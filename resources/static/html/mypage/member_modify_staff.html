@@ -262,7 +262,7 @@
                                                 <td>
                                                     <div class="input_group">
                                                         <div class="input size_25">
-                                                            <input type="text" value="홍*동" readonly>
+                                                            <input type="text" value="aaa****" readonly>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -337,6 +337,61 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>이메일 주소</th>
+                                                <td>
+                                                    <div id="email_change_button">
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <div class="input_tit">계열사</div>
+                                                                <input type="text" value="신세계백화점" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="tel" value="abc*****@****.com" readonly>
+                                                            </div>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" onclick="emailChangeOpen();">변경하기</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="email_change_form" style="display:none;">
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <div class="input_tit">계열사</div>
+                                                                <div class="design_select type5">
+                                                                    <select name="" onchange="affiliateChange(this);">
+                                                                        <option value="신세계백화점" data-email="@shinsegae.com" selected>신세계백화점</option>
+                                                                        <option value="신세계푸드" data-email="@shinsegaefood.com" >신세계푸드</option>
+                                                                        <option value="이마트" data-email="@emart.com" >이마트</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="text" value="aaad1234" id="changeEmailFirst">
+                                                            </div>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="text" value="@shinsegae.com" id="changeEmailSecond" readonly>
+                                                            </div>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" id="sendSms2">인증번호 받기</button>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" id="reSendSms2" style="display: none;">인증번호 재발송</button>
+                                                        </div>
+                                                        <div class="input_group" id="certify_numberbox2" style="display:none;">
+                                                            <div class="input size_25">
+                                                                <input type="tel" name="" maxlength="6" placeholder="인증번호 입력">
+                                                                <span class="count" id="count_down2">10:00</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="btn_list form_btns btn_fit size_25">
+                                                            <button class="btn btn_type5 btn_gray_line" type="button" onclick="emailChangeClose();">변경취소</button>
+                                                            <button class="btn btn_type5 btn_black" type="button" onclick="emailChangeSubmit();">확인</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <th>전화번호</th>
                                                 <td>
                                                     <div class="input_group">
@@ -366,7 +421,6 @@
                                                             <em>서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의 (선택)</em>
                                                             <button type="button" class="check_btn" onclick="openLayer('#terms_popup')">내용보기</button>
                                                         </div>
-                        
                                                         <div id="terms_popup" class="layer_popup layer_default">
                                                             <div class="layer_content  width_lg height_md">
                                                                 <div class="layer_default_title">서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의 (선택)</div>
@@ -414,9 +468,14 @@
                                                                 <span class="ck_icon"></span>
                                                                 <em>SMS 수신동의</em>
                                                             </label>
+                                                            <label class="checkbox checkbox_type2 inline">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                <em>이메일 수신동의</em>
+                                                            </label>
                                                         </div>
                                                         <p>
-                                                        SMS 수신동의를 선택하면 광고성 정보 수신에 자동 동의 처리됩니다.<br/>
+                                                        SMS 수신동의, 이메일 수신동의를 선택하면 광고성 정보 수신에 자동 동의 처리됩니다.<br/>
                                                         서비스의 중요 안내사항 및 주문/배송에 대한 안내는 위 수신여부와 관계없이 발송됩니다.<br/>
                                                         마케팅 수신동의를 하지 않더라도 서비스를 이용하실 수 있습니다. 단, 이벤트 소식 및 일부 할인쿠폰 서비스는 받을 수 없습니다.
                                                         </p>
@@ -730,6 +789,76 @@ document.getElementById('sendSms').addEventListener('click', function() {
 document.getElementById('reSendSms').addEventListener('click', function() {
     clearInterval(countdownInterval);
     startCountdown('sendSms', 'reSendSms', 'count_down');
+});
+
+
+//이메일 변경
+function emailChangeOpen(){
+    document.getElementById('email_change_button').style.display = 'none';
+    document.getElementById('email_change_form').style.display = 'block';
+}
+function emailChangeClose(){
+    document.getElementById('email_change_button').style.display = 'block';
+    document.getElementById('email_change_form').style.display = 'none';
+    emailClear();
+}
+function emailChangeSubmit(){
+    //휴대폰번호 변경 로직
+    box_alert('변경이 완료되었습니다.', 'info');
+    document.getElementById('count_down2').textContent = '10:00';
+    document.getElementById('email_change_button').style.display = 'block';
+    document.getElementById('email_change_form').style.display = 'none';
+    emailClear();
+}
+function emailClear(){
+    clearInterval(countdownInterval);
+    document.getElementById('count_down2').textContent = '10:00';
+}
+
+//계열사 변경 시 메일주소 변경
+function affiliateChange(select){
+    const selectedOption = select.options[select.selectedIndex];
+    const email = selectedOption.getAttribute('data-email');
+    document.getElementById('changeEmailSecond').value = email;
+}
+
+//인증번호
+let countdownInterval2;
+const certifyNumberBox2 = document.getElementById('certify_numberbox2');
+
+function startCountdown2(buttonId, reButtonId, countdownId) {
+    const button = document.getElementById(buttonId);
+    const reButton = document.getElementById(reButtonId);
+    const countdownSpan = document.getElementById(countdownId);
+    button.style.display = 'none';
+    reButton.style.display = 'flex';
+    certifyNumberBox2.style.display = 'flex';
+    let secondsLeft = 600;
+
+    countdownInterval = setInterval(function() {
+        secondsLeft--;
+        const minutes = Math.floor(secondsLeft / 60);
+        const seconds = secondsLeft % 60;
+        countdownSpan.textContent = minutes+`:`+seconds.toString().padStart(2, '0');
+
+        if (secondsLeft <= 0) {
+            clearInterval(countdownInterval2);
+            countdownSpan.textContent = '10:00';
+
+            //얼랏 실행
+            box_alert('시간이 만료되었습니다. 다시 시도해주세요.', 'info');
+        }
+    }, 1000);
+}
+
+document.getElementById('sendSms2').addEventListener('click', function() {
+    clearInterval(countdownInterval2);
+    startCountdown2('sendSms2', 'reSendSms2', 'count_down2');
+});
+
+document.getElementById('reSendSms2').addEventListener('click', function() {
+    clearInterval(countdownInterval2);
+    startCountdown2('sendSms2', 'reSendSms2', 'count_down2');
 });
 
 

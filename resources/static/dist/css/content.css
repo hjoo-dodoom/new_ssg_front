@@ -838,6 +838,8 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .input_group select:focus,
 .input_group textarea:focus{outline: none;}
 .input_group .input .in_text{margin:0 1.4rem 0 0.3rem;color:#000;font-size:1.4rem;}
+.input_group .input_tit{padding:1rem;border-right:1px solid #E6E6E6;height:100%;min-height:4.4rem;display:flex;align-items:center}
+.input_group .input_tit + input{border-radius:0 0.6rem 0.6rem 0 !important;}
 .size_16{width: 16rem;max-width:16rem;}
 .size_20{width: 20rem;max-width:20rem;}
 .size_25{width: 25rem;max-width:25rem;}
@@ -862,6 +864,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .input_group .input.size_mb_100{width: 100%;}
     .input_group > * + .size_mb_100 {margin-left:0;margin-top:1.2rem;}
     .input_group textarea.size_lg{height:20rem;}
+    .input_group > .input.size_mb_100 + *{margin-left:0;margin-top:1rem;}
 }
 
 .od_table.form_type1{margin-top:2.2rem;}
@@ -927,6 +930,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .form_type4 input[type="password"],
 .form_type4 input[type="tel"],
 .form_type4 input[type="email"]{height:4.4rem;border-radius:0.6rem;padding-left:1.4rem;border:0;background-color:#fff;}
+
 .form_type4 select{height:4.4rem;border-radius:0.6rem;padding-left:1.4rem;border:0;background-color:#F4F4F4;}
 .form_type4 textarea{border-radius:0.6rem;padding:1.4rem;border:0;background-color:#fff;height:14rem;resize: none;}
 .form_type4 .input .max_len{margin-right:1.4rem;}
@@ -937,7 +941,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .form_type4 input[type="text"]:read-only,
 .form_type4 input[type="password"]:read-only,
 .form_type4 input[type="tel"]:read-only,
-.form_type4 input[type="email"]:read-only{background-color:#e8e8e8;margin:-1px;}
+.form_type4 input[type="email"]:read-only{background-color:#e8e8e8;}
 .form_type4 .input .btn{height:4.8rem;margin-top:-1px;margin-right:-1px;margin-bottom:-1px;}
 .form_type4 .input_group + p{margin-top:2rem;}
 .form_type4 p + .input_group{margin-top:2rem;}
@@ -1249,6 +1253,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .dot li:before{content:"";width:2px;height:2px;border-radius: 50%;background-color: #000;position: absolute;left:0;top:0.8rem;}
 .dot li.red_text_color:before{background-color:#EA0000;}
 .layer_popup .dot{color:#555;font-size:1.4rem;}
+.indent{padding-left:0.8rem;}
 @media screen and (max-width: 1020px) {
     * + .dot{margin-top:1.5rem;}
     .dot{font-size:1.3rem;}

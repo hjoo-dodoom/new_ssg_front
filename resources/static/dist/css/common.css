@@ -47,6 +47,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .clearfix{zoom:1}
 .clearfix:after, .clearfix:before{display:table;content:"";}
 .clearfix:after{clear: both;}
+hr.devide_line{display: block;margin:2.4rem 0;background-color: #e6e6e6;height:1px;border:0;}
 
 /* vertical align */
 .align_top{vertical-align:top !important}
