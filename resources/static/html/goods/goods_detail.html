@@ -1,0 +1,1458 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show tablet_quick_hidden home_mobile_show">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="location_wrap container v_pc">
+            <div class="location">
+                <div class="item">
+                    <div class="item_inner">
+                        <a href="/resources/static/html/main/main.html">홈</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_inner">
+                        <a href="javascript:;">가전/IT</a>
+                        <div class="links">
+                            <div class="link"><a href="javascript:;">생활/주방/가구/건강</a></div>
+                            <div class="link"><a href="javascript:;" class="active">가전/IT</a></div>
+                            <div class="link"><a href="javascript:;">의류/잡화</a></div>
+                            <div class="link"><a href="javascript:;">스포츠/레저/자동차</a></div>
+                            <div class="link"><a href="javascript:;">화장품/이미용</a></div>
+                            <div class="link"><a href="javascript:;">유아동/도서/문구</a></div>
+                            <div class="link"><a href="javascript:;">식품</a></div>
+                            <div class="link"><a href="javascript:;">청소/생활용품</a></div>
+                            <div class="link"><a href="javascript:;">백화점</a></div>
+                            <div class="link"><a href="javascript:;">가공/건강식품</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_inner">
+                        <a href="javascript:;">생활용품</a>
+                        <div class="links">
+                            <div class="link"><a href="javascript:;">전체</a></div>
+                            <div class="link"><a href="javascript:;" class="active">생활용품</a></div>
+                            <div class="link"><a href="javascript:;">주방용품</a></div>
+                            <div class="link"><a href="javascript:;">식기/용기</a></div>
+                            <div class="link"><a href="javascript:;">가구/침구</a></div>
+                            <div class="link"><a href="javascript:;">인테리어소품</a></div>
+                            <div class="link"><a href="javascript:;">건강용품</a></div>
+                            <div class="link"><a href="javascript:;">반려용품</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_contents">
+
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="detail_wrap">
+                    <div class="dw_top">
+                        <div class="goods_images">
+                            <div class="imgaes_view">
+                                <div class="slide">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="/resources/static/dist/images/dummy/prd_image1.jpg">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/resources/static/dist/images/dummy/prd_image2.jpg">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/resources/static/dist/images/dummy/prd_image3.jpg">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/resources/static/dist/images/dummy/prd_image4.jpg">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/resources/static/dist/images/dummy/prd_image5.jpg">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="/resources/static/dist/images/dummy/prd_image6.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="imgaes_thumbs">
+                                <div class="slide">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;">
+                                                <img src="/resources/static/dist/images/dummy/prd_image1.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;">
+                                                <img src="/resources/static/dist/images/dummy/prd_image2.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;">
+                                                <img src="/resources/static/dist/images/dummy/prd_image3.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;">
+                                                <img src="/resources/static/dist/images/dummy/prd_image4.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;">
+                                                <img src="/resources/static/dist/images/dummy/prd_image5.jpg">
+                                            </a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;">
+                                                <img src="/resources/static/dist/images/dummy/prd_image6.jpg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+
+                        <div class="goods_info">
+                            <span class="department">신세계백화점</span>
+                            <h2>[LG전자] 스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_27ART10DSPL ☆신세계5만원☆</h2>
+                            <div class="info">
+                                <div class="item">
+                                    <div class="tit">소비자가</div>
+                                    <div class="cnt">
+                                        <span class="price_ori">89,000원</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="tit">판매가</div>
+                                    <div class="cnt">
+                                        <span class="discount_ori">40%</span>
+                                        <span class="price_ori">53,400원</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="tit">추가할인가</div>
+                                    <div class="cnt">
+                                        <span class="discount_sale">40%</span>
+                                        <span class="price_sale">53,400원</span>
+                                        <button class="btn btn_type6 btn_inline btn_black_line">
+                                            <span onclick="openLayer('#coupon_popup')">쿠폰받기</span>
+                                            <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.753 6.435a.438.438 0 0 1 .619-.62l3.19 3.191V1.75a.437.437 0 1 1 .875 0v7.256l3.191-3.19a.437.437 0 1 1 .619.619L7.31 10.372a.437.437 0 0 1-.62 0L2.753 6.435Zm9.06 4.94H2.187a.438.438 0 0 0 0 .875h9.626a.438.438 0 0 0 0-.875Z" fill="#000"/></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="item">
+                                    <div class="tit">배송비</div>
+                                    <div class="cnt">무료배송</div>
+                                </div>
+                                <div class="item">
+                                    <div class="tit">배송정보</div>
+                                    <div class="cnt">3-5일 이내 출고예정 (공휴일 제외)</div>
+                                </div>
+                                <div class="item">
+                                    <div class="tit">결제정보</div>
+                                    <div class="cnt">포인트 사용불가</div>
+                                </div>
+                                <div class="item">
+                                    <div class="tit">마일리지</div>
+                                    <div class="cnt">마일리지 639M 적립</div>
+                                </div>
+                                <div class="item">
+                                    <div class="tit">수량제한</div>
+                                    <div class="cnt">최소 1개 ~ 최대 20개 까지 구매가능</div>
+                                </div>
+                            </div>
+                            <div class="goods_options_btns">
+                                <div class="options">
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <!-- 필수 선택 옵션이 있을때 
+                                            onchange="option_required(this, 1)"
+                                            select-required
+                                            product-option="prd_option_required1"
+                                            -->
+                                            <select name=""  onchange="option_required(this, 1)" select-required product-option="prd_option_required1">
+                                                <option value="">색상 선택</option>
+                                                <option value="검정">검정</option>
+                                                <option value="노랑">노랑</option>
+                                                <option value="파랑" disabled>파랑 (품절)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" onchange="option_required(this, 2)" select-required product-option="prd_option_required2">
+                                                <option value="">사이즈 선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="prd_option_required3">
+                                                <option value="">길이 선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" id="">
+                                                <option value="">추가구성품 선택</option>
+                                                <option value="양말">양말 (재고 20)</option>
+                                                <option value="장갑">장갑 (재고 20)</option>
+                                                <option value="신발" disabled>신발 (품절)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="selected_options">
+                                    <div class="items">
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">블랙/미디움</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="3"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply');">쿠폰적용</butto>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 3개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="remove_item">선택옵션 삭제</button>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">양말</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 3개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="remove_item">선택옵션 삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="total_price">
+                                        <span class="tit">총 상품 금액</span>
+                                        <strong class="price">1,939,140원</strong>
+                                    </div>
+                                </div>
+
+                                <!-- 옵션없음 -->
+                                <div class="selected_options">
+                                    <div class="items">
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">양말</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 3개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="total_price">
+                                        <span class="tit">총 상품 금액</span>
+                                        <strong class="price">1,939,140원</strong>
+                                    </div>
+                                </div>
+                                <!-- //옵션없음 -->
+                                
+                                <div class="goods_btns">
+                                    <button type="button" class="btn btn_icon icon_zzim">찜하기</button>
+                                    <button type="button" class="btn btn_icon icon_present">선물하기</button>
+                                    <button type="button" class="btn btn_type2 btn_black">장바구니</button>
+                                    <button type="button" class="btn btn_type2 btn_theme">바로구매</button>
+                                    <button type="button" class="btn btn_type2 btn_black_line">여러곳 배송</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goods_gosi">
+                        <div class="item">
+                            <div class="tit">모델명</div>
+                            <div class="cnt">스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_27ART10DSPL</div>
+                        </div>
+                        <div class="item">
+                            <div class="tit">상품코드</div>
+                            <div class="cnt">P0000000198808</div>
+                        </div>
+                        <div class="item">
+                            <div class="tit">제조사/원산지</div>
+                            <div class="cnt">LG전자/대한민국</div>
+                        </div>
+                        <div class="item">
+                            <div class="tit">상품구성</div>
+                            <div class="cnt">본체</div>
+                        </div>
+                    </div>
+
+                    <div class="dw_bottom">
+                        <div class="tap_btns" scroll-poisition-active>
+                            <a href="#scroll_section1" class="active">상품정보</a>
+                            <a href="#scroll_section2">상품문의</a>
+                            <a href="#scroll_section3">배송&취소교환반품</a>
+                        </div>
+                        <div class="tap_contents">
+
+                            <!-- 상품정보 -->
+                            <div class="tap_box gd_tap_detail" id="scroll_section1">
+                                <div class="goods_detail_content">
+                                    <img src="/resources/static/dist/images/dummy/detail_img.jpg">
+                                    <button type="button" class="goods_detail_more btn btn_type4 btn_black_line" onclick="contentShow();">
+                                        <span>상품정보 더보기</span>
+                                        <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7 8.795 3.96-3.96a.588.588 0 1 1 .83.83l-4.375 4.376a.588.588 0 0 1-.83 0L2.208 5.666a.588.588 0 0 1 .831-.831L7 8.795Z" fill="#000" stroke="#000" stroke-width=".3"/></svg>
+                                    </button>
+                                </div> 
+
+                                <div class="table_type1">
+                                    <table>
+                                        <caption>상품 정보 고시</caption>
+                                        <colgroup>
+                                            <col style="width:340px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>품명 및 모델명</th>
+                                                <td>스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_27ART10DSPL</td>
+                                            </tr>
+                                            <tr>
+                                                <th>KC 인증 필 유무</th>
+                                                <td>HU07998-15004F</td>
+                                            </tr>
+                                            <tr>
+                                                <th>정격전압, 소비전력, 에너지소비효율등급</th>
+                                                <td>220V 60Hz / 소비전력 : 1500W</td>
+                                            </tr>
+                                            <tr>
+                                                <th>동일모델의 출시년월</th>
+                                                <td>2022.05</td>
+                                            </tr>
+                                            <tr>
+                                                <th>제조사, 수입품의 경우 수입자를 함께 표기</th>
+                                                <td>스마트 터치스크린(LG전자)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>제조국</th>
+                                                <td>대한민국</td>
+                                            </tr>
+                                            <tr>
+                                                <th>제품안전인증(제품안전인증 검색)</th>
+                                                <td>
+                                                    <div class="mark_kc">
+                                                        인증번호 : <a href="javascript:fnSearchSafetyAuthPop('HU073326-24002');" class="underline">HU07998-15004F</a><br/>
+                                                        인증번호를 클릭하시면 상세 확인이 가능합니다 (해당 인증 검사정보는 판매자가 직접 등록한 것으로 등록 정보에 대한 책임은 판매자에게 있습니다)
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>적합성평가인증(적합성평가인증 검색)</th>
+                                                <td>
+                                                    <div class="mark_kc">
+                                                        인증번호 : <a href="javascript:fnSearchSafetyAuthPop('HU073326-24002');" class="underline">HU073326-24002</a><br/>
+                                                        인증번호를 클릭하시면 상세 확인이 가능합니다 (해당 인증 검사정보는 판매자가 직접 등록한 것으로 등록 정보에 대한 책임은 판매자에게 있습니다)
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //상품정보 -->
+
+                            <!-- 상품문의 -->
+                            <div class="tap_box gd_tap_qna" id="scroll_section2">
+                                <form action="" id="qna_submit" novalidate="novalidate">
+                                <div class="form form_type3">
+                                    <table>
+                                        <caption>상품문의</caption>
+                                        <colgroup>
+                                            <col style="width:340px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>제목</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input">
+                                                            <input type="text" name="qna_subject" placeholder="제목을 입력해주세요">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>내용</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input">
+                                                            <textarea name="qna_content" id="" placeholder="내용을 입력해주세요" class="max_text" maxlength="1000"></textarea>
+                                                        </div>
+                                                        <span class="max_len"><b>0</b> / 1000</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul class="dot">
+                                    <li> 작성하신 문의내용은 <a href="javascript:;" class="underline"><b>마이페이지 > 나의활동내역</b></a>에서 확인하실 수 있습니다.</li>
+                                    <li> 배송 및 교환, 반품, 취소는 1:1문의를 통해 접수 부탁 드립니다.</li>
+                                    <li> 개인정보 보호를 위해 이메일, 주소, 휴대폰번호 등의 개인정보 입력은 금지되어 있습니다.</li>
+                                    <li> 부적절한 게시물 등록 시 사전동의 없이 무통보 삭제 될 수 있습니다.</li>
+                                </ul>
+                                <div class="form_check">
+                                    <div class="item">
+                                        <label class="checkbox checkbox_type1">
+                                            <input type="checkbox">
+                                            <span class="ck_icon"></span>
+                                            <strong>개인정보 수집 및 이용에 대한 동의<span class="red_text_color">(필수)</span></strong>
+                                        </label>
+                                        <button type="button" class="terms_btn" onclick="openLayer('#terms_popup')">내용보기</button>
+                                    </div>
+
+                                    <div id="terms_popup" class="layer_popup layer_default">
+                                        <div class="layer_content  width_md height_md">
+                                            <div class="layer_default_title">개인정보 수집 및 이용에 대한 동의(필수)</div>
+                                            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                            <div class="layer_default_content layer_scroll" data-simplebar>
+                                                <div class="table_response">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>구분</th>
+                                                                <th>수집항목</th>
+                                                                <th>수집목적</th>
+                                                                <th>보유 및 이용기간</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span class="mb_tit">구분</span><span class="mb_cnt">상품문의</span></td>
+                                                                <td><span class="mb_tit">수집항목</span><span class="mb_cnt">아이디, 이름, 휴대폰번호</span></td>
+                                                                <td><span class="mb_tit">수집목적</span><span class="mb_cnt">상품안내</span></td>
+                                                                <td><span class="mb_tit">보유 및 이용기간</span><span class="mb_cnt"><strong class="terms_strong">3년</strong></span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <ul class="dot">
+                                                    <li><em>고객은 동의를 거부 할 권리가 있습니다. 단, 동의를 
+                                                        거부 할 경우 상품문의 작성이 불가합니다.</em></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                    </div>
+
+                                </div>
+                                <div class="form_btns between_md">
+                                    <button type="submit" class="btn btn_type2 btn_black">작성하기</button>
+                                </div>
+                                </form>
+                            </div>
+                            <!-- //상품문의 -->
+
+                            <!-- 배송&취소교환반품 -->
+                            <div class="tap_box gd_tap_return" id="scroll_section3">
+                                <div class="table_type1">
+                                    <table>
+                                        <caption>배송&취소교환반품</caption>
+                                        <colgroup>
+                                            <col style="width:340px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>배송정보</th>
+                                                <td>
+                                                    ㆍ제주, 도서산간 지역 : 도선료 별도 , 주문 후 물류센터에서 별도로 입금 요청 드림 → 도선료 입금 후 발ㆍ송 가능합니다<br/>
+                                                    ㆍ삼성, LG , 딤채 등 브랜드 직배 상품은 브랜드 물류센터에서 직접 안내 및 배송됩니다
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>취소교환반품</th>
+                                                <td>
+                                                    ㆍSSG MONEY + 타 결제수단 복합결제시 부분취소 불가합니다. 반품,환불 처리로 인한 재 결제 요청드릴 수 있습니다.<br/>
+                                                    ㆍ시스템 주문 취소 후 카드사 (SSG PAY) 에서 7~10일내 취소처리 (영업일기준)<br/>
+                                                    ㆍ개인정보 강화로 쇼핑몰은 시스템 주문취소 확인 가능하나, 카드사 (SSG PAY) 취소건 확인 시 고객님께서 직접 카드사에 문의하셔야 합니다.
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //배송&취소교환반품 -->
+                        </div>
+                    </div>
+
+                    <div class="grid_scroll_content">
+                        <div class="title"><a href="javascript:;">기획전명이 표기됩니다</a></div>
+                        <div class="items">
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions2.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions3.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid_scroll_content">
+                        <div class="title"><a href="javascript:;">브랜드관명이 표기됩니다</a></div>
+                        <div class="items">
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions2.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions3.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="javascript:;">
+                                    <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="options_fixed fixed">
+                        <div class="goods_btns_mobile">
+                            <button type="button" class="btn btn_icon icon_zzim">찜하기</button>
+                            <button type="button" class="btn btn_icon icon_present" id="present_mobile">선물하기</button>
+                            <button type="button" class="btn btn_theme" id="buy_mobile">바로구매</button>
+                        </div>
+                        <button type="button" class="fixed_toggle_btn">옵션 선택</button>
+                        <div class="options_fixed_inner" data-simplebar>
+                            <div class="goods_options_btns">
+                                <div class="options_content">
+                                    <div class="product_name">[LG전자] 스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_
+                                        27ART10DSPL ☆신세계5만원☆</div>
+                                    <div class="options">
+                                        <div class="select">
+                                            <div class="design_select type3">
+                                                <select name="" id="" onchange="option_required(this, 1)" select-required product-option="modal_prd_option_required1">
+                                                    <option value="">색상 선택</option>
+                                                    <option value="검정">검정</option>
+                                                    <option value="노랑">노랑</option>
+                                                    <option value="파랑" disabled>파랑 (품절)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="select">
+                                            <div class="design_select type3">
+                                                <select name="" id="" onchange="option_required(this, 2)" select-required product-option="modal_prd_option_required2">
+                                                    <option value="">사이즈 선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="select">
+                                            <div class="design_select type3">
+                                                <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="modal_prd_option_required3">
+                                                    <option value="">길이 선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="select">
+                                            <div class="design_select type3">
+                                                <select name="" id="">
+                                                    <option value="">추가구성품 선택</option>
+                                                    <option value="양말">양말 (재고 20)</option>
+                                                    <option value="장갑">장갑 (재고 20)</option>
+                                                    <option value="신발" disabled>신발 (품절)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="selected_options">
+                                        <div class="items" data-simplebar>
+                                            <div class="item">
+                                                <div class="l">
+                                                    <div class="name">블랙/미디움</div>
+                                                    <div class="lot_box">
+                                                        <div class="lot_control">
+                                                            <button type="button" class="minus">수량 빼기</button>
+                                                            <input type="tel" value="1" limit="3"><!-- limit 재고수량 -->
+                                                            <button type="button" class="plus">수량 추가</button>
+                                                        </div>
+                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                    </div>
+                                                </div>
+                                                <div class="r">
+                                                    <div class="r_cnt">
+                                                        <div class="quantity">재고수량 10개</div>
+                                                        <div class="price">
+                                                            <span class="price_ori">1,020,600원</span>
+                                                            <span class="price_sale">918,540원</span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="l">
+                                                    <div class="name">양말</div>
+                                                    <div class="lot_box">
+                                                        <div class="lot_control">
+                                                            <button type="button" class="minus">수량 빼기</button>
+                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                            <button type="button" class="plus">수량 추가</button>
+                                                        </div>
+                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                    </div>
+                                                </div>
+                                                <div class="r">
+                                                    <div class="r_cnt">
+                                                        <div class="quantity">재고수량 10개</div>
+                                                        <div class="price">
+                                                            <span class="price_ori">1,020,600원</span>
+                                                            <span class="price_sale">918,540원</span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="l">
+                                                    <div class="name">블랙/미디움</div>
+                                                    <div class="lot_box">
+                                                        <div class="lot_control">
+                                                            <button type="button" class="minus">수량 빼기</button>
+                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                            <button type="button" class="plus">수량 추가</button>
+                                                        </div>
+                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                    </div>
+                                                </div>
+                                                <div class="r">
+                                                    <div class="r_cnt">
+                                                        <div class="quantity">재고수량 10개</div>
+                                                        <div class="price">
+                                                            <span class="price_ori">1,020,600원</span>
+                                                            <span class="price_sale">918,540원</span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="l">
+                                                    <div class="name">양말</div>
+                                                    <div class="lot_box">
+                                                        <div class="lot_control">
+                                                            <button type="button" class="minus">수량 빼기</button>
+                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                            <button type="button" class="plus">수량 추가</button>
+                                                        </div>
+                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                    </div>
+                                                </div>
+                                                <div class="r">
+                                                    <div class="r_cnt">
+                                                        <div class="quantity">재고수량 10개</div>
+                                                        <div class="price">
+                                                            <span class="price_ori">1,020,600원</span>
+                                                            <span class="price_sale">918,540원</span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="total_price">
+                                            <span class="tit">총 상품 금액</span>
+                                            <strong class="price">1,939,140원</strong>
+                                        </div>
+                                    </div>
+
+                                    <!-- 옵션없음 -->
+                                    <div class="selected_options">
+                                        <div class="items" data-simplebar>
+                                            <div class="item">
+                                                <div class="l">
+                                                    <div class="name">양말</div>
+                                                    <div class="lot_box">
+                                                        <div class="lot_control">
+                                                            <button type="button" class="minus">수량 빼기</button>
+                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                            <button type="button" class="plus">수량 추가</button>
+                                                        </div>
+                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                    </div>
+                                                </div>
+                                                <div class="r">
+                                                    <div class="r_cnt">
+                                                        <div class="quantity">재고수량 10개</div>
+                                                        <div class="price">
+                                                            <span class="price_ori">1,020,600원</span>
+                                                            <span class="price_sale">918,540원</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="total_price">
+                                            <span class="tit">총 상품 금액</span>
+                                            <strong class="price">1,939,140원</strong>
+                                        </div>
+                                    </div>
+                                    <!-- //옵션없음 -->
+                                </div>
+                                <div class="goods_btns">
+                                    <button type="button" class="btn btn_icon icon_zzim">찜하기</button>
+                                    <button type="button" class="btn btn_icon icon_present">선물하기</button>
+                                    <button type="button" class="btn btn_black">장바구니</button>
+                                    <button type="button" class="btn btn_theme">바로구매</button>
+                                    <button type="button" class="btn btn_black_line">여러곳 배송</button>
+                                    <button type="button" class="btn btn_theme" id="present_mobile_buy">선물하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+<!-- 쿠폰받기 -->
+<div id="coupon_popup" class="layer_popup layer_default">
+    <div class="layer_content  width_md height_md">
+        <div class="layer_default_title">쿠폰받기</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content">
+            <div class="label_check_list layer_scroll" data-simplebar>
+                <div class="items">
+                    <div class="label_item">
+                        <button type="button" class="label_cnt">
+                            <div class="per">12%</div>
+                            <div class="name">전 품목 대상 12%</div>
+                            <div class="info">최대 30,000원 할인ㆍ3일 남음</div>
+                        </button>
+                    </div>
+                    <div class="label_item">
+                        <button type="button" class="label_cnt">
+                            <div class="per">10%</div>
+                            <div class="name">LG브랜드 10% 할인쿠폰</div>
+                            <div class="info">최대 15,000원 할인ㆍ10일 남음</div>
+                        </button>
+                    </div>
+                    <div class="label_item">
+                        <button type="button" class="label_cnt" disabled>
+                            <div class="per">20%</div>
+                            <div class="name">전 품목 대상 20%</div>
+                            <div class="info">최대 30,000원 할인ㆍ3일 남음</div>
+                        </button>
+                    </div>
+                    <div class="label_item">
+                        <button type="button" class="label_cnt">
+                            <div class="per">10%</div>
+                            <div class="name">LG브랜드 10% 할인쿠폰</div>
+                            <div class="info">최대 15,000원 할인ㆍ10일 남음</div>
+                        </button>
+                    </div>
+                    <div class="label_item">
+                        <button type="button" class="label_cnt" disabled>
+                            <div class="per">20%</div>
+                            <div class="name">전 품목 대상 20%</div>
+                            <div class="info">최대 30,000원 할인ㆍ3일 남음</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form_btns between_md">
+                <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">닫기</a>
+                <a href="javascript:;" class="btn btn_type4 btn_black">모두받기</a>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //쿠폰받기 -->
+
+<!-- 쿠폰 적용하기 -->
+<div id="coupon_apply" class="layer_popup layer_default">
+    <div class="layer_content  width_md height_md">
+        <div class="layer_default_title">쿠폰 적용하기</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content">
+            <div class="label_check_list layer_scroll" data-simplebar>
+                <div class="check_list_tit">보유 쿠폰</div>
+                <div class="items">
+                    <div class="label_item">
+                        <label class="label_cnt checkbox checkbox_type2">
+                            <input type="checkbox">
+                            <span class="ck_icon"></span>
+                            <span class="ck_line"></span>
+                            <div class="coupon_cnt">
+                                <div class="per">12%</div>
+                                <div class="name">전 품목 대상 12%</div>
+                                <div class="info">최대 30,000원 할인ㆍ3일 남음</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="label_item">
+                        <label class="label_cnt checkbox checkbox_type2">
+                            <input type="checkbox" disabled>
+                            <span class="ck_icon"></span>
+                            <span class="ck_line"></span>
+                            <div class="coupon_cnt">
+                                <div class="per">10%</div>
+                                <div class="name">LG브랜드 10% 할인쿠폰</div>
+                                <div class="info">최대 15,000원 할인ㆍ10일 남음</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="label_item">
+                        <label class="label_cnt checkbox checkbox_type2">
+                            <input type="checkbox">
+                            <span class="ck_icon"></span>
+                            <span class="ck_line"></span>
+                            <div class="coupon_cnt">
+                                <div class="per">10%</div>
+                                <div class="name">LG브랜드 10% 할인쿠폰</div>
+                                <div class="info">최대 15,000원 할인ㆍ10일 남음</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="label_item">
+                        <label class="label_cnt checkbox checkbox_type2">
+                            <input type="checkbox">
+                            <span class="ck_icon"></span>
+                            <span class="ck_line"></span>
+                            <div class="coupon_cnt">
+                                <div class="per">20%</div>
+                                <div class="name">전 품목 대상 20%</div>
+                                <div class="info">최대 30,000원 할인ㆍ3일 남음</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="label_item">
+                        <label class="label_cnt checkbox checkbox_type2">
+                            <input type="checkbox">
+                            <span class="ck_icon"></span>
+                            <span class="ck_line"></span>
+                            <div class="coupon_cnt">
+                                <div class="per">20%</div>
+                                <div class="name">전 품목 대상 20%</div>
+                                <div class="info">최대 30,000원 할인ㆍ3일 남음</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form_btns between_md btn_fit">
+                <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">닫기</a>
+                <a href="javascript:;" class="btn btn_type4 btn_black">모두받기</a>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //쿠폰 적용하기 -->
+
+
+
+<script>
+//옵션 선택
+function option_required(elm, num, last){
+    const targetNum = num + 1;
+    const targetSelect = document.querySelector(`[product-option = 'prd_option_required`+targetNum+`']`);
+    const targetModalSelect = document.querySelector(`[product-option = 'modal_prd_option_required`+targetNum+`']`);
+    const changedValue = elm.options[elm.selectedIndex].value;
+
+    //실제 옵션 삽입 로직으로 교체
+    let options = ''
+    if(targetNum == 2){
+        options = `
+            <option value="라지">라지</option>
+            <option value="미디움">미디움</option>
+            <option value="스몰" disabled>스몰[품절]</option>
+        `;
+    }else if(targetNum == 3){
+        options = `
+            <option value="20cm">20cm (재고 20)</option>
+            <option value="10cm">10cm (재고 30)</option>
+            <option value="5cm" disabled>5cm [품절]</option>
+        `;
+    }
+
+    //선택한 셀렉트 업데이트 (선택한 셀렉트 && 모달창 안의 셀렉트)
+    const changeSelectChoices = choicesInstances.get(`prd_option_required`+num);
+    const changeModalSelectChoices = choicesInstances.get(`modal_prd_option_required`+num);
+    changeSelectChoices.setChoiceByValue(changedValue);
+    changeModalSelectChoices.setChoiceByValue(changedValue);
+    
+    
+    if(last){//필수 마지막 셀렉트
+        let selectedOptions = [];
+        document.querySelectorAll('.options_fixed [select-required]').forEach(select => {
+            selectedOptions.push(select.selectedOptions[0].value);
+        });
+
+        //옵션추가 로직
+
+        //셀렉트 selected, option 초기화
+        document.querySelectorAll('[select-required]').forEach(select => {
+            //필수 옵션 placeholder값 제외 지움 (첫번째 필수 셀렉트박스 제외)
+            document.querySelectorAll('.goods_info [select-required]').forEach((el, index) => {
+                if (index > 0) {
+                    while (el.options.length > 1) {
+                        el.remove(1);
+                    }
+                }
+            });
+            document.querySelectorAll('.options_fixed [select-required]').forEach((el, index) => {
+                console.log(el)
+                if (index > 0) {
+                    while (el.options.length > 1) {
+                        el.remove(1);
+                    }
+                }
+            });
+
+            const optionRequired = choicesInstances.get(select.getAttribute('product-option'));
+            optionRequired.removeActiveItems()
+            optionRequired.destroy();
+            optionRequired.init();
+        });
+        box_alert(selectedOptions)
+    }else{
+        //선택한 다음 셀렉트 업데이트 후  셀렉트 초기화
+        targetSelect.insertAdjacentHTML('beforeend', options); 
+        targetModalSelect.insertAdjacentHTML('beforeend', options); 
+        const targetSelectChoices = choicesInstances.get(`prd_option_required`+targetNum+``);
+        const targetModalSelectChoices = choicesInstances.get(`modal_prd_option_required`+targetNum+``);
+        if (targetSelectChoices) {
+            targetSelectChoices.destroy();
+            targetSelectChoices.init();
+        }
+        if (targetModalSelectChoices) {
+            targetModalSelectChoices.destroy();
+            targetModalSelectChoices.init();
+        }
+    }
+}
+
+                                        
+//찜하기 토글
+const iconZzimAll = document.querySelectorAll('.icon_zzim');
+iconZzimAll.forEach(zzim => {
+    zzim.addEventListener('click', () => {
+        //성공시
+        //if(){}
+        const newStatus = !zzim.classList.contains('active');
+        iconZzimAll.forEach(icon => icon.classList.toggle('active', newStatus));
+    });
+});
+
+//상품 이미지 슬라이드
+var imagesThumbs = new Swiper(".imgaes_thumbs .slide", {
+    watchSlidesProgress: true,
+    spaceBetween: 24,
+    slidesPerView: 5,
+    freeMode: true,
+    navigation: {
+    nextEl: ".imgaes_thumbs .swiper-button-next",
+    prevEl: ".imgaes_thumbs .swiper-button-prev",
+    },
+});
+var imagesView = new Swiper(".imgaes_view .slide", {
+    loop:true,
+    thumbs: {
+        swiper: imagesThumbs,
+    },
+    pagination: {
+        el: ".imgaes_view .swiper-pagination",
+        type: "fraction",
+        renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span><span class="' + totalClass + '"></span>';
+        },
+    },
+});
+
+//fixed 옵션선택 토글
+const fixedToggleBtn = document.querySelector('.fixed_toggle_btn');
+const presentMobileBtn = document.querySelector('#present_mobile');
+const buyMobileBtn = document.querySelector('#buy_mobile');
+const optionsFixed = document.querySelector('.options_fixed');
+fixedToggleBtn.addEventListener('click', function (event) {
+    optionsFixed.classList.toggle('open');
+});
+presentMobileBtn.addEventListener('click', function (event) {
+    optionsFixed.classList.toggle('open');
+    optionsFixed.classList.add('mobile_present');
+});
+buyMobileBtn.addEventListener('click', function (event) {
+    optionsFixed.classList.toggle('open');
+});
+document.addEventListener('click', function (event) {
+    if(!event.target.closest('.options_fixed')){
+        optionsFixed.classList.remove('open');
+        optionsFixed.classList.remove('mobile_present');
+    }
+});
+
+//모바일 상품품정보 더보기
+function contentShow(){
+    document.querySelector('.goods_detail_content').classList.add('show');
+}
+
+//상품 정보 고시 asis 스크립트
+function fnSearchSafetyAuthPop(key) {
+	var reqKey = encodeURI(key).replace(/(\s*)/g,"");
+	var popUrl ="http://www.safetykorea.kr/search/searchPop?certNum=" + reqKey;
+	var popOption = "width=800, height=600, resizable=no, scrollbars=yes, status=no;";
+
+	window.open(popUrl,"safetyAuthentication", popOption);
+}
+
+//jquery.validate.js && box_alert 예제코드
+let error_lists = [];
+$("#qna_submit").validate({
+    rules: {
+        qna_subject: {
+            required: true
+        },
+        qna_content: {
+            required: true,
+        },
+    },
+    messages: {
+        qna_subject: {
+            required: "상품문의 제목을 입력해주세요."
+        },
+        qna_content: {
+            required: "상품문의 내용을 입력해주세요.",
+        },
+    },
+    errorPlacement: function(error, element) {
+        error_lists.push(error.text());
+    },
+    invalidHandler: function(event, validator) {
+        setTimeout(() => {
+            //에러 배열 중복제거
+            const set = new Set(error_lists);
+            const uniqueArr = [...set];
+            let error_message = uniqueArr.join('<br />');
+
+            //얼랏 실행
+            box_alert(error_message, 'info');
+
+            //에러 배열 초기화
+            error_lists = [];
+            return false;
+        }, 0);
+    },
+    submitHandler: function(form, event) {
+        event.preventDefault();
+        //submit 로직
+        console.log("성공");
+    },
+
+    //display:none인것도 유효성 체크
+    ignore: [],
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('[scroll-poisition-active]');
+    let isScrolling = false;
+
+    window.addEventListener('scroll', function() {
+        if (!isScrolling) {
+            window.requestAnimationFrame(function() {
+                onScroll();
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    });
+
+    const scrollLinks = document.querySelectorAll('[scroll-poisition-active] a[href^="#"]');
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            window.removeEventListener('scroll', onScroll);
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+                window.location.hash = targetId;
+                window.addEventListener('scroll', onScroll);
+            }, 500);
+        });
+    });
+});
+
+function onScroll() {
+    const scrollPos = window.scrollY;
+    const scrollLinks = document.querySelectorAll('[scroll-poisition-active] a[href^="#"]');
+
+    // 첫 번째 섹션보다 위에 있는지 체크
+    const firstSection = document.querySelector(scrollLinks[0].getAttribute('href'));
+    if (firstSection && scrollPos < firstSection.offsetTop) {
+        scrollLinks.forEach(link => link.classList.remove('active'));
+        scrollLinks[0].classList.add('active');
+        return;
+    }
+
+    scrollLinks.forEach(link => {
+        const refElement = document.querySelector(link.getAttribute('href'));
+        if (refElement) {
+            const elementTop = refElement.offsetTop;
+            const elementBottom = elementTop + refElement.offsetHeight;
+            
+            if (elementTop <= scrollPos && elementBottom > scrollPos) {
+                scrollLinks.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+            }
+        }
+    });
+}
+</script>
+</body>
+</html>

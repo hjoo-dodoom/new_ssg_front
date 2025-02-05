@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+<h1 class="screen_hide">SHINSEGAE</h1>
+<div id="layout" class="join_layout">
+    <div class="hd_fl">
+        <div class="logo">
+            <img src="/resources/static/dist/images/common/logo.png" alt="SHINSEGAE">
+        </div>
+        <div class="links">
+            <div class="item"><a href="javascript:;">로그인</a></div>
+            <div class="item"><a href="javascript:;">홈</a></div>
+        </div>
+    </div>
+
+    <div id="content" class="join_content">
+        <div class="page_title_center">
+            <h2>임직원 확인</h2>
+            <div class="sub">임직원 확인을 위한 <strong>이메일 인증이 필요</strong>합니다.</div>
+        </div>
+
+        <div class="join_inner">
+            <form action="" id="" novalidate="novalidate">
+            <div class="form form_type1 size_lg">
+                <div class="row">
+                    <div class="row_top">
+                        <div class="tit required">이메일 주소를 입력해 주세요.</div>
+                        <div class="info_hover">
+                            <button type="button" class="btn_info_show">인증 메일이 안와요</button>
+                            <div class="info_cnt" style="width:34rem;">
+                                <div class="info_cnt_title">인증메일 확인 방법</div>
+                                <div class="info_cnt_text">
+                                    <ul>
+                                        <li>ㆍ작성하신 메일 주소를 다시 한번 확인해 주세요.</li>
+                                        <li>ㆍ계열사 서버에 따라 메일 수신이 지연될 수 있습니다.</li>
+                                        <li>ㆍ스팸메일이나 메일함의 용량을 확인해 주세요.</li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="btn_info_close">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_group">
+                        <div class="input">
+                            <input type="email">
+                            <div class="input_text">@shinsegae.com</div>
+                        </div> 
+                        <button class="btn btn_gray btn_type3 btn_inline" type="button" id="sendSms">인증번호 받기</button>
+                        <button class="btn btn_gray btn_type3 btn_inline" type="button" id="reSendSms" style="display: none;">인증번호 재발송</button>
+                    </div>
+                </div>
+
+                <div class="row" id="certify_numberbox" style="display: none;">
+                    <div class="row_top">
+                        <div class="tit required">인증번호를 입력해 주세요.</div>
+                    </div>
+                    <div class="input_group">
+                        <div class="input">
+                            <input type="tel" maxlength="6">
+                            <span class="count" id="count_down">10:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form_btns between_lg">
+                <button type="submit" class="btn btn_black btn_type1">이메일 인증하기</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+             //html include
+            //헤더&푸터 개발 완료시 삭제해주세요
+            function includeFile(path, targetId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(targetId).innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+            }
+            
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+</div>
+
+
+
+<script>
+    //인증번호
+    let countdownInterval;
+    const certifyNumberBox = document.getElementById('certify_numberbox');
+
+    function startCountdown(buttonId, reButtonId, countdownId) {
+        const button = document.getElementById(buttonId);
+        const reButton = document.getElementById(reButtonId);
+        const countdownSpan = document.getElementById(countdownId);
+        button.style.display = 'none';
+        reButton.style.display = 'block';
+        certifyNumberBox.style.display = 'block';
+        let secondsLeft = 600;
+
+        countdownInterval = setInterval(function() {
+            secondsLeft--;
+            const minutes = Math.floor(secondsLeft / 60);
+            const seconds = secondsLeft % 60;
+            countdownSpan.textContent = minutes+`:`+seconds.toString().padStart(2, '0');
+
+            if (secondsLeft <= 0) {
+                clearInterval(countdownInterval);
+                countdownSpan.textContent = '3:00';
+
+                error_lists.push('시간이 만료되었습니다. 다시 시도해주세요.');
+
+                //에러 배열 중복제거
+                const set = new Set(error_lists);
+                const uniqueArr = [...set];
+                let error_message = uniqueArr.join('<br />');
+
+                //얼랏 실행
+                box_alert(error_message, 'info');
+
+                //에러 배열 초기화
+                error_lists = [];
+            }
+        }, 1000);
+    }
+
+    document.getElementById('sendSms').addEventListener('click', function() {
+        clearInterval(countdownInterval);
+        startCountdown('sendSms', 'reSendSms', 'count_down');
+    });
+
+    document.getElementById('reSendSms').addEventListener('click', function() {
+        clearInterval(countdownInterval);
+        startCountdown('sendSms', 'reSendSms', 'count_down');
+    });
+</script>
+</body>
+</html>

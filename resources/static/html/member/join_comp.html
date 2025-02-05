@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+<h1 class="screen_hide">SHINSEGAE</h1>
+<div id="layout" class="join_layout">
+    <div class="hd_fl">
+        <div class="logo">
+            <img src="/resources/static/dist/images/common/logo.png" alt="SHINSEGAE">
+        </div>
+        <div class="links">
+            <div class="item"><a href="javascript:;">로그인</a></div>
+            <div class="item"><a href="javascript:;">홈</a></div>
+        </div>
+    </div>
+
+    <div id="content" class="join_content">
+        <div class="page_title_center">
+            <h2>회원가입</h2>
+            <div class="sub">가입완료!</div>
+        </div>
+
+        <div class="step_info">
+            <span class="sound_only">회원가입 단계 안내</span>
+            <div>
+                <div class="step complete">1</div>
+                <div class="step complete">2</div>
+                <div class="step active">3</div>
+            </div>
+        </div>
+
+        <div class="join_inner">
+            <div class="icon_center_title">
+                <div class="icon"><img src="../../dist/images/content/join_comp.svg"></div>
+                <div class="sub">고객님, 환영합니다.</div>
+                <div class="title">회원가입이 완료되었습니다.</div>
+            </div>
+            <div class="form_btns between_lg">
+                <a href="javascript:;" class="btn btn_black btn_type1">로그인하기</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+             //html include
+            //헤더&푸터 개발 완료시 삭제해주세요
+            function includeFile(path, targetId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(targetId).innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+            }
+            
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta charset="UTF-8">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>통합관리자 파일 목록</title>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css"/>
+<link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<script src="/resources/static/dist/js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Libs JS -->
+<script src="/resources/static/dist/libs/litepicker/dist/litepicker.js?1674944402"></script>
+<!-- Tabler Core -->
+
+<!-- code highlight -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
+<style type="text/css">
+    *{margin:0;padding:0;font-size:12px;}
+	#guide_wrap {padding:10px}
+	table {border-collapse:collapse;border-spacing:0;}
+	table th, strong {font-weight:normal;}
+	h1{
+		margin:0 0 10px 0;
+		text-align:center;
+		font-size:2.4em;
+		color:#000
+	}
+	a {text-decoration:none;}
+	a:hover {text-decoration:underline;}
+	table {
+		width:100%;
+		margin-top:5px;
+		border-top:2px solid #1e61a8;
+	}
+	table th, table td{
+		padding:5px 7px;
+		border-left:1px solid #ccc; border-bottom:1px solid #ccc;
+	}
+	table th:rowspan + th, table td:rowspan + td{border-left:1px solid #ccc;}
+	td.lineli, th.lineli {border-left:1px solid #ccc !important;}
+	table th:first-child, table td:first-child{border-left:0 none}
+	table thead th {
+		font-family:'ngB';
+		font-size:13px;
+		color:#000;
+		border-bottom:1px solid #ccc;
+		background-color:#f2f2f2;
+	}
+	.no, .date, .work {
+		text-align:center;
+		padding:5px 0
+	}
+
+	tr.on {background-color: #f5fed0}
+
+	.lastmdate {color: #1155CC;}
+	.stand_by {color:#777;}
+	.ing, .per_2 {color:#4848D4 !important;}
+	.curr_n, .per, .end {color:#ff0000 !important;}
+
+	.division td{border-top:2px solid #7e8e9e}
+	table tr.division:first-child td{border-top:0 none;}
+	td a {text-decoration: none;}
+	pre[class*=language-]{padding:0 20px;margin:0;border-radius:0;height:100%;}
+	.guide_links{display:flex;text-align:center;margin-bottom:20px;}
+	.guide_links a{flex:1 1;background-color: #ddd;color:#000;font-size:15px;font-weight:bold;padding:10px;}
+    .guide_links a + a{border-left:1px solid #ccc;}
+	.guide_links a.active{background-color:#000;color:#fff;}
+    .common_function{}
+    .common_function .box{display:flex;box-shadow: 0 0 10px rgba(0,0,0,.2);margin-top:20px;}
+    .common_function .box .dec{width:30%;background-color:#41734b;padding:20px;font-size:15px;color:#fff;}
+    .common_function .box .dec a{color:#3aff62;text-decoration: underline;}
+    .common_function .box .code{flex:1 1 auto;}
+    .common_function .box .preview{width:30%;background-color:#f1f1f1;padding:20px;}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Prism.highlightAll();
+    });
+    </script>
+</head>
+<body>
+<div id="wrap" class="wrap">
+<!-- eniter wrap -->
+<div id="guide_wrap">
+	<div class="guide_links">
+		<a href="/resources/static/html/index.html">통합관리자 파일 목록</a>
+		<a href="/resources/static/html/notice.html">개발참고사항</a>
+		<a href="/resources/static/html/guide_js.html" class="active">가이드(JS)</a>
+		<a href="/resources/static/html/form.html">Form html</a>
+	</div>
+	<div class="header">
+		<h1>가이드(JS)</h1>
+	</div>
+
+	<div class="common_function">
+        <div class="box">
+			<div class="dec">로딩화면 show/hide</div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+//common.js
+loading('show'); //로딩화면 show
+loading('hide'); //로딩화면 hide
+
+//ex
+function showLoading(){
+    loading('show');
+    //ajax db loading...
+    setTimeout(() => {
+        //loaded
+        loading('hide');
+    }, "3000");
+}
+					</code>
+				</pre>
+			</div>
+			<div class="preview">
+                <script>
+                    //ex)
+                    function showLoading(){
+                        loading('show');
+                        //ajax db loading...
+                        setTimeout(() => {
+                            loading('hide');
+                        }, "3000");
+                    }
+                </script>
+				<button type="button" onclick="showLoading();">로딩화면</button>
+			</div>
+		</div>
+        <div class="box">
+			<div class="dec">
+                셀렉트박스 option 변경후 셀렉트박스 초기화
+            </div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+targetSelectChoices.destroy();
+targetSelectChoices.init();
+					</code>
+				</pre>
+			</div>
+			<div class="preview">
+			</div>
+		</div>
+
+        <div class="box">
+			<div class="dec">
+                체크 전체 선택<br/>
+                전체 선택 그룹을 .label-control로 묶고 
+                전체 선택할 input[type="checkbox"]에 check-all 클래스 붙여줍니다.
+            </div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+//common.js
+&lt;div class="label_control"&gt;
+    &lt;label class="checkbox checkbox_type2"&gt;
+        &lt;input type="checkbox" class="check_all"&gt;
+        &lt;span class="ck_icon"&gt;&lt;/span&gt;
+        전체
+    &lt;/label&gt;
+    &lt;label class="checkbox checkbox_type2"&gt;
+        &lt;input type="checkbox"&gt;
+        &lt;span class="ck_icon"&gt;&lt;/span&gt;
+        체크1
+    &lt;/label&gt;
+    &lt;label class="checkbox checkbox_type2"&gt;
+        &lt;input type="checkbox"&gt;
+        &lt;span class="ck_icon"&gt;&lt;/span&gt;
+        체크2
+    &lt;/label&gt;
+    &lt;label class="checkbox checkbox_type2"&gt;
+        &lt;input type="checkbox"&gt;
+        &lt;span class="ck_icon"&gt;&lt;/span&gt;
+        체크3
+    &lt;/label&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="label_control">
+                    <label class="checkbox checkbox_type2 inline">
+                        <input type="checkbox" class="check_all">
+                        <span class="ck_icon"></span>
+                        전체
+                    </label>
+                    <label class="checkbox checkbox_type2 inline">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        체크1
+                    </label>
+                    <label class="checkbox checkbox_type2 inline">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        체크2
+                    </label>
+                    <label class="checkbox checkbox_type2 inline">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        체크3
+                    </label>
+                </div>
+			</div>
+		</div>
+
+        <div class="box">
+			<div class="dec">
+                체크 전체 선택 위에 또 전체가 있는경우<br/>
+                상위 그룹 element에 label-control-parent 클래스를 추가로 붙여주고
+                상위 그룹 전체 체크에 check-all-parent를 추가로 붙여줍니다.<br/><br/>
+
+                적용된 페이지: <br/>상품 카테고리 설정 <a href="javascript:;"
+                onclick="windowPopup('/resources/static/html/popup/category_set_pop.html', '900', '650')">category_set_pop.html</a>
+            </div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+//common.js
+&lt;div class="label-control label-control-parent" style="padding:10px;border:1px solid red;"&gt;
+    &lt;label class="form-check"&gt;
+        &lt;input class="form-check-input check-all check-all-parent" type="checkbox"&gt;
+        &lt;span class="form-check-label"&gt;전체&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;div class="label-control" style="padding:10px;border:1px solid blue;margin-top:10px;"&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input check-all" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;전체&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;체크1&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;체크2&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;체크3&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="label-control" style="padding:10px;border:1px solid green;margin-top:10px;"&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input check-all" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;전체&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;체크1&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;체크2&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox"&gt;
+            &lt;span class="form-check-label"&gt;체크3&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+					</code>
+				</pre>
+			</div>
+			<div class="preview">
+				<div class="label-control label-control-parent" style="padding:10px;border:1px solid red;">
+                    <label class="form-check">
+                        <input class="form-check-input check-all check-all-parent" type="checkbox">
+                        <span class="form-check-label">전체</span>
+                    </label>
+                    <div class="label-control" style="padding:10px;border:1px solid blue;margin-top:10px;">
+                        <label class="form-check">
+                            <input class="form-check-input check-all" type="checkbox">
+                            <span class="form-check-label">전체</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">체크1</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">체크2</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">체크3</span>
+                        </label>
+                    </div>
+                    <div class="label-control" style="padding:10px;border:1px solid green;margin-top:10px;">
+                        <label class="form-check">
+                            <input class="form-check-input check-all" type="checkbox">
+                            <span class="form-check-label">전체</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">체크1</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">체크2</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="checkbox">
+                            <span class="form-check-label">체크3</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+	</div>
+</div>
+<script>
+
+</script>
+
+</div><!-- //wrap -->
+<script src="/resources/static/dist/js/common.js"></script>
+
+</body>
+</html>

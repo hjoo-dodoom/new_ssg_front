@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="main_layout">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+    function gnbSearchSubmit(event, form){
+        event.preventDefault();
+        const input = form.querySelector('[name="gnb_search_input"]');
+        if(input.value.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }
+    }
+    </script>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="main_content">
+        <!-- 메인 배너 슬라이드 -->
+        <div class="main_visual_slider">
+            <div class="slider_wrap">
+                <div class="slider">
+                    <div class="item">
+                        <div class="v_pc"><img src="/resources/static/dist/images/dummy/main_visual_slider1.jpg" alt="다이슨 시크릿스토어몰 오픈 다이슨"></div>
+                        <div class="v_mobile"><img src="/resources/static/dist/images/dummy/main_visual_slider1_mobile.jpg" alt="다이슨 시크릿스토어몰 오픈 다이슨"></div>
+                    </div>
+                    <div class="item">
+                        <div class="v_pc"><img src="/resources/static/dist/images/dummy/main_visual_slider2.jpg" alt="NIKE조던 x Nina Chanel Abney 나이키"></div>
+                        <div class="v_mobile"><img src="/resources/static/dist/images/dummy/main_visual_slider1_mobile.jpg" alt="다이슨 시크릿스토어몰 오픈 다이슨"></div>
+                    </div>
+                    <div class="item">
+                        <div class="v_pc"><img src="/resources/static/dist/images/dummy/main_visual_slider3.jpg" alt="2024' Reebok FAMILY WEEK 리복"></div>
+                        <div class="v_mobile"><img src="/resources/static/dist/images/dummy/main_visual_slider1_mobile.jpg" alt="다이슨 시크릿스토어몰 오픈 다이슨"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="paging_info">
+                <div class="progress" role="MvProgressBar" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="count"><span class="now"></span><strong>/</strong><span class="total"></span></span>
+                <button type="button" class="pause">일시정지</button>
+            </div>
+        </div>
+        <!-- //메인 배너 슬라이드 -->
+
+        <div class="main_contents">
+
+            <!-- 공통영역2 -->
+            <!-- 퀵 콘텐츠 -->
+            <div id="aside_content" class="right_content">
+                
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+        
+                        var swiper = new Swiper(".quick_banner", {
+                            pagination: {
+                            el: ".qb_swiper_pagination",
+                            type: "progressbar",
+                            },
+                            navigation: {
+                            nextEl: ".quick_banner_wrapper .swiper-button-next",
+                            prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                            },
+                        });
+
+                        //소스 길어지는것 방지용 임시 스크립트
+                        const viewedproducts = document.querySelector('.viewed_products');
+                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide:nth-child(2)');
+                        
+                        for (var i = 0; i < 9; i++) {
+                            const newItem = viewedproductsItem.cloneNode(true);
+                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                        }
+                        
+                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                        var i = 0;
+                        viewedproductsItems.forEach(function(item){
+                            i++;
+                            if(i === 4){i = 1}
+                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                        });
+
+                        var swiper = new Swiper(".viewed_products", {
+                            autoHeight: true,
+                            pagination: {
+                            el: ".vp_swiper_pagination",
+                            type: "fraction",
+                            },
+                            navigation: {
+                            nextEl: ".viewed_products_wrapper .swiper-button-next",
+                            prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                            },
+                        });
+                    });
+                </script>
+                <script>
+                    var includePath = "/resources/static/inc/aside_content.html";
+                    includeFile(includePath, 'aside_content');
+                </script>
+            </div>
+            
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역2 -->
+
+            <div class="contents">
+
+                <!-- 이벤트 배너 -->
+                <div class="main_section">
+                    <div class="event_banner">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <a href="aa.html">
+                                    <div class="v_pc">
+                                        <img 
+                                            src="/resources/static/dist/images/dummy/event_banner1.jpg" 
+                                            alt="다이슨 제품 단독 기획전 당신을 위한 프리미엄 가전 자세히 보기"
+                                        >
+                                    </div>
+                                    <div class="v_mobile">
+                                        <img 
+                                            src="/resources/static/dist/images/dummy/event_banner1_mobile.jpg" 
+                                            alt="다이슨 제품 단독 기획전 당신을 위한 프리미엄 가전 자세히 보기"
+                                        >
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper_pagination"></div>
+                    </div>
+                </div>
+                <!-- //이벤트 배너 -->
+
+                <!-- 타일세일 -->
+                <div class="main_section">
+                    <div class="main_section_title">
+                        <div class="shine_title">
+                            <img src="/resources/static/dist/images/content/title_time_sale.svg" alt="타임세일">
+                        </div>
+                    </div>
+                    <div class="product_list display_type5">
+                        <!-- display_type5 pc5행 tablet4행 mobile2행 -->
+                        <!-- display_type4 pc4행 tablet3행 mobile2행 -->
+                        <!-- display_type3 pc3행 tablet3행 mobile2행 -->
+                        <div class="item">
+                            <div class="thum">
+                                <div>
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>10</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </div>
+                                <div class="time_after">
+                                    <div>이벤트<br/>종료</div>
+                                </div>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <div class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>10</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <div class="time_after">
+                                    <div>판매<br/>종료</div>
+                                </div>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>10</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <div class="sold_out">
+                                    <div>일시<br/>품절</div>
+                                </div>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item time_item" data-start-day="2024-07-12" data-start-time="15:30" data-end-day="2024-09-12" data-end-time="15:30" data-link-url="/resources/dist/html/goods/goods_detail.html">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>10</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="time_count"><span><strong class="time_count_data"></strong> 남음 </span></a>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item time_item" data-start-day="2024-08-12" data-start-time="15:30" data-end-day="2024-09-12" data-end-time="15:30" data-link-url="/resources/dist/html/goods/goods_detail.html">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <div class="time_before">
+                                    <div>
+                                        <div><strong class="day"></strong></div>
+                                        <div><strong class="time"></strong> 오픈</div>
+                                    </div>
+                                </div>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="time_count"><span><strong class="time_count_data"></strong> 남음 </span></a>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item time_item" data-start-day="2024-06-12" data-start-time="15:30" data-end-day="2024-07-12" data-end-time="15:30" data-link-url="/resources/dist/html/goods/goods_detail.html">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <div class="time_before">
+                                    <div>
+                                        <div><strong class="day"></strong></div>
+                                        <div><strong class="time"></strong> 오픈</div>
+                                    </div>
+                                </div>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="time_count"><span><strong class="time_count_data"></strong> 남음 </span></a>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item time_item" data-start-day="2024-07-12" data-start-time="15:30" data-end-day="2024-09-22" data-end-time="17:30" data-link-url="/resources/dist/html/goods/goods_detail.html">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>10</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="time_count"><span><strong class="time_count_data"></strong> 남음 </span></a>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item time_item" data-start-day="2024-07-12" data-start-time="15:30" data-end-day="2024-10-20" data-end-time="19:30" data-link-url="/resources/dist/html/goods/goods_detail.html">
+                            <div class="thum">
+                                <a href="/resources/dist/html/goods/goods_detail.html">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>10</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="time_count"><span><strong class="time_count_data"></strong> 남음 </span></a>
+                            <a href="/resources/dist/html/goods/goods_detail.html" class="cnt">
+                                <span class="time_icon">TIME</span>
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //타일세일 -->
+
+                <!-- 브랜드관 -->
+                <div class="main_section">
+                    <div class="main_section_title">
+                        <a href="javascript:;">브랜드관</a>
+                    </div>
+                    <div class="brand_list_wrap">
+                        <div class="brand_list">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide brand">
+                                    <a href="javascript:;">
+                                        <div class="thum"><img src="/resources/static/dist/images/dummy/brand_list1.jpg"></div>
+                                        <div class="subject">여름가전은 LG</div>
+                                        <div class="dsc">NEW! 콜라보 기념 최대 20% 할인</div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="swiper_button_type1 swiper-button-next bl_next"></div>
+                        <div class="swiper_button_type1 swiper-button-prev bl_prev"></div>
+                    </div>
+                    <div class="bl_swiper_pagination swiper_pagination"></div>
+                    <script>
+                        //소스 길어지는것 방지용 임시 스크립트
+                        const brandList = document.querySelector('.brand_list');
+                        const brandListItem = brandList.querySelector('.brand');
+                        
+                        for (var i = 0; i < 10; i++) {
+                            const newItem = brandListItem.cloneNode(true);
+                            brandList.querySelector('.swiper-wrapper').appendChild(newItem);
+                        }
+                        
+                        const brandListItems = brandList.querySelectorAll('.brand');
+                        var i = 0;
+                        brandListItems.forEach(function(item){
+                            i++;
+                            if(i === 4){i = 1}
+                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/brand_list`+ i +`.jpg`)
+                        });
+                    </script>
+                </div>
+                <!-- //브랜드관 -->
+
+                <!-- 4주년 기념 즉시할인 -->
+                <div class="main_section">
+                    <div class="main_section_title">
+                        4주년 기념 즉시할인
+                    </div>
+                    <!-- 카테고리 아이콘없음 -->
+                    <div class="product_cate sort_btns">
+                        <!-- ITEMGROUPCODE - 소팅 그룹명 코드 아무거나, ITEMCATECODE1_1 - 카테고리코드 -->
+                        <div class="item"><a href="javascript:;" class="active" onclick="itemSort(this, 'ITEMGROUPCODE', 'all');">전체</a></div>
+                        <div class="item"><a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE', 'ITEMCATECODE1_1');">생활용품</a></div>
+                        <div class="item"><a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE', 'ITEMCATECODE1_2');">주방용품</a></div>
+                        <div class="item"><a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE', 'ITEMCATECODE1_3');">계절가전</a></div>
+                        <div class="item"><a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE', 'ITEMCATECODE1_4');">영상/음향</a></div>
+                    </div>
+                    <div class="product_list display_type4">
+                        <!-- display_type5 pc5행 tablet4행 mobile2행 -->
+                        <!-- display_type4 pc4행 tablet3행 mobile2행 -->
+                        <!-- display_type3 pc3행 tablet3행 mobile2행 -->
+                        <div class="item"  data-itemgroup="ITEMGROUPCODE" data-itemgroup-sub="ITEMCATECODE1_1">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item"  data-itemgroup="ITEMGROUPCODE" data-itemgroup-sub="ITEMCATECODE1_2">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item"  data-itemgroup="ITEMGROUPCODE" data-itemgroup-sub="ITEMCATECODE1_3">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item"  data-itemgroup="ITEMGROUPCODE" data-itemgroup-sub="ITEMCATECODE1_4">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <script>
+                        //소스 길어지는것 방지용 임시 스크립트
+                        const displayType3 = document.querySelector('.display_type4');
+                        const displayType3Item1 = displayType3.querySelector('.item:nth-child(1)');
+                        const displayType3Item2 = displayType3.querySelector('.item:nth-child(2)');
+                        const displayType3Item3 = displayType3.querySelector('.item:nth-child(3)');
+                        const displayType3Item4 = displayType3.querySelector('.item:nth-child(4)');
+                        for (var i = 0; i < 3; i++) {
+                            const newItem1 = displayType3Item1.cloneNode(true);
+                            displayType3.appendChild(newItem1);
+                            const newItem2 = displayType3Item2.cloneNode(true);
+                            displayType3.appendChild(newItem2);
+                            const newItem3 = displayType3Item3.cloneNode(true);
+                            displayType3.appendChild(newItem3);
+                            const newItem4 = displayType3Item4.cloneNode(true);
+                            displayType3.appendChild(newItem4);
+                        }
+
+                        const displayType3Items = displayType3.querySelectorAll('.item');
+                        var i = 0;
+                        displayType3Items.forEach(function(item){
+                            i++;
+                            if(i === 4){i = 1}
+                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+ i +`.jpg`)
+                        });
+                    </script>
+                </div>
+                <!-- //4주년 기념 즉시할인 -->
+
+                
+                <!-- 이벤트 배너 -->
+                <div class="main_section">
+                    <div class="event_banner">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <a href="javascript:;">
+                                    <div class="v_pc">
+                                        <img 
+                                            src="/resources/static/dist/images/dummy/event_banner2.jpg" 
+                                            alt="5월 금주의 MD’S PICK 혜택 가득 핫딜 상품만 모았어요!"
+                                        >
+                                    </div>
+                                    <div class="v_mobile">
+                                        <img 
+                                            src="/resources/static/dist/images/dummy/event_banner2_mobile.jpg" 
+                                            alt="5월 금주의 MD’S PICK 혜택 가득 핫딜 상품만 모았어요!"
+                                        >
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a href="javascript:;">
+                                    <div class="v_pc">
+                                        <img 
+                                            src="/resources/static/dist/images/dummy/event_banner3.jpg" 
+                                            alt="오휘 단독 프로모션! 오휘 선케어 단독할인 & 사은행사 "
+                                        >
+                                    </div>
+                                    <div class="v_mobile">
+                                        <img 
+                                            src="/resources/static/dist/images/dummy/event_banner3_mobile.jpg" 
+                                            alt="오휘 단독 프로모션! 오휘 선케어 단독할인 & 사은행사 "
+                                        >
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper_pagination"></div>
+                    </div>
+                </div>
+                <!-- //이벤트 배너 -->
+
+                <!-- 시크릿 핫딜 기획전 -->
+                <div class="main_section">
+                    <div class="main_section_title">
+                        <a href="javascript:;">시크릿 핫딜 기획전</a>
+                    </div>
+                    <div class="product_exhibitions_wrap">
+                        <div class="product_exhibitions">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide exhibition">
+                                    <a href="javascript:;" class="exhibition_info">
+                                        <div class="thum"><img src="/resources/static/dist/images/dummy/product_exhibitions1.jpg"></div>
+                                        <div class="cates">
+                                            <span>유아동용품</span>
+                                            <span>남녀의류</span>
+                                        </div>
+                                        <div class="subject">
+                                            <strong>우리아이 여름준비 OPEN!</strong>
+                                            <span>자세히 보기</span>
+                                        </div>
+                                    </a>
+                                    <div class="product_list_sm">
+                                        <div class="item">
+                                            <a href="javascript:;">
+                                                <div class="thum">
+                                                    <div class="img" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                    <div class="price_origin">소비자가 : 45,000원</div>
+                                                    <div class="price_sale">판매가 : 37,200원</div>
+                                                    <div class="discount_info">
+                                                        <div class="percent">20%</div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="javascript:;">
+                                                <div class="thum">
+                                                    <div class="img" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></div>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                    <div class="price_origin">소비자가 : 45,000원</div>
+                                                    <div class="price_sale">판매가 : 37,200원</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="swiper_button_type1 swiper-button-next pe_next"></div>
+                        <div class="swiper_button_type1 swiper-button-prev pe_prev"></div>
+                    </div>
+                    <div class="pe_swiper_pagination swiper_pagination"></div>
+                    <script>
+                        //소스 길어지는것 방지용 임시 스크립트
+                        const exhibitionList = document.querySelector('.product_exhibitions');
+                        const exhibitionListItem = exhibitionList.querySelector('.exhibition');
+                        
+                        for (var i = 0; i < 10; i++) {
+                            const newItem = exhibitionListItem.cloneNode(true);
+                            exhibitionList.querySelector('.swiper-wrapper').appendChild(newItem);
+                        }
+                        
+                        const exhibitionListItems = exhibitionList.querySelectorAll('.exhibition');
+                        var i = 0;
+                        exhibitionListItems.forEach(function(item){
+                            i++;
+                            if(i === 4){i = 1}
+                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/product_exhibitions`+ i +`.jpg`)
+                        });
+                    </script>
+                </div>
+                <!-- //시크릿 핫딜 기획전 -->
+
+                <!-- MD Choice -->
+                <div class="main_section">
+                    <div class="main_section_title">
+                        MD Choice
+                    </div>
+
+                    <!-- 카테고리 아이콘있음 -->
+                    <div class="product_icon_cate sort_btns">
+                        <!-- ITEMGROUPCODE - 소팅 그룹명 코드 아무거나, ITEMCATECODE1 - 카테고리코드 -->
+                        <div class="item">
+                            <a href="javascript:;" class="active" onclick="itemSort(this, 'ITEMGROUPCODE2', 'all');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate1.png');"></span></span>
+                                전체
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_1');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate2.png');"></span></span>
+                                생활용품
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_2');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate3.png');"></span></span>
+                                주방용품
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_3');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate4.png');"></span></span>
+                                가구/침구
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_4');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate5.png');"></span></span>
+                                반려용품
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_5');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate6.png');"></span></span>
+                                대형가전
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_6');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate7.png');"></span></span>
+                                남녀의류
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_7');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate8.png');"></span></span>
+                                스포츠/레저
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_8');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate9.png');"></span></span>
+                                화장품
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;" onclick="itemSort(this, 'ITEMGROUPCODE2', 'ITEMCATECODE2_9');">
+                                <span class="icon"><span style="background-image: url('/resources/static/dist/images/dummy/product_icon_cate10.png');"></span></span>
+                                유아동 용품
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product_list choice_list display_type3">
+                        <!-- display_type5 pc5행 tablet4행 mobile2행 -->
+                        <!-- display_type4 pc4행 tablet3행 mobile2행 -->
+                        <!-- display_type3 pc3행 tablet3행 mobile2행 -->
+                        <div class="item" data-itemgroup="ITEMGROUPCODE2" data-itemgroup-sub="ITEMCATECODE2_1">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">10% 추가할인가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item" data-itemgroup="ITEMGROUPCODE2" data-itemgroup-sub="ITEMCATECODE2_2">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item" data-itemgroup="ITEMGROUPCODE2" data-itemgroup-sub="ITEMCATECODE2_3">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item" data-itemgroup="ITEMGROUPCODE2" data-itemgroup-sub="ITEMCATECODE2_4">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                        <div class="item" data-itemgroup="ITEMGROUPCODE2" data-itemgroup-sub="ITEMCATECODE2_5">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_origin">판매가 : 35,000원</div>
+                                <div class="price_sale">판매가 : 987,000원</div>
+                            </a>
+                        </div>
+                    </div>
+                    <script>
+                        //소스 길어지는것 방지용 임시 스크립트
+                        const displayType4 = document.querySelector('.choice_list');
+                        const displayType4Item1 = displayType4.querySelector('.item:nth-child(1)');
+                        const displayType4Item2 = displayType4.querySelector('.item:nth-child(2)');
+                        const displayType4Item3 = displayType4.querySelector('.item:nth-child(3)');
+                        const displayType4Item4 = displayType4.querySelector('.item:nth-child(4)');
+                        const displayType4Item5 = displayType4.querySelector('.item:nth-child(5)');
+                        for (var i = 0; i < 5; i++) {
+                            const newItem1 = displayType4Item1.cloneNode(true);
+                            displayType4.appendChild(newItem1);
+                            const newItem2 = displayType4Item2.cloneNode(true);
+                            displayType4.appendChild(newItem2);
+                            const newItem3 = displayType4Item3.cloneNode(true);
+                            displayType4.appendChild(newItem3);
+                            const newItem4 = displayType4Item4.cloneNode(true);
+                            displayType4.appendChild(newItem4);
+                            const newItem5 = displayType4Item5.cloneNode(true);
+                            displayType4.appendChild(newItem4);
+                        }
+                        const displayType4Items = displayType4.querySelectorAll('.item');
+                        var i = 0;
+                        displayType4Items.forEach(function(item){
+                            i++;
+                            if(i === 5){i = 1}
+                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+ i +`.jpg`)
+                        });
+                    </script>
+                </div>
+                <!-- //MD Choice -->
+
+                <!-- Good price -->
+                <div class="main_section">
+                    <div class="main_section_title">
+                        Good price
+                    </div>
+                    <div class="product_list good_list display_type4">
+                        <!-- display_type5 pc5행 tablet4행 mobile2행 -->
+                        <!-- display_type4 pc4행 tablet3행 mobile2행 -->
+                        <!-- display_type3 pc3행 tablet3행 mobile2행 -->
+                        <div class="item">
+                            <div class="thum">
+                                <a href="javascript:;">
+                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                    <div class="discount_info">
+                                        <div class="percent"><strong>20</strong><span>%</span></div>
+                                        <div class="additional">추가<br/>할인</div>
+                                    </div>
+                                </a>
+                                <a href="javascript:;" class="cart">장바구니 담기</a>
+                            </div>
+                            <a href="javascript:;" class="cnt">
+                                <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                <div class="price_origin">소비자가 : 45,000원</div>
+                                <div class="price_sale">판매가 : 35,000원</div>
+                            </a>
+                        </div>
+                    </div>
+                    <script>
+                        //소스 길어지는것 방지용 임시 스크립트
+                        const displayType5 = document.querySelector('.good_list');
+                        const displayType5Item = displayType5.querySelector('.item');
+                        for (var i = 0; i < 7; i++) {
+                            const newItem1 = displayType5Item.cloneNode(true);
+                            displayType5.appendChild(newItem1);
+                        }
+                        const displayType5Items = displayType5.querySelectorAll('.item');
+                        var i = 0;
+                        displayType5Items.forEach(function(item){
+                            i++;
+                            if(i === 5){i = 1}
+                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+ i +`.jpg`)
+                        });
+                    </script>
+                </div>
+                <!-- //Good price -->
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+
+</div>
+
+<script>
+//상품 타임 카운트
+function updateCountdown() {
+    const items = document.querySelectorAll('.time_item');
+    const now = new Date();
+
+    items.forEach(item => {
+        const startDay = item.getAttribute('data-start-day');
+        const startTime = item.getAttribute('data-start-time');
+        const endDay = item.getAttribute('data-end-day');
+        const endTime = item.getAttribute('data-end-time');
+        const linkUrl = item.getAttribute('data-link-url');
+
+        const startDateTime = new Date(startDay+`T`+startTime+`:00`);
+        const endDateTime = new Date(endDay+`T`+endTime+`:00`);
+        
+        if (now < startDateTime) {
+            // 시작 날짜 이전
+            const formattedStartDay = formatDateToMMDD(startDay);
+            item.querySelector('.time_before .day').textContent = formattedStartDay;
+            item.querySelector('.time_before .time').textContent = startTime;
+
+            // 모든 a 태그를 div 태그로 변경
+            item.querySelectorAll('a').forEach(a => {
+                if (!a.classList.contains('cart')) {
+                    const div = document.createElement('div');
+                    div.innerHTML = a.innerHTML;
+                    div.className = a.className;
+                    a.parentNode.replaceChild(div, a);
+                }
+            });
+        } else if (now >= startDateTime && now <= endDateTime) {
+            // 시작 후
+            item.classList.add('time_on');
+            const diff = endDateTime - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            let timeString = String(hours).padStart(2, '0') +`:`+ String(minutes).padStart(2, '0') +`:`+ String(seconds).padStart(2, '0');
+            if (days > 0) {
+                timeString = days+`일 ` + timeString;
+            }
+            item.querySelector('.time_count_data').textContent = timeString;
+        } else {
+            // 고객이 보는중에 기간만료로 종료된 경우
+            item.classList.remove('time_on');
+            if(item.querySelector('.time_before')){
+                item.querySelector('.time_before > div').innerHTML = '이벤트<br/>종료';
+                item.querySelector('.time_before').classList.add('time_after')
+                item.querySelector('.time_before').classList.remove('time_before')
+            }
+            // 모든 a 태그를 div 태그로 변경
+            item.querySelectorAll('a').forEach(a => {
+                if (!a.classList.contains('cart')) {
+                    const div = document.createElement('div');
+                    div.innerHTML = a.innerHTML;
+                    div.className = a.className;
+                    a.parentNode.replaceChild(div, a);
+                }
+            });
+        }
+    });
+}
+
+function formatDateToMMDD(dateString) {
+    const date = new Date(dateString);
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1
+    const day = String(date.getDate()).padStart(2, '0');
+    return month+`/`+day;
+}
+
+function formatTimeToHHMM(dateString) {
+    const date = new Date(dateString);
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return hours+`:`+minutes;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+
+//*** 메인배너 슬라이드 ***//
+//메인상단배너
+const $MvStatusNow = $('.main_visual_slider .paging_info .count .now');
+const $MvStatusTotal = $('.main_visual_slider .paging_info .count .total');
+const $MvSlickElement = $('.main_visual_slider .slider');
+const $MvProgressBar = $('.main_visual_slider .progress');
+const $MvProgressBarSet = $MvSlickElement.find('.item').length;
+const $MvProgressBarSetWid = ( (1) / ($MvProgressBarSet) ) * 100;
+
+$MvProgressBar
+    .css('background-size', $MvProgressBarSetWid + '% 100%')
+    .attr('aria-valuenow', $MvProgressBarSetWid );
+
+$MvSlickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+var i = (currentSlide ? currentSlide : 0) + 1;
+$MvStatusNow.text(i);
+$MvStatusTotal.text(slick.slideCount);
+});
+
+$MvSlickElement.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
+    var calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
+
+    $MvProgressBar
+    .css('background-size', calc + '% 100%')
+    .attr('aria-valuenow', calc );
+});
+
+$MvSlickElement.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
+    var calc = ( (nextSlide+1) / (slick.slideCount) ) * 100;
+    $MvProgressBar
+    .css('background-size', calc + '% 100%')
+    .attr('aria-valuenow', calc );
+});
+
+$MvSlickElement.slick({
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true
+});
+
+$(document).on('click', '.main_visual_slider .pause', function(){
+    $('.main_visual_slider .slider').slick('slickPause');
+    $(this).remove();
+    $('.main_visual_slider .paging_info').append('<button type="button" class="play">재생</button>');
+});
+
+$(document).on('click', '.main_visual_slider .play', function(){
+    $('.main_visual_slider .slider').slick('slickPlay');
+    $(this).remove();
+    $('.main_visual_slider .paging_info').append('<button type="button" class="pause">일시정지</button>');
+});
+//메인상단배너 끝
+
+// 브랜드관
+document.querySelectorAll(".brand_list").forEach(function(brandList, index) {
+    const wrap = brandList.closest('.main_section');
+    console.log(wrap)
+    wrap.querySelector('.swiper_pagination').classList.add('bl_pagination_' + index);
+    wrap.querySelector('.bl_prev').classList.add('bl_prev_' + index);
+    wrap.querySelector('.bl_next').classList.add('bl_next_' + index);
+    new Swiper(brandList, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        pagination: {
+            el: `.bl_pagination_`+index,
+            type: "bullets",
+        },
+        navigation: {
+            nextEl: `.bl_next_`+index,
+            prevEl: `.bl_prev_`+index,
+        },
+        breakpoints: {
+            500: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                pagination: {
+                    el: `.bl_pagination_`+index,
+                    type: "bullets",
+                },
+            },
+            850: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+                pagination: {
+                    el: `.bl_pagination_`+index,
+                    type: "progressbar",
+                },
+            },
+        },
+    });
+});
+
+// 시크릿 핫딜 기획전
+document.querySelectorAll(".product_exhibitions").forEach(function(productExhibition, index) {
+    const wrap = productExhibition.closest('.main_section');
+    wrap.querySelector('.swiper_pagination').classList.add('pe_pagination_' + index);
+    wrap.querySelector('.pe_prev').classList.add('pe_prev_' + index);
+    wrap.querySelector('.pe_next').classList.add('pe_next_' + index);
+
+    new Swiper(productExhibition, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: `.pe_pagination_`+index,
+            type: "bullets",
+        },
+        breakpoints: {
+            850: {
+                slidesPerView: 2,
+                spaceBetween: 15,
+                pagination: {
+                    el: `.pe_pagination_`+index,
+                    type: "progressbar",
+                },
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+                pagination: {
+                    el: `.pe_pagination_`+index,
+                    type: "progressbar",
+                },
+            },
+        },
+        navigation: {
+            nextEl: `.pe_next_`+index,
+            prevEl: `.pe_prev_`+index,
+        },
+    });
+});
+
+//메인 상품,배너 슬라이드
+document.addEventListener('DOMContentLoaded', function() {
+    const classesToInitialize = ['.event_banner', '.choice_list', '.good_list'];
+    let swipers = [];
+
+    function getSwiperOptions(className, paginationClass) {
+        let options = {};
+        if (className === '.event_banner') {
+            options = {
+                spaceBetween: 10,
+                pagination: {
+                    el: `.` + paginationClass,
+                },
+            };
+        }
+        if (className === '.choice_list' || className === '.good_list') {
+            options = {
+                spaceBetween: 16,
+                pagination: {
+                    el: `.` + paginationClass,
+                },
+                slidesPerView: 2,
+            };
+        }
+        return options;
+    }
+
+    function initializeSwipers() {
+        if (window.innerWidth <= 850) {
+            classesToInitialize.forEach((className, classIndex) => {
+                const elements = document.querySelectorAll(className);
+                elements.forEach((element, index) => {
+                    if (!element.classList.contains(`swiper-container-initialized-` + classIndex)) {
+                        const swiperContainerClass = `swiper-container-` + classIndex + `_` + index;
+                        element.classList.add(swiperContainerClass);
+                        
+                        const pagination = element.querySelector('.swiper_pagination');
+                        if (pagination) { // null 여부 확인
+                            const paginationClass = `swiper_pagination-` + classIndex + `_` + index;
+                            pagination.classList.add(paginationClass);
+
+                            const options = getSwiperOptions(className, paginationClass);
+
+                            const swiper = new Swiper(`.` + swiperContainerClass, options);
+                            swipers.push(swiper);
+                            element.classList.add(`swiper-container-initialized-` + classIndex);
+                        } else {
+                            console.warn(`Pagination element not found for ${className} at index ${index}.`);
+                        }
+                    }
+                });
+            });
+        } else {
+            destroySwipers();
+        }
+    }
+
+    function destroySwipers() {
+        swipers.forEach(swiper => swiper.destroy(true, true));
+        swipers = [];
+        classesToInitialize.forEach((className, classIndex) => {
+            const elements = document.querySelectorAll(className);
+            elements.forEach(element => element.classList.remove(`swiper-container-initialized-` + classIndex));
+        });
+    }
+
+    window.addEventListener('resize', initializeSwipers);
+    initializeSwipers();
+});
+//*** //메인배너 슬라이드 ***//
+
+
+
+</script>
+</body>
+</html>

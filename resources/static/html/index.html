@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta charset="UTF-8">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>사용자 파일 목록</title>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="/resources/static/dist/css/tabler.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/tabler-vendors.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css"/>
+<link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Libs JS -->
+<script src="/resources/static/dist/libs/litepicker/dist/litepicker.js?1674944402"></script>
+<!-- Tabler Core -->
+
+<script src="/resources/static/dist/js/common.js"></script>
+<!-- code highlight -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
+<style type="text/css">
+    *{margin:0;padding:0;font-size:12px;}
+	#guide_wrap {padding:10px}
+	table {border-collapse:collapse;border-spacing:0;}
+	table th, strong {font-weight:normal;}
+	h1{
+		margin:0 0 10px 0;
+		text-align:center;
+		font-size:2.4em;
+		color:#000
+	}
+	a {text-decoration:none;}
+	a:hover {text-decoration:underline;}
+	table {
+		width:100%;
+		margin-top:5px;
+		border-top:2px solid #1e61a8;
+	}
+	table th, table td{
+		padding:5px 7px;
+		border-left:1px solid #ccc; border-bottom:1px solid #ccc;
+	}
+	table th:rowspan + th, table td:rowspan + td{border-left:1px solid #ccc;}
+	td.lineli, th.lineli {border-left:1px solid #ccc !important;}
+	table th:first-child, table td:first-child{border-left:0 none}
+	table thead th {
+		font-family:'ngB';
+		font-size:13px;
+		color:#000;
+		border-bottom:1px solid #ccc;
+		background-color:#f2f2f2;
+	}
+	.no, .date, .work,.confirm {
+		text-align:center;
+		padding:5px 0
+	}
+
+	tr.on {background-color: #f5fed0}
+
+	.lastmdate {color: #1155CC;}
+	.stand_by {color:#777;}
+	.ing, .per_2 {color:#4848D4 !important;}
+	.curr_n, .per, .end {color:#ff0000 !important;}
+	.confirm{color:green !important;}
+
+	.division td{border-top:2px solid #7e8e9e}
+	table tr.division:first-child td{border-top:0 none;}
+	td a {text-decoration: none;}
+	.guide_links{display:flex;text-align:center;margin-bottom:20px;}
+	.guide_links a{flex:1 1;background-color: #ddd;color:#000;font-size:15px;font-weight:bold;padding:10px;}
+    .guide_links a + a{border-left:1px solid #ccc;}
+	.guide_links a.active{background-color:#000;color:#fff;}
+</style>
+</head>
+<body>
+<div id="wrap" class="wrap">
+<!-- eniter wrap -->
+<div id="guide_wrap">
+	<div class="guide_links">
+		<a href="/resources/static/html/index.html" class="active">사용자 파일 목록</a>
+		<a href="/resources/static/html/notice.html">개발참고사항</a>
+		<a href="/resources/static/html/guide_js.html">가이드(JS)</a>
+		<a href="/resources/static/html/form.html">Form html</a>
+	</div>
+	<div class="header">
+		<h1>사용자 파일 목록</h1>
+		<p>진행중 : <span class="ing_n"></span>p / 미완료 : <span class="notcurr_n"></span>p / 완료 : <span class="curr_n"></span>p / 전체 : <span class="total_n"></span>p</p>
+		<p>진행율 : <span class="per_2"></span> / 완료율 : <span class="per"></span></p>
+	</div>
+
+	<div class="list_w">
+		<table class="codinglist">
+			<colgroup>
+				<col style="width:40px">
+				<col>
+				<col>
+				<col>
+				<col>
+				<col>
+				<col style="width:70px">
+				<col style="width:50px">
+				<col>
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">no.</th>
+					<th colspan="4">navi</th>
+					<th rowspan="2">filename/link</th>
+					<th rowspan="2">date</th>
+					<th rowspan="2">work</th>
+					<th rowspan="2">최형민차장컨펌</th>
+					<th rowspan="2">etc.</th>
+				</tr>
+				<tr>
+					<th class="lineli">1depth</th>
+					<th>2depth</th>
+					<th>3depth</th>
+					<th>4depth</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no"></td>
+					<td>로그인</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/login.html" target="_blank">login.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>아이디/비밀번호 찾기</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/find_info.html" target="_blank">find_info.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>결과</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/find_result.html" target="_blank">find_result.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>비밀번호 변경</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/password_change.html" target="_blank">password_change.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td>회원가입</td>
+					<td>일반</td>
+					<td>본인인증</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/join_certify.html" target="_blank">join_certify.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>가입폼</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/join_form.html" target="_blank">join_form.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>가입완료</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/join_comp.html" target="_blank">join_comp.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>임직원</td>
+					<td>본인인증</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/staff_join_email.html" target="_blank">staff_join_email.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>휴대폰인증</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/staff_join_certify.html" target="_blank">staff_join_certify.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>가입폼</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/staff_join_form.html" target="_blank">staff_join_form.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>가입완료</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/staff_join_comp.html" target="_blank">staff_join_comp.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>최초진입</td>
+					<td>약관동의</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/first_login_terms.html" target="_blank">first_login_terms.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>입력폼</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/first_login_form.html" target="_blank">first_login_form.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>주기별 인증</td>
+					<td>비밀번호 변경</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/periodic_password_change.html" target="_blank">periodic_password_change.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>임직원 확인</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/member/periodic_certify_email.html" target="_blank">periodic_certify_email.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+                <tr>
+					<td class="no"></td>
+					<td>메인</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/main/main.html" target="_blank">main.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td>상품</td>
+					<td>리스트</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/goods/goods_list.html" target="_blank">goods_list.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/goods/goods_detail.html" target="_blank">goods_detail.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>장바구니</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/cart.html" target="_blank">cart.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>결제하기</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/payment.html" target="_blank">payment.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>완료</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/complete.html" target="_blank">complete.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>여러 곳으로 배송</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/multiple_shipping.html" target="_blank">multiple_shipping.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>결제하기</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/multiple_payment.html" target="_blank">multiple_payment.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>선물하기</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/gift.html" target="_blank">gift.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>결제하기</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/gift_payment.html" target="_blank">gift_payment.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>주문완료</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/gift_complte.html" target="_blank">gift_complte.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>선물받기</td>
+					<td>본인확인</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/gift_recive.html" target="_blank">gift_recive.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>주소입력</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/order/gift_recive_address.html" target="_blank">gift_recive_address.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td>브랜드관</td>
+					<td>리스트</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/goods/brand.html" target="_blank">brand.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/goods/brand_detail.html" target="_blank">brand_detail.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td>기획전</td>
+					<td>리스트</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/goods/exhibition.html" target="_blank">exhibition.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/goods/exhibition_detail.html" target="_blank">exhibition_detail.html</a></td>
+					<td class="date">2024-09-09</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td>마이페이지</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/mypage.html" target="_blank">mypage.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>나의주문</td>
+					<td>주문배송조회</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/order_list.html" target="_blank">order_list.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>주문상세조회</td>
+					<td class="link"><a href="/resources/static/html/mypage/order_detail.html" target="_blank">order_detail.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc">거래영수증,<br/>거래내역서</td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>선물상세</td>
+					<td class="link"><a href="/resources/static/html/mypage/order_detail_gift.html" target="_blank">order_detail_gift.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc">거래영수증,<br/>거래내역서,<br/>선물메시지</td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>주문취소</td>
+					<td class="link"><a href="/resources/static/html/mypage/order_cancel.html" target="_blank">order_cancel.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>교환/반품 신청</td>
+					<td class="link"><a href="/resources/static/html/mypage/order_return.html" target="_blank">order_return.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>취소/교환/반품</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/refund_list.html" target="_blank">refund_list.html</a></td>
+					<td class="date">2024-12-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc">취소상세,반품교환상세</td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>나의혜택</td>
+					<td>포인트</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/point_list.html" target="_blank">point_list.html</a></td>
+					<td class="date">2025-01-15</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>포인트선물하기</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/point_gift.html" target="_blank">point_gift.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc">불가사유</td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>비밀번호 재 확인</td>
+					<td class="link"><a href="/resources/static/html/mypage/check_password.html" target="_blank">check_password.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>포인트 선물하기 폼</td>
+					<td class="link"><a href="/resources/static/html/mypage/point_gift_form.html" target="_blank">point_gift_form.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>마일리지</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/mileage_list.html" target="_blank">mileage_list.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>쿠폰</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/coupon_list.html" target="_blank">coupon_list.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>나의활동</td>
+					<td>나의찜</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/zzim_list.html" target="_blank">zzim_list.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>나의 이벤트</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/event_list.html" target="_blank">event_list.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>상품요청</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/request_list.html" target="_blank">request_list.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>작성폼</td>
+					<td class="link"><a href="/resources/static/html/mypage/request_register.html" target="_blank">request_register.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td class="link"><a href="/resources/static/html/mypage/request_detail.html" target="_blank">request_detail.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>수정</td>
+					<td class="link"><a href="/resources/static/html/mypage/request_modify.html" target="_blank">request_modify.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>상품문의</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/product_inquiry.html" target="_blank">product_inquiry.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td class="link"><a href="/resources/static/html/mypage/product_inquiry_detail.html" target="_blank">product_inquiry_detail.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>수정</td>
+					<td class="link"><a href="/resources/static/html/mypage/product_inquiry_modify.html" target="_blank">product_inquiry_modify.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>배송/주문 문의</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/order_inquiry.html" target="_blank">order_inquiry.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td class="link"><a href="/resources/static/html/mypage/order_inquiry_detail.html" target="_blank">order_inquiry_detail.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>1:1문의</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/qna_list.html" target="_blank">qna_list.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>작성폼</td>
+					<td class="link"><a href="/resources/static/html/mypage/qna_register.html" target="_blank">qna_register.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>상세</td>
+					<td class="link"><a href="/resources/static/html/mypage/qna_detail.html" target="_blank">qna_detail.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>나의정보</td>
+					<td>정보수정</td>
+					<td>비밀번호 재 확인</td>
+					<td class="link"><a href="/resources/static/html/mypage/check_password.html" target="_blank">check_password.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>수정폼</td>
+					<td class="link"><a href="/resources/static/html/mypage/member_modify.html" target="_blank">member_modify.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>회원탈퇴</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/member_leave.html" target="_blank">member_leave.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>환불계좌관리</td>
+					<td>비밀번호 재 확인</td>
+					<td class="link"><a href="/resources/static/html/mypage/check_password.html" target="_blank">check_password.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>작성폼</td>
+					<td class="link"><a href="/resources/static/html/mypage/refund_account.html" target="_blank">refund_account.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td>고객센터</td>
+					<td>공지사항</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/notice.html" target="_blank">notice.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td>FAQ</td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/mypage/faq.html" target="_blank">faq.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+				<tr>
+					<td class="no"></td>
+					<td>기타</td>
+					<td>코드인증</td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="/resources/static/html/etc/code.html" target="_blank">code.html</a></td>
+					<td class="date">2025-01-16</td>
+					<td class="work"></td>
+					<td class="confirm"></td>
+					<td class="etc"></td>
+				</tr>
+
+
+				<!-- 
+				<tr>
+					<td class="no"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="link"><a href="html/.html" target="_blank"></a>.html</td>
+					<td class="date"></td>
+					<td class="work"></td>
+					<td class="etc"></td>
+				</tr>
+				-->
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$(".tab_menu li a").click(function () {
+			$(".tab_menu li a").removeClass("active");
+			$(this).addClass("active");
+			$(".list_w").hide().removeClass("codinglist")
+			var activeTab = $(this).attr("rel");
+			$("#" + activeTab).fadeIn().addClass("codinglist");
+			chkList();
+		});
+		chkList();
+	});
+
+	function chkList(){
+		var tatal_n = $(".codinglist tbody tr").length;
+		var curr_n = 0;
+		var ing_n = 0;
+		$(".codinglist td a").each(function() {
+			$(this).closest('tr').find('.work').text('대기중').addClass('stand_by');
+			if($(this).attr('href') != '#' && $(this).text().length > 0 && $(this).closest('tr').find('.date').text().length > 4){
+				curr_n++;
+				$(this).closest('tr').find('.work').text('완료').addClass('end');
+			} else if ($(this).text().length > 0 && $(this).attr('href') != '#') {
+				ing_n++;
+				$(this).closest('tr').find('.work').text('진행중').addClass('ing');
+			}
+		});
+
+		$(".codinglist tbody tr").each(function() {
+			var index = $(this).index()+1;
+			$(this).children(".codinglist td.no").text(index);
+		});
+		$(".codinglist .no + td").each(function() {
+			if($(this).text() != ""){
+				$(this).parent('tr').addClass('division');
+			}
+		});
+
+		$(".codinglist td").click(function() {
+			$(".codinglist tr").removeClass("on");
+			$(this).parent(".codinglist tr").addClass("on");
+		});
+
+		$('.total_n').text(tatal_n);
+		$('.curr_n').text(curr_n);
+		$('.notcurr_n').text(tatal_n - curr_n);
+		$('.ing_n').text(ing_n).addClass('ing');
+		$('.per').text(Math.floor((curr_n/tatal_n)*100) + '%');
+		$('.per_2').text(Math.floor((ing_n/tatal_n)*100) + '%');
+	}
+</script>
+</div><!-- //wrap -->
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout title_mobile_show">
+    
+    <div id="header">
+        <div id="hd_middle">
+            <div class="hd_inner">
+                <div class="page_title_mobile">선물받기</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <div class="contents">
+
+                <div class="subpage_title_center">
+                    <h2>선물받기</h2>
+                </div>
+
+                <div class="gift_detail">
+                    <div class="title"><strong>홍길동님</strong>이 보낸 선물이 도착했어요</div>
+                    <div class="time"><strong>2024년 10월 08일 23:59분까지</strong> 배송지를 입력해주세요.</div>
+
+                    <div class="gift_content" style="background-color: #F9D4CA;">
+                        <div class="gift_image">
+                            <img src="/resources/static/dist/images/content/gift_img1.jpg">
+                        </div>
+                        <div class="gift_message_text">
+                            사랑해요
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" id="gift_submit" novalidate="novalidate">
+                    <div class="od_box">
+                        <div class="od_title">
+                            <h3>배송지 정보</h3>
+                        </div>
+                        <div class="od_table form form_type4">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>배송지</th>
+                                        <td>
+                                            <div class="address_basic">
+                                                <div class="cnt">
+                                                    <div class="name">홍길동 / 010-1234-1234</div>
+                                                </div>
+                                            </div>
+                                            <div class="input_group mgt20">
+                                                <div class="input">
+                                                    <input type="text" placeholder="주소를 검색해 주세요" name="i_address_basic" class="i_address_basic" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                                                </div> 
+                                                <button class="btn btn_gray btn_type5 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
+                                            </div>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <input type="text" placeholder="상세주소" name="i_address_detail" class="i_address_detail">
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>배송 요청사항</th>
+                                        <td>
+                                            <div class="input_group">
+                                                <div class="input">
+                                                    <div class="design_select type5">
+                                                        <select name="" id="" class="select_display">
+                                                            <option select-display="" value="">배송 요청 사항을 선택해주세요</option>
+                                                            <option select-display="" value="부재 시 경비실에 맡겨주세요.">부재 시 경비실에 맡겨주세요.</option>
+                                                            <option select-display="" value="부재 시 전화 또는 문자 주세요.">부재 시 전화 또는 문자 주세요.</option>
+                                                            <option select-display="" value="배송 전 연락주세요.">배송 전 연락주세요.</option>
+                                                            <option select-display="" value="택배함에 넣어주세요.">택배함에 넣어주세요.</option>
+                                                            <option select-display="message_input1" value="직접입력(30자 이내)">직접입력(30자 이내)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input_group message_input1" style="display:none;">
+                                                <div class="input">
+                                                    <input type="text" class="max_text" maxlength="30" placeholder="직접입력">
+                                                    <span class="max_len"><b>0</b>/30</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="od_box">
+                        <div class="od_title">
+                            <h3>주문상품 정보 : 2개</h3>
+                        </div>
+                        <div class="product_info_list">
+                            <div class="product_info">
+                                <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                <div class="prd_cnt_price">
+                                    <div class="prd_cnt">
+                                        <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                        <div class="options">
+                                            <div class="option">블랙/라지</div>
+                                        </div>
+                                    </div>
+                                    <div class="prd_price">
+                                        <div class="od_price">600,000원</div>
+                                        <div class="lot">수량 <strong>1</strong>개</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></div>
+                                <div class="prd_cnt_price">
+                                    <div class="prd_cnt">
+                                        <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                        <div class="options">
+                                            <div class="option">블랙/라지</div>
+                                        </div>
+                                    </div>
+                                    <div class="prd_price">
+                                        <div class="od_price">600,000원</div>
+                                        <div class="lot">수량 <strong>1</strong>개</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mgt20">
+                        <label class="checkbox checkbox_type2 inline">
+                            <input type="checkbox" name="">
+                            <span class="ck_icon"></span>
+                            <em><a href="javascript:;" class="check_btn" onclick="openLayer('#terms_popup1')">선물하기 개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</a> 에 동의합니다</em>
+                        </label>
+
+                        <!-- 약관 -->
+                        <div id="terms_popup1" class="layer_popup layer_default">
+                            <div class="layer_content  width_md height_md">
+                                <div class="layer_default_title">선물하기 개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</div>
+                                <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                총칙<br/>
+                                제 1조 (목적)<br/>
+                                본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
+                                E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
+                                목적으로 합니다.<br/>
+                                ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
+                                준용합니다.<br/><br/>
+
+                                제 2조 (정의)<br/>
+                                1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
+                                영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                        <!-- //약관 -->
+
+                    </div>
+
+                
+                    <div class="form_btns btns_fixed_mobile between_lg btn_fit">
+                        <button class="btn btn_type2 btn_gray_line" type="button" onclick="openLayer('#gift_refuse')">받지 않기</button>
+                        <button class="btn btn_type2 btn_theme" type="submit">선물받기</button>
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 선물대신 마음만 받기 -->
+    <div id="gift_refuse" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">선물대신 마음만 받기</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div class="form form_type1">
+                    <div class="row">
+                        <div class="row_top row_line">
+                            <div class="tit">선물을 보내신 분께 전할 취소 메시지를 
+                                선택해주세요 </div>
+                        </div>
+                        <div class="check_list_row">
+                            <div class="item">
+                                <label class="checkbox radio_type1"><input type="radio" name="return_reason" value="소중한 마음만 감사히 받을게요"><span class="ck_icon"></span><em>소중한 마음만 감사히 받을게요</em></label>
+                            </div>
+                            <div class="item">
+                                <label class="checkbox radio_type1"><input type="radio" name="return_reason" value="0"><span class="ck_icon"></span><em>직접입력</em></label>
+                                <div class="input_group mgt20" id="return_reason_textarea" style="display:none;">
+                                    <div class="input">
+                                        <textarea name="" placeholder="내용을 입력해 주세요." class="max_text" maxlength="30"></textarea>
+                                        <span class="max_len"><b>0</b>/30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">닫기</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_black">받지 않기</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <script>
+    const radioButtons = document.querySelectorAll('input[name="return_reason"]');
+    const textareaGroup = document.querySelector('#return_reason_textarea');
+    const textarea = textareaGroup.querySelector('#return_reason_textarea textarea');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === '0') {
+                textareaGroup.style.display = 'flex';
+                textarea.focus();
+            } else {
+                textareaGroup.style.display = 'none';
+                textarea.value = '';
+            }
+        });
+    });
+    </script>
+    <!-- //선물대신 마음만 받기 -->
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            //html include
+            //헤더&푸터 개발 완료시 삭제해주세요
+            function includeFile(path, targetId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(targetId).innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+            }
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+    
+</div>
+
+
+
+<script>
+    const deliverySelect = document.getElementById('delivery_message_select');
+    const deliveryMessageGroup = document.getElementById('delivery_message_content');
+    const deliveryInput = deliveryMessageGroup.querySelector('input');
+    deliverySelect.addEventListener('change', function() {
+    if (this.value === '직접입력') {
+        deliveryMessageGroup.style.display = 'flex';
+        deliveryInput.focus();
+    } else {
+        deliveryMessageGroup.style.display = 'none';
+        deliveryInput.value = '';
+    }
+    });
+</script>
+</body>
+</html>

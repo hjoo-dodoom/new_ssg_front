@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="mypage_wrap">
+
+                    <!-- 마이페이지 피시 메뉴  -->
+                    <div id="mypage_aside" class="mypage_aside">
+                        <script>
+                            var includePath = "/resources/static/inc/mypage_aside.html";
+                            includeFile(includePath, 'mypage_aside');
+                        </script>
+                    </div>
+
+                    <div class="mypage_content">
+                        <h2 class="mypage_title">정보수정</h2>
+
+                        <form action="">
+                            <div class="mp_box">
+                                <div class="table_type2 od_table form form_type4">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:17rem;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>이름</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_25">
+                                                            <input type="text" value="홍*동" readonly>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>아이디</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_25">
+                                                            <input type="text" value="홍*동" readonly>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>비밀번호</th>
+                                                <td>
+                                                    <div id="password_change_button">
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <!-- 디자인적 요소라고 합니다. 
+                                                                    실제 비밀번호의 길이수를 넣는게 아닌 
+                                                                    이대로 고정값 출력하면됩니다. -->
+                                                                <input type="text" value="********" readonly>
+                                                            </div>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" onclick="passwordChangeOpen();">변경하기</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="password_change_form" style="display:none;">
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="password" placeholder="현재 비밀번호를 입력하세요.">
+                                                            </div>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="password" placeholder="새 비밀번호를 입력하세요.">
+                                                            </div>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="password" placeholder="새 비밀번호를 한번 더 입력하세요.">
+                                                            </div>
+                                                        </div>
+                                                        <div class="btn_list form_btns btn_fit size_25">
+                                                            <button class="btn btn_type5 btn_gray_line" type="button" onclick="passwordChangeClose();">변경취소</button>
+                                                            <button class="btn btn_type5 btn_black" type="button" onclick="passwordChangeSubmit();">확인</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>휴대폰번호</th>
+                                                <td>
+                                                    <div id="phone_change_button">
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="tel" value="010****1234" readonly>
+                                                            </div>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" onclick="phoneChangeOpen();">변경하기</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="phone_change_form" style="display:none;">
+                                                        <div class="input_group">
+                                                            <div class="input size_25">
+                                                                <input type="tel" maxlength="11" value="" placeholder="-없이 휴대폰번호 입력">
+                                                            </div>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" id="sendSms">인증번호 받기</button>
+                                                            <button type="button" class="btn btn_type5 btn_black_line" id="reSendSms" style="display: none;">인증번호 재발송</button>
+                                                        </div>
+                                                        <div class="input_group" id="certify_numberbox" style="display: none;">
+                                                            <div class="input size_25">
+                                                                <input type="tel" name="" maxlength="6" placeholder="인증번호 입력">
+                                                                <span class="count" id="count_down">3:00</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="btn_list form_btns btn_fit size_25">
+                                                            <button class="btn btn_type5 btn_gray_line" type="button" onclick="phoneChangeClose();">변경취소</button>
+                                                            <button class="btn btn_type5 btn_black" type="button" onclick="phoneChangeSubmit();">확인</button>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>전화번호</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_25">
+                                                            <input type="tel" value="01012341234">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>배송지관리</th>
+                                                <td>
+                                                    <div class="address_basic">
+                                                        <div class="cate">기본 배송지</div>
+                                                        <span class="name">홍길동 / 010-1234-1234</span>
+                                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                                    </div>
+                                                    <div class="btn_list">
+                                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_info')">나의 배송지</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div class="check_agree">
+                                                        <div class="item">
+                                                            <em>서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의 (선택)</em>
+                                                            <button type="button" class="check_btn" onclick="openLayer('#terms_popup')">내용보기</button>
+                                                        </div>
+                        
+                                                        <div id="terms_popup" class="layer_popup layer_default">
+                                                            <div class="layer_content  width_lg height_md">
+                                                                <div class="layer_default_title">마케팅 수신동의 내용</div>
+                                                                <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                                                <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                                                    <div class="layer_section">
+                                                                        <div class="ls_title">개인정보 수집 및 이용에 대한 동의</div>
+                                                                        <div class="table_response">
+                                                                            <table>
+                                                                                <colgroup>
+                                                                                    <col style="width:25%;">
+                                                                                    <col style="width:25%;">
+                                                                                    <col style="width:25%;">
+                                                                                    <col style="width:25%;">
+                                                                                </colgroup>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>구분</th>
+                                                                                        <th>수집항목</th>
+                                                                                        <th>수집목적</th>
+                                                                                        <th>보유 및 이용기간</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td><span class="mb_tit">구분</span><span class="mb_cnt">마케팅</span></td>
+                                                                                        <td class="align_left"><span class="mb_tit">수집항목</span><span class="mb_cnt">이름, 휴대폰번호, 이메일주소, 마케팅 수신동의 여부</span></td>
+                                                                                        <td><span class="mb_tit">수집목적</span><span class="mb_cnt">상품 및 서비스 안내, 이벤트 정보 및 혜택 제공</span></td>
+                                                                                        <td><span class="mb_tit">보유 및 이용기간</span><span class="mb_cnt"><strong class="underline fs_18">회원탈퇴 또는 동의 철회 시</strong></span></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                        <ul class="dot">
+                                                                            <li>동의거부권에 대한 고지 : 정보주체는 개인정보 제공 동의를 거부할 권리가 있으나, 이 경우 서비스 이용이 제한될 수 있습니다.</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                                        </div>
+
+                                                        <div class="check_list">
+                                                            <label class="checkbox checkbox_type2 inline">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                <em>문자메시지</em>
+                                                            </label>
+                                                            <label class="checkbox checkbox_type2 inline">
+                                                                <input type="checkbox">
+                                                                <span class="ck_icon"></span>
+                                                                <em>이메일</em>
+                                                            </label>
+                                                        </div>
+                                                        <p>문자, 이메일 수신을 선택하면 광고성 정보 수신에 자동 동의 처리됩니다.<br/>
+                                                            서비스의 중요 안내사항 및 주문/배송에 대한 안내는 위 수신여부와 관계없이 발송됩니다.<br/>
+                                                            마케팅 수신동의를 하지 않더라도 서비스를 이용하실 수 있습니다. 단, 이벤트 소식 및 일부 할인쿠폰 서비스는 받을 수 없습니다.</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="member_leave">
+                                <a href="javascript:;">회원탈퇴</a>
+                            </div>
+
+                            <div class="form_btns between_lg">
+                                <a href="javascript:;" class="btn btn_type4 btn_black_line">목록으로</a>
+                                <a href="javascript:;" class="btn btn_type4 btn_theme">수정하기</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 배송지 정보 -->
+    <div id="address_info" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">배송지 정보</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content">
+                <div class="form_btns btn_fit">
+                    <button type="button" class="btn btn_type4 btn_lblue" onclick="openLayer('#address_form')">
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8a.5.5 0 0 1-.5.5h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 1 1 0-1h5v-5a.5.5 0 1 1 1 0v5h5a.5.5 0 0 1 .5.5Z" fill="#000"/></svg>
+                        <span>신규배송지 등록</span>
+                    </button>
+                </div>
+                <div class="label_check_list layer_scroll" data-simplebar>
+                    <div class="items">
+                        <div class="list_empty">
+                            <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="cate">기본 배송지</div>
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button" onclick="openLayer('#address_form');">수정</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button" onclick="openLayer('#address_form');">수정</button></div>
+                                        <div><button type="button">삭제</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button" onclick="openLayer('#address_form');">수정</button></div>
+                                        <div><button type="button">삭제</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom_check">
+                    <label class="checkbox checkbox_type1">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        기본 배송지로 등록
+                    </label>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 정보 -->
+
+    <!-- 배송지 등록 수정 -->
+    <div id="address_form" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">배송지 등록</div>
+            <div class="layer_default_title">배송지 수정</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div class="form form_type1">
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">받는사람 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="홍길동">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">휴대폰 번호 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="tel" value="01012341234" placeholder="숫자만 입력">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row" id="adsInput1">
+                        <div class="row_top">
+                            <div class="tit required">배송지 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="12345" placeholder="주소를 검색해 주세요" name="i_address_zip" class="i_address_zip" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div> 
+                            <button class="btn btn_gray btn_type5 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="서울시 구로구 삼성로11(1234)" name="i_address_basic" class="i_address_basic" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div> 
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="101동 101호" placeholder="상세주소" name="i_address_detail" class="i_address_detail">
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_black">확인</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 등록 수정 -->
+
+
+    <!-- 다음주소 -->
+    <div id="ads_layer" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주소검색</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div id="daumAdressLayer">
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //다음주소 -->
+
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+//비밀번호 변경
+function passwordChangeOpen(){
+    document.getElementById('password_change_button').style.display = 'none';
+    document.getElementById('password_change_form').style.display = 'block';
+    passwordClear();
+}
+function passwordChangeClose(){
+    document.getElementById('password_change_button').style.display = 'block';
+    document.getElementById('password_change_form').style.display = 'none';
+    passwordClear();
+}
+function passwordChangeSubmit(){
+    //비밀번호 변경 로직
+    box_alert('변경이 완료되었습니다.', 'info');
+    document.getElementById('password_change_button').style.display = 'block';
+    document.getElementById('password_change_form').style.display = 'none';
+    passwordClear();
+}
+function passwordClear(){
+    clearInterval(countdownInterval);
+    document.querySelectorAll('#password_change_form input').forEach(function (input) {
+        input.value = '';
+    });
+}
+
+//휴대폰번호 변경
+function phoneChangeOpen(){
+    document.getElementById('phone_change_button').style.display = 'none';
+    document.getElementById('phone_change_form').style.display = 'block';
+}
+function phoneChangeClose(){
+    document.getElementById('phone_change_button').style.display = 'block';
+    document.getElementById('phone_change_form').style.display = 'none';
+    phoneClear();
+}
+function phoneChangeSubmit(){
+    //휴대폰번호 변경 로직
+    box_alert('변경이 완료되었습니다.', 'info');
+    document.getElementById('count_down').textContent = '3:00';
+    document.getElementById('phone_change_button').style.display = 'block';
+    document.getElementById('phone_change_form').style.display = 'none';
+    phoneClear();
+}
+function phoneClear(){
+    clearInterval(countdownInterval);
+    document.getElementById('count_down').textContent = '3:00';
+    document.querySelectorAll('#phone_change_form input').forEach(function (input) {
+        input.value = '';
+    });
+}
+
+//인증번호
+let countdownInterval;
+const certifyNumberBox = document.getElementById('certify_numberbox');
+
+function startCountdown(buttonId, reButtonId, countdownId) {
+    const button = document.getElementById(buttonId);
+    const reButton = document.getElementById(reButtonId);
+    const countdownSpan = document.getElementById(countdownId);
+    button.style.display = 'none';
+    reButton.style.display = 'flex';
+    certifyNumberBox.style.display = 'flex';
+    let secondsLeft = 180;
+
+    countdownInterval = setInterval(function() {
+        secondsLeft--;
+        const minutes = Math.floor(secondsLeft / 60);
+        const seconds = secondsLeft % 60;
+        countdownSpan.textContent = minutes+`:`+seconds.toString().padStart(2, '0');
+
+        if (secondsLeft <= 0) {
+            clearInterval(countdownInterval);
+            countdownSpan.textContent = '3:00';
+
+            //얼랏 실행
+            box_alert('시간이 만료되었습니다. 다시 시도해주세요.', 'info');
+        }
+    }, 1000);
+}
+
+document.getElementById('sendSms').addEventListener('click', function() {
+    clearInterval(countdownInterval);
+    startCountdown('sendSms', 'reSendSms', 'count_down');
+});
+
+document.getElementById('reSendSms').addEventListener('click', function() {
+    clearInterval(countdownInterval);
+    startCountdown('sendSms', 'reSendSms', 'count_down');
+});
+
+
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+var ads_layer = document.getElementById('ads_layer');
+
+function execDaumPostcode(elm) {
+    const target = document.getElementById(elm)
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            } else {
+            }
+            target.querySelector(".i_address_zip").value = data.zonecode;
+            target.querySelector(".i_address_basic").value = addr;
+            target.querySelector(".i_address_detail").value= '';
+            target.querySelector(".i_address_detail").focus();
+            closeLayer(ads_layer);
+        },
+        width : '100%',
+        height : '100%',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>

@@ -1,0 +1,310 @@
+<div id="hd_top">
+    <div class="hd_inner">
+        <div id="hd_points">
+            <div class="item">
+                <a href="javascript:;" class="point">
+                    <span class="count">100,000</span>
+                    <span class="date">소멸예정일 : 2024.6.10</span>
+                </a>
+            </div>
+            <div class="item">
+                <a href="javascript:;" class="mileage">
+                    <span class="count">100,000</span>
+                    <span class="date">소멸예정일 : 2024.6.10</span>
+                </a>
+            </div>
+        </div>
+        <div id="hd_members">
+            <div class="item">
+                <a href="javascript:;" class="bold">
+                    <span class="icon_hd_reg"></span>대량등록
+                </a>
+            </div>
+            <div class="item">
+                <a href="javascript:;">로그아웃</a>
+            </div>
+            <div class="item">
+                <a href="javascript:;">주문배송조회</a>
+            </div>
+            <div class="item">
+                <a href="javascript:;">고객센터</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="hd_middle">
+    <div class="hd_inner">
+        <div id="hd_logo">
+            <div id="logo_wrap">
+                <div id="logo">
+                    <a href="javascript:;"><img src="/resources/static/dist/images/common/logo.png" alt="SHINSEGAE"></a>
+                </div>
+                <div id="hd_partner">
+                    <button type="button" class="btn_ptr_toggle" onclick="togglePatnerLinks();">제휴몰 바로가기</button>
+                    <div class="list">
+                        <div class="title">제휴몰 바로가기</div>
+                        <div class="item home">
+                            <a href="javascript:;">
+                                <span 
+                                    class="ptr_logo" 
+                                    style="background-image:url('/resources/static/dist/images/dummy/hd_partner_logo_secret.png');"
+                                >
+                                </span>
+                                <span class="name">시크릿스토어</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;">
+                                <span 
+                                    class="ptr_logo" 
+                                    style="background-image:url('/resources/static/dist/images/dummy/hd_partner_logo_sc.png');"
+                                >
+                                </span>
+                                <span class="name">에스씨컴퍼니</span>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="javascript:;">
+                                <span 
+                                    class="ptr_logo" 
+                                    style="background-image:url('/resources/static/dist/images/dummy/hd_partner_logo_kb.png');"
+                                >
+                                </span>
+                                <span class="name"> KB 증권</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hd_search">
+            <form action="" onsubmit="gnbSearchSubmit(event, this)">
+                <div class="search_inner">
+                    <input type="text" name="gnb_search_input" class="gnb_search_input" placeholder="상품명을 입력해 주세요."/>
+                    <button type="submit" class="gnb_search_submit">
+                        검색
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 모바일 뒤로가기 -->
+        <a href="javascript:;" class="back_btn">뒤로가기</a>
+
+        <!-- 모바일 상단 페이지 타이틀 -->
+        <div class="page_title_mobile">장바구니</div>
+
+        <!-- 모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+        <div class="cate_first_mobile">
+            <div class="cate_first_title">
+                <button type="button" class="cate_first_toggle" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');">생활/주방/가구/건강</button>
+            </div>
+
+            <div class="cate_first_list">
+                <div class="cate_first_list_inner">
+                    <div class="cate"><a href="javascript:;" class="active">생활/주발/가구/건강</a></div>
+                    <div class="cate"><a href="javascript:;">가전/IT</a></div>
+                    <div class="cate"><a href="javascript:;">의류/잡화</a></div>
+                    <div class="cate"><a href="javascript:;">스포츠/레저/자동차</a></div>
+                    <div class="cate"><a href="javascript:;">화장품/이미용</a></div>
+                    <div class="cate"><a href="javascript:;">유아동/도서/문구</a></div>
+                    <div class="cate"><a href="javascript:;">식품</a></div>
+                    <div class="cate"><a href="javascript:;">청소/생활용품</a></div>
+                    <div class="cate"><a href="javascript:;">백화점</a></div>
+                    <div class="cate"><a href="javascript:;">가공/건강식품</a></div>
+                </div>
+                <span class="cate_first_list_bg" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></span>
+            </div>
+        </div>
+        <!-- //모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+
+        <div id="hd_links">
+            <div class="item item_home">
+                <a href="javascript:;">
+                    <span class="icon_hd_home"></span>
+                    <span class="text">홈으로</span>
+                </a>
+            </div>
+            <div class="item v_mobile item_search">
+                <a href="javascript:;">
+                    <span class="icon_hd_search"></span>
+                    <span class="text">검색</span>
+                </a>
+            </div>
+            <div class="item v_both item_cart">
+                <a href="javascript:;">
+                    <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+                    <span class="text">장바구니</span>
+                </a>
+            </div>
+            <div class="item v_pc">
+                <a href="javascript:;">
+                    <span class="icon_hd_mypage"></span>
+                    <span class="text">마이페이지</span>
+                </a>
+            </div>
+            <div class="item v_pc">
+                <a href="javascript:;">
+                    <span class="icon_hd_like"></span>
+                    <span class="text">좋아요</span>
+                </a>
+            </div>
+            <div class="item v_pc">
+                <a href="javascript:;">
+                    <span class="icon_hd_notice"></span>
+                    <span class="text">공지사항</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="hd_bottom">
+    <div class="hd_inner">
+        <div id="gnb_wrap">
+            <div id="gnb_toggle">
+                <button type="button" id="btn_gnb_toggle">전체메뉴 열기</button>
+            </div>
+            <div id="gnb">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">생활/주방/가구/건강</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">가전/IT</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">의류/잡화</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">스포츠/레져/자동차</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">화장품/이미용</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">유아동/도서/문구</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">식품</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">청소/생활용품</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">백화점</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">가공/건강식</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">가공/건강식</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">가공/건강식</a>
+                    </div>
+                    <div class="swiper-slide item">
+                        <a href="javascript:;">가공/건강식</a>
+                    </div>
+                </div>
+                <div class="gnb_toggle_mobile">
+                    <button type="button" id="btn_gnb_toggle_mobile" onclick="gnbMobileOpen();">전체메뉴 열기</button>
+                </div>
+            </div>
+
+            <!-- 전체메뉴 -->
+            <div id="gnb_all">
+                <ul>
+                    <li><a href="javascript:;">생활/주방/가구/건강</a>
+                        <ul>
+                            <li><a href="javascript:;">생활용품</a></li>
+                            <li><a href="javascript:;">주방용품</a></li>
+                            <li><a href="javascript:;">식기/용기</a></li>
+                            <li><a href="javascript:;">가구/침구</a></li>
+                            <li><a href="javascript:;">인테리어소품</a></li>
+                            <li><a href="javascript:;">건강용품</a></li>
+                            <li><a href="javascript:;">반려용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">가전/IT</a>
+                        <ul>
+                            <li><a href="javascript:;">생활가전</a></li>
+                            <li><a href="javascript:;">주방가전</a></li>
+                            <li><a href="javascript:;">계절가전</a></li>
+                            <li><a href="javascript:;">영상/음향</a></li>
+                            <li><a href="javascript:;">컴퓨터/통신가전</a></li>
+                            <li><a href="javascript:;">대형가전</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">의류/잡화</a>
+                        <ul>
+                            <li><a href="javascript:;">남녀의류</a></li>
+                            <li><a href="javascript:;">가방/지갑/벨트</a></li>
+                            <li><a href="javascript:;">기타잡화</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">스포츠/레져/자동차</a>
+                        <ul>
+                            <li><a href="javascript:;">자동차용품</a></li>
+                            <li><a href="javascript:;">스포츠/레져</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">화장품/이미용</a>
+                        <ul>
+                            <li><a href="javascript:;">여성화장품</a></li>
+                            <li><a href="javascript:;">남성화장품</a></li>
+                            <li><a href="javascript:;">헤어케어</a></li>
+                            <li><a href="javascript:;">바디케어</a></li>
+                            <li><a href="javascript:;">기타</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">유아동/도서/문구</a>
+                        <ul>
+                            <li><a href="javascript:;">유아동용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">식품</a>
+                        <ul>
+                            <li><a href="javascript:;">건강식품</a></li>
+                            <li><a href="javascript:;">가공식품</a></li>
+                            <li><a href="javascript:;">농/수/축산물</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">청소/생활용품</a>
+                        <ul>
+                            <li><a href="javascript:;">위생/청소용품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">백화점</a>
+                        <ul>
+                            <li><a href="javascript:;">식품</a></li>
+                            <li><a href="javascript:;">화장품</a></li>
+                            <li><a href="javascript:;">잡화</a></li>
+                            <li><a href="javascript:;">여성의류</a></li>
+                            <li><a href="javascript:;">남성의류</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:;">가공/건강식품</a>
+                        <ul>
+                            <li><a href="javascript:;">가공식품</a></li>
+                            <li><a href="javascript:;">건강식품</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="hd_special">
+            <div class="item">
+                <a href="javascript:;">
+                    <span class="icon_hd_special"></span>
+                    기획전
+                </a>
+            </div>
+            <div class="item">
+                <a href="javascript:;">
+                    <span class="icon_hd_brand"></span>
+                    브랜드
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

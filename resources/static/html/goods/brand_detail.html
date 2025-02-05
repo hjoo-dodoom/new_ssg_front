@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show home_mobile_show">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+
+                <div class="list_special">
+                    <div class="subject">여름가전은 LG</div>
+                    <div class="description">NEW! 콜라보 기념 최대 20% 할인</div>
+                    <div class="date">24.12.12 ~ 24.12.30</div>
+                </div>
+
+                <!-- pc전용 이미지 -->
+                <div class="special_visual pc"><img src="/resources/static/dist/images/dummy/list_visual1_pc.jpg"></div>
+
+                <div class="location_cate_wrap">
+                    <div class="cate_taps">
+                        <div class="cate_slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">전체</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">생활/수납용품</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;"class="active">욕실/세탁/청소용품</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">카테고리1</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">카테고리2</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">카테고리3</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">카테고리4</a>
+                                </div>
+                                <div class="swiper-slide item">
+                                    <a href="javascript:;">기타</a>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                        let cateTapbsSwiper;
+
+                        function initializeCateTaps() {
+                            if (window.innerWidth <= 1020) {
+                                if (!cateTapbsSwiper) {
+                                    cateTapbsSwiper = new Swiper(".cate_slider", {
+                                        slidesPerView: "auto",
+                                        spaceBetween: 8,
+                                        freeMode: true,
+                                        on: {
+                                            init: function () {
+                                                const activeSlide = this.slides.find(slide => slide.querySelector('.active'));
+                                                if (activeSlide) {
+                                                    const activeIndex = this.slides.indexOf(activeSlide);
+                                                    this.slideTo(activeIndex, 0, false);
+                                                    setTimeout(() => {
+                                                        const slideWidth = activeSlide.offsetWidth;
+                                                        const containerWidth = this.el.offsetWidth;
+                                                        const scrollLeft = activeSlide.offsetLeft - (containerWidth / 2) + (slideWidth / 2);
+                                                        this.wrapperEl.scrollLeft = scrollLeft;
+                                                    }, 0);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                            } else {
+                                if (cateTapbsSwiper) {
+                                    cateTapbsSwiper.destroy(true, true);
+                                    cateTapbsSwiper = undefined;
+                                }
+                            }
+                        }
+                        initializeCateTaps();
+                        window.addEventListener('resize', initializeCateTaps);
+                        </script>
+                    </div>
+                </div>
+
+                <!-- mobile전용 이미지 -->
+                <div class="special_visual mobile"><img src="/resources/static/dist/images/dummy/list_visual1_mobile.jpg"></div>
+                
+                <div class="list_sort v_pc">
+                    <div class="active_control">
+                        <div class="item"><a href="javascript:;" class="active">신상품순</a></div>
+                        <div class="item"><a href="javascript:;">업데이트순</a></div>
+                        <div class="item"><a href="javascript:;">낮은 가격순</a></div>
+                        <div class="item"><a href="javascript:;">높은 가격순</a></div>
+                    </div>
+                    <div>
+                        <div class="item">
+                            <div class="design_select type1 right">
+                                <select name="" id="">
+                                    <option value="20">20개씩 보기</option>
+                                    <option value="40">40개씩 보기</option>
+                                    <option value="60">60개씩 보기</option>
+                                    <option value="80" selected>80개씩 보기</option>
+                                </select>
+                            </div>
+                            <!-- <div class="design_select type1 right">
+                                <input type="hidden" value="80">
+                                <button type="button" class="btn_select">80개씩 보기</button>
+                                <div class="design_select_options checked_options">
+                                    <div class="items">
+                                        <div class="item"><a href="javascript:;" data-id="20">20개씩 보기</a></div>
+                                        <div class="item"><a href="javascript:;" data-id="40">40개씩 보기</a></div>
+                                        <div class="item"><a href="javascript:;" data-id="60">60개씩 보기</a></div>
+                                        <div class="item"><a href="javascript:;" data-id="80" class="active">80개씩 보기</a></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list_top v_mobile">
+                    <div class="total">
+                    </div>
+                    <div>
+                        <div class="design_select type1 right">
+                            <select name="" id="">
+                                <option value="신상품순" selected>신상품순</option>
+                                <option value="업데이트순">업데이트순</option>
+                                <option value="낮은 가격순">낮은 가격순</option>
+                                <option value="높은 가격순">높은 가격순</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product_list display_type4">
+                    <!-- display_type5 pc5행 tablet4행 mobile2행 -->
+                    <!-- display_type4 pc4행 tablet3행 mobile2행 -->
+                    <!-- display_type3 pc3행 tablet3행 mobile2행 -->
+                    <div class="item">
+                        <div class="thum">
+                            <a href="javascript:;">
+                                <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                <div class="discount_info">
+                                    <div class="percent"><strong>20</strong><span>%</span></div>
+                                    <div class="additional">추가<br/>할인</div>
+                                </div>
+                            </a>
+                            <a href="javascript:;" class="cart">장바구니 담기</a>
+                        </div>
+                        <a href="javascript:;" class="cnt">
+                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                            <div class="price_origin">소비자가 : 45,000원</div>
+                            <div class="price_sale">판매가 : 987,000원</div>
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    //소스 길어지는것 방지용 임시 스크립트
+                    const productList = document.querySelector('.product_list');
+                    const productListtItem = productList.querySelector('.item');
+                    
+                    for (var i = 0; i < 15; i++) {
+                        const newItem = productListtItem.cloneNode(true);
+                        productList.appendChild(newItem);
+                    }
+                    
+                    const productListtItems = productList.querySelectorAll('.item');
+                    var i = 0;
+                    productListtItems.forEach(function(item){
+                        i++;
+                        if(i === 4){i = 1}
+                        item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                    });
+                </script>
+
+                <div class="paging line">
+                    <a href="javascript:;" class="pg_move pg_start">처음</a>
+                    <a href="javascript:;" class="pg_move pg_prev">이전</a>
+                    <a href="javascript:;" class="pg_page">1<span class="sound_only">페이지</span></a>
+                    <span class="sound_only">열린</span><strong class="pg_current">2</strong><span class="sound_only">페이지</span>
+                    <a href="javascript:;" class="pg_page">3<span class="sound_only">페이지</span></a>
+                    <a href="javascript:;" class="pg_page">4<span class="sound_only">페이지</span></a>
+                    <a href="javascript:;" class="pg_page">5<span class="sound_only">페이지</span></a>
+                    <a href="javascript:;" class="pg_move pg_next">다음</a>
+                    <a href="javascript:;" class="pg_move pg_end">맨끝</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+</body>
+</html>

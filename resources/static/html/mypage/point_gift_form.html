@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="mypage_wrap">
+
+                    <!-- 마이페이지 피시 메뉴  -->
+                    <div id="mypage_aside" class="mypage_aside">
+                        <script>
+                            var includePath = "/resources/static/inc/mypage_aside.html";
+                            includeFile(includePath, 'mypage_aside');
+                        </script>
+                    </div>
+
+                    <div class="mypage_content">
+                        <h2 class="mypage_title">포인트 선물하기</h2>
+
+                        <div class="caution_box">
+                            <div class="caution_title">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.25A9.75 9.75 0 1 0 21.75 12 9.76 9.76 0 0 0 12 2.25Zm0 18A8.25 8.25 0 1 1 20.25 12 8.26 8.26 0 0 1 12 20.25Zm-.75-7.5V7.5a.75.75 0 1 1 1.5 0v5.25a.75.75 0 1 1-1.5 0Zm1.875 3.375a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0Z" fill="#000"/></svg>
+                                <span>유의사항</span>
+                            </div>
+                            <div class="caution_content">
+                                <ul class="dot">
+                                    <li class="red_text_color">포인트 선물완료 후 포인트 금액 및 받는 분 정보는 수정이 불가합니다. 선물 받는 분의 이름, 휴대폰번호, 포인트금액을 정확히 입력해주세요.</li>
+                                    <li>보내는분의 휴대폰인증을 위해 선물하기 전에 휴대폰번호를 업데이트해주세요. (마이페이지 > 나의정보 > 정보수정)</li>
+                                    <li>포인트 선물 후 선물안내 메시지가 선물 받는 분의 휴대폰번호로 알림 메시지가 발송됩니다.</li>
+                                    <li>선물한 포인트는 지급 받은 포인트와 동일한 유효기간이 적용됩니다.</li>
+                                    <li>포인트는 보유포인트 한도 내 선물할 수 있으며, 선물완료 후 받는 분 포인트에 자동 적립됩니다.</li>
+                                    <li>단, 선물한 포인트 상태가 “대기” 인 경우 관리자 “승인” 후 포인트 선물하기가 완료됩니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form action="">
+                            <div class="mp_box">
+                                <div class="table_top">
+                                    <div class="title">선물 보내기</div>
+                                </div>
+                                <div class="table_type2 od_table form form_type4">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:17rem;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>받는분</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_20">
+                                                            <input type="text" placeholder="받는 분 이름">
+                                                        </div>
+                                                    </div>
+                                                    <div class="input_group">
+                                                        <div class="input size_20">
+                                                            <input type="tel" maxlength="11" placeholder="-없이 휴대폰번호 입력">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="mp_box">
+                                <div class="table_top">
+                                    <div class="title">포인트 선물</div>
+                                </div>
+                                <div class="table_type2 od_table form form_type4">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:17rem;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>포인트</th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <label class="input size_20">
+                                                            <input type="tel" class="align_right" data-amount-comma>
+                                                            <span class="in_text">원</span>
+                                                        </label>
+                                                        <button type="button" class="btn btn_type5 btn_black_line">전체사용</button>
+                                                        <span class="od_point">(잔여 : 10,000P)</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    휴대폰인증
+                                                    <div class="info_hover left">
+                                                        <button type="button" class="btn_info_show single"></button>
+                                                        <div class="info_cnt" style="width:34rem;">
+                                                            <div class="info_cnt_title">휴대폰번호가 등록되지 않은 경우</div>
+                                                            <div class="info_cnt_text">
+                                                                보내는분의 휴대폰인증을 위해 선물하기 전에 
+                                                                휴대폰번호를 업데이트해주세요.<br/>
+                                                                (마이페이지 > 나의정보 > 정보수정)
+                                                            </div>
+                                                            <button type="button" class="btn_info_close">닫기</button>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td>
+                                                    <div class="input_group">
+                                                        <div class="input size_20">
+                                                            <input type="tel" readonly maxlength="11" value="0101234134">
+                                                        </div>
+                                                        <button type="button" class="btn btn_type5 btn_black_line" id="sendSms">인증번호 받기</button>
+                                                        <button type="button" class="btn btn_type5 btn_black_line" id="reSendSms" style="display: none;">인증번호 재발송</button>
+                                                    </div>
+                                                    <div class="input_group" id="certify_numberbox" style="display: none;">
+                                                        <div class="input size_20">
+                                                            <input type="tel" name="" maxlength="6" placeholder="인증번호 입력">
+                                                            <span class="count" id="count_down">3:00</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="check_agree">
+                                <div class="item">
+                                    <label class="checkbox checkbox_type2">
+                                        <input type="checkbox">
+                                        <span class="ck_icon"></span>
+                                        <em>포인트 선물하기 개인정보 수집 및 이용에 동의합니다. <span class="red_text_color">(필수)</span></em>
+                                        <button type="button" class="check_btn" onclick="openLayer('#terms_popup')">내용보기</button>
+                                    </label>
+                                </div>
+
+                                <div id="terms_popup" class="layer_popup layer_default">
+                                    <div class="layer_content  width_lg height_md">
+                                        <div class="layer_default_title">개인정보 수집 및 이용에 대한 동의</div>
+                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                            <div class="layer_section">
+                                                <div class="ls_title">개인정보 수집 및 이용에 대한 동의</div>
+                                                <div class="table_response">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col style="width:25%;">
+                                                            <col>
+                                                            <col style="width:25%;">
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>구분</th>
+                                                                <th>수집항목</th>
+                                                                <th>수집목적</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span class="mb_tit">구분</span><span class="mb_cnt">포인트선물 서비스</span></td>
+                                                                <td class="align_left"><span class="mb_tit">수집항목</span><span class="mb_cnt">[필수항목] 받는 분(아이디, 이름, 휴대폰번호), 보내는 분(아이디, 이름, 휴대폰번호)</span></td>
+                                                                <td><span class="mb_tit">수집목적</span><span class="mb_cnt">선물포인트 정상사용 및 포인트 승인</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <ul class="dot">
+                                                    <li>개인정보의 보유 및 이용 기간 : <span class="underline">소속회사의 요청 또는 계약종료 시 지체없이 파기 단, 관계 법령에 의해 보존이 필요한 경우 의무기간 동안 보관</span></li>
+                                                    <li>동의거부권에 대한 고지 : 정보주체는 개인정보 제공 동의를 거부할 권리가 있으나, 이 경우 서비스 이용이 제한될 수 있습니다.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="layer_section">
+                                                <div class="ls_title">개인정보 제 3자 제공에 대한 고지</div>
+                                                <div class="table_response">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                            <col>
+                                                        </colgroup>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>제공받는자</th>
+                                                                <th>이용목적</th>
+                                                                <th>제공항목</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><span class="mb_tit">제공받는자</span><span class="mb_cnt"><strong class="terms_strong">시크릿스토어</strong></span></td>
+                                                                <td><span class="mb_tit">이용목적</span><span class="mb_cnt">선물포인트 정상사용 및 포인트 승인</span></td>
+                                                                <td class="align_left"><span class="mb_tit">제공항목</span><span class="mb_cnt">[필수항목] 받는 분(아이디, 이름, 휴대폰번호), 보내는 분(아이디, 이름)</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <ul class="dot">
+                                                    <li>개인정보의 보유 및 이용 기간 : 소속회사의 요청 또는 계약종료 시 지체없이 파기 단, 관계 법령에 의해 보존이 필요한 경우 의무기간 동안 보관 </li>
+                                                    <li>동의거부권에 대한 고지 : 정보주체는 개인정보 제공 동의를 거부할 권리가 있으나, 이 경우 결제하기 서비스 이용이 제한될 수 있습니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                </div>
+                            </div>
+
+                            <div class="form_btns between_lg">
+                                <a href="javascript:;" class="btn btn_type4 btn_black_line">목록으로</a>
+                                <a href="javascript:;" class="btn btn_type4 btn_theme">선물하기</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+<script>
+    //인증번호
+    let countdownInterval;
+    const certifyNumberBox = document.getElementById('certify_numberbox');
+
+    function startCountdown(buttonId, reButtonId, countdownId) {
+        const button = document.getElementById(buttonId);
+        const reButton = document.getElementById(reButtonId);
+        const countdownSpan = document.getElementById(countdownId);
+        button.style.display = 'none';
+        reButton.style.display = 'flex';
+        certifyNumberBox.style.display = 'flex';
+        let secondsLeft = 180;
+
+        countdownInterval = setInterval(function() {
+            secondsLeft--;
+            const minutes = Math.floor(secondsLeft / 60);
+            const seconds = secondsLeft % 60;
+            countdownSpan.textContent = minutes+`:`+seconds.toString().padStart(2, '0');
+
+            if (secondsLeft <= 0) {
+                clearInterval(countdownInterval);
+                countdownSpan.textContent = '3:00';
+
+                //얼랏 실행
+                box_alert('시간이 만료되었습니다. 다시 시도해주세요.', 'info');
+            }
+        }, 1000);
+    }
+
+    document.getElementById('sendSms').addEventListener('click', function() {
+        clearInterval(countdownInterval);
+        startCountdown('sendSms', 'reSendSms', 'count_down');
+    });
+
+    document.getElementById('reSendSms').addEventListener('click', function() {
+        clearInterval(countdownInterval);
+        startCountdown('sendSms', 'reSendSms', 'count_down');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="mypage_wrap">
+
+                    <!-- 마이페이지 피시 메뉴  -->
+                    <div id="mypage_aside" class="mypage_aside">
+                        <script>
+                            var includePath = "/resources/static/inc/mypage_aside.html";
+                            includeFile(includePath, 'mypage_aside');
+                        </script>
+                    </div>
+
+                    <div class="mypage_content">
+                        <h2 class="mypage_title">취소/교환/반품</h2>
+
+                        <!-- pc용 검색 (피시에서 검색 시 모바일 코드도 맞춰서 active처리 해야함) -->
+                        <div class="list_search v_pc">
+                            <div class="content">
+                                <div class="form_box date_box">
+                                    <div class="date_control">
+                                        <button class="active" type="button" onclick="dateControl('#date_start', '#date_end', '7d')">최근 7일</button>
+                                        <button type="button" onclick="dateControl('#date_start', '#date_end', '1m')">1개월</button>
+                                        <button type="button" onclick="dateControl('#date_start', '#date_end', '3m')">3개월</button>
+                                    </div>
+                                    <div class="date_input">
+                                        <!-- 디폴트 7일 세팅해주세요. -->
+                                        <div class="input_group">
+                                            <div class="input"><input type="text" id="date_start" class="datepicker" value="2024-12-12" placeholder="기간 시작일" readonly ></div>
+                                            <span class="dash">-</span>
+                                            <div class="input"><input type="text" id="date_end" class="datepicker" value="2024-12-19" readonly placeholder="기간 종료일"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_box form_type4 v_pc">
+                                    <div class="input_group">
+                                        <div class="input input size_20">
+                                            <div class="design_select type5">
+                                                <select name="" id="">
+                                                    <option value="체결번호" selected>체결번호</option>
+                                                    <option value="주문자">주문자</option>
+                                                    <option value="받는사람">받는사람</option>
+                                                    <option value="주문자 휴대폰번호">주문자 휴대폰번호</option>
+                                                    <option value="받는사람 휴대폰번호">받는사람 휴대폰번호</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="input">
+                                            <input type="text">
+                                        </div>
+                                        <button class="btn btn_black btn_type5">조회</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //pc용 검색 -->
+                        <!-- mobile용 검색  (모바일에서 검색 시 피시 코드도 맞춰서 active datepicker value 값넣어 줘야함) -->
+                        <div class="list_search v_mobile">
+                            <div class="date_control">
+                                <a href="javascript:;" class="active">최근 7일</a>
+                                <a href="javascript:;">1개월</a>
+                                <a href="javascript:;">3개월</a>
+                            </div>
+                        </div>
+                        <!-- //mobile용 검색 -->
+
+                        <div class="mp_box">
+                            <!-- pc용 버튼 -->
+                            <div class="table_top">
+                                <div class="list_cates">
+                                    <div class="item"><button type="button" class="active">전체</button></div>
+                                    <div class="item"><button type="button">취소</button></div>
+                                    <div class="item"><button type="button">교환</button></div>
+                                    <div class="item"><button type="button">반품</button></div>
+                                    <!-- <div class="item"><a href="javascript:;">반품</a></div> -->
+                                </div>
+                            </div>
+                            <!-- //pc용 버튼 -->
+                            <div class="mp_product">
+                                <div class="table">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:16rem;">
+                                            <col>
+                                            <col style="width:17rem;">
+                                            <col style="width:11rem;">
+                                            <col style="width:12rem;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">상품정보</th>
+                                                <th>주문금액</th>
+                                                <th colspan="2">진행상황</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="5" class="list_empty">
+                                                    <div class="empty">내역이 없습니다.</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody>
+                                            <tr class="tr_info">
+                                                <td colspan="5">
+                                                    <div class="group_info">
+                                                        <div class="l">
+                                                            <div class="date">2024.10.23</div>
+                                                            <div class="price">O000000002901757</div>
+                                                        </div>
+                                                        <div class="r">
+                                                            <div class="order_num">
+                                                                <div class="tit">체결번호</div>
+                                                                <div class="num">K00000063733</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_thum">
+                                                    <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></a>
+                                                </td>
+                                                <td class="td_product">
+                                                    <div class="prd_cnt">
+                                                        <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                        <div class="options">
+                                                            <div class="option">레드/스몰</div>
+                                                            <div class="lot">1개</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="td_price">1,200,000원</td>
+                                                <td class="td_status">
+                                                    <div class="status">주문취소</div>
+                                                </td>
+                                                <td class="td_btns td_pr0">
+                                                    <button class="btn btn_type5 btn_black_line" type="button" onclick="openLayer('#cancel_detail');">취소상세</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody>
+                                            <tr class="tr_info">
+                                                <td colspan="5">
+                                                    <div class="group_info">
+                                                        <div class="l">
+                                                            <div class="date">2024.10.23</div>
+                                                            <div class="price">O000000002901757</div>
+                                                        </div>
+                                                        <div class="r">
+                                                            <div class="order_num">
+                                                                <div class="tit">체결번호</div>
+                                                                <div class="num">K00000063733</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_thum">
+                                                    <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></a>
+                                                </td>
+                                                <td class="td_product">
+                                                    <div class="prd_cnt">
+                                                        <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                        <div class="options">
+                                                            <div class="option">레드/스몰</div>
+                                                            <div class="lot">1개</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="td_price">1,200,000원</td>
+                                                <td class="td_status">
+                                                    <div class="status">
+                                                        반품신청
+                                                        <button type="button" class="btn_text">반품철회</button>
+                                                    </div>
+                                                </td>
+                                                <td class="td_btns td_pr0">
+                                                    <button class="btn btn_type5 btn_black_line" type="button" onclick="openLayer('#refund_detail');">반품상세</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                        <tbody>
+                                            <tr class="tr_info">
+                                                <td colspan="5">
+                                                    <div class="group_info">
+                                                        <div class="l">
+                                                            <div class="date">2024.10.23</div>
+                                                            <div class="price">O000000002901757</div>
+                                                        </div>
+                                                        <div class="r">
+                                                            <div class="order_num">
+                                                                <div class="tit">체결번호</div>
+                                                                <div class="num">K00000063733</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="td_thum">
+                                                    <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                                </td>
+                                                <td class="td_product">
+                                                    <div class="prd_cnt">
+                                                        <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                        <div class="options">
+                                                            <div class="option">레드/스몰</div>
+                                                            <div class="lot">1개</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="td_price">1,200,000원</td>
+                                                <td class="td_status">
+                                                    <div class="status">
+                                                        교환신청
+                                                        <button type="button" class="btn_text">교환철회</button>
+                                                    </div>
+                                                </td>
+                                                <td class="td_btns td_pr0">
+                                                    <button class="btn btn_type5 btn_black_line" type="button" onclick="openLayer('#change_detail');">교환상세</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="paging">
+                                <a href="javascript:;" class="pg_move pg_start">처음</a>
+                                <a href="javascript:;" class="pg_move pg_prev">이전</a>
+                                <a href="javascript:;" class="pg_page">1<span class="sound_only">페이지</span></a>
+                                <span class="sound_only">열린</span><strong class="pg_current">2</strong><span class="sound_only">페이지</span>
+                                <a href="javascript:;" class="pg_page">3<span class="sound_only">페이지</span></a>
+                                <a href="javascript:;" class="pg_page">4<span class="sound_only">페이지</span></a>
+                                <a href="javascript:;" class="pg_page">5<span class="sound_only">페이지</span></a>
+                                <a href="javascript:;" class="pg_move pg_next">다음</a>
+                                <a href="javascript:;" class="pg_move pg_end">맨끝</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+<!-- 취소정보 -->
+<div id="cancel_detail" class="layer_popup layer_default">
+    <div class="layer_content  width_lg">
+        <div class="layer_default_title">취소정보</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+
+            <div class="layer_section ">
+                <div class="mp_product">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:16rem;">
+                                <col>
+                                <col style="width:14rem;">
+                                <col style="width:12rem;">
+                            </colgroup>
+                            <tbody>
+                                <tr class="tr_info">
+                                    <td colspan="4">
+                                        <div class="group_info">
+                                            <div class="l">
+                                                <div class="date">2024.10.23</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_thum">
+                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                    </td>
+                                    <td class="td_product">
+                                        <div class="prd_cnt">
+                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                            <div class="options">
+                                                <div class="option">레드/스몰</div>
+                                                <div class="lot">1개</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="td_price">1,200,000원</td>
+                                    <td class="td_status">
+                                        <div class="status">주문취소</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="tfoot_gray">
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="gray_box">
+                                            사유 : 단순변심
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer_section ">
+                <div class="ls_title">환불정보</div>
+                <div class="payment_calc">
+                    <div class="group">
+                        <div class="top">
+                            <div class="row">
+                                <div class="tit">주문금액</div>
+                                <div class="cnt">2,400,000원</div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="row">
+                                <div class="tit">상품금액</div>
+                                <div class="cnt">2,397,500원</div>
+                            </div>
+                            <div class="row">
+                                <div class="tit">배송비</div>
+                                <div class="cnt">2,500원</div>
+                            </div>
+                            <div class="row">
+                                <div class="tit">쿠폰할인</div>
+                                <div class="cnt">(-)10,000원</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="top">
+                            <div class="row">
+                                <div class="tit">환불예정금액</div>
+                                <div class="cnt">500,000원</div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="row">
+                                <div class="tit">신용카드</div>
+                                <div class="cnt">1,119,500원</div>
+                            </div>
+                            <div class="row">
+                                <div class="tit">마일리지</div>
+                                <div class="cnt">50,500M</div>
+                            </div>
+                            <div class="row">
+                                <div class="tit">포인트</div>
+                                <div class="cnt">20,000P</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //취소정보 -->
+
+
+<!-- 교환정보 -->
+<div id="change_detail" class="layer_popup layer_default">
+    <div class="layer_content  width_lg">
+        <div class="layer_default_title">교환/반품정보</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+
+            <div class="layer_section ">
+                <div class="mp_product">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:16rem;">
+                                <col>
+                                <col style="width:14rem;">
+                                <col style="width:12rem;">
+                            </colgroup>
+                            <tbody>
+                                <tr class="tr_info">
+                                    <td colspan="4">
+                                        <div class="group_info">
+                                            <div class="l">
+                                                <div class="date">2024.10.23(교환)</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_thum">
+                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                    </td>
+                                    <td class="td_product">
+                                        <div class="prd_cnt">
+                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                            <div class="options">
+                                                <div class="option">레드/스몰</div>
+                                                <div class="lot">1개</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="td_price">1,200,000원</td>
+                                    <td class="td_status">
+                                        <div class="status">
+                                            교환신청
+                                            <button type="button" class="btn_text">교환철회</button>
+                                        </div>
+                                        <!-- <div class="status red_text_color">
+                                            교환불가
+                                        </div> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="tfoot_gray">
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="gray_box">
+                                            사유 : 제품불량
+                                        </div>
+                                        <div class="gray_box red_box">
+                                            불가사유 : 교환불가 사유가 표기됩니다.
+                                        </div>
+
+                                        <div class="uploaded_photos">
+                                            <div class="item">
+                                                <button type="button" class="btn_photo" onclick="openLayer('#image_detail');imageDetail('/resources/static/dist/images/dummy/prd_image1.jpg')">
+                                                    <!-- 미리보기는 작은 썸네일로 레이어팝업에는 원본으로 -->
+                                                    <span style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></span>
+                                                    첨부 이미지 상세보기
+                                                </button>
+                                            </div>
+                                            <div class="item">
+                                                <button type="button" class="btn_photo" onclick="openLayer('#image_detail');imageDetail('/resources/static/dist/images/dummy/prd_image2.jpg')">
+                                                    <!-- 미리보기는 작은 썸네일로 레이어팝업에는 원본으로 -->
+                                                    <span style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></span>
+                                                    첨부 이미지 상세보기
+                                                </button>
+                                            </div>
+                                            <div class="item">
+                                                <button type="button" class="btn_photo" onclick="openLayer('#image_detail');imageDetail('/resources/static/dist/images/dummy/prd_image3.jpg')">
+                                                    <!-- 미리보기는 작은 썸네일로 레이어팝업에는 원본으로 -->
+                                                    <span style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></span>
+                                                    첨부 이미지 상세보기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer_section">
+                <div class="ls_title">상품회수지</div>
+                <div class="table_type3">
+                    <table>
+                        <colgroup>
+                            <col style="width:24%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>이름</th>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰번호</th>
+                                <td>010-1234-1234</td>
+                            </tr>
+                            <tr>
+                                <th>회수지</th>
+                                <td>(12345) 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</td>
+                            </tr>
+                            <tr>
+                                <th>회수 요청사항</th>
+                                <td>회수 전에 연락주세요</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="layer_section">
+                <div class="ls_title">배송지</div>
+                <div class="table_type3">
+                    <table>
+                        <colgroup>
+                            <col style="width:24%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>이름</th>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰번호</th>
+                                <td>010-1234-1234</td>
+                            </tr>
+                            <tr>
+                                <th>회수지</th>
+                                <td>(12345) 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</td>
+                            </tr>
+                            <tr>
+                                <th>회수 요청사항</th>
+                                <td>회수 전에 연락주세요</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="caution_box">
+                <div class="caution_title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.25A9.75 9.75 0 1 0 21.75 12 9.76 9.76 0 0 0 12 2.25Zm0 18A8.25 8.25 0 1 1 20.25 12 8.26 8.26 0 0 1 12 20.25Zm-.75-7.5V7.5a.75.75 0 1 1 1.5 0v5.25a.75.75 0 1 1-1.5 0Zm1.875 3.375a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0Z" fill="#000"/></svg>
+                    <span>교환정책</span>
+                </div>
+                <div class="caution_content">
+                    <ul class="dot">
+                        <li>교환 신청 후 교환진행단계 전까지 교환철회를 하실 수 있습니다.</li>
+                        <li>교환 진행 전 상품회수지에 등록된 휴대폰번호로 유선상담을 진행합니다.</li>
+                        <li>사용흔적이 없는 상품만 교환이 가능합니다. 상품 포장, 태그 및 라벨 부착 등을 확인해주세요.</li>
+                        <li>교환상품 검수 후 문제가 없을 경우만 교환이 가능하며, 교환완료 까지는 영업일 기준 최소 7일 이상 소요됩니다.</li>
+                        <li>교환상품에 대한 왕복배송비가 부과될 수 있으며, 배송비는 지역에 따라 기본배송비 외 추가배송비가 발행될 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //교환정보 -->
+
+
+
+<!-- 반품정보 -->
+<div id="refund_detail" class="layer_popup layer_default">
+    <div class="layer_content  width_lg">
+        <div class="layer_default_title">교환/반품정보</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+
+            <div class="layer_section ">
+                <div class="mp_product">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:16rem;">
+                                <col>
+                                <col style="width:14rem;">
+                                <col style="width:12rem;">
+                            </colgroup>
+                            <tbody>
+                                <tr class="tr_info">
+                                    <td colspan="4">
+                                        <div class="group_info">
+                                            <div class="l">
+                                                <div class="date">2024.10.23(반품)</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_thum">
+                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                    </td>
+                                    <td class="td_product">
+                                        <div class="prd_cnt">
+                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                            <div class="options">
+                                                <div class="option">레드/스몰</div>
+                                                <div class="lot">1개</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="td_price">1,200,000원</td>
+                                    <td class="td_status">
+                                        <div class="status">
+                                            반품신청
+                                            <button type="button" class="btn_text">반품철회</button>
+                                        </div>
+                                        <!-- <div class="status red_text_color">
+                                            반품불가
+                                        </div> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="tfoot_gray">
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="gray_box">
+                                            사유 : 제품불량
+                                        </div>
+                                        <div class="gray_box red_box">
+                                            불가사유 : 반품불가 사유가 표기됩니다.
+                                        </div>
+
+                                        <div class="uploaded_photos">
+                                            <div class="item">
+                                                <!-- 미리보기는 작은 썸네일로 레이어팝업에는 원본으로 -->
+                                                <button type="button" class="btn_photo" onclick="openLayer('#image_detail');imageDetail('/resources/static/dist/images/dummy/prd_image1.jpg')">
+                                                    <span style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></span>
+                                                    첨부 이미지 상세보기
+                                                </button>
+                                            </div>
+                                            <div class="item">
+                                                <!-- 미리보기는 작은 썸네일로 레이어팝업에는 원본으로 -->
+                                                <button type="button" class="btn_photo" onclick="openLayer('#image_detail');imageDetail('/resources/static/dist/images/dummy/prd_imag123e2.jpg')">
+                                                    <span style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></span>
+                                                    첨부 이미지 상세보기
+                                                </button>
+                                            </div>
+                                            <div class="item">
+                                                <!-- 미리보기는 작은 썸네일로 레이어팝업에는 원본으로 -->
+                                                <button type="button" class="btn_photo" onclick="openLayer('#image_detail');imageDetail('/resources/static/dist/images/dummy/prd_image3.jpg')">
+                                                    <span style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></span>
+                                                    첨부 이미지 상세보기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer_section">
+                <div class="ls_title">상품회수지</div>
+                <div class="table_type3">
+                    <table>
+                        <colgroup>
+                            <col style="width:24%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>이름</th>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰번호</th>
+                                <td>010-1234-1234</td>
+                            </tr>
+                            <tr>
+                                <th>회수지</th>
+                                <td>(12345) 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</td>
+                            </tr>
+                            <tr>
+                                <th>회수 요청사항</th>
+                                <td>회수 전에 연락주세요</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="layer_section">
+                <div class="ls_title">배송지</div>
+                <div class="table_type3">
+                    <table>
+                        <colgroup>
+                            <col style="width:24%;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>이름</th>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <th>휴대폰번호</th>
+                                <td>010-1234-1234</td>
+                            </tr>
+                            <tr>
+                                <th>회수지</th>
+                                <td>(12345) 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</td>
+                            </tr>
+                            <tr>
+                                <th>회수 요청사항</th>
+                                <td>회수 전에 연락주세요</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="caution_box">
+                <div class="caution_title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.25A9.75 9.75 0 1 0 21.75 12 9.76 9.76 0 0 0 12 2.25Zm0 18A8.25 8.25 0 1 1 20.25 12 8.26 8.26 0 0 1 12 20.25Zm-.75-7.5V7.5a.75.75 0 1 1 1.5 0v5.25a.75.75 0 1 1-1.5 0Zm1.875 3.375a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0Z" fill="#000"/></svg>
+                    <span>반품정책</span>
+                </div>
+                <div class="caution_content">
+                    <ul class="dot">
+                        <li>반품 신청 후 반품진행단계 전까지 반품철회를 하실 수 있습니다.</li>
+                        <li>반품 진행 전 상품회수지에 등록된 휴대폰번호로 유선상담을 진행합니다.</li>
+                        <li>사용흔적이 없는 상품만 반품이 가능합니다. 상품 포장, 태그 및 라벨 부착 등을 확인해주세요.</li>
+                        <li>반품상품 검수 후 문제가 없을 경우만 반품이 가능하며, 반품완료 까지는 영업일 기준 최소 7일 이상 소요됩니다.</li>
+                        <li>반품상품에 대한 왕복배송비가 부과될 수 있으며, 배송비는 지역에 따라 기본배송비 외 추가배송비가 발행될 수 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //반품정보 -->
+
+
+
+<!-- 이미지 상세 -->
+<div id="image_detail" class="layer_popup layer_default">
+    <div class="layer_content">
+        <div class="layer_default_title">자세히 보기</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="preview_image">
+                <img src="" id="preview_image">
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //이미지 상세 -->
+
+
+</body>
+</html>

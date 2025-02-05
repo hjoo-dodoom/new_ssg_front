@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta charset="UTF-8">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>사용자 파일 목록</title>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="/resources/static/dist/css/tabler.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/tabler-vendors.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css"/>
+<link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<script src="/resources/static/dist/js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Libs JS -->
+<script src="/resources/static/dist/libs/litepicker/dist/litepicker.js?1674944402"></script>
+<!-- Tabler Core -->
+
+<script src="/resources/static/dist/js/common.js"></script>
+<!-- code highlight -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
+<style type="text/css">
+    *{margin:0;padding:0;}
+	#guide_wrap {padding:10px}
+	table {border-collapse:collapse;border-spacing:0;}
+	table th, strong {font-weight:normal;}
+	h1{
+		margin:0 0 10px 0;
+		text-align:center;
+		font-size:2.4em;
+		color:#000
+	}
+	a {text-decoration:none;}
+	a:hover {text-decoration:underline;}
+	table {
+		width:100%;
+		margin-top:5px;
+		border-top:2px solid #1e61a8;
+	}
+	table th, table td{
+		padding:5px 7px;
+		border-left:1px solid #ccc; border-bottom:1px solid #ccc;
+	}
+	table th:rowspan + th, table td:rowspan + td{border-left:1px solid #ccc;}
+	td.lineli, th.lineli {border-left:1px solid #ccc !important;}
+	table th:first-child, table td:first-child{border-left:0 none}
+	table thead th {
+		font-family:'ngB';
+		font-size:13px;
+		color:#000;
+		border-bottom:1px solid #ccc;
+		background-color:#f2f2f2;
+	}
+	.no, .date, .work {
+		text-align:center;
+		padding:5px 0
+	}
+
+	tr.on {background-color: #f5fed0}
+
+	.lastmdate {color: #1155CC;}
+	.stand_by {color:#777;}
+	.ing, .per_2 {color:#4848D4 !important;}
+	.curr_n, .per, .end {color:#ff0000 !important;}
+
+	.division td{border-top:2px solid #7e8e9e}
+	table tr.division:first-child td{border-top:0 none;}
+	td a {text-decoration: none;}
+	pre[class*=language-]{padding:0 20px;margin:0;border-radius:0;height:100%;}
+	.guide_links{display:flex;text-align:center;margin-bottom:20px;}
+	.guide_links a{flex:1 1;background-color: #ddd;color:#000;font-size:15px;font-weight:bold;padding:10px;}
+    .guide_links a + a{border-left:1px solid #ccc;}
+	.guide_links a.active{background-color:#000;color:#fff;}
+    .common_function{}
+    .common_function .box{display:flex;box-shadow: 0 0 10px rgba(0,0,0,.2);margin-top:20px;}
+    .common_function .box .dec{width:30%;background-color:#41734b;padding:20px;font-size:15px;color:#fff;}
+    .common_function .box .dec a{color:#3aff62;text-decoration: underline;}
+    .common_function .box .code{flex:1 1 auto;}
+    .common_function .box .preview{width:100%;padding:30px;}
+
+    .group_box{}
+    .group_box + .group_box{margin-top:30px;}
+    .group_box .group_tit{font-size:16px;margin-bottom:15px;font-weight:bold;}
+    .group_box .btn{margin-bottom:5px;}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    Prism.highlightAll();
+});
+</script>
+<style>
+:root {
+    --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+    --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+    --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+}
+</style>
+</head>
+<body>
+<div id="wrap" class="wrap">
+<!-- eniter wrap -->
+<div id="guide_wrap">
+	<div class="guide_links">
+		<a href="/resources/static/html/index.html">사용자 파일 목록</a>
+		<a href="/resources/static/html/notice.html">개발참고사항</a>
+		<a href="/resources/static/html/guide_js.html">가이드(JS)</a>
+		<a href="/resources/static/html/form.html" class="active">Form html</a>
+	</div>
+	<div class="header">
+		<h1>Form html</h1>
+	</div>
+
+	<div class="common_function">
+        <div class="box">
+			<div class="preview form-container grid_grid4">
+                <div class="card form_area">
+                    <div class="card-body">
+                        <div class="group_box">
+                            <div class="group_tit">버튼컬러</div>
+                            <div class="group_cnt">
+                                <button class="btn btn_type6 btn_black" type="button">BUTTON</button>
+                                <button class="btn btn_type6 btn_black_line" type="button">BUTTON</button>
+                                <button class="btn btn_type6 btn_theme" type="button">SETTING COLOR</button>
+                                <button class="btn btn_type6 btn_theme_line" type="button">SETTING COLOR</button>
+                                <button class="btn btn_type6 btn_red" type="button">BUTTON</button>
+                                <button class="btn btn_type6 btn_red_line" type="button">BUTTON</button>
+                                <button class="btn btn_type6 btn_gray" type="button">BUTTON</button>
+                                <button class="btn btn_type6 btn_gray_line" type="button">BUTTON</button>
+                                <button class="btn btn_type6 btn_lblue" type="button">BUTTON</button>
+                                <button class="btn btn_type6" type="button" disabled>DISABLED BUTTON</button>
+                            </div>
+                        </div>
+
+                        <div class="group_box">
+                            <div class="group_tit">글자수대로  btn_inline</div>
+                            <div class="group_cnt">
+                                <button class="btn btn_type1 btn_inline btn_theme" type="button">TYPE1 H64 - 56</button>
+                                <button class="btn btn_type2 btn_inline btn_theme" type="button">TYPE2 H60 - 54</button>
+                                <button class="btn btn_type3 btn_inline btn_theme" type="button">TYPE3 H58 - 46</button>
+                                <button class="btn btn_type4 btn_inline btn_theme" type="button">TYPE4 H54 - 16</button>
+                                <button class="btn btn_type5 btn_inline btn_theme" type="button">TYPE5 H46 - 46</button>
+                                <button class="btn btn_type6 btn_inline btn_theme" type="button">TYPE6 H38 - 36</button>
+                            </div>
+                        </div>
+
+                        <div class="group_box">
+                            <div class="group_tit">글자수대로 아이콘  btn_inline btn_icon</div>
+                            <div class="group_cnt">
+                                <button class="btn btn_type1 btn_inline btn_icon btn_theme" type="button">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    <span>TYPE1 ICON</span>
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                </button>
+                                <button class="btn btn_type2 btn_inline btn_icon btn_theme" type="button">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    <span>TYPE2 ICON</span>
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                </button>
+                                <button class="btn btn_type3 btn_inline btn_icon btn_theme" type="button">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    <span>TYPE3 ICON</span>
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                </button>
+                                <button class="btn btn_type4 btn_inline btn_icon btn_theme" type="button">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    <span>TYPE4 ICON</span>
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                </button>
+                                <button class="btn btn_type5 btn_inline btn_icon btn_theme" type="button">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    <span>TYPE5 ICON</span>
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                </button>
+                                <button class="btn btn_type6 btn_inline btn_icon btn_theme" type="button">
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    <span>TYPE6 ICON</span>
+                                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="group_box">
+                            <div class="group_tit">좌우 100% form_btns btn_fit</div>
+                            <div class="group_cnt">
+                                <div class="form_btns btn_fit">
+                                    <button class="btn btn_type1 btn_theme" type="button">
+                                        TYPE1 ICON
+                                    </button>
+                                    <button class="btn btn_type2 btn_theme" type="button">
+                                        TYPE2 ICON
+                                    </button>
+                                    <button class="btn btn_type3 btn_theme" type="button">
+                                        TYPE3 ICON
+                                    </button>
+                                    <button class="btn btn_type4 btn_theme" type="button">
+                                        TYPE4 ICON
+                                    </button>
+                                    <button class="btn btn_type5 btn_theme" type="button">
+                                        TYPE5 ICON
+                                    </button>
+                                    <button class="btn btn_type6 btn_theme" type="button">
+                                        TYPE6 ICON
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group_box">
+                            <div class="group_tit">좌우 100% 아이콘 form_btns btn_fit</div>
+                            <div class="group_cnt">
+                                <div class="form_btns btn_fit">
+                                    <button class="btn btn_type1 btn_icon btn_theme" type="button">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                        <span>TYPE1 ICON</span>
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    </button>
+                                    <button class="btn btn_type2 btn_icon btn_theme" type="button">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                        <span>TYPE2 ICON</span>
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    </button>
+                                    <button class="btn btn_type3 btn_icon btn_theme" type="button">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                        <span>TYPE3 ICON</span>
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    </button>
+                                    <button class="btn btn_type4 btn_icon btn_theme" type="button">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                        <span>TYPE4 ICON</span>
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    </button>
+                                    <button class="btn btn_type5 btn_icon btn_theme" type="button">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                        <span>TYPE5 ICON</span>
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    </button>
+                                    <button class="btn btn_type6 btn_icon btn_theme" type="button">
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                        <span>TYPE6 ICON</span>
+                                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#fff"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group_box">
+                            <div class="group_tit">고정 사이즈</div>
+                            <div class="group_cnt">
+                                <button class="btn btn_type1 btn_theme" type="button">
+                                    TYPE1 ICON
+                                </button>
+                                <button class="btn btn_type2 btn_theme" type="button">
+                                    TYPE2 ICON
+                                </button>
+                                <button class="btn btn_type3 btn_theme" type="button">
+                                    TYPE3 ICON
+                                </button>
+                                <button class="btn btn_type4 btn_theme" type="button">
+                                    TYPE4 ICON
+                                </button>
+                                <button class="btn btn_type5 btn_theme" type="button">
+                                    TYPE5 ICON
+                                </button>
+                                <button class="btn btn_type6 btn_theme" type="button">
+                                    TYPE6 ICON
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="group_box">
+                            <div class="group_tit">PC style 고정 (mobile로 변환시 변경X)</div>
+                            <div class="group_cnt">
+                                <div class="form_btns btn_fit">
+                                    <button class="btn btn_type1 btn_fixed btn_theme" type="button">
+                                        TYPE1 ICON
+                                    </button>
+                                    <button class="btn btn_type2 btn_fixed btn_theme" type="button">
+                                        TYPE2 ICON
+                                    </button>
+                                    <button class="btn btn_type3 btn_fixed btn_theme" type="button">
+                                        TYPE3 ICON
+                                    </button>
+                                    <button class="btn btn_type4 btn_fixed btn_theme" type="button">
+                                        TYPE4 ICON
+                                    </button>
+                                    <button class="btn btn_type5 btn_fixed btn_theme" type="button">
+                                        TYPE5 ICON
+                                    </button>
+                                    <button class="btn btn_type6 btn_fixed btn_theme" type="button">
+                                        TYPE6 ICON
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="group_box">
+                            <div class="group_tit">글자수대로 아이콘  btn_inline btn_icon</div>
+                            <div class="group_cnt">
+                                
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script>
+
+</script>
+
+</div><!-- //wrap -->
+</body>
+</html>

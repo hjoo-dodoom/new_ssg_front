@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden home_mobile_show">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="subpage_title_center">
+                    <h2>장바구니</h2>
+                    <div class="page_step">
+                        <div class="step on">01 장바구니</div>
+                        <div class="step">02 결제하기</div>
+                        <div class="step">03 주문완료</div>
+                    </div>
+                </div>
+
+                <div class="mobile_address_basic">
+                    <div class="address_basic">
+                        <div class="tit">기본배송지</div>
+                        <div class="cnt">
+                            <div class="empty">등록된 배송지가 없습니다.</div>
+                            <div class="name">홍길동 / 010-1234-1234</div>
+                            <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                        </div>
+                        <div class="form_btns btn_fit">
+                            <button type="button" class="btn btn_type5 btn_black_line" onclick="openLayer('#address_info')">나의 배송지</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order_wrap">
+                    <div class="order_content">
+                        
+                        <div class="cart_table cart_border label_control">
+                            <div class="table_title">
+                                <div class="l">
+                                    <h3>장바구니(2)</h3>
+                                    <label class="checkbox checkbox_type2">
+                                        <input type="checkbox" class="check_all">
+                                        <span class="ck_icon"></span>
+                                        전체
+                                    </label>
+                                </div>
+                                <div class="r">
+                                    <button type="button" class="table_remove">선택상품 삭제</button>
+                                </div>
+                            </div>
+
+                            <table>
+                                <colgroup>
+                                    <col style="width:2.8rem;">
+                                    <col>
+                                    <col style="width:17rem;">
+                                    <col>
+                                    <col style="width:13.2rem;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="th_check">
+                                            <label class="checkbox checkbox_type2 single">
+                                                <input type="checkbox" class="check_all">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </th>
+                                        <th class="th_product">상품정보</th>
+                                        <th class="th_lot">수량</th>
+                                        <th class="th_price">주문금액</th>
+                                        <th class="th_btns">선택</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 상품없음 -->
+                                    <tr>
+                                        <td colspan="9999">
+                                            <div class="list_empty size_lg">
+                                                <div class="empty">장바구니에 담긴 상품이 없습니다.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- //상품없음 -->
+                                    <tr>
+                                        <td class="td_check">
+                                            <label class="checkbox checkbox_type2 single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td class="td_product">
+                                            <div class="product_info">
+                                                <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                                <div class="prd_cnt">
+                                                    <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                                    <div class="options">
+                                                        <div class="option">레드/스몰</div>
+                                                    </div>
+                                                    <div class="option_change"><button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td_lot">
+                                            <button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button>
+                                            <div class="lot_box lot_change">
+                                                <div class="lot_control lot_event">
+                                                    <button type="button" class="minus" disabled>수량 빼기</button><!-- 로드시 수량이 1이면 disabled추가 -->
+                                                    <input type="tel" value="1" db-count="1" limit="3"><!-- limit 재고수량 -->
+                                                    <button type="button" class="plus">수량 추가</button><!-- 로드시 수량과 제한 재고수량이 같으면 disabled추가 -->
+                                                </div>
+                                                <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
+                                            </div>
+                                        </td>
+                                        <td class="td_price">1,200,000원</td>
+                                        <td class="td_btns">
+                                            <button class="btn_product_remove" type="button">상품삭제</button>
+                                            <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
+                                            <button class="btn btn_type5 btn_gray_line" type="button">선물하기</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_check">
+                                            <label class="checkbox checkbox_type2 single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td class="td_product">
+                                            <div class="product_info">
+                                                <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                                <div class="prd_cnt">
+                                                    <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                                    <div class="options">
+                                                        <div class="option">블랙/라지</div>
+                                                    </div>
+                                                    <div class="option_change"><button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td_lot">
+                                            <button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button>
+                                            <div class="lot_box lot_change">
+                                                <div class="lot_control lot_event">
+                                                    <button type="button" class="minus" disabled>수량 빼기</button>
+                                                    <input type="tel" value="1" db-count="1" limit="3"><!-- limit 재고수량 -->
+                                                    <button type="button" class="plus">수량 추가</button>
+                                                </div>
+                                                <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
+                                            </div>
+                                        </td>
+                                        <td class="td_price">1,200,000원</td>
+                                        <td class="td_btns">
+                                            <button class="btn_product_remove" type="button">상품삭제</button>
+                                            <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
+                                            <button class="btn btn_type5 btn_gray_line" type="button">선물하기</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr_calc">
+                                        <td colspan="5" class="td_calc">
+                                            <div class="product_calc">
+                                                1,200,000원 + 2,500원(배송비) - 2,000(할인) = <strong>1,200,500원</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td class="td_check">
+                                            <label class="checkbox checkbox_type2 single">
+                                                <input type="checkbox">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td class="td_product">
+                                            <div class="product_info">
+                                                <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                                <div class="prd_cnt">
+                                                    <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                                    <div class="options">
+                                                        <div class="option">레드/스몰</div>
+                                                    </div>
+                                                    <div class="option_change"><button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td_lot">
+                                            <button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button>
+                                            <div class="lot_box lot_change">
+                                                <div class="lot_control lot_event">
+                                                    <button type="button" class="minus" disabled>수량 빼기</button>
+                                                    <input type="tel" value="1" db-count="1" limit="3"><!-- limit 재고수량 -->
+                                                    <button type="button" class="plus">수량 추가</button>
+                                                </div>
+                                                <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
+                                            </div>
+                                        </td>
+                                        <td class="td_price">1,200,000원</td>
+                                        <td class="td_btns">
+                                            <button class="btn_product_remove" type="button">상품삭제</button>
+                                            <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
+                                            <button class="btn btn_type5 btn_gray_line" type="button">선물하기</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="tr_calc">
+                                        <td colspan="5" class="td_calc">
+                                            <div class="product_calc">
+                                                1,200,000원 + 2,500원(배송비) = <strong>1,202,500원</strong>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form_desc">
+                            <ul class="dot">
+                                <li>쇼핑백 상품은 최대 100개까지 담을 수 있습니다.</li>
+                                <li>쇼핑백에 담긴 상품은 30일간 보관 후 삭제됩니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="order_aside cart_aside">
+                        <div class="address_basic">
+                            <div class="tit">기본배송지</div>
+                            <div class="cnt">
+                                <div class="empty">등록된 배송지가 없습니다.</div>
+                                <div class="name">홍길동 / 010-1234-1234</div>
+                                <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호 </div>
+                            </div>
+                            <div class="form_btns btn_fit">
+                                <button type="button" class="btn btn_type5 btn_black_line" onclick="openLayer('#address_info')">나의 배송지</button>
+                            </div>
+                        </div>
+                        <div class="price_detail">
+                            <div class="item">
+                                <div class="tit">총 상품금액</div>
+                                <div class="cnt">1,254,000원</div>
+                            </div>
+                            <div class="item">
+                                <div class="tit">총 배송비</div>
+                                <div class="cnt">2,500원</div>
+                            </div>
+                            <div class="item total">
+                                <div class="tit">총 주문금액</div>
+                                <div class="cnt">1,256,500원</div>
+                            </div>
+                            <div class="item mileage">
+                                <div class="tit">적립예정 마일리지</div>
+                                <div class="cnt"><span>100</span></div>
+                            </div>
+                        </div>
+                        <div class="oa_btns btns_fixed_mobile">
+                            <button class="btn btn_type2 btn_gray_line" type="button">선물하기</button>
+                            <button class="btn btn_type2 btn_theme" type="button">선택상품 주문</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 배송지 정보 -->
+    <div id="address_info" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">배송지 정보</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content">
+                <div class="form_btns btn_fit">
+                    <button type="button" class="btn btn_type4 btn_lblue" onclick="openLayer('#address_form')">
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8a.5.5 0 0 1-.5.5h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 1 1 0-1h5v-5a.5.5 0 1 1 1 0v5h5a.5.5 0 0 1 .5.5Z" fill="#000"/></svg>
+                        <span>신규배송지 등록</span>
+                    </button>
+                </div>
+                <div class="label_check_list layer_scroll" data-simplebar>
+                    <div class="items">
+                        <div class="list_empty">
+                            <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="cate">기본 배송지</div>
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button">수정</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button">수정</button></div>
+                                        <div><button type="button">삭제</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button">수정</button></div>
+                                        <div><button type="button">삭제</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom_check">
+                    <label class="checkbox checkbox_type1">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        기본 배송지로 등록
+                    </label>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 정보 -->
+    
+    <!-- 배송지 등록 수정 -->
+    <div id="address_form" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">배송지 등록</div>
+            <div class="layer_default_title">배송지 수정</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div class="form form_type1">
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">받는사람 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="홍길동">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">휴대폰 번호 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="tel" value="01012341234" placeholder="숫자만 입력">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row" id="adsInput1">
+                        <div class="row_top">
+                            <div class="tit required">배송지 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="12345" placeholder="주소를 검색해 주세요" name="i_address_zip" class="i_address_zip" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div> 
+                            <button class="btn btn_gray btn_type5 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="서울시 구로구 삼성로11(1234)" name="i_address_basic" class="i_address_basic" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div> 
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="101동 101호" placeholder="상세주소" name="i_address_detail" class="i_address_detail">
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_black">확인</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 등록 수정 -->
+
+
+    <!-- 다음주소 -->
+    <div id="ads_layer" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주소검색</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div id="daumAdressLayer">
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //다음주소 -->
+
+    <!-- 옵션변경 -->
+    <div id="change_option" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">옵션변경</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content">
+                <div class="options">
+                    <div class="form form_type1">
+                        <div class="row">
+                            <div class="input_group">
+                                <div class="input">
+                                    <div class="design_select type3">
+                                        <select name="" id="" onchange="option_required(this, 1)" select-required product-option="modal_prd_option_required1">
+                                            <option value="">색상 선택</option>
+                                            <option value="검정">검정</option>
+                                            <option value="노랑">노랑</option>
+                                            <option value="파랑" disabled>파랑 (품절)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_group">
+                                <div class="input">
+                                    <div class="design_select type3">
+                                        <select name="" id="" onchange="option_required(this, 2)" select-required product-option="modal_prd_option_required2">
+                                            <option value="">사이즈 선택</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_group">
+                                <div class="input">
+                                    <div class="design_select type3">
+                                        <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="modal_prd_option_required3">
+                                            <option value="">길이 선택</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns btn_fit between_md">
+                    <a href="javascript:;" class="btn btn_black_line btn_type4" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:;" class="btn btn_black btn_type4">적용</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <script>
+        //옵션 선택
+        function option_required(elm, num, last){
+            const targetNum = num + 1;
+            const targetModalSelect = document.querySelector(`[product-option = 'modal_prd_option_required`+targetNum+`']`);
+            const changedValue = elm.options[elm.selectedIndex].value;
+        
+            //실제 옵션 삽입 로직으로 교체
+            let options = ''
+            if(targetNum == 2){
+                options = `
+                    <option value="라지">라지</option>
+                    <option value="미디움">미디움</option>
+                    <option value="스몰" disabled>스몰[품절]</option>
+                `;
+            }else if(targetNum == 3){
+                options = `
+                    <option value="20cm">20cm (재고 20)</option>
+                    <option value="10cm">10cm (재고 30)</option>
+                    <option value="5cm" disabled>5cm [품절]</option>
+                `;
+            }
+            
+            if(last){//필수 마지막 셀렉트
+                let selectedOptions = [];
+                document.querySelectorAll('.options [select-required]').forEach(select => {
+                    selectedOptions.push(select.selectedOptions[0].value);
+                });
+        
+                //옵션추가 로직
+        
+                //셀렉트 selected, option 초기화
+                document.querySelectorAll('[select-required]').forEach(select => {
+                    //필수 옵션 placeholder값 제외 지움 (첫번째 필수 셀렉트박스 제외)
+                    document.querySelectorAll('.goods_info [select-required]').forEach((el, index) => {
+                        if (index > 0) {
+                            while (el.options.length > 1) {
+                                el.remove(1);
+                            }
+                        }
+                    });
+                    document.querySelectorAll('.options [select-required]').forEach((el, index) => {
+                        console.log(el)
+                        if (index > 0) {
+                            while (el.options.length > 1) {
+                                el.remove(1);
+                            }
+                        }
+                    });
+        
+                    const optionRequired = choicesInstances.get(select.getAttribute('product-option'));
+                    optionRequired.removeActiveItems()
+                    optionRequired.destroy();
+                    optionRequired.init();
+                });
+                box_alert(selectedOptions)
+            }else{
+                //선택한 다음 셀렉트 업데이트 후  셀렉트 초기화
+                targetModalSelect.insertAdjacentHTML('beforeend', options); 
+                const targetModalSelectChoices = choicesInstances.get(`modal_prd_option_required`+targetNum+``);
+                if (targetModalSelectChoices) {
+                    targetModalSelectChoices.destroy();
+                    targetModalSelectChoices.init();
+                }
+            }
+        }
+    </script>
+    <!-- //옵션변경 -->
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+function lotChange(button){
+    const input = button.closest('.lot_box').querySelector('input');
+    input.setAttribute('db-count', input.value)
+}
+
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+var ads_layer = document.getElementById('ads_layer');
+
+function execDaumPostcode(elm) {
+    const target = document.getElementById(elm)
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            } else {
+            }
+            target.querySelector(".i_address_zip").value = data.zonecode;
+            target.querySelector(".i_address_basic").value = addr;
+            target.querySelector(".i_address_detail").value= '';
+            target.querySelector(".i_address_detail").focus();
+            closeLayer(ads_layer);
+        },
+        width : '100%',
+        height : '100%',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>
+</body>
+</html>

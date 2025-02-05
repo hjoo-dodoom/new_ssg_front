@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="mypage_wrap">
+
+                    <!-- 마이페이지 피시 메뉴  -->
+                    <div id="mypage_aside" class="mypage_aside">
+                        <script>
+                            var includePath = "/resources/static/inc/mypage_aside.html";
+                            includeFile(includePath, 'mypage_aside');
+                        </script>
+                    </div>
+
+                    <div class="mypage_content">
+                        <div class="order_status">
+                            <div class="title">최근 3개월 배송현황</div>
+                            <div class="status_arrow">
+                                <div class="box">
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="count">0</div>
+                                            <div class="tit">주문접수</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="count">2</div>
+                                            <div class="tit">배송준비중</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="count">0</div>
+                                            <div class="tit">배송시작</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="count">0</div>
+                                            <div class="tit">배송중</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="count">0</div>
+                                            <div class="tit">배송완료</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="status_between">
+                                <div class="box">
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">결제대기</div>
+                                            <div class="count">0</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">취소</div>
+                                            <div class="count">0</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">반품</div>
+                                            <div class="count">10</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">교환</div>
+                                            <div class="count">0</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="box v_pc">
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">포인트</div>
+                                            <div class="count">1,000,000P</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">마일리지</div>
+                                            <div class="count">1,000,000M</div>
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <div class="tit">사용가능쿠폰</div>
+                                            <div class="count">0개</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- 피시 콘텐츠 -->
+                        <div class="mypage_main">
+                            <div class="mp_box">
+                                <div class="table_top">
+                                    <div class="title">최근 7일 주문내역</div>
+                                    <div class="r">
+                                        <a href="javascript:;" class="mp_more">바로가기</a>
+                                    </div>
+                                </div>
+                                <div class="mp_product">
+                                    <div class="table">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:16rem;">
+                                                <col>
+                                                <col style="width:17rem;">
+                                                <col style="width:14rem;">
+                                                <col style="width:12rem;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">상품정보</th>
+                                                    <th>주문금액</th>
+                                                    <th colspan="2">진행상황</th>
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="5" class="list_empty">
+                                                        <div class="empty">내역이 없습니다.</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                            <tbody>
+                                                <tr class="tr_info">
+                                                    <td colspan="5">
+                                                        <div class="group_info">
+                                                            <div class="l">
+                                                                <div class="date">2024.10.23</div>
+                                                                <div class="price">1,200,000원</div>
+                                                            </div>
+                                                            <div class="r">
+                                                                <div class="order_num">
+                                                                    <div class="tit">체결번호</div>
+                                                                    <a href="javascript:;" class="num">K00000063733</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_thum">
+                                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></a>
+                                                    </td>
+                                                    <td class="td_product">
+                                                        <div class="prd_cnt">
+                                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                            <div class="options">
+                                                                <div class="option">레드/스몰</div>
+                                                                <div class="lot">1개</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_price">1,200,000원</td>
+                                                    <td class="td_status">
+                                                        <div class="status">
+                                                            주문접수
+                                                            <span class="sub">(수신자미확인)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_btns td_pr0">
+                                                        <button class="btn btn_type5 btn_black_line" type="button">주문취소</button>
+                                                        <button class="btn btn_type5 btn_gray_line" type="button" onclick="openLayer('#gift_detail');">문의하기</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_thum">
+                                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></a>
+                                                    </td>
+                                                    <td class="td_product">
+                                                        <div class="prd_cnt">
+                                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                            <div class="options">
+                                                                <div class="option">레드/스몰</div>
+                                                                <div class="lot">1개</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_price">1,200,000원</td>
+                                                    <td class="td_status">
+                                                        <div class="status">
+                                                            주문접수
+                                                            <span class="sub">(수신자미확인)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_btns td_pr0">
+                                                        <button class="btn btn_type5 btn_black_line" type="button">주문취소</button>
+                                                        <button class="btn btn_type5 btn_gray_line" type="button" onclick="openLayer('#gift_detail');">문의하기</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                            <tbody>
+                                                <tr class="tr_info">
+                                                    <td colspan="5">
+                                                        <div class="group_info">
+                                                            <div class="l">
+                                                                <div class="date">2024.10.23</div>
+                                                                <div class="price">1,200,000원</div>
+                                                                <div class="gift">
+                                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.875 5.626h-2.74c.03-.026.061-.05.09-.078A2.306 2.306 0 0 0 15 3.874a2.546 2.546 0 0 0-2.622-2.623 2.308 2.308 0 0 0-1.675.774c-.292.339-.529.72-.703 1.132a4.292 4.292 0 0 0-.703-1.132 2.307 2.307 0 0 0-1.675-.774A2.549 2.549 0 0 0 5 3.874a2.307 2.307 0 0 0 .774 1.674c.03.026.061.05.092.078H3.125a1.25 1.25 0 0 0-1.25 1.25v2.5a1.25 1.25 0 0 0 1.25 1.25v5a1.25 1.25 0 0 0 1.25 1.25h11.25a1.25 1.25 0 0 0 1.25-1.25v-5a1.25 1.25 0 0 0 1.25-1.25v-2.5a1.25 1.25 0 0 0-1.25-1.25Zm-5.234-2.773a1.07 1.07 0 0 1 .78-.351h.04a1.298 1.298 0 0 1 1.289 1.333 1.07 1.07 0 0 1-.352.782c-.741.656-1.971.887-2.734.968.094-.827.352-2.03.977-2.732Zm-5.007.029a1.3 1.3 0 0 1 .912-.38h.038a1.07 1.07 0 0 1 .782.35c.655.741.886 1.97.968 2.729-.76-.078-1.988-.313-2.729-.968a1.07 1.07 0 0 1-.351-.781 1.297 1.297 0 0 1 .376-.95h.004ZM3.125 6.876h6.25v2.5h-6.25v-2.5Zm1.25 3.75h5v5h-5v-5Zm11.25 5h-5v-5h5v5Zm1.25-6.25h-6.25v-2.5h6.25v2.5Z" fill="#F22C2D"/></svg>
+                                                                    GIFT
+                                                                </div>
+                                                            </div>
+                                                            <div class="r">
+                                                                <div class="order_num">
+                                                                    <div class="tit">체결번호</div>
+                                                                    <a href="javascript:;" class="num">K00000063733</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_thum">
+                                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                                    </td>
+                                                    <td class="td_product">
+                                                        <div class="prd_cnt">
+                                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                            <div class="options">
+                                                                <div class="option">레드/스몰</div>
+                                                                <div class="lot">1개</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_price">1,200,000원</td>
+                                                    <td class="td_status">
+                                                        <div class="status">
+                                                            주문접수
+                                                            <span class="sub">(수신자미확인)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_btns td_pr0">
+                                                        <button class="btn btn_type5 btn_black_line" type="button">주문취소</button>
+                                                        <button class="btn btn_type5 btn_gray_line" type="button" onclick="openLayer('#gift_detail');">문의하기</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                            <tbody>
+                                                <tr class="tr_info">
+                                                    <td colspan="5">
+                                                        <div class="group_info">
+                                                            <div class="l">
+                                                                <div class="date">2024.10.23</div>
+                                                                <div class="price">1,200,000원</div>
+                                                                <div class="multi">
+                                                                    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.475 5.166 10.6 1.405a1.24 1.24 0 0 0-1.2 0L2.525 5.168a1.25 1.25 0 0 0-.65 1.094v7.472a1.25 1.25 0 0 0 .65 1.093L9.4 18.591a1.24 1.24 0 0 0 1.2 0l6.875-3.764a1.25 1.25 0 0 0 .65-1.093V6.263a1.25 1.25 0 0 0-.65-1.097ZM10 2.498l6.277 3.438-2.326 1.273-6.278-3.437L10 2.498Zm0 6.875L3.723 5.936l2.649-1.45 6.276 3.437L10 9.373ZM3.125 7.03l6.25 3.42v6.702l-6.25-3.418V7.03Zm13.75 6.701-6.25 3.421v-6.699l2.5-1.368v2.788a.625.625 0 1 0 1.25 0V8.402l2.5-1.371V13.73Z" fill="#576597"/></svg>
+                                                                    여러곳 배송하기
+                                                                </div>
+                                                            </div>
+                                                            <div class="r">
+                                                                <div class="order_num">
+                                                                    <div class="tit">체결번호</div>
+                                                                    <a href="javascript:;" class="num">K00000063733</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td_thum">
+                                                        <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image4.jpg');"></a>
+                                                    </td>
+                                                    <td class="td_product">
+                                                        <div class="prd_cnt">
+                                                            <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                            <div class="options">
+                                                                <div class="option">레드/스몰</div>
+                                                                <div class="lot">1개</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_price">1,200,000원</td>
+                                                    <td class="td_status">
+                                                        <div class="status">
+                                                            주문접수
+                                                            <span class="sub">(수신자미확인)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="td_btns td_pr0">
+                                                        <button class="btn btn_type5 btn_black_line" type="button">주문취소</button>
+                                                        <button class="btn btn_type5 btn_gray_line" type="button" onclick="openLayer('#gift_detail');">문의하기</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mp_box">
+                                <div class="table_top">
+                                    <div class="title">배송/주문문의</div>
+                                    <div class="r">
+                                        <a href="javascript:;" class="mp_more">바로가기</a>
+                                    </div>
+                                </div>
+                                <div class="board_table">
+                                    <div class="table">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:14rem;">
+                                                <col>
+                                                <col style="width:12rem;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>유형</th>
+                                                    <th>제목</th>
+                                                    <th>답변</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>배송문의</td>
+                                                    <td>
+                                                        <div class="subject">
+                                                            <a href="javascript:;">배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>답변대기</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>배송문의</td>
+                                                    <td>
+                                                        <div class="subject">
+                                                            <a href="javascript:;">배송/주문문의 작성한 제목이 표기됩니다</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>답변대기</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="9999">
+                                                        <div class="list_empty size_sm">
+                                                            <div class="empty">배송/주문 문의 내역이 없습니다.</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mp_box">
+                                <div class="table_top">
+                                    <div class="title">1:1 문의</div>
+                                    <div class="r">
+                                        <a href="javascript:;" class="mp_more">바로가기</a>
+                                    </div>
+                                </div>
+                                <div class="board_table">
+                                    <div class="table">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:14rem;">
+                                                <col>
+                                                <col style="width:12rem;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>유형</th>
+                                                    <th>제목</th>
+                                                    <th>답변</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>유형</td>
+                                                    <td>
+                                                        <div class="subject">
+                                                            <a href="javascript:;">배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다배송/주문문의 작성한 제목이 표기됩니다</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>답변대기</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>유형</td>
+                                                    <td>
+                                                        <div class="subject">
+                                                            <a href="javascript:;">배송/주문문의 작성한 제목이 표기됩니다</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>답변대기</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="9999">
+                                                        <div class="list_empty size_sm">
+                                                            <div class="empty">1:1 문의 내역이 없습니다.</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //피시 콘텐츠 -->
+
+                        <!-- 모바일 콘텐츠 -->
+                        <div class="mypge_links">
+                            <ul>
+                                <li><a href="javascript:;">나의 주문</a>
+                                    <ul>
+                                        <li><a href="javascript:;" class="active">주문배송조회</a></li>
+                                        <li><a href="javascript:;">취소/교환/반품</a></li>
+                                        <li><a href="javascript:;">취합 후 결제</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:;">나의 혜택</a>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="tit">포인트</div>
+                                                <div class="item_value">
+                                                    <strong>보유</strong>
+                                                    <span>1,000,000P</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li><a href="javascript:;">포인트 선물하기</a></li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="tit">마일리지</div>
+                                                <div class="item_value">
+                                                    <strong>보유</strong>
+                                                    <span>550,000M</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="tit">쿠폰</div>
+                                                <div class="item_value">
+                                                    <strong>사용가능쿠폰</strong>
+                                                    <span>0개</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:;">나의 활동</a>
+                                    <ul>
+                                        <li><a href="javascript:;">나의 찜</a></li>
+                                        <li><a href="javascript:;">나의 이벤트</a></li>
+                                        <li><a href="javascript:;">상품요청</a></li>
+                                        <li><a href="javascript:;">상품문의</a></li>
+                                        <li><a href="javascript:;">배송/주문 문의</a></li>
+                                        <li><a href="javascript:;">1:1 문의</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:;">나의 정보</a>
+                                    <ul>
+                                        <li><a href="javascript:;">정보수정</a></li>
+                                        <li><a href="javascript:;">환불계좌관리</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:;">고객센터</a>
+                                    <ul>
+                                        <li><a href="javascript:;">공지사항</a></li>
+                                        <li><a href="javascript:;">FAQ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //모바일 콘텐츠 -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+<!-- 배송/주문문의 -->
+<div id="gift_detail" class="layer_popup layer_default">
+    <div class="layer_content width_lg">
+        <div class="layer_default_title">배송/주문문의</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <form action="">
+                <div class="mp_box">
+                    <div class="order_product_info inquiry_form_info">
+                        <div class="num">O000000002805472</div>
+                        <div class="product">LG전자] 스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_27ART10DS</div>
+                        <div class="options">
+                            <div class="option">레드/스몰</div>
+                            <div class="lot">1개</div>
+                        </div>
+                    </div>
+                    <div class="table_type3 od_table form form_type4">
+                        <table class="bd0">
+                            <colgroup>
+                                <col style="width:12rem;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>답변알림</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input size_20 size_mb_100">
+                                                <input type="text" value="010-1234-1234">
+                                            </div>
+                                            <div class="size_mb_100">
+                                                <label class="checkbox checkbox_type2">
+                                                    <input type="checkbox">
+                                                    <span class="ck_icon"></span>
+                                                    답변알림받기
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>문의유형</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <div class="design_select type5">
+                                                    <select name="" id="">
+                                                        <option value="">문의유형을 선택하세요.(필수)</option>
+                                                        <option value="배송">배송</option>
+                                                        <option value="반품">반품</option>
+                                                        <option value="교환">교환</option>
+                                                        <option value="기타">기타</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>문의제목</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <input type="text" class="max_text" maxlength="100">
+                                            </div>
+                                            <span class="max_len"><b>0</b>/100</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>문의내용</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <div class="input">
+                                                <textarea name="" id=""class="max_text size_lg" maxlength="1000"></textarea>
+                                            </div>
+                                            <span class="max_len"><b>0</b>/1000</span>
+                                        </div>
+                                        <div class="photo_upload">
+                                            <div class="photo_item">
+                                                <label>
+                                                    <input type="file" accept="image/*" file-type="JPG, JPEG, PNG, GIF,jpg, jpeg, png, gif" max-size="10" onchange="previewImage(this)">
+                                                    <span class="preview" style="display:none;"></span>
+                                                    <button type="button" class="photo_remove" style="display:none;">삭제</button>
+                                                </label>
+                                            </div>
+                                            <div class="photo_item">
+                                                <label>
+                                                    <input type="file" accept="image/*" file-type="JPG, JPEG, PNG, GIF,jpg, jpeg, png, gif" max-size="10" onchange="previewImage(this)">
+                                                    <span class="preview" style="display:none;"></span>
+                                                    <button type="button" class="photo_remove" style="display:none;">삭제</button>
+                                                </label>
+                                            </div>
+                                            <div class="photo_item">
+                                                <label>
+                                                    <input type="file" accept="image/*" file-type="JPG, JPEG, PNG, GIF,jpg, jpeg, png, gif" max-size="10" onchange="previewImage(this)">
+                                                    <span class="preview" style="display:none;"></span>
+                                                    <button type="button" class="photo_remove" style="display:none;">삭제</button>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <ul class="dot">
+                                            <li>사진을 등록하면 상품 상태를 확인하는 데 도움이 됩니다. *최대 3개, 개당 10MB까지 첨부 가능합니다.(JPG, JPEG, PNG, GIF만 첨부 가능)</li>
+                                            <li>개인정보(이름, 얼굴 전체 사진, 주소, 주민등록번호 등)가 포함되지 않도록 주의하여 사진을 첨부해 주시기 바랍니다.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="check_agree">
+                    <div class="item">
+                        <label class="checkbox checkbox_type2">
+                            <input type="checkbox">
+                            <span class="ck_icon"></span>
+                            <em>개인정보 수집 및 이용에 동의합니다. <span class="red_text_color">(필수)</span></em>
+                            <button type="button" class="check_btn" onclick="openLayer('#terms_popup')">내용보기</button>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form_btns between_lg">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">목록으로</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_theme">신청하기</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //배송/주문문의 -->
+
+<!-- 문의 약관 -->
+<div id="terms_popup" class="layer_popup layer_default">
+    <div class="layer_content  width_lg height_md">
+        <div class="layer_default_title">개인정보 수집 및 이용</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+            <div class="layer_section">
+                <div class="ls_title">개인정보 수집 및 이용에 대한 동의</div>
+                <div class="table_response">
+                    <table>
+                        <colgroup>
+                            <col style="width:25%;">
+                            <col style="width:25%;">
+                            <col style="width:25%;">
+                            <col style="width:25%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>수집항목</th>
+                                <th>수집목적</th>
+                                <th>보유 및 이용기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="mb_tit">구분</span><span class="mb_cnt">상품요청</span></td>
+                                <td class="align_left"><span class="mb_tit">수집항목</span><span class="mb_cnt">아이디, 이름, 휴대폰번호</span></td>
+                                <td><span class="mb_tit">수집목적</span><span class="mb_cnt">품질향상 등을 위한 원활환 의사소통의 경로 확보</span></td>
+                                <td><span class="mb_tit">보유 및 이용기간</span><span class="mb_cnt"><strong class="underline fs_18">3년</strong></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="dot">
+                    <li>동의거부권에 대한 고지 : 정보주체는 개인정보 제공 동의를 거부할 권리가 있으나, 이 경우 서비스 이용이 제한될 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //문의 약관 -->
+
+</body>
+</html>

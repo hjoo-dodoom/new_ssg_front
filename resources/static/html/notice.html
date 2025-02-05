@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta charset="UTF-8">
+<meta name="author" content="">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>통합관리자 파일 목록</title>
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link href="/resources/static/dist/css/tabler.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/tabler-vendors.css" rel="stylesheet"/>
+<link href="/resources/static/dist/css/style.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css"/>
+<link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+<script src="/resources/static/dist/js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Libs JS -->
+<script src="/resources/static/dist/libs/litepicker/dist/litepicker.js?1674944402"></script>
+<!-- Tabler Core -->
+
+
+<!-- code highlight -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
+<style type="text/css">
+    *{margin:0;padding:0;font-size:12px;}
+	#guide_wrap {padding:10px}
+	table {border-collapse:collapse;border-spacing:0;}
+	table th, strong {font-weight:normal;}
+	h1{
+		margin:0 0 10px 0;
+		text-align:center;
+		font-size:2.4em;
+		color:#000
+	}
+	a {text-decoration:none;}
+	a:hover {text-decoration:underline;}
+	table {
+		width:100%;
+		margin-top:5px;
+		border-top:2px solid #1e61a8;
+	}
+	table th, table td{
+		padding:5px 7px;
+		border-left:1px solid #ccc; border-bottom:1px solid #ccc;
+	}
+	table th:rowspan + th, table td:rowspan + td{border-left:1px solid #ccc;}
+	td.lineli, th.lineli {border-left:1px solid #ccc !important;}
+	table th:first-child, table td:first-child{border-left:0 none}
+	table thead th {
+		font-family:'ngB';
+		font-size:13px;
+		color:#000;
+		border-bottom:1px solid #ccc;
+		background-color:#f2f2f2;
+	}
+	.no, .date, .work {
+		text-align:center;
+		padding:5px 0
+	}
+
+	tr.on {background-color: #f5fed0}
+
+	.lastmdate {color: #1155CC;}
+	.stand_by {color:#777;}
+	.ing, .per_2 {color:#4848D4 !important;}
+	.curr_n, .per, .end {color:#ff0000 !important;}
+
+	.division td{border-top:2px solid #7e8e9e}
+	table tr.division:first-child td{border-top:0 none;}
+	td a {text-decoration: none;}
+	pre[class*=language-]{padding:0 20px;margin:0;border-radius:0;}
+	.guide_links{display:flex;text-align:center;margin-bottom:20px;}
+	.guide_links a{flex:1 1;background-color: #ddd;color:#000;font-size:15px;font-weight:bold;padding:10px;}
+    .guide_links a + a{border-left:1px solid #ccc;}
+	.guide_links a.active{background-color:#000;color:#fff;}
+    .common_function{}
+    .common_function .box{display:flex;box-shadow: 0 0 10px rgba(0,0,0,.2);margin-top:20px;}
+    .common_function .box .dec{width:30%;background-color:#41734b;padding:20px;font-size:15px;color:#fff;}
+    .common_function .box .code{flex:1 1 auto;}
+    .common_function .box .preview{width:30%;background-color:#f1f1f1;padding:20px;}
+</style>
+</head>
+<body>
+<div id="wrap" class="wrap">
+<!-- eniter wrap -->
+<div id="guide_wrap">
+	<div class="guide_links">
+		<a href="/resources/static/html/index.html">통합관리자 파일 목록</a>
+		<a href="/resources/static/html/notice.html" class="active">개발참고사항</a>
+		<a href="/resources/static/html/guide_js.html">가이드(JS)</a>
+		<a href="/resources/static/html/form.html">Form html</a>
+	</div>
+	<div class="header">
+		<h1>가이드(JS)</h1>
+	</div>
+
+	<div class="common_function">
+		<div class="box">
+			<div class="dec">
+                개발참고사항1<br/><br/>
+                include 개발이 완료되면 해당 스크립트 삭제해주셔야 합니다.<br/>
+                header, footer
+            </div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+//로그인 제외한 모든 메인 서브 페이지
+//html include
+//헤더&푸터 개발 완료시 삭제해주세요
+function includeFile(path, targetId) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', path, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById(targetId).innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+}
+var includePath = "/resources/static/layout/header.html";
+includeFile(includePath, 'header');
+					</code>
+				</pre>
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					Prism.highlightAll({});
+				});
+				</script>
+			</div>
+		</div>
+        <div class="box">
+			<div class="dec">
+                개발참고사항2<br/><br/>
+                공통영역입니다.
+            </div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+//로그인 제외한 모든 메인 서브 페이지
+&lt;!-- 공통영역2 --&gt;
+&lt;div class="member_info"&gt;
+    &lt;div class="info"&gt;
+        &lt;span class="login_session"&gt;로그인 유지시간 &lt;strong&gt;30:00&lt;/strong&gt; &lt;button type="button" class="btn btn-xs btn-primary"&gt;연장&lt;/button&gt;&lt;/span&gt;
+        &lt;span&gt;관리권한 : 최상위관리자&lt;/span&gt;
+        &lt;span&gt;방문횟수 : 1,000&lt;/span&gt;
+        &lt;span&gt;최근방문IP : 12.1.123.12&lt;/span&gt;
+        &lt;button type="button" class="btn btn-xs btn-secondary"&gt;메뉴얼다운로드&lt;/button&gt;
+        &lt;button type="button" class="btn btn-xs btn-secondary"&gt;기본양식다운로드&lt;/button&gt;
+        &lt;button type="button" class="btn btn-xs btn-secondary"&gt;관리자정보수정&lt;/button&gt;
+        &lt;button type="button" class="btn btn-xs btn-secondary"&gt;이용약관&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;a href="javascript:;" class="logout"&gt;홍길동(admin_01)님 로그아웃&lt;/a&gt;
+        &lt;a href="javascript:;" class="home"&gt;홈으로&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 페이지 히스토리 탭 --&gt;
+&lt;div class="page-history"&gt;
+    &lt;div class="history_toggle"&gt;
+        &lt;label class="form-check form-switch"&gt;
+            &lt;span class="form-check-label"&gt;History&lt;/span&gt;
+            &lt;input id="historyUse" class="form-check-input" type="checkbox" &gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button class="close_all" type="button" title="히스토리 모두 삭제" onclick="historyRemoveAll();"&gt;히스토리 모두 삭제&lt;/button&gt;
+&lt;/div&gt;
+&lt;!-- //공통영역2 --&gt;
+					</code>
+				</pre>
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					Prism.highlightAll({});
+				});
+				</script>
+			</div>
+		</div>
+        <div class="box">
+			<div class="dec">
+                개발참고사항3<br/><br/>
+                헤더,검색,폼 디스플레이 기능은 현재 쿠키로 쓰고 있습니다.<br/>
+                페이지 로드시 딜레이가 있어 개발시 회원db에 설정값 저장해서 사용해야합니다.<br/>
+                개발완료후 해당 스크립트 삭제<br/><br/>
+                헤더 디스플레이 &lt;aside id="header"&gt;에<br/> 값에따라 <br/>header_top, header_left<br/><br/>
+                검색 디스플레이 &lt;div class="page-body"&gt;에<br/> 값에따라 <br/>search_left, search_top, search_right<br/><br/>
+                폼 디스플레이 &lt;div class="form-container"&gt;에<br/> 값에따라 <br/>grid_grid2, grid_grid3, grid_grid4<br/><br/>
+                클래스 넣어주세요.
+            </div>
+			<div class="code">
+				<pre>
+					<code class="language-go">
+//common.js
+//헤더 디스플레이
+var aside = document.querySelector('aside');
+var headerDisplayButtons = aside.querySelectorAll('aside .display_type button');
+
+headerDisplayButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        var placement = this.classList.contains('top') ? 'top' :
+                        this.classList.contains('left') ? 'left' :
+                        this.classList.contains('right') ? 'right' :
+                        this.classList.contains('bottom') ? 'bottom' : '';
+
+        if (placement) {
+            setActiveButton(button, headerDisplayButtons);
+            setPlacementClass(placement, aside);
+            setCookie('headerPlacement', placement);
+        }
+    });
+});
+var headerPlacement = getCookie('headerPlacement');
+if (headerPlacement) {
+    var button = aside.querySelector('aside .display_type button.' + headerPlacement);
+    if (button) {
+        setActiveButton(button, headerDisplayButtons);
+        setPlacementClass(headerPlacement, aside);
+    }
+}
+
+//검색 디스플레이
+var pageBody = document.querySelector('.page-body');
+var searchDisplayButtons = pageBody.querySelectorAll('.aside-search .display_type button');
+searchDisplayButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        var placement = this.classList.contains('top') ? 'top' :
+                        this.classList.contains('left') ? 'left' :
+                        this.classList.contains('right') ? 'right' :
+                        this.classList.contains('bottom') ? 'bottom' : '';
+
+        if (placement) {
+            setActiveButton(button, searchDisplayButtons);
+            setPlacementClass(placement, pageBody);
+            setCookie('searchPlacement', placement);
+        }
+    });
+});
+var searchPlacement = getCookie('searchPlacement');
+if (searchPlacement) {
+    var button = pageBody.querySelector('.aside-search .display_type button.' + searchPlacement);
+    if (button) {
+        setActiveButton(button, searchDisplayButtons);
+        setPlacementClass(searchPlacement, pageBody);
+    }
+}
+
+//폼 디스플레이   
+var formBody = document.querySelector('.form-container');
+if(formBody){
+    var formDisplayButtons = formBody.querySelectorAll('.form-container .display_type button');
+    formDisplayButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        var placement = this.classList.contains('grid4') ? 'grid4' :
+                        this.classList.contains('grid3') ? 'grid3' :
+                        this.classList.contains('grid2') ? 'grid2' : '';
+
+        if (placement) {
+            setActiveButton(button, formDisplayButtons);
+            setPlacementClass(placement, formBody);
+            setCookie('formPlacement', placement);
+        }
+    });
+    });
+    var formPlacement = getCookie('formPlacement');
+    if (formPlacement) {
+        var button = formBody.querySelector('.display_type button.' + formPlacement);
+        if (button) {
+            setActiveButton(button, formDisplayButtons);
+            setPlacementClass(formPlacement, formBody);
+        }
+    }
+}
+
+function setActiveButton(activeButton, buttons) {
+    buttons.forEach(function(button) {
+        button.classList.remove('active');
+    });
+    activeButton.classList.add('active');
+}
+
+function setPlacementClass(placement, elm) {
+    elm.classList.remove('search_top', 'search_left', 'search_right', 'search_bottom', 'header_left', 'header_top', 'grid_grid4', 'grid_grid3', 'grid_grid2');
+    if(elm === aside){
+    elm.classList.add('header_' + placement);
+    }else if(elm === pageBody){
+    elm.classList.add('search_' + placement);
+    }else if(elm === formBody){
+    elm.classList.add('grid_' + placement);
+    }
+}
+
+function setCookie(name, value) {
+    document.cookie = name + '=' + value + '; path=/';
+}
+
+function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+}
+					</code>
+				</pre>
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					Prism.highlightAll({});
+				});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div><!-- //wrap -->
+</body>
+</html>

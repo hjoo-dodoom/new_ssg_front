@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden home_mobile_show search_mobile_hidden cart_mobile_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="subpage_title_center">
+                    <h2>결제하기</h2>
+                    <div class="page_step">
+                        <div class="step">01 선물하기</div>
+                        <div class="step on">02 결제하기</div>
+                        <div class="step">03 주문완료</div>
+                    </div>
+                </div>
+
+                <div class="order_wrap">
+                    <div class="order_content">
+                        <div class="od_box">
+                            <div class="od_title">
+                                <h3>주문자 정보</h3>
+                            </div>
+                            <div class="od_table form form_type4">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:17rem">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="align_top">보내는 분</th>
+                                            <td>
+                                                <div class="address_basic">
+                                                    <div class="cnt">
+                                                        <div class="text">주문자 정보가 없습니다. 주문자 정보를 등록해주세요.</div>
+                                                    </div>
+                                                    <div class="btn_list">
+                                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_info')">등록</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="align_top">보내는 분</th>
+                                            <td>
+                                                <div class="address_basic">
+                                                    <div class="cnt">
+                                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                                    </div>
+                                                    <div class="btn_list">
+                                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_form')">변경</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="od_box">
+                            <div class="od_title">
+                                <h3>선물 받는분 정보</h3>
+                            </div>
+                            <div class="od_toggle_box">
+                                <div class="od_toggle_button">
+                                    <div class="toggle_button">
+                                        <div class="tit">배송지 1.</div>
+                                        <div class="cnt">
+                                            [12345] 서울특별시 종로구 우정국로2길 8, 1211(관철동)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="od_toggle_box">
+                                <div class="od_toggle_button">
+                                    <div class="toggle_button">
+                                        <div class="tit">배송지 2.</div>
+                                        <div class="cnt">
+                                            [12345] 서울특별시 종로구 우정국로2길 8, 1211(관철동)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="od_box">
+                            <div class="od_title">
+                                <h3>주문상품 정보 : 2개</h3>
+                            </div>
+                            <div class="product_info_list">
+                                <div class="product_info">
+                                    <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                    <div class="prd_cnt_price">
+                                        <div class="prd_cnt">
+                                            <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                            <div class="options">
+                                                <div class="option">블랙/라지</div>
+                                            </div>
+                                        </div>
+                                        <div class="prd_price">
+                                            <div class="od_price">600,000원</div>
+                                            <div class="lot">수량 <strong>1</strong>개</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_info">
+                                    <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></div>
+                                    <div class="prd_cnt_price">
+                                        <div class="prd_cnt">
+                                            <div class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</div>
+                                            <div class="options">
+                                                <div class="option">블랙/라지</div>
+                                            </div>
+                                        </div>
+                                        <div class="prd_price">
+                                            <div class="od_price">600,000원</div>
+                                            <div class="lot">수량 <strong>1</strong>개</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="od_box">
+                            <div class="od_title">
+                                <h3>결제정보</h3>
+                            </div>
+                            <div class="od_table form form_type4">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:17rem">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>총 주문금액</th>
+                                            <td>
+                                                <div class="od_price">1,200,000원</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>포인트</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input size_20">
+                                                        <input type="tel" class="align_right" data-amount-comma>
+                                                        <span class="in_text">원</span>
+                                                    </label>
+                                                    <button type="button" class="btn btn_type5 btn_black_line">전체사용</button>
+                                                    <span class="od_point">(잔여 : 10,000P)</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>마일리지</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <label class="input size_20">
+                                                        <input type="tel" class="align_right" data-amount-comma>
+                                                        <span class="in_text">원</span>
+                                                    </label>
+                                                    <button type="button" class="btn btn_type5 btn_black_line">전체사용</button>
+                                                    <span class="od_point">(잔여 : 10,000M)</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="od_box">
+                            <div class="od_title">
+                                <h3>결제정보</h3>
+                            </div>
+                            <div class="payment_list">
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="0">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30.375 9.281h-22.5a1.406 1.406 0 0 1 0-2.812H27a.844.844 0 1 0 0-1.688H7.875a3.094 3.094 0 0 0-3.094 3.094v18a3.094 3.094 0 0 0 3.094 3.094h22.5A1.969 1.969 0 0 0 32.344 27V11.25a1.969 1.969 0 0 0-1.969-1.969ZM30.656 27a.282.282 0 0 1-.281.281h-22.5a1.406 1.406 0 0 1-1.406-1.406V10.63c.435.223.917.34 1.406.339h22.5a.282.282 0 0 1 .281.281V27Zm-3.937-8.438a1.407 1.407 0 1 1-2.814 0 1.407 1.407 0 0 1 2.814 0Z" fill="#000"/></svg>
+                                            <span>가상계좌</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="1">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" fill="#000"><path d="M33.333 25.467H32.4V7c0-1.133-.867-2-2-2H5.6c-1.133 0-2 .867-2 2v18.467h-.933c-.4 0-.667.333-.667.733.133 2.533 2.267 4.533 4.8 4.533h22.4c2.533 0 4.6-2 4.8-4.533 0-.4-.267-.733-.667-.733ZM4.933 7c0-.4.267-.667.667-.667h24.8c.4 0 .667.267.667.667v18.467H4.933V7ZM29.2 29.4H6.8a3.44 3.44 0 0 1-3.333-2.533h29.066c-.4 1.4-1.733 2.533-3.333 2.533Z"/><path d="m26 13.399-2.867-2.867a.645.645 0 0 0-.933 0 .644.644 0 0 0 0 .933l1.733 1.734h-7.134c-.4 0-.666.266-.666.666s.267.667.666.667h7.067l-1.733 1.733a.644.644 0 0 0 0 .934.644.644 0 0 0 .933 0l2.867-2.867c.333-.267.333-.733.067-.933ZM19.197 17.331h-7.133l1.733-1.733a.645.645 0 0 0 0-.933.645.645 0 0 0-.934 0l-2.866 2.867a.644.644 0 0 0 0 .933l2.867 2.866a.644.644 0 0 0 .933 0 .645.645 0 0 0 0-.933l-1.734-1.733h7.067c.4 0 .667-.267.667-.667s-.267-.667-.6-.667Z"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(2 5)" d="M0 0h32v25.733H0z"/></clipPath></defs></svg>
+                                            <span>실시간 계좌이체</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="2">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M31.5 7.031h-27A1.969 1.969 0 0 0 2.531 9v18A1.969 1.969 0 0 0 4.5 28.969h27A1.969 1.969 0 0 0 33.469 27V9A1.969 1.969 0 0 0 31.5 7.031ZM4.5 8.72h27a.281.281 0 0 1 .281.281v3.656H4.22V9a.281.281 0 0 1 .281-.281Zm27 18.562h-27A.281.281 0 0 1 4.219 27V14.344H31.78V27a.282.282 0 0 1-.281.281Zm-2.531-3.656a.843.843 0 0 1-.844.844h-4.5a.843.843 0 1 1 0-1.688h4.5a.843.843 0 0 1 .844.844Zm-9 0a.843.843 0 0 1-.844.844h-2.25a.843.843 0 1 1 0-1.688h2.25a.843.843 0 0 1 .844.844Z" fill="#000"/></svg>
+                                            <span>신용카드</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="3">
+                                        <div>
+                                            <img src="/resources/static/dist/images/content/ssg_pay.png" class="ssg_pay">
+                                            <span>SSG PAY</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="4">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 23.344a5.344 5.344 0 1 0 0-10.688 5.344 5.344 0 0 0 0 10.688Zm0-9a3.657 3.657 0 1 1 0 7.313 3.657 3.657 0 0 1 0-7.313Zm15.75-6.188H2.25A.844.844 0 0 0 1.406 9v18a.844.844 0 0 0 .844.844h31.5a.843.843 0 0 0 .844-.844V9a.844.844 0 0 0-.844-.844ZM3.094 15.303a7.696 7.696 0 0 0 5.459-5.46h18.894a7.696 7.696 0 0 0 5.46 5.46v5.394a7.696 7.696 0 0 0-5.46 5.46H8.553a7.696 7.696 0 0 0-5.46-5.46v-5.394Zm29.812-1.762a6.02 6.02 0 0 1-3.697-3.697h3.697v3.697ZM6.791 9.844a6.02 6.02 0 0 1-3.697 3.697V9.844H6.79ZM3.094 22.459a6.02 6.02 0 0 1 3.697 3.697H3.094V22.46Zm26.115 3.697a6.02 6.02 0 0 1 3.697-3.697v3.697H29.21Z" fill="#000"/></svg>
+                                            <span>급여공제</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="5">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M29.25 7.031H6.75a3.094 3.094 0 0 0-3.094 3.094v15.75a3.094 3.094 0 0 0 3.094 3.094h22.5a3.094 3.094 0 0 0 3.094-3.094v-15.75a3.094 3.094 0 0 0-3.094-3.094ZM5.344 13.22h25.312v2.812H22.5a.843.843 0 0 0-.844.844 3.657 3.657 0 0 1-7.312 0 .843.843 0 0 0-.844-.844H5.344V13.22Zm1.406-4.5h22.5a1.406 1.406 0 0 1 1.406 1.406v1.406H5.344v-1.406A1.406 1.406 0 0 1 6.75 8.719Zm22.5 18.562H6.75a1.406 1.406 0 0 1-1.406-1.406v-8.156h7.378a5.344 5.344 0 0 0 10.556 0h7.378v8.156a1.406 1.406 0 0 1-1.406 1.406Z" fill="#000"/></svg>
+                                            <span>취합 후 결제</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="pay_form_etc" class="od_table top_line_gray bottom_line_transparent form form_type4" style="display: none;">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:17rem">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr class="pay_account hidden">
+                                            <th>입금은행</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_20">
+                                                        <div class="design_select type5">
+                                                            <select name="" id="">
+                                                                <option value="">선택해주세요.</option>
+                                                                <option value="기업은행">기업은행</option>
+                                                                <option value="국민은행">국민은행</option>
+                                                                <option value="우리은행">우리은행</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="pay_account hidden">
+                                            <th>입금자</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_20">
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="input_text red_text_color size_mb_100"><em>입금예정일 : 2024-10-08일까지 미입금시 자동 주문취소 처리 됩니다.</em></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="pay_cash hidden">
+                                            <td colspan="2">
+                                                <div class="input_group">
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="cash_receipt" value="0">
+                                                        <span class="ck_icon"></span>
+                                                        개인 소득 공제
+                                                    </label>
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="cash_receipt" value="1">
+                                                        <span class="ck_icon"></span>
+                                                        사업자 지출 증빙
+                                                    </label>
+                                                </div>
+
+                                                <!-- hidden -->
+                                                <div class="cash_row hidden">
+                                                    <hr class="clear_devide">
+                                                    <div class="input_group">
+                                                        <div class="input size_20 size_mb_100">
+                                                            <div class="design_select type5">
+                                                                <select name="" id="">
+                                                                    <option value="휴대폰번호">휴대폰번호</option>
+                                                                    <option value="현금영수증카드">현금영수증카드</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input size_32 size_mb_100">
+                                                            <input type="tel" placeholder="-없이 숫자만 입력해주세요">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- hidden -->
+                                                <div class="company_row hidden">
+                                                    <hr class="clear_devide">
+                                                    <div class="input_group">
+                                                        <div class="input size_32 size_mb_100">
+                                                            <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 클래스 장바구니, 결제, 여러곳 배송 클래스 다름 -->
+                    <div class="order_aside">
+                        <h3 class="aside_title">결제 정보</h3>
+                        <div class="price_detail">
+                            <div class="item">
+                                <div class="tit">총 상품금액</div>
+                                <div class="cnt">1,254,000원</div>
+                            </div>
+                            <div class="item">
+                                <div class="tit">총 배송비</div>
+                                <div class="cnt">2,500원</div>
+                            </div>
+                            <div class="item">
+                                <div class="tit">할인쿠폰</div>
+                                <div class="cnt">1,000원</div>
+                            </div>
+                            <div class="item total">
+                                <div class="tit">총 주문금액</div>
+                                <div class="cnt">1,256,500원</div>
+                            </div>
+                            <div class="item mileage">
+                                <div class="tit">적립예정 마일리지</div>
+                                <div class="cnt"><span>100</span></div>
+                            </div>
+                        </div>
+                        <ul class="label_list row label_control">
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox" class="check_all">
+                                    <span class="ck_icon"></span>
+                                    <strong>주문정보를 모두 확인하였으며, <br/>약관 전체에 동의합니다.</strong>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    <button type="button" class="check_btn" onclick="openLayer('#terms_popup1')">주문내역 확인 동의 (필수)</button>
+                                </label>
+
+                                <!-- 약관 -->
+                                <div id="terms_popup1" class="layer_popup layer_default">
+                                    <div class="layer_content  width_md height_md">
+                                        <div class="layer_default_title">주문내역 확인 동의 (필수)</div>
+                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                        총칙<br/>
+                                        제 1조 (목적)<br/>
+                                        본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
+                                        E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
+                                        목적으로 합니다.<br/>
+                                        ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
+                                        준용합니다.<br/><br/>
+
+                                        제 2조 (정의)<br/>
+                                        1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
+                                        영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                        </div>
+                                    </div>
+                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                </div>
+                                <!-- //약관 -->
+                            </li>
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    <button type="button" class="check_btn" onclick="openLayer('#terms_popup2')">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</button>
+                                </label>
+                                
+                                <!-- 약관 -->
+                                <div id="terms_popup2" class="layer_popup layer_default">
+                                    <div class="layer_content  width_md height_md">
+                                        <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</div>
+                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                        총칙<br/>
+                                        제 1조 (목적)<br/>
+                                        본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
+                                        E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
+                                        목적으로 합니다.<br/>
+                                        ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
+                                        준용합니다.<br/><br/>
+
+                                        제 2조 (정의)<br/>
+                                        1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
+                                        영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                        </div>
+                                    </div>
+                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                </div>
+                                <!-- //약관 -->
+                            </li>
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    <button type="button" class="check_btn" onclick="openLayer('#terms_popup3')">결제대행서비스 이용약관 동의(필수)</button>
+                                </label>
+
+                                <!-- 약관 -->
+                                <div id="terms_popup3" class="layer_popup layer_default">
+                                    <div class="layer_content  width_md height_md">
+                                        <div class="layer_default_title">결제대행서비스 이용약관 동의(필수)</div>
+                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                        총칙<br/>
+                                        제 1조 (목적)<br/>
+                                        본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
+                                        E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
+                                        목적으로 합니다.<br/>
+                                        ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
+                                        준용합니다.<br/><br/>
+
+                                        제 2조 (정의)<br/>
+                                        1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
+                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
+                                        영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                        </div>
+                                    </div>
+                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                </div>
+                                <!-- //약관 -->
+                            </li>
+                        </ul>
+                        <div class="oa_btns btns_fixed_mobile">
+                            <button class="btn btn_type2 btn_theme" type="button">결제하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 배송지 정보 -->
+    <div id="address_info" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">배송지 정보</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content">
+                <div class="form_btns btn_fit">
+                    <button type="button" class="btn btn_type4 btn_lblue" onclick="openLayer('#address_form')">
+                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 8a.5.5 0 0 1-.5.5h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 1 1 0-1h5v-5a.5.5 0 1 1 1 0v5h5a.5.5 0 0 1 .5.5Z" fill="#000"/></svg>
+                        <span>신규배송지 등록</span>
+                    </button>
+                </div>
+                <div class="label_check_list layer_scroll" data-simplebar>
+                    <div class="items">
+                        <div class="list_empty">
+                            <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="cate">기본 배송지</div>
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button">수정</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button">수정</button></div>
+                                        <div><button type="button">삭제</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="label_item">
+                            <label class="label_cnt checkbox radio_type1">
+                                <input type="radio" name="ads_check">
+                                <span class="ck_icon"></span>
+                                <span class="ck_line"></span>
+                                <div class="address_cnt">
+                                    <div class="address_basic">
+                                        <div class="name">홍길동 / 010-1234-1234</div>
+                                        <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
+                                    </div>
+                                    <div class="text_btns">
+                                        <div><button type="button">수정</button></div>
+                                        <div><button type="button">삭제</button></div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom_check">
+                    <label class="checkbox checkbox_type1">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        기본 배송지로 등록
+                    </label>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 정보 -->
+
+    <!-- 배송지 등록 수정 -->
+    <div id="address_form" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">배송지 등록</div>
+            <div class="layer_default_title">배송지 수정</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div class="form form_type1">
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">받는사람 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="홍길동">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">휴대폰 번호 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="tel" value="01012341234" placeholder="숫자만 입력">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row" id="adsInput1">
+                        <div class="row_top">
+                            <div class="tit required">배송지 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="12345" placeholder="주소를 검색해 주세요" name="i_address_zip" class="i_address_zip" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div> 
+                            <button class="btn btn_gray btn_type5 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="서울시 구로구 삼성로11(1234)" name="i_address_basic" class="i_address_basic" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div> 
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" value="101동 101호" placeholder="상세주소" name="i_address_detail" class="i_address_detail">
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_black">확인</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 등록 수정 -->
+
+
+    <!-- 다음주소 -->
+    <div id="ads_layer" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주소검색</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div id="daumAdressLayer">
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //다음주소 -->
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+
+<script>
+//멀티 배송지 토글
+function addressToggle(button, target){
+    slideToggle(target);
+    button.classList.toggle('active');
+}
+
+function lotChange(button){
+    const input = button.closest('.lot_box').querySelector('input');
+    input.setAttribute('db-count', input.value)
+}
+
+//결제수단 가상계좌, 급여공제 토글
+const paymentTypeAll = document.querySelectorAll('input[name="payment_type"]');
+const paymentFormEtc = document.getElementById('pay_form_etc');
+const paymentAccount = document.querySelectorAll('.pay_account');
+const paymentCash = document.querySelectorAll('.pay_cash');
+
+paymentTypeAll.forEach(function(paymentType){
+    paymentType.addEventListener('change', function() {
+        if(paymentType.checked && paymentType.value === '0'){ //가상계좌
+            paymentFormEtc.style.display = 'block';
+            paymentAccount.forEach(function(account){
+                account.classList.remove('hidden');
+            });
+            paymentCash.forEach(function(cash){
+                cash.classList.remove('hidden');
+            });
+        }else if(paymentType.checked && paymentType.value === '4'){//급여공제
+                paymentFormEtc.style.display = 'block';
+                paymentAccount.forEach(function(account){
+                    account.classList.add('hidden');
+                });
+                paymentCash.forEach(function(cash){
+                    cash.classList.remove('hidden');
+                });
+        }else{
+            paymentFormEtc.style.display = 'none';
+        }
+    });
+});
+
+//개인 소득 공제 & 사업자 지출 증빙
+const cashReceiptAll = document.querySelectorAll('input[name="cash_receipt"]');
+const cashRow = document.querySelector('.cash_row');
+const companyRow = document.querySelector('.company_row');
+cashReceiptAll.forEach(function(receipt){
+    receipt.addEventListener('change', function() {
+        if(receipt.checked && receipt.value === '0'){//개인 소득 공제
+            cashRow.classList.remove('hidden');
+            companyRow.classList.add('hidden');
+        }else if(receipt.checked && receipt.value === '1'){//사업자 지줄층빙
+            companyRow.classList.remove('hidden');
+            cashRow.classList.add('hidden');
+        }
+    });
+});
+
+</script>
+</body>
+</html>
