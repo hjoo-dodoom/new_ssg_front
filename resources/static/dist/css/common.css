@@ -424,3 +424,6 @@ top: 0;transform: translateX(-10px);background: #f52121;opacity: 0.75;backdrop-f
 .info_btn{margin-left:0.2rem;width: 2rem;height: 2rem;vertical-align: text-top;border:0;background-color: transparent;text-indent: -999em;overflow:hidden;background-position: center center;background-repeat: no-repeat;background-image: url('../images/common/info_btn.svg');}
 .info_btn:hover{filter: brightness(0.7)}
 
+.only_pc_use{text-align: center;flex:1 1 auto;margin:8rem 0 3rem;}
+.only_pc_use svg{width: 10rem;height:10rem;margin-bottom:2rem;}
+.only_pc_use p{font-size:1.8rem;}
