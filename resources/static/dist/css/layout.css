@@ -345,3 +345,8 @@
     .popup_notice.type3 .popup_nbtn{padding:9px 20px;}
     .popup_notice.type3 .ppn_close{padding:9px 18px;font-size:13px;}
 }
+
+#popup_layout{padding:4rem;}
+#popup_layout #content{}
+#popup_layout .popup_title{font-size:2.2rem;font-weight:600;border-bottom:1px solid #000;margin-bottom:3rem;padding-bottom:2rem;}
+
