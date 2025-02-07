@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="subpage_title_center">
+                    <h2>대량주문하기</h2>
+                </div>
+
+                <div class="mp_box">
+                    <!-- 등록된 배너 이미지있으면  -->
+                    <div class="large_order_banner">
+                        <img src="/resources/static/dist/images/dummy/large_order_banner_mirae.jpg">
+                    </div>
+                    <!-- //등록된 배너 이미지있으면  -->
+
+                    <div class="cbox_wrap">
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16a1 1 0 0 1-1 1h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 1 1Zm-1 3h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2Zm7-14v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V5a1 1 0 0 1 1-1h3V3a1 1 0 0 1 2 0v1h4V3a1 1 0 0 1 2 0v1h4V3a1 1 0 0 1 2 0v1h3a1 1 0 0 1 1 1Zm-2 1h-2v1a1 1 0 0 1-2 0V6h-4v1a1 1 0 0 1-2 0V6h-4v1a1 1 0 0 1-2 0V6H7v19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6Z" fill="#000"/></svg>
+                                    주문 신청방법
+                                </div>
+                            </div>
+                            <div class="content">
+                                <ol class="large_order_step">
+                                    <li>
+                                        <div class="num">01</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m31.504 12.433-8.312-8.312a.89.89 0 0 0-.63-.262H8.313a2.078 2.078 0 0 0-2.078 2.079v26.125a2.078 2.078 0 0 0 2.079 2.078h21.374a2.078 2.078 0 0 0 2.079-2.078v-19a.891.891 0 0 0-.262-.63ZM23.454 6.9l5.272 5.273h-5.273V6.899Zm6.233 25.46H8.313a.297.297 0 0 1-.296-.297V5.939a.297.297 0 0 1 .296-.297h13.36v7.421a.89.89 0 0 0 .89.891h7.422v18.11a.297.297 0 0 1-.297.296Zm-6.495-9.238a.89.89 0 0 1 0 1.258l-3.563 3.563a.89.89 0 0 1-1.258 0l-3.563-3.563a.891.891 0 0 1 1.259-1.258l2.042 2.04v-7.349a.89.89 0 0 1 1.782 0v7.35l2.042-2.041a.89.89 0 0 1 1.259 0Z" fill="#000"/></svg>
+                                        <div class="cnt">주문가이드<br/>다운로드</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">02</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.438 10.984H23.75A5.641 5.641 0 0 0 19 13.59a5.641 5.641 0 0 0-4.75-2.605H3.562a.89.89 0 0 0-.89.891v17.813a.89.89 0 0 0 .89.89H14.25a3.86 3.86 0 0 1 3.86 3.86.89.89 0 0 0 1.78 0 3.86 3.86 0 0 1 3.86-3.86h10.688a.89.89 0 0 0 .89-.89V11.875a.89.89 0 0 0-.89-.89ZM14.25 28.797H4.453V12.766h9.797a3.86 3.86 0 0 1 3.86 3.859v13.702a5.62 5.62 0 0 0-3.86-1.53Zm19.297 0H23.75a5.615 5.615 0 0 0-3.86 1.533V16.625a3.86 3.86 0 0 1 3.86-3.86h9.797v16.032ZM13.537 6.59a6.827 6.827 0 0 1 10.925 0 .891.891 0 0 1-1.424 1.068 5.047 5.047 0 0 0-8.075 0 .891.891 0 0 1-1.425-1.068Z" fill="#000"/></svg>
+                                        <div class="cnt">주문가이드<br/>필독</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">03</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m33.88 8.87-4.75-4.75a.89.89 0 0 0-1.26 0L13.62 18.37a.891.891 0 0 0-.26.63v4.75a.89.89 0 0 0 .89.89H19a.89.89 0 0 0 .63-.26l14.25-14.25a.89.89 0 0 0 0-1.26ZM18.63 22.86h-3.49v-3.49l9.797-9.797 3.49 3.49-9.797 9.796Zm11.058-11.058-3.49-3.49L28.5 6.01l3.49 3.49-2.302 2.302ZM32.953 19v11.875a2.078 2.078 0 0 1-2.078 2.078H7.125a2.078 2.078 0 0 1-2.078-2.078V7.125a2.078 2.078 0 0 1 2.078-2.078H19a.89.89 0 0 1 0 1.781H7.125a.297.297 0 0 0-.297.297v23.75a.297.297 0 0 0 .297.297h23.75a.297.297 0 0 0 .297-.297V19a.89.89 0 0 1 1.781 0Z" fill="#000"/></svg>
+                                        <div class="cnt">주문양식<br/>파일에 내용작성</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">04</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.86 30.875a.89.89 0 0 1-.891.89h-4.157a.89.89 0 0 1-.89-.89v-8.313a.89.89 0 1 1 1.78 0v7.422h3.267a.89.89 0 0 1 .89.891Zm-9.281-9.038a.891.891 0 0 0-1.241.206l-2.244 3.142-2.245-3.142A.89.89 0 1 0 6.4 23.082L9 26.719l-2.6 3.636a.891.891 0 1 0 1.45 1.04l2.244-3.146 2.244 3.141a.89.89 0 0 0 1.24.21.891.891 0 0 0 .209-1.243l-2.6-3.638 2.6-3.639a.888.888 0 0 0-.208-1.243Zm14.772 3.875c-1.61-.464-1.99-.696-1.93-1.174a.977.977 0 0 1 .428-.754c.831-.562 2.62-.271 3.183-.124a.89.89 0 0 0 .455-1.722c-.296-.08-2.983-.743-4.632.368a2.765 2.765 0 0 0-1.2 2.01c-.267 2.106 1.82 2.709 3.202 3.108 1.8.52 2.192.791 2.108 1.449a1.017 1.017 0 0 1-.445.792c-.833.554-2.595.244-3.146.092a.89.89 0 0 0-.476 1.712c.71.19 1.443.289 2.179.297.815 0 1.713-.141 2.428-.615a2.805 2.805 0 0 0 1.234-2.05c.298-2.324-1.917-2.964-3.388-3.389ZM6.234 16.625V5.937A2.078 2.078 0 0 1 8.312 3.86h14.25a.89.89 0 0 1 .63.262l8.312 8.312a.89.89 0 0 1 .261.63v3.562a.89.89 0 0 1-1.78 0v-2.672h-7.423a.89.89 0 0 1-.89-.89V5.64H8.312a.297.297 0 0 0-.297.296v10.688a.89.89 0 0 1-1.78 0Zm17.219-4.453h5.27l-5.27-5.273v5.273Z" fill="#000"/></svg>
+                                        <div class="cnt">작성한 주문파일<br/>등록(엑셀)</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">05</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.953 7.125v23.75a2.078 2.078 0 0 1-2.078 2.078H20.187a.89.89 0 0 1 0-1.781h10.688a.297.297 0 0 0 .297-.297V7.125a.297.297 0 0 0-.297-.297H7.125a.297.297 0 0 0-.297.297v14.25a.89.89 0 0 1-1.781 0V7.125a2.078 2.078 0 0 1 2.078-2.078h23.75a2.078 2.078 0 0 1 2.078 2.078Zm-15.77 15.996L9.5 30.802l-2.933-2.931a.891.891 0 0 0-1.259 1.258l3.563 3.563a.89.89 0 0 0 1.258 0l8.313-8.313a.891.891 0 0 0-1.259-1.258Z" fill="#000"/></svg>
+                                        <div class="cnt">주문 확인 후<br/>[오류체크] 클릭</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">06</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M33.312 15.467c-.579-.604-1.177-1.227-1.417-1.808-.223-.539-.235-1.336-.248-2.179-.02-1.392-.045-2.969-1.101-4.025-1.057-1.057-2.64-1.081-4.026-1.102-.843-.013-1.633-.025-2.18-.248-.58-.24-1.203-.838-1.807-1.417-.986-.944-2.102-2.016-3.533-2.016-1.43 0-2.547 1.072-3.533 2.016-.604.579-1.227 1.177-1.808 1.417-.539.223-1.336.235-2.179.248-1.392.02-2.969.045-4.025 1.102-1.057 1.056-1.081 2.639-1.102 4.025-.013.843-.025 1.633-.248 2.18-.24.58-.838 1.203-1.417 1.807-.944.986-2.016 2.102-2.016 3.533 0 1.43 1.072 2.547 2.016 3.533.579.604 1.177 1.227 1.417 1.808.223.539.235 1.336.248 2.179.02 1.392.045 2.969 1.102 4.026 1.056 1.056 2.639 1.08 4.025 1.1.843.014 1.633.026 2.18.249.58.24 1.203.838 1.807 1.417.986.944 2.102 2.016 3.533 2.016 1.43 0 2.547-1.072 3.533-2.016.604-.579 1.227-1.177 1.808-1.417.539-.223 1.336-.235 2.179-.248 1.392-.02 2.969-.045 4.026-1.101 1.056-1.057 1.08-2.634 1.1-4.026.014-.843.026-1.633.249-2.18.24-.58.838-1.203 1.417-1.807.944-.986 2.016-2.102 2.016-3.533 0-1.43-1.072-2.547-2.016-3.533Zm-1.285 5.834c-.693.721-1.41 1.47-1.781 2.36-.354.852-.368 1.858-.383 2.832-.017 1.105-.035 2.248-.58 2.794-.544.546-1.689.562-2.793.579-.974.015-1.98.03-2.832.383-.89.368-1.633 1.085-2.362 1.78-.779.743-1.585 1.52-2.299 1.52s-1.52-.773-2.3-1.52c-.722-.692-1.47-1.41-2.36-1.78-.853-.354-1.86-.368-2.833-.383-1.104-.017-2.247-.035-2.794-.58-.546-.544-.562-1.689-.579-2.793-.014-.974-.03-1.98-.383-2.832-.368-.89-1.085-1.633-1.78-2.362-.742-.779-1.515-1.585-1.515-2.299s.773-1.52 1.52-2.3c.693-.722 1.41-1.47 1.781-2.36.354-.853.369-1.86.383-2.833.017-1.104.034-2.247.58-2.794.544-.546 1.688-.562 2.793-.579.974-.014 1.98-.03 2.832-.383.89-.368 1.633-1.085 2.362-1.78.776-.745 1.582-1.518 2.296-1.518.714 0 1.52.773 2.3 1.52.722.693 1.47 1.41 2.36 1.781.853.354 1.86.369 2.833.383 1.105.017 2.248.034 2.794.58.546.544.562 1.688.579 2.793.015.974.03 1.98.383 2.832.368.89 1.085 1.633 1.78 2.362.743.779 1.52 1.585 1.52 2.299s-.776 1.517-1.522 2.298Zm-6.46-6.493a.89.89 0 0 1 0 1.259l-8.313 8.312a.89.89 0 0 1-1.258 0l-3.563-3.562a.891.891 0 0 1 1.259-1.259l2.933 2.932 7.683-7.682a.89.89 0 0 1 1.259 0Z" fill="#000"/></svg>
+                                        <div class="cnt">오류 수정 후<br/>[주문신청] 클릭</div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3.433 10.832 22.007-6.75A2 2 0 0 1 28 6v18a2 2 0 0 1-2.565 1.919L15 22.716V24a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-3.738L3.433 19.17A2.011 2.011 0 0 1 2 17.25v-4.5a2.011 2.011 0 0 1 1.433-1.918ZM15 20.625 26 24V6L15 9.375v11.25ZM9 24h4v-1.898l-4-1.227V24Zm-5-6.75h.014L13 20.01V9.99l-8.986 2.75H4v4.51Z" fill="#000"/></svg>
+                                    주문 신청 시 안내사항
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>1. 주문 파일 등록 시 엑셀파일에 작성한 내용 중 잘못 작성한 경우 화면에서 수정할 수 있습니다</p>
+                                <p>2. 반드시 [주문신청]버튼을 클릭 하셔야 주문이 완료됩니다</p>
+                                <p>3. 승인이 완료된 건은 [배송준비중]으로 표시되며, 우측 하단의 [주문/배송 조회]를 선택하시면 확인하실 수 있습니다</p>
+                                <p>4. 상품 발송 시, 송장표기는 “주문자” 그대로 발송됩니다 [예) 홍길동(○), ○○점 홍길동(Ⅹ)]</p>
+                                <hr class="devide_line">
+                                <div class="btn_list">
+                                    <a href="javascript:;" class="btn btn_type5 btn_black_line btn_icon w300">
+                                        <span>주문 가이드 다운로드</span>
+                                        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#000"/></svg>
+                                    </a>
+                                </div>
+                                <p class="gray_text_color fs_13 mgt10" style="text-align:center;max-width:30rem;"><em>이용가이드ㆍ주문샘플파일</em></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3a13 13 0 1 0 13 13A13.013 13.013 0 0 0 16 3Zm0 24a11 11 0 1 1 11-11 11.012 11.012 0 0 1-11 11Zm-1-10v-7a1 1 0 0 1 2 0v7a1 1 0 0 1-2 0Zm2.5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" fill="#000"/></svg>
+                                    주문 파일 등록 유의사항
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>1. DRM 문서보안이 적용된 파일이나 암호화 파일인 경우 보안,암호화 해지 후 업로드 해주시기 바랍니</p>
+                                <p>2. 다른 파일에서 내용을 가져올 경우, 서식/함수 등은 반드시 제거하여야 합니다</p>
+                                <hr class="devide_line">
+                                <form action="">
+                                    <div class="btn_list">
+                                        <label class="btn btn_input_file btn_type5 btn_black btn_icon w300">
+                                            <input type="file">
+                                            <span>엑셀로 업로드하기</span>
+                                            <svg width="12" height="13" viewbox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.854 6.646a.5.5 0 1 1-.708.708L6.5 3.707V12a.5.5 0 0 1-1 0V3.707L1.854 7.354a.5.5 0 1 1-.708-.708l4.5-4.5a.5.5 0 0 1 .708 0l4.5 4.5ZM.5 1h11a.5.5 0 0 0 0-1H.5a.5.5 0 1 0 0 1Z" fill="#fff"/></svg>
+                                        </label>
+                                    </div>
+                                </form>
+                                <!-- 임시버튼 -->
+                                <br/>
+                                <br/>
+                                <button type="button" onclick="windowPopup('/resources/static/html/etc/large_order_popup.html')">업로드된 주문정보 목록</button>
+                                <script>
+                                function windowPopup(url, width, height) {
+                                width = window.screen.width;
+                                height = window.screen.height;
+                                const features = `width=`+width+`,height=`+height+`,top=0,left=0,resizable=yes,scrollbars=yes`;
+                                window.open(url, '_blank', features);
+                                }
+                                </script>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="m31.927 14.625-1.75-4.375A1.992 1.992 0 0 0 28.323 9H24V8a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h2.125a4 4 0 0 0 7.75 0h6.25a4 4 0 0 0 7.75 0H30a2 2 0 0 0 2-2v-8a.994.994 0 0 0-.073-.375ZM24 11h4.323l1.2 3H24v-3ZM4 9h18v8H4V9Zm6 17a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm10.125-3h-6.25a4 4 0 0 0-7.75 0H4v-4h18v1.539A4.016 4.016 0 0 0 20.125 23ZM24 26a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm6-3h-2.125A4.007 4.007 0 0 0 24 20v-4h6v7Z" fill="#000"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h32v32H0z"/></clipPath></defs></svg>
+                                    주문신청 진행현황
+                                </div>
+                            </div>
+                            <div class="content">
+                                <ul class="dot">
+                                    <li>협력회사에서 승인완료하면 [배송준비중]상태로 표기되며, 배송은 우측 [주문/배송조회]메뉴에서 확인 가능합니다</li>
+                                    <li>주문취소는 "주문접수" 상태에서 개별 또는 일괄적으로 취소가 가능합니다</li>
+                                    <li>추후 취소건은 고객센터에 별도 문의 바랍니다</li>
+                                </ul>
+                                <hr class="devide_line">
+                                <form action="">
+                                    <div class="btn_list">
+                                        <a href="javascript:;" class="btn btn_type5 btn_black_line btn_icon w300">
+                                            주문/배송조회
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mp_box">
+                    <div class="table_top">
+                        <div class="title">감사카드</div>
+                        <div class="r">
+                            <p>* 감사카드 수량을 확인하세요. (오류가 있는 주문의 감사카드 수량은 포함되지 않습니다)</p>
+                        </div>
+                    </div>
+                    <div class="default_table">
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:20%;">
+                                    <col style="width:20%;">
+                                    <col style="width:20%;">
+                                    <col style="width:20%;">
+                                    <col style="width:20%;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>감사카드 한도</th>
+                                        <th>미신청</th>
+                                        <th>신청완료</th>
+                                        <th>주문완료</th>
+                                        <th>잔여수량</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>감사카드 사용안함</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>감사카드 사용안함</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mp_box">
+                    <div class="table_top">
+                        <div class="title">업로드된 주문정보 목록</div>
+                        <div class="r">
+                            <p>* 엑셀파일 업로드 후 반드시 [주문신청] 을 하셔야 합니다.</p>
+                        </div>
+                    </div>
+                    <div class="default_table">
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col style="width:15rem;">
+                                    <col style="width:15rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:15rem;">
+                                </colgroup>
+                                <thead class="size_sm">
+                                    <tr>
+                                        <th rowspan="2">등록파일명 (업로드 일련번호)</th>
+                                        <th rowspan="2">등록일</th>
+                                        <th rowspan="2">처리상태<br/>오류유무</th>
+                                        <th colspan="4">합계</th>
+                                        <th rowspan="2">감사카드</th>
+                                        <th rowspan="2">삭제</th>
+                                    </tr>
+                                    <tr>
+                                        <th>주문건수</th>
+                                        <th>승인</th>
+                                        <th>취소</th>
+                                        <th>신청</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                        <td>복사본 2025년_설_주문양식_미래에셋_WM고객용.xlsx (20241213161433)</td>
+                                        <td>2025-01-02</td>
+                                        <td>
+                                            미신청
+                                            <div class="red_text_color">오류있음</div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">수정</button>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">삭제</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2025년_설_주문양식_미래에셋_WM고객용.xlsx (20241213161433)</td>
+                                        <td>2025-01-02</td>
+                                        <td>
+                                            미신청
+                                            <div class="red_text_color">오류있음</div>
+                                        </td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">수정</button>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">삭제</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>복사본 2025년_설_주문양식_미래에셋_WM고객용.xlsx (20241213161433)</td>
+                                        <td>2025-01-02</td>
+                                        <td>
+                                            미신청
+                                        </td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">수정</button>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">삭제</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>복사본 2025년_설_주문양식_미래에셋_WM고객용.xlsx (20241213161433)</td>
+                                        <td>2025-01-02</td>
+                                        <td>
+                                            미신청
+                                        </td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">수정</button>
+                                        <button typre="button" class="btn btn_type6 btn_gray_line btn_inline">삭제</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+
+</body>
+</html>
