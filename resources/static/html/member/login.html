@@ -298,6 +298,31 @@
 <!-- //비밀번호 변경 -->
 
 
+<!-- 로그인 실패 -->
+<div id="login_fail" class="layer_popup layer_default show">
+    <div class="layer_content  width_md height_md">
+        <div class="layer_default_title">로그인 실패</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="txt1">
+                비밀번호 입력 <strong>실패 횟수가 5회 초과</strong>되었거나,<br/>
+                <strong>비정상적인 접속 시도</strong>로 고객님의 계정을 안전하게 보호하기 위해
+                잠김 처리되었습니다.
+            </div>
+            <div class="txt2">
+            개인 정보보호를 위해 본인확인(휴대폰 인증) 이후에 로그인이 가능합니다.<br/>
+            가입 여부 및 본인 확인을 통해서 새로운 비밀번호를 등록하여 로그인해 주시면 됩니다.
+            </div>
+            <div class="form_btns btn_fit between_md">
+                <a href="javascript:;" class="btn btn_black_line btn_type4" onclick="closeLayer(this)">닫기</a>
+                <a href="javascript:;" class="btn btn_black btn_type4">본인확인(휴대폰 인증)</a>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //로그인 실패 -->
+
 <script>
 
     //로딩 임시 스크립트
