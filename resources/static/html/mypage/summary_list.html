@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="mypage_wrap">
+
+                    <!-- 마이페이지 피시 메뉴  -->
+                    <div id="mypage_aside" class="mypage_aside">
+                        <script>
+                            var includePath = "/resources/static/inc/mypage_aside.html";
+                            includeFile(includePath, 'mypage_aside');
+                        </script>
+                    </div>
+
+                    <div class="mypage_content">
+                        <h2 class="mypage_title">취합 후 결제</h2>
+                        <form action="">
+                            <div class="mp_box">
+                                <div class="table_top">
+                                    <div class="list_cates">
+                                        <div class="item"><button type="button" class="active">미결제 (4)</button></div>
+                                        <div class="item"><button type="button">결제완료 (0)</button></div>
+                                    </div>
+                                </div>
+                                <div class="label_control">
+                                    <div class="mobile_table_top">
+                                        <label class="checkbox checkbox_type2">
+                                            <input type="checkbox" class="check_all">
+                                            <span class="ck_icon"></span>
+                                            전체
+                                        </label>
+                                    </div>
+                                    <div class="mp_product">
+                                        <div class="table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:3.4rem;">
+                                                    <col style="width:16rem;">
+                                                    <col>
+                                                    <col style="width:13rem;">
+                                                    <col style="width:12rem;">
+                                                    <col style="width:14rem;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="align_left">
+                                                            <label class="checkbox checkbox_type2 single">
+                                                                <input type="checkbox" class="check_all">
+                                                                <span class="ck_icon"></span>
+                                                            </label>
+                                                        </th>
+                                                        <th colspan="2">상품정보</th>
+                                                        <th>옵션</th>
+                                                        <th>수량</th>
+                                                        <th>주문금액</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="6" class="list_empty">
+                                                            <div class="empty">내역이 없습니다.</div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <tbody>
+                                                    <tr class="tr_info">
+                                                        <td colspan="6">
+                                                            <div class="group_info">
+                                                                <div class="l">
+                                                                    <label class="checkbox checkbox_type2 single">
+                                                                        <input type="checkbox">
+                                                                        <span class="ck_icon"></span>
+                                                                    </label>
+                                                                    <div class="date">2024.10.23</div>
+                                                                </div>
+                                                                <div class="r">
+                                                                    <div class="order_num">
+                                                                        <div class="tit">체결번호</div>
+                                                                        <div class="num">K00000063733</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td_thum" colspan="2">
+                                                            <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></a>
+                                                        </td>
+                                                        <td class="td_product">
+                                                            <div class="prd_cnt">
+                                                                <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                                <div class="options">
+                                                                    <div class="option">레드/스몰</div>
+                                                                    <div class="lot">1개</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td_price">레드/스몰</td>
+                                                        <td class="td_price">1개</td>
+                                                        <td class="td_price">1,200,000원 </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td_thum" colspan="2">
+                                                            <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></a>
+                                                        </td>
+                                                        <td class="td_product">
+                                                            <div class="prd_cnt">
+                                                                <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                                <div class="options">
+                                                                    <div class="option">레드/스몰</div>
+                                                                    <div class="lot">1개</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td_price">레드/스몰</td>
+                                                        <td class="td_price">1개</td>
+                                                        <td class="td_price">1,200,000원 </td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <tbody>
+                                                    <tr class="tr_info">
+                                                        <td colspan="6">
+                                                            <div class="group_info">
+                                                                <div class="l">
+                                                                    <label class="checkbox checkbox_type2 single">
+                                                                        <input type="checkbox">
+                                                                        <span class="ck_icon"></span>
+                                                                    </label>
+                                                                    <div class="date">2024.10.23</div>
+                                                                </div>
+                                                                <div class="r">
+                                                                    <div class="order_num">
+                                                                        <div class="tit">체결번호</div>
+                                                                        <div class="num">K00000063733</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td_thum" colspan="2">
+                                                            <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image2.jpg');"></a>
+                                                        </td>
+                                                        <td class="td_product">
+                                                            <div class="prd_cnt">
+                                                                <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                                <div class="options">
+                                                                    <div class="option">레드/스몰</div>
+                                                                    <div class="lot">1개</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td_price"></td>
+                                                        <td class="td_price">1개</td>
+                                                        <td class="td_price">1,200,000원 </td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <tbody>
+                                                    <tr class="tr_info">
+                                                        <td colspan="6">
+                                                            <div class="group_info">
+                                                                <div class="l">
+                                                                    <label class="checkbox checkbox_type2 single">
+                                                                        <input type="checkbox">
+                                                                        <span class="ck_icon"></span>
+                                                                    </label>
+                                                                    <div class="date">2024.10.23</div>
+                                                                </div>
+                                                                <div class="r">
+                                                                    <div class="order_num">
+                                                                        <div class="tit">체결번호</div>
+                                                                        <div class="num">K00000063733</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td_thum" colspan="2">
+                                                            <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                                        </td>
+                                                        <td class="td_product">
+                                                            <div class="prd_cnt">
+                                                                <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                                <div class="options">
+                                                                    <div class="option">레드/스몰</div>
+                                                                    <div class="lot">1개</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td_price"></td>
+                                                        <td class="td_price">1개</td>
+                                                        <td class="td_price">1,200,000원 </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td_thum" colspan="2">
+                                                            <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                                        </td>
+                                                        <td class="td_product">
+                                                            <div class="prd_cnt">
+                                                                <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                                <div class="options">
+                                                                    <div class="option">레드/스몰</div>
+                                                                    <div class="lot">1개</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td_price"></td>
+                                                        <td class="td_price">1개</td>
+                                                        <td class="td_price">1,200,000원 </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="td_thum" colspan="2">
+                                                            <a href="javascript:;" class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image3.jpg');"></a>
+                                                        </td>
+                                                        <td class="td_product">
+                                                            <div class="prd_cnt">
+                                                                <a href="javascript:;" class="name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a>
+                                                                <div class="options">
+                                                                    <div class="option">레드/스몰</div>
+                                                                    <div class="lot">1개</div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td_price"></td>
+                                                        <td class="td_price">1개</td>
+                                                        <td class="td_price">1,200,000원 </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="calc_colbox bottom">
+                                    <div class="item red_text_color">
+                                        <div class="tit">미결제금액</div>
+                                        <div class="cnt">2,920,000원</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="tit">선택된 주문</div>
+                                        <div class="cnt">3건</div>
+                                    </div>
+                                    <div class="item total">
+                                        <div class="tit">결제예정금액</div>
+                                        <div class="cnt">2,650,000원</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form_btns between_ml btns_fixed_mobile">
+                                <button type="button" class="btn btn_type4 btn_theme">선택상품 결제</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+</body>
+</html>
