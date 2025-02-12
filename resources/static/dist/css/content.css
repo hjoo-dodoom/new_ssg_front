@@ -1131,6 +1131,11 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .dw_top{display:flex;}
 .dw_top .goods_images{width:min(50%, 62rem);overflow: hidden;position: relative;}
 .dw_top .goods_images img{width: 100%;}
+.dw_top .goods_images .sold_out{position:absolute;z-index:5;left:0;top:0;width:100%;height:100%;background-color: rgba(0,0,0,.35);}
+.dw_top .goods_images .sold_out > div{display:flex;flex-direction: column;position:absolute;width:20rem;height:20rem;left:50%;top:50%;transform: translate(-50%,-50%);background-color:#000;border-radius:50%;color:#fff;font-size:2rem;font-weight:600;align-items: center;justify-content: center;text-align: center;}
+.dw_top .goods_images .sold_out > div strong{font-weight: 600;}
+.dw_top .goods_images .sold_out > div br{display: none;}
+
 .dw_top .imgaes_view{position: relative;}
 .dw_top .imgaes_view .swiper-pagination{display: none;}
 .dw_top .imgaes_view .swiper-pagination{position: absolute;width:auto;border-radius:2rem;left:auto;right:2.4rem;bottom:1.7rem;background-color: rgba(0,0,0,.5);color:#fff;min-width:4.2rem;height:2.2rem;line-height: 2.3rem;color:#fff;font-size:1.1rem;font-weight:500;}
@@ -1169,6 +1174,9 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .detail_wrap{margin-top:0;}
     .dw_top{display:block;}
     .dw_top .goods_images{width:auto;margin-left:-2.4rem;margin-right:-2.4rem;}
+    .dw_top .goods_images .sold_out > div{width:10rem;height:10rem;}
+    .dw_top .goods_images .sold_out > div br{display: inline;}
+
     .dw_top .imgaes_view .swiper-pagination{display: block;}
     .dw_top .imgaes_thumbs{display: none;}
 
@@ -1294,9 +1302,9 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .goods_options_btns .options .select .design_select{flex:1 1 auto;}
 .goods_options_btns{}
 .goods_btns{display: flex;justify-content: end;}
-.goods_btns .btn{height: 6rem;border-radius: 0.6rem;padding:0;width: 14.6rem;}
+.goods_btns .btn{height: 6rem;border-radius: 0.6rem;padding:0;width: 14.6rem;flex:1 1;}
 .goods_btns .btn + .btn{margin-left:1rem;}
-.goods_btns .btn.btn_icon{min-width:6rem;width:6rem;height:6rem;text-indent:-999em;overflow:hidden;border:1px solid #E5E5E5;background-color: #fff;background-position: center center;background-repeat: no-repeat;}
+.goods_btns .btn.btn_icon{max-width:6rem;min-width:6rem;width:6rem;height:6rem;text-indent:-999em;overflow:hidden;border:1px solid #E5E5E5;background-color: #fff;background-position: center center;background-repeat: no-repeat;}
 .goods_info .goods_btns{margin-top:3rem;}
 .btn.icon_zzim{background-image: url('/resources/static/dist/images/content/icon_zzim.svg');}
 .btn.icon_zzim.active{background-image: url('/resources/static/dist/images/content/icon_zzim_active.svg');}
@@ -1373,7 +1381,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 @media screen and (max-width: 1620px) {
     .goods_btns .btn{height: 5rem;font-size:1.5rem;}
     .goods_btns .btn + .btn{margin-left:0.5rem;}
-    .goods_btns .btn.btn_icon{min-width:5rem;width:5rem;height:5rem;}
+    .goods_btns .btn.btn_icon{max-width:5rem;min-width:5rem;width:5rem;height:5rem;}
     .goods_info .goods_btns{margin-top:3rem;}
 
     .selected_options .item{padding:1.8rem 1.4rem;display: block;}
@@ -2720,6 +2728,37 @@ td .check_agree p{margin-top:2rem;}
     .calc_colbox.top{margin-bottom:0.6rem;}
 }
 
+.promotion_wrap{margin:0 auto;max-width:104rem;}
+.promotion_wrap .attendance_visual{position: relative;}
+.promotion_wrap .attendance_visual .img{width:100%;display:block;}
+.promotion_wrap .attendance_visual .date{position:absolute;left:50%;top:9rem;transform: translate(-50%,0);font-size:2rem;font-weight:600;}
+.promotion_wrap .attendance_visual .date span{display:block;padding:1rem 2.3rem;}
+.promotion_wrap .attendance_visual .date span:before,
+.promotion_wrap .attendance_visual .date span:after{content:"";position:absolute;top:0;width:3.5rem;height:100%;border-top:3px solid #000;border-bottom:3px solid #000;}
+.promotion_wrap .attendance_visual .date span:before{left:0;border-left:3px solid #000;border-right:3px solid transparent;border-radius:5rem 0 0 5rem;}
+.promotion_wrap .attendance_visual .date span:after{right:0;border-right:3px solid #000;border-left:3px solid transparent;border-radius:0 5rem 5rem 0;}
+.promotion_wrap .attendance_visual .date:before{content:"";position:absolute;left:3rem;top:0;width:calc(100% - 6rem);height:0.3rem;background-color: #000;}
+.promotion_wrap .attendance_visual .date:after{content:"";position:absolute;left:3rem;bottom:-0.8rem;width:calc(100% - 6rem);height:1.1rem;background-position: right center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/attendance_visual_date_line.svg');}
+.promotion_wrap .attendance_visual .text{position:absolute;left:0;top:40rem;width:100%;text-align:center;font-size:2.6rem;font-weight:500;word-break:keep-all}
+
+
+
+<div class="promotion_wrap">
+                    <div class="table_top">
+                        <div class="list_cates">
+                            <div class="item"><a href="javascript:;" class="active">출석체크</a></div>
+                            <div class="item"><a href="javascript:;">럭키박스</a></div>
+                        </div>
+                    </div>
+
+                    <div class="attendance_content">
+                        <div class="attendance_visual">
+                            <div class="img"><img src="/resources/static/dist/images/content/attendance_img.jpg"></div>
+                            <div class="date">1.13 – 2.7 토/일 제외</div>
+                            <div class="cnt">1회 출석 시 10마일리지,<br/>10일 연속 출석 시 10,000 마일리지 지급!</div>
+                        </div>
+                    </div>
+                </div>
 
 
 
