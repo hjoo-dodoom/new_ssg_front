@@ -580,6 +580,10 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .cate_first_show #hd_logo{display:none;}
     .back_mobile_show #hd_logo{display:none;}
     .title_mobile_show .page_title_mobile{display:block;}
+    .search_mobile_show {display:block;}
+    .search_mobile_show #hd_logo{display:none;}
+    .search_mobile_show #hd_search{display:block;}
+    .search_mobile_show .item_search{display:none !important;}
 }
 
 .list_special{}
@@ -2850,6 +2854,11 @@ td .check_agree p{margin-top:2rem;}
 .event_result_text{text-align: center;margin-top:2rem;}
 .event_result_text .tit{font-size:1.8rem;font-weight:600;}
 .event_result_text .disc{font-size:1.4rem;color:#666;margin-top:1rem;}
+
+.search_empty{}
+@media screen and (max-width: 1020px) {
+    .search_empty{min-height:calc(100vh - 16rem);display: flex;align-items: center;justify-content: center;}
+}
 
 <div class="event_result_image">
 <img src="/resources/static/dist/images/content/event_result_mileage.png">

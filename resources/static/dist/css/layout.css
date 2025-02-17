@@ -172,6 +172,12 @@
     #gnb.mobile_open .item{margin-bottom:0.2rem;}
     #gnb.mobile_open #btn_gnb_toggle_mobile{transform: rotate(180deg);}
     #gnb.mobile_open .item:first-child{padding-left:0;}
+
+    #hd_search{position: absolute;left:5.3rem;top:0;padding:0.6rem 0;width:calc(100% - 10.9rem);}
+    #hd_search form{}
+    #hd_search .search_inner{max-width:none;height:4.6rem;border:0;background-color: #F5F5F5;border-radius:20rem;}
+    #hd_search .search_inner .gnb_search_input{padding-left:1.8rem;font-size:1.4rem;background-color: transparent;}
+    #hd_search .search_inner .gnb_search_submit{width: 5rem;}
 }
 
 .mobile_bottom_fixed{margin-top:19rem;}
