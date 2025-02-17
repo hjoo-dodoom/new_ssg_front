@@ -456,10 +456,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .sub_content .product_exhibitions .exhibition .product_list_sm{margin-top:2.6rem;}
 .product_exhibitions .swiper-wrapper  .exhibition .cates,
 .product_exhibitions .swiper-wrapper  .exhibition .subject,
-.product_exhibitions .swiper-wrapper  .exhibition .product_list_sm{opacity:0;transition: all 0.3s;}
-.product_exhibitions .swiper-wrapper .swiper-slide-active .cates,
-.product_exhibitions .swiper-wrapper .swiper-slide-active .subject,
-.product_exhibitions .swiper-wrapper .swiper-slide-active .product_list_sm{opacity:1;}
+.product_exhibitions .swiper-wrapper  .exhibition .product_list_sm{transition: all 0.3s;}
 
 .product_list_sm .item{display: flex;align-items: center;}
 .product_list_sm .item + .item{margin-top:2rem;}
@@ -494,6 +491,12 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .sub_content .product_exhibitions .exhibition > .thum img{position: relative;transform: translate(0,0);left:0;top:0;}
     .sub_content .product_exhibitions .exhibition .subject{margin-top:0;}
     .sub_content .product_exhibitions .exhibition .product_list_sm{margin-top:2rem;}
+    .product_exhibitions .swiper-wrapper  .exhibition .cates,
+    .product_exhibitions .swiper-wrapper  .exhibition .subject,
+    .product_exhibitions .swiper-wrapper  .exhibition .product_list_sm{opacity:0;}
+    .product_exhibitions .swiper-wrapper .swiper-slide-active .cates,
+    .product_exhibitions .swiper-wrapper .swiper-slide-active .subject,
+    .product_exhibitions .swiper-wrapper .swiper-slide-active .product_list_sm{opacity:1;}
 
     #layout .pe_swiper_pagination {display:flex;margin-top:3rem;justify-content: center;flex-wrap:wrap;background-color: transparent;}
     #layout .pe_swiper_pagination .swiper-pagination-bullet{width:0.4rem;height:0.4rem;background-color: #c6c6c6;border-radius:1rem;margin:0 0.3rem;transition:all 0.3s;opacity: 1;}
@@ -1945,6 +1948,8 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .caution_box .dot{margin-top:0;}
 .caution_box .dot li{font-size:1.4rem;color:#000;}
 .caution_box .stit{font-size:1.4rem;font-weight:600;margin-bottom:0.8rem;}
+.caution_box.dark{background-color: #1E2023;color:#fff;}
+.caution_box.dark .dot li{color:#fff;}
 
 .gift_form{border-radius: 0.6rem;overflow: hidden;}
 .gift_form .gift_content{background-color: #ddd;padding:0 4rem 4rem;}
@@ -2731,34 +2736,87 @@ td .check_agree p{margin-top:2rem;}
 .promotion_wrap{margin:0 auto;max-width:104rem;}
 .promotion_wrap .attendance_visual{position: relative;}
 .promotion_wrap .attendance_visual .img{width:100%;display:block;}
+.promotion_wrap .attendance_visual .img img{max-width:none;width: 100%;}
+.promotion_wrap .attendance_visual .img_pc{}
+.promotion_wrap .attendance_visual .img_mobile{display: none;}
 .promotion_wrap .attendance_visual .date{position:absolute;left:50%;top:9rem;transform: translate(-50%,0);font-size:2rem;font-weight:600;}
 .promotion_wrap .attendance_visual .date span{display:block;padding:1rem 2.3rem;}
 .promotion_wrap .attendance_visual .date span:before,
 .promotion_wrap .attendance_visual .date span:after{content:"";position:absolute;top:0;width:3.5rem;height:100%;border-top:3px solid #000;border-bottom:3px solid #000;}
-.promotion_wrap .attendance_visual .date span:before{left:0;border-left:3px solid #000;border-right:3px solid transparent;border-radius:5rem 0 0 5rem;}
-.promotion_wrap .attendance_visual .date span:after{right:0;border-right:3px solid #000;border-left:3px solid transparent;border-radius:0 5rem 5rem 0;}
+.promotion_wrap .attendance_visual .date span:before{left:0;border-left:3px solid #000;border-right:3px solid transparent;border-radius:55rem 0 0 55rem;}
+.promotion_wrap .attendance_visual .date span:after{right:0;border-right:3px solid #000;border-left:3px solid transparent;border-radius:0 55rem 55rem 0;}
 .promotion_wrap .attendance_visual .date:before{content:"";position:absolute;left:3rem;top:0;width:calc(100% - 6rem);height:0.3rem;background-color: #000;}
-.promotion_wrap .attendance_visual .date:after{content:"";position:absolute;left:3rem;bottom:-0.8rem;width:calc(100% - 6rem);height:1.1rem;background-position: right center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/attendance_visual_date_line.svg');}
+.promotion_wrap .attendance_visual .date:after{content:"";position:absolute;left:3rem;bottom:-0.8rem;width:calc(100% - 6rem);height:1.1rem;background-position: right bottom;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/attendance_visual_date_line.svg');}
 .promotion_wrap .attendance_visual .text{position:absolute;left:0;top:40rem;width:100%;text-align:center;font-size:2.6rem;font-weight:500;word-break:keep-all}
+.promotion_wrap .caution_box {border-radius:0;margin-top:0;}
+@media screen and (max-width: 1120px) {
+    .promotion_wrap{max-width:9999em;margin-left:-4rem;margin-right:-4rem;}
+    .promotion_wrap .table_top{justify-content: center;}
+    .promotion_wrap .attendance_visual .date{top:9.5vw;font-size:3.5vw;}
+    .promotion_wrap .attendance_visual .date span{padding:2vw 3.8vw;white-space: nowrap;}
+    .promotion_wrap .attendance_visual .text{top:53vw;font-size:4vw;}
+    .promotion_wrap .attendance_visual .img_pc{display: none;}
+    .promotion_wrap .attendance_visual .img_mobile{display: block;}
+}
+@media screen and (max-width: 1020px) {
+    .promotion_wrap{margin-left:-2.4rem;margin-right:-2.4rem;}
+}
 
+.attendance_content{padding:8rem 9rem;background-color: #E5EEF8;}
+.attendance_content .atd_info{background-color: #f5f5f5;display: flex;align-items: center;position: relative;border:2px solid #000;border-radius: 3rem;margin-bottom:2.5rem;}
+.attendance_content .atd_info .item{flex:1 1;padding:2.8rem;text-align: center;display: flex;align-items: center;justify-content: center;position: relative;}
+.attendance_content .atd_info .item .tit{color:#555;font-size:1.8rem;font-weight:500;margin-right:3rem;color:#555;}
+.attendance_content .atd_info .item .cnt{font-size:2.4rem;font-weight:600;}
+.attendance_content .atd_info .item + .item{}
+.attendance_content .atd_info .item + .item:before{content:"";width:1px;height:2rem;background-color: #b5b5b5;position: absolute;left:0;top:50%;margin-top:-1rem;}
 
+.atd_calendar{padding:5rem 5rem 6rem;background-color: #fff;border:2px solid #000;border-radius: 3rem;}
+.atd_calendar .disc{display: flex;justify-content: end;font-size:1.6rem;font-weight:500;margin-bottom:2.4rem;}
+.atd_calendar .disc .item{display: flex;align-items: center;}
+.atd_calendar .disc span{display: inline-block;width:1.5rem;height: 1.5rem;border-radius: 50%;margin-right:0.6rem;vertical-align: middle;}
+.atd_calendar .calendar{border:1px solid #E6E6E6;}
+.atd_calendar .calendar .week{display: flex;}
+.atd_calendar .calendar .week + .week{border-top:1px solid #e6e6e6;}
+.atd_calendar .calendar .week .day{padding:1rem;flex:1 1;}
+.atd_calendar .calendar .week .day + .day{border-left:1px solid #e6e6e6;}
+.atd_calendar .calendar .week .day .date{margin-bottom:1.3rem;font-size:1.4rem;font-weight:500;}
+.atd_calendar .calendar .week .day .cnt{padding-bottom:0.5rem;}
+.atd_calendar .calendar .week .day .atd{margin:0 auto;max-width:7.4rem;height:7.4rem;position: relative;background-size: contain;background-position: center center;background-repeat: no-repeat;background-image: url('../images/content/atd_calendar_atd.svg');}
+.atd_calendar .calendar .week .day .atd .atd_comp{position: absolute;z-index:10;left:50%;top:50%;width:100%;height:100%;transform: translate(-50%,-50%);background-size: contain;background-position: center center;background-repeat: no-repeat;background-image: url('../images/content/atd_calendar_atd_comp.svg');}
+.atd_calendar .calendar .week .day.today{background-color: #E7F1FF;}
+.atd_calendar .calendar .week .day.today .atd .atd_comp{opacity: 0;transition:translate(-50%,-50%);}
+.atd_calendar .calendar .week .day.today .atd .atd_comp.stamp{ opacity:1;animation: stamp 0.5s ease-in;}
 
-<div class="promotion_wrap">
-                    <div class="table_top">
-                        <div class="list_cates">
-                            <div class="item"><a href="javascript:;" class="active">출석체크</a></div>
-                            <div class="item"><a href="javascript:;">럭키박스</a></div>
-                        </div>
-                    </div>
+.atd_calendar .calendar .week .day .mission{margin:0 auto;max-width:7.4rem;height:7.4rem;position: relative;background-position: center center;background-repeat: no-repeat;background-image: url('../images/content/atd_calendar_atd.svg');}
+.atd_calendar .calendar .week .day .mission .mission_comp{position: absolute;z-index:10;left:50%;top:50%;width:100%;height:100%;transform: translate(-50%,-50%);background-size: contain;background-position: center center;background-repeat: no-repeat;background-image: url('../images/content/atd_calendar_mission_comp.svg');}
+.atd_calendar .calendar .week .day.today .mission .mission_comp{opacity: 0;transition:translate(-50%,-50%);}
+.atd_calendar .calendar .week .day.today .mission .mission_comp.stamp{ opacity:1;animation: stamp 0.5s ease-in;}
+@media screen and (max-width: 1020px) {
+    .attendance_content{padding:3rem 2.4rem 4rem;}
+    .attendance_content .atd_info{border-radius: 1.6rem;margin-bottom:1.5rem;}
+    .attendance_content .atd_info .item{padding:1rem;display: block;}
+    .attendance_content .atd_info .item .tit{font-size:1.1rem;margin-right:0;}
+    .attendance_content .atd_info .item .cnt{font-size:1.4rem;}
+    .attendance_content .atd_info .item + .item:before{height:1.6rem;margin-top:-0.8rem;}
 
-                    <div class="attendance_content">
-                        <div class="attendance_visual">
-                            <div class="img"><img src="/resources/static/dist/images/content/attendance_img.jpg"></div>
-                            <div class="date">1.13 – 2.7 토/일 제외</div>
-                            <div class="cnt">1회 출석 시 10마일리지,<br/>10일 연속 출석 시 10,000 마일리지 지급!</div>
-                        </div>
-                    </div>
-                </div>
-
+    .atd_calendar{padding:1.8rem 1rem 2.4rem;border-radius: 1.6rem;}
+    .atd_calendar .disc{font-size:1rem;margin-bottom:1rem;}
+    .atd_calendar .disc span{width:0.8rem;height: 0.8rem;}
+    .atd_calendar .calendar .week .day{padding:0.8rem 0.6rem;}
+    .atd_calendar .calendar .week .day .date{margin-bottom:0.5rem;font-size:1rem;}
+    .atd_calendar .calendar .week .day .cnt{padding-bottom:0;}
+    .atd_calendar .calendar .week .day .atd{height:auto;padding-top:100%;}
+    .atd_calendar .calendar .week .day .mission{height:auto;padding-top:100%;}
+}
+@keyframes stamp {
+    0% {
+        transform:translate(-50%,-150%) scale(5);
+        opacity: 0;
+    }
+    100% {
+        transform:translate(-50%,-50%) scale(1);
+        opacity: 1;
+    }
+}
 
 
