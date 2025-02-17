@@ -2734,29 +2734,29 @@ td .check_agree p{margin-top:2rem;}
 }
 
 .promotion_wrap{margin:0 auto;max-width:104rem;}
-.promotion_wrap .attendance_visual{position: relative;}
-.promotion_wrap .attendance_visual .img{width:100%;display:block;}
-.promotion_wrap .attendance_visual .img img{max-width:none;width: 100%;}
-.promotion_wrap .attendance_visual .img_pc{}
-.promotion_wrap .attendance_visual .img_mobile{display: none;}
-.promotion_wrap .attendance_visual .date{position:absolute;left:50%;top:9rem;transform: translate(-50%,0);font-size:2rem;font-weight:600;}
-.promotion_wrap .attendance_visual .date span{display:block;padding:1rem 2.3rem;}
-.promotion_wrap .attendance_visual .date span:before,
-.promotion_wrap .attendance_visual .date span:after{content:"";position:absolute;top:0;width:3.5rem;height:100%;border-top:3px solid #000;border-bottom:3px solid #000;}
-.promotion_wrap .attendance_visual .date span:before{left:0;border-left:3px solid #000;border-right:3px solid transparent;border-radius:55rem 0 0 55rem;}
-.promotion_wrap .attendance_visual .date span:after{right:0;border-right:3px solid #000;border-left:3px solid transparent;border-radius:0 55rem 55rem 0;}
-.promotion_wrap .attendance_visual .date:before{content:"";position:absolute;left:3rem;top:0;width:calc(100% - 6rem);height:0.3rem;background-color: #000;}
-.promotion_wrap .attendance_visual .date:after{content:"";position:absolute;left:3rem;bottom:-0.8rem;width:calc(100% - 6rem);height:1.1rem;background-position: right bottom;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/attendance_visual_date_line.svg');}
-.promotion_wrap .attendance_visual .text{position:absolute;left:0;top:40rem;width:100%;text-align:center;font-size:2.6rem;font-weight:500;word-break:keep-all}
+.attendance_visual{position: relative;}
+.attendance_visual .img{width:100%;display:block;}
+.attendance_visual .img img{max-width:none;width: 100%;}
+.attendance_visual .img_pc{}
+.attendance_visual .img_mobile{display: none;}
+.attendance_visual .date{position:absolute;left:50%;top:9rem;transform: translate(-50%,0);font-size:2rem;font-weight:600;}
+.attendance_visual .date span{display:block;padding:1rem 2.3rem;}
+.attendance_visual .date span:before,
+.attendance_visual .date span:after{content:"";position:absolute;top:0;width:3.5rem;height:100%;border-top:3px solid #000;border-bottom:3px solid #000;}
+.attendance_visual .date span:before{left:0;border-left:3px solid #000;border-right:3px solid transparent;border-radius:55rem 0 0 55rem;}
+.attendance_visual .date span:after{right:0;border-right:3px solid #000;border-left:3px solid transparent;border-radius:0 55rem 55rem 0;}
+.attendance_visual .date:before{content:"";position:absolute;left:3rem;top:0;width:calc(100% - 6rem);height:0.3rem;background-color: #000;}
+.attendance_visual .date:after{content:"";position:absolute;left:3rem;bottom:-0.8rem;width:calc(100% - 6rem);height:1.1rem;background-position: right bottom;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/attendance_visual_date_line.svg');}
+.attendance_visual .text{position:absolute;left:0;top:40rem;width:100%;text-align:center;font-size:2.6rem;font-weight:500;word-break:keep-all}
 .promotion_wrap .caution_box {border-radius:0;margin-top:0;}
 @media screen and (max-width: 1120px) {
     .promotion_wrap{max-width:9999em;margin-left:-4rem;margin-right:-4rem;}
     .promotion_wrap .table_top{justify-content: center;}
-    .promotion_wrap .attendance_visual .date{top:9.5vw;font-size:3.5vw;}
-    .promotion_wrap .attendance_visual .date span{padding:2vw 3.8vw;white-space: nowrap;}
-    .promotion_wrap .attendance_visual .text{top:53vw;font-size:4vw;}
-    .promotion_wrap .attendance_visual .img_pc{display: none;}
-    .promotion_wrap .attendance_visual .img_mobile{display: block;}
+    .attendance_visual .date{top:9.5vw;font-size:3.5vw;}
+    .attendance_visual .date span{padding:2vw 3.8vw;white-space: nowrap;}
+    .attendance_visual .text{top:53vw;font-size:4vw;}
+    .attendance_visual .img_pc{display: none;}
+    .attendance_visual .img_mobile{display: block;}
 }
 @media screen and (max-width: 1020px) {
     .promotion_wrap{margin-left:-2.4rem;margin-right:-2.4rem;}
@@ -2820,3 +2820,41 @@ td .check_agree p{margin-top:2rem;}
 }
 
 
+.luckybox_visual{position: relative;}
+.luckybox_visual .img{width:100%;display:block;}
+.luckybox_visual .img img{max-width:none;width: 100%;}
+.luckybox_visual .img_pc{}
+.luckybox_visual .img_mobile{display: none;}
+.luckybox_visual .date{position:absolute;left:50%;margin-left:15.4rem;top:20.9rem;font-size:2rem;font-weight:600;color:#fff;width:12.4rem;height: 12.4rem;display: flex;align-items: center;justify-content: center;text-align: center;}
+.luckybox_visual .text{position:absolute;left:0;bottom:14.4rem;width:100%;text-align:center;}
+.luckybox_visual .text div{display:inline-block;padding:2.4rem 6.5rem;background-color: #000;border-radius:10rem;font-size:2.6rem;font-weight:500;word-break:keep-all;color:#fff;}
+.luckybox_items{padding:8rem;background-color: #E83A3C;text-align: center;}
+.luckybox_items .items{margin:0 auto;display: inline-grid;grid-template-columns: repeat(3,1fr);gap:3rem;}
+.luckybox_items .items .item{background-color: #F8EDE1;border-radius: 4rem;display: flex;align-items: center;justify-content: center;width:20rem;height:20rem;}
+.luckybox_items .items .item img{}
+@media screen and (max-width: 1120px) {
+    .luckybox_visual .img_pc{display: none;}
+    .luckybox_visual .img_mobile{display: block;}
+    .luckybox_visual .date{margin-left:19vw;top:24vw;font-size:3.5vw;width:19vw;height: 19vw;}
+    .luckybox_visual .text{bottom:15.5vw;}
+    .luckybox_visual .text div{padding:4.5vw 7vw;border-radius:100vw;font-size:4.5vw;}
+    .luckybox_items{padding:15vw 0;}
+    .luckybox_items .items{gap:5vw;display: grid;padding:0 12vw;}
+    .luckybox_items .items .item{border-radius: 5vw;position: relative;padding-top:100%;;width:auto;height:auto;}
+    .luckybox_items .items .item img{position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);width:48%;}
+    .luckybox_items .form_btns{padding:0 max(2.4rem, 7vw);}
+}
+
+.event_result_image{text-align: center;}
+.event_result_image img{max-width:14rem;}
+.event_result_text{text-align: center;margin-top:2rem;}
+.event_result_text .tit{font-size:1.8rem;font-weight:600;}
+.event_result_text .disc{font-size:1.4rem;color:#666;margin-top:1rem;}
+
+<div class="event_result_image">
+<img src="/resources/static/dist/images/content/event_result_mileage.png">
+</div>
+<div class="event_result_text">
+<div class="tit">50,000 마일리지</div>
+<div class="disc">25/1/16 지급예정</div>
+</div>

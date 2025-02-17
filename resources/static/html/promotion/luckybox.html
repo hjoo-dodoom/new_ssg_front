@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById(targetId).innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div id="viewed_products_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="subpage_title_center">
+                    <h2>프로모션</h2>
+                </div>
+                <div class="promotion_wrap">
+                    <div class="table_top">
+                        <div class="list_cates">
+                            <div class="item"><a href="javascript:;">출석체크</a></div>
+                            <div class="item"><a href="javascript:;" class="active">럭키박스</a></div>
+                        </div>
+                    </div>
+
+                    <div class="luckybox_wrap">
+                        <div class="luckybox_visual">
+                            <div class="img img_pc"><img src="/resources/static/dist/images/content/luckybox_img.jpg"></div>
+                            <div class="img img_mobile"><img src="/resources/static/dist/images/content/luckybox_img_mobile.jpg"></div>
+                            <div class="date">12.16 –<br/>12.30</div>
+                            <div class="text"><div>1일 1회 이벤트 참여 가능</div></div>
+                        </div>
+                        <div class="luckybox_items">
+                            <div class="items">
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item1.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item2.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item1.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item2.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item1.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item2.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item1.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item2.png"></div>
+                                <div class="item"><img src="/resources/static/dist/images/content/luckybox_item1.png"></div>
+                            </div>
+                            <div class="form_btns between_ml">
+                                <a href="javascript:;" class="btn btn_type4 btn_black w450">이벤트 당첨 확인하기</a>
+                            </div>
+                        </div>
+                        <div class="caution_box dark">
+                            <div class="caution_title">
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 2.25C10.4913 2.25 8.52768 2.82183 6.85749 3.89317C5.18731 4.96451 3.88556 6.48726 3.11685 8.26884C2.34815 10.0504 2.14702 12.0108 2.5389 13.9021C2.93079 15.7934 3.89807 17.5307 5.31845 18.8943C6.73883 20.2579 8.5485 21.1865 10.5186 21.5627C12.4887 21.9389 14.5308 21.7458 16.3866 21.0078C18.2424 20.2699 19.8286 19.0202 20.9446 17.4168C22.0606 15.8134 22.6563 13.9284 22.6563 12C22.6534 9.41498 21.5825 6.93661 19.6784 5.10872C17.7744 3.28084 15.1927 2.25273 12.5 2.25ZM12.5 20.25C10.8003 20.25 9.13881 19.7661 7.72557 18.8596C6.31234 17.9531 5.21086 16.6646 4.56041 15.1571C3.90997 13.6496 3.73979 11.9908 4.07138 10.3905C4.40297 8.79016 5.22145 7.32015 6.42331 6.16637C7.62516 5.01259 9.15642 4.22685 10.8234 3.90852C12.4905 3.59019 14.2184 3.75357 15.7887 4.37799C17.359 5.00242 18.7012 6.05984 19.6454 7.41655C20.5897 8.77325 21.0938 10.3683 21.0938 12C21.0912 14.1873 20.1849 16.2843 18.5738 17.8309C16.9628 19.3775 14.7784 20.2475 12.5 20.25ZM11.7188 12.75V7.5C11.7188 7.30109 11.8011 7.11032 11.9476 6.96967C12.0941 6.82902 12.2928 6.75 12.5 6.75C12.7072 6.75 12.9059 6.82902 13.0524 6.96967C13.1989 7.11032 13.2813 7.30109 13.2813 7.5V12.75C13.2813 12.9489 13.1989 13.1397 13.0524 13.2803C12.9059 13.421 12.7072 13.5 12.5 13.5C12.2928 13.5 12.0941 13.421 11.9476 13.2803C11.8011 13.1397 11.7188 12.9489 11.7188 12.75ZM13.6719 16.125C13.6719 16.3475 13.6031 16.565 13.4744 16.75C13.3456 16.935 13.1626 17.0792 12.9485 17.1644C12.7343 17.2495 12.4987 17.2718 12.2714 17.2284C12.0441 17.185 11.8353 17.0778 11.6714 16.9205C11.5075 16.7632 11.3959 16.5627 11.3506 16.3445C11.3054 16.1262 11.3286 15.9 11.4173 15.6945C11.506 15.4889 11.6562 15.3132 11.8489 15.1896C12.0417 15.066 12.2682 15 12.5 15C12.8108 15 13.1089 15.1185 13.3286 15.3295C13.5484 15.5405 13.6719 15.8266 13.6719 16.125Z" fill="white"/>
+                                </svg>
+                                <span>꼭 알아두세요</span>
+                            </div>
+                            <ul class="dot">
+                                <li>본 이벤트는 1일 1회만 참여하실 수 있습니다.</li>
+                                <li>이벤트 기간 : 24년 10월 27일 ~ 11월 15일 까지</li>
+                                <li>나의정보 > 정보수정 > 휴대폰번호 인증회원만 본 이벤트에 참여하실 수 있습니다.</li>
+                                <li>이벤트 진행 시 당첨 결과 확인 및 안내 목적으로 고객님의 아이디, 이름, 휴대폰번호를 이용할 수 있습니다.</li>
+                                <li>해당 이벤트는 당사 사정에 의해 사전 고지 없이 임의변경 또는 조기종료 될 수 있습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<!-- 이벤트 당첨 확인하기 -->
+<div id="event_history" class="layer_popup layer_default show">
+    <div class="layer_content width_md">
+        <div class="layer_default_title">이벤트 당첨 확인하기</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="table_response">
+                <table>
+                    <colgroup>
+                        <col style="width:12rem;">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>당첨일</th>
+                            <th>당첨내역</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="mb_tit">항목</span><span class="mb_cnt">2025-01-22</span></td>
+                            <td><span class="mb_tit">당첨내역</span><span class="mb_cnt">[경품] 스타벅스 10,000원권</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="mb_tit">항목</span><span class="mb_cnt">2025-01-22</span></td>
+                            <td><span class="mb_tit">당첨내역</span><span class="mb_cnt">[마일리지] 50,000 마일리지 50,000 마일리지</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="mb_tit">항목</span><span class="mb_cnt">2025-01-22</span></td>
+                            <td><span class="mb_tit">당첨내역</span><span class="mb_cnt">[당첨실패] 꽝! 다음기회에</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //이벤트 당첨 확인하기 -->
+
+
+<!-- 마일리지 당첨 축하! -->
+<div id="event_result_mileage" class="layer_popup layer_default show">
+    <div class="layer_content width_sm">
+        <div class="layer_default_title">마일리지 당첨 축하!</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="event_result_image">
+                <img src="/resources/static/dist/images/content/event_result_mileage.png">
+            </div>
+            <div class="event_result_text">
+                <div class="tit">50,000 마일리지</div>
+                <div class="disc">25/1/16 지급예정</div>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //마일리지 당첨 축하! -->
+
+<!-- 경품 당첨 축하! -->
+<div id="event_result_product" class="layer_popup layer_default show">
+    <div class="layer_content width_sm">
+        <div class="layer_default_title">경품 당첨 축하!</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="event_result_image">
+                <img src="/resources/static/dist/images/content/event_result_product.png">
+            </div>
+            <div class="event_result_text">
+                <div class="tit">스타벅스 10,000원권</div>
+                <div class="disc">지급일 개별공지</div>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //경품 당첨 축하! -->
+
+<!-- 당첨 실패 -->
+<div id="event_result_lose" class="layer_popup layer_default show">
+    <div class="layer_content width_sm">
+        <div class="layer_default_title">당첨 실패</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="event_result_image">
+                <img src="/resources/static/dist/images/content/event_result_lose.png">
+            </div>
+            <div class="event_result_text">
+                <div class="tit">꽝! 아쉽지만 다음기회에..</div>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //당첨 실패 -->
+
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div>
+    <!-- //공통영역3 -->
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                element.classList.add('stamp');
+                observer.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 1
+    });
+
+    const atdElement = document.querySelector('.day.today .atd .atd_comp');
+    if (atdElement) {
+        observer.observe(atdElement);
+    }
+
+    const missionElement = document.querySelector('.day.today .mission .mission_comp');
+    if (missionElement) {
+        observer.observe(missionElement);
+    }
+});
+</script>
+
+</body>
+</html>

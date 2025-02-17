@@ -362,6 +362,7 @@ top: 0;transform: translateX(-10px);background: #f52121;opacity: 0.75;backdrop-f
 .btn.btn_type6{height:3.8rem;font-size:1.4rem;font-weight:600;width:26rem;}
 .btn.w100{width:100%;}
 .btn.w300{width:30rem;}
+.btn.w450{width:45rem;}
 .btn_type1.btn_inline{padding-left:2.8rem;padding-right:2.8rem;}
 .btn_type2.btn_inline{padding-left:2.8rem;padding-right:2.8rem;}
 .btn_type3.btn_inline{padding-left:2.8rem;padding-right:2.8rem;}
