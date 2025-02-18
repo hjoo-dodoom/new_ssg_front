@@ -2860,10 +2860,20 @@ td .check_agree p{margin-top:2rem;}
     .search_empty{min-height:calc(100vh - 16rem);display: flex;align-items: center;justify-content: center;}
 }
 
-<div class="event_result_image">
-<img src="/resources/static/dist/images/content/event_result_mileage.png">
-</div>
-<div class="event_result_text">
-<div class="tit">50,000 마일리지</div>
-<div class="disc">25/1/16 지급예정</div>
-</div>
+#error_page{}
+#error_page #content{display:flex;flex-direction:column;min-height:100vh;padding:min(24rem, 7vw) min(18rem, 4.5vw) min(13rem, 3.5vw) min(21rem, 6vw);}
+#error_page .content{width:100%;}
+#error_page .content h2{font-size:7rem;font-weight:600;margin-bottom:1.5rem;}
+#error_page .content p{font-size:1.7rem;color:#444;word-break: keep-all;}
+#error_page .content .form_btns{justify-content: start;}
+#error_page .bg{margin-top:auto;margin-left:auto;}
+#error_page .bg img{max-width:41.7rem;}
+@media screen and (max-width: 1020px) {
+    #error_page #content{align-items: center;justify-content: center;padding:12rem 2.4rem 8rem;}
+    #error_page .content{text-align: center;}
+    #error_page .content h2{font-size:3.6rem;}
+    #error_page .content p{font-size:1.4rem;}
+    #error_page .content .form_btns{justify-content: center;}
+    #error_page .bg{margin:9rem 0 0;}
+    #error_page .bg img{max-width:24.6rem;}
+}
