@@ -619,7 +619,7 @@ selectImageAll.forEach(function (item) {
         const checkedImage = document.querySelector('input[name="select_image"]:checked');
         const imageNumber = checkedImage.value;
         const backgroundColor = checkedImage.getAttribute('data-color');
-        giftImage.src = `/resources/static/dist/images/content/gift_img${imageNumber}.jpg`;
+        giftImage.src = `/resources/static/dist/images/content/gift_img`+imageNumber+`.jpg`;
         giftContent.style.backgroundColor = backgroundColor;
     });
 });
@@ -671,21 +671,21 @@ function handleReceiverCount() {
             for(let i = currentCount + 1; i <= newCount; i++) {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <th>받는 분 ${newCount > 1 ? `<span class="reciver_number">${i}.</span>` : ''}</th>
+                    <th>받는 분 ` + (newCount > 1 ? `<span class="reciver_number">` + i + `.</span>` : '') + `</th>
                     <td>
                         <div class="input_group">
                             <div class="input size_32">
-                                <input type="text" placeholder="받는 분 이름" name="reciver_name${i}">
+                                <input type="text" placeholder="받는 분 이름" name="reciver_name`+i+`">
                             </div>
                         </div>
                         <div class="input_group">
                             <div class="input size_32">
-                                <input type="tel" placeholder="-없이 휴대폰번호 입력" maxlength="11" name="reciver_tel${i}">
+                                <input type="tel" placeholder="-없이 휴대폰번호 입력" maxlength="11" name="reciver_tel`+i+`">
                             </div>
                         </div>
                         <div class="input_group">
                             <label class="checkbox checkbox_type2 inline">
-                                <input type="checkbox" name="reciver_check${i}">
+                                <input type="checkbox" name="reciver_check`+i+`">
                                 <span class="ck_icon"></span>
                                 주문자 정보와 동일하게
                             </label>
@@ -707,7 +707,7 @@ function handleReceiverCount() {
                 el.style.display = 'none';
             } else {
                 el.style.display = '';
-                el.textContent = `${index + 1}.`;
+                el.textContent = index + 1;
             }
         });
     });
