@@ -531,6 +531,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .location .item.active .links{display:block;box-shadow:0 0.4rem 3rem rgba(0,0,0,.25);}
     .location .item .links .link a{padding:0.9rem 1.8rem;}
 }
+.location_cate_wrap{margin-bottom:7rem;}
 .cate_taps{margin-top:4rem;}
 .cate_taps .swiper-wrapper{display: grid;grid-template-columns: repeat(6, 1fr);}
 .cate_taps .swiper-wrapper .item{border:1px solid #E7E7E7;border-left:0;}
@@ -567,7 +568,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .location_wrap .item{display:none;}
     .location_wrap .item:last-child{display:block;}
     .location_wrap .item a{font-size:1.5rem;}
-    .location_cate_wrap{margin:0 -2.4rem;padding:0 2.4rem;overflow: hidden;position: relative;}
+    .location_cate_wrap{margin:0 -2.4rem 2.6rem;padding:0 2.4rem;overflow: hidden;position: relative;}
     .location_cate_wrap:before{content:"";position: absolute;left:0;bottom:0;background-color: #EDEDED;height:1px;width:100%;}
     .cate_taps{margin-top:0.5rem;}
     .cate_taps .swiper-wrapper{display: flex;}
@@ -593,7 +594,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .special_visual{margin-top:3rem;}
 .special_visual img{width: 100%;}
 
-.list_top{margin-top:7rem;margin-bottom:3rem;padding-bottom:2rem;display:flex;align-items: center;border-bottom:2px solid #000;}
+.list_top{margin-bottom:3rem;padding-bottom:2rem;display:flex;align-items: center;border-bottom:2px solid #000;}
 .list_bottom{margin-top:2rem;display:flex;align-items: center}
 .list_top > div{}
 .list_top > div + div,
@@ -629,7 +630,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .list_special .date{font-size:1.3rem;margin-top:2rem;}
     .special_visual{margin:0 -2.4rem 2.5rem -2.4rem;}
     .list_top.v_mobile{display:flex !important;}
-    .list_top{margin:2.6rem 0 2rem;padding-bottom:0;border-bottom:0;}
+    .list_top{margin:0 0 2rem;padding-bottom:0;border-bottom:0;}
     .list_top .total_count{font-size:1.3rem;}
     .list_sort.v_mobile{display: block;}
     .list_btns{margin-bottom:1.6rem;}
@@ -2877,3 +2878,88 @@ td .check_agree p{margin-top:2rem;}
     #error_page .bg{margin:9rem 0 0;}
     #error_page .bg img{max-width:24.6rem;}
 }
+
+.terms_wrap{}
+.terms_wrap p{color:#444;}
+.terms_wrap p + p{}
+.terms_wrap strong{font-size:1.6rem;display: block;}
+.terms_wrap em{font-size:1.6rem;display: block;}
+.terms_wrap em + p{margin-top:1rem;}
+.terms_wrap strong + p{margin-top:1rem;}
+.terms_wrap strong + em{margin-top:1rem;}
+.terms_wrap em + strong{margin-top:1rem;}
+.terms_wrap p + em{margin-top:2rem;}
+.terms_wrap p + strong{margin-top:2rem;}
+@media screen and (max-width: 1020px) {
+    .terms_wrap strong{font-size:1.5rem;}
+    .terms_wrap em{font-size:1.5rem;}
+}
+
+.policy_wrap{}
+.policy_wrap .title{font-size:2rem;font-weight:500;text-align: center;margin-bottom:2rem;}
+.policy_wrap .policy_mark{display:grid;grid-template-columns: repeat(3,1fr);gap:3.7rem;}
+.policy_wrap .policy_mark li{border:1px solid #E6E6E6;border-radius:2rem;text-align: center;padding:3.6rem;font-size:1.6rem;font-weight:500;word-break: keep-all;}
+.policy_wrap .policy_mark li img{display:block;margin:0 auto 1rem;}
+.policy_wrap .policy_list{margin-top:5rem;border-bottom:1px solid #e5e5e5;}
+.policy_wrap .policy_list > li{border-top:1px solid #e5e5e5;}
+.policy_wrap .policy_list li + li{}
+.policy_wrap .policy_list li .top_cnt{display:flex;flex-wrap:wrap;align-items: center;padding:1.3rem 3rem 1.3rem 2rem;border:0;background-color:#fff;text-align:left;width:100%;font-size:1.6rem;font-weight:500;position:relative;}
+.policy_wrap .policy_list li .top_cnt span{margin-right:2rem;}
+.policy_wrap .policy_list li .top_cnt img{width:5rem;}
+.policy_wrap .policy_list li .top_cnt img + img{margin-left:1rem;}
+.policy_wrap .policy_list li .top_cnt .marks{}
+.policy_wrap .policy_list li .top_cnt:before{content:"";width:1.8rem;height:1.8rem;position:absolute;right:0;top:50%;margin-top:-0.9rem;transition:all 0.2s;background-size:contain;
+background-repeat:no-repeat;background-position:center center;background-image:url('/resources/static/dist/images/common/icon_arrow_down3.svg');}
+.policy_wrap .policy_list li.active .top_cnt:before{transform:rotate(180deg);}
+.policy_wrap .policy_list li .bottom_cnt{display:none;padding:3rem;background-color:#F5F5F5;border-radius:1.2rem;}
+.policy_wrap .policy_list li.active + li{border-top:0;}
+.policy_list ol{}
+.policy_list ol li{}
+.policy_list ol li + li{margin-top:1rem;}
+.policy_list ul li{}
+.policy_list ul li + li{margin-top:1rem;}
+
+.policy_list .privacy_table{margin:1rem 0;}
+.policy_list table{width:100%;border-collapse:collapse;border-top:1px solid #ddd;border-right:1px solid #ddd;}
+.policy_list table th{background-color:#f1f1f1;border-left:1px solid #ddd;border-bottom:1px solid #ddd;text-align:center;padding:1rem;font-weight:600;border-top:0;text-indent:0;}
+.policy_list table td{border-left:1px solid #ddd;border-bottom:1px solid #ddd;text-align:left;padding:1rem;border-top:0;text-indent:0;background-color:#fff;}
+@media screen and (max-width: 1020px) {
+    .policy_wrap .title{font-size:1.6rem;margin-bottom:1.4rem;}
+    .policy_wrap .policy_mark{grid-template-columns: repeat(2,1fr);gap:1.2rem;}
+    .policy_wrap .policy_mark li{border-radius:1.6rem;padding:2.4rem 1rem;font-size:1.5rem;}
+    .policy_wrap .policy_mark li img{width:6.4rem;}
+
+    .policy_wrap .policy_list{margin-top:4rem;border-bottom:1px solid #e5e5e5;}
+    .policy_wrap .policy_list > li{border-top:1px solid #e5e5e5;}
+    .policy_wrap .policy_list li .top_cnt{padding:0.8rem 3rem 0.8rem 1rem;font-size:1.5rem;gap:0.8rem 0}
+    .policy_wrap .policy_list li .top_cnt span{margin-right:1.2rem;}
+    .policy_wrap .policy_list li .top_cnt img{width:4rem;}
+    .policy_wrap .policy_list li .top_cnt:before{width:1.6rem;height:1.6rem;margin-top:-0.8rem;}
+    .policy_wrap .policy_list li .bottom_cnt{padding:2rem;}
+    .policy_list ol{}
+    .policy_list .privacy_table{width:100%;overflow-x:auto;}
+    .policy_list table{white-space: nowrap;}
+}
+
+<ul class="policy_list">
+<li>
+    <button type="button" class="top_cnt">제 1조 총칙 <img src="/resources/static/dist/images/content/policy_mark1.jpg" alt=""></button>
+    <div class="bottom_cnt">
+        <ol>
+            <li>1. 개인정보란 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명 등의 사항에 의하여 당해 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.</li>
+            <li>2. ㈜신세계는 (이하 “당사”라고 합니다) 회원의 개인정보를 매우 중요시하고, 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』, 『개인정보보호법』 등의 관련 법률을 준수하고 있으며, 그에 의거한 개인정보처리방침을 정하여 이용자의 권익보호에 최선을 다하고 있습니다.</li>
+            <li>3. 당사는 개인정보처리방침을 통하여 회원께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.</li>
+            <li>4. 당사는 개인정보처리방침을 홈페이지 첫 화면에 공개함으로써 회원께서 언제나 용이하게 보실 수 있도록 조치하고 있습니다.</li>
+        </ol>
+    </div>
+</li>
+
+<div class="policy_wrap">
+                    <ul class="policy_mark">
+						<li class="item"><img src="/resources/static/dist/images/content/policy_mark1.png">일반 개인정보 수집</li>
+						<li class="item"><img src="/resources/static/dist/images/content/policy_mark2.png">개인정보 처리목적</li>
+						<li class="item"><img src="/resources/static/dist/images/content/policy_mark3.png">개인정보의 보유 기간</li>
+						<li class="item"><img src="/resources/static/dist/images/content/policy_mark4.png">개인정보 처리위탁</li>
+						<li class="item"><img src="/resources/static/dist/images/content/policy_mark5.png">개인정보의 제공</li>
+						<li class="item"><img src="/resources/static/dist/images/content/policy_mark6.png">개인정보 열람 청구</li>
+					</ul>

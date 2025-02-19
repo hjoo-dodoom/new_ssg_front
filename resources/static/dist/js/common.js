@@ -1018,7 +1018,7 @@ function imageDetail(src) {
 //토글 슬라이드
 function toggleSlideItem(button, content ,duration){
     if (isSliding) return;
-    const toggleSlide = button.closest('.item');
+    const toggleSlide = button.closest('.item') || button.closest('li');
     let targetSlide = null;
     targetSlide = content ? content : toggleSlide.querySelector('[slide-content]');
     console.log(targetSlide)
