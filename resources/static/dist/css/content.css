@@ -2150,9 +2150,10 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .mp_product .table table .group_info .r{margin-left:auto;justify-content: end;}
 .mp_product .table table .group_info .date{font-size:1.6rem;font-weight:600;margin-right:4rem;}
 .mp_product .table table .group_info .price{font-size:1.4rem;font-weight:500;}
-.mp_product .table table .group_info .gift{font-size:1.4rem;font-weight:500;color:var(--theme-color);}
+.mp_product .table table .group_info .gift{font-size:1.4rem;font-weight:500;color:var(--theme-color);border:0;background-color:transparent;}
 .mp_product .table table .group_info .gift svg path{fill:var(--theme-color) !important;}
-.mp_product .table table .group_info .multi{font-size:1.4rem;font-weight:500;color:#576597;}
+.mp_product .table table .group_info .gift:hover{text-decoration:underline;}
+.mp_product .table table .group_info .multi{font-size:1.4rem;font-weight:500;color:#576597;border:0;background-color:transparent;}
 
 .mp_product .table table .group_info .order_num{display: flex;align-items: center;}
 .mp_product .table table .group_info .order_num .tit{font-size:1.4rem;}
@@ -2174,6 +2175,11 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .mp_product .table table .td_product .prd_cnt .options .option{position: relative;}
 .mp_product .table table .td_product .prd_cnt .options .option:after{content:"";position: absolute;right:-1rem;top:50%;margin-top:-0.7rem;width:1px;height:1.4rem;background-color: #d7d7d7;}
 .mp_product .table table .td_product .prd_cnt .options .lot{}
+.mp_product .table table .td_product .reciver{font-weight:600;margin-top:1.4rem;}
+.mp_product .table table .td_product .reciver span{}
+.mp_product .table table .td_product .reciver button{color:#666;border:0;background-color:transparent;margin-left:2rem;text-decoration: underline;}
+.mp_product .table table .td_product .reciver button:hover{color:#333;}
+
 .mp_product .table table .td_price{font-size:1.6rem;font-weight:600;}
 .mp_product .table table .td_status{}
 .mp_product .table table .td_status .status{font-size:1.6rem;font-weight:600;}
@@ -2322,6 +2328,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .mp_product .table table .td_product .prd_cnt .options{margin-top:1.2rem;font-size:1.2rem;}
     .mp_product .table table .td_product .prd_cnt .options .option:after{margin-top:-0.5rem;height:1rem;}
     .mp_product .table table .td_product .prd_cnt .options .lot{}
+    .mp_product .table table .td_product .reciver{margin-top:0.8rem;font-size:1.3rem;}
     .mp_product .table table .td_price{margin-top:0.5rem;font-size:1.5rem;}
     .mp_product .table table .td_status{margin-top:1rem;}
     .mp_product .table table .td_status .status{display: flex;align-items: center;font-size:1.4rem;}
