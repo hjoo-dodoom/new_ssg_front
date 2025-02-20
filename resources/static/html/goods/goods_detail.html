@@ -561,7 +561,7 @@
                         <div class="tap_btns" scroll-poisition-active>
                             <a href="#scroll_section1" class="active">상품정보</a>
                             <a href="#scroll_section2">상품문의</a>
-                            <a href="#scroll_section3">배송&취소교환반품</a>
+                            <a href="#scroll_section3">배송/반품/교환</a>
                         </div>
                         <div class="tap_contents">
 
@@ -1460,6 +1460,26 @@ function onScroll() {
         }
     });
 }
+
+
+//옵션선택 스크롤
+const scrollDwTop = document.querySelector('.dw_top');
+const scrollOptionsFixed = document.querySelector('.options_fixed');
+const callback = (entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            scrollOptionsFixed.classList.add('show');
+        } else {
+            scrollOptionsFixed.classList.remove('show');
+        }
+    });
+};
+const options = {
+    root: null,
+    threshold: 0
+};
+const observer = new IntersectionObserver(callback, options);
+observer.observe(scrollDwTop);
 </script>
 </body>
 </html>

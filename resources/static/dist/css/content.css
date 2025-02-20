@@ -1385,6 +1385,9 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .options_fixed.open .goods_btns_mobile{display: none;}
 @media screen and (min-width: 1020px) {
     .goods_btns_mobile{display: none !important;}
+    .options_fixed{display:none;}
+    .options_fixed.show{display:block;}
+    .options_fixed.open{display:block;}
 }
 @media screen and (max-width: 1620px) {
     .goods_btns .btn{height: 5rem;font-size:1.5rem;}
