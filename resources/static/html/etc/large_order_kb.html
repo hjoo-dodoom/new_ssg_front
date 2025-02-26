@@ -429,6 +429,58 @@
                 <p class="red_text_color mgt20">* 업로드된 주문정보에 맞지 않는 부분이 있습니다. 각 주문건의 비고란을 참고하시고 주문정보를 재확인 수정 후 재 업로드 해주시기 바랍니다.</p>
                 <!-- 오류 -->
 
+                <div class="check_agree">
+                    <div class="item">
+                        <label class="checkbox checkbox_type2">
+                            <input type="checkbox">
+                            <span class="ck_icon"></span>
+                            <em>개인정보 제3자 제공에 동의합니다. <span class="red_text_color">(필수)</span></em>
+                            <button type="button" class="check_btn" onclick="openLayer('#terms_popup')">내용보기</button>
+                        </label>
+                    </div>
+
+                    <div id="terms_popup" class="layer_popup layer_default">
+                        <div class="layer_content width_xl height_md">
+                            <div class="layer_default_title">개인정보 제3자 제공에 동의합니다.</div>
+                            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                <div class="layer_section">
+                                    <div class="table_response">
+                                        <table>
+                                            <colgroup>
+                                                <col>
+                                                <col style="width:28%;">
+                                                <col style="width:28%;">
+                                                <col style="width:28%;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>제공받는 자</th>
+                                                    <th>제공받는 자의 이용 목적</th>
+                                                    <th>제공항목</th>
+                                                    <th>보유기간</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="mb_tit">제공받는 자</span><span class="mb_cnt"><strong class="terms_strong">신세계</strong></span></td>
+                                                    <td><span class="mb_tit">제공받는 자의 이용 목적</span><span class="mb_cnt"><strong class="terms_strong">지급 포인트 정상 사용, 배송상태 검수 및 정산내역 확인</strong></span></td>
+                                                    <td><span class="mb_tit">제공항목</span><span class="mb_cnt">주문자정보(이름, 전화번호, 휴대폰, 주소)<br/> 받는사람 정보(이름, 전화번호, 휴대폰, 주소)</span></td>
+                                                    <td><span class="mb_tit">보유기간</span><span class="mb_cnt"><strong class="terms_strong">소속 회사의 요청 또는 계약종료 시 지체없이 파기 단, 관계법령에 의해 보전이 필요한 경우 요구하는 기한까지 보관</strong></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul class="dot">
+                                        <li>동의거부권에 등한 대한 고지 : 정보주체는 개인정보 제공 동의를 거부할 권리가 있으나, 이 경우 상품 주문/배송 서비스 이용이 제한될 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="layer_bg" onclick="closeLayer(this)"></span>
+                    </div>
+                </div>
+
                 <div class="form_btns between_lg">
                     <a href="javascript:;" class="btn btn_type4 btn_black_line">주문취소</a>
 

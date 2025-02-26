@@ -328,7 +328,7 @@ function toggleLayer(target, auto, button) {
         if (auto !== 'auto') {
             document.querySelector('html').classList.remove('mobile_hidden');
         }
-        if (target === '#cate_all_mobile') {
+        if ((target === '#cate_all_mobile') || (target === '#viewed_products_mobile')) {
             document.querySelector('#floating_wrap').classList.remove('on');
         }
         if (button) {
@@ -339,7 +339,7 @@ function toggleLayer(target, auto, button) {
         if (auto !== 'auto') {
             document.querySelector('html').classList.add('mobile_hidden');
         }
-        if (target === '#cate_all_mobile') {
+        if ((target === '#cate_all_mobile') || (target === '#viewed_products_mobile')) {
             document.querySelector('#floating_wrap').classList.add('on');
         }
         if (button) {

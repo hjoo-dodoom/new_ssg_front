@@ -117,6 +117,7 @@ input.bg_white{background-color: #fff !important;}
 .container:before{display: table;content: "";*display: block;*overflow: hidden}
 .v_pc{}
 .v_mobile{display: none !important;}
+.v_mobile_flex{display: none !important;}
 @media screen and (max-width: 1820px) {
   .container{max-width:none;padding-left:4rem;padding-right:4rem;}
 }
@@ -131,6 +132,7 @@ input.bg_white{background-color: #fff !important;}
   .fs_mb_14{font-size:1.5rem !important;}
   .v_pc{display: none !important;}
   .v_mobile{display: block !important;}
+  .v_mobile_flex{display: flex !important;}
 }
 .btn_bright{transition:all 0.3s;}
 .btn_bright:hover{filter: brightness(1.2);}
@@ -220,7 +222,7 @@ select{border:0;padding-right: 1.7rem;-webkit-appearance: none;-moz-appearance: 
 .design_select.type3 .choices__list[aria-expanded] .choices__item{background-color: #fff;}
 .design_select.type3 .choices__list--dropdown .choices__item.is-selected{background-color: #F5F7FA;}
 
-.design_select.type4 .choices__inner{color:#000;font-size:1.8rem;height:6.8rem;padding:0 5rem 0 2rem;font-weight:500;border:0;background-color: transparent;border-radius:0;display: flex;align-items: center;min-height: 0;}
+.design_select.type4 .choices__inner{color:#000;font-size:1.8rem;height:5.8rem;padding:0 5rem 0 2rem;border:0;background-color: transparent;border-radius:0;display: flex;align-items: center;min-height: 0;}
 .design_select.type4 .choices[data-type*="select-one"]::after{width:2.4rem;height:2.4rem;margin-top:-1.2rem;right:2rem;background-repeat: no-repeat;background-position: center center;background-size:2.4rem;background-image: url("/resources/static/dist/images/common/icon_arrow_down3.svg");}
 .design_select.type4 .choices__list--dropdown,.design_select.type4 .choices__list[aria-expanded]{top:7.5rem;border-radius: 1.4rem;background-color: #fff;min-width:12rem;padding:0.6rem 0;}
 .design_select.type4 .is-open .choices__list--dropdown,
@@ -242,7 +244,7 @@ select{border:0;padding-right: 1.7rem;-webkit-appearance: none;-moz-appearance: 
 .design_select.type5 .choices__list--dropdown .choices__item, 
 .design_select.type5 .choices__list[aria-expanded] .choices__item{background-color: #fff;}
 .design_select.type5 .choices__list--dropdown .choices__item:hover{background-color: #f9f9f9;}
-.design_select.type5 .choices__list--dropdown .choices__item.is-selected{background-color:color-mix(in srgb, var(--theme-color) 10%, #fff);;}
+.design_select.type5 .choices__list--dropdown .choices__item.is-selected{background-color:#F9F9F9;;}
 
 #layout .design_select.type3 .has-no-choices{}
 #layout .options .design_select.type3 .has-no-choices span{display: none;}
@@ -265,6 +267,11 @@ select{border:0;padding-right: 1.7rem;-webkit-appearance: none;-moz-appearance: 
   .design_select.type3 .choices[data-type*="select-one"]::after{right:1.1rem;}
   .design_select.type3 .choices__list--dropdown,.design_select.type3 .choices__list[aria-expanded]{top:4rem;}
   .design_select.type3 .choices__list--dropdown .choices__item,.design_select.type3 .choices__list[aria-expanded] .choices__item{padding:1.1rem 1.4rem;font-size:1.4rem;}
+
+  .design_select.type4 .choices__inner{font-size:1.4rem;height:4.6rem;padding:0 3.5rem 0 1.4rem;}
+  .design_select.type4 .choices[data-type*="select-one"]::after{width:2rem;height:2rem;margin-top:-1rem;right:1.4rem;background-size:1.8rem;}
+  .design_select.type4 .choices__list--dropdown,.design_select.type4 .choices__list[aria-expanded]{top:5.2rem;border-radius: 0.6rem;}
+  .design_select.type4 .choices__list--dropdown .choices__item,.design_select.type4  .choices__list[aria-expanded] .choices__item{padding:1rem 1.4rem;font-size:1.4rem;}
 
   .design_select.type5 .choices__inner{padding:0 4rem 0 1.4rem;}
   .design_select.type5 .choices[data-type*="select-one"]::after{width:1.6rem;height:1.6rem;margin-top:-0.8rem;right:1.4rem;background-size:1.6rem;}
@@ -335,6 +342,7 @@ top: 0;transform: translateX(-10px);background: #f52121;opacity: 0.75;backdrop-f
 .btn.btn_red_line{border:1px solid #F22C2D;background-color: #fff;color:#F22C2D;}
 .btn.btn_gray{border:1px solid #CBCBCB;background-color: #CBCBCB;color:#fff;}
 .btn.btn_gray_line{border:1px solid #D1D1D1;background-color: #fff;color:#666666;}
+.btn.btn_gray2{border:1px solid #CBCBCB;background-color: #CBCBCB;color:#444;}
 .btn.btn_lblue{border:1px solid #F5F7FA;background-color: #F5F7FA;color:#000000;}
 .btn:disabled{border:1px solid #DDDDDD;background-color: #DDDDDD;color:#fff;}
 
