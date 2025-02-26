@@ -367,13 +367,6 @@
                                                         <input type="tel" placeholder="-없이 휴대폰번호 입력" maxlength="11" name="reciver_tel1">
                                                     </div>
                                                 </div>
-                                                <div class="input_group">
-                                                    <label class="checkbox checkbox_type2 inline">
-                                                        <input type="checkbox" name="reciver_check1">
-                                                        <span class="ck_icon"></span>
-                                                        주문자 정보와 동일하게
-                                                    </label>
-                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -514,10 +507,10 @@
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>구분</th>
-                                <th>수집항목</th>
-                                <th>수집목적</th>
-                                <th>보유 및 이용기간</th>
+                                <th>번호</th>
+                                <th>이름</th>
+                                <th>휴대폰번호</th>
+                                <th>상태</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -682,13 +675,6 @@ function handleReceiverCount() {
                             <div class="input size_32">
                                 <input type="tel" placeholder="-없이 휴대폰번호 입력" maxlength="11" name="reciver_tel`+i+`">
                             </div>
-                        </div>
-                        <div class="input_group">
-                            <label class="checkbox checkbox_type2 inline">
-                                <input type="checkbox" name="reciver_check`+i+`">
-                                <span class="ck_icon"></span>
-                                주문자 정보와 동일하게
-                            </label>
                         </div>
                     </td>
                 `;
