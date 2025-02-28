@@ -90,11 +90,9 @@
 #gnb_wrap.open #gnb_all{display:block;}
 #gnb_all{display:none;position: absolute;z-index:100;left:0;top:100%;width:100%;padding:4.2rem 0 5.7rem;background-color:#fff;border-top:1px solid #E0E0E0;}
 #gnb_all > ul{max-width:128rem;margin:0 auto;display:flex;flex-wrap:wrap;display:grid;grid-template-columns: repeat(6, 1fr);gap: 3.6rem 6.2rem;}
-#gnb_all > ul a{display: block;position: relative;}
+#gnb_all > ul span{display: block;position: relative;}
 #gnb_all > ul > li{}
-#gnb_all > ul > li > a{font-size:1.6rem;font-weight:600;margin-bottom:2.2rem;padding-right:2rem;background-position: right center;background-repeat: no-repeat;}
-#gnb_all > ul > li:hover > a{color:var(--theme-color);}
-#gnb_all > ul > li:hover > a:before{content:"\e5cc";font-weight:400;font-family: 'Material Symbols Rounded';font-size:3rem;position:absolute;right:0;top:50%;transform:translate(0,-50%);}
+#gnb_all > ul > li > span{font-size:1.6rem;font-weight:600;margin-bottom:2.2rem;padding-right:2rem;background-position: right center;background-repeat: no-repeat;}
 
 #gnb_all > ul > li > ul{}
 #gnb_all > ul > li > ul > li{}
