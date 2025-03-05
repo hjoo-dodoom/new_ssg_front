@@ -39,6 +39,26 @@
         --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
     }
     </style>
+    <script>
+        // html template include
+        // 개발 완료시 삭제해주세요
+        function includeTemplateFile(path, targetId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = xhr.responseText;
+
+                    var template = tempDiv.querySelector('template[data-title="' + targetId + '"]');
+                    if (template) {
+                        document.getElementById(targetId).appendChild(template.content.cloneNode(true));
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </head>
 <body>
 
@@ -576,23 +596,15 @@
                                 <!-- 약관 -->
                                 <div id="terms_popup1" class="layer_popup layer_default">
                                     <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">주문내역 확인 동의 (필수)</div>
+                                        <div class="layer_default_title">주문내역 확인 동의</div>
                                         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
                                         <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                        총칙<br/>
-                                        제 1조 (목적)<br/>
-                                        본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
-                                        E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
-                                        목적으로 합니다.<br/>
-                                        ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
-                                        준용합니다.<br/><br/>
-
-                                        제 2조 (정의)<br/>
-                                        1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
-                                        영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                            <div id="confirm_order_details_terms">
+                                                <script>
+                                                    var includePath = "/resources/static/inc/terms.html";
+                                                    includeTemplateFile(includePath, 'confirm_order_details_terms');
+                                                </script>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="layer_bg" onclick="closeLayer(this)"></span>
@@ -605,27 +617,19 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup2')">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</button>
                                 </label>
-                                
+
                                 <!-- 약관 -->
                                 <div id="terms_popup2" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</div>
+                                    <div class="layer_content width_lg height_md">
+                                        <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지</div>
                                         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
                                         <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                        총칙<br/>
-                                        제 1조 (목적)<br/>
-                                        본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
-                                        E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
-                                        목적으로 합니다.<br/>
-                                        ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
-                                        준용합니다.<br/><br/>
-
-                                        제 2조 (정의)<br/>
-                                        1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
-                                        영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                            <div id="personal_info_provide_terms">
+                                                <script>
+                                                    var includePath = "/resources/static/inc/terms.html";
+                                                    includeTemplateFile(includePath, 'personal_info_provide_terms');
+                                                </script>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="layer_bg" onclick="closeLayer(this)"></span>
@@ -642,23 +646,15 @@
                                 <!-- 약관 -->
                                 <div id="terms_popup3" class="layer_popup layer_default">
                                     <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">결제대행서비스 이용약관 동의(필수)</div>
+                                        <div class="layer_default_title">결제대행서비스 이용약관 동의</div>
                                         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
                                         <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                        총칙<br/>
-                                        제 1조 (목적)<br/>
-                                        본 약관은 신세계가 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 신세계 B2B/
-                                        E몰 회원이 이용함에 있어서 신세계몰과 이용자의 권리/의무 및 책임사항을 규정함을 
-                                        목적으로 합니다.<br/>
-                                        ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 
-                                        준용합니다.<br/><br/>
-
-                                        제 2조 (정의)<br/>
-                                        1. "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 . "몰" 이란 신세계 회사가 재화 또는 용역(이하 "재화 등"이라 함)을 이용자에게 제공하기 
-                                        위하여 컴퓨터 등정보통신설비를 이용하여 재화 등을 거래할 수 있도록 설정한 가상의 
-                                        영업장을말하며, 아울러 신세계 B2B/E몰 을 운영하는 사업자의 의미로도 사용합니다.<br/>
+                                            <div id="payment_agency_service_terms">
+                                                <script>
+                                                    var includePath = "/resources/static/inc/terms.html";
+                                                    includeTemplateFile(includePath, 'payment_agency_service_terms');
+                                                </script>
+                                            </div>
                                         </div>
                                     </div>
                                     <span class="layer_bg" onclick="closeLayer(this)"></span>
