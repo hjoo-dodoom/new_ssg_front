@@ -340,34 +340,6 @@
                                         <col>
                                     </colgroup>
                                     <tbody>
-                                        <tr class="pay_account hidden">
-                                            <th>입금은행</th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_20">
-                                                        <div class="design_select type5">
-                                                            <select name="" id="">
-                                                                <option value="">선택해주세요.</option>
-                                                                <option value="기업은행">기업은행</option>
-                                                                <option value="국민은행">국민은행</option>
-                                                                <option value="우리은행">우리은행</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="pay_account hidden">
-                                            <th>입금자</th>
-                                            <td>
-                                                <div class="input_group">
-                                                    <div class="input size_20">
-                                                        <input type="text">
-                                                    </div>
-                                                    <div class="input_text red_text_color size_mb_100"><em>입금예정일 : 2024-10-08일까지 미입금시 자동 주문취소 처리 됩니다.</em></div>
-                                                </div>
-                                            </td>
-                                        </tr>
                                         <tr class="pay_cash hidden">
                                             <td colspan="2">
                                                 <div class="input_group">
@@ -391,7 +363,8 @@
                                                             <div class="design_select type5">
                                                                 <select name="" id="">
                                                                     <option value="휴대폰번호">휴대폰번호</option>
-                                                                    <option value="현금영수증카드">현금영수증카드</option>
+                                                                    <option value="카드번호">카드번호</option>
+                                                                    <option value="주민등록번호">주민등록번호</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -399,6 +372,7 @@
                                                             <input type="tel" placeholder="-없이 숫자만 입력해주세요">
                                                         </div>
                                                     </div>
+                                                    <p>*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
                                                 </div>
 
                                                 <!-- hidden -->
@@ -409,6 +383,7 @@
                                                             <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
                                                         </div>
                                                     </div>
+                                                    <p>*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -735,19 +710,15 @@ function lotChange(button){
     input.setAttribute('db-count', input.value)
 }
 
-//결제수단 가상계좌, 급여공제 토글
+//결제수단 SSG PAY, 급여공제 토글
 const paymentTypeAll = document.querySelectorAll('input[name="payment_type"]');
 const paymentFormEtc = document.getElementById('pay_form_etc');
-const paymentAccount = document.querySelectorAll('.pay_account');
 const paymentCash = document.querySelectorAll('.pay_cash');
 
 paymentTypeAll.forEach(function(paymentType){
     paymentType.addEventListener('change', function() {
-        if(paymentType.checked && paymentType.value === '0'){ //가상계좌
+        if(paymentType.checked && paymentType.value === '3'){ //SSG PAY
             paymentFormEtc.style.display = 'block';
-            paymentAccount.forEach(function(account){
-                account.classList.remove('hidden');
-            });
             paymentCash.forEach(function(cash){
                 cash.classList.remove('hidden');
             });

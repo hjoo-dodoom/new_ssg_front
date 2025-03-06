@@ -408,7 +408,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .product_cate{display: block;white-space: nowrap;margin-bottom:2rem;margin-left:-2.4rem;margin-right:-2.4rem;padding:0 2.4rem;overflow-x: auto;}
     .product_cate .item{display:inline-block;margin:0 0.5rem 0 0;}
     .product_cate .item a{padding:0.6rem 1.4rem;font-size:1.4rem;}
-    .product_icon_cate{margin:0 -2.4rem 3rem;padding:0 2.4rem;flex-wrap:nowrap;overflow-x:auto;justify-content: start;}
+    .product_icon_cate{margin:0 -2.4rem 3rem;padding:0 2.4rem;flex-wrap:nowrap;overflow-x:auto;justify-content: start;gap: 2rem 1.3rem;}
     .product_icon_cate .item{margin:0 1.2rem 1rem 0;}
     .product_icon_cate .item a{font-size:1.2rem;}
 }
