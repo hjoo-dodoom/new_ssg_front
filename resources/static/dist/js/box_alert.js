@@ -72,7 +72,7 @@ function box_alert_focus(txt, obj, boxType, boxTitle)
 }
 
 // confirm, prompt
-function box_confirm(txt, boxType, boxTitle, callbackMethod, jsonData, jsonData2)
+function box_confirm(txt, boxType, boxTitle, callbackMethod)
 {
     if (boxType == '' || boxType == undefined) boxType = 'confirm';
     if (boxTitle == '' || boxTitle == undefined) boxTitle = '알림';
@@ -87,13 +87,7 @@ function box_confirm(txt, boxType, boxTitle, callbackMethod, jsonData, jsonData2
             closeClick: false,
             callback: function(result)
             {
-                if (result)
-                {
-                    if (callbackMethod)
-                    {
-                        callbackMethod(jsonData, jsonData2);
-                    }
-                }
+                callbackMethod(result);
             }
         });
     }, 150);
