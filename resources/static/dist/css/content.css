@@ -732,6 +732,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 }
 
 #layout.join_layout{}
+#layout.mail_form_layout{display:flex;justify-content:center;align-items:center;}
 #content.join_content{max-width:110rem;width:100%;margin-left:auto;margin-right:auto;margin-top:10rem;margin-bottom:20rem}
 .hd_fl{display: flex;align-items: center;padding:3.5rem 4rem;border-bottom:1px solid #E0E0E0;}
 .hd_fl .links{margin-left:auto;display: flex;align-items: center;}
@@ -791,9 +792,27 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .icon_center_title .icon{margin-bottom:4rem;}
 .icon_center_title .sub{font-size:2.6rem;margin-bottom:1.5rem;}
 .icon_center_title .title{font-size:3.2rem;font-weight:500;}
+
+.mail_form{width:100%;max-width:70rem;margin:0 auto;padding:6.8rem 7rem 8.3rem;background-color: #F3F3F3;border-radius:1.4rem;}
+.mail_form .title{margin-bottom:4rem;}
+.mail_form .title .icon{margin-bottom:1.8rem;width:3.6rem;height:3.6rem;}
+.mail_form .title h2{font-size:3rem;font-weight:700;}
+.mail_form .title p{margin-top:5rem;font-size:2rem;font-weight:600;}
+.mail_form table{width:100%;}
+.mail_form .auth_box{display:flex;align-items:center;flex-wrap: wrap;height:8rem;margin-bottom:5rem;background-color: #000;border-radius:1.4rem;}
+.mail_form .auth_box .item{display:flex;align-items:center;margin-right:2rem;flex:1;}
+.mail_form .auth_box .item + .item{position:relative;}
+.mail_form .auth_box .item + .item:before{content:'';display:inline-block;position:absolute;top:50%;left:0;transform:translateY(-50%); width:1px; height: 2rem; background-color:#fff;}
+.mail_form .auth_box .item td{color:#fff;font-size:2.6rem;font-weight:600;}
+.mail_form .auth_box .item td:first-child{font-size:1.6rem;margin-left:3rem;margin-right:2rem;white-space: nowrap;}
+.mail_form .auth_box .item td.id{font-size:1.8rem;}
+.mail_form .auth_box .item td.code{color:#5F9FFF;}
+.mail_form .txt{font-size:1.6rem;font-weight:500;}
+
 @media screen and (max-width: 1100px) {
     .join_layout #footer .ft_inner{display: block;}
     #content.join_content{margin-top:4rem;margin-bottom:10rem;padding-left:2rem;padding-right:2rem;}
+    #content.join_content.mail_form{}
     .hd_fl{padding:1.9rem 2rem;}
     .hd_fl .logo{width: 19rem;}
     .hd_fl .logo img{width:67%;display: block;}
@@ -838,6 +857,17 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .icon_center_title .icon img{width: 10rem;}
     .icon_center_title .sub{font-size:2rem;margin-bottom:1rem;}
     .icon_center_title .title{font-size:2.4rem;}
+
+    .mail_form{padding:4.8rem 3rem 5.8rem}
+    .mail_form .title .icon{width:2.8rem;height:2.8rem;}
+    .mail_form .title h2{font-size: 2.5rem;}
+    .mail_form .title p{font-size: 1.8rem;}
+    .mail_form .auth_box{padding: 0 2rem; height:auto;flex-direction: column;}
+    .mail_form .auth_box .item{width:100%;}
+    .mail_form .auth_box .item + .item:before{top:0;left:50%;transform:translateX(-50%);width:30%; height:1px;}
+    .mail_form .auth_box .item td{width:100%;padding:2rem 0;font-size: 2rem;}
+    .mail_form .auth_box .item td:first-child{width: 40%;margin:0;padding-right:2rem;font-size: 1.5rem;text-align:center;}
+    .mail_form .txt{font-size: 1.4rem;}
 }
 .datepicker{background-position: right 1.4rem center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/common/datepicker.svg');cursor: pointer !important;}
 .form .row{}
