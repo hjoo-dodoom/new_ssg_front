@@ -5,73 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>신세계 사용자</title>
-    
-    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
-    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
-    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
-    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
-    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
-    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
-    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
-    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
-
-    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
-    <script src="/resources/static/dist/js/jquery-ui.js"></script>
-    <script src="/resources/static/dist/js/litepicker.js"></script>
-    <script src="/resources/static/dist/js/jquery.modal.js"></script>
-    <script src="/resources/static/dist/js/box_alert.js"></script>
-    <script src="/resources/static/dist/js/swiper.min.js"></script>
-    <script src="/resources/static/dist/js/slick.min.js"></script>
-    <script src="/resources/static/dist/js/litepicker.js"></script>
-    <script src="/resources/static/dist/js/jquery.validate.js"></script>
-    <script src="/resources/static/dist/js/simplebar.min.js"></script>
-    <script src="/resources/static/dist/js/choices.min.js"></script>
-    <script src="/resources/static/dist/js/pikaday.js"></script>
-    <script src="/resources/static/dist/js/common.js"></script>
-    <style>
-    :root {
-        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
-        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
-        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
-    }
-    </style>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
 </head>
 <body>
-<h1 class="screen_hide">SHINSEGAE</h1>
-<div id="layout" class="join_layout mail_form_layout">
-    <div id="content" class="join_content">
-        <!-- 컨텐츠 시작 -->
-        <div class="mail_form">
-            <div class="title">
-                <div class="icon"><img src="../../dist/images/content/icon_checkbox.svg"></div>
-                <h2>임직원 가입인증</h2>
-                <p>시크릿스토어 임직원 인증을 위해 아래 인증번호를 확인해주세요.</p>
-            </div>
-            <table>
-                <tbody class="auth_box">
-                    <tr class="item">
-                        <td>발송일</td>
-                        <td class="id">2025.03.12 15:05</td>
-                    </tr>
-                    <tr class="item">
-                        <td>인증번호</td>
-                        <td class="code">884233</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="txt">
-                인증번호 항목에 인증번호를 입력해주세요.<br/>
-                <span class="strong underline">본 메일은 발신전용으로 메일수신이 불가</span>합니다
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+    <style type='text/css'>
+        html,body{line-height: 1.4;font-family: "Pretendard Variable", Pretendard, "-apple-system", BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", Roboto, Helvetica, Arial, sans-serif;}
+    </style>
+    <table cellpadding='0' cellspacing='0' border="0"width="100%" style='margin:30px auto 30px;width:700px;height:800px;'>
+        <tbody style="width: 100%;">
+            <tr>
+                <td>
+                    <div style="max-width: 700px; margin: 0 auto; padding: 68px 70px 83px; background-color: #F3F3F3; border-radius: 14px;">
+                        <div style="margin-bottom: 40px;">
+                            <div style="margin-bottom: 18px; width: 36px; height: 36px;">
+                                <!-- 이미지 src 수정하기 -->
+                                <img src="/resources/static/dist/images/content/icon_checkbox.svg" width="36" height="36" alt="Checkbox Icon">
+                            </div>
+                            <h2 style="margin:0;font-size: 30px; font-weight: 700;">임직원 가입인증</h2>
+                            <p style="margin-top: 50px; font-size: 20px; font-weight: 600;">시크릿스토어 임직원 인증을 위해 아래 인증번호를 확인해주세요.</p>
+                        </div>
+                        <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 100%;border-collapse: separate; border: none;">
+                            <tbody style="display: block; height: 80px; margin-bottom: 50px; border-radius: 14px; background-color: #000;">
+                                <tr style="display: inline-block; min-width: 277px; height: 100%; line-height: 80px; border:none;">
+                                    <td style="padding-left: 30px; color: #fff; font-size: 16px; font-weight: 600;">발송일</td>
+                                    <td style="padding-left: 20px; color: #fff; font-size: 18px; font-weight: 600;">2025.03.12 15:05</td>
+                                </tr>
+                                <tr style="display: inline-block; min-width: 277px; height: 100%; line-height: 78px; border:none;">
+                                    <td style="display: inline-block; height: 100%; color: #fff; font-size: 16px; font-weight: 600;">
+                                        <span style="display: inline-block; width:1px; height:20px;background-color:#fff;vertical-align: middle;"></span>
+                                        <span style="margin-left: 30px;">인증번호</span>
+                                    </td>
+                                    <td style="display: inline-block; height: 100%; padding-left: 20px; color: #5F9FFF; height:100%;font-size: 26px; font-weight: 600;vertical-align: bottom;">884233</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="font-size: 16px; font-weight: 500;">
+                            인증번호 항목에 인증번호를 입력해주세요.<br />
+                            <span style="text-decoration: underline;">본 메일은 발신전용으로 메일수신이 불가</span>합니다
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
+
+
+<script>
+    // 개발 후 삭제
+    // 상단 html을 공유 소스 형식으로 변환
+    sb.append("<html xmlns='http://www.w3.org/1999/xhtml'>");
+    sb.append(" <head>");
+    sb.append("  <meta charset='utf-8' />");
+    sb.append("  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />");
+    sb.append("  <meta http-equiv='X-UA-Compatible' content='IE=edge, chrome=1' />");
+    sb.append("  <title>신세계 사용자</title>");
+    sb.append("  <link rel='stylesheet' as='style' crossorigin href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css' />");
+    sb.append(" </head>");
+    sb.append(" <body>");
+    sb.append("  <style type='text/css'>");
+    sb.append("   html, body {line-height: 1.4;font-family: 'Pretendard Variable', Pretendard, '-apple-system', BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', Roboto, Helvetica, Arial, sans-serif;}");
+    sb.append("  </style>");
+    sb.append("  <table cellpadding='0' cellspacing='0' border='0' width='100%' style='margin:30px auto 30px;width:700px;height:800px;'>");
+    sb.append("   <tbody style='width: 100%;'>");
+    sb.append("    <tr>");
+    sb.append("     <td>");
+    sb.append("      <div style='max-width: 700px; margin: 0 auto; padding: 68px 70px 83px; background-color: #F3F3F3; border-radius: 14px;'>");
+    sb.append("       <div style='margin-bottom: 40px;'>");
+    sb.append("        <div style='margin-bottom: 18px; width: 36px; height: 36px;'>");
+    sb.append("         <img src='/resources/static/dist/images/content/icon_checkbox.svg' width='36' height='36' alt='Checkbox Icon'>"); // 이미지 src 수정하기
+    sb.append("        </div>");
+    sb.append("        <h2 style='margin:0;font-size: 30px; font-weight: 700;'>임직원 가입인증</h2>");
+    sb.append("        <p style='margin-top: 50px; font-size: 20px; font-weight: 600;'>시크릿스토어 임직원 인증을 위해 아래 인증번호를 확인해주세요.</p>");
+    sb.append("       </div>");
+    sb.append("       <table border='0' cellpadding='0' cellspacing='0' width='100%' style='width: 100%;border-collapse: separate; border: none;'>");
+    sb.append("        <tbody style='display: block; height: 80px; margin-bottom: 50px; border-radius: 14px; background-color: #000;'>");
+    sb.append("         <tr style='display: inline-block; min-width: 277px; height: 100%; line-height: 80px; border:none;'>");
+    sb.append("          <td style='padding-left: 30px; color: #fff; font-size: 16px; font-weight: 600;'>발송일</td>");
+    sb.append("          <td style='padding-left: 20px; color: #fff; font-size: 18px; font-weight: 600;'>2025.03.12 15:05</td>");
+    sb.append("         </tr>");
+    sb.append("         <tr style='display: inline-block; min-width: 277px; height: 100%; line-height: 78px; border:none;'>");
+    sb.append("          <td style='display: inline-block; height: 100%; color: #fff; font-size: 16px; font-weight: 600;'>");
+    sb.append("           <span style='display: inline-block; width:1px; height:20px;background-color:#fff;vertical-align: middle;'></span>");
+    sb.append("           <span style='margin-left: 30px;'>인증번호</span>");
+    sb.append("          </td>");
+    sb.append("          <td style='display: inline-block; height: 100%; padding-left: 20px; color: #5F9FFF; height:100%;font-size: 26px; font-weight: 600;vertical-align: bottom;'>884233</td>");
+    sb.append("         </tr>");
+    sb.append("        </tbody>");
+    sb.append("       </table>");
+    sb.append("       <div style='font-size: 16px; font-weight: 500;'>");
+    sb.append("        인증번호 항목에 인증번호를 입력해주세요.<br />");
+    sb.append("        <span style='text-decoration: underline;'>본 메일은 발신전용으로 메일수신이 불가</span>합니다");
+    sb.append("       </div>");
+    sb.append("      </div>");
+    sb.append("     </td>");
+    sb.append("    </tr>");
+    sb.append("   </tbody>");
+    sb.append("  </table>");
+    sb.append(" </body>");
+    sb.append("</html>");
+</script>
