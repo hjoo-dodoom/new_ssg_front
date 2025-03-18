@@ -142,6 +142,7 @@
     #hd_middle .hd_inner{min-height:2.6rem;padding-left:2.4rem;padding-right:2.4rem;}
     #hd_middle .hd_inner > div{flex:auto;}
     #hd_logo{margin-right:2rem;}
+    #logo{width: 72%;}
     #hd_partner .list{min-width:20rem;}
     #hd_partner .list .title{font-size:1.4rem;margin-bottom:1.5rem;}
     #hd_partner.open .list{margin:0;}
@@ -216,7 +217,7 @@
 @media screen and (max-width: 1020px) {
     #ft_top{padding:3rem 0 2rem;display: block;}
     #ft_logo{margin:0 0 2.1rem 0;margin-right:4rem;width:19rem;}
-    #ft_logo img{display: block;;width:67%}
+    #ft_logo img{display: block;;width:72%}
     #ft_logo svg{width:11rem;}
     #ft_links{margin:0;}
     #ft_links .item{margin-right:3rem;margin-bottom:0.5rem;font-size:1.2rem;}
