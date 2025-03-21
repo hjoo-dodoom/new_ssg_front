@@ -1545,6 +1545,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .label_check_list .check_list_tit{margin-bottom:2rem;font-size:1.8rem;font-weight:600;}
 .label_check_list .label_item{}
 .label_check_list .label_item + .label_item{margin-top:2rem;}
+.label_check_list .label_item:last-child{margin-bottom:.1rem;}
 .label_check_list .label_item .label_cnt{width:100%;text-align:left;border:1px solid #d8d8d8;border-radius:0.8rem;padding:2rem 3rem;background-color: #fff;position: relative;}
 .label_check_list .label_item button.label_cnt:before{content:"";position: absolute;right:3rem;top:1.6rem;width:3.2rem;height:3.2rem;border-radius:50%;background-color: #000;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/icon_download_white.svg');}
 .label_check_list .label_item label.label_cnt{padding-left:5.2rem;overflow: visible;}

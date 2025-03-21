@@ -458,8 +458,10 @@
                         <div class="list_empty">
                             <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
                         </div>
+
+                        <!-- 기본 배송지 -->
                         <div class="label_item">
-                            <label class="label_cnt checkbox radio_type1">
+                            <label class="label_cnt checkbox radio_type1 ads_default">
                                 <input type="radio" name="ads_check">
                                 <span class="ck_icon"></span>
                                 <span class="ck_line"></span>
@@ -475,6 +477,8 @@
                                 </div>
                             </label>
                         </div>
+
+                        <!-- 배송지 -->
                         <div class="label_item">
                             <label class="label_cnt checkbox radio_type1">
                                 <input type="radio" name="ads_check">
@@ -492,6 +496,8 @@
                                 </div>
                             </label>
                         </div>
+
+                        <!-- 배송지 -->
                         <div class="label_item">
                             <label class="label_cnt checkbox radio_type1">
                                 <input type="radio" name="ads_check">
@@ -511,13 +517,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="bottom_check">
+                <!-- <div class="bottom_check">
                     <label class="checkbox checkbox_type1">
                         <input type="checkbox">
                         <span class="ck_icon"></span>
                         기본 배송지로 등록
                     </label>
-                </div>
+                </div> -->
             </div>
         </div>
         <span class="layer_bg" onclick="closeLayer(this)"></span>
@@ -776,4 +782,27 @@ function execDaumPostcode(elm) {
         maxSuggestItems : 5
     }).embed(element_layer);
 }
+
+// 배송지 설정
+const adsAll = document.querySelectorAll('input[name="ads_check"]');
+
+const call_back = function(isConfirmed){
+    if (isConfirmed) {
+        alert("예 클릭 이벤트");
+    }
+}
+
+adsAll.forEach(function(ads){
+    ads.addEventListener('change', function(){
+        if(!this.closest('.ads_default')){
+            // 기본 배송지가 아닌 배송지 선택 시
+            box_confirm(
+                '기본배송지로 설정 하시겠습니까?',
+                'confirm',
+                '알림',
+                call_back
+            );
+        }
+    });
+});
 </script>
