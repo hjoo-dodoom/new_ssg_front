@@ -45,7 +45,7 @@
 
 
 <!-- 팝업 -->
-<div class="popup_notice type0" style="top:70px;left:20px;z-index:99999999;display:;">
+<div id="popup1" class="popup_notice type0 hidden" style="top:70px;left:20px;z-index:99999999;">
 	<div id="" class="popup_nbox">
 		<div class="cnt">
 			<img src="../../dist/images/dummy/brand_list1.jpg" alt="">
@@ -55,11 +55,11 @@
         <div class="check_today">
             <label class="checkbox checkbox_type2"><input type="checkbox"><span class="ck_icon"></span> 24시간동안 팝업 안열기</label>
         </div>
-		<button type="button" class="ppn_close" onclick="document.querySelector('.popup_notice.type0').style.display = 'none'">닫기</button>
+		<button type="button" class="ppn_close" onclick="closePopup(this)">닫기</button>
 	</div>
 </div>
 
-<div class="popup_notice type1" style="top:70px;left:20px;z-index:999999;display:;">
+<div id="popup2" class="popup_notice type1 hidden" style="top:70px;left:20px;z-index:999999;">
 	<div id="" class="popup_nbox">
 		<div class="tit">신한은행 협력사 공지</div>	
 		<div class="cnt">
@@ -88,11 +88,11 @@
         <div class="check_today">
             <label class="checkbox checkbox_type2"><input type="checkbox"><span class="ck_icon"></span> 24시간동안 팝업 안열기</label>
         </div>
-		<button type="button" class="ppn_close" onclick="document.querySelector('.popup_notice.type1').style.display = 'none'">닫기</button>
+		<button type="button" class="ppn_close" onclick="closePopup(this)">닫기</button>
 	</div>
 </div>
 
-<div class="popup_notice type2" style="top:70px;left:330px;z-index:999999;display:;">
+<div id="popup3" class="popup_notice type2 hidden" style="top:70px;left:330px;z-index:999999;">
 	<div id="" class="popup_nbox">
 		<div class="tit">신한은행 협력사 공지</div>	
 		<div class="cnt">
@@ -121,11 +121,11 @@
 		<div class="check_today">
             <label class="checkbox checkbox_type2"><input type="checkbox"><span class="ck_icon"></span> 24시간동안 팝업 안열기</label>
         </div>
-		<button type="button" class="ppn_close" onclick="document.querySelector('.popup_notice.type2').style.display = 'none'">닫기</button>
+		<button type="button" class="ppn_close" onclick="closePopup(this)">닫기</button>
 	</div>
 </div>
 
-<div class="popup_notice type3" style="top:70px;left:720px;z-index:999999;display:;">
+<div id="popup4" class="popup_notice type3 hidden" style="top:70px;left:720px;z-index:999999;">
 	<div id="" class="popup_nbox">
 		<div class="tit">신한은행 협력사 공지</div>	
 		<div class="cnt">
@@ -154,11 +154,20 @@
 		<div class="check_today">
             <label class="checkbox checkbox_type2"><input type="checkbox"><span class="ck_icon"></span> 24시간동안 팝업 안열기</label>
         </div>
-		<button type="button" class="ppn_close" onclick="document.querySelector('.popup_notice.type3').style.display = 'none'">닫기</button>
+		<button type="button" class="ppn_close" onclick="closePopup(this)">닫기</button>
 	</div>
 </div>
 <!-- //팝업 -->
 
+<div style="position:fixed;left:10px;top:10px;z-index:100;">
+    임시 팝업 ▶
+    <button type="button" class="check_btn" onclick="openPopup('#popup1')">팝업1</button> /
+    <button type="button" class="check_btn" onclick="openPopup('#popup2')">팝업2</button> /
+    <button type="button" class="check_btn" onclick="openPopup('#popup3')">팝업3</button> /
+    <button type="button" class="check_btn" onclick="openPopup('#popup4')">팝업4</button> /
+    <button type="button" class="check_btn" onclick="openLayer('#login_fail')">로그인 실패</button> /
+    <button type="button" class="check_btn" onclick="openLayer('#periodic_password_change')">비밀번호 변경</button>
+</div>
 
 <div id="layout" class="login_layout">
     <div id="content" class="login_content">
@@ -266,7 +275,7 @@
 
 
 <!-- 비밀번호 변경 -->
-<div id="periodic_password_change" class="layer_popup layer_default show">
+<div id="periodic_password_change" class="layer_popup layer_default">
     <div class="layer_content  width_md height_md">
         <div class="layer_default_title">비밀번호 변경</div>
         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
@@ -299,7 +308,7 @@
 
 
 <!-- 로그인 실패 -->
-<div id="login_fail" class="layer_popup layer_default show">
+<div id="login_fail" class="layer_popup layer_default">
     <div class="layer_content  width_md height_md">
         <div class="layer_default_title">로그인 실패</div>
         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
@@ -341,6 +350,21 @@
     });
 
     let error_lists = [];
+
+    // 팝업 보이기
+    function openPopup(target) {
+        document.querySelector(target).classList.remove('hidden');
+    }
+
+    // 팝업 숨기기
+    function closePopup(button, target) {
+        if (!target && button) {
+            const closestLayerPopup = button.closest('.popup_notice');
+            closestLayerPopup.classList.add('hidden');
+        } else {
+            document.getElementById(target).classList.add('hidden');
+        }
+    }
 
     //jquery.validate.js && box_alert 예제코드
     $("#login_submit").validate({
