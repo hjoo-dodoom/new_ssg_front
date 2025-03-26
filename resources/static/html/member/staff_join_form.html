@@ -276,7 +276,7 @@
                             <div class="item label_control">
                                 <div class="check_item">
                                     <label class="checkbox checkbox_type1">
-                                        <input type="checkbox" class="check_all"><span class="ck_icon"></span>
+                                        <input type="checkbox" data-title="chk_service"><span class="ck_icon"></span>
                                     </label>
                                     <button type="button" href="javascript:;" class="terms_show_btn" onclick="openLayer('#terms_popup3')">서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의(선택)</button>
                                 </div>
@@ -319,29 +319,14 @@
                                     </div>
                                     <span class="layer_bg" onclick="closeLayer(this)"></span>
                                 </div>
-                                <div class="terms_inline">
-                                    <div class="check_item">
-                                        <label class="checkbox checkbox_type1">
-                                            <input type="checkbox"><span class="ck_icon"></span>
-                                            SMS 수신동의
-                                        </label>
-                                    </div>
-                                    <div class="check_item">
-                                        <label class="checkbox checkbox_type1">
-                                            <input type="checkbox"><span class="ck_icon"></span>
-                                            이메일 수신동의
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="item">
+                            <div class="item label_control">
                                 <div class="check_item">
                                     <label class="checkbox checkbox_type1">
-                                        <input type="checkbox"><span class="ck_icon"></span>
+                                        <input type="checkbox" class="check_all optional" data-title="chk_adv"><span class="ck_icon"></span>
                                     </label>
                                     <button type="button" class="terms_show_btn" onclick="openLayer('#terms_popup4')">광고성 정보 수신 동의(선택)</button>
                                 </div>
-
                                 <div id="terms_popup4" class="layer_popup layer_default">
                                     <div class="layer_content  width_md height_md">
                                         <div class="layer_default_title">광고성 정보 수신 동의(선택)</div>
@@ -355,6 +340,20 @@
                                         </div>
                                     </div>
                                     <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                </div>
+                                <div class="terms_inline">
+                                    <div class="check_item">
+                                        <label class="checkbox checkbox_type1">
+                                            <input type="checkbox" data-title="chk_sms"><span class="ck_icon"></span>
+                                            SMS 수신동의
+                                        </label>
+                                    </div>
+                                    <div class="check_item">
+                                        <label class="checkbox checkbox_type1">
+                                            <input type="checkbox" data-title="chk_email"><span class="ck_icon"></span>
+                                            이메일 수신동의
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 

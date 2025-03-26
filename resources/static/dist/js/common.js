@@ -240,11 +240,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } else if (target.matches('input[type="checkbox"]:not(.check_all)') && !target.checked) {
                 const checkAllCheckbox = check.closest('.label_control').querySelector('.check_all');
-                if (checkAllCheckbox) {
+                if (checkAllCheckbox && !checkAllCheckbox.classList.contains('optional')) {
                     checkAllCheckbox.checked = false; // check_all 비활성화
                 }
                 if (checkAllParentCheckbox) {
                     checkAllParentCheckbox.checked = false; // check_all 비활성화
+                }
+            }
+        });
+    });
+});
+
+// 이용약관 체크박스 제어
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.terms_list .item input[type="checkbox"]').forEach(function (check) {
+        const chk_service = document.querySelector('input[data-title="chk_service"]');
+        const chk_adv = document.querySelector('input[data-title="chk_adv"]');
+        const chk_sms = document.querySelector('input[data-title="chk_sms"]');
+        const chk_email = document.querySelector('input[data-title="chk_email"]');
+
+        check.addEventListener('change', function (event) {
+
+            const dataTitle = check.dataset.title;
+
+            if(dataTitle === 'chk_service'){
+                chk_adv.checked = event.target.checked;
+                chk_sms.checked = event.target.checked;
+                chk_email.checked = event.target.checked;
+            }
+
+            if(dataTitle === 'chk_adv' && event.target.checked){
+                chk_service.checked = true;
+            }
+
+            if(dataTitle === 'chk_sms' || dataTitle === 'chk_email'){
+                const checkItmes = check.closest('.terms_inline');
+                const itemsAll = checkItmes.querySelectorAll('.check_item input[type="checkbox"]:checked'); // 체크 항목 모두 찾기
+
+                if(event.target.checked){
+                    chk_service.checked = true;
+                    chk_adv.checked = true;
+                }else{
+                    if(itemsAll.length === 0){
+                        chk_adv.checked = false;
+                    }
                 }
             }
         });
