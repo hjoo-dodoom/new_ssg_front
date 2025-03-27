@@ -416,24 +416,6 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup1')">주문내역 확인 동의 (필수)</button>
                                 </label>
-
-                                <!-- 약관 -->
-                                <div id="terms_popup1" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">주문내역 확인 동의</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div id="confirm_order_details_terms">
-                                                <script>
-                                                    var includePath = "/resources/static/inc/terms.html";
-                                                    includeTemplateFile(includePath, 'confirm_order_details_terms');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <!-- //약관 -->
                             </li>
                             <li>
                                 <label class="checkbox checkbox_type2">
@@ -441,24 +423,6 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup2')">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</button>
                                 </label>
-
-                                <!-- 약관 -->
-                                <div id="terms_popup2" class="layer_popup layer_default">
-                                    <div class="layer_content width_lg height_md">
-                                        <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div id="personal_info_provide_terms">
-                                                <script>
-                                                    var includePath = "/resources/static/inc/terms.html";
-                                                    includeTemplateFile(includePath, 'personal_info_provide_terms');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <!-- //약관 -->
                             </li>
                             <li>
                                 <label class="checkbox checkbox_type2">
@@ -466,24 +430,6 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup3')">결제대행서비스 이용약관 동의(필수)</button>
                                 </label>
-
-                                <!-- 약관 -->
-                                <div id="terms_popup3" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">결제대행서비스 이용약관 동의</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div id="payment_agency_service_terms">
-                                                <script>
-                                                    var includePath = "/resources/static/inc/terms.html";
-                                                    includeTemplateFile(includePath, 'payment_agency_service_terms');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <!-- //약관 -->
                             </li>
                         </ul>
                         <div class="oa_btns btns_fixed_mobile">
@@ -653,6 +599,63 @@
         <span class="layer_bg" onclick="closeLayer(this)"></span>
     </div>
     <!-- //다음주소 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup1" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주문내역 확인 동의</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="confirm_order_details_terms">
+                    <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'confirm_order_details_terms');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup2" class="layer_popup layer_default">
+        <div class="layer_content width_lg height_md">
+            <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="personal_info_provide_terms">
+                    <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'personal_info_provide_terms');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+
+    <!-- 약관 -->
+    <div id="terms_popup3" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">결제대행서비스 이용약관 동의</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="payment_agency_service_terms">
+                    <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'payment_agency_service_terms');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+
     <!-- 공통영역3 -->
     <!-- 모바일 전체 카테고리  -->
     <div id="cate_all_mobile" class="layer_popup layer_fullpage">

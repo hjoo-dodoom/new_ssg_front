@@ -342,25 +342,6 @@
                                                             </label>
                                                             <button type="button" class="info_btn" onclick="openLayer('#safe_number')">자세히 보기</button>
                                                         </div>
-                                                        <!-- 안심번호 사용 안내 레이어 -->
-                                                        <div id="safe_number" class="layer_popup layer_default">
-                                                            <div class="layer_content  width_md height_md">
-                                                                <div class="layer_default_title">안심번호 서비스 안내</div>
-                                                                <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                                                <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                                                    <div class="safe_number_title">
-                                                                        <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.5 6.25h-25A2.5 2.5 0 0 0 5 8.75v8.75c0 8.238 3.988 13.23 7.333 15.967 3.603 2.947 7.187 3.947 7.344 3.99.214.058.441.058.656 0 .156-.043 3.736-1.043 7.344-3.99C31.012 30.73 35 25.737 35 17.5V8.75a2.5 2.5 0 0 0-2.5-2.5Zm0 11.25c0 5.792-2.134 10.494-6.344 13.972A20.202 20.202 0 0 1 20 34.94a20.038 20.038 0 0 1-6.081-3.408C9.659 28.048 7.5 23.328 7.5 17.5V8.75h25v8.75Zm-19.634 4.634a1.251 1.251 0 0 1 1.768-1.768l2.866 2.867 7.866-7.867a1.252 1.252 0 0 1 2.135.884 1.252 1.252 0 0 1-.367.884l-8.75 8.75a1.25 1.25 0 0 1-1.768 0l-3.75-3.75Z" fill="#3B6DEC"/></svg>
-                                                                        안심번호 서비스는 배송지 정보의 개인정보인 휴대폰번호를<br class="pc"/> 1회성 임시번호(0XX-XXX-XXXX)로 변경하는 서비스 입니다
-                                                                    </div>
-                                                                    <p class="txt3">협력회사및 택배사에게 안심번호가 전달되므로 만일에 발생할 수 있는 개인정보 유출을 사전에 차단할 수 있습니다.(택배상자에 안심번호 표시)</p>
-                                                                    <p class="txt3">본 서비스는 다우기술과 제휴하여 고객님께 무료로 제공되며, 부여된 안심번호는 배송완료 또는 주문취소 시 자동으로 해지/소멸됩니다.</p>
-                                                                    <p class="txt3">안심번호는 해지/소멸 후 다른 고객 번호에 연결하여 재 사용할 수 있으며, 일부 택배사의 경우 안심번호 서비스 지원이 불가할 수 있습니다.</p>
-                                                                    <p class="txt3">안심번호는 고객이 이용에 동의할 경우만 서비스를 제공합니다.</p>
-                                                                </div>
-                                                            </div>
-                                                            <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                                        </div>
-                                                        <!-- //안심번호 사용 안내 레이어 -->
                                                         <div class="ads">[12345] 서울특별시 종로구 우정국로 2길 8, 12(관철동), 1011동 206호</div>
                                                     </div>
                                                     <div class="btn_list">
@@ -666,24 +647,6 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup1')">주문내역 확인 동의 (필수)</button>
                                 </label>
-
-                                <!-- 약관 -->
-                                <div id="terms_popup1" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">주문내역 확인 동의</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div id="confirm_order_details_terms">
-                                                <script>
-                                                    var includePath = "/resources/static/inc/terms.html";
-                                                    includeTemplateFile(includePath, 'confirm_order_details_terms');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <!-- //약관 -->
                             </li>
                             <li>
                                 <label class="checkbox checkbox_type2">
@@ -691,24 +654,6 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup2')">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</button>
                                 </label>
-
-                                <!-- 약관 -->
-                                <div id="terms_popup2" class="layer_popup layer_default">
-                                    <div class="layer_content width_xl height_md">
-                                        <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content layer_scroll" data-simplebar>
-                                            <div id="personal_info_provide_terms">
-                                                <script>
-                                                    var includePath = "/resources/static/inc/terms.html";
-                                                    includeTemplateFile(includePath, 'personal_info_provide_terms');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <!-- //약관 -->
                             </li>
                             <li>
                                 <label class="checkbox checkbox_type2">
@@ -716,24 +661,6 @@
                                     <span class="ck_icon"></span>
                                     <button type="button" class="check_btn" onclick="openLayer('#terms_popup3')">결제대행서비스 이용약관 동의(필수)</button>
                                 </label>
-
-                                <!-- 약관 -->
-                                <div id="terms_popup3" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">결제대행서비스 이용약관 동의</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div id="payment_agency_service_terms">
-                                                <script>
-                                                    var includePath = "/resources/static/inc/terms.html";
-                                                    includeTemplateFile(includePath, 'payment_agency_service_terms');
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <!-- //약관 -->
                             </li>
                         </ul>
                         <div class="oa_btns btns_fixed_mobile">
@@ -905,6 +832,80 @@
         <span class="layer_bg" onclick="closeLayer(this)"></span>
     </div>
     <!-- //다음주소 -->
+
+    <!-- 안심번호 사용 안내 레이어 -->
+    <div id="safe_number" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">안심번호 서비스 안내</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div class="safe_number_title">
+                    <svg width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.5 6.25h-25A2.5 2.5 0 0 0 5 8.75v8.75c0 8.238 3.988 13.23 7.333 15.967 3.603 2.947 7.187 3.947 7.344 3.99.214.058.441.058.656 0 .156-.043 3.736-1.043 7.344-3.99C31.012 30.73 35 25.737 35 17.5V8.75a2.5 2.5 0 0 0-2.5-2.5Zm0 11.25c0 5.792-2.134 10.494-6.344 13.972A20.202 20.202 0 0 1 20 34.94a20.038 20.038 0 0 1-6.081-3.408C9.659 28.048 7.5 23.328 7.5 17.5V8.75h25v8.75Zm-19.634 4.634a1.251 1.251 0 0 1 1.768-1.768l2.866 2.867 7.866-7.867a1.252 1.252 0 0 1 2.135.884 1.252 1.252 0 0 1-.367.884l-8.75 8.75a1.25 1.25 0 0 1-1.768 0l-3.75-3.75Z" fill="#3B6DEC"/></svg>
+                    안심번호 서비스는 배송지 정보의 개인정보인 휴대폰번호를<br class="pc"/> 1회성 임시번호(0XX-XXX-XXXX)로 변경하는 서비스 입니다
+                </div>
+                <p class="txt3">협력회사및 택배사에게 안심번호가 전달되므로 만일에 발생할 수 있는 개인정보 유출을 사전에 차단할 수 있습니다.(택배상자에 안심번호 표시)</p>
+                <p class="txt3">본 서비스는 다우기술과 제휴하여 고객님께 무료로 제공되며, 부여된 안심번호는 배송완료 또는 주문취소 시 자동으로 해지/소멸됩니다.</p>
+                <p class="txt3">안심번호는 해지/소멸 후 다른 고객 번호에 연결하여 재 사용할 수 있으며, 일부 택배사의 경우 안심번호 서비스 지원이 불가할 수 있습니다.</p>
+                <p class="txt3">안심번호는 고객이 이용에 동의할 경우만 서비스를 제공합니다.</p>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //안심번호 사용 안내 레이어 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup1" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주문내역 확인 동의</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(thisPmultiple_payment)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="confirm_order_details_terms">
+                    <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'confirm_order_details_terms');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup2" class="layer_popup layer_default">
+        <div class="layer_content width_xl height_md">
+            <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content layer_scroll" data-simplebar>
+                <div id="personal_info_provide_terms">
+                    <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'personal_info_provide_terms');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup3" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">결제대행서비스 이용약관 동의</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="payment_agency_service_terms">
+                    <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'payment_agency_service_terms');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
 
     <!-- 공통영역3 -->
     <!-- 모바일 전체 카테고리  -->
