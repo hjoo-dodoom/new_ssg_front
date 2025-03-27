@@ -436,3 +436,22 @@ top: 0;transform: translateX(-10px);background: #f52121;opacity: 0.75;backdrop-f
 .only_pc_use{text-align: center;flex:1 1 auto;margin:8rem 0 3rem;}
 .only_pc_use svg{width: 10rem;height:10rem;margin-bottom:2rem;}
 .only_pc_use p{font-size:1.8rem;}
+
+
+#bottom_sheet {position: fixed; top: 0; left: 0;width: 100%; height: 100%; display: flex; opacity: 0; pointer-events: none; align-items: center; flex-direction: column; justify-content: flex-end; transition: 0.1s linear; z-index: 10000;}
+#bottom_sheet.show {opacity: 1; pointer-events: auto; z-index: 10000; }
+#bottom_sheet .sheet-overlay {position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; opacity: 0.2; background: #000; z-index: 10000;}
+#bottom_sheet .content {width: 100%; position: relative; background: #fff; max-height: 100vh; height: 50vh; max-width: 1150px; padding: 14px 0px 25px; transform: translateY(100%); border-radius: 40px 40px 0 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s ease; z-index: 10000;}
+#bottom_sheet.show .content{transform: translateY(0%);}
+#bottom_sheet.dragging .content {transition: none;}
+#bottom_sheet.fullscreen .content { overflow-y: hidden;}
+#bottom_sheet .header {display: flex; justify-content: center;}
+#bottom_sheet .header .drag-icon {cursor: grab; user-select: none; padding: 30px 15px 15px; margin-top: -15px; width: 100%; border: 0; background-color: transparent; text-indent: -999em; overflow: hidden; background-position: center; background-size: 5.6rem; background-repeat: no-repeat; background-image: url('/resources/static/dist/images/common/icon_bottom_sheet.svg'); }
+#bottom_sheet .body { position:relative; height: 100%; overflow-y: auto; padding: 8px 0 40px; scrollbar-width: none;}
+#bottom_sheet .hd_search{width:100%;padding:0 24px 0 21px;}
+#bottom_sheet .hd_search form{display:flex;}
+#bottom_sheet .hd_search .back_btn{width:4rem;}
+#bottom_sheet .hd_search .search_inner{display: flex; flex: 1; max-width: none;height: 4.6rem; border: 0; background-color: #F5F5F5; border-radius: 20rem;}
+#bottom_sheet .hd_search .search_inner .gnb_search_input {border: 0; outline: none; font-weight: 500; padding-left: 1.8rem; font-size: 1.4rem;background-color: transparent; flex: 1 1 auto; min-width: 1%;}
+#bottom_sheet .search_inner .gnb_search_submit { width: 5rem; border: 0; background-color: transparent; text-indent: -999em; overflow: hidden; background-position: center center; background-size: 2.4rem; background-repeat: no-repeat; background-image: url('/resources/static/dist/images/common/icon_hd_search.svg');}
+#bottom_sheet .body::-webkit-scrollbar {width: 0;}

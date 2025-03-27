@@ -402,6 +402,98 @@ function closeLayer(button, target) {
     document.querySelector('html').classList.remove('mobile_hidden');
 }
 
+
+// 검색 바텀 시트 제어
+function showBottomSheet(event){
+    event.preventDefault();
+
+    const bottomSheet = document.getElementById("bottom_sheet");
+    bottomSheet.classList.add("show");
+    document.querySelector('html').classList.add('mobile_hidden');
+    updateSheetHeight(70); // 바텀 시트 최초 높이(vh)
+}
+
+function updateSheetHeight(height){
+    const bottomSheet = document.getElementById("bottom_sheet");
+    const sheetContent = bottomSheet.querySelector(".content");
+
+    if(height === 100){
+        const viewportHeight = window.innerHeight;
+        const calculatedHeightInVh = (viewportHeight - 30) / viewportHeight * 100; // `calc( 100vh - 30px )` 와 같은 의미
+        sheetContent.style.height =`${calculatedHeightInVh}svh`; // 바텀 시트 최고 높이
+    }else{
+        sheetContent.style.height = `${height}svh`;
+    }
+    bottomSheet.classList.toggle("fullscreen", height === 100);
+}
+
+function hideBottomSheet(){
+    const bottomSheet = document.getElementById("bottom_sheet");
+    bottomSheet.classList.remove("show");
+    document.querySelector('html').classList.remove('mobile_hidden');
+}
+
+let isDragging = false, startY, startHeight;
+
+const dragStart = (e) => {
+    let bottomSheet = document.getElementById("bottom_sheet");
+    let sheetContent = document.querySelector("#bottom_sheet .content");
+    isDragging = true;
+    startY = e.pageY || e.touches?.[0].pageY;
+    startHeight = parseInt(sheetContent.style.height);
+    bottomSheet.classList.add("dragging");
+}
+
+const dragging = (e) => {
+    if(!isDragging) return;
+    const delta = startY - (e.pageY || e.touches?.[0].pageY);
+    const newHeight = startHeight + delta / window.innerHeight * 100;
+    updateSheetHeight(newHeight);
+}
+
+const dragStop = () => {
+    let bottomSheet = document.getElementById("bottom_sheet");
+
+    let sheetContent = document.querySelector("#bottom_sheet .content");
+    isDragging = false;
+    bottomSheet.classList.remove("dragging");
+    const sheetHeight = parseInt(sheetContent.style.height);
+    sheetHeight < 65 ? hideBottomSheet() : sheetHeight > 75 ? updateSheetHeight(100) : updateSheetHeight(70);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new MutationObserver(function (mutationsList, observer) {
+        const dragIcon = document.getElementById("search_bottom_sheet").querySelector(".drag-icon");
+        if(dragIcon){
+            dragIcon.addEventListener("mousedown", dragStart);
+            document.addEventListener("mousemove", dragging);
+            document.addEventListener("mouseup", dragStop);
+            dragIcon.addEventListener("touchstart", dragStart);
+            document.addEventListener("touchmove", dragging);
+            document.addEventListener("touchend", dragStop);
+
+            // 요소가 존재하면 observer를 멈춤
+            observer.disconnect();
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //모바일 헤더 전체 카테고리 토글
 function gnbMobileOpen() {
     const gnb = document.getElementById('gnb');
