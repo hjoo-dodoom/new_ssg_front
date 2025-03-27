@@ -1,7 +1,7 @@
 #layout{min-height:100vh;display: flex;flex-direction: column;position: relative;background-color: #fff;}
 #header{z-index:250;border-bottom:1px solid #E0E0E0;background-color: #fff;}
 #header .hd_inner{display:flex;align-items: center;max-width:128rem;margin-left:auto;margin-right:auto;}
-.mobile_hidden #header{z-index:3;}
+/* .mobile_hidden #header{z-index:3;} */
 #hd_top{border-bottom:1px solid #EDEDED;}
 #hd_top .hd_inner{padding:0.9rem 0;flex-wrap:wrap;}
 #hd_points{display:flex;padding:0.3rem 0;}
