@@ -829,194 +829,197 @@
                             <button type="button" class="btn btn_theme" id="buy_mobile">바로구매</button>
                             <button type="button" class="btn btn_gray">일시품절</button>
                         </div>
-                        <button type="button" class="fixed_toggle_btn">옵션 선택</button>
-                        <div class="options_fixed_inner" data-simplebar>
-                            <div class="goods_options_btns">
-                                <div class="options_content">
-                                    <div class="product_name">[LG전자] 스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_
-                                        27ART10DSPL ☆신세계5만원☆</div>
-                                    <div class="options">
-                                        <div class="select">
-                                            <div class="design_select type3">
-                                                <select name="" id="" onchange="option_required(this, 1)" select-required product-option="modal_prd_option_required1">
-                                                    <option value="">색상 선택</option>
-                                                    <option value="검정">검정</option>
-                                                    <option value="노랑">노랑</option>
-                                                    <option value="파랑" disabled>파랑 (품절)</option>
-                                                </select>
+                        <div class="dimmed"></div>
+                        <div class="options_fixed_layer">
+                            <button type="button" class="fixed_toggle_btn">옵션 선택</button>
+                            <div class="options_fixed_inner" data-simplebar>
+                                <div class="goods_options_btns">
+                                    <div class="options_content">
+                                        <div class="product_name">[LG전자] 스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_
+                                            27ART10DSPL ☆신세계5만원☆</div>
+                                        <div class="options">
+                                            <div class="select">
+                                                <div class="design_select type3">
+                                                    <select name="" id="" onchange="option_required(this, 1)" select-required product-option="modal_prd_option_required1">
+                                                        <option value="">색상 선택</option>
+                                                        <option value="검정">검정</option>
+                                                        <option value="노랑">노랑</option>
+                                                        <option value="파랑" disabled>파랑 (품절)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="select">
+                                                <div class="design_select type3">
+                                                    <select name="" id="" onchange="option_required(this, 2)" select-required product-option="modal_prd_option_required2">
+                                                        <option value="">사이즈 선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="select">
+                                                <div class="design_select type3">
+                                                    <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="modal_prd_option_required3">
+                                                        <option value="">길이 선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="select">
+                                                <div class="design_select type3">
+                                                    <select name="" id="">
+                                                        <option value="">추가구성품 선택</option>
+                                                        <option value="양말">양말 (재고 20)</option>
+                                                        <option value="장갑">장갑 (재고 20)</option>
+                                                        <option value="신발" disabled>신발 (품절)</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="select">
-                                            <div class="design_select type3">
-                                                <select name="" id="" onchange="option_required(this, 2)" select-required product-option="modal_prd_option_required2">
-                                                    <option value="">사이즈 선택</option>
-                                                </select>
+                                        <div class="selected_options">
+                                            <div class="items" data-simplebar>
+                                                <div class="item">
+                                                    <div class="l">
+                                                        <div class="name">블랙/미디움</div>
+                                                        <div class="lot_box">
+                                                            <div class="lot_control">
+                                                                <button type="button" class="minus">수량 빼기</button>
+                                                                <input type="tel" value="1" limit="3"><!-- limit 재고수량 -->
+                                                                <button type="button" class="plus">수량 추가</button>
+                                                            </div>
+                                                            <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                            <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                        </div>
+                                                    </div>
+                                                    <div class="r">
+                                                        <div class="r_cnt">
+                                                            <div class="quantity">재고수량 10개</div>
+                                                            <div class="price">
+                                                                <span class="price_ori">1,020,600원</span>
+                                                                <span class="price_sale">918,540원</span>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="l">
+                                                        <div class="name">양말</div>
+                                                        <div class="lot_box">
+                                                            <div class="lot_control">
+                                                                <button type="button" class="minus">수량 빼기</button>
+                                                                <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                                <button type="button" class="plus">수량 추가</button>
+                                                            </div>
+                                                            <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                            <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                        </div>
+                                                    </div>
+                                                    <div class="r">
+                                                        <div class="r_cnt">
+                                                            <div class="quantity">재고수량 10개</div>
+                                                            <div class="price">
+                                                                <span class="price_ori">1,020,600원</span>
+                                                                <span class="price_sale">918,540원</span>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="l">
+                                                        <div class="name">블랙/미디움</div>
+                                                        <div class="lot_box">
+                                                            <div class="lot_control">
+                                                                <button type="button" class="minus">수량 빼기</button>
+                                                                <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                                <button type="button" class="plus">수량 추가</button>
+                                                            </div>
+                                                            <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                            <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                        </div>
+                                                    </div>
+                                                    <div class="r">
+                                                        <div class="r_cnt">
+                                                            <div class="quantity">재고수량 10개</div>
+                                                            <div class="price">
+                                                                <span class="price_ori">1,020,600원</span>
+                                                                <span class="price_sale">918,540원</span>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="l">
+                                                        <div class="name">양말</div>
+                                                        <div class="lot_box">
+                                                            <div class="lot_control">
+                                                                <button type="button" class="minus">수량 빼기</button>
+                                                                <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                                <button type="button" class="plus">수량 추가</button>
+                                                            </div>
+                                                            <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                            <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                        </div>
+                                                    </div>
+                                                    <div class="r">
+                                                        <div class="r_cnt">
+                                                            <div class="quantity">재고수량 10개</div>
+                                                            <div class="price">
+                                                                <span class="price_ori">1,020,600원</span>
+                                                                <span class="price_sale">918,540원</span>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="remove_item">선택옵션 삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="total_price">
+                                                <span class="tit">총 상품 금액</span>
+                                                <strong class="price">1,939,140원</strong>
                                             </div>
                                         </div>
-                                        <div class="select">
-                                            <div class="design_select type3">
-                                                <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="modal_prd_option_required3">
-                                                    <option value="">길이 선택</option>
-                                                </select>
+    
+                                        <!-- 옵션없음 -->
+                                        <div class="selected_options">
+                                            <div class="items" data-simplebar>
+                                                <div class="item">
+                                                    <div class="l">
+                                                        <div class="name">양말</div>
+                                                        <div class="lot_box">
+                                                            <div class="lot_control">
+                                                                <button type="button" class="minus">수량 빼기</button>
+                                                                <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                                <button type="button" class="plus">수량 추가</button>
+                                                            </div>
+                                                            <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
+                                                            <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
+                                                        </div>
+                                                    </div>
+                                                    <div class="r">
+                                                        <div class="r_cnt">
+                                                            <div class="quantity">재고수량 10개</div>
+                                                            <div class="price">
+                                                                <span class="price_ori">1,020,600원</span>
+                                                                <span class="price_sale">918,540원</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="total_price">
+                                                <span class="tit">총 상품 금액</span>
+                                                <strong class="price">1,939,140원</strong>
                                             </div>
                                         </div>
-                                        <div class="select">
-                                            <div class="design_select type3">
-                                                <select name="" id="">
-                                                    <option value="">추가구성품 선택</option>
-                                                    <option value="양말">양말 (재고 20)</option>
-                                                    <option value="장갑">장갑 (재고 20)</option>
-                                                    <option value="신발" disabled>신발 (품절)</option>
-                                                </select>
-                                            </div>
-                                        </div>
+                                        <!-- //옵션없음 -->
                                     </div>
-                                    <div class="selected_options">
-                                        <div class="items" data-simplebar>
-                                            <div class="item">
-                                                <div class="l">
-                                                    <div class="name">블랙/미디움</div>
-                                                    <div class="lot_box">
-                                                        <div class="lot_control">
-                                                            <button type="button" class="minus">수량 빼기</button>
-                                                            <input type="tel" value="1" limit="3"><!-- limit 재고수량 -->
-                                                            <button type="button" class="plus">수량 추가</button>
-                                                        </div>
-                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
-                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
-                                                    </div>
-                                                </div>
-                                                <div class="r">
-                                                    <div class="r_cnt">
-                                                        <div class="quantity">재고수량 10개</div>
-                                                        <div class="price">
-                                                            <span class="price_ori">1,020,600원</span>
-                                                            <span class="price_sale">918,540원</span>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="l">
-                                                    <div class="name">양말</div>
-                                                    <div class="lot_box">
-                                                        <div class="lot_control">
-                                                            <button type="button" class="minus">수량 빼기</button>
-                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
-                                                            <button type="button" class="plus">수량 추가</button>
-                                                        </div>
-                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
-                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
-                                                    </div>
-                                                </div>
-                                                <div class="r">
-                                                    <div class="r_cnt">
-                                                        <div class="quantity">재고수량 10개</div>
-                                                        <div class="price">
-                                                            <span class="price_ori">1,020,600원</span>
-                                                            <span class="price_sale">918,540원</span>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="l">
-                                                    <div class="name">블랙/미디움</div>
-                                                    <div class="lot_box">
-                                                        <div class="lot_control">
-                                                            <button type="button" class="minus">수량 빼기</button>
-                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
-                                                            <button type="button" class="plus">수량 추가</button>
-                                                        </div>
-                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
-                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
-                                                    </div>
-                                                </div>
-                                                <div class="r">
-                                                    <div class="r_cnt">
-                                                        <div class="quantity">재고수량 10개</div>
-                                                        <div class="price">
-                                                            <span class="price_ori">1,020,600원</span>
-                                                            <span class="price_sale">918,540원</span>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="l">
-                                                    <div class="name">양말</div>
-                                                    <div class="lot_box">
-                                                        <div class="lot_control">
-                                                            <button type="button" class="minus">수량 빼기</button>
-                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
-                                                            <button type="button" class="plus">수량 추가</button>
-                                                        </div>
-                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
-                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
-                                                    </div>
-                                                </div>
-                                                <div class="r">
-                                                    <div class="r_cnt">
-                                                        <div class="quantity">재고수량 10개</div>
-                                                        <div class="price">
-                                                            <span class="price_ori">1,020,600원</span>
-                                                            <span class="price_sale">918,540원</span>
-                                                        </div>
-                                                    </div>
-                                                    <button type="button" class="remove_item">선택옵션 삭제</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="total_price">
-                                            <span class="tit">총 상품 금액</span>
-                                            <strong class="price">1,939,140원</strong>
-                                        </div>
+                                    <div class="goods_btns">
+                                        <button type="button" class="btn btn_icon icon_zzim">찜하기</button>
+                                        <button type="button" class="btn btn_icon icon_present">선물하기</button>
+                                        <button type="button" class="btn btn_black">장바구니</button>
+                                        <button type="button" class="btn btn_theme">바로구매</button>
+                                        <button type="button" class="btn btn_black_line">여러곳 배송</button>
+                                        <button type="button" class="btn btn_theme" id="present_mobile_buy">선물하기</button>
                                     </div>
-
-                                    <!-- 옵션없음 -->
-                                    <div class="selected_options">
-                                        <div class="items" data-simplebar>
-                                            <div class="item">
-                                                <div class="l">
-                                                    <div class="name">양말</div>
-                                                    <div class="lot_box">
-                                                        <div class="lot_control">
-                                                            <button type="button" class="minus">수량 빼기</button>
-                                                            <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
-                                                            <button type="button" class="plus">수량 추가</button>
-                                                        </div>
-                                                        <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</butto>
-                                                        <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</butto>
-                                                    </div>
-                                                </div>
-                                                <div class="r">
-                                                    <div class="r_cnt">
-                                                        <div class="quantity">재고수량 10개</div>
-                                                        <div class="price">
-                                                            <span class="price_ori">1,020,600원</span>
-                                                            <span class="price_sale">918,540원</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="total_price">
-                                            <span class="tit">총 상품 금액</span>
-                                            <strong class="price">1,939,140원</strong>
-                                        </div>
-                                    </div>
-                                    <!-- //옵션없음 -->
-                                </div>
-                                <div class="goods_btns">
-                                    <button type="button" class="btn btn_icon icon_zzim">찜하기</button>
-                                    <button type="button" class="btn btn_icon icon_present">선물하기</button>
-                                    <button type="button" class="btn btn_black">장바구니</button>
-                                    <button type="button" class="btn btn_theme">바로구매</button>
-                                    <button type="button" class="btn btn_black_line">여러곳 배송</button>
-                                    <button type="button" class="btn btn_theme" id="present_mobile_buy">선물하기</button>
                                 </div>
                             </div>
                         </div>
@@ -1359,11 +1362,17 @@ var imagesView = new Swiper(".imgaes_view .slide", {
 });
 
 //fixed 옵션선택 토글
+const fixedDimmed = document.querySelector('.dimmed');
 const fixedToggleBtn = document.querySelector('.fixed_toggle_btn');
 const presentMobileBtn = document.querySelector('#present_mobile');
 const buyMobileBtn = document.querySelector('#buy_mobile');
 const optionsFixed = document.querySelector('.options_fixed');
+fixedDimmed.addEventListener('click', function (event) {
+    document.querySelector('html').classList.toggle('mobile_hidden');
+    optionsFixed.classList.toggle('open');
+});
 fixedToggleBtn.addEventListener('click', function (event) {
+    document.querySelector('html').classList.toggle('mobile_hidden');
     optionsFixed.classList.toggle('open');
 });
 presentMobileBtn.addEventListener('click', function (event) {
@@ -1371,6 +1380,7 @@ presentMobileBtn.addEventListener('click', function (event) {
     optionsFixed.classList.add('mobile_present');
 });
 buyMobileBtn.addEventListener('click', function (event) {
+    document.querySelector('html').classList.add('mobile_hidden');
     optionsFixed.classList.toggle('open');
 });
 document.addEventListener('click', function (event) {
