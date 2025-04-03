@@ -463,7 +463,7 @@ const dragStop = () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const observer = new MutationObserver(function (mutationsList, observer) {
-        const dragIcon = document.getElementById("search_bottom_sheet").querySelector(".drag-icon");
+        const dragIcon = document.getElementById("search_bottom_sheet")?.querySelector(".drag-icon");
         if(dragIcon){
             dragIcon.addEventListener("mousedown", dragStart);
             document.addEventListener("mousemove", dragging);

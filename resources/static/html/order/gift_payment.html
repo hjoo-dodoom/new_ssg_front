@@ -494,7 +494,8 @@
                                                 <div class="cash_row hidden">
                                                     <hr class="clear_devide">
                                                     <div class="input_group">
-                                                        <div class="input size_20 size_mb_100">
+                                                         <!-- SSG_PAY -->
+                                                         <div class="input size_20 size_mb_100 type_ssg">
                                                             <div class="design_select type5">
                                                                 <select name="" id="">
                                                                     <option value="휴대폰번호">휴대폰번호</option>
@@ -503,11 +504,20 @@
                                                                 </select>
                                                             </div>
                                                         </div>
+                                                        <!-- 급여공제 -->
+                                                        <div class="input size_20 size_mb_100 type_pay">
+                                                            <div class="design_select type5">
+                                                                <select name="" id="">
+                                                                    <option value="휴대폰번호">휴대폰번호</option>
+                                                                    <option value="현금영수증카드">현금영수증카드</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                         <div class="input size_32 size_mb_100">
                                                             <input type="tel" placeholder="-없이 숫자만 입력해주세요">
                                                         </div>
                                                     </div>
-                                                    <p>*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
+                                                    <p class="text">*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
                                                 </div>
 
                                                 <!-- hidden -->
@@ -518,6 +528,7 @@
                                                             <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
                                                         </div>
                                                     </div>
+                                                    <p class="text">*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -866,6 +877,9 @@ function lotChange(button){
 const paymentTypeAll = document.querySelectorAll('input[name="payment_type"]');
 const paymentFormEtc = document.getElementById('pay_form_etc');
 const paymentCash = document.querySelectorAll('.pay_cash');
+const paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
+const paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
+const paymentTxt = document.querySelectorAll('#pay_form_etc .text');
 
 paymentTypeAll.forEach(function(paymentType){
     paymentType.addEventListener('change', function() {
@@ -874,11 +888,25 @@ paymentTypeAll.forEach(function(paymentType){
             paymentCash.forEach(function(cash){
                 cash.classList.remove('hidden');
             });
+
+            paymentSelectSsgPay.classList.remove('hide');
+            paymentSelectPay.classList.add('hide');
+
+            paymentTxt.forEach(function(text){
+                text.classList.remove('hide')
+            });
         }else if(paymentType.checked && paymentType.value === '4'){//급여공제
-                paymentFormEtc.style.display = 'block';
-                paymentCash.forEach(function(cash){
-                    cash.classList.remove('hidden');
-                });
+            paymentFormEtc.style.display = 'block';
+            paymentCash.forEach(function(cash){
+                cash.classList.remove('hidden');
+            });
+
+            paymentSelectSsgPay.classList.add('hide');
+            paymentSelectPay.classList.remove('hide');
+
+            paymentTxt.forEach(function(text){
+                text.classList.add('hide')
+            });
         }else{
             paymentFormEtc.style.display = 'none';
         }
