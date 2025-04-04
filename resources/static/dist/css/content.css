@@ -3006,7 +3006,7 @@ background-repeat:no-repeat;background-position:center center;background-image:u
     .policy_list table{white-space: nowrap;}
 }
 
-#system_check{width:100%;height:100svh; background-color:#F8F8F8;}
+#system_check{width:100%;height: 100%; min-height: 100svh;background-color:#F8F8F8;display:flex;justify-content: center;align-items:center;}
 #system_check .bg_wrap{text-align: center;height:100%;display:flex;justify-content: center;align-items:center;flex-wrap:wrap;}
 #system_check img + img{margin-left:6rem;}
 
