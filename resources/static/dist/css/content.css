@@ -3006,25 +3006,12 @@ background-repeat:no-repeat;background-position:center center;background-image:u
     .policy_list table{white-space: nowrap;}
 }
 
-<ul class="policy_list">
-<li>
-    <button type="button" class="top_cnt">제 1조 총칙 <img src="/resources/static/dist/images/content/policy_mark1.jpg" alt=""></button>
-    <div class="bottom_cnt">
-        <ol>
-            <li>1. 개인정보란 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명 등의 사항에 의하여 당해 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.</li>
-            <li>2. ㈜신세계는 (이하 “당사”라고 합니다) 회원의 개인정보를 매우 중요시하고, 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』, 『개인정보보호법』 등의 관련 법률을 준수하고 있으며, 그에 의거한 개인정보처리방침을 정하여 이용자의 권익보호에 최선을 다하고 있습니다.</li>
-            <li>3. 당사는 개인정보처리방침을 통하여 회원께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.</li>
-            <li>4. 당사는 개인정보처리방침을 홈페이지 첫 화면에 공개함으로써 회원께서 언제나 용이하게 보실 수 있도록 조치하고 있습니다.</li>
-        </ol>
-    </div>
-</li>
+#system_check{width:100%;height:100svh; background-color:#F8F8F8;}
+#system_check .bg_wrap{text-align: center;height:100%;display:flex;justify-content: center;align-items:center;flex-wrap:wrap;}
+#system_check img + img{margin-left:6rem;}
 
-<div class="policy_wrap">
-                    <ul class="policy_mark">
-						<li class="item"><img src="/resources/static/dist/images/content/policy_mark1.png">일반 개인정보 수집</li>
-						<li class="item"><img src="/resources/static/dist/images/content/policy_mark2.png">개인정보 처리목적</li>
-						<li class="item"><img src="/resources/static/dist/images/content/policy_mark3.png">개인정보의 보유 기간</li>
-						<li class="item"><img src="/resources/static/dist/images/content/policy_mark4.png">개인정보 처리위탁</li>
-						<li class="item"><img src="/resources/static/dist/images/content/policy_mark5.png">개인정보의 제공</li>
-						<li class="item"><img src="/resources/static/dist/images/content/policy_mark6.png">개인정보 열람 청구</li>
-					</ul>
+@media screen and (max-width: 1020px) {
+    #system_check{display:flex;justify-content: center;align-items:center;}
+    #system_check .bg_wrap{display:block;height: auto;}
+    #system_check img + img{margin-left:0rem;}
+}
