@@ -110,7 +110,7 @@
 
             
             <div class="form_btns between_lg">
-                <a href="javascript:;" class="btn btn_black btn_type1">휴대폰 인증하기</a>
+                <button type="submit" class="btn btn_black btn_type1">휴대폰 인증하기</button>
             </div>
             </form>
         </div>
@@ -143,6 +143,7 @@
 
 <script>
     let error_lists = [];
+    let certifyErrorCount = 0; // 인증번호 오류 횟수 추적
 
     //jquery.validate.js && box_alert 예제코드
     $("#findid_submit").validate({
@@ -178,9 +179,22 @@
         },
         errorPlacement: function(error, element) {
             error_lists.push(error.text());
+
+            // 인증번호 오류 횟수 증가
+            let inputElement = element.find('input');
+            if (inputElement.length && inputElement.attr('name') === 'findid_certify') {
+                certifyErrorCount++;
+            }
         },
         invalidHandler: function(event, validator) {
             setTimeout(() => {
+                // 인증번호 5회 실패 후 submit 시
+                if (certifyErrorCount > 5) {
+                    box_alert_reload("인증번호를 연속으로 실패하였습니다.<br />해당화면은 초기화됩니다.", "error");
+
+                    return false;
+                }
+
                 //에러 배열 중복제거
                 const set = new Set(error_lists);
                 const uniqueArr = [...set];
@@ -214,6 +228,7 @@
         const countdownSpan = document.getElementById(countdownId);
         button.style.display = 'none';
         reButton.style.display = 'block';
+        reButton.disabled = true;
         certifyNumberBox.style.display = 'block';
         let secondsLeft = 180;
 
@@ -228,6 +243,9 @@
                 countdownSpan.textContent = '3:00';
 
                 error_lists.push('시간이 만료되었습니다. 다시 시도해주세요.');
+
+                // 버튼 활성화
+                reButton.disabled = false;
 
                 //에러 배열 중복제거
                 const set = new Set(error_lists);
