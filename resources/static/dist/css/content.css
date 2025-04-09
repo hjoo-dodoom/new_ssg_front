@@ -2360,7 +2360,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 
     .mp_product .table table .group_info .gift{font-size:1.3rem;}
     .mp_product .table table .group_info .multi{font-size:1.3rem;}
-    .mp_product .table table .group_info .order_num{display: none;}
+    .mp_product .table table .group_info .order_num{display: inline-block; width:1.8rem;height: 1.8rem;text-indent: -999em;overflow:hidden; background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/icon_arrow_thin_right_black.svg');}
 
     .mp_product .table table tbody + tbody .group_info{margin-top:5rem;}
     .mp_product .table table tbody td{padding:3rem 1.2rem;border-bottom:1px solid #E6E6E6;text-align: center;vertical-align: middle;}
