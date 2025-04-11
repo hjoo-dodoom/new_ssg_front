@@ -3011,8 +3011,20 @@ background-repeat:no-repeat;background-position:center center;background-image:u
 #system_check .bg_wrap{text-align: center;height:100%;display:flex;justify-content: center;align-items:center;flex-wrap:wrap;}
 #system_check img + img{margin-left:6rem;}
 
+#system_check .sesstion_connect{display:flex;flex-wrap:wrap;gap:5.3rem; row-gap:2rem;}
+#system_check .sesstion_connect .info h1{color:#444; font-size: 3.2rem; font-weight:600;}
+#system_check .sesstion_connect .info p{margin-top:2.5rem; margin-bottom:4rem;color:#444; font-size: 1.7rem;}
+#system_check .sesstion_connect .info .btn.btn_reset{ background-color: #000; color: #fff;  font-size: 1.6rem;}
+
 @media screen and (max-width: 1020px) {
     #system_check{display:flex;justify-content: center;align-items:center;}
     #system_check .bg_wrap{display:block;height: auto;}
     #system_check img + img{margin-left:0rem;}
+
+    #system_check .sesstion_connect.container:before,
+    #system_check .sesstion_connect.container:after{display:none;}
+    #system_check .sesstion_connect{justify-content: center; text-align:center;}
+    #system_check .sesstion_connect .img_wrap{text-align:center;}
+    #system_check .sesstion_connect .info h1{font-size: 2.2rem;}
+    #system_check .sesstion_connect .info p{font-size: 1.3rem;}
 }
