@@ -92,9 +92,14 @@
                                             </div>
                                             <div class="input_group mgt20">
                                                 <div class="input">
+                                                    <input type="text" placeholder="우편번호" name="i_address_zip" class="i_address_zip" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                                                </div> 
+                                                <button class="btn btn_gray btn_type3 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
+                                            </div>
+                                            <div class="input_group">
+                                                <div class="input">
                                                     <input type="text" placeholder="주소를 검색해 주세요" name="i_address_basic" class="i_address_basic" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
                                                 </div> 
-                                                <button class="btn btn_gray btn_type5 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
                                             </div>
                                             <div class="input_group">
                                                 <div class="input">
@@ -335,7 +340,8 @@ function execDaumPostcode(elm) {
                 }
             } else {
             }
-            target.querySelector(".i_address_basic").value = data.zonecode + ' ' + addr;
+            target.querySelector(".i_address_zip").value = data.zonecode;
+            target.querySelector(".i_address_basic").value = addr;
             target.querySelector(".i_address_detail").focus();
             closeLayer(ads_layer);
         },
