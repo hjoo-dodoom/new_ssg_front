@@ -281,8 +281,12 @@ html .simplebar-vertical .simplebar-scrollbar:before {background-color: rgba(0,0
 html .simplebar-horizontal .simplebar-scrollbar:before {background-color: rgba(0,0,0,.4);left: 2px;right: 5px;bottom: 5px;}
 html .simplebar_visible .simplebar-scrollbar:before{opacity: 1 !important;}
 
-#daumAdressLayer{margin-bottom:4rem;}
+#daumAdressLayer{margin-bottom:4rem;padding:0 4rem;}
 #daumAdressLayer > div{height:50rem !important;}
+
+@media screen and (max-width: 1250px), screen and (max-height: 850px) {
+  #daumAdressLayer{padding:0 2rem;}
+}
 
 .checkbox{position:relative;overflow:hidden;display:inline-block;}
 .checkbox strong{font-weight:600;}
