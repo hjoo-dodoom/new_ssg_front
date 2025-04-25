@@ -695,6 +695,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .login_form .login_logo img{}
 .login_form .save_find{margin-top:1.7rem;}
 .login_form .save_find a{color:#444;font-size:1.5rem;}
+.login_form .save_find a + a{margin-left:.8rem;}
 .login_form .save_find a:hover{text-decoration: underline;}
 .login_form .form_btns{margin-top:3rem;}
 
@@ -702,7 +703,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .login_info .title{color:#000;font-size:1.7rem;font-weight:600;}
 .login_info .content{margin-top:1.2rem;color:#000;font-size:1.5rem;word-break: keep-all;}
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1024px) {
     #content.login_content{max-width:72rem;}
     .login_banner{display: none;}
     .login_title{font-size:2.5rem;margin-bottom:3.4rem;font-weight: 600;}
@@ -725,6 +726,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .login_form .login_form_inner{max-width: 100%;width: 100%;}
     .login_form .login_logo{display: none;}
     .login_form .save_find a{font-size:1.3rem;}
+    .login_form .save_find a + a{margin-left:.4rem;}
     .login_form .form_btn{margin-top:4rem;}
     .login_info{margin-top:3.6rem;padding-top:3rem;}
     .login_info .title{font-size:1.6rem;}
@@ -1619,7 +1621,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .order_wrap .order_content{width: 100%;}
     .order_wrap .order_aside{width:100%;margin-left:0;margin-top:2.4rem;border-radius:0;padding:0;border:0;position: relative;top:0;}
     .order_wrap .order_aside .aside_title{font-size:1.8rem;padding-bottom:1.9rem;border-bottom:2px solid #000;margin-bottom:2.2rem;}
-    .order_wrap .order_aside.cart_aside{padding-top:2.6rem;border-top:1px solid #E6E6E6;}
+    .order_wrap .order_aside.cart_aside{padding-top:2.6rem;border-top:1px solidrgb(20, 17, 17);}
     .order_wrap .order_aside.aside_hidden{padding:0;margin:0;}
     .order_wrap .order_aside.aside_hidden .aside_title{display:none;}
 }
