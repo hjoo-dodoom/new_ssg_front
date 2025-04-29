@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
+    <title>신세계 사용자</title>
+
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/static/dist/css/choices.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">    
+
+    <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
+    <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.modal.min.js"></script>
+    <script src="/resources/real/dist/js/box_alert.js"></script>
+    <script src="/resources/real/dist/js/swiper.min.js"></script>
+    <script src="/resources/real/dist/js/slick.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.validate.min.js"></script>
+    <script src="/resources/real/dist/js/simplebar.min.js"></script>
+    <script src="/resources/real/dist/js/choices.min.js"></script>
+    <script src="/resources/real/dist/js/common.js"></script>
+    <script src="/resources/real/dist/js/common_dev.js"></script>
+    <script src="/resources/real/dist/js/pikaday.js"></script>
+    <script src="/resources/real/dist/js/jquery.cookie.js"></script>
+
+    <style>
+    :root {
+        --theme-color:#000000;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1e2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#ffffff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+
+    <!-- ie css 변수적용 -->
+    <script>
+        window.MSInputMethodContext && document.documentMode && document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+    </script>
+</head>
+<body>
+<h1 class="screen_hide">SHINSEGAE</h1>
+    <!-- content -->
+    
+
+
+
+<script>
+   var agent = navigator.userAgent.toLowerCase();
+    var isIE = (agent.indexOf("msie") !== -1 || agent.indexOf("trident") !== -1);
+
+    if (isIE) {
+      //  window.open("https://test2.web.re.kr/auth/login", "_blank");
+        console.log("이 브라우저는 Internet Explorer입니다.");
+    } else {
+        console.log("이 브라우저는 Internet Explorer가 아닙니다.");
+    }
+
+    var links = document.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+        if (document.referrer.indexOf('ssgfront.dodoom.co.kr') !== -1) {
+            links[i].setAttribute('target', '_blank');
+        }
+    }
+
+  /*  document.addEventListener('click', event => {
+        var target = event.target;
+        // `iframe` 내부인지 확인
+        if (window !== window.parent) {
+            event.preventDefault(); // 기본 링크 열림 행동을 막음
+            window.open("https://test2.web.re.kr/auth/login", '_blank'); // 새 탭에서 열기
+            console.log(target.href);
+        }
+    });*!/*/
+
+</script>
+
+<div id="layout" class="login_layout">
+    <div id="content" class="login_content">
+        <div class="login_hd">
+            <div class="logo">
+                
+
+            </div>
+
+            
+        </div>
+
+        <div class="login_box">
+            <div class="login_banner">
+                <div class="swiper-wrapper">
+                    
+                </div>
+                <div class="swiper_pagination"></div>
+            </div>
+            <div class="login_form">
+                <div class="login_form_inner">
+                    <form id="loginForm" novalidate="novalidate">
+                        <input type="hidden" name="sms_send_type" value="LOGIN"/>
+                        <div class="login_logo">
+                            
+                        </div>
+                        <div class="login_title">
+                            테스트
+                        </div>
+
+                        <div class="form form_type1 size_lg">
+                            <div class="row">
+                                <div class="input_group">
+                                    <div class="input" input-active>
+                                        <input type="text" id="login_id" name="mbid" class="icon_input" placeholder="아이디를 입력하세요">
+                                        <label for="mbid" class="icon">
+                                            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.236 14.908c-1.071-1.851-2.721-3.179-4.647-3.808a5.063 5.063 0 1 0-5.18 0c-1.925.629-3.575 1.956-4.646 3.808a.562.562 0 1 0 .974.563c1.324-2.29 3.666-3.657 6.262-3.657 2.597 0 4.938 1.367 6.263 3.657a.562.562 0 1 0 .974-.563ZM5.062 6.752a3.937 3.937 0 1 1 7.875 0 3.937 3.937 0 0 1-7.875 0Z" fill="#444"/></svg>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="input_group">
+                                    <div class="input" input-active>
+                                        <input type="password" id="login_pw" name="mbpw" class="icon_input" placeholder="비밀번호를 입력하세요">
+                                        <label for="mbpw" class="icon">
+                                            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.625 5.625H6.75V3.937A2.25 2.25 0 0 1 9 1.688c1.08 0 2.053.774 2.261 1.8a.562.562 0 0 0 1.103-.224C12.046 1.698 10.63.563 9 .563a3.379 3.379 0 0 0-3.375 3.375v1.687h-2.25A1.125 1.125 0 0 0 2.25 6.75v7.875a1.125 1.125 0 0 0 1.125 1.125h11.25a1.125 1.125 0 0 0 1.125-1.125V6.75a1.125 1.125 0 0 0-1.125-1.125Zm0 9H3.375V6.75h11.25v7.875Zm-4.781-3.938a.844.844 0 1 1-1.688 0 .844.844 0 0 1 1.688 0Z" fill="#444"/></svg>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="save_find jbetween_acenter">
+                            <div>
+                                <label class="checkbox checkbox_type1">
+                                    <input type="checkbox" id="remember_id">
+                                    <span class="ck_icon"></span>
+                                    아이디 저장
+                                </label>
+                            </div>
+                            <div>
+                                <a href="/auth/findInfo">아이디 찾기</a>
+                                <a href="/auth/findPassword">비밀번호 재설정</a>
+                            </div>
+                        </div>
+
+                        <div class="form_btns btn_row">
+                            <button type="submit" class="btn btn_theme btn_type1">로그인하기</button>
+                            
+                                
+                                
+                                    
+                                        <a href="/auth/signUpCertify" class="btn btn_theme_line btn_type1">회원가입하기</a>
+                                    
+                                
+                            
+                        </div>
+                    </form>
+                    <div class="login_info">
+                        <div class="title">쇼핑몰 이용안내</div>
+                        <div class="content"><!-- db데이터 출력 -->
+                            <p>☎ 이용문의. 02-3406-6900 🕓 운영시간. 10:00 ~ 17:00 (점심시간 12:00~13:00)</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 비밀번호 변경 -->
+<div id="periodic_password_change" class="layer_popup layer_default">
+    <div class="layer_content  width_md height_md">
+        <div class="layer_default_title">비밀번호 변경</div>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+        <div class="layer_default_content layer_scroll" data-simplebar>
+            <div class="txt1" id="changeId"><br/>안전한 개인정보 보호를 위해 <strong>비밀번호를 변경</strong>해주세요.</div>
+            <div class="txt2">
+                이용 중인 계정의 비밀번호를 3개월 이상 변경하지 않으셨습니다.<br/>
+                소중한 개인정보 보호를 위해 주기적으로 비밀번호 변경을 권장합니다.
+            </div>
+            <div class="txt2">
+                변경하길 원하시면 “지금 변경하기”를 통해, 안전하게 비밀번호 변경을 진행하시기
+                바랍니다.
+            </div>
+            <div class="form_btns btn_fit between_md">
+                <a href="javascript:fnPasswordNoneChange();" class="btn btn_black_line btn_type4" onclick="closeLayer(this)">30일 후에 변경하기</a>
+                <a href="javascript:fnPasswordChange();" class="btn btn_black btn_type4">지금 변경하기</a>
+            </div>
+        </div>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //비밀번호 변경 -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 기본 커스텀함수 초기화
+        fnCmmAddCustomValidators(function() {
+            fnLoginValidate(); // 로그인 유효성 검사
+        });
+
+        fnGetRememberId();
+    });
+
+    function fnLoginValidate() {
+        var auyhType = fnToNotNull('3');
+        var error_lists = [];
+
+        $("#loginForm").validate({
+            rules: {
+                mbid: {
+                    required: true
+                },
+                mbpw: {
+                    required: true
+                },
+                mbhp: {
+                    required: function() {
+                        return "2" === auyhType;
+                    },
+                    regex: /^(01[0-9])(-)?(\d{3,4})(-)?(\d{4})$/
+                },
+                sms_confirm_no: {
+                    required: function() {
+                        return "2" === auyhType;
+                    },
+                    number: true
+                }
+            },
+            messages: {
+                mbid: {
+                    required: '아이디를 입력하세요.'
+                },
+                mbpw: {
+                    required: '비밀번호를 입력하세요.'
+                },
+                mbhp: {
+                    required: '휴대폰번호를 입력하세요.',
+                    regex: '휴대폰번호 형식이 잘못되었습니다.'
+                },
+                sms_confirm_no: {
+                    required: '인증번호를 입력하세요.',
+                    number: '인증번호는 숫자만 입력하세요.'
+                }
+            },
+            errorPlacement: function(error) {
+                error_lists.push(error.text());
+            },
+            invalidHandler: function() {
+                setTimeout(function() {
+                    //에러 배열 중복제거 (IE11 호환 방식)
+                    var uniqueArr = [];
+                    var seen = {};
+                    for (var i = 0; i < error_lists.length; i++) {
+                        var item = error_lists[i];
+                        if (seen[item] !== 1) {
+                            seen[item] = 1;
+                            uniqueArr.push(item);
+                        }
+                    }
+                    
+                    var error_message = uniqueArr.join('<br />');
+
+                    //얼랏 실행
+                    box_alert(error_message, 'info');
+
+                    //에러 배열 초기화
+                    error_lists = [];
+                    return false;
+                }, 0);
+            },
+            submitHandler: function(form, event) {
+                event.preventDefault();
+                fnLogin();
+            },
+
+            //display:none인것도 유효성 체크 (인증번호)
+            ignore: [],
+        });
+    }
+
+    // 로그인 처리
+    function fnLogin() {
+        fnMakePcid("PCID", $.cookie("PCID"), 23, "", "");
+
+        $.ajax({
+            type : 'post',
+            url:'/auth/loginChk',
+            data: $("#loginForm").serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+                loading('show');
+            },
+            success : function(data) {
+                var resultCode = fnToNotNull(data.result_code);
+
+                if ("900" === resultCode){
+                    box_alert("ID 또는 비밀번호가 일치하지 않습니다.\n다시 시도하거나 비밀번호 찾기를 클릭하여 재설정하세요");
+                } else if ("200" === resultCode){
+                    //5회 이상 로그인 실패
+                    //showModal('LoginFail');
+                    fnLoginFail();
+                } else if ("400" === resultCode) {
+                    // 최초로그인시 약관동의 및 비밀번호 변경 팝업 호출
+                    fnFirstLogin();
+                    //showModal('firstLoginTerms');
+                } else if ("401" === resultCode)  {
+                    fnPasswordChange();
+                } else if ("402" === resultCode) {
+                    fnLoginAgree();
+                } else if ("600" === resultCode) {
+                    // 90일이상 비밀번호 변경 없을 시
+                    openLayer('#periodic_password_change');
+                    //$("#changeId").text($("#login_id").val() + "님");
+                } else if ("700" === resultCode){
+                    box_alert("입력하신 휴대폰번호가 일치하지 않습니다.");
+                    $("#login_hp").focus();
+                } else if ("800" === resultCode) {
+                    box_alert("인증정보를 찾을수 없습니다.");
+                    $("#login_confirmNo").focus();
+                } else if ("801" === resultCode){
+                    box_alert("반복된 인증번호 입력실패로 1분간 인증번호 발송이 제한됩니다.");
+                    $("#login_confirmNo").focus();
+                } else if ("901" === resultCode) {
+                    box_alert("로그인이 불가 합니다. \n관리자에게 문의해주세요.[불가 코드 : 901]");
+                } else {
+                    location.href = "/main";
+                }
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, 1000);
+            }
+        });
+    }
+
+    // 인증번호 문자발송
+    function fnSmsSend(formId, callback) {
+        $.ajax({
+            type : 'post',
+            url:'/auth/loginSmsSend',
+            data: $("#" + formId).serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+                loading('show');
+            },
+            success : function(data) {
+                box_alert(data.result_msg, 'info');
+
+                if ("0000" === data.result_code) {
+                    callback(data);
+                }
+            },
+            error: function(request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, 1000);
+            }
+        });
+    }
+
+    // PC별 고유 아이디 설정
+    function fnMakePcid(name, val, length, pathVal,	domain) {
+        var cookie;
+        var today = new Date();
+        var expiredDate = new Date(2099, 1, 1); // 만료시간
+
+    	cookie = $.cookie(name);
+
+    	if (cookie) {
+    		return;
+    	}
+
+    	// PCID 발급
+    	if (fnToNotNull(val) === "" && length !== "") {
+            var values = [];
+
+            for (var i = 0; i < length; i++) {
+    			values[i] = "" + Math.random();
+    		}
+
+    		val = today.getTime();
+
+    		for (var i = 0; i < length; i++) {
+    			val += values[i].charAt(2);
+    		}
+    	}
+
+    	$.cookie(name, val, {expires : expiredDate, path : pathVal});
+    }
+
+    function fnMoveMainPage() {
+        location.href = "/main";
+    }
+    function fnFirstLogin() {
+        var options = {
+            formId: "loginForm",
+            method: "post",
+            action: "/auth/firstLoginAgree",
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fnLoginFail() {
+        var options = {
+            formId: "loginForm",
+            method: "post",
+            action: "/auth/loginFail",
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fnLoginAgree() {
+        var options = {
+            formId: "loginForm",
+            method: "post",
+            action: "/auth/loginAgree",
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fnPasswordChange() {
+        var options = {
+            formId: "loginForm",
+            method: "post",
+            action: "/auth/passwordChange",
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fnPasswordNoneChange() {
+        $.ajax({
+            type : 'post',
+            url:'/auth/passwordNoneChange',
+            data: $("#loginForm").serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+                loading('show');
+            },
+            success : function(data) {
+                if ("0000" === data.result_code) {
+                    fnLogin();
+                }
+            },
+            error: function(request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, 1000);
+            }
+        });
+    }
+
+    function fnGetRememberId() {
+        var savedId = $.cookie('savedUserId');
+        var inputId = $('#login_id');
+        var checkedMember = $('#remember_id');
+
+        if (savedId) {
+            inputId.val(savedId);
+            checkedMember.prop('checked', true);
+        }
+
+        // 체크박스 변경 이벤트
+        checkedMember.change(function () {
+            if ($(this).is(':checked')) {
+                $.cookie("savedUserId", inputId.val(), { expires: 7, path: '/'} );
+            } else {
+                $.cookie("savedUserId", "", { expires: 7, path: '/'} );
+            }
+        });
+
+        // 아이디 입력 시 체크박스가 선택되어 있으면 쿠키 업데이트
+        inputId.on('input', function () {
+            if (checkedMember.is(':checked')) {
+                $.cookie("savedUserId", inputId.val(), { expires: 7, path: '/'} );
+            }
+        });
+    }
+</script>
+
+
+<script src="/resources/real/dist/js/common.js"></script>
+<script>
+
+    var swiper = new Swiper(".login_banner", {
+        pagination: {
+        el: ".swiper_pagination",
+        },
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        $(".popup_notice").each(function() {
+            if ($.cookie($(this).attr("id")) === 'hidden') {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+
+        //오늘 하루 보지 않기
+        $('.pop_today').click(function() {
+            var val = $(this).val();
+            $.cookie("pop_"+val, 'hidden', {expires : 1});
+            $("#pop_"+val).hide();
+        });
+
+        //닫기
+        $('.close').click(function() {
+            var val = $(this).val();
+            $("#pop_"+val).hide();
+        });
+
+        //닫기
+        $('.ppn_close').click(function() {
+            var val = $(this).val();
+            $("#pop_"+val).hide();
+        });
+    });
+
+    function fn_linkPage(target_url){
+        var results_url = window.location.origin + target_url;
+        var options = {
+            formId: "form_popup",
+            method: "get",
+            action: results_url,
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+</script>
+
+
+
+
+</body>
+</html>
