@@ -1,3 +1,8 @@
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
-    <title>회원가입</title>
+    <title>약관동의</title>
 
     <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
     <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
@@ -61,6 +66,8 @@
 <div class="hd_fl">
     <div class="logo">
         
+            <img src="/ib2bmall/designConfigImg/2025042919280550076" alt="SHINSEGAE">
+        
     </div>
     <div class="links">
         
@@ -76,91 +83,25 @@
 
 
 
-
 <div id="content" class="join_content">
     <div class="page_title_center">
-        <h2>회원가입</h2>
-        <div class="sub">회원정보를 <strong>정확히 입력</strong>해 주세요.</div>
+        <h2>고객님, 환영합니다.</h2>
+        <div class="sub">보다 즐거운 쇼핑몰 위한 <strong>약관동의 및 기타정보를 입력</strong>해 주세요.</div>
     </div>
 
     <div class="step_info">
-        <span class="sound_only">회원가입 단계 안내</span>
+        <span class="sound_only">약관동의 단계 안내</span>
         <div>
-            <div class="step complete">1</div>
-            <div class="step complete">2</div>
-            <div class="step active">3</div>
-            <div class="step">4</div>
+            <div class="step active">1</div>
+            <div class="step">2</div>
         </div>
     </div>
 
     <div class="join_inner">
-        <form action="" id="signUpForm" novalidate="novalidate">
-            <input type="hidden" value="L6pw5qRIJOYijW81BuS/Ww==" name="mbname">
-            <input type="hidden" value="MjEq6P/CzyuhGR9QisFxLA==" name="mbhp">
+        <form action="" id="firstLoginAgree" novalidate="novalidate">
+            <input type="hidden" value="aVPTOzudqFxZI7Lz68ll+w==" name="mbid">
+            <input type="hidden" value="/Rk6wL920A/qFs9O32A/dg==" name="mbpw">
             <div class="form form_type1 size_lg">
-                <div class="row">
-                    
-                </div>
-
-                <div class="row">
-                    <div class="row_top">
-                        <div class="tit required">아이디를 입력해 주세요.</div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="text" placeholder="2~30자 영문/숫자" name="mbid" id="mbid">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="row_top">
-                        <div class="tit required">비밀번호를 입력해 주세요.</div>
-                        <div class="info_hover">
-                            <button type="button" class="btn_info_show">사용가능 특수문자</button>
-                            <div class="info_cnt">
-                                <div class="info_cnt_title">사용가능 특수문자</div>
-                                <div class="info_cnt_text">~ ! @ # $ % ^ * _ . - ( )_+</div>
-                                <button type="button" class="btn_info_close">닫기</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="password" name="mbpw" placeholder="8~20자 영문/숫자/특수문자 조합(영문 대/소문자 구분)">
-                            <button class="btn_password_show" type="button">비밀번호 보기</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row" id="adsInput1">
-                    <div class="row_top">
-                        <div class="tit">배송지를 입력해 주세요.</div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="text" placeholder="주소를 검색해 주세요" id="mbaddr1" name="mbaddr1" class="i_address_basic" readonly onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
-                        </div>
-                        <button class="btn btn_gray btn_type3 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="text" placeholder="상세주소" id="mbaddr2" name="mbaddr2" class="i_address_detail">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="row_top">
-                        <div class="tit">전화번호를 입력해 주세요.</div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="tel" name="mbtel" placeholder="-없이 전화번호 입력">
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="row_top">
                         <div class="tit">이용약관</div>
@@ -694,264 +635,166 @@
                                     <button type="button" class="terms_show_btn" onclick="openLayer('#terms_popup2')">개인정보 수집 및 이용동의(필수)</button>
                                 </div>
                                 <div id="terms_popup2" class="layer_popup layer_default">
-                                    <div class="layer_content  width_lg height_md">
+                                    <div class="layer_content  width_md height_md">
                                         <div class="layer_default_title">개인정보 수집 및 이용동의(필수)</div>
                                         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
                                         <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div class="layer_section">
-                                                <div class="table_default mb_scroll">
-                                                    <div class="caption">개인정보 수집 및 이용동의</div>
+                                            <p><strong>수집하는 개인정보의 항목 및 수집방법</strong><br />
+&nbsp;</p>
+
+<p>1.&nbsp;당사는 신세계법인몰 회원 (오픈형 회원, 폐쇄형 회원)에게 본인확인, 포인트 적립 및 결제 서비스, 다양하고 편리한 서비스를 제공하기 위해</p>
+
+<p>아래의 방법을 통해 개인정보를 수집하고 있습니다.&nbsp;비회원 고객 또한 당사에서 운영하는 사이트에서 상품을 구매할 수 있으며,</p>
+
+<p>이 경우 아래와 같이 배송, 대금 결제, 서비스 안내 등을 위해 최소한의 개인정보만을 요청하여 동의를 구합니다.</p>
+
+<p>① 개인정보 수집항목</p>
+
+<p><strong>회원가입 시</strong></p>
+
+<p>ㆍ기본몰</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- [필수항목] : 아이디, 비밀번호, 이름, 휴대폰번호(휴대폰인증)</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- [선택항목] : 우편번호, 주소, 상세주소, 이메일, 전화번호, 마케팅수신동의</p>
+
+<p>ㆍ임직원몰</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- [필수항목] : 계열사, 아이디, 사번, 이메일(이메일인증), 비밀번호, 회사명, 부서, 휴대폰번호(휴대폰인증)</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- [선택항목] : 우편번호, 주소, 상세주소, 전화번호, 마케팅수신동의</p>
+
+<p>＊선택항목은 입력하지 않아도 회원가입이 가능합니다.</p>
+
+<p><strong>주문/결제/배송</strong></p>
+
+<p>-&nbsp;성명, 휴대전화번호, 전자우편주소, 배송정보(주문자 및 받는사람 주소, 주문자 및 받는사람 명, 주문자 및 받는사람 연락처 등)</p>
+
+<p><strong>인증고객 본인확인 시</strong></p>
+
+<p>- 아이디, 이름, 휴대폰 번호(휴대폰 인증) 등 본인확인에 필요한 정보</p>
+
+<p><strong>사이트 접속 시 수집될 수 있는 개인정보</strong></p>
+
+<p>- [수집항목] : 서비스 이용 및 중지기록, 접속로그, 쿠키, 접속IP정보, 이용정지기록</p>
+
+<p>- [이용목적] : 소비자보호를 위한 법적 의무 준수, 서비스 통계 분석 등</p>
+
+<p>- [보유기간] : 회원 탈퇴 시 또는 고객사 요청 시 또는 법정 의무 보유기간까지</p>
+
+<p>② 개인정보의 수집방법</p>
+
+<p>당사의 홈페이지,&nbsp;상담게시판,&nbsp;전화,&nbsp;팩스 등을 통한 본인,&nbsp;대리인 확인,&nbsp;경품행사 응모,&nbsp;관계사의 제공,</p>
+
+<p>로그 분석 프로그램을 통한 생성정보 수집,&nbsp;제휴사부터의 제공을 통한&nbsp;수집 방법 등&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>2.&nbsp;회원은 개인정보 수집동의를 거부할 권리가 있으나,&nbsp;동의거부 시 제3조에서 규정하고 있는 당사가 제공하는</p>
+
+<p>서비스를 받을수 없습니다<br />
+&nbsp;</p>
+
+<p>3.&nbsp;허위 정보 입력 시 당사의 조치</p>
+
+<p>회원은 자신의 정보에 대해 정확성 및 적법성을 보장해야 합니다.&nbsp;만약 이를 위반하여 타인의 정보를</p>
+
+<p>도용하는 등 각종 방법으로 허위 정보를 입력할 경우 당사는 해당 회원을 관계법령에 따라 신고 할 수</p>
+
+<p>있으며 강제 탈퇴를 시킬 수도 있습니다.</p>
+
+<p>&nbsp;</p>
+
+<p>4.&nbsp;회원이 자발적으로 공개한 개인정보로 인해 회원개인에게 발생하는 손실이나 문제는 전적으로 개인의</p>
+
+<p>책임이며,&nbsp;공개적인 공간에 게재되는 개인정보는 다른 사람이 수집하여 무단으로 사용할 수 있음을&nbsp;<br />
+&nbsp;&nbsp;&nbsp;인지하시어,&nbsp;이로 인해 원하지 않는 피해를 입을 수 있음을 유념하시기 바랍니다.</p>
+                                        </div>
+                                    </div>
+                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                </div>
+                            </div>
+                            
+                                <div class="item label_control">
+                                    <div class="check_item">
+                                        <label class="checkbox checkbox_type1">
+                                            <input type="checkbox" class="check_all"><span class="ck_icon"></span>
+                                        </label>
+                                        <button type="button" href="javascript:;" class="terms_show_btn" onclick="openLayer('#terms_popup3')">마케팅 목적의 개인정보 수집 및 이용동의(선택)</button>
+                                    </div>
+                                    <div id="terms_popup3" class="layer_popup layer_default">
+                                        <div class="layer_content  width_md height_md">
+                                            <div class="layer_default_title">마케팅 목적의 개인정보 수집 및 이용동의(선택)</div>
+                                            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+                                            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                                                <div class="table_response">
                                                     <table>
+                                                        <colgroup>
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                            <col style="width:25%;">
+                                                        </colgroup>
                                                         <thead>
                                                             <tr>
                                                                 <th>항목</th>
-                                                                <th>목적</th>
-                                                                <th>보유 및 이용기간</th>
+                                                                <th>이용목적</th>
+                                                                <th>수집항목</th>
+                                                                <th>보유기간</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td><span class="mb_cnt">(필수) 아이디, 비밀번호, 이름, 휴대폰번호</span></td>
-                                                                <td><span class="mb_cnt">회원가입 및 이용자 식별, 회원관리</span></td>
-                                                                <td>
-                                                                    <span class="underline">- 회원탈퇴 시</span>
-                                                                    <br/>
-                                                                    <span class="underline">- 고객사 요청 시</span>
-                                                                </td>
+                                                                <td><span class="mb_tit">항목</span><span class="mb_cnt">마케팅</span></td>
+                                                                <td><span class="mb_tit">이용목적</span><span class="mb_cnt"><strong class="terms_strong">상품 및 서비스 안내, 이벤트 정보 및 혜택 제공</strong></span></td>
+                                                                <td><span class="mb_tit">수집항목</span><span class="mb_cnt">이름, 휴대폰 번호, 마케팅 수신 동의 여부</span></td>
+                                                                <td><span class="mb_tit">보유기간</span><span class="mb_cnt">회원 탈퇴 또는 동의 철회 시</span></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                                 <ul class="dot">
-                                                    <li>선택 항목은 가입 시 입력 또는 서비스 이용 시점에 수집되어 이용됩니다. </li>
-                                                    <li>동의를 거부할 수 있으나 동의 거부 시 서비스 이용이 제한됩니다.</li>
+                                                    <li>마케팅 정보 수신 동의를 하지 않더라도 회원 서비스를 이용할 수 있습니다. 다만, 이벤트 소식 및 일부 할인 쿠폰 서비스를 받을 수 없습니다.</li>
+                                                    <li>회원가입/주문배송/계약상 지급의 의무가 있는 쿠폰이나 포인트/회사 주요 정책 관련 정보는 수신동의와 관계없이 모든 회원에게 발송됩니다.</li>
                                                 </ul>
                                             </div>
-
+                                        </div>
+                                        <span class="layer_bg" onclick="closeLayer(this)"></span>
+                                    </div>
+                                    <div class="terms_inline">
+                                        <div class="check_item">
+                                            <label class="checkbox checkbox_type1">
+                                                <input type="checkbox" name="mbsms" value="1"><span class="ck_icon"></span>
+                                                SMS 수신동의
+                                            </label>
+                                        </div>
+                                        <div class="check_item">
+                                            <label class="checkbox checkbox_type1">
+                                                <input type="checkbox" name="mbreception" value="1"><span class="ck_icon"></span>
+                                                이메일 수신동의
+                                            </label>
                                         </div>
                                     </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
                                 </div>
-                            </div>
-                            <div class="item label_control">
-                                <div class="check_item">
-                                    <label class="checkbox checkbox_type1">
-                                        <input type="checkbox" data-title="chk_service"><span class="ck_icon"></span>
-                                    </label>
-                                    <button type="button" href="javascript:;" class="terms_show_btn" onclick="openLayer('#terms_popup3')">서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의(선택)</button>
-                                </div>
-                                <div id="terms_popup3" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의(선택)</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            <div class="table_response">
-                                                <table>
-                                                    <colgroup>
-                                                        <col style="width:25%;">
-                                                        <col style="width:25%;">
-                                                        <col style="width:25%;">
-                                                        <col style="width:25%;">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th>항목</th>
-                                                            <th>이용목적</th>
-                                                            <th>수집항목</th>
-                                                            <th>보유기간</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td><span class="mb_tit">항목</span><span class="mb_cnt">마케팅</span></td>
-                                                            <td><span class="mb_tit">이용목적</span><span class="mb_cnt"><strong class="terms_strong">상품 및 서비스 안내, 이벤트 정보 및 혜택 제공</strong></span></td>
-                                                            <td><span class="mb_tit">수집항목</span><span class="mb_cnt">이름, 휴대폰 번호, 마케팅 수신 동의 여부</span></td>
-                                                            <td><span class="mb_tit">보유기간</span><span class="mb_cnt"><strong class="terms_strong">회원 탈퇴 또는 동의 철회 시</strong></span></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <ul class="dot">
-                                                <li>마케팅 정보 수신 동의를 하지 않더라도 회원 서비스를 이용할 수 있습니다. 다만, 이벤트 소식 및 일부 할인 쿠폰 서비스를 받을 수 없습니다.</li>
-                                                <li>회원가입/주문배송/계약상 지급의 의무가 있는 쿠폰이나 포인트/회사 주요 정책 관련 정보는 수신동의와 관계없이 모든 회원에게 발송됩니다.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                            </div>
-                            <div class="item label_control">
-                                <div class="check_item">
-                                    <label class="checkbox checkbox_type1">
-                                        <input type="checkbox" class="check_all optional" data-title="chk_adv"><span class="ck_icon"></span>
-                                    </label>
-                                    <button type="button" class="terms_show_btn" onclick="openLayer('#terms_popup4')">광고성 정보 수신 동의(선택)</button>
-                                </div>
-                                <div id="terms_popup4" class="layer_popup layer_default">
-                                    <div class="layer_content  width_md height_md">
-                                        <div class="layer_default_title">광고성 정보 수신 동의(선택)</div>
-                                        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-                                        <div class="layer_default_content terms_content layer_scroll" data-simplebar>
-                                            회원님이 수집 및 이용에 동의한 개인정보를 이용하여 SMS(LMS/MMS), 친구톡, 이메일 등 다양한 전자적 전송 매체를 통해 오전 8시부터 오후 9시까지 광고성 정보를 전송할 수 있습니다.<br/>
-                                            본 동의는 거부하실 수 있으나, 거부 시 이벤트 및 프로모션 안내, 유용한 광고를 받아보실 수 없습니다.<br/>
-                                            광고성정보수신설정은 언제든지 변경하실 수 있습니다.<br/>
-                                            1) SMS, 이메일 : 웹 브라우저에서 로그인 > 마이페이지 > 나의정보 > 정보수정 > 서비스ㆍ이벤트 정보 제공을 위한 개인정보 수집 및 이용동의(선택) > 수신설정<br/>
-                                            2) 친구톡 : 채널 차단<br/>
-                                        </div>
-                                    </div>
-                                    <span class="layer_bg" onclick="closeLayer(this)"></span>
-                                </div>
-                                <div class="terms_inline">
-                                    <div class="check_item">
-                                        <label class="checkbox checkbox_type1">
-                                            <input type="checkbox" data-title="chk_sms" name="mbsms" id="mbsms"><span class="ck_icon"></span>
-                                            SMS 수신동의
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="form_btns between_lg">
-                <button type="submit" class="btn btn_black btn_type1">동의하고 회원가입하기</button>
+                <button type="button" onclick="fnFirstLoginAgree()" class="btn btn_black btn_type1">이용약관 동의하기</button>
             </div>
         </form>
     </div>
 </div>
-<div id="ads_layer" class="layer_popup layer_default">
-    <div class="layer_content  width_md height_md">
-        <div class="layer_default_title">주소검색</div>
-        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
-        <div id="daumAdressLayer">
-        </div>
-    </div>
-    <span class="layer_bg" onclick="closeLayer(this)"></span>
-</div>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    //주소 api
-    var element_layer = document.getElementById('daumAdressLayer');
-    var ads_layer = document.getElementById('ads_layer');
-
-    function execDaumPostcode(elm) {
-        const target = document.getElementById(elm)
-        new daum.Postcode({
-            oncomplete: function(data) {
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-                if(data.userSelectedType === 'R'){
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                } else {
-                }
-                target.querySelector(".i_address_basic").value = data.zonecode + ' ' + addr;
-                target.querySelector(".i_address_detail").focus();
-                closeLayer(ads_layer);
-            },
-            width : '100%',
-            height : '100%',
-            maxSuggestItems : 5
-        }).embed(element_layer);
-    }
-</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // 기본 커스텀함수 초기화
         fnCmmAddCustomValidators(function() {
-            fnSignUpValidate(); // 로그인 유효성 검사
         });
     });
-    function fnSignUpValidate() {
-        var formValidator = $("#signUpForm").validate({
-            ignore: {},
-            rules: {
-                mbid: {
-                    required: true,
-                    regex: /^[a-zA-Z0-9]+$/,
-                    rangeByteLength: [2, 30],
-                    remote: {
-                        type: "post",
-                        url: "/auth/signUpIdCheck",
-                        data: {
-                            mbid: function() {
-                                return $('#mbid').val();
-                            }
-                        },
-                        dataFilter: function(data) {
-                            var json = JSON.parse(data);
-                            if ("0000" === json.result_code) {
-                                return "true";
-                            } else {
-                                return "false";
-                            }
-                        },
-                    }
-                },
-                mbpw: {
-                    required: true,
-                    regex: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[~!@#$%^&*()_+.]).*$/,
-                    rangeByteLength: [8, 20]
-                },
-                mbtel: {
-                    regex: /^(0\d{1,2})(-)?(\d{3,4})(-)?(\d{4})$/
-                },
-                mbaddr2:{
-                    required: function() { return $("#mbaddr1").val() !== ""; }
-                }
-            },
-            messages: {
-                mbid: {
-                    required: '아이디를 입력해주세요.',
-                    regex: '아이디는 영문/숫자 조합을 사용해주세요',
-                    rangeByteLength: '{0} ~ {1} 글자 사이로 입력해주세요.',
-                    remote: '이미 등록된 아이디 입니다.'
-                },
-                mbpw: {
-                    required: "비밀번호를 입력해 주세요",
-                    regex: '비밀번호는 영문, 숫자, 특수문자를 하나씩 조합해서 사용해주세요.',
-                    rangeByteLength: '{0} ~ {1} 글자 사이로 입력해주세요.'
-                },
-                mbtel: {
-                    regex: '전화번호 형식이 올바르지 않습니다.'
-                },
-                mbaddr2:{
-                    required:'상세주소를 입력해 주세요.'
-                }
-            },
-            onkeyup: function(element) {
-                $(element).valid();
-            },
-            onchange: function(element) {
-                $(element).valid();
-            },
-            submitHandler: function (form) {
-                fnSignUpSubmit();
-            },
-            invalidHandler: function (event, validator) {
-                if (validator.errorList.length > 0) {
-                    $(validator.errorList[0].element).focus();
-                }
-            }
-        });
-        formValidator.form();
-    }
-    function fnSignUpSubmit(){
+    function fnFirstLoginAgree() {
         if(!$("#agreement").is(":checked")){
             box_alert("이용약관 동의에 체크해 주세요.", 'info')
             $("#agreement").focus();
@@ -961,20 +804,23 @@
             $("#security").focus();
             return;
         }
-        if($("#mbsms").prop("checked")) {
-            $("#mbsms").val("1");
-        }
         $.ajax({
             type : 'post',
-            url:'/auth/signUpSubmit',
-            data: $("#signUpForm").serialize(),
+            url:'/auth/fnAgreeCheck',
+            data: $("#firstLoginAgree").serialize(),
             dataType: 'json',
+            async: 'false',
             beforeSend: function() {
                 loading('show');
             },
             success : function(data) {
                 if ("0000" === data.result_code) {
-                    fnSignUpComp();
+                    
+                        
+                        
+                            fnAgreeSubmit();
+                        
+                    
                 }else{
                     box_alert(data.result_msg, 'info');
                 }
@@ -983,22 +829,22 @@
                 box_alert("관리자에게 문의하여 주시기바랍니다.", 'info');
             },
             complete : function() {
-                setTimeout(function() {
+                setTimeout(function(){
                     loading('hide');
                 }, 1000);
             }
         });
     }
-    function fnSignUpComp() {
+    function fnAgreeSubmit() {
         var options = {
-            formId: "signUpForm",
+            formId: "firstLoginAgree",
             method: "post",
-            action: "/auth/signUpComp",
-            target:""
+            action: "/auth/firstLoginForm"
         };
         fnCmmSubmitDynamicForm(options);
     }
 </script>
+
     <!-- footer -->
     <div id="footer">
         

@@ -1,0 +1,1709 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
+    <title>신세계 사용자</title>
+
+    <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/pikaday.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/real/dist/css/choices.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon"> 
+
+    <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
+    <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.modal.min.js"></script>
+    <script src="/resources/real/dist/js/box_alert.js"></script>
+    <script src="/resources/real/dist/js/swiper.min.js"></script>
+    <script src="/resources/real/dist/js/slick.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.validate.min.js"></script>
+    <script src="/resources/real/dist/js/simplebar.min.js"></script>
+    <script src="/resources/real/dist/js/choices.min.js"></script>
+    <script src="/resources/real/dist/js/common.js"></script>
+    <script src="/resources/real/dist/js/common_dev.js"></script>
+    <script src="/resources/real/dist/js/pikaday.js"></script>
+    <script src="/resources/real/dist/js/jquery.cookie.js"></script>
+
+    <style>
+    :root {
+        --theme-color:#000000;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1e2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#ffffff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+
+    <!-- ie css 변수적용 -->
+    <script>
+        window.MSInputMethodContext && document.documentMode && document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+    </script>
+</head>
+<body>
+
+<!-- content -->
+
+
+
+
+
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden mobile_bottom_margin_no home_mobile_show search_mobile_hidden cart_mobile_hidden">
+
+    <!-- 공통영역1 -->
+    
+
+
+
+
+
+<div id="header">
+    <!-- 헤더 영역 임시이기때문에 추후 바뀔 수 있음 -->
+    <div id="hd_top">
+        <div class="hd_inner">
+            <div id="hd_points">
+                
+                    <div class="item">
+                        <a href="/mypage/pointList" class="point">
+                            <span class="count">776,400</span>
+                            
+                        </a>
+                    </div>
+                
+                
+                    <div class="item">
+                        <a href="/mypage/mileageList" class="mileage">
+                            <span class="count">490,300</span>
+                            
+                        </a>
+                    </div>
+                
+            </div>
+            <div id="hd_members">
+                
+                    <div class="item">
+                        <a href="/order/orderMultiRegView" class="bold">
+                            <span class="icon_hd_reg"></span>대량등록
+                        </a>
+                    </div>
+                
+                <div class="item">
+                    <a href="javascript:fnLogout();">로그아웃</a>
+                </div>
+                <div class="item">
+                    <a href="/mypage/orderList">주문배송조회</a>
+                </div>
+                <div class="item">
+                    <a href="javascript:fnMoveNotice();">고객센터</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hd_middle">
+        <div class="hd_inner">
+            <div id="hd_logo">
+                <div id="logo_wrap">
+                    <div id="logo">
+                        
+                        <a href="/main">
+                            <img
+                            
+                                    src="/ib2bmall/designConfigImg/2025042919280550076"
+                            
+                                    alt="테스트">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="hd_search">
+                <div class="search_inner">
+                    <input type="text" name="gnb_search_input" class="gnb_search_input" placeholder="상품명을 입력해 주세요." value="" onkeyup="javascript:fn_search_prd();"/>
+                    <button type="button" class="gnb_search_submit" onclick="javascript:fn_search_prd_trigger();">
+                        검색
+                    </button>
+                </div>
+            </div>
+
+            <!-- 모바일 뒤로가기 -->
+            <a href="javascript:history.back();" class="back_btn">뒤로가기</a>
+
+            <!-- 모바일 상단 페이지 타이틀 -->
+            
+                
+                
+                    <div class="page_title_mobile">장바구니</div>
+                
+            
+
+            <!-- 모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+            
+                
+                    <div class="cate_first_mobile">
+                        <div class="cate_first_title">
+                            <div class="cate_first_list_inner">
+                                
+                                    
+                                    
+                                        <button type="button" class="cate_first_toggle" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></button>
+                                    
+                                
+                            </div>
+                        </div>
+
+                        <div class="cate_first_list">
+                            <div class="cate_first_list_inner">
+                                
+                                    
+                                    
+                                        
+                                    
+                                
+                            </div>
+                            <span class="cate_first_list_bg" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></span>
+                        </div>
+                    </div>
+                
+                
+                
+            
+            <!-- //모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+            <!--
+            #hd_links .item.item_home{display: none;}
+            .home_mobile_show #hd_links .item.item_home{display: block;}
+            -->
+            <div id="hd_links">
+                <div class="item v_mobile item_home">
+                    <a href="/main">
+                        <span class="icon_hd_home"></span>
+                        <span class="text">홈으로</span>
+                    </a>
+                </div>
+                <div class="item v_mobile item_search">
+                    <a href="javascript:;" class="show-modal" onclick="showBottomSheet(event)">
+                        <span class="icon_hd_search"></span>
+                        <span class="text">검색</span>
+                    </a>
+                </div>
+                
+                    <div class="item v_both item_cart">
+                        <a href="javascript:fn_moveCart();">
+                            <span class="icon_hd_cart"><span class="count theme_bg_color">1</span></span>
+                            <span class="text">장바구니</span>
+                        </a>
+                    </div>
+                
+                <div class="item v_pc">
+                    <a href="javascript:fnMoveMypage();">
+                        <span class="icon_hd_mypage"></span>
+                        <span class="text">마이페이지</span>
+                    </a>
+                </div>
+                
+                    <div class="item v_pc">
+                        <a href="javascript:fnMoveWishList();">
+                            <span class="icon_hd_like"></span>
+                            <span class="text">나의 찜</span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="item v_pc">
+                        <a href="javascript:fnMoveNotice();">
+                            <span class="icon_hd_notice"></span>
+                            <span class="text">공지사항</span>
+                        </a>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="hd_bottom">
+        <div class="hd_inner">
+            <div id="gnb_wrap">
+                <div id="gnb_toggle">
+                    
+                </div>
+                <div id="gnb">
+                    <div class="swiper-wrapper">
+                        
+
+                    </div>
+                    <div class="gnb_toggle_mobile">
+                        <button type="button" id="btn_gnb_toggle_mobile" onclick="gnbMobileOpen();">전체메뉴 열기</button>
+                    </div>
+                </div>
+                
+                    <div id="hd_special">
+                        
+                            <div class="item">
+                                <a href="javascript:fn_promoExhibitList();">
+                                    <span class="icon_hd_special"></span>
+                                    기획전
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="item">
+                                <a href="javascript:fn_promoBrandList();">
+                                    <span class="icon_hd_brand"></span>
+                                    브랜드
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+                <!-- 전체메뉴 -->
+                <div id="gnb_all">
+                    <ul>
+                        
+                            
+                                
+                            
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //헤더 영역 임시이기때문에 추후 바뀔 수 있음 -->
+<form id="headerForm"></form>
+<input type="hidden" id="mbst" value="2" />
+<script>
+    // 로그아웃
+    function fnLogout() {
+        $.ajax({
+            type: 'get',
+            url: '/auth/logout',
+            dataType: 'json',
+            success: function (data) {
+                window.location.href = "/auth/login";
+            },
+            error: function () {
+                window.location.href = "/auth/login";
+            }
+        });
+    }
+
+    // 헤더 카테고리 2레벨 그려넣기
+    var _ctgList = [];
+    
+    fn_setCategory(_ctgList);
+
+    function fn_setCategory(_valList) {
+        for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+            var categor_code_name = _valList[ct_i].code_name;
+            var categor_cty_code = _valList[ct_i].cty_code;
+            var categor_cty_depth = _valList[ct_i].cty_depth;
+            if ("2" == categor_cty_depth) {
+                var parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                var ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                $("." + parentCode).append(ctyDepthSecHTML);
+            }
+        }
+
+        // 하위 항목이 없을때에 전체 삭제
+        /*
+        $(".search_product_cate").each(function () {
+            let length_li = $(this).find('li');
+            if(length_li.length === 1){
+                length_li.remove();
+            }
+        });
+        */
+    }
+
+    function fn_linkCategoryPage(_url) {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchCtyPCode: _url,
+                searchOptType:"category"
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_linkCategoryPricePage(_url) {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchCtyPCode: _url,
+                searchOptType:"price"
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_moveCart() {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/order/cart"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_goodsCartIn(_prid){
+        var _mbst = $("#mbst").val();
+        if("2" != _mbst){
+            alert("현재 구매가 불가능합니다.");
+            return;
+        }
+        $.ajax({
+            type: 'post',
+            url: '/product/goodsCartIn',
+            data: {
+                "prid": _prid
+            },
+            success: function (data) {
+                console.log(data);
+                if(null != data && "0000" == data.cmmMemo){
+                    // 장바구니에 담겼을때
+                    fn_moveCart();
+                }else if(null != data && "8888" == data.cmmMemo){
+                    // 장바구니에 담기지 않고 상세페이지로 이동
+                    var target_url = "/product/goodsDetail";
+                    var results_url = window.location.origin + target_url;
+                    var options = {
+                        formId: "mainForm",
+                        method: "get",
+                        params: {
+                            prid: _prid
+                        },
+                        action: results_url
+                    };
+                    fnCmmSubmitDynamicForm(options);
+                }else if(null != data && "7777" == data.cmmMemo){
+                    alert("현재 구매가 불가능한 상품입니다.");
+                }else if(null != data && "6666" == data.cmmMemo){
+                    alert("현재 구매가 불가능합니다.");
+                }
+            },
+            error: function () {
+                alert("시스템 관리자에게 문의 하여 주십시오.");
+            }
+        });
+    }
+
+    //공지사항 이동
+    function fnMoveNotice() {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/noticeList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //마이페이지 메인 이동
+    function fnMoveMypage() {
+        var _mbst = '2';
+        if("2" != _mbst){
+            return;
+        }
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/mypageList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //좋아요(나의 찜) 이동
+    function fnMoveWishList() {
+        var _mbst = '2';
+        if("2" != _mbst){
+            return;
+        }
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/wishList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_promoExhibitList(){
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/promoExhibitList"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_exhibitDetailHeader(_val) {
+        $("#curPage").val(1);
+        $("#searchViewCnt").val("20");
+        var options = {
+            formId: "goodsForm",
+            method: "get",
+            action: "/product/promoExhibitDetailList",
+            params: {
+                idx: _val,
+                curPage:"1",
+                searchViewCnt:"20",
+                searchCtyCode:""
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_promoBrandList(){
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/promoBrandList"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_BrandDetailHeader(_val) {
+        $("#curPage").val(1);
+        $("#searchViewCnt").val("20");
+        var options = {
+            formId: "goodsForm",
+            method: "get",
+            action: "/product/promoBrandDetailList",
+            params: {
+                idx: _val,
+                curPage:"1",
+                searchViewCnt:"20",
+                searchCtyCode:""
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_search_prd_trigger(){
+        var word = $('[name="gnb_search_input"]').val();
+        if(word.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }else{
+            fn_search_goodsList(word);
+        }
+    }
+
+    function fn_search_prd_trigger_mobile(){
+        var word = $('#gnb_search_input_mobile').val();
+        if(word.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }else{
+            fn_search_goodsList(word);
+        }
+    }
+
+    function fn_search_prd(){
+        var word = $('[name="gnb_search_input"]').val();
+        if(window.event.keyCode == 13){
+            if(word.length < 2){
+                alert('검색어를 두 글자 이상 입력해주세요.');
+                return;
+            }else{
+                fn_search_goodsList(word);
+            }
+        }
+    }
+
+    function fn_search_prd_mobile(){
+        var word = $('#gnb_search_input_mobile').val();
+        if(window.event.keyCode == 13){
+            if(word.length < 2){
+                alert('검색어를 두 글자 이상 입력해주세요.');
+                return;
+            }else{
+                fn_search_goodsList(word);
+            }
+        }
+    }
+
+    function fn_search_goodsList(_search_word){
+        var incoding_search_word = encodeURIComponent(_search_word);
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchHeaderText: incoding_search_word
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function gnbSearchSubmit(event, form){
+        event.preventDefault();
+        var input = form.querySelector('[name="gnb_search_input"]');
+        if(input.value.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }
+    }
+
+    function fn_partnerMallPage(idx, ptncode) {
+        $.ajax({
+            type: 'post',
+            url: '/auth/setPartnerMall',
+            data: {
+                cmmIdx: idx,
+                cmmPtncode: ptncode
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                if ("0000" === data.result_code) {
+                    window.location.replace("/main");
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            
+
+
+
+
+
+<div id="aside_content" class="right_content">
+  <div class="quick_content">
+    <!-- 퀵 배너 -->
+    
+
+    <!-- //퀵 배너 -->
+
+    <!-- 최근 본 상품 -->
+    
+    <!-- 최근 본 상품 -->
+    <!-- 최근 본 상품 다시 테스트 -->
+    
+      <div class="quick_item">
+        <div class="viewed_products_wrapper">
+          <div class="title">최근 본 상품</div>
+          <div class="viewed_products">
+            <div class="swiper-wrapper">
+
+              
+                
+                
+                  
+                  
+                    
+                      <div class="swiper-slide">
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000237163')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/34368_0.jpg" alt="[셰프라인] 오도르 두유제조기 CFL-SM800">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">[셰프라인] 오도르 두유제조기 CFL-SM800</div>
+                          <div class="price_sale">58,800원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                  
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000234477')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 돋움 이미지">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">테스트상품 돋움 이미지</div>
+                          <div class="price_sale">5,900원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                  
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000237134')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/001/97284_0.jpg" alt="[테스트] 복숭아 3kg 소과 15~18과(냉장포장)">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">[테스트] 복숭아 3kg 소과 15~18과(냉장포장)</div>
+                          <div class="price_sale">9,700원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                      </div>
+                    
+                  
+                    
+                      <div class="swiper-slide">
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000237132')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/37132_0.jpg" alt="테스트상품 1입니다">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">테스트상품 1입니다</div>
+                          <div class="price_sale">5,900원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                      </div>
+                    
+                  
+                
+              
+            </div>
+          </div>
+          <div class="swiper_button_type3 swiper-button-next"></div>
+          <div class="swiper_button_type3 swiper-button-prev"></div>
+          <div class="vp_swiper_pagination"></div>
+        </div>
+      </div>
+    
+    <!-- 최근 본 상품 다시 테스트 -->
+
+
+
+    
+      <!-- 재판매 금지 -->
+      <div class="quick_item">
+        <div id="resale_no_layer" class="layer_popup layer_mobile">
+          <div class="layer_mobile_content">
+            <div class="resale_no">
+              <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+            </div>
+            <div class="layer_mobile_btns">
+              <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+            </div>
+          </div>
+          <span class="layer_bg" onclick="closeLayer(this)"></span>
+        </div>
+      </div>
+    <!-- //재판매 금지 -->
+    
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    var swiper = new Swiper(".quick_banner", {
+      pagination: {
+        el: ".qb_swiper_pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".quick_banner_wrapper .swiper-button-next",
+        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+      },
+    });
+
+
+    var swiper = new Swiper(".viewed_products", {
+      autoHeight: true,
+      pagination: {
+        el: ".vp_swiper_pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".viewed_products_wrapper .swiper-button-next",
+        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+      },
+    });
+  });
+</script>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="subpage_title_center">
+                    <h2>여러 곳으로 배송</h2>
+                    <div class="page_step">
+                        <div class="step on">01 여러 곳으로 배송</div>
+                        <div class="step">02 결제하기</div>
+                        <div class="step">03 주문완료</div>
+                    </div>
+                </div>
+
+                <form id="multiDeliveryForm">
+
+                </form>
+                <div class="order_wrap">
+                    <input type="hidden" id="chgOptCrid" />
+                    <input type="hidden" id="chgOptPrid" />
+                    <input type="hidden" id="chgOptCode" />
+                    <input type="hidden" id="chgOptSearchStr" />
+                    <input type="hidden" id="orgOptCode" />
+                    <div class="order_content">
+                        <div class="cart_table label_control">
+                            <div class="step_title">
+                                <h3><strong>Step1.</strong> 보내실 상품을 확인해주세요.</h3>
+                            </div>
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col style="width:17rem;">
+                                    <col style="width:18rem;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="th_product">상품정보</th>
+                                        <th class="th_lot">수량</th>
+                                        <th class="th_price visible_price">주문금액</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        <tr>
+                                            <td class="td_product">
+                                                <div class="product_info">
+                                                    <div class="prd_thum" style="background-image: url('/ib2bmall/productImg/P00/000/002/34368_0.jpg');"></div>
+                                                    <div class="prd_cnt">
+                                                        <div class="name">[셰프라인] 오도르 두유제조기 CFL-SM800</div>
+                                                        
+                                                            <div class="options">
+                                                                <div class="option">틸(Q4)/100</div>
+                                                            </div>
+                                                            
+                                                                
+                                                                    <div class="option_change"><button type="button" class="btn_text" onclick="openLayer('#change_option'); fnGetOptList('31549', 'P0000000237163', '23716302');" >옵션변경</button></div>
+                                                                
+                                                                
+                                                            
+                                                        
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="td_lot">
+                                                
+                                                    
+                                                        <button type="button" class="btn_text" onclick="openLayer('#change_option'); fnGetOptList('31549', 'P0000000237163', '23716302');">옵션변경</button>
+                                                    
+                                                    
+                                                
+
+                                                <div class="lot_box lot_change qty_chg_event">
+                                                    <div class="lot_control lot_event">
+                                                        <button type="button" class="minus" >수량 빼기</button><!-- 로드시 수량이 1이면 disabled추가 -->
+                                                        <input type="tel" value="1"
+                                                               db-count="1"
+                                                               minBundle="" 
+                                                               minLimit=""
+                                                               maxLimit=""><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus" >수량 추가</button><!-- 로드시 수량과 제한 재고수량이 같으면 disabled추가 -->
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="fnModProductQty(this, '31549', 'P0000000237163', 'P0000000234368', '23716302', '23436802', '7');">변경</button>
+                                                </div>
+                                            </td>
+                                            <td class="td_price visible_price">70,000원</td>
+                                        </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cart_table label_control">
+                            <div class="step_title">
+                                <h3><strong>Step2.</strong> 배송지를 선택해주세요.</h3>
+
+                                <!-- pc에서만 보임 -->
+                                <div class="r v_pc">
+                                    <button type="button" class="table_add" onclick="fnRegDeliveryLayer();">
+                                        <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.75 9a.563.563 0 0 1-.563.563H9.564v5.624a.562.562 0 1 1-1.126 0V9.564H2.814a.563.563 0 1 1 0-1.126h5.624V2.814a.563.563 0 1 1 1.126 0v5.624h5.624A.562.562 0 0 1 15.75 9Z" fill="#000"/></svg>
+                                        신규 배송지
+                                    </button>
+                                </div>
+                                <!-- //pc에서만 보임 -->
+                            </div>
+
+                            <!-- mobile에서만 보임 -->
+                            <div class="cart_table_top v_mobile">
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox" class="check_all">
+                                    <span class="ck_icon"></span>
+                                    전체
+                                </label>
+                                <div class="r">
+                                    <button type="button" class="table_add" onclick="fnRegDeliveryLayer();">
+                                        <svg width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.75 9a.563.563 0 0 1-.563.563H9.564v5.624a.562.562 0 1 1-1.126 0V9.564H2.814a.563.563 0 1 1 0-1.126h5.624V2.814a.563.563 0 1 1 1.126 0v5.624h5.624A.562.562 0 0 1 15.75 9Z" fill="#000"/></svg>
+                                        신규 배송지
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- //mobile에서만 보임 -->
+                            <table id="tblDelivery">
+                                <colgroup>
+                                    <col style="width:2.8rem;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="th_check">
+                                            <label class="checkbox checkbox_type2 single">
+                                                <input type="checkbox" class="check_all">
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </th>
+                                        <th>배송지</th>
+                                    </tr>
+                                </thead>
+                                
+                                    <tbody>
+                                        <tr>
+                                            <td class="td_check">
+                                                <label class="checkbox checkbox_type2 single">
+                                                    <input type="checkbox" name="checkedDeliIdx" value="199596">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </td>
+                                            <td class="td_address">
+                                                <div class="address_basic">
+                                                    <div class="cnt">
+                                                        <div class="name">최민삼 / 01047366880</div>
+                                                        <div class="ads">[10402] 경기 고양시 일산동구 장항동 864-3, 111</div>
+                                                    </div>
+                                                    <button type="button" class="btn_ads_modify" onclick="fnModDeliveryLayer('199596', '최민삼', '01047366880', '10402', '경기 고양시 일산동구 장항동 864-3', '111');">수정</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                
+                                    <tbody>
+                                        <tr>
+                                            <td class="td_check">
+                                                <label class="checkbox checkbox_type2 single">
+                                                    <input type="checkbox" name="checkedDeliIdx" value="199651">
+                                                    <span class="ck_icon"></span>
+                                                </label>
+                                            </td>
+                                            <td class="td_address">
+                                                <div class="address_basic">
+                                                    <div class="cnt">
+                                                        <div class="name">홍길동 / 01071502122</div>
+                                                        <div class="ads">[06112] 서울 강남구 논현로123길 4-1, 12</div>
+                                                    </div>
+                                                    <button type="button" class="btn_ads_modify" onclick="fnModDeliveryLayer('199651', '홍길동', '01071502122', '06112', '서울 강남구 논현로123길 4-1', '12');">수정</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                
+                                
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 클래스 장바구니, 결제, 여러곳 배송 클래스 다름 -->
+                    <div class="order_aside aside_hidden">
+                        <h3 class="aside_title">여러 곳으로 배송</h3>
+                        <div class="oa_btns btns_fixed_mobile">
+                            <button class="btn btn_type2 btn_theme" type="button" onclick="fnMovePayment();">주문하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 배송지 등록 수정 -->
+    <div id="address_form" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title" id="layer_title">배송지 등록</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div class="form form_type1">
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">받는사람 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="hidden" id="layer_idx"/>
+                                <input type="text" id="layer_name" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="row_top">
+                            <div class="tit required">휴대폰 번호 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="tel" id="layer_mobile" value="" placeholder="숫자만 입력">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="adsInput1">
+                        <div class="row_top">
+                            <div class="tit required">배송지 </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" id="layer_zip" value="" placeholder="주소를 검색해 주세요" name="i_address_zip" class="i_address_zip" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div>
+                            <button class="btn btn_gray btn_type5 btn_inline" type="button" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">주소 찾기</button>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" id="layer_addr1" value="서울시 구로구 삼성로11(1234)" name="i_address_basic" class="i_address_basic" readonly="" onclick="openLayer('#ads_layer');execDaumPostcode('adsInput1')">
+                            </div>
+                        </div>
+                        <div class="input_group">
+                            <div class="input">
+                                <input type="text" id="layer_addr2" value="101동 101호" placeholder="상세주소" name="i_address_detail" class="i_address_detail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:fnSetDelivery();" class="btn btn_type4 btn_black">확인</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //배송지 등록 수정 -->
+
+
+    <!-- 다음주소 -->
+    <div id="ads_layer" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주소검색</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div id="daumAdressLayer">
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //다음주소 -->
+
+    <!-- 옵션변경 -->
+    <div id="change_option" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">옵션변경</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content">
+                <div class="options">
+                    <div class="form form_type1">
+                        <div class="row" id="divOptGroupDefine"></div>
+                    </div>
+                </div>
+
+                <div class="form_btns btn_fit between_md">
+                    <a href="javascript:;" class="btn btn_black_line btn_type4" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:fnModProductOpt();" class="btn btn_black btn_type4">적용</a>
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //옵션변경 -->
+
+    <!-- 공통영역3 -->
+    
+
+
+
+<div id="cate_all_mobile" class="layer_popup layer_fullpage">
+
+<button type="button" class="fullpage_title" onclick="toggleLayer('#cate_all_mobile');">카테고리</button>
+
+
+  <div class="fullpage_top_links">
+    <div class="item item_search">
+      <a href="javascript:;">
+        <span class="icon_hd_search"></span>
+        <span class="sound_only">검색</span>
+      </a>
+    </div>
+    
+      <div class="item item_cart">
+        <a href="javascript:fn_moveCart();">
+          <span class="icon_hd_cart"><span class="count theme_bg_color">1</span></span>
+          <span class="sound_only">장바구니</span>
+        </a>
+      </div>
+    
+  </div>
+
+  <div class="fullpage_inner">
+
+  
+    
+      <div class="cate_all">
+        
+      </div>
+      <div class="cate_sub">
+      </div>
+    
+    
+  
+</div>
+<ul class="cate_all_member">
+  <li><a href="javascript:fnLogout();">로그아웃</a></li>
+  <li><a href="javascript:fnMoveNotice();">고객센터</a></li>
+</ul>
+</div>
+<script>
+    var _mobile_ctgList = [];
+    
+    fn_setCategoryMobile(_mobile_ctgList);
+  
+    function fn_setCategoryMobile(_valList) {
+      for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+        var categor_code_name = _valList[ct_i].code_name;
+        var categor_cty_code = _valList[ct_i].cty_code;
+        var categor_cty_depth = _valList[ct_i].cty_depth;
+        if ("2" == categor_cty_depth) {
+          var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+          var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+          $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
+        }
+      }
+    }
+  
+    // 최초 모바일 탭 클릭
+    $(document).ready(function () {
+      var _active_mobile_cate = $(".cate a.active").attr("data-cate");
+      $(".cate_mobile_" + _active_mobile_cate).css("display", "");
+    });
+  </script>
+
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+    <div class="mbf_inner">
+
+        <c:if test="false" >
+            <div class="left">
+                <button type="button" class="btn v_mobile chat">ì±ë´ìë´</button>
+            </div>
+        </c:if>
+        <div class="right">
+            <c:if test="false" >
+                <button class="btn v_mobile quick" onclick="openLayer('#quick_banner_layer')" style="background-image: url('/ib2bmall/designImg/');">íµë°°ë ì´ê¸°</button>
+            </c:if>
+            <button class="btn v_mobile resale" onclick="openLayer('#resale_no_layer')" >ì¬íë§¤ ê¸ì§</button>
+            <button type="button" class="btn to_top" onclick="toTop();">ìë¨ì¼ë¡</button>
+        </div>
+    </div>
+</div>
+    
+
+
+<!-- 푸터  -->
+<div id="footer">
+    <div class="ft_inner">
+        <div id="ft_top">
+            <div id="ft_logo">
+                <img src="/resources/static/dist/images/common/ft_logo.png" alt="SHINSEGAE">
+            </div>
+            <div id="ft_links">
+                <div class="item"><a href="/mypage/agreement">이용약관</a></div>
+                <div class="item"><a href="/mypage/policy">개인정보처리방침</a></div>
+                <div class="item cb"><a href="https://www.ssgb2e.com/about.ss" target="_blank" rel="noopener noreferrer">법인영업</a></div>
+            </div>
+        </div>
+        <div id="ft_bottom">
+            <div id="ft_company">
+                (주)신세계
+            </div>
+            <div id="ft_info">
+                서울시 서초구 신반포로 194 고속버스터미널 신관 대표이사 : 박주형 | 개인정보관리 책임자 : 김선진  | 사업자등록번호 : 201-81-32195 고객만족센터 : TEL : 02-3406-6900 | 운영시간 : 평일 10:00 ~ 17:00 (점심시간 12:00~13:00) 
+
+            </div>
+            <div id="ft_copy">Copyright SHINSEGAE. All Rights Reserved.</div>
+        </div>
+    </div>
+</div>
+<!-- //푸터  -->
+
+<!-- 모바일 하단 플로팅  -->
+<div id="floating_wrap">
+    <div class="floating_inner">
+        <div class="item all"><a href="javascript:;" onclick="toggleLayer('#cate_all_mobile');">전체</a></div>
+        <!-- 전체가 없는 경우 고객센터 노출 -->
+        <!-- <div class="item cs"><a href="javascript:;">고객센터</a></div> -->
+        <div class="item del"><a href="/mypage/orderList">배송</a></div>
+        <div class="item home"><a href="/main">홈</a></div>
+        <div class="item my"><a href="javascript:fnMoveMypage();">MY</a></div>
+        <div class="item viewd"><a href="javascript:;" onclick="toggleLayer('#viewed_products_mobile');">최근본</a></div>
+    </div>
+</div>
+<!-- //모바일 하단 플로팅  -->
+    <!-- //공통영역3 -->
+</div>
+
+<script>
+    // 상품 수량조절
+    document.addEventListener('click', function (event) {
+        var target = event.target;
+        var qtyControl = target.closest('.qty_chg_event');
+
+        if (target.closest('.qty_chg_event')) {
+            var input = qtyControl.querySelector('input');
+            var minBundle = fnToNotNull(input.getAttribute('minBundle'));
+            var minLimit = 1;
+            var maxLimit = isNaN(parseInt(input.getAttribute('maxLimit'), 10)) ? 99999 : parseInt(input.getAttribute('maxLimit'), 10);
+            var initialValue = input.getAttribute('db-count');
+            var inputValue = parseInt(input.value, 10);
+
+            if (isNaN(parseInt(input.getAttribute('minLimit'), 10))) {
+                minLimit = 1;
+            } else {
+                if ("1" === minBundle) {
+                    minLimit = parseInt(input.getAttribute('minLimit'), 10);
+                }
+            }
+
+            // minus 버튼 클릭
+            if (target.classList.contains('minus')) {
+                if (inputValue > minLimit) {
+                    if (inputValue - minLimit < minLimit) {
+                        input.value = minLimit;
+                    } else {
+                        input.value = inputValue - minLimit;
+                    }
+
+                    fnUpdateLotButtonStates(qtyControl, input, initialValue);
+                }
+            }
+
+            // plus 버튼 클릭
+            if (target.classList.contains('plus')) {
+                if (inputValue < maxLimit) {
+                    input.value = inputValue + ("1" === minBundle ? minLimit : 1);
+                    fnUpdateLotButtonStates(qtyControl, input, initialValue);
+                }
+            }
+        }
+    });
+
+    // 상품수량 input 값 변경에 대한 이벤트 위임
+    document.addEventListener('input', function (event) {
+        var target = event.target;
+
+        if (target.closest('.qty_chg_event')) {
+            var qtyControl = target.closest('.qty_chg_event');
+            var minLimit = isNaN(parseInt(target.getAttribute('minLimit'), 10)) ? 1 : parseInt(target.getAttribute('minLimit'), 10);
+            var maxLimit = isNaN(parseInt(target.getAttribute('maxLimit'), 10)) ? 99999 : parseInt(target.getAttribute('maxLimit'), 10);
+            var initialValue = target.getAttribute('db-count');
+            var value = parseInt(target.value, 10);
+
+            if (isNaN(value) || value < 1) {
+                target.value = 1;
+            } else if (value < minLimit) {
+                target.value = minLimit;
+            } else if (value > maxLimit) {
+                target.value = maxLimit;
+            }
+
+            fnUpdateLotButtonStates(qtyControl, target, initialValue);
+        }
+    });
+
+    function fnUpdateLotButtonStates(qtyControl, input, initialValue) {
+        var minusBtn = qtyControl.querySelector('.minus');
+        var plusBtn = qtyControl.querySelector('.plus');
+        var currentValue = parseInt(input.value, 10);
+        var minLimit = isNaN(parseInt(input.getAttribute('minLimit'), 10)) ? 1 : parseInt(input.getAttribute('minLimit'), 10);
+        var maxLimit = isNaN(parseInt(input.getAttribute('maxLimit'), 10)) ? 99999 : parseInt(input.getAttribute('maxLimit'), 10);
+
+        minusBtn.disabled = currentValue <= minLimit;
+        plusBtn.disabled = currentValue >= maxLimit;
+
+        if (initialValue) {
+            var changeBtn = qtyControl.closest('.lot_box').querySelector('.lot_change_btn');
+            if (changeBtn) {
+                if (input.value !== initialValue) {
+                    changeBtn.classList.remove('btn_gray_line')
+                    changeBtn.classList.add('btn_black_line')
+                } else {
+                    changeBtn.classList.remove('btn_black_line')
+                    changeBtn.classList.add('btn_gray_line')
+                }
+            }
+        }
+    }
+
+    // 옵션 일체형
+    function fnGetOptList(reqCrid, reqPrid, reqOptcode) {
+        $.ajax({
+            type: 'post',
+            url: '/order/getOptGroupDefineList',
+            data: {
+                cmmPrid: reqPrid,
+                cmmPrabsyn: "7"
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                var list = data.optGroupList;
+                var optGroupBody = document.getElementById('divOptGroupDefine');
+                var optNameHtml = '';
+
+                if (optGroupBody) {
+                    while (optGroupBody.firstChild) {
+                        optGroupBody.removeChild(optGroupBody.firstChild);
+                    }
+                }
+
+                for (var i = 0; i < list.length; i++) {
+                    if (0 === list[i].cmmOptaddamt) {
+                        optNameHtml += '<option value="' + list[i].cmmOptcode + '" disabled>' + list[i].cmmProptname + ' (품절)</option>';
+                    } else {
+                        var optShow = "1" === list[i].cmmOptShowyn ? ' (재고 ' + fnSetComma(list[i].cmmOptaddamt) + ')' : '';
+                        optNameHtml += '<option value="' + list[i].cmmOptcode + '">' + list[i].cmmProptname + optShow + '</option>';
+                    }
+                }
+
+                var row = document.createElement('div');
+                row.classList.add('input_group');
+                row.innerHTML = 
+                    '<div class="input">' +
+                    '    <div class="design_select type3">' +
+                    '        <select onchange="fnSetOptValues(this, \'' + reqCrid + '\', \'' + reqPrid + '\', \'' + reqOptcode + '\')">' +
+                    '            <option value="">옵션을 선택하세요</option>' +
+                    optNameHtml +
+                    '        </select>' +
+                    '    </div>' +
+                    '</div>';
+
+                optGroupBody.appendChild(row);
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    // 옵션 분리형, 독립형
+    function fnGetOptGroupDefine(reqCrid, reqPrid, reqOptcode, reqOptType, reqGroupName) {
+        $.ajax({
+            type: 'post',
+            url: '/order/getOptGroupDefineList',
+            data: {
+                cmmPrid: reqPrid,
+                cmmPrabsyn: reqOptType,
+                cmmProptgroupname: Object.keys(JSON.parse(reqGroupName))[0]
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                var list = data.optGroupList;
+                var optGroupBody = document.getElementById('divOptGroupDefine');
+
+                if (optGroupBody) {
+                    while (optGroupBody.firstChild) {
+                        optGroupBody.removeChild(optGroupBody.firstChild);
+                    }
+                }
+
+                for (var i = 0; i < list.length; i++) {
+                    var optNameHtml = '';
+                    var items = fnToNotNull(list[i].opt_name).split(",");
+                    var lastOptYn = (i === list.length - 1 ? "Y" : "N");
+
+                    if ("9" !== reqOptType) {
+                        // 첫번째 옵션만 상세옵션 표시
+                        if (i === 0) {
+                            items.forEach(function(item) {
+                                var itemCombine = list[i].opt_group_idx + "|" + item;
+                                optNameHtml += '<option value="' + itemCombine + '">' + item + '</option>';
+                            });
+                        } else {
+                            optNameHtml = "상위 옵션을 먼저 선택해주세요";
+                        }
+                    } else {
+                        items.forEach(function(item) {
+                            var itemCombine = list[i].opt_group_idx + "|" + item;
+                            optNameHtml += '<option value="' + itemCombine + '">' + item + '</option>';
+                        });
+                    }
+
+                    var row = document.createElement('div');
+                    row.classList.add('input_group');
+                    row.innerHTML = 
+                        '<div class="input">' +
+                        '    <div class="design_select type3">' +
+                        '        <select onchange="fnGetOptGroupDefineDetail(this, ' + i + ', \'' + reqCrid + '\', \'' + reqPrid + '\', \'' + reqOptcode + '\', \'' + list[i].opt_group_idx + '\', \'' + lastOptYn + '\')" select-required product-option="modal_prd_option_required' + i + '">' +
+                        '            <option value="">' + list[i].opt_group_name + ' 선택</option>' +
+                        optNameHtml +
+                        '        </select>' +
+                        '    </div>' +
+                        '</div>';
+
+                    optGroupBody.appendChild(row);
+                }
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    // 옵션 분리형, 독립형 선택
+    function fnGetOptGroupDefineDetail(reqElm, reqNum, reqCrid, reqPrid, reqOptcode, reqGroupIdx, reqLastYn){
+        var targetNum = reqNum + 1;
+
+        $.ajax({
+            type: 'post',
+            url: '/order/getOptGroupDefineList',
+            data: {
+                cmmPrid: reqPrid,
+                cmmOptgroupidx: Number(reqGroupIdx) + 1
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                var list = data.optGroupList;
+                var options = '';
+
+                for (var i = 0; i < list.length; i++) {
+                    var items = fnToNotNull(list[i].opt_name).split(",");
+
+                    items.forEach(function(item) {
+                        var itemCombine = list[i].opt_group_idx + "|" + item;
+                        options += '<option value="' + itemCombine + '">' + item + '</option>';
+                    });
+                }
+
+                if ("Y" === reqLastYn) { // 마지막 옵션을 선택했을때 값 설정
+                    var selectedOptions = [];
+                    document.querySelectorAll('.options [select-required]').forEach(function(select) {
+                        var groupIdx = select.selectedOptions[0].value.split("|")[0];
+                        var optName = select.selectedOptions[0].value.split("|")[1];
+                        var optParams = {
+                            cmmOptgroupidx: groupIdx,
+                            cmmProptname: optName
+                        }
+
+                        selectedOptions.push(optParams)
+                    });
+
+                    $("#chgOptCrid").val(reqCrid);
+                    $("#chgOptPrid").val(reqPrid);
+                    $("#orgOptCode").val(reqOptcode);
+                    $("#chgOptSearchStr").val(JSON.stringify(selectedOptions));
+                } else {
+                    var targetModalSelect = document.querySelector('[product-option = \'modal_prd_option_required'+targetNum+'\']');
+
+                    //선택한 다음 셀렉트 업데이트 후  셀렉트 초기화
+                    targetModalSelect.insertAdjacentHTML('beforeend', options);
+                    var targetModalSelectChoices = choicesInstances.get('modal_prd_option_required'+targetNum+'');
+
+                    if (targetModalSelectChoices) {
+                        targetModalSelectChoices.destroy();
+                        targetModalSelectChoices.init();
+                    }
+                }
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+            }
+        });
+    }
+
+    // 옵션 일체형 수정을 위한 값 설정
+    function fnSetOptValues(reqElm, reqCrid, reqPrid, reqOptcode) {
+        $("#chgOptCrid").val(reqCrid);
+        $("#chgOptPrid").val(reqPrid);
+        $("#chgOptCode").val($(reqElm).val());
+        $("#orgOptCode").val(reqOptcode);
+    }
+
+    function fnModProductQty(button, reqCrid, reqPrid, reqParentPrid, reqOptcode, reqParentOptcode, reqPrabsyn){
+        var input = button.closest('.lot_box').querySelector('input');
+        input.setAttribute('db-count', input.value)
+
+        $.ajax({
+            type : "post",
+            data: {
+                cmmCrid: reqCrid,
+                cmmPrid: reqPrid,
+                cmmParentPrid: reqParentPrid,
+                cmmOptcode: reqOptcode,
+                cmmParentOptcode: reqParentOptcode,
+                cmmPrabsyn: reqPrabsyn,
+                cmmCrnum: input.value,
+                cmmCartType: "D"
+            },
+            url: "/order/updateProductQtyForMultiDelivery",
+            dataType: 'json',
+            beforeSend: function() {
+                loading('show');
+            },
+            success : function(data) {
+                if ("0000" === data.result_code) {
+                    window.location.reload();
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            error: function(request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, 2000);
+            }
+        });
+    }
+
+    // 상품옵션 변경
+    function fnModProductOpt() {
+        $.ajax({
+            type: 'post',
+            url: '/order/updateProductOptionForMultiDelivery',
+            data: {
+                cmmCrid: $("#chgOptCrid").val(),
+                cmmPrid: $("#chgOptPrid").val(),
+                cmmNewOptcode: $("#chgOptCode").val(),
+                cmmOptcode: $("#orgOptCode").val(),
+                cmmOptsearchStr: $("#chgOptSearchStr").val()
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                if ("0000" === data.result_code) {
+                    window.location.reload();
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+                closeLayer('', 'change_option');
+            }
+        });
+    }
+
+    function fnRegDeliveryLayer() {
+        fnCmmResetDocumentValues('address_form');
+        openLayer('#address_form');
+        $("#address_form #layer_title").text("배송지 등록");
+        $("#address_form #layer_idx").val("");
+        $("#layer_name").focus();
+    }
+
+    function fnModDeliveryLayer(reqIdx, reqName, reqMobile, reqZip, reqAddr1, reqAddr2) {
+        $("#address_form #layer_title").text("배송지 수정");
+        $("#address_form #layer_idx").val(reqIdx);
+        $("#address_form #layer_name").val(reqName);
+        $("#address_form #layer_mobile").val(reqMobile);
+        $("#address_form #layer_zip").val(reqZip);
+        $("#address_form #layer_addr1").val(reqAddr1);
+        $("#address_form #layer_addr2").val(reqAddr2);
+        openLayer('#address_form');
+    }
+
+    function fnSetDelivery() {
+        var idx = $("#address_form #layer_idx");
+        var name = $("#address_form #layer_name");
+        var mobile = $("#address_form #layer_mobile");
+        var zip = $("#address_form #layer_zip");
+        var addr1 = $("#address_form #layer_addr1");
+        var addr2 = $("#address_form #layer_addr2");
+
+        if ("" === fnToNotNull(name.val())) {
+            box_alert("이름을 입력해주세요", 'info', '', fnValidFocus, name);
+            return;
+        }
+
+        if ("" === fnToNotNull(mobile.val())) {
+            box_alert("휴대폰 번호를 입력해주세요", 'info', '', fnValidFocus, mobile);
+            return;
+        }
+
+        if ("" === fnToNotNull(zip.val())) {
+            box_alert("주소를 검색해주세요", 'info', '', fnValidFocus, zip);
+            return;
+        }
+
+        if ("" === fnToNotNull(addr1.val())) {
+            box_alert("주소를 검색해주세요", 'info', '', fnValidFocus, addr1);
+            return;
+        }
+
+        if ("" === fnToNotNull(addr2.val())) {
+            box_alert("상세주소를 입력해주세요", 'info', '', fnValidFocus, addr2);
+            return;
+        }
+
+        $.ajax({
+            type : 'post',
+            url:'/common/setDeliveryProcess',
+            data: {
+                "cmmIdx": idx.val(),
+                "cmmName": name.val(),
+                "cmmMbhp": mobile.val(),
+                "cmmZipcode": zip.val(),
+                "cmmAddress1": addr1.val(),
+                "cmmAddress2": addr2.val(),
+            },
+            dataType: 'json',
+            beforeSend: function() {
+                loading('show');
+            },
+            success : function(data) {
+                var resultCode = fnToNotNull(data.result_code);
+
+                if ("0000" === resultCode) {
+                    window.location.reload();
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, 1000);
+            }
+        });
+    }
+
+    function fnMovePayment() {
+        var fieldCnt = 0;
+        var chkList = [];
+
+        $("#tblDelivery tbody input[name=checkedDeliIdx]").each(function () {
+            var params = {};
+
+            if ($(this).is(':checked')) {
+                params.cmmIdx = fnToNotNull($(this).val());
+
+                chkList.push(params);
+
+                fieldCnt++;
+            }
+        });
+
+        if (fieldCnt === 0) {
+            box_alert('배송지를 선택해주세요', 'info');
+            return;
+        }
+
+        var options = {
+            formId: "multiDeliveryForm",
+            method: "post",
+            action: "/order/payment",
+            params: {
+                cmmCartType: "D",
+                cmmMultitype: "M",
+                cmmDeliveryJsonStr: JSON.stringify(chkList)
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+</script>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+var ads_layer = document.getElementById('ads_layer');
+
+function execDaumPostcode(elm) {
+    const target = document.getElementById(elm)
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            } else {
+            }
+            target.querySelector(".i_address_zip").value = data.zonecode;
+            target.querySelector(".i_address_basic").value = addr;
+            target.querySelector(".i_address_detail").value= '';
+            target.querySelector(".i_address_detail").focus();
+            closeLayer(ads_layer);
+        },
+        width : '100%',
+        height : '100%',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>
+</body>
+</html>

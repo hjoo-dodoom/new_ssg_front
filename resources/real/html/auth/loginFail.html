@@ -1,3 +1,8 @@
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
-    <title>비밀번호 찾기</title>
+    <title>본인인증</title>
 
     <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
     <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
@@ -61,6 +66,8 @@
 <div class="hd_fl">
     <div class="logo">
         
+            <img src="/ib2bmall/designConfigImg/2025042919280550076" alt="SHINSEGAE">
+        
     </div>
     <div class="links">
         
@@ -75,21 +82,22 @@
 
 <div id="content" class="join_content">
     <div class="page_title_center">
-        <h2>비밀번호 재설정</h2>
-        <div class="sub">비밀번호 변경 후 <strong>다시 한번 로그인이 필요</strong>합니다.</div>
+        <h2>본인인증</h2>
+        <div class="sub">고객확인을 위해 <strong>이름</strong>과 <strong>휴대폰번호</strong>를 입력해주세요.</div>
     </div>
 
     <div class="join_inner">
         <form action="" id="findInfoForm" novalidate="novalidate">
-            <input type="hidden" name="sms_send_type" value="FINDPW"/>
+            <input type="hidden" name="sms_send_type" value="LOGINFAIL"/>
+            <input type="hidden" name="mbid" value="n27pPfoQ2wkHqv9RmnD92A=="/>
             <div class="form form_type1 size_lg">
                 <div class="row">
                     <div class="row_top">
-                        <div class="tit required">현재 아이디를 입력해 주세요.</div>
+                        <div class="tit required">이름을 입력해 주세요.</div>
                     </div>
                     <div class="input_group">
                         <div class="input">
-                            <input type="text" id="mbid" name="mbid">
+                            <input type="text" id="mbname" name="mbname">
                         </div>
                     </div>
                 </div>
@@ -118,91 +126,73 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    var countdownInterval;
-                    var secondsLeft;
-                    var checkCnt;
-                    var certifyNumberBox = document.getElementById('certifyNumberBox');
-                
-                    function startCountdown(buttonId, reButtonId, countdownId) {
-                        var button = document.getElementById(buttonId);
-                        var reButton = document.getElementById(reButtonId);
-                        var countdownSpan = document.getElementById(countdownId);
-                        button.style.display = 'block';
-                        reButton.style.display = 'none';
-                        certifyNumberBox.style.display = 'block';
-                        secondsLeft = 180;
-                        checkCnt = 0;
-                
-                        countdownInterval = setInterval(function() {
-                            secondsLeft--;
-                            var minutes = Math.floor(secondsLeft / 60);
-                            var seconds = secondsLeft % 60;
-                            countdownSpan.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-                
-                            if (secondsLeft <= 0) {
-                                clearInterval(countdownInterval);
-                                countdownSpan.textContent = '3:00';
-                                button.style.display = 'none';
-                                reButton.style.display = 'block';
-                                document.getElementById('reSendSms').removeAttribute("disabled");
-                                box_alert('인증번호 입력시간이 초과되었습니다. 인증번호 재발송버튼을 선택해주세요.', 'info');
-                            }
-                        }, 1000);
-                    }
-                
-                    function loginSmsSend(data) {
-                        var confirmNo = document.getElementById('sms_confirm_no');
-                        clearInterval(countdownInterval);
-                        startCountdown('sendSms', 'reSendSms', 'countDown');
-                        confirmNo.value = data.result_etc;
-                        confirmNo.focus();
-                    }
-                
-                    // 이벤트 리스너 등록 함수
-                    function addEventListeners() {
-                        var sendSmsBtn = document.getElementById('sendSms');
-                        var reSendSmsBtn = document.getElementById('reSendSms');
-                        
-                        if(sendSmsBtn) {
-                            sendSmsBtn.addEventListener('click', function() {
-                                var idValid = $("#mbid").valid();
-                                var hpValid = $("#mbhp").valid();
-                
-                                if (idValid && hpValid) {
-                                    fnSmsSend('findInfoForm', loginSmsSend);
-                                }
-                            });
-                        }
-                        
-                        if(reSendSmsBtn) {
-                            reSendSmsBtn.addEventListener('click', function() {
-                                var idValid = $("#mbid").valid();
-                                var hpValid = $("#mbhp").valid();
-                
-                                if (idValid && hpValid) {
-                                    fnSmsSend('findInfoForm', loginSmsSend);
-                                }
-                            });
-                        }
-                    }
-                
-                    // DOM이 준비되면 이벤트 리스너 등록
-                    if (document.readyState === "loading") {
-                        document.addEventListener("DOMContentLoaded", addEventListeners);
-                    } else {
-                        addEventListeners();
-                    }
-                </script>
             </div>
+            <script>
+                var countdownInterval;
+                var secondsLeft;
+                var checkCnt;
+                var certifyNumberBox = document.getElementById('certifyNumberBox');
+
+                function startCountdown(buttonId, reButtonId, countdownId) {
+                    var button = document.getElementById(buttonId);
+                    var reButton = document.getElementById(reButtonId);
+                    var countdownSpan = document.getElementById(countdownId);
+                    button.style.display = 'block';
+                    reButton.style.display = 'none';
+                    certifyNumberBox.style.display = 'block';
+                    secondsLeft = 180;
+                    checkCnt = 0;
+
+                    countdownInterval = setInterval(function() {
+                        secondsLeft--;
+                        var minutes = Math.floor(secondsLeft / 60);
+                        var seconds = secondsLeft % 60;
+                        countdownSpan.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+                        if (secondsLeft <= 0) {
+                            clearInterval(countdownInterval);
+                            countdownSpan.textContent = '3:00';
+                            button.style.display = 'none';
+                            reButton.style.display = 'block';
+                            document.getElementById('reSendSms').removeAttribute("disabled");
+                            box_alert('인증번호 입력시간이 초과되었습니다. 인증번호 재발송버튼을 선택해주세요.', 'info');
+                        }
+                    }, 1000);
+                }
+
+                function loginSmsSend(data) {
+                    var confirmNo = document.getElementById('sms_confirm_no');
+                    clearInterval(countdownInterval);
+                    startCountdown('sendSms', 'reSendSms', 'countDown');
+                    confirmNo.value = data.result_etc;
+                    confirmNo.focus();
+                }
+
+                document.getElementById('sendSms').addEventListener('click', function() {
+                    var idValid = $("#mbname").valid();
+                    var hpValid = $("#mbhp").valid();
+
+                    if (idValid && hpValid) {
+                        fnSmsSend('findInfoForm', loginSmsSend);
+                    }
+                });
+
+                document.getElementById('reSendSms').addEventListener('click', function() {
+                    var idValid = $("#mbname").valid();
+                    var hpValid = $("#mbhp").valid();
+
+                    if (idValid && hpValid) {
+                        fnSmsSend('findInfoForm', loginSmsSend);
+                    }
+                });
+            </script>
 
             <div class="form_btns between_lg">
-                <button type="submit" class="btn btn_black btn_type1">비밀번호 변경하기</button>
+                <input type="submit" class="btn btn_black btn_type1" value="휴대폰 인증하기">
             </div>
         </form>
     </div>
 </div>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // 기본 커스텀함수 초기화
@@ -212,14 +202,29 @@
     });
 
     function fnCertifyValidate() {
-        var formValidator = $("#findInfoForm").validate({
+        var formValidator = $("#certifyForm").validate({
             rules: {
-                mbid: {
+                mbname: {
                     required: true
                 },
                 mbhp: {
                     required: true,
-                    regex: /^(01[0-9])(-)?(\d{3,4})(-)?(\d{4})$/
+                    regex: /^(01[0-9])(-)?(\d{3,4})(-)?(\d{4})$/,
+                    remote: {
+                        type: "post",
+                        url: "/auth/hpCheck",
+                        data: {
+                            mbhp: function() { return $('#mbhp').val(); }
+                        },
+                        dataFilter: function(data) {
+                            var json = JSON.parse(data);
+                            if ("0000" === json.result_code) {
+                                return "true";
+                            } else {
+                                return "false";
+                            }
+                        },
+                    }
                 },
                 sms_confirm_no: {
                     required: secondsLeft,
@@ -227,12 +232,13 @@
                 }
             },
             messages: {
-                mbid: {
-                    required: '아이디를 입력하세요.'
+                mbname: {
+                    required: '이름을 입력하세요.'
                 },
                 mbhp: {
                     required: '휴대폰번호를 입력하세요.',
-                    regex: '휴대폰번호 형식이 잘못되었습니다.'
+                    regex: '휴대폰번호 형식이 잘못되었습니다.',
+                    remote: '이미 사용중인 휴대폰번호입니다.'
                 },
                 sms_confirm_no: {
                     required: '인증번호를 입력하세요.',
@@ -247,9 +253,9 @@
             },
             submitHandler: function (form) {
                 if(secondsLeft){
-                    fnSmsConfirm("findInfoForm",fnCertifyConfirm)
+                    fnSmsConfirm("certifyForm",fnCertifyConfirm)
                 }else{
-                    fnSmsSend('findInfoForm', loginSmsSend);
+                    fnSmsSend('certifyForm', loginSmsSend);
                 }
             },
             invalidHandler: function (event, validator) {
@@ -264,7 +270,7 @@
     function fnSmsSend(formId, callback) {
         $.ajax({
             type : 'post',
-            url:'/auth/loginSmsSend',
+            url:'/auth/signUpSmsSend',
             data: $("#" + formId).serialize(),
             dataType: 'json',
             beforeSend: function() {
@@ -291,6 +297,7 @@
 
     // 인증번호 체크
     function fnSmsConfirm(formId, callback) {
+
         $.ajax({
             type : 'post',
             url:'/auth/smsConfirm',
@@ -319,9 +326,10 @@
 
     function fnCertifyConfirm() {
         var options = {
-            formId: "findInfoForm",
+            formId: "certifyForm",
             method: "post",
-            action: "/auth/findPasswordResult",
+            action: "/auth/signUpForm",
+            target:""
         };
         fnCmmSubmitDynamicForm(options);
     }

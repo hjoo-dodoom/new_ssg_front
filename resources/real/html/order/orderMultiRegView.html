@@ -1,0 +1,1157 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
+    <title>신세계 사용자</title>
+
+    <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/pikaday.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/real/dist/css/choices.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon"> 
+
+    <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
+    <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.modal.min.js"></script>
+    <script src="/resources/real/dist/js/box_alert.js"></script>
+    <script src="/resources/real/dist/js/swiper.min.js"></script>
+    <script src="/resources/real/dist/js/slick.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.validate.min.js"></script>
+    <script src="/resources/real/dist/js/simplebar.min.js"></script>
+    <script src="/resources/real/dist/js/choices.min.js"></script>
+    <script src="/resources/real/dist/js/common.js"></script>
+    <script src="/resources/real/dist/js/common_dev.js"></script>
+    <script src="/resources/real/dist/js/pikaday.js"></script>
+    <script src="/resources/real/dist/js/jquery.cookie.js"></script>
+
+    <style>
+    :root {
+        --theme-color:#000000;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1e2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#ffffff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+
+    <!-- ie css 변수적용 -->
+    <script>
+        window.MSInputMethodContext && document.documentMode && document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+    </script>
+</head>
+<body>
+
+<!-- content -->
+
+
+
+
+
+<script>
+$(document).ready(function(){
+    $("#fileInput").on("change",function(){
+        $.ajax({
+            type : 'post',
+            enctype:"multipart/form-data",
+            url:'/order/orderMultiUpload',
+            data: new FormData(document.getElementById('uploadForm')),
+            contentType:false,
+            processData:false,
+            beforeSend: function(xhr) {
+                loading('show');
+            },
+            success : function(data) {
+                if ("0000" == data.result_code) {
+                    fnExcelUploadModPop(data.result_etc)
+                }
+            },
+            error:function(request,status,error) {
+                box_alert("관리자에게 문의하여 주시기바랍니다.", 'info')
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, "500");
+            }
+        });
+    })
+});
+
+function fnExcelUploadModPop(idx) {
+	var url = "/order/popup/orderMultiUploadPop?idx=" + idx;
+	var params = "";
+	var newwin = null;
+
+	params += 'width='+screen.width;
+	params += ', height='+screen.height;
+	params += ', top=0, left=0'
+	params += ', fullscreen=yes';
+
+	newwin = window.open(url,'excelUploadPop', params);
+
+	if (window.focus) {newwin.focus()}
+    location.reload()
+}
+
+function fnDeleteExcelUpload(idx) {
+	$.ajax({
+        type : 'post',
+        url:'/order/deleteOrderMulti',
+        data : {"idx" : idx},
+        beforeSend: function(xhr) {
+            loading('show');
+        },
+        success : function(data) {
+            if ("0000" == data.result_code) {
+                fnReload();
+            }
+        },
+        error:function(request,status,error) {
+            box_alert("관리자에게 문의하여 주시기바랍니다.", 'info')
+        },
+        complete : function() {
+            setTimeout(function() {
+                loading('hide');
+            }, "500");
+        }
+    });
+}
+
+function fnReload() {
+	location.href = "/order/orderMultiRegView";
+}
+//파일 다운
+function fnFileDown(fileName) {
+	
+	$("#fileType").val("PTN_COUNSEL");
+	$("#fileName").val(fileName);
+	$("#fileDownFrm").prop({action:"/order/gideDownload"}).submit();
+}
+
+</script>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+
+    <!-- 공통영역1 -->
+    
+
+
+
+
+
+<div id="header">
+    <!-- 헤더 영역 임시이기때문에 추후 바뀔 수 있음 -->
+    <div id="hd_top">
+        <div class="hd_inner">
+            <div id="hd_points">
+                
+                    <div class="item">
+                        <a href="/mypage/pointList" class="point">
+                            <span class="count">0</span>
+                            
+                        </a>
+                    </div>
+                
+                
+            </div>
+            <div id="hd_members">
+                
+                    <div class="item">
+                        <a href="/order/orderMultiRegView" class="bold">
+                            <span class="icon_hd_reg"></span>대량등록
+                        </a>
+                    </div>
+                
+                <div class="item">
+                    <a href="javascript:fnLogout();">로그아웃</a>
+                </div>
+                <div class="item">
+                    <a href="/mypage/orderList">주문배송조회</a>
+                </div>
+                <div class="item">
+                    <a href="javascript:fnMoveNotice();">고객센터</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hd_middle">
+        <div class="hd_inner">
+            <div id="hd_logo">
+                <div id="logo_wrap">
+                    <div id="logo">
+                        
+                        <a href="/main">
+                            <img
+                            
+                                    src="/ib2bmall/designConfigImg/2025042919280550076"
+                            
+                                    alt="테스트">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="hd_search">
+                <div class="search_inner">
+                    <input type="text" name="gnb_search_input" class="gnb_search_input" placeholder="상품명을 입력해 주세요." value="" onkeyup="javascript:fn_search_prd();"/>
+                    <button type="button" class="gnb_search_submit" onclick="javascript:fn_search_prd_trigger();">
+                        검색
+                    </button>
+                </div>
+            </div>
+
+            <!-- 모바일 뒤로가기 -->
+            <a href="javascript:history.back();" class="back_btn">뒤로가기</a>
+
+            <!-- 모바일 상단 페이지 타이틀 -->
+            
+                
+                
+                    <div class="page_title_mobile">장바구니</div>
+                
+            
+
+            <!-- 모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+            
+                
+                    <div class="cate_first_mobile">
+                        <div class="cate_first_title">
+                            <div class="cate_first_list_inner">
+                                
+                                    
+                                    
+                                        <button type="button" class="cate_first_toggle" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></button>
+                                    
+                                
+                            </div>
+                        </div>
+
+                        <div class="cate_first_list">
+                            <div class="cate_first_list_inner">
+                                
+                                    
+                                    
+                                        
+                                    
+                                
+                            </div>
+                            <span class="cate_first_list_bg" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></span>
+                        </div>
+                    </div>
+                
+                
+                
+            
+            <!-- //모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+            <!--
+            #hd_links .item.item_home{display: none;}
+            .home_mobile_show #hd_links .item.item_home{display: block;}
+            -->
+            <div id="hd_links">
+                <div class="item v_mobile item_home">
+                    <a href="/main">
+                        <span class="icon_hd_home"></span>
+                        <span class="text">홈으로</span>
+                    </a>
+                </div>
+                <div class="item v_mobile item_search">
+                    <a href="javascript:;" class="show-modal" onclick="showBottomSheet(event)">
+                        <span class="icon_hd_search"></span>
+                        <span class="text">검색</span>
+                    </a>
+                </div>
+                
+                    <div class="item v_both item_cart">
+                        <a href="javascript:fn_moveCart();">
+                            <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+                            <span class="text">장바구니</span>
+                        </a>
+                    </div>
+                
+                <div class="item v_pc">
+                    <a href="javascript:fnMoveMypage();">
+                        <span class="icon_hd_mypage"></span>
+                        <span class="text">마이페이지</span>
+                    </a>
+                </div>
+                
+                    <div class="item v_pc">
+                        <a href="javascript:fnMoveWishList();">
+                            <span class="icon_hd_like"></span>
+                            <span class="text">나의 찜</span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="item v_pc">
+                        <a href="javascript:fnMoveNotice();">
+                            <span class="icon_hd_notice"></span>
+                            <span class="text">공지사항</span>
+                        </a>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="hd_bottom">
+        <div class="hd_inner">
+            <div id="gnb_wrap">
+                <div id="gnb_toggle">
+                    
+                </div>
+                <div id="gnb">
+                    <div class="swiper-wrapper">
+                        
+
+                    </div>
+                    <div class="gnb_toggle_mobile">
+                        <button type="button" id="btn_gnb_toggle_mobile" onclick="gnbMobileOpen();">전체메뉴 열기</button>
+                    </div>
+                </div>
+                
+                    <div id="hd_special">
+                        
+                            <div class="item">
+                                <a href="javascript:fn_promoExhibitList();">
+                                    <span class="icon_hd_special"></span>
+                                    기획전
+                                </a>
+                            </div>
+                        
+                        
+                    </div>
+                
+                <!-- 전체메뉴 -->
+                <div id="gnb_all">
+                    <ul>
+                        
+                            
+                                
+                            
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //헤더 영역 임시이기때문에 추후 바뀔 수 있음 -->
+<form id="headerForm"></form>
+<input type="hidden" id="mbst" value="2" />
+<script>
+
+    // 로그아웃
+    function fnLogout() {
+        $.ajax({
+            type: 'get',
+            url: '/auth/logout',
+            dataType: 'json',
+            success: function (data) {
+                location.href = "/auth/login";
+            },
+            error: function () {
+                location.href = "/auth/login";
+            }
+        });
+    }
+
+    // 헤더 카테고리 2레벨 그려넣기
+    var _ctgList = [];
+    
+    fn_setCategory(_ctgList);
+
+    function fn_setCategory(_valList) {
+        for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+            let categor_code_name = _valList[ct_i].code_name;
+            let categor_cty_code = _valList[ct_i].cty_code;
+            let categor_cty_depth = _valList[ct_i].cty_depth;
+            if ("2" == categor_cty_depth) {
+                let parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                let ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                $("." + parentCode).append(ctyDepthSecHTML);
+            }
+        }
+
+        // 하위 항목이 없을때에 전체 삭제
+        /*
+        $(".search_product_cate").each(function () {
+            let length_li = $(this).find('li');
+            if(length_li.length === 1){
+                length_li.remove();
+            }
+        });
+        */
+    }
+
+
+    function fn_linkCategoryPage(_url) {
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchCtyPCode: _url,
+                searchOptType:"category"
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fn_linkCategoryPricePage(_url) {
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchCtyPCode: _url,
+                searchOptType:"price"
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_moveCart() {
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/order/cart"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_goodsCartIn(_prid){
+        const _mbst = $("#mbst").val();
+        if("2" != _mbst){
+            alert("현재 구매가 불가능합니다.");
+            return;
+        }
+        $.ajax({
+            type: 'post',
+            url: '/product/goodsCartIn',
+            data: {
+                "prid": _prid
+            },
+            success: function (data) {
+                console.log(data);
+                if(null != data && "0000" == data.cmmMemo){
+                    // 장바구니에 담겼을때
+                    fn_moveCart();
+                }else if(null != data && "8888" == data.cmmMemo){
+                    // 장바구니에 담기지 않고 상세페이지로 이동
+                    const target_url = "/product/goodsDetail";
+                    let results_url = window.location.origin + target_url;
+                    const options = {
+                        formId: "mainForm",
+                        method: "get",
+                        params: {
+                            prid: _prid
+                        },
+                        action: results_url,
+                    };
+                    fnCmmSubmitDynamicForm(options);
+                }else if(null != data && "7777" == data.cmmMemo){
+                    alert("현재 구매가 불가능한 상품입니다.");
+                }else if(null != data && "6666" == data.cmmMemo){
+                    alert("현재 구매가 불가능합니다.");
+                }
+            },
+            error: function () {
+                alert("시스템 관리자에게 문의 하여 주십시오.");
+            }
+        });
+    }
+
+    //공지사항 이동
+    function fnMoveNotice() {
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/noticeList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //마이페이지 메인 이동
+    function fnMoveMypage() {
+        const _mbst = '2';
+        if("2" != _mbst){
+            return;
+        }
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/mypageList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //좋아요(나의 찜) 이동
+    function fnMoveWishList() {
+        const _mbst = '2';
+        if("2" != _mbst){
+            return;
+        }
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/wishList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fn_promoExhibitList(){
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/promoExhibitList"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_exhibitDetailHeader(_val) {
+        $("#curPage").val(1);
+        $("#searchViewCnt").val("20");
+        const options = {
+            formId: "goodsForm",
+            method: "get",
+            action: "/product/promoExhibitDetailList",
+            params: {
+                idx: _val,
+                curPage:"1",
+                searchViewCnt:"20",
+                searchCtyCode:""
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_promoBrandList(){
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/promoBrandList"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_BrandDetailHeader(_val) {
+        $("#curPage").val(1);
+        $("#searchViewCnt").val("20");
+        const options = {
+            formId: "goodsForm",
+            method: "get",
+            action: "/product/promoBrandDetailList",
+            params: {
+                idx: _val,
+                curPage:"1",
+                searchViewCnt:"20",
+                searchCtyCode:""
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_search_prd_trigger(){
+        let word = $('[name="gnb_search_input"]').val();
+        if(word.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }else{
+            fn_search_goodsList(word);
+        }
+    }
+    function fn_search_prd_trigger_mobile(){
+        let word = $('#gnb_search_input_mobile').val();
+        if(word.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }else{
+            fn_search_goodsList(word);
+        }
+    }
+
+    function fn_search_prd(){
+        let word = $('[name="gnb_search_input"]').val();
+        if(window.event.keyCode == 13){
+            if(word.length < 2){
+                alert('검색어를 두 글자 이상 입력해주세요.');
+                return;
+            }else{
+                fn_search_goodsList(word);
+            }
+        }
+    }
+
+    function fn_search_prd_mobile(){
+        let word = $('#gnb_search_input_mobile').val();
+        if(window.event.keyCode == 13){
+            if(word.length < 2){
+                alert('검색어를 두 글자 이상 입력해주세요.');
+                return;
+            }else{
+                fn_search_goodsList(word);
+            }
+        }
+    }
+    function fn_search_goodsList(_search_word){
+        let incoding_search_word = encodeURIComponent(_search_word);
+        const options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchHeaderText: incoding_search_word
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function gnbSearchSubmit(event, form){
+        event.preventDefault();
+        const input = form.querySelector('[name="gnb_search_input"]');
+        if(input.value.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }
+    }
+
+    function fn_partnerMallPage(idx, ptncode) {
+        $.ajax({
+            type: 'post',
+            url: '/auth/setPartnerMall',
+            data: {
+                cmmIdx: idx,
+                cmmPtncode: ptncode
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                if ("0000" === data.result_code) {
+                    location.replace("/main");
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+    <!-- //공통영역1 -->
+
+	<div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            
+
+
+
+
+
+<div id="aside_content" class="right_content">
+  <div class="quick_content">
+    <!-- 퀵 배너 -->
+    
+
+    <!-- //퀵 배너 -->
+
+    <!-- 최근 본 상품 -->
+    
+    <!-- 최근 본 상품 -->
+    <!-- 최근 본 상품 다시 테스트 -->
+    
+      <div class="quick_item">
+        <div class="viewed_products_wrapper">
+          <div class="title">최근 본 상품</div>
+          <div class="viewed_products">
+            <div class="swiper-wrapper">
+
+              
+                
+                
+                  
+                  
+                    
+                      <div class="swiper-slide">
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000234313')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 11">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">테스트상품 11</div>
+                          <div class="price_sale">5,900원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                      </div>
+                    
+                  
+                
+              
+            </div>
+          </div>
+          <div class="swiper_button_type3 swiper-button-next"></div>
+          <div class="swiper_button_type3 swiper-button-prev"></div>
+          <div class="vp_swiper_pagination"></div>
+        </div>
+      </div>
+    
+    <!-- 최근 본 상품 다시 테스트 -->
+
+
+
+    
+      <!-- 재판매 금지 -->
+      <div class="quick_item">
+        <div id="resale_no_layer" class="layer_popup layer_mobile">
+          <div class="layer_mobile_content">
+            <div class="resale_no">
+              <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+            </div>
+            <div class="layer_mobile_btns">
+              <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+            </div>
+          </div>
+          <span class="layer_bg" onclick="closeLayer(this)"></span>
+        </div>
+      </div>
+    <!-- //재판매 금지 -->
+    
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    var swiper = new Swiper(".quick_banner", {
+      pagination: {
+        el: ".qb_swiper_pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".quick_banner_wrapper .swiper-button-next",
+        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+      },
+    });
+
+
+    var swiper = new Swiper(".viewed_products", {
+      autoHeight: true,
+      pagination: {
+        el: ".vp_swiper_pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".viewed_products_wrapper .swiper-button-next",
+        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+      },
+    });
+  });
+</script>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+			<div class="contents">
+                <div class="subpage_title_center">
+                    <h2>대량주문하기</h2>
+                </div>
+
+                <div class="mp_box">
+                    <!-- 등록된 배너 이미지있으면  -->
+                    <div class="large_order_banner">
+                        <div class="swiper-wrapper">
+							
+						</div>
+						<div class="swiper_pagination"></div>
+                    </div>
+                    <!-- //등록된 배너 이미지있으면  -->
+
+                    <div class="cbox_wrap">
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16a1 1 0 0 1-1 1h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 1 1Zm-1 3h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2Zm7-14v20a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V5a1 1 0 0 1 1-1h3V3a1 1 0 0 1 2 0v1h4V3a1 1 0 0 1 2 0v1h4V3a1 1 0 0 1 2 0v1h3a1 1 0 0 1 1 1Zm-2 1h-2v1a1 1 0 0 1-2 0V6h-4v1a1 1 0 0 1-2 0V6h-4v1a1 1 0 0 1-2 0V6H7v19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6Z" fill="#000"/></svg>
+                                    주문 신청방법
+                                </div>
+                            </div>
+                            <div class="content">
+                                <ol class="large_order_step">
+                                    <li>
+                                        <div class="num">01</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m31.504 12.433-8.312-8.312a.89.89 0 0 0-.63-.262H8.313a2.078 2.078 0 0 0-2.078 2.079v26.125a2.078 2.078 0 0 0 2.079 2.078h21.374a2.078 2.078 0 0 0 2.079-2.078v-19a.891.891 0 0 0-.262-.63ZM23.454 6.9l5.272 5.273h-5.273V6.899Zm6.233 25.46H8.313a.297.297 0 0 1-.296-.297V5.939a.297.297 0 0 1 .296-.297h13.36v7.421a.89.89 0 0 0 .89.891h7.422v18.11a.297.297 0 0 1-.297.296Zm-6.495-9.238a.89.89 0 0 1 0 1.258l-3.563 3.563a.89.89 0 0 1-1.258 0l-3.563-3.563a.891.891 0 0 1 1.259-1.258l2.042 2.04v-7.349a.89.89 0 0 1 1.782 0v7.35l2.042-2.041a.89.89 0 0 1 1.259 0Z" fill="#000"/></svg>
+                                        <div class="cnt">주문가이드<br/>다운로드</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">02</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.438 10.984H23.75A5.641 5.641 0 0 0 19 13.59a5.641 5.641 0 0 0-4.75-2.605H3.562a.89.89 0 0 0-.89.891v17.813a.89.89 0 0 0 .89.89H14.25a3.86 3.86 0 0 1 3.86 3.86.89.89 0 0 0 1.78 0 3.86 3.86 0 0 1 3.86-3.86h10.688a.89.89 0 0 0 .89-.89V11.875a.89.89 0 0 0-.89-.89ZM14.25 28.797H4.453V12.766h9.797a3.86 3.86 0 0 1 3.86 3.859v13.702a5.62 5.62 0 0 0-3.86-1.53Zm19.297 0H23.75a5.615 5.615 0 0 0-3.86 1.533V16.625a3.86 3.86 0 0 1 3.86-3.86h9.797v16.032ZM13.537 6.59a6.827 6.827 0 0 1 10.925 0 .891.891 0 0 1-1.424 1.068 5.047 5.047 0 0 0-8.075 0 .891.891 0 0 1-1.425-1.068Z" fill="#000"/></svg>
+                                        <div class="cnt">주문가이드<br/>필독</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">03</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m33.88 8.87-4.75-4.75a.89.89 0 0 0-1.26 0L13.62 18.37a.891.891 0 0 0-.26.63v4.75a.89.89 0 0 0 .89.89H19a.89.89 0 0 0 .63-.26l14.25-14.25a.89.89 0 0 0 0-1.26ZM18.63 22.86h-3.49v-3.49l9.797-9.797 3.49 3.49-9.797 9.796Zm11.058-11.058-3.49-3.49L28.5 6.01l3.49 3.49-2.302 2.302ZM32.953 19v11.875a2.078 2.078 0 0 1-2.078 2.078H7.125a2.078 2.078 0 0 1-2.078-2.078V7.125a2.078 2.078 0 0 1 2.078-2.078H19a.89.89 0 0 1 0 1.781H7.125a.297.297 0 0 0-.297.297v23.75a.297.297 0 0 0 .297.297h23.75a.297.297 0 0 0 .297-.297V19a.89.89 0 0 1 1.781 0Z" fill="#000"/></svg>
+                                        <div class="cnt">주문양식<br/>파일에 내용작성</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">04</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.86 30.875a.89.89 0 0 1-.891.89h-4.157a.89.89 0 0 1-.89-.89v-8.313a.89.89 0 1 1 1.78 0v7.422h3.267a.89.89 0 0 1 .89.891Zm-9.281-9.038a.891.891 0 0 0-1.241.206l-2.244 3.142-2.245-3.142A.89.89 0 1 0 6.4 23.082L9 26.719l-2.6 3.636a.891.891 0 1 0 1.45 1.04l2.244-3.146 2.244 3.141a.89.89 0 0 0 1.24.21.891.891 0 0 0 .209-1.243l-2.6-3.638 2.6-3.639a.888.888 0 0 0-.208-1.243Zm14.772 3.875c-1.61-.464-1.99-.696-1.93-1.174a.977.977 0 0 1 .428-.754c.831-.562 2.62-.271 3.183-.124a.89.89 0 0 0 .455-1.722c-.296-.08-2.983-.743-4.632.368a2.765 2.765 0 0 0-1.2 2.01c-.267 2.106 1.82 2.709 3.202 3.108 1.8.52 2.192.791 2.108 1.449a1.017 1.017 0 0 1-.445.792c-.833.554-2.595.244-3.146.092a.89.89 0 0 0-.476 1.712c.71.19 1.443.289 2.179.297.815 0 1.713-.141 2.428-.615a2.805 2.805 0 0 0 1.234-2.05c.298-2.324-1.917-2.964-3.388-3.389ZM6.234 16.625V5.937A2.078 2.078 0 0 1 8.312 3.86h14.25a.89.89 0 0 1 .63.262l8.312 8.312a.89.89 0 0 1 .261.63v3.562a.89.89 0 0 1-1.78 0v-2.672h-7.423a.89.89 0 0 1-.89-.89V5.64H8.312a.297.297 0 0 0-.297.296v10.688a.89.89 0 0 1-1.78 0Zm17.219-4.453h5.27l-5.27-5.273v5.273Z" fill="#000"/></svg>
+                                        <div class="cnt">작성한 주문파일<br/>등록(엑셀)</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">05</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32.953 7.125v23.75a2.078 2.078 0 0 1-2.078 2.078H20.187a.89.89 0 0 1 0-1.781h10.688a.297.297 0 0 0 .297-.297V7.125a.297.297 0 0 0-.297-.297H7.125a.297.297 0 0 0-.297.297v14.25a.89.89 0 0 1-1.781 0V7.125a2.078 2.078 0 0 1 2.078-2.078h23.75a2.078 2.078 0 0 1 2.078 2.078Zm-15.77 15.996L9.5 30.802l-2.933-2.931a.891.891 0 0 0-1.259 1.258l3.563 3.563a.89.89 0 0 0 1.258 0l8.313-8.313a.891.891 0 0 0-1.259-1.258Z" fill="#000"/></svg>
+                                        <div class="cnt">주문 확인 후<br/>[오류체크] 클릭</div>
+                                    </li>
+                                    <li>
+                                        <div class="num">06</div>
+                                        <svg width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M33.312 15.467c-.579-.604-1.177-1.227-1.417-1.808-.223-.539-.235-1.336-.248-2.179-.02-1.392-.045-2.969-1.101-4.025-1.057-1.057-2.64-1.081-4.026-1.102-.843-.013-1.633-.025-2.18-.248-.58-.24-1.203-.838-1.807-1.417-.986-.944-2.102-2.016-3.533-2.016-1.43 0-2.547 1.072-3.533 2.016-.604.579-1.227 1.177-1.808 1.417-.539.223-1.336.235-2.179.248-1.392.02-2.969.045-4.025 1.102-1.057 1.056-1.081 2.639-1.102 4.025-.013.843-.025 1.633-.248 2.18-.24.58-.838 1.203-1.417 1.807-.944.986-2.016 2.102-2.016 3.533 0 1.43 1.072 2.547 2.016 3.533.579.604 1.177 1.227 1.417 1.808.223.539.235 1.336.248 2.179.02 1.392.045 2.969 1.102 4.026 1.056 1.056 2.639 1.08 4.025 1.1.843.014 1.633.026 2.18.249.58.24 1.203.838 1.807 1.417.986.944 2.102 2.016 3.533 2.016 1.43 0 2.547-1.072 3.533-2.016.604-.579 1.227-1.177 1.808-1.417.539-.223 1.336-.235 2.179-.248 1.392-.02 2.969-.045 4.026-1.101 1.056-1.057 1.08-2.634 1.1-4.026.014-.843.026-1.633.249-2.18.24-.58.838-1.203 1.417-1.807.944-.986 2.016-2.102 2.016-3.533 0-1.43-1.072-2.547-2.016-3.533Zm-1.285 5.834c-.693.721-1.41 1.47-1.781 2.36-.354.852-.368 1.858-.383 2.832-.017 1.105-.035 2.248-.58 2.794-.544.546-1.689.562-2.793.579-.974.015-1.98.03-2.832.383-.89.368-1.633 1.085-2.362 1.78-.779.743-1.585 1.52-2.299 1.52s-1.52-.773-2.3-1.52c-.722-.692-1.47-1.41-2.36-1.78-.853-.354-1.86-.368-2.833-.383-1.104-.017-2.247-.035-2.794-.58-.546-.544-.562-1.689-.579-2.793-.014-.974-.03-1.98-.383-2.832-.368-.89-1.085-1.633-1.78-2.362-.742-.779-1.515-1.585-1.515-2.299s.773-1.52 1.52-2.3c.693-.722 1.41-1.47 1.781-2.36.354-.853.369-1.86.383-2.833.017-1.104.034-2.247.58-2.794.544-.546 1.688-.562 2.793-.579.974-.014 1.98-.03 2.832-.383.89-.368 1.633-1.085 2.362-1.78.776-.745 1.582-1.518 2.296-1.518.714 0 1.52.773 2.3 1.52.722.693 1.47 1.41 2.36 1.781.853.354 1.86.369 2.833.383 1.105.017 2.248.034 2.794.58.546.544.562 1.688.579 2.793.015.974.03 1.98.383 2.832.368.89 1.085 1.633 1.78 2.362.743.779 1.52 1.585 1.52 2.299s-.776 1.517-1.522 2.298Zm-6.46-6.493a.89.89 0 0 1 0 1.259l-8.313 8.312a.89.89 0 0 1-1.258 0l-3.563-3.562a.891.891 0 0 1 1.259-1.259l2.933 2.932 7.683-7.682a.89.89 0 0 1 1.259 0Z" fill="#000"/></svg>
+                                        <div class="cnt">오류 수정 후<br/>[주문신청] 클릭</div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m3.433 10.832 22.007-6.75A2 2 0 0 1 28 6v18a2 2 0 0 1-2.565 1.919L15 22.716V24a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-3.738L3.433 19.17A2.011 2.011 0 0 1 2 17.25v-4.5a2.011 2.011 0 0 1 1.433-1.918ZM15 20.625 26 24V6L15 9.375v11.25ZM9 24h4v-1.898l-4-1.227V24Zm-5-6.75h.014L13 20.01V9.99l-8.986 2.75H4v4.51Z" fill="#000"/></svg>
+                                    주문 신청 시 안내사항
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>1. 주문 파일 등록 시 엑셀파일에 작성한 내용 중 잘못 작성한 경우 화면에서 수정할 수 있습니다</p>
+                                <p>2. 반드시 [주문신청]버튼을 클릭 하셔야 주문이 완료됩니다</p>
+                                <p>3. 승인이 완료된 건은 [배송준비중]으로 표시되며, 우측 하단의 [주문/배송 조회]를 선택하시면 확인하실 수 있습니다</p>
+                                <p>4. 상품 발송 시, 송장표기는 “주문자” 그대로 발송됩니다 [예) 홍길동(○), ○○점 홍길동(Ⅹ)]</p>
+                                <hr class="devide_line">
+                                <div class="btn_list">
+                                    
+									
+
+									
+										
+										
+											<a href="javascript:fnFileDown('guide_v2.zip');" class="btn btn_type5 btn_black_line btn_icon w300">
+										
+									
+                                        <span>주문 가이드 다운로드</span>
+                                        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.146 7.354a.5.5 0 1 1 .708-.708L7.5 10.293V2a.5.5 0 1 1 1 0v8.293l3.646-3.647a.501.501 0 0 1 .708.708l-4.5 4.5a.502.502 0 0 1-.708 0l-4.5-4.5ZM13.5 13h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1Z" fill="#000"/></svg>
+                                    </a>
+                                </div>
+                                <p class="gray_text_color fs_13 mgt10" style="text-align:center;max-width:30rem;"><em>이용가이드ㆍ주문샘플파일</em></p>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 3a13 13 0 1 0 13 13A13.013 13.013 0 0 0 16 3Zm0 24a11 11 0 1 1 11-11 11.012 11.012 0 0 1-11 11Zm-1-10v-7a1 1 0 0 1 2 0v7a1 1 0 0 1-2 0Zm2.5 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" fill="#000"/></svg>
+                                    주문 파일 등록 유의사항
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>1. DRM 문서보안이 적용된 파일이나 암호화 파일인 경우 보안,암호화 해지 후 업로드 해주시기 바랍니</p>
+                                <p>2. 다른 파일에서 내용을 가져올 경우, 서식/함수 등은 반드시 제거하여야 합니다</p>
+                                <hr class="devide_line">
+                                <form id="uploadForm">
+                                    <div class="btn_list">
+                                        <label class="btn btn_input_file btn_type5 btn_black btn_icon w300">
+                                            <input type="file" id="fileInput" name="orderMultiFile">
+                                            <span>엑셀로 업로드하기</span>
+                                            <svg width="12" height="13" viewbox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.854 6.646a.5.5 0 1 1-.708.708L6.5 3.707V12a.5.5 0 0 1-1 0V3.707L1.854 7.354a.5.5 0 1 1-.708-.708l4.5-4.5a.5.5 0 0 1 .708 0l4.5 4.5ZM.5 1h11a.5.5 0 0 0 0-1H.5a.5.5 0 1 0 0 1Z" fill="#fff"/></svg>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="title">
+                                <div>
+                                    <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="m31.927 14.625-1.75-4.375A1.992 1.992 0 0 0 28.323 9H24V8a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h2.125a4 4 0 0 0 7.75 0h6.25a4 4 0 0 0 7.75 0H30a2 2 0 0 0 2-2v-8a.994.994 0 0 0-.073-.375ZM24 11h4.323l1.2 3H24v-3ZM4 9h18v8H4V9Zm6 17a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm10.125-3h-6.25a4 4 0 0 0-7.75 0H4v-4h18v1.539A4.016 4.016 0 0 0 20.125 23ZM24 26a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm6-3h-2.125A4.007 4.007 0 0 0 24 20v-4h6v7Z" fill="#000"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h32v32H0z"/></clipPath></defs></svg>
+                                    주문신청 진행현황
+                                </div>
+                            </div>
+                            <div class="content">
+                                <ul class="dot">
+                                    <li>협력회사에서 승인완료하면 [배송준비중]상태로 표기되며, 배송은 우측 [주문/배송조회]메뉴에서 확인 가능합니다</li>
+                                    <li>주문취소는 "주문접수" 상태에서 개별 또는 일괄적으로 취소가 가능합니다</li>
+                                    <li>추후 취소건은 고객센터에 별도 문의 바랍니다</li>
+                                </ul>
+                                <hr class="devide_line">
+                                <form action="">
+                                    <div class="btn_list">
+                                        <a href="/mypage/orderList" class="btn btn_type5 btn_black_line btn_icon w300">
+                                            주문/배송조회
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mp_box">
+                    <div class="table_top">
+                        <div class="title">업로드된 주문정보 목록</div>
+                        <div class="r">
+                            <p>* 엑셀파일 업로드 후 반드시 [주문신청] 을 하셔야 합니다.</p>
+                        </div>
+                    </div>
+                    <div class="default_table">
+                        <div class="table">
+                            <table>
+                                <colgroup>
+                                    <col>
+                                    <col style="width:15rem;">
+                                    <col style="width:15rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:7.5rem;">
+                                    <col style="width:15rem;">
+                                </colgroup>
+                                <thead class="size_sm">
+                                    <tr>
+                                        <th rowspan="2">등록파일명 (업로드 일련번호)</th>
+                                        <th rowspan="2">등록일</th>
+                                        <th rowspan="2">처리상태<br/>오류유무</th>
+                                        <th colspan="4">합계</th>
+                                        <th rowspan="2">삭제</th>
+                                    </tr>
+                                    <tr>
+                                        <th>주문건수</th>
+                                        <th>승인</th>
+                                        <th>취소</th>
+                                        <th>신청</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+									
+										
+										
+											<tr>
+												<td colspan="8">주문건이 없습니다.</td>
+											</tr>
+										
+									
+
+								</tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+		</div><!-- //content -->
+	</div>
+	<form name="fileDownFrm" id="fileDownFrm" method="post">
+		<input type="hidden" name="fileType" id="fileType" />
+		<input type="hidden" name="fileName" id="fileName" />
+	</form>
+	<!-- 공통영역3 -->
+    
+
+
+
+<div id="cate_all_mobile" class="layer_popup layer_fullpage">
+
+<button type="button" class="fullpage_title" onclick="toggleLayer('#cate_all_mobile');">카테고리</button>
+
+
+  <div class="fullpage_top_links">
+    <div class="item item_search">
+      <a href="javascript:;">
+        <span class="icon_hd_search"></span>
+        <span class="sound_only">검색</span>
+      </a>
+    </div>
+    
+      <div class="item item_cart">
+        <a href="javascript:fn_moveCart();">
+          <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+          <span class="sound_only">장바구니</span>
+        </a>
+      </div>
+    
+  </div>
+
+  <div class="fullpage_inner">
+
+  
+    
+      <div class="cate_all">
+        
+      </div>
+      <div class="cate_sub">
+      </div>
+    
+    
+  
+</div>
+<ul class="cate_all_member">
+  <li><a href="javascript:fnLogout();">로그아웃</a></li>
+  <li><a href="javascript:fnMoveNotice();">고객센터</a></li>
+</ul>
+</div>
+<script>
+    var _mobile_ctgList = [];
+  
+    fn_setCategoryMobile(_mobile_ctgList);
+  
+    function fn_setCategoryMobile(_valList) {
+      for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+        var categor_code_name = _valList[ct_i].code_name;
+        var categor_cty_code = _valList[ct_i].cty_code;
+        var categor_cty_depth = _valList[ct_i].cty_depth;
+        if ("2" == categor_cty_depth) {
+          var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+          var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage(' + categor_cty_code + ');">' + categor_code_name + '</a></div>';
+          $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
+        }
+      }
+    }
+  
+    // 최초 모바일 탭 클릭
+    $(document).ready(function () {
+      var _active_mobile_cate = $(".cate a.active").attr("data-cate");
+      $(".cate_mobile_" + _active_mobile_cate).css("display", "");
+    });
+  </script>
+  
+
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+    <div class="mbf_inner">
+
+        <c:if test="false" >
+            <div class="left">
+                <button type="button" class="btn v_mobile chat">ì±ë´ìë´</button>
+            </div>
+        </c:if>
+        <div class="right">
+            <c:if test="false" >
+                <button class="btn v_mobile quick" onclick="openLayer('#quick_banner_layer')" style="background-image: url('/ib2bmall/designImg/');">íµë°°ë ì´ê¸°</button>
+            </c:if>
+            <button class="btn v_mobile resale" onclick="openLayer('#resale_no_layer')" >ì¬íë§¤ ê¸ì§</button>
+            <button type="button" class="btn to_top" onclick="toTop();">ìë¨ì¼ë¡</button>
+        </div>
+    </div>
+</div>
+    
+
+
+<!-- 푸터  -->
+<div id="footer">
+    <div class="ft_inner">
+        <div id="ft_top">
+            <div id="ft_logo">
+                <img src="/resources/static/dist/images/common/ft_logo.png" alt="SHINSEGAE">
+            </div>
+            <div id="ft_links">
+                <div class="item"><a href="/mypage/agreement">이용약관</a></div>
+                <div class="item"><a href="/mypage/policy">개인정보처리방침</a></div>
+                <div class="item cb"><a href="https://www.ssgb2e.com/about.ss" target="_blank" rel="noopener noreferrer">법인영업</a></div>
+            </div>
+        </div>
+        <div id="ft_bottom">
+            <div id="ft_company">
+                (주)신세계
+            </div>
+            <div id="ft_info">
+                서울시 서초구 신반포로 194 고속버스터미널 신관 대표이사 : 박주형 | 개인정보관리 책임자 : 김선진  | 사업자등록번호 : 201-81-32195 고객만족센터 : TEL : 02-3406-6900 | 운영시간 : 평일 10:00 ~ 17:00 (점심시간 12:00~13:00) 
+
+            </div>
+            <div id="ft_copy">Copyright SHINSEGAE. All Rights Reserved.</div>
+        </div>
+    </div>
+</div>
+<!-- //푸터  -->
+
+<!-- 모바일 하단 플로팅  -->
+<div id="floating_wrap">
+    <div class="floating_inner">
+        <div class="item all"><a href="javascript:;" onclick="toggleLayer('#cate_all_mobile');">전체</a></div>
+        <!-- 전체가 없는 경우 고객센터 노출 -->
+        <!-- <div class="item cs"><a href="javascript:;">고객센터</a></div> -->
+        <div class="item del"><a href="/mypage/orderList">배송</a></div>
+        <div class="item home"><a href="/main">홈</a></div>
+        <div class="item my"><a href="javascript:fnMoveMypage();">MY</a></div>
+        <div class="item viewd"><a href="javascript:;" onclick="toggleLayer('#viewed_products_mobile');">최근본</a></div>
+    </div>
+</div>
+<!-- //모바일 하단 플로팅  -->
+    <!-- //공통영역3 -->
+</div><!-- //container -->
+
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+var ads_layer = document.getElementById('ads_layer');
+
+function execDaumPostcode(elm) {
+    const target = document.getElementById(elm)
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            } else {
+            }
+            target.querySelector(".i_address_zip").value = data.zonecode;
+            target.querySelector(".i_address_basic").value = addr;
+            target.querySelector(".i_address_detail").value= '';
+            target.querySelector(".i_address_detail").focus();
+            closeLayer(ads_layer);
+        },
+        width : '100%',
+        height : '100%',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>
+</body>
+</html>

@@ -235,124 +235,189 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //체크박스 전체 체크 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.label_control input[type="checkbox"]').forEach(function (check) {
-        check.addEventListener('change', function (event) {
-            function isVisible(element) {
-                return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
-            }
-            var target = event.target;
-            var labelControlParent = check.closest('.label_control_parent');
-            var checkAllParentCheckbox = labelControlParent ? labelControlParent.querySelector('.check_all_parent') : null;
-            if (target.matches('input[type="checkbox"]') && target.classList.contains('check_all')) {
-                var isChecked = target.checked;
-                var checkboxes = check.closest('.label_control').querySelectorAll('input[type="checkbox"]');
-                checkboxes.forEach(function (checkbox) {
-                    if (isVisible(checkbox) && !checkbox.disabled) {
-                        checkbox.checked = isChecked;
+    var checkboxList = document.querySelectorAll('.label_control input[type="checkbox"]');
+
+    // NodeList.forEach IE11 미지원 → 일반 for 루프 사용
+    for (var i = 0; i < checkboxList.length; i++) {
+        (function (check) {
+            check.addEventListener('change', function (event) {
+
+                function isVisible(element) {
+                    return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+                }
+
+                function closestByClass(el, className) {
+                    while (el && el !== document) {
+                        if (el.classList && el.classList.contains(className)) {
+                            return el;
+                        }
+                        el = el.parentElement;
                     }
-                });
-                if (!isChecked) {
-                    target.checked = false; // check_all 비활성화
+                    return null;
+                }
+
+                function matches(el, selector) {
+                    var proto = Element.prototype;
+                    var func = proto.matches || proto.msMatchesSelector || proto.webkitMatchesSelector;
+                    return func.call(el, selector);
+                }
+
+                var target = event.target || event.srcElement;
+                var labelControlParent = closestByClass(check, 'label_control_parent');
+                var checkAllParentCheckbox = labelControlParent ? labelControlParent.querySelector('.check_all_parent') : null;
+
+                if (matches(target, 'input[type="checkbox"]') && target.classList.contains('check_all')) {
+                    var isChecked = target.checked;
+                    var labelControl = closestByClass(check, 'label_control');
+                    if (labelControl) {
+                        var checkboxes = labelControl.querySelectorAll('input[type="checkbox"]');
+                        for (var j = 0; j < checkboxes.length; j++) {
+                            var checkbox = checkboxes[j];
+                            if (isVisible(checkbox) && !checkbox.disabled) {
+                                checkbox.checked = isChecked;
+                            }
+                        }
+                    }
+
+                    if (!isChecked) {
+                        target.checked = false;
+                        if (checkAllParentCheckbox) {
+                            checkAllParentCheckbox.checked = false;
+                        }
+                    }
+
+                } else if (matches(target, 'input[type="checkbox"]:not(.check_all)') && !target.checked) {
+                    var labelControl = closestByClass(check, 'label_control');
+                    if (labelControl) {
+                        var checkAllCheckbox = labelControl.querySelector('.check_all');
+                        if (checkAllCheckbox && !checkAllCheckbox.classList.contains('optional')) {
+                            checkAllCheckbox.checked = false;
+                        }
+                    }
                     if (checkAllParentCheckbox) {
-                        checkAllParentCheckbox.checked = false; // check_all 비활성화
+                        checkAllParentCheckbox.checked = false;
                     }
                 }
-            } else if (target.matches('input[type="checkbox"]:not(.check_all)') && !target.checked) {
-                var checkAllCheckbox = check.closest('.label_control').querySelector('.check_all');
-                if (checkAllCheckbox && !checkAllCheckbox.classList.contains('optional')) {
-                    checkAllCheckbox.checked = false; // check_all 비활성화
-                }
-                if (checkAllParentCheckbox) {
-                    checkAllParentCheckbox.checked = false; // check_all 비활성화
-                }
-            }
-        });
-    });
+            });
+        })(checkboxList[i]);
+    }
 });
+
 
 // 이용약관 체크박스 제어
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.terms_list .item input[type="checkbox"]').forEach(function (check) {
-        var chk_service = document.querySelector('input[data-title="chk_service"]');
-        var chk_adv = document.querySelector('input[data-title="chk_adv"]');
-        var chk_sms = document.querySelector('input[data-title="chk_sms"]');
-        var chk_email = document.querySelector('input[data-title="chk_email"]');
+    var checkboxList = document.querySelectorAll('.terms_list .item input[type="checkbox"]');
 
-        check.addEventListener('change', function (event) {
+    // 체크박스 루프
+    for (var i = 0; i < checkboxList.length; i++) {
+        (function (check) {
+            var chk_service = document.querySelector('input[data-title="chk_service"]');
+            var chk_adv = document.querySelector('input[data-title="chk_adv"]');
+            var chk_sms = document.querySelector('input[data-title="chk_sms"]');
+            var chk_email = document.querySelector('input[data-title="chk_email"]');
 
-            var dataTitle = check.dataset.title;
+            check.addEventListener('change', function (event) {
+                var target = event.target || event.srcElement;
 
-            if(dataTitle === 'chk_service'){
-                chk_adv.checked = event.target.checked;
-                chk_sms.checked = event.target.checked;
-                chk_email.checked = event.target.checked;
-            }
+                // IE11에서도 안전한 dataset 접근법
+                var dataTitle = check.getAttribute('data-title');
 
-            if(dataTitle === 'chk_adv' && event.target.checked){
-                chk_service.checked = true;
-            }
+                if (dataTitle === 'chk_service') {
+                    chk_adv.checked = target.checked;
+                    chk_sms.checked = target.checked;
+                    chk_email.checked = target.checked;
+                }
 
-            if(dataTitle === 'chk_sms' || dataTitle === 'chk_email'){
-                var checkItmes = check.closest('.terms_inline');
-                var itemsAll = checkItmes.querySelectorAll('.check_item input[type="checkbox"]:checked'); // 체크 항목 모두 찾기
-
-                if(event.target.checked){
+                if (dataTitle === 'chk_adv' && target.checked) {
                     chk_service.checked = true;
-                    chk_adv.checked = true;
-                }else{
-                    if(itemsAll.length === 0){
-                        chk_adv.checked = false;
+                }
+
+                if (dataTitle === 'chk_sms' || dataTitle === 'chk_email') {
+
+                    // closest('.terms_inline') 대체
+                    var el = check;
+                    var checkItems = null;
+                    while (el && el !== document) {
+                        if (el.classList && el.classList.contains('terms_inline')) {
+                            checkItems = el;
+                            break;
+                        }
+                        el = el.parentElement;
+                    }
+
+                    if (target.checked) {
+                        chk_service.checked = true;
+                        chk_adv.checked = true;
+                    } else {
+                        if (checkItems) {
+                            var checkedInputs = checkItems.querySelectorAll('.check_item input[type="checkbox"]:checked');
+                            if (checkedInputs.length === 0) {
+                                chk_adv.checked = false;
+                            }
+                        }
                     }
                 }
-            }
-        });
-    });
+            });
+        })(checkboxList[i]);
+    }
 });
+
 
 /* 상품 탭 컨트롤 */
 function itemSort(button, group, target) {
-    // 버튼 active
-    var sortBtnsContainer = button.closest('.sort_btns');
+    // 버튼 active 처리
+    var sortBtnsContainer = button;
+    while (sortBtnsContainer && sortBtnsContainer !== document) {
+        if (sortBtnsContainer.classList.contains('sort_btns')) break;
+        sortBtnsContainer = sortBtnsContainer.parentElement;
+    }
+
     if (sortBtnsContainer) {
         var sortButtons = sortBtnsContainer.querySelectorAll('a');
-        Array.prototype.forEach.call(sortButtons, function(item) {
-            item.classList.remove('active');
-        });
+        for (var i = 0; i < sortButtons.length; i++) {
+            sortButtons[i].classList.remove('active');
+        }
         button.classList.add('active');
     }
 
     // 상품 소팅
     var itemGroup = document.querySelectorAll('[data-itemgroup="' + group + '"]');
     var itemGroupSub = document.querySelectorAll('[data-itemgroup-sub="' + target + '"]');
-    
+
     if (target === 'all') {
-        Array.prototype.forEach.call(itemGroup, function(item) {
-            item.style.display = 'block';
-        });
+        for (var i = 0; i < itemGroup.length; i++) {
+            itemGroup[i].style.display = 'block';
+        }
         return false;
     }
-    
-    Array.prototype.forEach.call(itemGroup, function(item) {
-        item.style.display = 'none';
-    });
-    
-    Array.prototype.forEach.call(itemGroupSub, function(item) {
-        item.style.display = 'block';
-    });
+
+    for (var i = 0; i < itemGroup.length; i++) {
+        itemGroup[i].style.display = 'none';
+    }
+
+    for (var i = 0; i < itemGroupSub.length; i++) {
+        itemGroupSub[i].style.display = 'block';
+    }
 
     // 상품이 슬라이드인 경우 슬라이드 초기화
-    var mainSection = button.closest('.main_section');
+    var mainSection = button;
+    while (mainSection && mainSection !== document) {
+        if (mainSection.classList.contains('main_section')) break;
+        mainSection = mainSection.parentElement;
+    }
+
     if (mainSection && mainSection.querySelector('.slide')) {
-        // swipers 전역 변수에 대한 안전한 처리
-        if (window.swipers && Array.isArray(window.swipers)) {
-            Array.prototype.forEach.call(window.swipers, function(swiper) {
+        if (window.swipers && Object.prototype.toString.call(window.swipers) === '[object Array]') {
+            for (var i = 0; i < window.swipers.length; i++) {
+                var swiper = window.swipers[i];
                 if (swiper && typeof swiper.update === 'function') {
                     swiper.update();
                 }
-            });
+            }
         }
     }
 }
+
 
 
 //퀵메뉴, 상단으로 버튼 모바일 footer밑으로 안넘어가게 제어
@@ -425,13 +490,32 @@ function openLayer(target) {
 
 function closeLayer(button, target) {
     if (!target && button) {
-        var closestLayerPopup = button.closest('.layer_popup');
-        closestLayerPopup.classList.remove('show');
-    } else {
-        document.getElementById(target).classList.remove('show');
+        var el = button;
+        var closestLayerPopup = null;
+        while (el && el !== document) {
+            if (el.classList && el.classList.contains('layer_popup')) {
+                closestLayerPopup = el;
+                break;
+            }
+            el = el.parentElement;
+        }
+
+        if (closestLayerPopup) {
+            closestLayerPopup.classList.remove('show');
+        }
+    } else if (target) {
+        var targetEl = document.getElementById(target);
+        if (targetEl) {
+            targetEl.classList.remove('show');
+        }
     }
-    document.querySelector('html').classList.remove('mobile_hidden');
+
+    var htmlEl = document.querySelector('html');
+    if (htmlEl) {
+        htmlEl.classList.remove('mobile_hidden');
+    }
 }
+
 
 
 // 검색 바텀 시트 제어
