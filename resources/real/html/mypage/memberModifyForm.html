@@ -1489,15 +1489,14 @@
         var reButton = document.getElementById(reButtonId);
         var countdownSpan = document.getElementById(countdownId);
         certifyNumberBox.style.display = 'block';
-        secondsLeft = 180;
+        var secondsLeft = 180;
         checkCnt = 0;
 
         countdownInterval = setInterval(function() {
             secondsLeft--;
             var minutes = Math.floor(secondsLeft / 60);
             var seconds = secondsLeft % 60;
-            var paddedSeconds = seconds < 10 ? '0' + seconds : seconds;
-            countdownSpan.textContent = minutes+":"+paddedSeconds;
+            countdownSpan.textContent = minutes+':'+(seconds < 10 ? '0' : '') + seconds;
 
             if (secondsLeft <= 0) {
                 clearInterval(countdownInterval);
@@ -1686,8 +1685,7 @@
             secondsLeft2--;
             var minutes = Math.floor(secondsLeft2 / 60);
             var seconds = secondsLeft2 % 60;
-            var paddedSeconds = seconds < 10 ? '0' + seconds : seconds;
-            countdownSpan.textContent = minutes+":"+paddedSeconds;
+            countdownSpan.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 
             if (secondsLeft2 <= 0) {
                 clearInterval(countdownInterval2);
@@ -1753,7 +1751,7 @@
         
         var emailValid = $("#to_email").valid();
 
-        if (ptncodeValid &&emailValid) {
+        if (ptncodeValid && emailValid) {
             fnEmailSend('emailModForm', emailSend);
         }
     });
@@ -1764,7 +1762,7 @@
         
         var emailValid = $("#to_email").valid();
 
-        if (ptncodeValid &&emailValid) {
+        if (ptncodeValid && emailValid) {
             fnEmailSend('emailModForm', emailSend);
         }
     });
@@ -1996,11 +1994,10 @@
                     if(list[i].cmmAdtp !== 'D'){
                         temHtml += '<div><button type="button" onclick="fnDeleteDelivery(\'' + list[i].cmmIdx + '\')">삭제</button></div>';
                     }
-                    temHtml += '</div>' +
-                            '</div>' +
-                        '</label>';
                     
+                    temHtml += '</div></div></label>';
                     row.innerHTML = temHtml;
+
                     deliveryBody.appendChild(row);
                 }
             },
@@ -2055,6 +2052,7 @@
     function fnValidFocus(attr) {
         attr.focus();
     }
+
     function fnUpdateMemberInfo(){
         var befSms = 0;
         var befmbreception = 0;
@@ -2080,19 +2078,23 @@
             success : function(data) {
                 if ("0000" === data.result_code) {
                     var now = new Date();
-                    if(befSms!=$("#mbsms").val()&&befmbreception!=$("#mbreception").val()){
-                        box_confirm('문자메시지 및 이메일 수신 동의 변경이 완료되었습니다.<br>ㆍ변경일시:'+now.getFullYear() + '년 ' + (now.getMonth()+1) + '월' + now.getDate() + '일<br>ㆍ전송자:테스트','info','',fnReload);
-                    }else if(befSms!=$("#mbsms").val()){
+                    var changedYear = now.getFullYear();
+                    var changedMonth = now.getMonth() + 1;
+                    var changedDate = now.getDate();
+                    
+                    if(befSms != $("#mbsms").val() && befmbreception != $("#mbreception").val()){
+                        box_confirm('문자메시지 및 이메일 수신 동의 변경이 완료되었습니다.<br>ㆍ변경일시:' + changedYear + '년 ' + changedMonth + '월 ' + changedDate + '일<br>ㆍ전송자:테스트','info','',fnReload);
+                    }else if(befSms != $("#mbsms").val()){
                         if("1"==$("#mbsms").val()){
-                            box_confirm('문자메시지 수신 동의가 완료되었습니다.<br>ㆍ동의일시:'+now.getFullYear() + '년 ' + (now.getMonth()+1) + '월' + now.getDate() + '일<br>ㆍ전송자:테스트','info','',fnReload);
+                            box_confirm('문자메시지 수신 동의가 완료되었습니다.<br>ㆍ동의일시:' + changedYear + '년 ' + changedMonth + '월 ' + changedDate + '일<br>ㆍ전송자:테스트','info','',fnReload);
                         }else if("0"==$("#mbsms").val()){
-                            box_confirm('문자메시지 수신 거부가 완료되었습니다.<br>ㆍ거부일시:'+now.getFullYear() + '년 ' + (now.getMonth()+1) + '월' + now.getDate() + '일<br>ㆍ전송자:테스트','info','',fnReload);
+                            box_confirm('문자메시지 수신 거부가 완료되었습니다.<br>ㆍ거부일시:' + changedYear + '년 ' + changedMonth + '월 ' + changedDate + '일<br>ㆍ전송자:테스트','info','',fnReload);
                         }
-                    }else if(befmbreception!=$("#mbreception").val()){
+                    }else if(befmbreception != $("#mbreception").val()){
                         if("1"==$("#mbreception").val()){
-                            box_confirm('이메일 수신 동의가 완료되었습니다.<br>ㆍ동의일시:'+now.getFullYear() + '년 ' + (now.getMonth()+1) + '월' + now.getDate() + '일<br>ㆍ전송자:테스트','info','',fnReload);
+                            box_confirm('이메일 수신 동의가 완료되었습니다.<br>ㆍ동의일시:' + changedYear + '년 ' + changedMonth + '월 ' + changedDate + '일<br>ㆍ전송자:테스트','info','',fnReload);
                         }else if("0"==$("#mbreception").val()){
-                            box_confirm('이메일 수신 거부가 완료되었습니다.<br>ㆍ거부일시:'+now.getFullYear() + '년 ' + (now.getMonth()+1) + '월' + now.getDate() + '일<br>ㆍ전송자:테스트','info','',fnReload);
+                            box_confirm('이메일 수신 거부가 완료되었습니다.<br>ㆍ거부일시:' + changedYear + '년 ' + changedMonth + '월 ' + changedDate + '일<br>ㆍ전송자:테스트','info','',fnReload);
                         }
                     } else {
                         box_confirm(data.result_msg,'info','알림',fnReload);
@@ -2120,9 +2122,7 @@
         };
         fnCmmSubmitDynamicForm(options);
     }
-
 </script>
-
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
