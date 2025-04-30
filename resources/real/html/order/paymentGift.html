@@ -3903,12 +3903,12 @@
 
     function fn_setCategory(_valList) {
         for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-            let categor_code_name = _valList[ct_i].code_name;
-            let categor_cty_code = _valList[ct_i].cty_code;
-            let categor_cty_depth = _valList[ct_i].cty_depth;
+            var categor_code_name = _valList[ct_i].code_name;
+            var categor_cty_code = _valList[ct_i].cty_code;
+            var categor_cty_depth = _valList[ct_i].cty_depth;
             if ("2" == categor_cty_depth) {
-                let parentCode = "cate_" + categor_cty_code.substring(0, 2);
-                let ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                var parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                var ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
                 $("." + parentCode).append(ctyDepthSecHTML);
             }
         }
@@ -3926,7 +3926,7 @@
 
 
     function fn_linkCategoryPage(_url) {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -3939,7 +3939,7 @@
         fnCmmSubmitDynamicForm(options);
     }
     function fn_linkCategoryPricePage(_url) {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -3953,7 +3953,7 @@
     }
 
     function fn_moveCart() {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/order/cart"
@@ -3963,7 +3963,7 @@
     }
 
     function fn_goodsCartIn(_prid){
-        const _mbst = $("#mbst").val();
+        var _mbst = $("#mbst").val();
         if("2" != _mbst){
             alert("현재 구매가 불가능합니다.");
             return;
@@ -3981,15 +3981,15 @@
                     fn_moveCart();
                 }else if(null != data && "8888" == data.cmmMemo){
                     // 장바구니에 담기지 않고 상세페이지로 이동
-                    const target_url = "/product/goodsDetail";
-                    let results_url = window.location.origin + target_url;
-                    const options = {
+                    var target_url = "/product/goodsDetail";
+                    var results_url = window.location.origin + target_url;
+                    var options = {
                         formId: "mainForm",
                         method: "get",
                         params: {
                             prid: _prid
                         },
-                        action: results_url,
+                        action: results_url
                     };
                     fnCmmSubmitDynamicForm(options);
                 }else if(null != data && "7777" == data.cmmMemo){
@@ -4006,7 +4006,7 @@
 
     //공지사항 이동
     function fnMoveNotice() {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/noticeList"
@@ -4016,11 +4016,11 @@
 
     //마이페이지 메인 이동
     function fnMoveMypage() {
-        const _mbst = '2';
+        var _mbst = '2';
         if("2" != _mbst){
             return;
         }
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/mypageList"
@@ -4030,11 +4030,11 @@
 
     //좋아요(나의 찜) 이동
     function fnMoveWishList() {
-        const _mbst = '2';
+        var _mbst = '2';
         if("2" != _mbst){
             return;
         }
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/wishList"
@@ -4042,7 +4042,7 @@
         fnCmmSubmitDynamicForm(options);
     }
     function fn_promoExhibitList(){
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/promoExhibitList"
@@ -4054,7 +4054,7 @@
     function fn_exhibitDetailHeader(_val) {
         $("#curPage").val(1);
         $("#searchViewCnt").val("20");
-        const options = {
+        var options = {
             formId: "goodsForm",
             method: "get",
             action: "/product/promoExhibitDetailList",
@@ -4070,7 +4070,7 @@
     }
 
     function fn_promoBrandList(){
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/promoBrandList"
@@ -4082,7 +4082,7 @@
     function fn_BrandDetailHeader(_val) {
         $("#curPage").val(1);
         $("#searchViewCnt").val("20");
-        const options = {
+        var options = {
             formId: "goodsForm",
             method: "get",
             action: "/product/promoBrandDetailList",
@@ -4098,7 +4098,7 @@
     }
 
     function fn_search_prd_trigger(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4107,7 +4107,7 @@
         }
     }
     function fn_search_prd_trigger_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4117,7 +4117,7 @@
     }
 
     function fn_search_prd(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4129,7 +4129,7 @@
     }
 
     function fn_search_prd_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4140,8 +4140,8 @@
         }
     }
     function fn_search_goodsList(_search_word){
-        let incoding_search_word = encodeURIComponent(_search_word);
-        const options = {
+        var incoding_search_word = encodeURIComponent(_search_word);
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -4155,7 +4155,7 @@
 
     function gnbSearchSubmit(event, form){
         event.preventDefault();
-        const input = form.querySelector('[name="gnb_search_input"]');
+        var input = form.querySelector('[name="gnb_search_input"]');
         if(input.value.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -8556,12 +8556,12 @@
 
   function fn_setCategoryMobile(_valList) {
     for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-      let categor_code_name = _valList[ct_i].code_name;
-      let categor_cty_code = _valList[ct_i].cty_code;
-      let categor_cty_depth = _valList[ct_i].cty_depth;
+      var categor_code_name = _valList[ct_i].code_name;
+      var categor_cty_code = _valList[ct_i].cty_code;
+      var categor_cty_depth = _valList[ct_i].cty_depth;
       if ("2" == categor_cty_depth) {
-        let parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
-        let ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+        var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+        var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
         $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
       }
     }
@@ -8569,7 +8569,7 @@
 
   // 최초 모바일 탭 클릭
   $(document).ready(function () {
-    let _active_mobile_cate = $(".cate a.active").attr("data-cate");
+    var _active_mobile_cate = $(".cate a.active").attr("data-cate");
     $(".cate_mobile_" + _active_mobile_cate).css("display", "");
   });
 </script>
@@ -8868,7 +8868,7 @@
 
         // 포인트 최대입력 금액 설정
         $("#requsepoint").on('input', function() {
-            const totalPoint = Number('0');
+            var totalPoint = Number('0');
 
             if (Number(fnCmmSetNumberFormat($(this).val())) > totalPoint) {
                 fnUseAllPrice('1');
@@ -8879,7 +8879,7 @@
 
         // 마일리지 최대입력 금액 설정
         $("#requsemileage").on('input', function() {
-            const totalMileage = Number('0');
+            var totalMileage = Number('0');
 
             if (Number(fnCmmSetNumberFormat($(this).val())) > totalMileage) {
                 fnUseAllPrice('2');
@@ -8909,19 +8909,19 @@
     }
 
     function fnSetDelivery() {
-        const idx = $("#address_form #layer_idx");
-        const name = $("#address_form #layer_name");
-        const mobile = $("#address_form #layer_mobile");
-        const zip = $("#address_form #layer_zip");
-        const addr1 = $("#address_form #layer_addr1");
-        const addr2 = $("#address_form #layer_addr2");
+        var idx = $("#address_form #layer_idx");
+        var name = $("#address_form #layer_name");
+        var mobile = $("#address_form #layer_mobile");
+        var zip = $("#address_form #layer_zip");
+        var addr1 = $("#address_form #layer_addr1");
+        var addr2 = $("#address_form #layer_addr2");
 
         if ("" === fnToNotNull(name.val())) {
             box_alert("이름을 입력해주세요", 'info', '', fnValidFocus, name);
             return;
         }
 
-        const cellPhonelOptions = {
+        var cellPhonelOptions = {
             name: "휴대폰번호",
             value: mobile.val(),
             message: "휴대폰 형식을 확인해주세요",
@@ -8964,7 +8964,7 @@
                 loading('show');
             },
             success : function(data) {
-                const resultCode = fnToNotNull(data.result_code);
+                var resultCode = fnToNotNull(data.result_code);
 
                 if ("0000" === resultCode) {
                     closeLayer('', 'address_form');
@@ -8974,7 +8974,7 @@
                 }
             },
             complete : function() {
-                setTimeout(() => {
+                setTimeout(function(){
                     loading('hide');
                 }, 1000);
             }
@@ -8986,7 +8986,7 @@
     }
 
     function fnGetDeliveryData() {
-        const deliType = fnToNotNull($("#tmpReqDeliType").val());
+        var deliType = fnToNotNull($("#tmpReqDeliType").val());
 
         $.ajax({
             type : 'post',
@@ -8996,15 +8996,15 @@
 
             },
             success : function(data) {
-                let tbodyId;
+                var tbodyId;
                 if ("1" === deliType) {
                     tbodyId = 'tbodySendAddressField';
                 } else {
                     tbodyId = 'tbodyRecvAddressField';
                 }
 
-                const deliData = data.deliveryDetail;
-                const deliveryBody = document.getElementById(tbodyId);
+                var deliData = data.deliveryDetail;
+                var deliveryBody = document.getElementById(tbodyId);
 
                 if (deliveryBody) {
                     while (deliveryBody.firstChild) {
@@ -9012,79 +9012,75 @@
                     }
                 }
 
-                const row = document.createElement('tr');
+                var row = document.createElement('tr');
 
                 if ("1" === deliType) {
                     if (deliData == null) {
-                        row.innerHTML = `
-                            <th class="align_top">보내는 분</th>
-                            <td>
-                                <div class="address_basic">
-                                    <div class="cnt">
-                                        <div class="text">주문자 정보가 없습니다. 주문자 정보를 등록해주세요.</div>
-                                    </div>
-                                    <div class="btn_list">
-                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_info'); fnGetDeliveryList('1');">등록</button>
-                                    </div>
-                                </div>
-                            </td>
-                        `;
+                        row.innerHTML = 
+                            '<th class="align_top">보내는 분</th>' +
+                            '<td>' +
+                                '<div class="address_basic">' +
+                                    '<div class="cnt">' +
+                                        '<div class="text">주문자 정보가 없습니다. 주문자 정보를 등록해주세요.</div>' +
+                                    '</div>' +
+                                    '<div class="btn_list">' +
+                                        '<button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer(\'#address_info\'); fnGetDeliveryList(\'1\');">등록</button>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</td>';
                     } else {
-                        row.innerHTML = `
-                            <th class="align_top">보내는 분</th>
-                            <td>
-                                <div class="address_basic">
-                                    <input type="hidden" id="oizip" name="oizip" value="` + deliData.cmmZipcode + `"/>
-                                    <input type="hidden" id="oiaddr1" name="oiaddr1" value="` + deliData.cmmAddress1 + `"/>
-                                    <input type="hidden" id="oiaddr2" name="oiaddr2" value="` + deliData.cmmAddress2 + `"/>
-                                    <input type="hidden" id="oiname" name="oiname" value="` + deliData.cmmName + `"/>
-                                    <input type="hidden" id="oihp" name="oihp" value="` + deliData.cmmMbhp + `"/>
-                                    <div class="cnt">
-                                        <div class="name" id="divAds1">` + deliData.cmmName + ` / ` + deliData.cmmMbhp + `</div>
-                                        <div class="ads" id="divAds2">[` + deliData.cmmZipcode + `] ` + deliData.cmmAddress1 + `, ` + deliData.cmmAddress2 + `</div>
-                                    </div>
-                                    <div class="btn_list">
-                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_info'); fnGetDeliveryList('1');">변경</button>
-                                    </div>
-                                </div>
-                            </td>
-                        `;
+                        row.innerHTML = 
+                            '<th class="align_top">보내는 분</th>' +
+                            '<td>' +
+                                '<div class="address_basic">' +
+                                    '<input type="hidden" id="oizip" name="oizip" value="' + deliData.cmmZipcode + '"/>' +
+                                    '<input type="hidden" id="oiaddr1" name="oiaddr1" value="' + deliData.cmmAddress1 + '"/>' +
+                                    '<input type="hidden" id="oiaddr2" name="oiaddr2" value="' + deliData.cmmAddress2 + '"/>' +
+                                    '<input type="hidden" id="oiname" name="oiname" value="' + deliData.cmmName + '"/>' +
+                                    '<input type="hidden" id="oihp" name="oihp" value="' + deliData.cmmMbhp + '"/>' +
+                                    '<div class="cnt">' +
+                                        '<div class="name" id="divAds1">' + deliData.cmmName + ' / ' + deliData.cmmMbhp + '</div>' +
+                                        '<div class="ads" id="divAds2">[' + deliData.cmmZipcode + '] ' + deliData.cmmAddress1 + ', ' + deliData.cmmAddress2 + '</div>' +
+                                    '</div>' +
+                                    '<div class="btn_list">' +
+                                        '<button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer(\'#address_info\'); fnGetDeliveryList(\'1\');">변경</button>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</td>';
                     }
                 } else {
                     if (deliData == null) {
-                        row.innerHTML = `
-                            <th class="align_top">배송지</th>
-                            <td>
-                                <div class="address_basic">
-                                    <div class="cnt">
-                                        <div class="text">받는분 정보가 없습니다 받는분 정보를 등록해주세요.</div>
-                                    </div>
-                                    <div class="btn_list">
-                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_info'); fnGetDeliveryList('1');">등록</button>
-                                    </div>
-                                </div>
-                            </td>
-                        `;
+                        row.innerHTML = 
+                            '<th class="align_top">배송지</th>' +
+                            '<td>' +
+                                '<div class="address_basic">' +
+                                    '<div class="cnt">' +
+                                        '<div class="text">받는분 정보가 없습니다 받는분 정보를 등록해주세요.</div>' +
+                                    '</div>' +
+                                    '<div class="btn_list">' +
+                                        '<button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer(\'#address_info\'); fnGetDeliveryList(\'1\');">등록</button>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</td>';
                     } else {
-                        row.innerHTML = `
-                            <th class="align_top">배송지</th>
-                            <td>
-                                <div class="address_basic">
-                                    <input type="hidden" id="oircvzip" name="oircvzip" value="` + deliData.cmmZipcode + `"/>
-                                    <input type="hidden" id="oircvaddr1" name="oircvaddr1" value="` + deliData.cmmAddress1 + `"/>
-                                    <input type="hidden" id="oircvaddr2" name="oircvaddr2" value="` + deliData.cmmAddress2 + `"/>
-                                    <input type="hidden" id="oircvname" name="oircvname" value="` + deliData.cmmName + `"/>
-                                    <input type="hidden" id="oircvhp" name="oircvhp" value="` + deliData.cmmMbhp + `"/>
-                                    <div class="cnt">
-                                        <div class="name" id="divRcvAds1">` + deliData.cmmName + ` / ` + deliData.cmmMbhp + `</div>
-                                        <div class="ads" id="divRcvAds2">[` + deliData.cmmZipcode + `] ` + deliData.cmmAddress1 + `, ` + deliData.cmmAddress2 + `</div>
-                                    </div>
-                                    <div class="btn_list">
-                                        <button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer('#address_info'); fnGetDeliveryList('2');">변경</button>
-                                    </div>
-                                </div>
-                            </td>
-                        `;
+                        row.innerHTML = 
+                            '<th class="align_top">배송지</th>' +
+                            '<td>' +
+                                '<div class="address_basic">' +
+                                    '<input type="hidden" id="oircvzip" name="oircvzip" value="' + deliData.cmmZipcode + '"/>' +
+                                    '<input type="hidden" id="oircvaddr1" name="oircvaddr1" value="' + deliData.cmmAddress1 + '"/>' +
+                                    '<input type="hidden" id="oircvaddr2" name="oircvaddr2" value="' + deliData.cmmAddress2 + '"/>' +
+                                    '<input type="hidden" id="oircvname" name="oircvname" value="' + deliData.cmmName + '"/>' +
+                                    '<input type="hidden" id="oircvhp" name="oircvhp" value="' + deliData.cmmMbhp + '"/>' +
+                                    '<div class="cnt">' +
+                                        '<div class="name" id="divRcvAds1">' + deliData.cmmName + ' / ' + deliData.cmmMbhp + '</div>' +
+                                        '<div class="ads" id="divRcvAds2">[' + deliData.cmmZipcode + '] ' + deliData.cmmAddress1 + ', ' + deliData.cmmAddress2 + '</div>' +
+                                    '</div>' +
+                                    '<div class="btn_list">' +
+                                        '<button class="btn btn_type6 btn_inline btn_gray_line" type="button" onclick="openLayer(\'#address_info\'); fnGetDeliveryList(\'2\');">변경</button>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</td>';
                     }
                 }
 
@@ -9100,12 +9096,12 @@
     }
 
     function fnGetDeliveryList(reqDeliType) {
-        let deliType = "";
+        var deliType = "";
 
         if ("" === fnToNotNull(reqDeliType)) {
             deliType = $("#tmpReqDeliType").val();
         } else {
-            deliType = reqDeliType
+            deliType = reqDeliType;
         }
 
         $.ajax({
@@ -9116,8 +9112,8 @@
 
             },
             success : function(data) {
-                const list = data.deliveryList;
-                const deliveryBody = document.getElementById('divDeliveryField');
+                var list = data.deliveryList;
+                var deliveryBody = document.getElementById('divDeliveryField');
 
                 if (deliveryBody) {
                     while (deliveryBody.firstChild) {
@@ -9126,46 +9122,44 @@
                 }
 
                 if (list.length === 0) {
-                    const row = document.createElement('div');
+                    var row = document.createElement('div');
                     row.classList.add('list_empty');
-                    row.innerHTML = `
-                        <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
-                    `;
+                    row.innerHTML = 
+                        '<div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>';
 
                     deliveryBody.appendChild(row);
                 }
 
-                for (let i = 0; i < list.length; i++) {
-                    let baseDeliveryHtml = '';
-                    const baseName = fnToNotNull(list[i].cmmName);
-                    const baseHp = fnToNotNull(list[i].cmmMbhp);
-                    const baseZip = fnToNotNull(list[i].cmmZipcode);
-                    const baseAddr1 = fnToNotNull(list[i].cmmAddress1);
-                    const baseAddr2 = fnToNotNull(list[i].cmmAddress2);
+                for (var i = 0; i < list.length; i++) {
+                    var baseDeliveryHtml = '';
+                    var baseName = fnToNotNull(list[i].cmmName);
+                    var baseHp = fnToNotNull(list[i].cmmMbhp);
+                    var baseZip = fnToNotNull(list[i].cmmZipcode);
+                    var baseAddr1 = fnToNotNull(list[i].cmmAddress1);
+                    var baseAddr2 = fnToNotNull(list[i].cmmAddress2);
 
                     if ("D" === list[i].cmmAdtp) {
                         baseDeliveryHtml = '<div class="cate">기본 배송지</div>';
                     }
 
-                    const row = document.createElement('div');
+                    var row = document.createElement('div');
                     row.classList.add('label_item');
-                    row.innerHTML = `
-                        <label class="label_cnt checkbox radio_type1">
-                            <input type="radio" name="ads_check" onclick="fnChangeDelivery('` + deliType + `','` + baseName + `','` + baseHp + `','` + baseZip + `','` + baseAddr1 + `','` + baseAddr2 + `');">
-                            <span class="ck_icon"></span>
-                            <span class="ck_line"></span>
-                            <div class="address_cnt">
-                                ` + baseDeliveryHtml + `
-                                <div class="address_basic">
-                                    <div class="name">` + baseName + ` / ` + baseHp + `</div>
-                                    <div class="ads">[` + baseZip + `] ` + baseAddr1 + `, ` + baseAddr2 + `</div>
-                                </div>
-                                <div class="text_btns">
-                                    <div><button type="button" onclick="fnModDeliveryLayer('` + list[i].cmmIdx + `','` + baseName + `','` + baseHp + `','` + baseZip + `','` + baseAddr1 + `','` + baseAddr2 + `');">수정</button></div>
-                                </div>
-                            </div>
-                        </label>
-                    `;
+                    row.innerHTML = 
+                        '<label class="label_cnt checkbox radio_type1">' +
+                            '<input type="radio" name="ads_check" onclick="fnChangeDelivery(\'' + deliType + '\',\'' + baseName + '\',\'' + baseHp + '\',\'' + baseZip + '\',\'' + baseAddr1 + '\',\'' + baseAddr2 + '\');">' +
+                            '<span class="ck_icon"></span>' +
+                            '<span class="ck_line"></span>' +
+                            '<div class="address_cnt">' +
+                                baseDeliveryHtml +
+                                '<div class="address_basic">' +
+                                    '<div class="name">' + baseName + ' / ' + baseHp + '</div>' +
+                                    '<div class="ads">[' + baseZip + '] ' + baseAddr1 + ', ' + baseAddr2 + '</div>' +
+                                '</div>' +
+                                '<div class="text_btns">' +
+                                    '<div><button type="button" onclick="fnModDeliveryLayer(\'' + list[i].cmmIdx + '\',\'' + baseName + '\',\'' + baseHp + '\',\'' + baseZip + '\',\'' + baseAddr1 + '\',\'' + baseAddr2 + '\');">수정</button></div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</label>';
 
                     deliveryBody.appendChild(row);
                 }
@@ -9187,21 +9181,21 @@
     }
 
     function fnCallPayment() {
-        const priceViewYn = fnToNotNull('1');
-        const autoUsePoint = Number(fnToNotNullDefVal('0', 0));
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
-        const standardPayTypes = ['4', '7', '9']; // 선주문후결제, 취합후결제, 포인트결제
-        let payType = "";
-        const payCheckedValue = fnToNotNull($("input[name='oipaytype']:checked").val());
-        const payTypeMapping = {
+        var priceViewYn = fnToNotNull('1');
+        var autoUsePoint = Number(fnToNotNullDefVal('0', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var standardPayTypes = ['4', '7', '9']; // 선주문후결제, 취합후결제, 포인트결제
+        var payType = "";
+        var payCheckedValue = fnToNotNull($("input[name='oipaytype']:checked").val());
+        var payTypeMapping = {
             "1": "11", // 신용카드
             "2": "22", // 가상계좌
             "3": "21", // 계좌이체
             "5": "90"  // SSG PAY
         };
 
-        let lastUsePoint;
+        var lastUsePoint;
         if ("1" === priceViewYn) {
             lastUsePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
         } else {
@@ -9209,7 +9203,7 @@
         }
 
         // 할인수단 제외 실 결제금액
-        const totalPrice = Number(fnToNotNull('5900') - lastUsePoint - useMileage);
+        var totalPrice = Number(fnToNotNull('5900') - lastUsePoint - useMileage);
 
         if (0 === totalPrice) { // 실 결제금액이 0원이면
             if (lastUsePoint > 0) {
@@ -9227,7 +9221,7 @@
             return;
         }
 
-        const call_back = function(isConfirmed){
+        var call_back = function(isConfirmed){
             if (isConfirmed) {
                 $.ajax({
                     type : 'post',
@@ -9237,14 +9231,18 @@
                     },
                     success : function(data) {
                         if (data != null) {
-                            const isMobile = "MOBILE" === fnCmmGetDeviceType();
+                            var isMobile = "MOBILE" === fnCmmGetDeviceType();
 
                             if ("90" === payType) { // SSGPAY 모듈 호출
                                 fnCallSsgpayPayment(isMobile ? "3" : "1", data);
                             } else { // WEBPAY 모듈 호출
-                                const paymentFunc = standardPayTypes.includes(payType)
-                                ? fnStandardPayment
-                                : (isMobile ? fnWebpayMobilePayment : fnWebpayPcPayment);
+                                var paymentFunc;
+                                
+                                if (standardPayTypes.indexOf(payType) !== -1) {
+                                    paymentFunc = fnStandardPayment;
+                                } else {
+                                    paymentFunc = isMobile ? fnWebpayMobilePayment : fnWebpayPcPayment;
+                                }
 
                                 paymentFunc(payType, data);
                             }
@@ -9252,10 +9250,10 @@
                     },
                     error: function(request, status, error) {
                         console.log(error);
-                    },
+                    }
                 });
             }
-        }
+        };
 
         box_confirm(
             '결제중 인터넷창을 종료하거나 뒤로가기 및 새로고침을 하게 되면 주문이 정상적으로 진행되지 않을 수 있습니다. 주문하시겠습니까?',
@@ -9266,24 +9264,24 @@
     }
 
     function fnPaymentValidate(reqPayType) {
-        const payConfig = fnToNotNull('1,4,5');
-        const addrViewYn = fnToNotNull('N');
-        const priceViewYn = fnToNotNull('1');
-        const multiType = fnToNotNull('G');
-        const thirdPartyYn = fnToNotNull('Y');
-        const myPoint = Number(fnToNotNullDefVal('0', 0));
-        const pointType = fnToNotNull('1');
-        const pointName = fnToNotNull('포포포');
-        const pointUnit = fnToNotNull('');
-        const limitMaxPoint = Number(fnToNotNullDefVal('', 0));
-        const limitPointType = fnToNotNull('9');
-        const limitPointMny = Number(fnToNotNullDefVal('1000', 0));
-        const limitPointPer = Number(fnToNotNullDefVal('', 0));
-        const autoUsePoint = Number(fnToNotNullDefVal('0', 0));
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
-        const prdPrice = Number(fnToNotNull('5900'));
-        //const totalPrice = Number(fnToNotNull(prdPrice - usePoint - useMileage));
+        var payConfig = fnToNotNull('1,4,5');
+        var addrViewYn = fnToNotNull('N');
+        var priceViewYn = fnToNotNull('1');
+        var multiType = fnToNotNull('G');
+        var thirdPartyYn = fnToNotNull('Y');
+        var myPoint = Number(fnToNotNullDefVal('0', 0));
+        var pointType = fnToNotNull('1');
+        var pointName = fnToNotNull('포포포');
+        var pointUnit = fnToNotNull('');
+        var limitMaxPoint = Number(fnToNotNullDefVal('', 0));
+        var limitPointType = fnToNotNull('9');
+        var limitPointMny = Number(fnToNotNullDefVal('1000', 0));
+        var limitPointPer = Number(fnToNotNullDefVal('', 0));
+        var autoUsePoint = Number(fnToNotNullDefVal('0', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var prdPrice = Number(fnToNotNull('5900'));
+        //var totalPrice = Number(fnToNotNull(prdPrice - usePoint - useMileage));
 
         // 주문자 정보 체크
         if ("Y" === addrViewYn || "" === addrViewYn) { // 쇼핑몰 설정에 주문자 정보 노출로 설정시
@@ -9316,26 +9314,26 @@
             if ("1" === limitPointType) {
                 if (usePoint > limitPointMny) {
                     box_alert('최대 사용가능한 ' + pointName + ' 은(는) ' + fnSetComma(limitPointMny) + '' + pointUnit + ' 입니다', 'info');
-                    return false
+                    return false;
                 }
             }
 
             if ("2" === limitPointType) {
-                const limitPerPrice = prdPrice * limitPointPer / 100
+                var limitPerPrice = prdPrice * limitPointPer / 100;
                 if (limitPerPrice > usePoint) {
                     box_alert('최소 ' + fnSetComma(limitPerPrice) + ' ' + pointName + ' ' + pointUnit + ' 을(를) 보유하고 있어야합니다', 'info');
-                    return false
+                    return false;
                 }
             }
 
             if (myPoint < limitMaxPoint) {
                 box_alert(pointName + ' 을(를) ' + fnSetComma(limitMaxPoint) + ' ' + pointUnit + ' 이상 보유시 사용 가능합니다', 'info');
-                return false
+                return false;
             }
         }
 
         if ("" === payConfig) { // 결제수단을 사용하지 않을때
-            let lastUsePoint;
+            var lastUsePoint;
             if ("1" === priceViewYn) { // 판매가 공개시
                 lastUsePoint = usePoint; // 직접입력 포인트
             } else {
@@ -9355,7 +9353,7 @@
 
         if (!$("#orderAgree1").is(":checked")) {
             box_alert('주문내역 확인 동의는 필수입니다', 'info');
-            return false
+            return false;
         }
 
         if ("Y" === thirdPartyYn) {
@@ -9375,20 +9373,20 @@
 
     // 이지페이 모바일 팝업호출
     function fnWebpayMobilePayment(reqPayType, reqData) {
-        const form = document.getElementById("frm_sppay");
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
-        const totalPrice = String(fnToNotNull('5900') - usePoint - useMileage);
-        const korParams = ["sp_mall_nm", "sp_product_nm", "sp_user_nm"];
-        const ptnname = fnToNotNull('테스트');
-        const prcount = '1';
-        let prname = "[" + ptnname + "] " + fnToNotNull('테스트상품 돋움 이미지');
+        var form = document.getElementById("frm_sppay");
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = String(fnToNotNull('5900') - usePoint - useMileage);
+        var korParams = ["sp_mall_nm", "sp_product_nm", "sp_user_nm"];
+        var ptnname = fnToNotNull('테스트');
+        var prcount = '1';
+        var prname = "[" + ptnname + "] " + fnToNotNull('테스트상품 돋움 이미지');
 
         if (prcount > 0) {
             prname = prname + " 외 " + (prcount - 1) + "건";
         }
 
-        const options = {
+        var options = {
             formId: "frm_sppay",
             params: {
                 sp_order_no: reqData.orderNo,
@@ -9431,20 +9429,20 @@
 
     // 이지페이 PC 팝업호출
     function fnWebpayPcPayment(reqPayType, reqData) {
-        const form = document.getElementById("frm_pay");
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
-        const totalPrice = String(fnToNotNull('5900') - usePoint - useMileage);
-        const korParams = ["EP_mall_nm", "EP_product_nm", "EP_user_nm"];
-        const ptnname = fnToNotNull('테스트');
-        const prcount = '1';
-        let prname = "[" + ptnname + "] " + fnToNotNull('테스트상품 돋움 이미지');
+        var form = document.getElementById("frm_pay");
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = String(fnToNotNull('5900') - usePoint - useMileage);
+        var korParams = ["EP_mall_nm", "EP_product_nm", "EP_user_nm"];
+        var ptnname = fnToNotNull('테스트');
+        var prcount = '1';
+        var prname = "[" + ptnname + "] " + fnToNotNull('테스트상품 돋움 이미지');
 
         if (prcount > 0) {
             prname = prname + " 외 " + (prcount - 1) + "건";
         }
 
-        const options = {
+        var options = {
             formId: "frm_pay",
             params: {
                 EP_order_no: reqData.orderNo,
@@ -9472,26 +9470,26 @@
 
     // SSGPAY 팝업 호출
     function fnCallSsgpayPayment(reqDeviceType, reqData) {
-        const form = document.getElementById("frm_ssgpay");
-        const returnUrl = location.protocol + "//" + location.host + '/order/bypass/paymentSsgResponse';
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
-        const totalPrice = String(fnToNotNull('5900') - usePoint - useMileage);
-        const korParams = ["EP_mall_nm", "EP_product_nm", "EP_user_nm"];
-        const ptnname = fnToNotNull('테스트');
-        const prcount = '1';
-        const mobile = fnToNotNull($("#oihp").val());
-        let cashAuthValue = "";
-        let cashYn = "";
-        let prname = "[" + ptnname + "] " + fnToNotNull('테스트상품 돋움 이미지');
+        var form = document.getElementById("frm_ssgpay");
+        var returnUrl = location.protocol + "//" + location.host + '/order/bypass/paymentSsgResponse';
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = String(fnToNotNull('5900') - usePoint - useMileage);
+        var korParams = ["EP_mall_nm", "EP_product_nm", "EP_user_nm"];
+        var ptnname = fnToNotNull('테스트');
+        var prcount = '1';
+        var mobile = fnToNotNull($("#oihp").val());
+        var cashAuthValue = "";
+        var cashYn = "";
+        var prname = "[" + ptnname + "] " + fnToNotNull('테스트상품 돋움 이미지');
 
         if (prcount > 0) {
             prname = prname + " 외 " + (prcount - 1) + "건";
         }
 
         // 현금영수증 발행
-        let cashIssueType = fnToNotNull($("input[name='cash_issue_type']:checked").val()) // 발행용도 - 01:소득공제, 02:지출증빙
-        let cashAuthType = $("#cash_auth_type").val(); // 인증구분 - 1:개인카드번호, 2:개인주민번호, 3:개인휴대폰, 4:법인사업자번호
+        var cashIssueType = fnToNotNull($("input[name='cash_issue_type']:checked").val()); // 발행용도 - 01:소득공제, 02:지출증빙
+        var cashAuthType = $("#cash_auth_type").val(); // 인증구분 - 1:개인카드번호, 2:개인주민번호, 3:개인휴대폰, 4:법인사업자번호
 
         if ("02" === cashIssueType) {
             cashAuthType = "4";
@@ -9504,7 +9502,7 @@
             cashYn = "1";
         }
 
-        const options = {
+        var options = {
             formId: "frm_ssgpay",
             params: {
                 EP_order_no: reqData.orderNo,
@@ -9555,7 +9553,7 @@
 
     // 이지페이 최종 승인요청
     function fnWebpayRequest() {
-        const options = {
+        var options = {
             formId: "frm_pay",
             method: "post",
             action: "/order/webpayRequest"
@@ -9566,7 +9564,7 @@
 
     // SSGPAY 최종 승인요청
     function fnSsgpayRequest() {
-        const options = {
+        var options = {
             formId: "frm_ssgpay",
             method: "post",
             action: "/order/ssgpayRequest"
@@ -9577,7 +9575,7 @@
 
     // 일반결제(포인트, 선주문후결제, 취합후결제)
     function fnStandardPayment(reqPayType) {
-        const options = {
+        var options = {
             formId: "paymentForm",
             method: "post",
             action: "/order/insertStandardOrder",
@@ -9588,10 +9586,10 @@
     }
 
     function fnPaymentRequestAjax(options, callback) {
-        const reqFormId = options.formId;
-        const reqMethod = options.method;
-        const reqAction = options.action;
-        let reqPayType = "";
+        var reqFormId = options.formId;
+        var reqMethod = options.method;
+        var reqAction = options.action;
+        var reqPayType = "";
 
         if ("" !== fnToNotNull(options.payType)) {
             reqPayType = options.payType;
@@ -9599,19 +9597,23 @@
 
         fnSetDeliveryInfoToJson();
 
-        let form = $("#" + reqFormId).serializeArray();
-        let mergedData = {};
+        var form = $("#" + reqFormId).serializeArray();
+        var mergedData = {};
 
-        form.forEach(field => mergedData[field.name] = field.value);
+        for (var i = 0; i < form.length; i++) {
+            var field = form[i];
+            mergedData[field.name] = field.value;
+        }
 
         if ("paymentForm" !== reqFormId) {
-            let paymentForm = $("#paymentForm").serializeArray();
+            var paymentForm = $("#paymentForm").serializeArray();
 
-            paymentForm.forEach(field => {
+            for (var j = 0; j < paymentForm.length; j++) {
+                var field = paymentForm[j];
                 if (!mergedData.hasOwnProperty(field.name)) {
                     mergedData[field.name] = field.value;
                 }
-            });
+            }
         }
 
         $.ajax({
@@ -9635,7 +9637,7 @@
                 box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
             },
             complete : function() {
-                setTimeout(() => {
+                setTimeout(function() {
                     loading('hide');
                 }, 2000);
             }
@@ -9647,9 +9649,9 @@
         // 급여공제 현금영수증 발행
         if ("4" === reqPayType) {
             // 현금영수증 발행
-            let cashAuthValue = "";
-            let cashIssueType = fnToNotNull($("input[name='cash_issue_type']:checked").val()) // 발행용도 - 01:소득공제, 02:지출증빙
-            let cashAuthType = $("#pre_cash_auth_type").val(); // 인증구분 - hp:개인휴대폰, receiptcard:현금영수증카드, bno:사업자번호
+            var cashAuthValue = "";
+            var cashIssueType = fnToNotNull($("input[name='cash_issue_type']:checked").val()); // 발행용도 - 01:소득공제, 02:지출증빙
+            var cashAuthType = $("#pre_cash_auth_type").val(); // 인증구분 - hp:개인휴대폰, receiptcard:현금영수증카드, bno:사업자번호
 
             if ("02" === cashIssueType) {
                 cashAuthType = "bno";
@@ -9674,11 +9676,11 @@
                 },
                 error: function (request, status, error) {
                     console.log(error);
-                },
+                }
             });
         }
 
-        const options = {
+        var options = {
             formId: "paymentCompleteForm",
             method: "post",
             action: "/order/paymentComplete",
@@ -9694,8 +9696,8 @@
 
     function fnChangeDelivery(reqDeliType, reqName, reqHp, reqZip, reqAddr1, reqAddr2) {
         if ("1" === reqDeliType) {
-            const divSend1 = $("#divAds1");
-            const divSend2 = $("#divAds2");
+            var divSend1 = $("#divAds1");
+            var divSend2 = $("#divAds2");
 
             $("#oiname").val(reqName);
             $("#oihp").val(reqHp);
@@ -9716,8 +9718,8 @@
             // 불필요한 텍스트 제거
             $("#divSendNoneDeliText").remove();
         } else {
-            const divRcv1 = $("#divRcvAds1");
-            const divRcv2 = $("#divRcvAds2");
+            var divRcv1 = $("#divRcvAds1");
+            var divRcv2 = $("#divRcvAds2");
             $("#oircvname").val(reqName);
             $("#oircvhp").val(reqHp);
             $("#oircvzip").val(reqZip);
@@ -9743,13 +9745,13 @@
 
     function fnSetSameDelivery(reqElm) {
         if ($(reqElm).is(':checked')) {
-            const baseName = $("#oiname").val();
-            const baseHp = $("#oihp").val();
-            const baseZip = $("#oizip").val();
-            const baseAddr1 = $("#oiaddr1").val();
-            const baseAddr2 = $("#oiaddr2").val();
-            const divRcv1 = $("#divRcvAds1");
-            const divRcv2 = $("#divRcvAds2");
+            var baseName = $("#oiname").val();
+            var baseHp = $("#oihp").val();
+            var baseZip = $("#oizip").val();
+            var baseAddr1 = $("#oiaddr1").val();
+            var baseAddr2 = $("#oiaddr2").val();
+            var divRcv1 = $("#divRcvAds1");
+            var divRcv2 = $("#divRcvAds2");
 
             $("#oircvname").val(baseName);
             $("#oircvhp").val(baseHp);
@@ -9774,11 +9776,11 @@
     }
 
     function fnUseAllPrice(reqType) {
-        let totalPrice = Number(fnToNotNull('5900', 0));
-        const myPoint = Number(fnToNotNullDefVal('0', 0));
-        const myMileage = Number(fnToNotNullDefVal('0', 0));
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = Number(fnToNotNull('5900', 0));
+        var myPoint = Number(fnToNotNullDefVal('0', 0));
+        var myMileage = Number(fnToNotNullDefVal('0', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
 
         if ("1" === reqType) {
             totalPrice = totalPrice - useMileage;
@@ -9802,27 +9804,27 @@
     }
 
     function fnSetDeliveryInfoToJson() {
-        let data = [];
-        let recvNames = $('input[name^="oircvname"]');
-        let recvHp = $('input[name^="oircvhp"]');
-        let recvZip = $('input[name^="oircvzip"]');
-        let recvAddr1 = $('input[name^="oircvaddr1"]');
-        let recvAddr2 = $('input[name^="oircvaddr2"]');
-        let recvSelMsg = $('input[name^="oiadminmsg_sel"]');
-        let recvMsg = $('input[name^="oiadminmsg"]');
-        let recvShipDay = $('input[name^="shipday"]');
-        let recvCardMsg = $('input[name^="cardmsg"]');
+        var data = [];
+        var recvNames = $('input[name^="oircvname"]');
+        var recvHp = $('input[name^="oircvhp"]');
+        var recvZip = $('input[name^="oircvzip"]');
+        var recvAddr1 = $('input[name^="oircvaddr1"]');
+        var recvAddr2 = $('input[name^="oircvaddr2"]');
+        var recvSelMsg = $('input[name^="oiadminmsg_sel"]');
+        var recvMsg = $('input[name^="oiadminmsg"]');
+        var recvShipDay = $('input[name^="shipday"]');
+        var recvCardMsg = $('input[name^="cardmsg"]');
 
         recvNames.each(function(index) {
-            let nameValue = $(this).val();
-            let hpValue = recvHp.eq(index).val();
-            let zipValue = recvZip.eq(index).val();
-            let addr1Value = recvAddr1.eq(index).val();
-            let addr2Value = recvAddr2.eq(index).val();
-            let msgValue = recvMsg.eq(index).val();
-            let selMsgValue = recvSelMsg.eq(index).val();
-            let shipdayValue = recvShipDay.eq(index).val();
-            let cardmsgValue = recvCardMsg.eq(index).val();
+            var nameValue = $(this).val();
+            var hpValue = recvHp.eq(index).val();
+            var zipValue = recvZip.eq(index).val();
+            var addr1Value = recvAddr1.eq(index).val();
+            var addr2Value = recvAddr2.eq(index).val();
+            var msgValue = recvMsg.eq(index).val();
+            var selMsgValue = recvSelMsg.eq(index).val();
+            var shipdayValue = recvShipDay.eq(index).val();
+            var cardmsgValue = recvCardMsg.eq(index).val();
 
             data.push({
                 oircvname: nameValue,
@@ -9834,7 +9836,7 @@
                 oiadminmsg: msgValue,
                 shipday: shipdayValue,
                 cardmsg: cardmsgValue
-            })
+            });
         });
 
         $("#cmmDeliveryJsonStr").val(JSON.stringify(data));
@@ -9847,18 +9849,18 @@
     }
 
     function fnSetSameMultiDelivery() {
-        const baseName = $("#oiname").val();
-        const baseHp = $("#oihp").val();
-        const baseZip = $("#oizip").val();
-        const baseAddr1 = $("#oiaddr1").val();
-        const baseAddr2 = $("#oiaddr2").val();
+        var baseName = $("#oiname").val();
+        var baseHp = $("#oihp").val();
+        var baseZip = $("#oizip").val();
+        var baseAddr1 = $("#oiaddr1").val();
+        var baseAddr2 = $("#oiaddr2").val();
 
         $(".oircvname").val(baseName);
         $(".oircvhp").val(baseHp);
         $(".oircvzip").val(baseZip);
         $(".oircvaddr1").val(baseAddr1);
         $(".oircvaddr2").val(baseAddr2);
-        $(".divRcvAdsTitle").text("[" + baseZip + "] " + baseAddr1 + ", " + baseAddr2)
+        $(".divRcvAdsTitle").text("[" + baseZip + "] " + baseAddr1 + ", " + baseAddr2);
         $(".divRcvAds1").text(baseName + " / " + baseHp);
         $(".divRcvAds2").text("[" + baseZip + "] " + baseAddr1 + ", " + baseAddr2);
     }
@@ -9872,8 +9874,8 @@
 
             },
             success : function(data) {
-                const list = data.deliveryList;
-                const deliveryBody = document.getElementById('divDeliveryField');
+                var list = data.deliveryList;
+                var deliveryBody = document.getElementById('divDeliveryField');
 
                 if (deliveryBody) {
                     while (deliveryBody.firstChild) {
@@ -9882,46 +9884,44 @@
                 }
 
                 if (list.length === 0) {
-                    const row = document.createElement('div');
+                    var row = document.createElement('div');
                     row.classList.add('list_empty');
-                    row.innerHTML = `
-                        <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
-                    `;
+                    row.innerHTML = 
+                        '<div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>';
 
                     deliveryBody.appendChild(row);
                 }
 
-                for (let i = 0; i < list.length; i++) {
-                    let baseDeliveryHtml = '';
-                    const baseName = fnToNotNull(list[i].cmmName);
-                    const baseHp = fnToNotNull(list[i].cmmMbhp);
-                    const baseZip = fnToNotNull(list[i].cmmZipcode);
-                    const baseAddr1 = fnToNotNull(list[i].cmmAddress1);
-                    const baseAddr2 = fnToNotNull(list[i].cmmAddress2);
+                for (var i = 0; i < list.length; i++) {
+                    var baseDeliveryHtml = '';
+                    var baseName = fnToNotNull(list[i].cmmName);
+                    var baseHp = fnToNotNull(list[i].cmmMbhp);
+                    var baseZip = fnToNotNull(list[i].cmmZipcode);
+                    var baseAddr1 = fnToNotNull(list[i].cmmAddress1);
+                    var baseAddr2 = fnToNotNull(list[i].cmmAddress2);
 
                     if ("D" === list[i].cmmAdtp) {
                         baseDeliveryHtml = '<div class="cate">기본 배송지</div>';
                     }
 
-                    const row = document.createElement('div');
+                    var row = document.createElement('div');
                     row.classList.add('label_item');
-                    row.innerHTML = `
-                        <label class="label_cnt checkbox radio_type1">
-                            <input type="radio" name="ads_check" onclick="fnChangeMultiDelivery('` + reqIndex + `','` + baseName + `','` + baseHp + `','` + baseZip + `','` + baseAddr1 + `','` + baseAddr2 + `');">
-                            <span class="ck_icon"></span>
-                            <span class="ck_line"></span>
-                            <div class="address_cnt">
-                                ` + baseDeliveryHtml + `
-                                <div class="address_basic">
-                                    <div class="name">` + baseName + ` / ` + baseHp + `</div>
-                                    <div class="ads">[` + baseZip + `] ` + baseAddr1 + `, ` + baseAddr2 + `</div>
-                                </div>
-                                <div class="text_btns">
-                                    <div><button type="button" onclick="fnModDeliveryLayer('` + list[i].cmmIdx + `','` + baseName + `','` + baseHp + `','` + baseZip + `','` + baseAddr1 + `','` + baseAddr2 + `');">수정</button></div>
-                                </div>
-                            </div>
-                        </label>
-                    `;
+                    row.innerHTML = 
+                        '<label class="label_cnt checkbox radio_type1">' +
+                            '<input type="radio" name="ads_check" onclick="fnChangeMultiDelivery(\'' + reqIndex + '\',\'' + baseName + '\',\'' + baseHp + '\',\'' + baseZip + '\',\'' + baseAddr1 + '\',\'' + baseAddr2 + '\');">' +
+                            '<span class="ck_icon"></span>' +
+                            '<span class="ck_line"></span>' +
+                            '<div class="address_cnt">' +
+                                baseDeliveryHtml +
+                                '<div class="address_basic">' +
+                                    '<div class="name">' + baseName + ' / ' + baseHp + '</div>' +
+                                    '<div class="ads">[' + baseZip + '] ' + baseAddr1 + ', ' + baseAddr2 + '</div>' +
+                                '</div>' +
+                                '<div class="text_btns">' +
+                                    '<div><button type="button" onclick="fnModDeliveryLayer(\'' + list[i].cmmIdx + '\',\'' + baseName + '\',\'' + baseHp + '\',\'' + baseZip + '\',\'' + baseAddr1 + '\',\'' + baseAddr2 + '\');">수정</button></div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</label>';
 
                     deliveryBody.appendChild(row);
                 }
@@ -9941,7 +9941,7 @@
         $("#oircvzip_" + reqIndex).val(reqZip);
         $("#oircvaddr1_" + reqIndex).val(reqAddr1);
         $("#oircvaddr2_" + reqIndex).val(reqAddr2);
-        $("#divRcvAdsTitle_" + reqIndex).text("[" + reqZip + "] " + reqAddr1 + ", " + reqAddr2)
+        $("#divRcvAdsTitle_" + reqIndex).text("[" + reqZip + "] " + reqAddr1 + ", " + reqAddr2);
         $("#divRcvAds1_" + reqIndex).text(reqName + " / " + reqHp);
         $("#divRcvAds2_" + reqIndex).text("[" + reqZip + "] " + reqAddr1 + ", " + reqAddr2);
 
@@ -9950,9 +9950,9 @@
 
     // 결제예정금액 계산
     function fnSetExpectedTotalPice() {
-        let totalPrice = Number(fnToNotNull('5900', 0));
-        const usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
-        const useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = Number(fnToNotNull('5900', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
 
         totalPrice = totalPrice - usePoint - useMileage;
 
@@ -9960,60 +9960,61 @@
     }
 
     //결제수단 SSG PAY, 급여공제 토글
-    const paymentTypeAll = document.querySelectorAll('input[name="oipaytype"]');
-    const paymentFormEtc = document.getElementById('pay_form_etc');
-    const paymentCash = document.querySelectorAll('.pay_cash');
-    const paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
-    const paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
-    const paymentTxt = document.querySelectorAll('#pay_form_etc .text');
+    var paymentTypeAll = document.querySelectorAll('input[name="oipaytype"]');
+    var paymentFormEtc = document.getElementById('pay_form_etc');
+    var paymentCash = document.querySelectorAll('.pay_cash');
+    var paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
+    var paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
+    var paymentTxt = document.querySelectorAll('#pay_form_etc .text');
 
-    paymentTypeAll.forEach(function(paymentType){
-        paymentType.addEventListener('change', function() {
-            if(paymentType.checked && paymentType.value === '5'){ //SSG PAY
+    for (var i = 0; i < paymentTypeAll.length; i++) {
+        paymentTypeAll[i].addEventListener('change', function() {
+            if(this.checked && this.value === '5'){ //SSG PAY
                 paymentFormEtc.style.display = 'block';
-                paymentCash.forEach(function(cash){
-                    cash.classList.remove('hidden');
-                });
+                for (var j = 0; j < paymentCash.length; j++) {
+                    paymentCash[j].classList.remove('hidden');
+                }
 
                 paymentSelectSsgPay.classList.remove('hide');
                 paymentSelectPay.classList.add('hide');
 
-                paymentTxt.forEach(function(text){
-                    text.classList.remove('hide')
-                });
-            }else if(paymentType.checked && paymentType.value === '4'){//급여공제
+                for (var k = 0; k < paymentTxt.length; k++) {
+                    paymentTxt[k].classList.remove('hide');
+                }
+            }else if(this.checked && this.value === '4'){//급여공제
                 paymentFormEtc.style.display = 'block';
-                paymentCash.forEach(function(cash){
-                    cash.classList.remove('hidden');
-                });
+                for (var j = 0; j < paymentCash.length; j++) {
+                    paymentCash[j].classList.remove('hidden');
+                }
 
                 paymentSelectSsgPay.classList.add('hide');
                 paymentSelectPay.classList.remove('hide');
 
-                paymentTxt.forEach(function(text){
-                    text.classList.add('hide')
-                });
+                for (var k = 0; k < paymentTxt.length; k++) {
+                    paymentTxt[k].classList.add('hide');
+                }
             }else{
                 paymentFormEtc.style.display = 'none';
             }
         });
-    });
+    }
 
     //개인 소득 공제 & 사업자 지출 증빙
-    const cashReceiptAll = document.querySelectorAll('input[name="cash_issue_type"]');
-    const cashRow = document.querySelector('.cash_row');
-    const companyRow = document.querySelector('.company_row');
-    cashReceiptAll.forEach(function(receipt){
-        receipt.addEventListener('change', function() {
-            if(receipt.checked && receipt.value === '01'){//개인 소득 공제
+    var cashReceiptAll = document.querySelectorAll('input[name="cash_issue_type"]');
+    var cashRow = document.querySelector('.cash_row');
+    var companyRow = document.querySelector('.company_row');
+    
+    for (var i = 0; i < cashReceiptAll.length; i++) {
+        cashReceiptAll[i].addEventListener('change', function() {
+            if(this.checked && this.value === '01'){//개인 소득 공제
                 cashRow.classList.remove('hidden');
                 companyRow.classList.add('hidden');
-            }else if(receipt.checked && receipt.value === '02'){//사업자 지줄층빙
+            }else if(this.checked && this.value === '02'){//사업자 지줄층빙
                 companyRow.classList.remove('hidden');
                 cashRow.classList.add('hidden');
             }
         });
-    });
+    }
 </script>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -10023,7 +10024,7 @@ var element_layer = document.getElementById('daumAdressLayer');
 var ads_layer = document.getElementById('ads_layer');
 
 function execDaumPostcode(elm) {
-    const target = document.getElementById(elm)
+    var target = document.getElementById(elm)
     new daum.Postcode({
         oncomplete: function(data) {
             var addr = ''; // 주소 변수

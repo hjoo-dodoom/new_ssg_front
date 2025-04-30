@@ -122,15 +122,15 @@
                     </div>
                 </div>
                 <script>
-                    let countdownInterval;
+                    var countdownInterval;
                     var secondsLeft;
-                    let checkCnt;
-                    const certifyNumberBox = document.getElementById('certifyNumberBox');
+                    var checkCnt;
+                    var certifyNumberBox = document.getElementById('certifyNumberBox');
 
                     function startCountdown(buttonId, reButtonId, countdownId) {
-                        const button = document.getElementById(buttonId);
-                        const reButton = document.getElementById(reButtonId);
-                        const countdownSpan = document.getElementById(countdownId);
+                        var button = document.getElementById(buttonId);
+                        var reButton = document.getElementById(reButtonId);
+                        var countdownSpan = document.getElementById(countdownId);
                         button.style.display = 'block';
                         reButton.style.display = 'none';
                         certifyNumberBox.style.display = 'block';
@@ -139,8 +139,8 @@
 
                         countdownInterval = setInterval(function() {
                             secondsLeft--;
-                            const minutes = Math.floor(secondsLeft / 60);
-                            const seconds = secondsLeft % 60;
+                            var minutes = Math.floor(secondsLeft / 60);
+                            var seconds = secondsLeft % 60;
                             countdownSpan.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 
                             if (secondsLeft <= 0) {
@@ -155,7 +155,7 @@
                     }
 
                     function loginSmsSend(data) {
-                        const confirmNo = document.getElementById('sms_confirm_no');
+                        var confirmNo = document.getElementById('sms_confirm_no');
                         clearInterval(countdownInterval);
                         startCountdown('sendSms', 'reSendSms', 'countDown');
                         confirmNo.value = data.result_etc;
@@ -163,8 +163,8 @@
                     }
 
                     document.getElementById('sendSms').addEventListener('click', function() {
-                        const idValid = $("#mbname").valid();
-                        const hpValid = $("#mbhp").valid();
+                        var idValid = $("#mbname").valid();
+                        var hpValid = $("#mbhp").valid();
 
                         if (idValid && hpValid) {
                             fnSmsSend('findInfoForm', loginSmsSend);
@@ -172,8 +172,8 @@
                     });
 
                     document.getElementById('reSendSms').addEventListener('click', function() {
-                        const idValid = $("#mbname").valid();
-                        const hpValid = $("#mbhp").valid();
+                        var idValid = $("#mbname").valid();
+                        var hpValid = $("#mbhp").valid();
 
                         if (idValid && hpValid) {
                             fnSmsSend('findInfoForm', loginSmsSend);

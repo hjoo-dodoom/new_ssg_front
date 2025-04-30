@@ -3907,12 +3907,12 @@
 
     function fn_setCategory(_valList) {
         for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-            let categor_code_name = _valList[ct_i].code_name;
-            let categor_cty_code = _valList[ct_i].cty_code;
-            let categor_cty_depth = _valList[ct_i].cty_depth;
+            var categor_code_name = _valList[ct_i].code_name;
+            var categor_cty_code = _valList[ct_i].cty_code;
+            var categor_cty_depth = _valList[ct_i].cty_depth;
             if ("2" == categor_cty_depth) {
-                let parentCode = "cate_" + categor_cty_code.substring(0, 2);
-                let ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                var parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                var ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
                 $("." + parentCode).append(ctyDepthSecHTML);
             }
         }
@@ -3930,7 +3930,7 @@
 
 
     function fn_linkCategoryPage(_url) {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -3943,7 +3943,7 @@
         fnCmmSubmitDynamicForm(options);
     }
     function fn_linkCategoryPricePage(_url) {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -3957,7 +3957,7 @@
     }
 
     function fn_moveCart() {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/order/cart"
@@ -3967,7 +3967,7 @@
     }
 
     function fn_goodsCartIn(_prid){
-        const _mbst = $("#mbst").val();
+        var _mbst = $("#mbst").val();
         if("2" != _mbst){
             alert("현재 구매가 불가능합니다.");
             return;
@@ -3985,15 +3985,15 @@
                     fn_moveCart();
                 }else if(null != data && "8888" == data.cmmMemo){
                     // 장바구니에 담기지 않고 상세페이지로 이동
-                    const target_url = "/product/goodsDetail";
-                    let results_url = window.location.origin + target_url;
-                    const options = {
+                    var target_url = "/product/goodsDetail";
+                    var results_url = window.location.origin + target_url;
+                    var options = {
                         formId: "mainForm",
                         method: "get",
                         params: {
                             prid: _prid
                         },
-                        action: results_url,
+                        action: results_url
                     };
                     fnCmmSubmitDynamicForm(options);
                 }else if(null != data && "7777" == data.cmmMemo){
@@ -4010,7 +4010,7 @@
 
     //공지사항 이동
     function fnMoveNotice() {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/noticeList"
@@ -4020,11 +4020,11 @@
 
     //마이페이지 메인 이동
     function fnMoveMypage() {
-        const _mbst = '2';
+        var _mbst = '2';
         if("2" != _mbst){
             return;
         }
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/mypageList"
@@ -4034,11 +4034,11 @@
 
     //좋아요(나의 찜) 이동
     function fnMoveWishList() {
-        const _mbst = '2';
+        var _mbst = '2';
         if("2" != _mbst){
             return;
         }
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/wishList"
@@ -4046,7 +4046,7 @@
         fnCmmSubmitDynamicForm(options);
     }
     function fn_promoExhibitList(){
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/promoExhibitList"
@@ -4058,7 +4058,7 @@
     function fn_exhibitDetailHeader(_val) {
         $("#curPage").val(1);
         $("#searchViewCnt").val("20");
-        const options = {
+        var options = {
             formId: "goodsForm",
             method: "get",
             action: "/product/promoExhibitDetailList",
@@ -4074,7 +4074,7 @@
     }
 
     function fn_promoBrandList(){
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/promoBrandList"
@@ -4086,7 +4086,7 @@
     function fn_BrandDetailHeader(_val) {
         $("#curPage").val(1);
         $("#searchViewCnt").val("20");
-        const options = {
+        var options = {
             formId: "goodsForm",
             method: "get",
             action: "/product/promoBrandDetailList",
@@ -4102,7 +4102,7 @@
     }
 
     function fn_search_prd_trigger(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4111,7 +4111,7 @@
         }
     }
     function fn_search_prd_trigger_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4121,7 +4121,7 @@
     }
 
     function fn_search_prd(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4133,7 +4133,7 @@
     }
 
     function fn_search_prd_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4144,8 +4144,8 @@
         }
     }
     function fn_search_goodsList(_search_word){
-        let incoding_search_word = encodeURIComponent(_search_word);
-        const options = {
+        var incoding_search_word = encodeURIComponent(_search_word);
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -4159,7 +4159,7 @@
 
     function gnbSearchSubmit(event, form){
         event.preventDefault();
-        const input = form.querySelector('[name="gnb_search_input"]');
+        var input = form.querySelector('[name="gnb_search_input"]');
         if(input.value.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -8178,12 +8178,12 @@
 
   function fn_setCategoryMobile(_valList) {
     for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-      let categor_code_name = _valList[ct_i].code_name;
-      let categor_cty_code = _valList[ct_i].cty_code;
-      let categor_cty_depth = _valList[ct_i].cty_depth;
+      var categor_code_name = _valList[ct_i].code_name;
+      var categor_cty_code = _valList[ct_i].cty_code;
+      var categor_cty_depth = _valList[ct_i].cty_depth;
       if ("2" == categor_cty_depth) {
-        let parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
-        let ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+        var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+        var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
         $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
       }
     }
@@ -8191,7 +8191,7 @@
 
   // 최초 모바일 탭 클릭
   $(document).ready(function () {
-    let _active_mobile_cate = $(".cate a.active").attr("data-cate");
+    var _active_mobile_cate = $(".cate a.active").attr("data-cate");
     $(".cate_mobile_" + _active_mobile_cate).css("display", "");
   });
 </script>
@@ -9060,7 +9060,7 @@ var element_layer = document.getElementById('daumAdressLayer');
 var ads_layer = document.getElementById('ads_layer');
 
 function execDaumPostcode(elm) {
-    const target = document.getElementById(elm)
+  var target = document.getElementById(elm)
     new daum.Postcode({
         oncomplete: function(data) {
             var addr = ''; // 주소 변수

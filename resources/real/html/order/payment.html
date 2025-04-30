@@ -3903,12 +3903,12 @@
 
     function fn_setCategory(_valList) {
         for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-            let categor_code_name = _valList[ct_i].code_name;
-            let categor_cty_code = _valList[ct_i].cty_code;
-            let categor_cty_depth = _valList[ct_i].cty_depth;
+            var categor_code_name = _valList[ct_i].code_name;
+            var categor_cty_code = _valList[ct_i].cty_code;
+            var categor_cty_depth = _valList[ct_i].cty_depth;
             if ("2" == categor_cty_depth) {
-                let parentCode = "cate_" + categor_cty_code.substring(0, 2);
-                let ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                var parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                var ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
                 $("." + parentCode).append(ctyDepthSecHTML);
             }
         }
@@ -3926,7 +3926,7 @@
 
 
     function fn_linkCategoryPage(_url) {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -3939,7 +3939,7 @@
         fnCmmSubmitDynamicForm(options);
     }
     function fn_linkCategoryPricePage(_url) {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -3953,7 +3953,7 @@
     }
 
     function fn_moveCart() {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/order/cart"
@@ -3963,7 +3963,7 @@
     }
 
     function fn_goodsCartIn(_prid){
-        const _mbst = $("#mbst").val();
+        var _mbst = $("#mbst").val();
         if("2" != _mbst){
             alert("현재 구매가 불가능합니다.");
             return;
@@ -3981,15 +3981,15 @@
                     fn_moveCart();
                 }else if(null != data && "8888" == data.cmmMemo){
                     // 장바구니에 담기지 않고 상세페이지로 이동
-                    const target_url = "/product/goodsDetail";
-                    let results_url = window.location.origin + target_url;
-                    const options = {
+                    var target_url = "/product/goodsDetail";
+                    var results_url = window.location.origin + target_url;
+                    var options = {
                         formId: "mainForm",
                         method: "get",
                         params: {
                             prid: _prid
                         },
-                        action: results_url,
+                        action: results_url
                     };
                     fnCmmSubmitDynamicForm(options);
                 }else if(null != data && "7777" == data.cmmMemo){
@@ -4006,7 +4006,7 @@
 
     //공지사항 이동
     function fnMoveNotice() {
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/noticeList"
@@ -4016,11 +4016,11 @@
 
     //마이페이지 메인 이동
     function fnMoveMypage() {
-        const _mbst = '2';
+        var _mbst = '2';
         if("2" != _mbst){
             return;
         }
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/mypageList"
@@ -4030,11 +4030,11 @@
 
     //좋아요(나의 찜) 이동
     function fnMoveWishList() {
-        const _mbst = '2';
+        var _mbst = '2';
         if("2" != _mbst){
             return;
         }
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/mypage/wishList"
@@ -4042,7 +4042,7 @@
         fnCmmSubmitDynamicForm(options);
     }
     function fn_promoExhibitList(){
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/promoExhibitList"
@@ -4054,7 +4054,7 @@
     function fn_exhibitDetailHeader(_val) {
         $("#curPage").val(1);
         $("#searchViewCnt").val("20");
-        const options = {
+        var options = {
             formId: "goodsForm",
             method: "get",
             action: "/product/promoExhibitDetailList",
@@ -4070,7 +4070,7 @@
     }
 
     function fn_promoBrandList(){
-        const options = {
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/promoBrandList"
@@ -4082,7 +4082,7 @@
     function fn_BrandDetailHeader(_val) {
         $("#curPage").val(1);
         $("#searchViewCnt").val("20");
-        const options = {
+        var options = {
             formId: "goodsForm",
             method: "get",
             action: "/product/promoBrandDetailList",
@@ -4098,7 +4098,7 @@
     }
 
     function fn_search_prd_trigger(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4107,7 +4107,7 @@
         }
     }
     function fn_search_prd_trigger_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4117,7 +4117,7 @@
     }
 
     function fn_search_prd(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4129,7 +4129,7 @@
     }
 
     function fn_search_prd_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4140,8 +4140,8 @@
         }
     }
     function fn_search_goodsList(_search_word){
-        let incoding_search_word = encodeURIComponent(_search_word);
-        const options = {
+        var incoding_search_word = encodeURIComponent(_search_word);
+        var options = {
             formId: "mainForm",
             method: "get",
             action: "/product/goodsList",
@@ -4155,7 +4155,7 @@
 
     function gnbSearchSubmit(event, form){
         event.preventDefault();
-        const input = form.querySelector('[name="gnb_search_input"]');
+        var input = form.querySelector('[name="gnb_search_input"]');
         if(input.value.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -8714,12 +8714,12 @@
 
   function fn_setCategoryMobile(_valList) {
     for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-      let categor_code_name = _valList[ct_i].code_name;
-      let categor_cty_code = _valList[ct_i].cty_code;
-      let categor_cty_depth = _valList[ct_i].cty_depth;
+      var categor_code_name = _valList[ct_i].code_name;
+      var categor_cty_code = _valList[ct_i].cty_code;
+      var categor_cty_depth = _valList[ct_i].cty_depth;
       if ("2" == categor_cty_depth) {
-        let parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
-        let ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+        var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+        var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
         $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
       }
     }
@@ -8727,7 +8727,7 @@
 
   // 최초 모바일 탭 클릭
   $(document).ready(function () {
-    let _active_mobile_cate = $(".cate a.active").attr("data-cate");
+    var _active_mobile_cate = $(".cate a.active").attr("data-cate");
     $(".cate_mobile_" + _active_mobile_cate).css("display", "");
   });
 </script>
@@ -9022,30 +9022,30 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    fnSetExpectedTotalPice();
-
-    // 포인트 최대입력 금액 설정
-    $("#requsepoint").on('input', function() {
-        var totalPoint = Number('0');
-
-        if (Number(fnCmmSetNumberFormat($(this).val())) > totalPoint) {
-            fnUseAllPrice('1');
-        }
-
         fnSetExpectedTotalPice();
+
+        // 포인트 최대입력 금액 설정
+        $("#requsepoint").on('input', function() {
+            var totalPoint = Number('0');
+
+            if (Number(fnCmmSetNumberFormat($(this).val())) > totalPoint) {
+                fnUseAllPrice('1');
+            }
+
+            fnSetExpectedTotalPice();
+        });
+
+        // 마일리지 최대입력 금액 설정
+        $("#requsemileage").on('input', function() {
+            var totalMileage = Number('0');
+
+            if (Number(fnCmmSetNumberFormat($(this).val())) > totalMileage) {
+                fnUseAllPrice('2');
+            }
+
+            fnSetExpectedTotalPice();
+        });
     });
-
-    // 마일리지 최대입력 금액 설정
-    $("#requsemileage").on('input', function() {
-        var totalMileage = Number('0');
-
-        if (Number(fnCmmSetNumberFormat($(this).val())) > totalMileage) {
-            fnUseAllPrice('2');
-        }
-
-        fnSetExpectedTotalPice();
-    });
-});
 
 function fnRegDeliveryLayer() {
     fnCmmResetDocumentValues('address_form');
@@ -9329,6 +9329,629 @@ function fnInitDeliveryLayer() {
     fnGetDeliveryList(); // 배송정보 리스트 리로드
 }
 
+function fnCallPayment() {
+        var priceViewYn = fnToNotNull('1');
+        var autoUsePoint = Number(fnToNotNullDefVal('0', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var standardPayTypes = ['4', '7', '9']; // 선주문후결제, 취합후결제, 포인트결제
+        var payType = "";
+        var payCheckedValue = fnToNotNull($("input[name='oipaytype']:checked").val());
+        var payTypeMapping = {
+            "1": "11", // 신용카드
+            "2": "22", // 가상계좌
+            "3": "21", // 계좌이체
+            "5": "90"  // SSG PAY
+        };
+
+        var lastUsePoint;
+        if ("1" === priceViewYn) {
+            lastUsePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        } else {
+            lastUsePoint = autoUsePoint; // 자동차감 포인트
+        }
+
+        // 할인수단 제외 실 결제금액
+        var totalPrice = Number(fnToNotNull('70000') - lastUsePoint - useMileage);
+
+        if (0 === totalPrice) { // 실 결제금액이 0원이면
+            if (lastUsePoint > 0) {
+                payType = "9"; // 결제수단 포인트
+            } else {
+                if (useMileage > 0) {
+                    payType = "9"; // 결제수단 포인트
+                }
+            }
+        } else {
+            payType = payTypeMapping[payCheckedValue] || payCheckedValue;
+        }
+
+        if (!fnPaymentValidate(payType)) {
+            return;
+        }
+
+        var call_back = function(isConfirmed){
+            if (isConfirmed) {
+                $.ajax({
+                    type : 'post',
+                    url:'/order/getOrderNo',
+                    dataType: 'json',
+                    beforeSend: function() {
+                    },
+                    success : function(data) {
+                        if (data != null) {
+                            var isMobile = "MOBILE" === fnCmmGetDeviceType();
+
+                            if ("90" === payType) { // SSGPAY 모듈 호출
+                                fnCallSsgpayPayment(isMobile ? "3" : "1", data);
+                            } else { // WEBPAY 모듈 호출
+                                var paymentFunc = null;
+                                
+                                if (standardPayTypes.indexOf(payType) !== -1) {
+                                    paymentFunc = fnStandardPayment;
+                                } else {
+                                    paymentFunc = isMobile ? fnWebpayMobilePayment : fnWebpayPcPayment;
+                                }
+
+                                paymentFunc(payType, data);
+                            }
+                        }
+                    },
+                    error: function(request, status, error) {
+                        console.log(error);
+                    }
+                });
+            }
+        };
+
+        box_confirm(
+            '결제중 인터넷창을 종료하거나 뒤로가기 및 새로고침을 하게 되면 주문이 정상적으로 진행되지 않을 수 있습니다. 주문하시겠습니까?',
+            'confirm',
+            '결제 알림',
+            call_back
+        );
+    }
+
+    function fnPaymentValidate(reqPayType) {
+        var payConfig = fnToNotNull('1,2,3,4,5');
+        var addrViewYn = fnToNotNull('Y');
+        var priceViewYn = fnToNotNull('1');
+        var multiType = fnToNotNull('');
+        var thirdPartyYn = fnToNotNull('Y');
+        var myPoint = Number(fnToNotNullDefVal('0', 0));
+        var pointType = fnToNotNull('1');
+        var pointName = fnToNotNull('포인트');
+        var pointUnit = fnToNotNull('');
+        var limitMaxPoint = Number(fnToNotNullDefVal('', 0));
+        var limitPointType = fnToNotNull('9');
+        var limitPointMny = Number(fnToNotNullDefVal('1000', 0));
+        var limitPointPer = Number(fnToNotNullDefVal('', 0));
+        var autoUsePoint = Number(fnToNotNullDefVal('0', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var prdPrice = Number(fnToNotNull('70000'));
+        //var totalPrice = Number(fnToNotNull(prdPrice - usePoint - useMileage));
+
+        // 주문자 정보 체크
+        if ("Y" === addrViewYn || "" === addrViewYn) { // 쇼핑몰 설정에 주문자 정보 노출로 설정시
+            if ("" === fnToNotNull($("#oiname").val())
+                || "" === fnToNotNull($("#oizip").val())
+                || "" === fnToNotNull($("#oiaddr1").val())
+                || "" === fnToNotNull($("#oiaddr2").val())
+                || "" === fnToNotNull($("#oihp").val())
+            ) {
+                box_alert('주문자 정보를 등록해주세요', 'info');
+                return;
+            }
+        }
+
+        // 배송지 정보 체크(선물하기, 여러곳배송은 체크 제외)
+        if ("G" !==  multiType && "M" !== multiType) {
+            if ("" === fnToNotNull($("#oircvname").val())
+                || "" === fnToNotNull($("#oircvzip").val())
+                || "" === fnToNotNull($("#oircvaddr1").val())
+                || "" === fnToNotNull($("#oircvaddr2").val())
+                || "" === fnToNotNull($("#oircvhp").val())
+            ) {
+                box_alert('배송지 정보를 등록해주세요', 'info');
+                return;
+            }
+        }
+
+        // 쇼핑몰 설정 포인트사용방식이 필수차감 일때
+        if ("3" === pointType) {
+            if ("1" === limitPointType) {
+                if (usePoint > limitPointMny) {
+                    box_alert('최대 사용가능한 ' + pointName + ' 은(는) ' + fnSetComma(limitPointMny) + '' + pointUnit + ' 입니다', 'info');
+                    return false;
+                }
+            }
+
+            if ("2" === limitPointType) {
+                var limitPerPrice = prdPrice * limitPointPer / 100;
+                if (limitPerPrice > usePoint) {
+                    box_alert('최소 ' + fnSetComma(limitPerPrice) + ' ' + pointName + ' ' + pointUnit + ' 을(를) 보유하고 있어야합니다', 'info');
+                    return false;
+                }
+            }
+
+            if (myPoint < limitMaxPoint) {
+                box_alert(pointName + ' 을(를) ' + fnSetComma(limitMaxPoint) + ' ' + pointUnit + ' 이상 보유시 사용 가능합니다', 'info');
+                return false;
+            }
+        }
+
+        if ("" === payConfig) { // 결제수단을 사용하지 않을때
+            var lastUsePoint;
+            if ("1" === priceViewYn) { // 판매가 공개시
+                lastUsePoint = usePoint; // 직접입력 포인트
+            } else {
+                lastUsePoint = autoUsePoint; // 자동차감 포인트
+            }
+
+            if (prdPrice > lastUsePoint) {
+                box_alert('포인트 잔액이 부족합니다', 'info');
+                return;
+            }
+        } else {
+            if ("" === reqPayType) {
+                box_alert('결제수단을 선택해주세요', 'info');
+                return;
+            }
+        }
+
+        if (!$("#orderAgree1").is(":checked")) {
+            box_alert('주문내역 확인 동의는 필수입니다', 'info');
+            return false;
+        }
+
+        if ("Y" === thirdPartyYn) {
+            if (!$("#orderAgree2").is(":checked")) {
+                box_alert('개인정보 수집 및 이용, 제 3자 제공에 대한 고지 동의는 필수입니다', 'info');
+                return false;
+            }
+        }
+
+        if (!$("#orderAgree3").is(":checked")) {
+            box_alert('결제대행서비스 이용약관 동의는 필수입니다', 'info');
+            return false;
+        }
+
+        return true;
+    }
+
+    // 이지페이 모바일 팝업호출
+    function fnWebpayMobilePayment(reqPayType, reqData) {
+        var form = document.getElementById("frm_sppay");
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = String(fnToNotNull('70000') - usePoint - useMileage);
+        var korParams = ["sp_mall_nm", "sp_product_nm", "sp_user_nm"];
+        var ptnname = fnToNotNull('테스트');
+        var prcount = '1';
+        var prname = "[" + ptnname + "] " + fnToNotNull('[셰프라인] 오도르 두유제조기 CFL-SM800');
+
+        if (prcount > 0) {
+            prname = prname + " 외 " + (prcount - 1) + "건";
+        }
+
+        var options = {
+            formId: "frm_sppay",
+            params: {
+                sp_order_no: reqData.orderNo,
+                sp_mall_id: '05513906',
+                sp_mall_nm: 'SHINSEGAE',
+                sp_product_nm: prname,
+                sp_product_amt: totalPrice,
+                sp_pay_type: reqPayType,
+                sp_user_nm: '홍지우'
+            },
+            encodeFields: korParams
+        };
+
+        fnSetDeliveryInfoToJson();
+
+        $.ajax({
+            type : "post",
+            data: $("#paymentForm").serialize(),
+            url: "/order/setOrderInfoForMobile",
+            dataType: 'json',
+            success : function(data) {
+                if ("0000" !== data.result_code) {
+                    box_alert('주문정보 생성이 필요합니다.', 'info');
+                }
+            },
+            error: function(request, status, error) {
+                box_alert('주문정보 생성이 필요합니다.', 'info');
+            },
+            complete : function() {
+            }
+        });
+
+        fnCmmInitWebpayForm(options);
+
+        // 이지페이 모바일 결제창
+        easypay_card_webpay(form,'/order/paymentMobileRequest',"_self","0","0","submit",30);
+
+        fnCmmUriDecode(form, korParams);
+    }
+
+    // 이지페이 PC 팝업호출
+    function fnWebpayPcPayment(reqPayType, reqData) {
+        var form = document.getElementById("frm_pay");
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = String(fnToNotNull('70000') - usePoint - useMileage);
+        var korParams = ["EP_mall_nm", "EP_product_nm", "EP_user_nm"];
+        var ptnname = fnToNotNull('테스트');
+        var prcount = '1';
+        var prname = "[" + ptnname + "] " + fnToNotNull('[셰프라인] 오도르 두유제조기 CFL-SM800');
+
+        if (prcount > 0) {
+            prname = prname + " 외 " + (prcount - 1) + "건";
+        }
+
+        var options = {
+            formId: "frm_pay",
+            params: {
+                EP_order_no: reqData.orderNo,
+                EP_mall_id: '05513906',
+                EP_mall_nm: 'SHINSEGAE',
+                EP_product_nm: prname,
+                EP_product_amt: totalPrice,
+                EP_pay_type: reqPayType,
+                EP_user_nm: '홍지우'
+            },
+            encodeFields: korParams
+        };
+
+        // 추가로 설정하고싶은 항목이 있다면(payForm.jsp 를 참고하여 파라메터만 추가)
+        fnCmmInitWebpayForm(options);
+
+        // 이지페이 결제창 호출(iframe)
+        easypay_webpay(form,'/order/paymentRequest',"hiddenifr","0","0","iframe",30);
+
+        // 이지페이 결제창 호출(popup)
+        //easypay_webpay(form,'/order/paymentRequestPop',"hiddenifr","","","popup",30);
+
+        fnCmmUriDecode(form, korParams);
+    }
+
+    // SSGPAY 팝업 호출
+    function fnCallSsgpayPayment(reqDeviceType, reqData) {
+        var form = document.getElementById("frm_ssgpay");
+        var returnUrl = location.protocol + "//" + location.host + '/order/bypass/paymentSsgResponse';
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+        var totalPrice = String(fnToNotNull('70000') - usePoint - useMileage);
+        var korParams = ["EP_mall_nm", "EP_product_nm", "EP_user_nm"];
+        var ptnname = fnToNotNull('테스트');
+        var prcount = '1';
+        var mobile = fnToNotNull($("#oihp").val());
+        var cashAuthValue = "";
+        var cashYn = "";
+        var prname = "[" + ptnname + "] " + fnToNotNull('[셰프라인] 오도르 두유제조기 CFL-SM800');
+
+        if (prcount > 0) {
+            prname = prname + " 외 " + (prcount - 1) + "건";
+        }
+
+        // 현금영수증 발행
+        var cashIssueType = fnToNotNull($("input[name='cash_issue_type']:checked").val()); // 발행용도 - 01:소득공제, 02:지출증빙
+        var cashAuthType = $("#cash_auth_type").val(); // 인증구분 - 1:개인카드번호, 2:개인주민번호, 3:개인휴대폰, 4:법인사업자번호
+
+        if ("02" === cashIssueType) {
+            cashAuthType = "4";
+            cashAuthValue = fnToNotNull($("#biz_cash_auth_value").val());
+        } else {
+            cashAuthValue = fnToNotNull($("#cash_auth_value").val());
+        }
+
+        if ("" !== cashAuthValue) {
+            cashYn = "1";
+        }
+
+        var options = {
+            formId: "frm_ssgpay",
+            params: {
+                EP_order_no: reqData.orderNo,
+                EP_mall_id: '05546047',
+                EP_mall_nm: 'SHINSEGAE',
+                EP_product_nm: prname,
+                EP_product_amt: totalPrice,
+                EP_recv_mob: mobile,
+                EP_user_nm: '홍지우',
+                EP_return_url: returnUrl,
+                EP_cash_yn: cashYn,
+                EP_cash_issue_type: cashIssueType,
+                EP_cash_auth_type: cashAuthType,
+                EP_cash_auth_value: cashAuthValue,
+                EP_ssgpay_processctype: reqDeviceType
+            },
+            encodeFields: korParams
+        };
+
+        fnSetDeliveryInfoToJson();
+
+        $.ajax({
+            type : "post",
+            data: $("#paymentForm").serialize(),
+            url: "/order/setOrderInfoForMobile",
+            dataType: 'json',
+            success : function(data) {
+                if ("0000" !== data.result_code) {
+                    box_alert('주문정보 생성이 필요합니다.', 'info');
+                }
+            },
+            error: function(request, status, error) {
+                box_alert('주문정보 생성이 필요합니다.', 'info');
+            },
+            complete : function() {
+            }
+        });
+
+        // 추가로 설정하고싶은 항목이 있다면(payForm.jsp 를 참고하여 파라메터만 추가)
+        fnCmmInitWebpayForm(options);
+
+        // SSG PAY 다이렉트 결제창 호출(popup)
+        kicc_PAYMENTLAYER_POPUP(form, "", "popup", "640", "650");
+
+        // 팝업창 호출전 공통함수에서 자동인코딩 값들 다시 디코딩
+        fnCmmUriDecode(form, korParams);
+    }
+
+    // 이지페이 최종 승인요청
+    function fnWebpayRequest() {
+        var options = {
+            formId: "frm_pay",
+            method: "post",
+            action: "/order/webpayRequest"
+        };
+
+        fnPaymentRequestAjax(options, fnPaymentComplete);
+    }
+
+    // SSGPAY 최종 승인요청
+    function fnSsgpayRequest() {
+        var options = {
+            formId: "frm_ssgpay",
+            method: "post",
+            action: "/order/ssgpayRequest"
+        };
+
+        fnPaymentRequestAjax(options, fnPaymentComplete);
+    }
+
+    // 일반결제(포인트, 선주문후결제, 취합후결제)
+    function fnStandardPayment(reqPayType) {
+        var options = {
+            formId: "paymentForm",
+            method: "post",
+            action: "/order/insertStandardOrder",
+            payType: reqPayType
+        };
+
+        fnPaymentRequestAjax(options, fnPaymentComplete);
+    }
+
+    function fnPaymentRequestAjax(options, callback) {
+        var reqFormId = options.formId;
+        var reqMethod = options.method;
+        var reqAction = options.action;
+        var reqPayType = "";
+
+        if ("" !== fnToNotNull(options.payType)) {
+            reqPayType = options.payType;
+        }
+
+        fnSetDeliveryInfoToJson();
+
+        var form = $("#" + reqFormId).serializeArray();
+        var mergedData = {};
+
+        for (var i = 0; i < form.length; i++) {
+            var field = form[i];
+            mergedData[field.name] = field.value;
+        }
+
+        if ("paymentForm" !== reqFormId) {
+            var paymentForm = $("#paymentForm").serializeArray();
+            
+            for (var j = 0; j < paymentForm.length; j++) {
+                var field = paymentForm[j];
+                if (!mergedData.hasOwnProperty(field.name)) {
+                    mergedData[field.name] = field.value;
+                }
+            }
+        }
+
+        $.ajax({
+            type : reqMethod,
+            data: $.param(mergedData),
+            url: reqAction,
+            dataType: 'json',
+            beforeSend: function() {
+                loading('show');
+            },
+            success : function(data) {
+                if ("0000" === data.result_code) {
+                    if (typeof callback === 'function') {
+                        callback(reqPayType, data.result_etc);
+                    }
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            error: function(request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete : function() {
+                setTimeout(function() {
+                    loading('hide');
+                }, 2000);
+            }
+        });
+    }
+
+    // 주문완료
+    function fnPaymentComplete(reqPayType, reqOrderNo) {
+        // 급여공제 현금영수증 발행
+        if ("4" === reqPayType) {
+            // 현금영수증 발행
+            var cashAuthValue = "";
+            var cashIssueType = fnToNotNull($("input[name='cash_issue_type']:checked").val()); // 발행용도 - 01:소득공제, 02:지출증빙
+            var cashAuthType = $("#pre_cash_auth_type").val(); // 인증구분 - hp:개인휴대폰, receiptcard:현금영수증카드, bno:사업자번호
+
+            if ("02" === cashIssueType) {
+                cashAuthType = "bno";
+                cashAuthValue = fnToNotNull($("#biz_cash_auth_value").val());
+            } else {
+                cashAuthValue = fnToNotNull($("#cash_auth_value").val());
+            }
+
+            $.ajax({
+                type: 'post',
+                url: '/order/cashReceiptProcess',
+                data: {
+                    oikey: reqOrderNo,
+                    rec_req_type: cashIssueType,
+                    rec_value_type: cashAuthType,
+                    rec_value: cashAuthValue
+                },
+                dataType: 'json',
+                beforeSend: function () {
+                },
+                success: function (data) {
+                },
+                error: function (request, status, error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        var options = {
+            formId: "paymentCompleteForm",
+            method: "post",
+            action: "/order/paymentComplete",
+            target: "",
+            params: {
+                oikey: reqOrderNo,
+                completeSafetyNumUse: fnToNotNull($("input[name='safetynumCheck']:checked").val())
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fnChangeDelivery(reqDeliType, reqName, reqHp, reqZip, reqAddr1, reqAddr2) {
+        if ("1" === reqDeliType) {
+            var divSend1 = $("#divAds1");
+            var divSend2 = $("#divAds2");
+
+            $("#oiname").val(reqName);
+            $("#oihp").val(reqHp);
+            $("#oizip").val(reqZip);
+            $("#oiaddr1").val(reqAddr1);
+            $("#oiaddr2").val(reqAddr2);
+            divSend1.text(reqName + " / " + reqHp);
+            divSend2.text("[" + reqZip + "] " + reqAddr1 + ", " + reqAddr2);
+
+            if (!divSend1.is(':visible')) {
+                divSend1.show();
+            }
+
+            if (!divSend2.is(':visible')) {
+                divSend2.show();
+            }
+
+            // 불필요한 텍스트 제거
+            $("#divSendNoneDeliText").remove();
+        } else {
+            var divRcv1 = $("#divRcvAds1");
+            var divRcv2 = $("#divRcvAds2");
+            $("#oircvname").val(reqName);
+            $("#oircvhp").val(reqHp);
+            $("#oircvzip").val(reqZip);
+            $("#oircvaddr1").val(reqAddr1);
+            $("#oircvaddr2").val(reqAddr2);
+            divRcv1.text(reqName + " / " + reqHp);
+            divRcv2.text("[" + reqZip + "] " + reqAddr1 + ", " + reqAddr2);
+
+            if (!divRcv1.is(':visible')) {
+                divRcv1.show();
+            }
+
+            if (!divRcv2.is(':visible')) {
+                divRcv2.show();
+            }
+
+            // 불필요한 텍스트 제거
+            $("#divRecvNoneDeliText").remove();
+        }
+
+        closeLayer('', 'address_info');
+    }
+
+    function fnSetSameDelivery(reqElm) {
+        if ($(reqElm).is(':checked')) {
+            var baseName = $("#oiname").val();
+            var baseHp = $("#oihp").val();
+            var baseZip = $("#oizip").val();
+            var baseAddr1 = $("#oiaddr1").val();
+            var baseAddr2 = $("#oiaddr2").val();
+            var divRcv1 = $("#divRcvAds1");
+            var divRcv2 = $("#divRcvAds2");
+
+            $("#oircvname").val(baseName);
+            $("#oircvhp").val(baseHp);
+            $("#oircvzip").val(baseZip);
+            $("#oircvaddr1").val(baseAddr1);
+            $("#oircvaddr2").val(baseAddr2);
+
+            // 불필요한 텍스트 제거
+            $("#divRecvNoneDeliText").remove();
+
+            divRcv1.text(baseName + " / " + baseHp);
+            divRcv2.text("[" + baseZip + "] " + baseAddr1 + ", " + baseAddr2);
+
+            if (!divRcv1.is(':visible')) {
+                divRcv1.show();
+            }
+
+            if (!divRcv2.is(':visible')) {
+                divRcv2.show();
+            }
+        }
+    }
+
+    function fnUseAllPrice(reqType) {
+        var totalPrice = Number(fnToNotNull('70000', 0));
+        var myPoint = Number(fnToNotNullDefVal('0', 0));
+        var myMileage = Number(fnToNotNullDefVal('0', 0));
+        var usePoint = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsepoint").val()), 0));
+        var useMileage = Number(fnToNotNullDefVal(fnCmmSetNumberFormat($("#requsemileage").val()), 0));
+
+        if ("1" === reqType) {
+            totalPrice = totalPrice - useMileage;
+
+            if (totalPrice < myPoint) {
+                $("#requsepoint").val(fnSetComma(totalPrice));
+            } else {
+                $("#requsepoint").val(fnSetComma(myPoint));
+            }
+        } else if ("2" === reqType) {
+            totalPrice = totalPrice - usePoint;
+
+            if (totalPrice < myMileage) {
+                $("#requsemileage").val(fnSetComma(totalPrice));
+            } else {
+                $("#requsemileage").val(fnSetComma(myMileage));
+            }
+        }
+
+        fnSetExpectedTotalPice();
+    }
+
 function fnSetDeliveryInfoToJson() {
     var data = [];
     var recvNames = $('input[name^="oircvname"]');
@@ -9550,7 +10173,7 @@ var element_layer = document.getElementById('daumAdressLayer');
 var ads_layer = document.getElementById('ads_layer');
 
 function execDaumPostcode(elm) {
-    const target = document.getElementById(elm)
+    var target = document.getElementById(elm)
     new daum.Postcode({
         oncomplete: function(data) {
             var addr = ''; // 주소 변수

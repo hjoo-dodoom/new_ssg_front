@@ -3902,12 +3902,12 @@
 
     function fn_setCategory(_valList) {
         for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-            let categor_code_name = _valList[ct_i].code_name;
-            let categor_cty_code = _valList[ct_i].cty_code;
-            let categor_cty_depth = _valList[ct_i].cty_depth;
+            var categor_code_name = _valList[ct_i].code_name;
+            var categor_cty_code = _valList[ct_i].cty_code;
+            var categor_cty_depth = _valList[ct_i].cty_depth;
             if ("2" == categor_cty_depth) {
-                let parentCode = "cate_" + categor_cty_code.substring(0, 2);
-                let ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                var parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                var ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
                 $("." + parentCode).append(ctyDepthSecHTML);
             }
         }
@@ -3981,14 +3981,14 @@
                 }else if(null != data && "8888" == data.cmmMemo){
                     // 장바구니에 담기지 않고 상세페이지로 이동
                     var target_url = "/product/goodsDetail";
-                    let results_url = window.location.origin + target_url;
+                    var results_url = window.location.origin + target_url;
                     var options = {
                         formId: "mainForm",
                         method: "get",
                         params: {
                             prid: _prid
                         },
-                        action: results_url,
+                        action: results_url
                     };
                     fnCmmSubmitDynamicForm(options);
                 }else if(null != data && "7777" == data.cmmMemo){
@@ -4097,7 +4097,7 @@
     }
 
     function fn_search_prd_trigger(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4106,7 +4106,7 @@
         }
     }
     function fn_search_prd_trigger_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(word.length < 2){
             alert('검색어를 두 글자 이상 입력해주세요.');
             return;
@@ -4116,7 +4116,7 @@
     }
 
     function fn_search_prd(){
-        let word = $('[name="gnb_search_input"]').val();
+        var word = $('[name="gnb_search_input"]').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4128,7 +4128,7 @@
     }
 
     function fn_search_prd_mobile(){
-        let word = $('#gnb_search_input_mobile').val();
+        var word = $('#gnb_search_input_mobile').val();
         if(window.event.keyCode == 13){
             if(word.length < 2){
                 alert('검색어를 두 글자 이상 입력해주세요.');
@@ -4139,7 +4139,7 @@
         }
     }
     function fn_search_goodsList(_search_word){
-        let incoding_search_word = encodeURIComponent(_search_word);
+        var incoding_search_word = encodeURIComponent(_search_word);
         var options = {
             formId: "mainForm",
             method: "get",
@@ -8751,15 +8751,14 @@ function fnMovePaymentAll() {
                 if (list.length === 0) {
                     var row = document.createElement('div');
                     row.classList.add('list_empty');
-                    row.innerHTML = `
-                        <div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>
-                    `;
+                    row.innerHTML = 
+                        '<div class="empty">등록된 배송지가 없습니다.<br/>배송지를 등록해주세요.</div>';
 
                     deliveryBody.appendChild(row);
                 }
 
-                for (let i = 0; i < list.length; i++) {
-                    let baseDeliveryHtml = '';
+                for (var i = 0; i < list.length; i++) {
+                    var baseDeliveryHtml = '';
                     var baseName = fnToNotNull(list[i].cmmName);
                     var baseHp = fnToNotNull(list[i].cmmMbhp);
                     var baseZip = fnToNotNull(list[i].cmmZipcode);
@@ -8772,23 +8771,22 @@ function fnMovePaymentAll() {
 
                     var row = document.createElement('div');
                     row.classList.add('label_item');
-                    row.innerHTML = `
-                        <label class="label_cnt checkbox radio_type1">
-                            <input type="radio" name="ads_check" onclick="fnChangeDelivery('` + list[i].cmmIdx + `','` + baseName + `','` + baseHp + `','` + baseZip + `','` + baseAddr1 + `','` + baseAddr2 + `');">
-                            <span class="ck_icon"></span>
-                            <span class="ck_line"></span>
-                            <div class="address_cnt">
-                                ` + baseDeliveryHtml + `
-                                <div class="address_basic">
-                                    <div class="name">` + baseName + ` / ` + baseHp + `</div>
-                                    <div class="ads">[` + baseZip + `] ` + baseAddr1 + `, ` + baseAddr2 + `</div>
-                                </div>
-                                <div class="text_btns">
-                                    <div><button type="button" onclick="fnModDeliveryLayer('` + list[i].cmmIdx + `','` + baseName + `','` + baseHp + `','` + baseZip + `','` + baseAddr1 + `','` + baseAddr2 + `');">수정</button></div>
-                                </div>
-                            </div>
-                        </label>
-                    `;
+                    row.innerHTML = 
+                        '<label class="label_cnt checkbox radio_type1">' +
+                            '<input type="radio" name="ads_check" onclick="fnChangeDelivery(\'' + list[i].cmmIdx + '\',\'' + baseName + '\',\'' + baseHp + '\',\'' + baseZip + '\',\'' + baseAddr1 + '\',\'' + baseAddr2 + '\');">' +
+                            '<span class="ck_icon"></span>' +
+                            '<span class="ck_line"></span>' +
+                            '<div class="address_cnt">' +
+                                baseDeliveryHtml +
+                                '<div class="address_basic">' +
+                                    '<div class="name">' + baseName + ' / ' + baseHp + '</div>' +
+                                    '<div class="ads">[' + baseZip + '] ' + baseAddr1 + ', ' + baseAddr2 + '</div>' +
+                                '</div>' +
+                                '<div class="text_btns">' +
+                                    '<div><button type="button" onclick="fnModDeliveryLayer(\'' + list[i].cmmIdx + '\',\'' + baseName + '\',\'' + baseHp + '\',\'' + baseZip + '\',\'' + baseAddr1 + '\',\'' + baseAddr2 + '\');">수정</button></div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</label>';
 
                     deliveryBody.appendChild(row);
                 }
@@ -8844,7 +8842,7 @@ function fnMovePaymentAll() {
                     }
                 }
 
-                for (let i = 0; i < list.length; i++) {
+                for (var i = 0; i < list.length; i++) {
                     var optNameHtml = '';
                     var items = fnToNotNull(list[i].opt_name).split(",");
                     var lastOptYn = (i === list.length - 1 ? "Y" : "N");
@@ -8852,7 +8850,7 @@ function fnMovePaymentAll() {
                     if ("9" !== reqOptType) {
                         // 첫번째 옵션만 상세옵션 표시
                         if (i === 0) {
-                            items.forEach(item => {
+                            items.forEach(function(item) {
                                 var itemCombine = list[i].opt_group_idx + "|" + item;
                                 optNameHtml += '<option value="' + itemCombine + '">' + item + '</option>';
                             });
@@ -8860,7 +8858,7 @@ function fnMovePaymentAll() {
                             optNameHtml = "상위 옵션을 먼저 선택해주세요";
                         }
                     } else {
-                        items.forEach(item => {
+                        items.forEach(function(item) {
                             var itemCombine = list[i].opt_group_idx + "|" + item;
                             optNameHtml += '<option value="' + itemCombine + '">' + item + '</option>';
                         });
@@ -8868,16 +8866,15 @@ function fnMovePaymentAll() {
 
                     var row = document.createElement('div');
                     row.classList.add('input_group');
-                    row.innerHTML = `
-                        <div class="input">
-                            <div class="design_select type3">
-                                <select onchange="fnGetOptGroupDefineDetail(this, ` + i + ` , '` + reqCrid + `', '` + reqPrid + `', '` + reqOptcode + `', '` + list[i].opt_group_idx  + `', '` + lastOptYn + `')" select-required product-option="modal_prd_option_required` + i + `">
-                                    <option value="">` + list[i].opt_group_name + ` 선택</option>
-                                    ` + optNameHtml + `
-                                </select>
-                            </div>
-                        </div>
-                    `;
+                    row.innerHTML = 
+                        '<div class="input">' +
+                            '<div class="design_select type3">' +
+                                '<select onchange="fnGetOptGroupDefineDetail(this, ' + i + ', \'' + reqCrid + '\', \'' + reqPrid + '\', \'' + reqOptcode + '\', \'' + list[i].opt_group_idx + '\', \'' + lastOptYn + '\')" select-required product-option="modal_prd_option_required' + i + '">' +
+                                    '<option value="">' + list[i].opt_group_name + ' 선택</option>' +
+                                    optNameHtml +
+                                '</select>' +
+                            '</div>' +
+                        '</div>';
 
                     optGroupBody.appendChild(row);
                 }
@@ -8907,22 +8904,22 @@ function fnMovePaymentAll() {
             },
             success: function (data) {
                 var list = data.optGroupList;
-                let options = '';
+                var options = '';
 
-                for (let i = 0; i < list.length; i++) {
+                for (var i = 0; i < list.length; i++) {
                     var items = fnToNotNull(list[i].opt_name).split(",");
 
-                    items.forEach(item => {
+                    items.forEach(function(item) {
                         var itemCombine = list[i].opt_group_idx + "|" + item;
                         options += '<option value="' + itemCombine + '">' + item + '</option>';
                     });
                 }
 
                 if ("Y" === reqLastYn) { // 마지막 옵션을 선택했을때 값 설정
-                    let selectedOptions = [];
-                    document.querySelectorAll('.options [select-required]').forEach(select => {
-                        var groupIdx = select.selectedOptions[0].value.split("|") [0];
-                        var optName = select.selectedOptions[0].value.split("|") [1];
+                    var selectedOptions = [];
+                    document.querySelectorAll('.options [select-required]').forEach(function(select) {
+                        var groupIdx = select.selectedOptions[0].value.split("|")[0];
+                        var optName = select.selectedOptions[0].value.split("|")[1];
                         var optParams = {
                             cmmOptgroupidx: groupIdx,
                             cmmProptname: optName
@@ -8936,11 +8933,11 @@ function fnMovePaymentAll() {
                     $("#orgOptCode").val(reqOptcode);
                     $("#chgOptSearchStr").val(JSON.stringify(selectedOptions));
                 } else {
-                    var targetModalSelect = document.querySelector(`[product-option = 'modal_prd_option_required`+targetNum+`']`);
+                    var targetModalSelect = document.querySelector('[product-option = \'modal_prd_option_required'+targetNum+'\']');
 
                     //선택한 다음 셀렉트 업데이트 후  셀렉트 초기화
                     targetModalSelect.insertAdjacentHTML('beforeend', options);
-                    var targetModalSelectChoices = choicesInstances.get(`modal_prd_option_required`+targetNum+``);
+                    var targetModalSelectChoices = choicesInstances.get('modal_prd_option_required'+targetNum+'');
 
                     if (targetModalSelectChoices) {
                         targetModalSelectChoices.destroy();
@@ -8988,7 +8985,7 @@ function fnMovePaymentAll() {
     }
 
     function fnCalCartTotalPrice() {
-        let fieldCnt = 0;
+        var fieldCnt = 0;
         var chkList = [];
 
         $("#tblCart tbody input[name=checkedCrid]").each(function () {
@@ -9059,7 +9056,7 @@ function fnMovePaymentAll() {
             success: function (data) {
                 var list = data.optGroupList;
                 var optGroupBody = document.getElementById('divOptGroupDefine');
-                let optNameHtml = '';
+                var optNameHtml = '';
 
                 if (optGroupBody) {
                     while (optGroupBody.firstChild) {
@@ -9067,7 +9064,7 @@ function fnMovePaymentAll() {
                     }
                 }
 
-                for (let i = 0; i < list.length; i++) {
+                for (var i = 0; i < list.length; i++) {
                     if (0 === list[i].cmmOptaddamt) {
                         optNameHtml += '<option value="' + list[i].cmmOptcode + '" disabled>' + list[i].cmmProptname + ' (품절)</option>';
                     } else {
@@ -9078,16 +9075,15 @@ function fnMovePaymentAll() {
 
                 var row = document.createElement('div');
                 row.classList.add('input_group');
-                row.innerHTML = `
-                    <div class="input">
-                        <div class="design_select type3">
-                            <select onchange="fnSetOptValues(this, '` + reqCrid + `', '` + reqPrid + `', '` + reqOptcode + `')">
-                                <option value="">옵션을 선택하세요</option>
-                                ` + optNameHtml + `
-                            </select>
-                        </div>
-                    </div>
-                `;
+                row.innerHTML = 
+                    '<div class="input">' +
+                        '<div class="design_select type3">' +
+                            '<select onchange="fnSetOptValues(this, \'' + reqCrid + '\', \'' + reqPrid + '\', \'' + reqOptcode + '\')">' +
+                                '<option value="">옵션을 선택하세요</option>' +
+                                optNameHtml +
+                            '</select>' +
+                        '</div>' +
+                    '</div>';
 
                 optGroupBody.appendChild(row);
             },

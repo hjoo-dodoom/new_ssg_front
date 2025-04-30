@@ -7866,12 +7866,12 @@ function fn_partnerMallPage(idx, ptncode) {
 
   function fn_setCategoryMobile(_valList) {
     for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-      let categor_code_name = _valList[ct_i].code_name;
-      let categor_cty_code = _valList[ct_i].cty_code;
-      let categor_cty_depth = _valList[ct_i].cty_depth;
+      var categor_code_name = _valList[ct_i].code_name;
+      var categor_cty_code = _valList[ct_i].cty_code;
+      var categor_cty_depth = _valList[ct_i].cty_depth;
       if ("2" == categor_cty_depth) {
-        let parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
-        let ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+        var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+        var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
         $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
       }
     }
@@ -7879,7 +7879,7 @@ function fn_partnerMallPage(idx, ptncode) {
 
   // 최초 모바일 탭 클릭
   $(document).ready(function () {
-    let _active_mobile_cate = $(".cate a.active").attr("data-cate");
+    var _active_mobile_cate = $(".cate a.active").attr("data-cate");
     $(".cate_mobile_" + _active_mobile_cate).css("display", "");
   });
 </script>
@@ -7954,7 +7954,7 @@ var element_layer = document.getElementById('daumAdressLayer');
 var ads_layer = document.getElementById('ads_layer');
 
 function execDaumPostcode(elm) {
-    const target = document.getElementById(elm)
+  var target = document.getElementById(elm)
     new daum.Postcode({
         oncomplete: function(data) {
             var addr = ''; // 주소 변수

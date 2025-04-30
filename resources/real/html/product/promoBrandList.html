@@ -1155,7 +1155,7 @@ var element_layer = document.getElementById('daumAdressLayer');
 var ads_layer = document.getElementById('ads_layer');
 
 function execDaumPostcode(elm) {
-    const target = document.getElementById(elm)
+    var target = document.getElementById(elm)
     new daum.Postcode({
         oncomplete: function(data) {
             var addr = ''; // 주소 변수
