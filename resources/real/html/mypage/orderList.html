@@ -8721,6 +8721,138 @@ function goPage(curPage) {
     $("#orderListForm").submit();
 }
 
+//배송/주문문의 등록
+function fnInsert(btn) {
+    $('#insertForm').validate({
+        rules: {
+            mbhp: {required: true},
+            subject: {required: true},
+            content: {required: true},
+            qna_category: {required: true}
+        },
+        messages: {
+            mbhp: {required: '휴대폰번호를 입력해 주세요.'},
+            subject: {required: '문의제목을 입력해 주세요.'},
+            content: {required: '문의내용을 입력해 주세요.'},
+            qna_category: {required: '문의유형을 선택하세요.'}
+        },
+        submitHandler: function() {
+            var phoneValue = $('#mbhp').val();
+            if (!isMobile(phoneValue)) {
+                alert('전화번호 형식이 아닙니다.');
+                return;
+            }
+
+            var cat = $('#qna_category').val();
+            if (!cat) {
+                alert('문의유형을 선택하세요.');
+                $('#cat').focus();
+                return;
+            }
+
+            var check = $('#check_yn').prop('checked');
+            if (!check) {
+                alert('개인정보 수집 및 이용에 동의해야합니다.');
+                return;
+            }
+
+            var formFile = $("#insertForm")[0];
+            var formData = new FormData(formFile);
+
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "/mypage/insertDeliveryQna",
+                data: formData,
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    loading('show');
+                },
+                success: function (data) {
+                    if (data.result_code == "0000") {
+                        alert("정상적으로 접수되었습니다.");
+                        var div = btn.closest('div');
+                        var a = div.querySelector('a');
+                        closeLayer(a);
+                    } else {
+                        alert(data.result_msg);
+                    }
+                },
+                error: function (e) {
+                    alert("오류가 발생 하였습니다.");
+                },
+                complete: function () {
+                    setTimeout(function() {
+                        loading('hide');
+                    }, 1000);
+                }
+            });
+        }
+    });
+}
+
+//전화번호 종류인지 확인
+function isMobile(phoneNum) {
+    var regExp = /(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/;
+    var myArray;
+    if (regExp.test(phoneNum)) {
+        myArray = regExp.exec(phoneNum);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//이미지 삭제
+function removeImage(input) {
+    var photoItem = input.closest('.photo_item');
+    var fileItem = photoItem.querySelector('input[type=file]');
+    var preview = photoItem.querySelector('.preview');
+    var removeBtn = photoItem.querySelector('.photo_remove');
+
+    fileItem.value = '';
+    preview.style = '';
+    preview.style.display = 'none';
+    removeBtn.style.display = 'none';
+}
+
+//배송/주문문의 데이터 획득
+function fnGetQnaData(input, oiid, opid) {
+    var tr = input.closest('tr');
+    var td_product = tr.querySelector('.td_product');
+    var name = td_product.querySelector('.name') ? td_product.querySelector('.name').text : '';
+    var option = td_product.querySelector('.option') ? td_product.querySelector('.option').textContent : '';
+    var lot = td_product.querySelector('.lot') ? td_product.querySelector('.lot').textContent : '';
+
+    var form = document.querySelector('#insertForm');
+    form.querySelector('#opid').value = opid;
+    form.querySelector('#oiid').textContent = oiid;
+    form.querySelector('#pname').textContent = name;
+    form.querySelector('#option').textContent = option;
+    form.querySelector('#lot').textContent = lot;
+}
+
+//배송조회
+function fnSearchDeliveryPop(slipcom, slipno) {
+    var replStr = slipno.replace("-", "");
+    var myForm = document.deliveryForm;
+    var url = "https://info.sweettracker.co.kr/tracking/5";
+
+    window.open("" ,"searchInvoiceInfo", "toolbar=no, width=450, height=800, directories=no, status=no, scrollorbars=yes, resizable=yes");
+
+    myForm.action = url;
+    myForm.method = "post";
+    myForm.target = "searchInvoiceInfo";
+
+    $("#deliveryForm #t_key").val("LhoT9Is9Hf9VJO7lUfQkmA");
+    $("#deliveryForm #t_code").val(slipcom);
+    $("#deliveryForm #t_invoice").val(replStr);
+
+    myForm.submit();
+}
+
 // 대량주문 조회
 function fn_multi_cancel_select() {
     $.ajax({

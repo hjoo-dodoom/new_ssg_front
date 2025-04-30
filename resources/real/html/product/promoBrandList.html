@@ -1,3 +1,8 @@
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -56,7 +61,10 @@
 
 
 
-<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+
+
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show">
 
     <!-- 공통영역1 -->
     
@@ -73,14 +81,27 @@
                 
                     <div class="item">
                         <a href="/mypage/pointList" class="point">
-                            <span class="count">0</span>
+                            <span class="count">776,400</span>
                             
                         </a>
                     </div>
                 
                 
+                    <div class="item">
+                        <a href="/mypage/mileageList" class="mileage">
+                            <span class="count">490,300</span>
+                            
+                        </a>
+                    </div>
+                
             </div>
             <div id="hd_members">
+                
+                    <div class="item">
+                        <a href="/order/orderMultiRegView" class="bold">
+                            <span class="icon_hd_reg"></span>대량등록
+                        </a>
+                    </div>
                 
                 <div class="item">
                     <a href="javascript:fnLogout();">로그아웃</a>
@@ -126,40 +147,31 @@
             <!-- 모바일 상단 페이지 타이틀 -->
             
                 
-                    <div class="page_title_mobile">마이페이지</div>
                 
+                    <div class="page_title_mobile">장바구니</div>
                 
             
 
             <!-- 모바일 1차 카테고리 (상품 리스트에서만 노출) -->
             
                 
+                
+                
                     <div class="cate_first_mobile">
                         <div class="cate_first_title">
-                            <div class="cate_first_list_inner">
-                                
-                                    
-                                    
-                                        <button type="button" class="cate_first_toggle" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></button>
-                                    
-                                
-                            </div>
+                            <button type="button" class="cate_first_toggle" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');">브랜드관</button>
                         </div>
 
                         <div class="cate_first_list">
                             <div class="cate_first_list_inner">
+
                                 
-                                    
-                                    
-                                        
-                                    
+                                    <div class="cate"><a href="javascript:;fn_BrandDetailHeader('3159')">SAFA,Panasonic,BRAMS</a></div>
                                 
                             </div>
                             <span class="cate_first_list_bg" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></span>
                         </div>
                     </div>
-                
-                
                 
             
             <!-- //모바일 1차 카테고리 (상품 리스트에서만 노출) -->
@@ -183,7 +195,7 @@
                 
                     <div class="item v_both item_cart">
                         <a href="javascript:fn_moveCart();">
-                            <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+                            <span class="icon_hd_cart"><span class="count theme_bg_color">2</span></span>
                             <span class="text">장바구니</span>
                         </a>
                     </div>
@@ -202,6 +214,13 @@
                         </a>
                     </div>
                 
+                
+                    <div class="item v_pc">
+                        <a href="javascript:fnMoveNotice();">
+                            <span class="icon_hd_notice"></span>
+                            <span class="text">공지사항</span>
+                        </a>
+                    </div>
                 
             </div>
         </div>
@@ -231,6 +250,13 @@
                                 </a>
                             </div>
                         
+                        
+                            <div class="item">
+                                <a href="javascript:fn_promoBrandList();">
+                                    <span class="icon_hd_brand"></span>
+                                    브랜드
+                                </a>
+                            </div>
                         
                     </div>
                 
@@ -290,7 +316,7 @@
         // 하위 항목이 없을때에 전체 삭제
         /*
         $(".search_product_cate").each(function () {
-            var length_li = $(this).find('li');
+            let length_li = $(this).find('li');
             if(length_li.length === 1){
                 length_li.remove();
             }
@@ -563,9 +589,10 @@
     }
 </script>
     <!-- //공통영역1 -->
-
     <div id="content" class="sub_content">
+
         <div class="main_contents">
+
             <!-- 공통영역 -->
             <!-- 퀵 콘텐츠 -->
             
@@ -601,13 +628,62 @@
                       <div class="swiper-slide">
                     
                     <div class="item">
-                      <a href="javascript:fn_linkGoodsPage('P0000000234313')">
+                      <a href="javascript:fn_linkGoodsPage('P0000000237132')">
                         <div class="img">
-                          <img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 11">
+                          <img src="/ib2bmall/productImg/P00/000/002/37132_0.jpg" alt="테스트상품 1입니다">
                         </div>
                         <div class="cnt">
-                          <div class="product_name">테스트상품 11</div>
+                          <div class="product_name">테스트상품 1입니다</div>
                           <div class="price_sale">5,900원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                  
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000237163')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/34368_0.jpg" alt="[셰프라인] 오도르 두유제조기 CFL-SM800">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">[셰프라인] 오도르 두유제조기 CFL-SM800</div>
+                          <div class="price_sale">58,800원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                  
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000234477')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 돋움 이미지">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">테스트상품 돋움 이미지</div>
+                          <div class="price_sale">5,900원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                      </div>
+                    
+                  
+                    
+                      <div class="swiper-slide">
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000237134')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/001/97284_0.jpg" alt="[테스트] 복숭아 3kg 소과 15~18과(냉장포장)">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">[테스트] 복숭아 3kg 소과 15~18과(냉장포장)</div>
+                          <div class="price_sale">9,700원</div>
                         </div>
                       </a>
                     </div>
@@ -630,6 +706,22 @@
 
 
 
+    
+      <!-- 재판매 금지 -->
+      <div class="quick_item">
+        <div id="resale_no_layer" class="layer_popup layer_mobile">
+          <div class="layer_mobile_content">
+            <div class="resale_no">
+              <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+            </div>
+            <div class="layer_mobile_btns">
+              <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+            </div>
+          </div>
+          <span class="layer_bg" onclick="closeLayer(this)"></span>
+        </div>
+      </div>
+    <!-- //재판매 금지 -->
     
   </div>
 </div>
@@ -664,195 +756,66 @@
 </script>
             <!-- //퀵 콘텐츠 -->
             <!-- //공통영역 -->
-
             <div class="contents">
-                <div class="mypage_wrap">
+                <div class="subpage_title_center between_sm">
+                    <h2>브랜드관</h2>
+                </div>
 
-                    <!-- 마이페이지 피시 메뉴  -->
+                <div class="brand_list">
                     
-
-
-
-
-<div id="mypage_aside" class="mypage_aside">
-  <div class="ma_name"><a href="/mypage/mypageList">홍지우님</a></div>
-  <div class="ma_location">
-    <ul>
-      <li><a href="javascript:;">나의 주문</a>
-        <ul>
-          <li><a href="/mypage/orderList" class="">주문배송조회</a></li>
-          <li><a href="/mypage/orderRefundList" class="">취소/교환/반품</a></li>
-          
-        </ul>
-      </li>
-      <li><a href="javascript:;">나의 혜택</a>
-        <ul>
-          
-            <li><a href="/mypage/pointList" class="">포인트</a></li>
-            
-          
-          
-
-            <li><a href="/mypage/couponList" class="">쿠폰</a></li>
-
-        </ul>
-      </li>
-      <li><a href="javascript:;">나의 활동</a>
-        <ul>
-          <li><a href="/mypage/wishList" class="">나의 찜</a></li>
-          <li><a href="/mypage/eventList" class="">나의 이벤트</a></li>
-          <li><a href="/mypage/productRequestList" class="">상품요청</a></li>
-          <li><a href="/mypage/productQnaList" class="">상품문의</a></li>
-          <li><a href="/mypage/deliveryQnaList" class="">배송/주문 문의</a></li>
-          <li><a href="/mypage/oneToOneQnaList" class="active">1:1 문의</a></li>
-        </ul>
-      </li>
-      <li><a href="javascript:;">나의 정보</a>
-        <ul>
-          <li><a href="/mypage/memberModify" class="">정보수정</a></li>
-          
-        </ul>
-      </li>
-      <li><a href="javascript:;">고객센터</a>
-        <ul>
-          <li><a href="/mypage/noticeList" class="">공지사항</a></li>
-          <li><a href="/mypage/faq" class="">FAQ</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
-
-                    <div class="mypage_content">
-                        <h2 class="mypage_title">1:1 문의</h2>
-
-                        <div class="info_gbox_wrap">
-                            <div class="links_gbox">
-                                <a href="javascript:fnChangeStatus('');" class="item active">
-                                    <div class="cnt">1</div>
-                                    <div class="tit">
-                                        <span>전체</span>
-                                    </div>
-                                </a>
-                                <a href="javascript:fnChangeStatus('1');" class="item ">
-                                    <div class="cnt">1</div>
-                                    <div class="tit">
-                                        <span>답변대기</span>
-                                    </div>
-                                </a>
-                                <a href="javascript:fnChangeStatus('2');" class="item ">
-                                    <div class="cnt">0</div>
-                                    <div class="tit">
-                                        <span>답변완료</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="form_btns between_md">
-                                <button type="submit" class="btn btn_black btn_type5 w300" onclick="fnMoveReg()">문의하기</button>
-                            </div>
+                        <div class="item brand">
+                            <a href="javascript:fn_BrandDetailHeader('3159');">
+                                <div class="thum"><img src="/ib2bmall/promotionImg/20250405155513292852"></div>
+                                <div class="subject">SAFA,Panasonic,BRAMS</div>
+                                <div class="dsc">안마의자 브랜드전</div>
+                            </a>
                         </div>
+                    
+                </div>
+                <!-- 페이징 -->
+                
 
-                        <div class="mp_box">
-                            <div class="table_top">
-                                <div class="r">
-                                    <div class="sort_items form_type4 ">
-                                        <div class="item">
-                                            <div class="input_group">
-                                                <div class="input size_20">
-                                                    <div class="design_select type5">
-                                                        <select name="catSelect" id="catSelect" onchange="fnChangeCategory()">
-                                                            <option value="0" selected>전체</option>
-                                                            <option value="1" >주문/결제</option>
-                                                            <option value="2" >배송문의</option>
-                                                            <option value="3" >교환/반품</option>
-                                                            <option value="4" >주문취소</option>
-                                                            <option value="5" >포인트</option>
-                                                            <option value="7" >비회원상담</option>
-                                                            <option value="6" >기타</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="info_list">
-                                
-                                    
-                                        
-                                            <li>
-                                                <div class="content">
-                                                    
-                                                    
-                                                        <div class="status gray"><span>답변대기</span></div>
-                                                    
-                                                    <div class="date">2025.04.30</div><a href="javascript:fnMoveDetail('41128');" class="subject">제목입니다</a>
-                                                </div>
-                                                <div class="btns">
-                                                    
-                                                        <div class="item"><a href="javascript:fnMoveUpdate('41128');">수정</a></div>
-                                                    
-                                                    <div class="item"><a href="javascript:fnDelete('41128');">삭제</a></div>
-                                                </div>
-                                            </li>
-                                        
-                                    
-                                    
-                                
-                            </ul>
 
-                            <!-- 마이페이지 페이징 -->
-                            
-
+<script>
+	$(document).ready(function() {
+		$("#inputPageNum").keydown(function(e) {
+			if (e.keyCode === 13) {
+				goPage($("#inputPageNum").val());
+			}
+		});
+	});
+</script>
 
 
 	
-    
-    
-   
 	
-    	
-    
-								   
-	<div class="paging">
+	
+	
 		
-		
-		
-		
-			
-				<span class="sound_only">열린</span><strong class="pg_current">1</strong><span class="sound_only">페이지</span>
-			
-			
-		
-		
+	
+	<div class="paging line">
+		<a href="javascript:goPage(1);" class="pg_move pg_start">처음</a>
+		<a href="javascript:goPage(0);" class="pg_move pg_prev">이전</a>
 		
 			
-		<!-- <button type="button" class="btn_ty4">창닫기</button> -->
+				
+					<span class="sound_only">열린</span><strong class="pg_current">1</strong><span class="sound_only">페이지</span>
+				
+				
+			
+		
+		<a href="javascript:goPage(2);" class="pg_move pg_next">다음</a>
+		<a href="javascript:goPage(1);" class="pg_move pg_end">맨끝</a>
 	</div>
 
-                        </div>
+                <!--// 페이징 -->
 
-                        <div class="caution_box">
-                            <div class="caution_title">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.25A9.75 9.75 0 1 0 21.75 12 9.76 9.76 0 0 0 12 2.25Zm0 18A8.25 8.25 0 1 1 20.25 12 8.26 8.26 0 0 1 12 20.25Zm-.75-7.5V7.5a.75.75 0 1 1 1.5 0v5.25a.75.75 0 1 1-1.5 0Zm1.875 3.375a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0Z" fill="#000"></path></svg>
-                                <span>유의사항</span>
-                            </div>
-                            <ul class="dot">
-                                <li>상담시간 : 월~금 10:00 ~ 17:00(점심시간 12:00-13:00, 토/일/공휴일 휴무)</li>
-                                <li>답변이 완료된 상담내용은 수정이 불가합니다.</li>
-                                <li>1:1 문의와 관련 없는 내용, 비방, 광고, 불건전한 내용의 글은 사전 동의 없이 삭제될 수 있습니다.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 공통영역3 -->
-    <!-- 모바일 전체 카테고리  -->
-    
+        <!-- 공통영역3 -->
+        <!-- 모바일 전체 카테고리  -->
+        
 
 
 
@@ -871,7 +834,7 @@
     
       <div class="item item_cart">
         <a href="javascript:fn_moveCart();">
-          <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+          <span class="icon_hd_cart"><span class="count theme_bg_color">2</span></span>
           <span class="sound_only">장바구니</span>
         </a>
       </div>
@@ -897,33 +860,32 @@
 </ul>
 </div>
 <script>
-var _mobile_ctgList = [];
+    var _mobile_ctgList = [];
+    
+    fn_setCategoryMobile(_mobile_ctgList);
   
-  fn_setCategoryMobile(_mobile_ctgList);
-
-  function fn_setCategoryMobile(_valList) {
-    for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
-      var categor_code_name = _valList[ct_i].code_name;
-      var categor_cty_code = _valList[ct_i].cty_code;
-      var categor_cty_depth = _valList[ct_i].cty_depth;
-      if ("2" == categor_cty_depth) {
-        var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
-        var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
-        $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
+    function fn_setCategoryMobile(_valList) {
+      for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+        var categor_code_name = _valList[ct_i].code_name;
+        var categor_cty_code = _valList[ct_i].cty_code;
+        var categor_cty_depth = _valList[ct_i].cty_depth;
+        if ("2" == categor_cty_depth) {
+          var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+          var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+          $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
+        }
       }
     }
-  }
+  
+    // 최초 모바일 탭 클릭
+    $(document).ready(function () {
+      var _active_mobile_cate = $(".cate a.active").attr("data-cate");
+      $(".cate_mobile_" + _active_mobile_cate).css("display", "");
+    });
+  </script>
 
-  // 최초 모바일 탭 클릭
-  $(document).ready(function () {
-    var _active_mobile_cate = $(".cate a.active").attr("data-cate");
-    $(".cate_mobile_" + _active_mobile_cate).css("display", "");
-  });
-</script>
-
-
-    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
-    
+        <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+        
 
 
 
@@ -937,9 +899,8 @@ var _mobile_ctgList = [];
     </div>
   </div>
 </div>
-
-    <!-- 푸터  -->
-    
+        <!-- 푸터  -->
+        
 
 
 <!-- 푸터  -->
@@ -982,9 +943,8 @@ var _mobile_ctgList = [];
     </div>
 </div>
 <!-- //모바일 하단 플로팅  -->
-
-    <!-- 모바일 하단 플로팅  -->
-    
+        <!-- 모바일 하단 플로팅  -->
+        
 
 
 
@@ -1002,7 +962,7 @@ var _mobile_ctgList = [];
     
       <div class="item item_cart">
         <a href="javascript:fn_moveCart();">
-          <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+          <span class="icon_hd_cart"><span class="count theme_bg_color">2</span></span>
           <span class="sound_only">장바구니</span>
         </a>
       </div>
@@ -1018,11 +978,44 @@ var _mobile_ctgList = [];
           
 
             <div class="item">
-              <a href="javascript:fn_linkGoodsPage('P0000000234313')">
-                <div class="img"><img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 11"></div>
+              <a href="javascript:fn_linkGoodsPage('P0000000237132')">
+                <div class="img"><img src="/ib2bmall/productImg/P00/000/002/37132_0.jpg" alt="테스트상품 1입니다"></div>
                 <div class="cnt">
-                  <div class="product_name">테스트상품 11</div>
+                  <div class="product_name">테스트상품 1입니다</div>
                   <div class="price_sale">5,900원</div>
+                </div>
+              </a>
+            </div>
+          
+
+            <div class="item">
+              <a href="javascript:fn_linkGoodsPage('P0000000237163')">
+                <div class="img"><img src="/ib2bmall/productImg/P00/000/002/34368_0.jpg" alt="[셰프라인] 오도르 두유제조기 CFL-SM800"></div>
+                <div class="cnt">
+                  <div class="product_name">[셰프라인] 오도르 두유제조기 CFL-SM800</div>
+                  <div class="price_sale">58,800원</div>
+                </div>
+              </a>
+            </div>
+          
+
+            <div class="item">
+              <a href="javascript:fn_linkGoodsPage('P0000000234477')">
+                <div class="img"><img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 돋움 이미지"></div>
+                <div class="cnt">
+                  <div class="product_name">테스트상품 돋움 이미지</div>
+                  <div class="price_sale">5,900원</div>
+                </div>
+              </a>
+            </div>
+          
+
+            <div class="item">
+              <a href="javascript:fn_linkGoodsPage('P0000000237134')">
+                <div class="img"><img src="/ib2bmall/productImg/P00/000/001/97284_0.jpg" alt="[테스트] 복숭아 3kg 소과 15~18과(냉장포장)"></div>
+                <div class="cnt">
+                  <div class="product_name">[테스트] 복숭아 3kg 소과 15~18과(냉장포장)</div>
+                  <div class="price_sale">9,700원</div>
                 </div>
               </a>
             </div>
@@ -1058,113 +1051,102 @@ var _mobile_ctgList = [];
     </div>
   </div>
 </div>
-    <!-- //공통영역3 -->
-</div>
-<form id="moveForm" method="post">
-    <input type="hidden" id="curPage" name="curPage" value=""/>
-    <input type="hidden" id="st" name="st" value=""/>
-    <input type="hidden" id="cat" name="cat" value=""/>
-</form>
-<script>
-    //등록이동
-    function fnMoveReg() {
-        var options = {
-            formId: 'moveForm',
-            method: 'post',
-            action:  '/mypage/oneToOneQnaReg'
-        };
-        fnCmmSubmitDynamicForm(options);
-    }
+        <!-- //공통영역3 -->
+    </div>
 
-    //상세
-    function fnMoveDetail(id) {
-        var options = {
-            formId: 'moveForm',
-            method: 'post',
-            action:  '/mypage/oneToOneQnaDetail',
-            params: {
-                id: id
-            }
-        };
-        fnCmmSubmitDynamicForm(options);
-    }
+    <form id="goodsForm" name="goodsForm" method="get">
+        <input type="hidden" id="curPage" name="curPage" value="1"/>
+        <input type="hidden" id="searchViewCnt" name="searchViewCnt" value="12"/>
+    </form>
 
-    //수정
-    function fnMoveUpdate(id) {
-        var options = {
-            formId: 'moveForm',
-            method: 'post',
-            action:  '/mypage/oneToOneQnaEdit',
-            params: {
-                id: id
-            }
-        };
-        fnCmmSubmitDynamicForm(options);
-    }
-
-    //삭제
-    function fnDelete(id) {
-        if (!confirm('정말로 삭제하시겠습니까?')) {
-            return;
+    <script>
+        function selectBoxOrderChage(){
+            var _val = $("#mobile_orderChage option:selected").val();
+            $("#searchOrderBy").val(_val);
+            selectChange();
         }
 
-        $.ajax({
-            type: 'post',
-            url: '/mypage/deleteOneToOneQna',
-            data: {id: id},
-            dataType: 'json',
-            beforeSend: function(xhr) {
-                loading('show');
-            },
-            success: function (data) {
-                if (data.result_code == '0000') {
-                    // alert("삭제 되었습니다. ");
-                    fnMoveList();
-                } else {
-                    alert(data.result_msg);
+        function selectOrderChage(_searchOrder){
+            $("#searchOrderBy").val(_searchOrder);
+            selectChange();
+        }
+
+        function selectChange() {
+            $("#curPage").val(1);
+            var viewCnt = $("#viewCntSelect").val();
+            $("#searchViewCnt").val(viewCnt);
+            fnSearch();
+        }
+        function goPage(pageno) {
+            $("#curPage").val(pageno);
+            fnSearch();
+        }
+        function fnSearch() {
+            var options = {
+                formId: 'goodsForm',
+                method: 'get',
+                action: '/product/promoBrandList'
+            };
+            fnCmmSubmitDynamicForm(options);
+        }
+
+        function fnMoveCatePageH(_cty_code){
+            $("#searchCtyPCode").val(_cty_code);
+            $("#searchOptType").val("category");
+            var options = {
+                formId: "goodsForm",
+                method: "get",
+                action: "/product/goodsList"
+                // params: {
+                //   searchCtyPCode: _cty_code,
+                //   searchOptType:"category"
+                // }
+            };
+
+            fnCmmSubmitDynamicForm(options);
+        }
+
+        function fn_exhibitDetail(_val) {
+            $("#curPage").val(1);
+            $("#searchViewCnt").val("20");
+            var options = {
+                formId: "goodsForm",
+                method: "get",
+                action: "/product/promoExhibitDetailList",
+                params: {
+                    idx: _val
                 }
-            },
-            error: function(e) {
-                alert("오류가 발생 하였습니다.");
-            },
-            complete: function () {
-                setTimeout(function() {
-                    loading('hide');
-                }, 1000);
+            };
+
+            fnCmmSubmitDynamicForm(options);
+        }
+
+        function fn_linkGoodsPage(_url,_sdt, _edt) {
+
+            // _sdt = '2028-09-22 23:59:59';
+            var now_dt = new Date();
+            var _start_dt = new Date(_sdt);
+            var _end_dt = new Date(_edt);
+            if(typeof _sdt !== 'undefined' && "" !== _sdt && now_dt < _start_dt){
+                alert("해당 상품은 ["+_sdt+ "]에 오픈됩니다.");
+                return;
             }
-        });
-    }
+            if(typeof _edt !== 'undefined' && "" !== _edt && now_dt > _end_dt){
+                alert("해당 이벤트가 종료되었습니다.");
+                return;
+            }
+            var options = {
+                formId: "goodsForm",
+                method: "get",
+                action: "/product/goodsDetail",
+                params: {
+                    prid: _url
+                }
+            };
 
-    //목록으로
-    function fnMoveList() {
-        var options = {
-            formId: 'moveForm',
-            method: 'post',
-            action:  '/mypage/oneToOneQnaList'
-        };
-        fnCmmSubmitDynamicForm(options);
-    }
-
-    //페이지 이동
-    function goPage(pageno) {
-        $("#curPage").val(pageno);
-        fnMoveList();
-    }
-
-    //답변상태에 따른 조회
-    function fnChangeStatus(status) {
-        $("#st").val(status);
-        fnMoveList();
-    }
-
-    //카테고리에 따른 조회
-    function fnChangeCategory() {
-        var cat = $('#catSelect').val();
-        $('#cat').val(cat);
-        fnMoveList();
-    }
-</script>
-
+            fnCmmSubmitDynamicForm(options);
+        }
+    </script>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
