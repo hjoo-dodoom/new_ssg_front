@@ -1,0 +1,1475 @@
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
+    <title>신세계 사용자</title>
+
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
+    <link href="/resources/static/dist/css/choices.css" rel="stylesheet" type="text/css"/>
+    <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">    
+
+    <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
+    <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.modal.min.js"></script>
+    <script src="/resources/real/dist/js/box_alert.js"></script>
+    <script src="/resources/real/dist/js/swiper.min.js"></script>
+    <script src="/resources/real/dist/js/slick.min.js"></script>
+    <script src="/resources/real/dist/js/litepicker.js"></script>
+    <script src="/resources/real/dist/js/jquery.validate.min.js"></script>
+    <script src="/resources/real/dist/js/simplebar.min.js"></script>
+    <script src="/resources/real/dist/js/choices.min.js"></script>
+    <script src="/resources/real/dist/js/common.js"></script>
+    <script src="/resources/real/dist/js/common_dev.js"></script>
+    <script src="/resources/real/dist/js/pikaday.js"></script>
+    <script src="/resources/real/dist/js/jquery.cookie.js"></script>
+
+    <style>
+    :root {
+        --theme-color:#000000;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1e2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#ffffff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+
+    <!-- ie css 변수적용 -->
+    <script>
+        window.MSInputMethodContext && document.documentMode && document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+    </script>
+</head>
+<body>
+
+<!-- content -->
+
+
+
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden">
+
+    <!-- 공통영역1 -->
+    
+
+
+
+
+
+<div id="header">
+    <!-- 헤더 영역 임시이기때문에 추후 바뀔 수 있음 -->
+    <div id="hd_top">
+        <div class="hd_inner">
+            <div id="hd_points">
+                
+                    <div class="item">
+                        <a href="/mypage/pointList" class="point">
+                            <span class="count">0</span>
+                            
+                        </a>
+                    </div>
+                
+                
+            </div>
+            <div id="hd_members">
+                
+                <div class="item">
+                    <a href="javascript:fnLogout();">로그아웃</a>
+                </div>
+                <div class="item">
+                    <a href="/mypage/orderList">주문배송조회</a>
+                </div>
+                <div class="item">
+                    <a href="javascript:fnMoveNotice();">고객센터</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hd_middle">
+        <div class="hd_inner">
+            <div id="hd_logo">
+                <div id="logo_wrap">
+                    <div id="logo">
+                        
+                        <a href="/main">
+                            <img
+                            
+                                    src="/ib2bmall/designConfigImg/2025042919280550076"
+                            
+                                    alt="테스트">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="hd_search">
+                <div class="search_inner">
+                    <input type="text" name="gnb_search_input" class="gnb_search_input" placeholder="상품명을 입력해 주세요." value="" onkeyup="javascript:fn_search_prd();"/>
+                    <button type="button" class="gnb_search_submit" onclick="javascript:fn_search_prd_trigger();">
+                        검색
+                    </button>
+                </div>
+            </div>
+
+            <!-- 모바일 뒤로가기 -->
+            <a href="javascript:history.back();" class="back_btn">뒤로가기</a>
+
+            <!-- 모바일 상단 페이지 타이틀 -->
+            
+                
+                    <div class="page_title_mobile">마이페이지</div>
+                
+                
+            
+
+            <!-- 모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+            
+                
+                    <div class="cate_first_mobile">
+                        <div class="cate_first_title">
+                            <div class="cate_first_list_inner">
+                                
+                                    
+                                    
+                                        <button type="button" class="cate_first_toggle" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></button>
+                                    
+                                
+                            </div>
+                        </div>
+
+                        <div class="cate_first_list">
+                            <div class="cate_first_list_inner">
+                                
+                                    
+                                    
+                                        
+                                    
+                                
+                            </div>
+                            <span class="cate_first_list_bg" onclick="toggleLayer('.cate_first_list', 'mobile_hidden', '.cate_first_toggle');"></span>
+                        </div>
+                    </div>
+                
+                
+                
+            
+            <!-- //모바일 1차 카테고리 (상품 리스트에서만 노출) -->
+            <!--
+            #hd_links .item.item_home{display: none;}
+            .home_mobile_show #hd_links .item.item_home{display: block;}
+            -->
+            <div id="hd_links">
+                <div class="item v_mobile item_home">
+                    <a href="/main">
+                        <span class="icon_hd_home"></span>
+                        <span class="text">홈으로</span>
+                    </a>
+                </div>
+                <div class="item v_mobile item_search">
+                    <a href="javascript:;" class="show-modal" onclick="showBottomSheet(event)">
+                        <span class="icon_hd_search"></span>
+                        <span class="text">검색</span>
+                    </a>
+                </div>
+                
+                    <div class="item v_both item_cart">
+                        <a href="javascript:fn_moveCart();">
+                            <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+                            <span class="text">장바구니</span>
+                        </a>
+                    </div>
+                
+                <div class="item v_pc">
+                    <a href="javascript:fnMoveMypage();">
+                        <span class="icon_hd_mypage"></span>
+                        <span class="text">마이페이지</span>
+                    </a>
+                </div>
+                
+                    <div class="item v_pc">
+                        <a href="javascript:fnMoveWishList();">
+                            <span class="icon_hd_like"></span>
+                            <span class="text">나의 찜</span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <div id="hd_bottom">
+        <div class="hd_inner">
+            <div id="gnb_wrap">
+                <div id="gnb_toggle">
+                    
+                </div>
+                <div id="gnb">
+                    <div class="swiper-wrapper">
+                        
+
+                    </div>
+                    <div class="gnb_toggle_mobile">
+                        <button type="button" id="btn_gnb_toggle_mobile" onclick="gnbMobileOpen();">전체메뉴 열기</button>
+                    </div>
+                </div>
+                
+                    <div id="hd_special">
+                        
+                            <div class="item">
+                                <a href="javascript:fn_promoExhibitList();">
+                                    <span class="icon_hd_special"></span>
+                                    기획전
+                                </a>
+                            </div>
+                        
+                        
+                    </div>
+                
+                <!-- 전체메뉴 -->
+                <div id="gnb_all">
+                    <ul>
+                        
+                            
+                                
+                            
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //헤더 영역 임시이기때문에 추후 바뀔 수 있음 -->
+<form id="headerForm"></form>
+<input type="hidden" id="mbst" value="2" />
+<script>
+
+    // 로그아웃
+    function fnLogout() {
+        $.ajax({
+            type: 'get',
+            url: '/auth/logout',
+            dataType: 'json',
+            success: function (data) {
+                location.href = "/auth/login";
+            },
+            error: function () {
+                location.href = "/auth/login";
+            }
+        });
+    }
+
+    // 헤더 카테고리 2레벨 그려넣기
+    var _ctgList = [];
+    
+    fn_setCategory(_ctgList);
+
+    function fn_setCategory(_valList) {
+        for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+            var categor_code_name = _valList[ct_i].code_name;
+            var categor_cty_code = _valList[ct_i].cty_code;
+            var categor_cty_depth = _valList[ct_i].cty_depth;
+            if ("2" == categor_cty_depth) {
+                var parentCode = "cate_" + categor_cty_code.substring(0, 2);
+                var ctyDepthSecHTML = '<li><a href="javascript:fn_linkCategoryPage('+categor_cty_code+')">' + categor_code_name + '</a></li>';
+                $("." + parentCode).append(ctyDepthSecHTML);
+            }
+        }
+
+        // 하위 항목이 없을때에 전체 삭제
+        /*
+        $(".search_product_cate").each(function () {
+            var length_li = $(this).find('li');
+            if(length_li.length === 1){
+                length_li.remove();
+            }
+        });
+        */
+    }
+
+
+    function fn_linkCategoryPage(_url) {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchCtyPCode: _url,
+                searchOptType:"category"
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fn_linkCategoryPricePage(_url) {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchCtyPCode: _url,
+                searchOptType:"price"
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_moveCart() {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/order/cart"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_goodsCartIn(_prid){
+        var _mbst = $("#mbst").val();
+        if("2" != _mbst){
+            alert("현재 구매가 불가능합니다.");
+            return;
+        }
+        $.ajax({
+            type: 'post',
+            url: '/product/goodsCartIn',
+            data: {
+                "prid": _prid
+            },
+            success: function (data) {
+                console.log(data);
+                if(null != data && "0000" == data.cmmMemo){
+                    // 장바구니에 담겼을때
+                    fn_moveCart();
+                }else if(null != data && "8888" == data.cmmMemo){
+                    // 장바구니에 담기지 않고 상세페이지로 이동
+                    var target_url = "/product/goodsDetail";
+                    var results_url = window.location.origin + target_url;
+                    var options = {
+                        formId: "mainForm",
+                        method: "get",
+                        params: {
+                            prid: _prid
+                        },
+                        action: results_url
+                    };
+                    fnCmmSubmitDynamicForm(options);
+                }else if(null != data && "7777" == data.cmmMemo){
+                    alert("현재 구매가 불가능한 상품입니다.");
+                }else if(null != data && "6666" == data.cmmMemo){
+                    alert("현재 구매가 불가능합니다.");
+                }
+            },
+            error: function () {
+                alert("시스템 관리자에게 문의 하여 주십시오.");
+            }
+        });
+    }
+
+    //공지사항 이동
+    function fnMoveNotice() {
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/noticeList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //마이페이지 메인 이동
+    function fnMoveMypage() {
+        var _mbst = '2';
+        if("2" != _mbst){
+            return;
+        }
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/mypageList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //좋아요(나의 찜) 이동
+    function fnMoveWishList() {
+        var _mbst = '2';
+        if("2" != _mbst){
+            return;
+        }
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/mypage/wishList"
+        };
+        fnCmmSubmitDynamicForm(options);
+    }
+    function fn_promoExhibitList(){
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/promoExhibitList"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_exhibitDetailHeader(_val) {
+        $("#curPage").val(1);
+        $("#searchViewCnt").val("20");
+        var options = {
+            formId: "goodsForm",
+            method: "get",
+            action: "/product/promoExhibitDetailList",
+            params: {
+                idx: _val,
+                curPage:"1",
+                searchViewCnt:"20",
+                searchCtyCode:""
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_promoBrandList(){
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/promoBrandList"
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_BrandDetailHeader(_val) {
+        $("#curPage").val(1);
+        $("#searchViewCnt").val("20");
+        var options = {
+            formId: "goodsForm",
+            method: "get",
+            action: "/product/promoBrandDetailList",
+            params: {
+                idx: _val,
+                curPage:"1",
+                searchViewCnt:"20",
+                searchCtyCode:""
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function fn_search_prd_trigger(){
+        var word = $('[name="gnb_search_input"]').val();
+        if(word.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }else{
+            fn_search_goodsList(word);
+        }
+    }
+    function fn_search_prd_trigger_mobile(){
+        var word = $('#gnb_search_input_mobile').val();
+        if(word.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }else{
+            fn_search_goodsList(word);
+        }
+    }
+
+    function fn_search_prd(){
+        var word = $('[name="gnb_search_input"]').val();
+        if(window.event.keyCode == 13){
+            if(word.length < 2){
+                alert('검색어를 두 글자 이상 입력해주세요.');
+                return;
+            }else{
+                fn_search_goodsList(word);
+            }
+        }
+    }
+
+    function fn_search_prd_mobile(){
+        var word = $('#gnb_search_input_mobile').val();
+        if(window.event.keyCode == 13){
+            if(word.length < 2){
+                alert('검색어를 두 글자 이상 입력해주세요.');
+                return;
+            }else{
+                fn_search_goodsList(word);
+            }
+        }
+    }
+    function fn_search_goodsList(_search_word){
+        var incoding_search_word = encodeURIComponent(_search_word);
+        var options = {
+            formId: "mainForm",
+            method: "get",
+            action: "/product/goodsList",
+            params: {
+                searchHeaderText: incoding_search_word
+            }
+        };
+
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    function gnbSearchSubmit(event, form){
+        event.preventDefault();
+        var input = form.querySelector('[name="gnb_search_input"]');
+        if(input.value.length < 2){
+            alert('검색어를 두 글자 이상 입력해주세요.');
+            return;
+        }
+    }
+
+    function fn_partnerMallPage(idx, ptncode) {
+        $.ajax({
+            type: 'post',
+            url: '/auth/setPartnerMall',
+            data: {
+                cmmIdx: idx,
+                cmmPtncode: ptncode
+            },
+            dataType: 'json',
+            beforeSend: function (xhr) {
+            },
+            success: function (data) {
+                if ("0000" === data.result_code) {
+                    location.replace("/main");
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            },
+            error: function (request, status, error) {
+                box_alert('관리자에게 문의하여 주시기바랍니다.', 'info');
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            
+
+
+
+
+
+<div id="aside_content" class="right_content">
+  <div class="quick_content">
+    <!-- 퀵 배너 -->
+    
+
+    <!-- //퀵 배너 -->
+
+    <!-- 최근 본 상품 -->
+    
+    <!-- 최근 본 상품 -->
+    <!-- 최근 본 상품 다시 테스트 -->
+    
+      <div class="quick_item">
+        <div class="viewed_products_wrapper">
+          <div class="title">최근 본 상품</div>
+          <div class="viewed_products">
+            <div class="swiper-wrapper">
+
+              
+                
+                
+                  
+                  
+                    
+                      <div class="swiper-slide">
+                    
+                    <div class="item">
+                      <a href="javascript:fn_linkGoodsPage('P0000000234313')">
+                        <div class="img">
+                          <img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 11">
+                        </div>
+                        <div class="cnt">
+                          <div class="product_name">테스트상품 11</div>
+                          <div class="price_sale">5,900원</div>
+                        </div>
+                      </a>
+                    </div>
+                    
+                    
+                      </div>
+                    
+                  
+                
+              
+            </div>
+          </div>
+          <div class="swiper_button_type3 swiper-button-next"></div>
+          <div class="swiper_button_type3 swiper-button-prev"></div>
+          <div class="vp_swiper_pagination"></div>
+        </div>
+      </div>
+    
+    <!-- 최근 본 상품 다시 테스트 -->
+
+
+
+    
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    var swiper = new Swiper(".quick_banner", {
+      pagination: {
+        el: ".qb_swiper_pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".quick_banner_wrapper .swiper-button-next",
+        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+      },
+    });
+
+
+    var swiper = new Swiper(".viewed_products", {
+      autoHeight: true,
+      pagination: {
+        el: ".vp_swiper_pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".viewed_products_wrapper .swiper-button-next",
+        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+      },
+    });
+  });
+</script>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="mypage_wrap">
+
+                    <!-- 마이페이지 피시 메뉴  -->
+                    
+
+
+
+
+<div id="mypage_aside" class="mypage_aside">
+  <div class="ma_name"><a href="/mypage/mypageList">홍지우님</a></div>
+  <div class="ma_location">
+    <ul>
+      <li><a href="javascript:;">나의 주문</a>
+        <ul>
+          <li><a href="/mypage/orderList" class="">주문배송조회</a></li>
+          <li><a href="/mypage/orderRefundList" class="">취소/교환/반품</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="javascript:;">나의 혜택</a>
+        <ul>
+          
+            <li><a href="/mypage/pointList" class="">포인트</a></li>
+            
+          
+          
+
+            <li><a href="/mypage/couponList" class="">쿠폰</a></li>
+
+        </ul>
+      </li>
+      <li><a href="javascript:;">나의 활동</a>
+        <ul>
+          <li><a href="/mypage/wishList" class="">나의 찜</a></li>
+          <li><a href="/mypage/eventList" class="">나의 이벤트</a></li>
+          <li><a href="/mypage/productRequestList" class="">상품요청</a></li>
+          <li><a href="/mypage/productQnaList" class="">상품문의</a></li>
+          <li><a href="/mypage/deliveryQnaList" class="">배송/주문 문의</a></li>
+          <li><a href="/mypage/oneToOneQnaList" class="">1:1 문의</a></li>
+        </ul>
+      </li>
+      <li><a href="javascript:;">나의 정보</a>
+        <ul>
+          <li><a href="/mypage/memberModify" class="">정보수정</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="javascript:;">고객센터</a>
+        <ul>
+          <li><a href="/mypage/noticeList" class="">공지사항</a></li>
+          <li><a href="/mypage/faq" class="active">FAQ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+                    <div class="mypage_content">
+                        <h2 class="mypage_title">FAQ</h2>
+
+                        <div class="mp_box">
+                            <div class="table_top">
+                                <div class="list_cates">
+                                    <div class="item"><button type="button" class="active" onclick="fnChangeCategory('')">전체</button></div>
+                                    <div class="item"><button type="button"  onclick="fnChangeCategory('2010')">주문/결제</button></div>
+                                    <div class="item"><button type="button"  onclick="fnChangeCategory('2020')">배송관련</button></div>
+                                    <div class="item"><button type="button"  onclick="fnChangeCategory('2030')">취소/교환/반품</button></div>
+                                    <div class="item"><button type="button"  onclick="fnChangeCategory('2040')">적립금/쿠폰</button></div>
+                                    <div class="item"><button type="button"  onclick="fnChangeCategory('2050')">회원/로그인</button></div>
+                                    <div class="item"><button type="button"  onclick="fnChangeCategory('2060')">이벤트/기타</button></div>
+                                </div>
+                            </div>
+                            <div class="board_list toggle_list">
+                                
+                                    
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">이벤트/기타</div>
+                                                    <div class="subject">
+                                                        <div>상품문의와 1:1문의 삭제는 어떻게 하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    작성해 주신 상품평 수정은 "마이페이지"에서 가능하며 삭제는 어렵습니다.
+삭제를 원하실 경우 고객센터 또는 1:1문의 주시기 바랍니다.
+
+ - 작성해주신 상품문의는 다른 분들께 소중한 정보가 됩니다.
+ - 작성한 상품문의는 모두 공개함을 원칙으로 하되 작성목적에 벗어나는 경우(스팸, 음란 및 불법적인 내용)는 별도 동의 없이 삭제 될 수 있습니다.
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">이벤트/기타</div>
+                                                    <div class="subject">
+                                                        <div>상품문의는 어디서 하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    상품문의 방법은 아래와 같습니다.
+ - 상품선택 → 상품상세페이지 이동 → 상품문의 택 선택 → 상품문의하기 버튼 선택 → 문의글 등록
+
+※ "상품문의하기" 버튼 선택 시 팝업이 노출되지 않는다면 팝업차단 해제를 하셔야 합니다.
+
+ - 익스플로러 : 브라우저 ① 상단메뉴 "도구"에서 팝업차단 ② "팝업차단 끄기" 선택
+ - 크롬 : 도메인(URL)입력 영역 오른쪽 ① 팝업차단 아이콘 클릭 ② 팝업 및 리디렉션을 항상 허용 앞 체크 ③ 완료버튼 선택
+
+
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">이벤트/기타</div>
+                                                    <div class="subject">
+                                                        <div>온라인 문의했던 내용은 어디서 확인하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    1:1문의 내용 확인방법은 아래와 같습니다.
+[우측상단] 고객센터 선택 → [좌측메뉴] 1:1문의 → 제목확인 후 선택
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">이벤트/기타</div>
+                                                    <div class="subject">
+                                                        <div>고객센터 이용방법을 알고 싶어요</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    고객센터 이용방법은 2가지이며, 이용방법은 아래와 같습니다.
+
+1. 온라인 문의
+ - ① [우측상단]의 고객센터 선택 → [좌측메뉴] 1:1문의 → 1:1문의하기 버튼 선택 후 내용을 기재해주세요.
+
+2. 전화문의
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+※ 고객센터 운영시간 안내
+ - 평일 10:00 ~ 17:00 / 주말 및 공휴일, 신세계백화점 강남점 점표 휴점일 제외
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>반품상품을 잘못 보낸경우 어떻게 해야하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    택배 영수증에 표기된 반송날짜, 택배사명, 송장번호, 반송지 주소 등을 확인하여, 고객센터로 문의주세요.
+
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>배송받은 상품에 대한 A/S를 받고싶은데 어떻게 해야하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    A/S를 지원하는 브랜드의 상품일 경우 해당 제조사의 A/S센터에서 이용하실 수 있습니다.
+그밖의 상품에 대한 A/S 문의는 온라인상의 상품 상세페이지에 있는 "상품고시정보" 및 "고객센터 >1:1문의"를 이용하시기 바랍니다.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>단순변심은 어떤 걸 말하는건가요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    제품에 하자가 없음에도 불구하고 고객님의 단순 변심으로 인한 교환/반품은 교환비/반품비가 부과됩니다.
+
+단순변심 교환/반품 이란? 
+고객님의 취향이나 주관적인 불만사항들(디자인 불만, 사이즈 불만, 소재 불만, 컬러 불만 등)에 의한 교환/반품 경우를 말합니다.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>주문취소 및 반품으로 환불받은 금액은 어디서 확인하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    취소/교환/반품에 대한 진행현황은 [마이페이지 → 취소/반품/교환/환불]에서 확인하실 수 있으며,
+해당 주문을 결제한 수단으로 환불되오니 [환불완료 후 금액을 확인하시기 바랍니다.]
+
+※ 협력회사 상품입고/확인(2~5일 소요) 후 환불 됩니다.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>오늘 반품 접수를 했는데요. 상품을 언제 가지고 갈수 있는지 알수 있을까요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    반품 수령은 반품 접수 후 5일 이내로 택배 기사님이 방문하여 수령합니다.
+단, 주말과 공휴일은 제외됩니다.
+
+고객님께서는 반품하실 상품이 훼손되지 않도록 포장하시어 택배 기사님 편으로 반송해주시고, 상품에 대한 운송장은 3개월 동안 보관해 주십시오.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>주문 취소를 했는데 환불은 언제 되나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    결제 유형에 따라 환불 소요시간이 조금씩 다르며, 주문취소 시 환불규정은 아래와 같습니다.
+주문당일 취소 시 환불 반영기간은 당일이며, 포인트 환불 반영기간도 당일입니다.
+
+ - ① 신용카드 : 신용카드 환불은 카드사 정책에 따라 취소 반영기간의 차이가 있으니 자세한 사항은 해당 카드사로 문의바랍니다.
+ - ② 체크카드 : 체크카드 전체취소 시 당일 환불이 원칙이나, 은행 정책에 따라 주말제외 3~5일 소요될 수 있습니다.
+ - ③ 실시간계좌이체 : 주문취소 시 5~30분 이내 환불(단, 은행 점검시간 종료 후 30분 이내)
+ - ④ 포인트 : 주문 시 사용하신 포인트는 즉시 돌려드립니다.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>하자 상품을 배송 받았는데 다른상품으로 교환이 가능한가요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    상품이 불량일 경우 동일 상품에 한해서만 교환 및 반품이 가능합니다.
+다른 상품으로 교환을 원하시면 해당 상품 반품 후 원하시는 상품을 새로 주문해 주시기 바랍니다.
+
+※ 불량상품 반품/교환 시 배송비는 발생하지 않으며
+   다른 상품으로 교환 시 새로 주문하는 상품에 대한 배송비는 고객 부담입니다.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>반품이 가능한 기준 및 주의사항이 있나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    > 반품이 가능한 경우
+
+1. 구매자 단순변심 : 배송완료 후 30일 이내(의류/속옷/보석/디지털기기 15일)
+※ 식품 등 상품 특성에 따라 반품이 불가한 경우가 있으며, 상품 불량인 경우는 제외됩니다.
+
+2. 표시, 광고 다름 : 물품을 수령한 날 부터 3개월 아내, 또는 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내
+
+> 반품이 불가능한 경우
+
+1. 상품을 멸실 또는 훼손한 경우(단, 상품의 내용을 확인하기 위해 포장 등을 훼손한 경우는 제외)
+
+2. 포장을 개봉하였거나, 포장이 훼손되어 상품의 가치가 현저히 상실된 경우
+예) 가전제품, 식품, 화장품 향수류, 액정화면이 부착된 노트북, LCD모니터, 디지털 카메라 등의 경우, 반품/교환은 제조사 기준을 따릅니다.
+
+3. 고객님의 사용 또는 일부 소비에 의하여 가치가 현저히 떨어진 경우
+예) 라벨이 떨어진 의류 또는 태그가 떨어진 상품인 경우
+
+4. 시간의 경과에 의하여 재 판매가 곤란한 정도로 상품 등의 가치가 현저히 감소한 경우
+
+5. 고객 주문 확인 후 제작에 들어가는 주문 제작상품, 복제가 가능한 상품 등의 포장을 훼손한 경우
+예) CD/DVD/GAME/BOOK의 경우 포장 개봉 시 
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>교환 및 반품신청은 어떻게 하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    교환 및 반품신청은 고객센터를 통해서만 가능합니다.
+고객님의 주문상품을 빠르고 정확하게 교환 및 반품 할 수 있도록 도와드리겠습니다.
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">취소/교환/반품</div>
+                                                    <div class="subject">
+                                                        <div>구매 후 주문취소는 어떻게 하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    상품별 전체 취소는 가능하며, 일부 취소는 불가합니다.
+
+ - ① 주문접수 단계 : 사이트에서 직접 취소 가능
+ - ② 주문접수 이후 단계 : 고객센터로 전화 문의
+
+주문취소 방법은 아래와 같습니다.
+[로그인 → [우측상단] 주문내역조회 → 주문목록/배송조회 → "주문일/체결번호" 확인]
+ - ① "전체취소"버튼이 있는 경우 : 체결번호 내 모든상품이 주문취소 됩니다.
+ - ② "전체취소"버튼이 없는 경우 : 주문접수 이후 단계로 고객센터로 전화하여 취소 가능여부 확인
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">배송관련</div>
+                                                    <div class="subject">
+                                                        <div>계속 발송준비중으로 뜨고 배송되지 않는 상품이 있어요</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    상품별로 출고 및 배송일자가 다르기 때문에 발송준비중인 상품이 있을 수 있습니다.
+다만, 이 상태가 오래 지속되어 고객에게 불편을 초래하지 않게 하기 위해 최선을 다하고 있습니다.
+
+고객센터로 전화주시면 주문상품을 최대한 빠르고 정확하게 받으실 수 있도록 도와드립니다.
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">배송관련</div>
+                                                    <div class="subject">
+                                                        <div>다른상품이 배송되거나 파손되었을때는 어떻게 하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    고객님이 주문하신 상품과 다른상품이 도착했거나, 상품이 파손된 경우 고객센터로 전화주시면
+주문상품을 빠르고 정확하게 교환하실 수 있도록 도와드립니다.
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">배송관련</div>
+                                                    <div class="subject">
+                                                        <div>상품을 주문했는데 배송기간은 얼마나 걸리나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    주문/결제가 완료된 경우, 협력회사에서 상품을 준비해 배송을 시작합니다.
+배송기간은 상품특성에 따라 차이가 발생할 수 있으니 상품 상세페이지에서 배송관련 상세정보를 확인해주세요.
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">배송관련</div>
+                                                    <div class="subject">
+                                                        <div>주문한 상품의 배송지를 변경할 수 있나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    주문/결제가 완료되면 배송지 변경은 불가합니다.
+
+ - ① 결제한 상품의 진행현황이 "주문접수"인 경우 전체취소 후 재결제
+ - ② 결제한 상품의 진행현황이 "발송준비중 혹은 발송완료" 인 경우 1:1문의 또는 "고객센터" 배송지 변경 전화문의
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">주문/결제</div>
+                                                    <div class="subject">
+                                                        <div>상품을 한번에 주문했는데 일부상품은 도착하지 않았습니다. 배송확인은 어떻게 하나요?</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    주문 상품 중 일부만 수령했을 경우 다음과 같은 사유로 상품이 개별 배송될 수 있으므로 참고 부탁드립니다.
+
+1) 동일 상품이 아닌 경우
+ - 협력회사 상품인 경우 각 업체 별 상품 출하시기가 다를 수 있습니다.
+
+2) 동일상품인 경우
+ - 상품의 특성상 대형 가전, 가구, 산지 직송 상품, 고중량의 상품 등은 중량 및 수량에 따라 1개 이상의 송장번호로 나뉘어 배송 될 수 있습니다.
+
+배송되지 않은 상품에 대한 배송정보는 [로그인 ① [우측상단] 주문내역조회 ② [하단 리스트 우측] 진행현황 ③ "배송조회" 에서 확인 가능하며, 
+해당 주문/배송 조회에서 확인되지 않을 경우 고객센터로 연락 부탁드립니다.
+
+> 고객센터 전화번호 확인방법
+ - ㉠ 페이지 좌측 "고객센터" 클릭 ㉡ 페이지 하단에 기재된 전화번호 확인 ㉢ 로그인 페이지 "사이트 이용문의" 확인
+
+
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="item">
+                                                <button type="button" class="bl_top question">
+                                                    <div class="cate">배송관련</div>
+                                                    <div class="subject">
+                                                        <div>배송확인을 해보니 배송완료라고 되어있는데 상품이 도착하지 않았어요</div>
+                                                    </div>
+                                                </button>
+                                                <div class="bl_bottom" slide-content>
+                                                    홈페이지 내 배송 진행 단계가 "발송완료"인 경우이거나 상품이 배송되었다는 문자 안내를 받으셨다면
+택배사로 접수되어 배송중이며 1~2일 내로 수령 가능합니다.
+(단, 가전/가구 등 설치상품 제외)
+
+만약 장기적으로 상품을 배송받지 못하셨다면 [마이페이지 > 활동관리 > "1:1문의"]에 글을 남겨주시거나, 
+고객센터로 전화문의 주시면 빠른확인 후 안내드리겠습니다.
+
+※ 문의 전 "주문상세내역 > 받는사람정보"가 정확히 기재되어 있는지 확인 부탁드립니다.
+
+
+                                                </div>
+                                            </div>
+                                        
+                                    
+                                    
+                                
+                            </div>
+
+                            <!-- 마이페이지 페이징 -->
+                            
+
+
+
+	
+    
+    
+   
+	
+    	
+    
+								   
+	<div class="paging">
+		
+		
+		
+		
+			
+				<span class="sound_only">열린</span><strong class="pg_current">1</strong><span class="sound_only">페이지</span>
+			
+			
+		
+			
+			
+				<a href="javascript:goPage(2);" class="pg_page">2<span class="sound_only">페이지</span></a>
+			
+		
+			
+			
+				<a href="javascript:goPage(3);" class="pg_page">3<span class="sound_only">페이지</span></a>
+			
+		
+			
+			
+				<a href="javascript:goPage(4);" class="pg_page">4<span class="sound_only">페이지</span></a>
+			
+		
+		
+		
+			
+		<!-- <button type="button" class="btn_ty4">창닫기</button> -->
+	</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    
+
+
+
+<div id="cate_all_mobile" class="layer_popup layer_fullpage">
+
+<button type="button" class="fullpage_title" onclick="toggleLayer('#cate_all_mobile');">카테고리</button>
+
+
+  <div class="fullpage_top_links">
+    <div class="item item_search">
+      <a href="javascript:;">
+        <span class="icon_hd_search"></span>
+        <span class="sound_only">검색</span>
+      </a>
+    </div>
+    
+      <div class="item item_cart">
+        <a href="javascript:fn_moveCart();">
+          <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+          <span class="sound_only">장바구니</span>
+        </a>
+      </div>
+    
+  </div>
+
+  <div class="fullpage_inner">
+
+  
+    
+      <div class="cate_all">
+        
+      </div>
+      <div class="cate_sub">
+      </div>
+    
+    
+  
+</div>
+<ul class="cate_all_member">
+  <li><a href="javascript:fnLogout();">로그아웃</a></li>
+  <li><a href="javascript:fnMoveNotice();">고객센터</a></li>
+</ul>
+</div>
+<script>
+  var _mobile_ctgList = [];
+  
+  fn_setCategoryMobile(_mobile_ctgList);
+  
+  function fn_setCategoryMobile(_valList) {
+    for (var ct_i = 0; ct_i < _valList.length; ct_i++) {
+      var categor_code_name = _valList[ct_i].code_name;
+      var categor_cty_code = _valList[ct_i].cty_code;
+      var categor_cty_depth = _valList[ct_i].cty_depth;
+      if ("2" == categor_cty_depth) {
+        var parentMobileCode = "cate_mobile_" + categor_cty_code.substring(0, 2);
+        var ctyDepthSecMobileHTML = '<div class="sub"><a href="javascript:fn_linkCategoryPage('+categor_cty_code+');">' + categor_code_name + '</a></div>';
+        $("." + parentMobileCode).append(ctyDepthSecMobileHTML);
+      }
+    }
+  }
+  
+  // 최초 모바일 탭 클릭
+  $(document).ready(function () {
+    var _active_mobile_cate = $(".cate a.active").attr("data-cate");
+    $(".cate_mobile_" + _active_mobile_cate).css("display", "");
+  });
+</script>
+
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    
+
+
+
+<div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+  <div class="mbf_inner">
+    
+    <div class="right">
+      
+      <button class="btn v_mobile resale" onclick="openLayer('#resale_no_layer')" >재판매 금지</button>
+      <button type="button" class="btn to_top" onclick="toTop();">상단으로</button>
+    </div>
+  </div>
+</div>
+
+    <!-- 푸터  -->
+    
+
+
+<!-- 푸터  -->
+<div id="footer">
+    <div class="ft_inner">
+        <div id="ft_top">
+            <div id="ft_logo">
+                <img src="/resources/static/dist/images/common/ft_logo.png" alt="SHINSEGAE">
+            </div>
+            <div id="ft_links">
+                <div class="item"><a href="/mypage/agreement">이용약관</a></div>
+                <div class="item"><a href="/mypage/policy">개인정보처리방침</a></div>
+                <div class="item cb"><a href="https://www.ssgb2e.com/about.ss" target="_blank" rel="noopener noreferrer">법인영업</a></div>
+            </div>
+        </div>
+        <div id="ft_bottom">
+            <div id="ft_company">
+                (주)신세계
+            </div>
+            <div id="ft_info">
+                서울시 서초구 신반포로 194 고속버스터미널 신관 대표이사 : 박주형 | 개인정보관리 책임자 : 김선진  | 사업자등록번호 : 201-81-32195 고객만족센터 : TEL : 02-3406-6900 | 운영시간 : 평일 10:00 ~ 17:00 (점심시간 12:00~13:00) 
+
+            </div>
+            <div id="ft_copy">Copyright SHINSEGAE. All Rights Reserved.</div>
+        </div>
+    </div>
+</div>
+<!-- //푸터  -->
+
+<!-- 모바일 하단 플로팅  -->
+<div id="floating_wrap">
+    <div class="floating_inner">
+        <div class="item all"><a href="javascript:;" onclick="toggleLayer('#cate_all_mobile');">전체</a></div>
+        <!-- 전체가 없는 경우 고객센터 노출 -->
+        <!-- <div class="item cs"><a href="javascript:;">고객센터</a></div> -->
+        <div class="item del"><a href="/mypage/orderList">배송</a></div>
+        <div class="item home"><a href="/main">홈</a></div>
+        <div class="item my"><a href="javascript:fnMoveMypage();">MY</a></div>
+        <div class="item viewd"><a href="javascript:;" onclick="toggleLayer('#viewed_products_mobile');">최근본</a></div>
+    </div>
+</div>
+<!-- //모바일 하단 플로팅  -->
+
+    <!-- 모바일 하단 플로팅  -->
+    
+
+
+
+
+<div id="viewed_products_mobile" class="layer_popup layer_fullpage">
+  <button type="button" class="fullpage_title" onclick="toggleLayer('#viewed_products_mobile');">최근 본 상품</button>
+
+  <div class="fullpage_top_links">
+    <div class="item item_search">
+      <a href="javascript:;" class="show-modal" onclick="showBottomSheet(event)">
+        <span class="icon_hd_search"></span>
+        <span class="sound_only">검색</span>
+      </a>
+    </div>
+    
+      <div class="item item_cart">
+        <a href="javascript:fn_moveCart();">
+          <span class="icon_hd_cart"><span class="count theme_bg_color">0</span></span>
+          <span class="sound_only">장바구니</span>
+        </a>
+      </div>
+    
+  </div>
+
+  <div class="fullpage_inner inner_scroll">
+    <div class="viewed_products">
+
+      
+        
+        
+          
+
+            <div class="item">
+              <a href="javascript:fn_linkGoodsPage('P0000000234313')">
+                <div class="img"><img src="/ib2bmall/productImg/P00/000/002/34303_0.jpg" alt="테스트상품 11"></div>
+                <div class="cnt">
+                  <div class="product_name">테스트상품 11</div>
+                  <div class="price_sale">5,900원</div>
+                </div>
+              </a>
+            </div>
+          
+        
+      
+
+
+    </div>
+  </div>
+</div>
+
+<!-- 모바일 검색 바텀 시트  -->
+<div id="search_bottom_sheet">
+  <div id="bottom_sheet">
+    <div class="sheet-overlay " onclick="hideBottomSheet()">바텀시트의 딤드</div>
+    <div class="content">
+      <div class="header">
+        <div class="drag-icon"></div>
+      </div>
+      <div class="body">
+        <div class="hd_search back_mobile_show">
+          <form action="">
+            <div class="search_inner">
+              <input type="text" id="gnb_search_input_mobile" name="gnb_search_input_mobile" class="gnb_search_input" placeholder="상품명을 입력해 주세요." onkeyup="javascript:fn_search_prd_mobile();"/>
+              <button type="button" class="gnb_search_submit" onclick="javascript:fn_search_prd_trigger_mobile();">
+                검색
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- //공통영역3 -->
+</div>
+<form id="moveForm" method="post">
+    <input type="hidden" id="curPage" name="curPage" value="" />
+    <input type="hidden" id="cty" name="cty" value="" />
+</form>
+<script>
+    //토글
+    $('.toggle_list').on('click', function(event) {
+        var button = $(event.target).closest('.bl_top');
+
+        if (button.length === 0) return;
+
+        var parentItem = button.closest('.item');
+        var content = parentItem.find('.bl_bottom');
+
+        // 슬라이드 토글 함수 호출
+        toggleSlideItem(button[0], content[0]);
+    });
+
+    //페이지이동
+    function goPage(pageno) {
+        $("#curPage").val(pageno);
+        const options = {
+            formId: 'moveForm',
+            method: 'post',
+            action:  '/mypage/faq',
+        }
+        fnCmmSubmitDynamicForm(options);
+    }
+
+    //카테고리 변경
+    function fnChangeCategory(cty) {
+        $('#curPage').val('1');
+        $('#cty').val(cty);
+        const options = {
+            formId: 'moveForm',
+            method: 'post',
+            action:  '/mypage/faq',
+        }
+        fnCmmSubmitDynamicForm(options);
+    }
+</script>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+//주소 api
+var element_layer = document.getElementById('daumAdressLayer');
+var ads_layer = document.getElementById('ads_layer');
+
+function execDaumPostcode(elm) {
+    const target = document.getElementById(elm)
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; // 주소 변수
+            var extraAddr = ''; // 참고항목 변수
+            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
+            if(data.userSelectedType === 'R'){
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraAddr += data.bname;
+                }
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraAddr !== ''){
+                    extraAddr = ' (' + extraAddr + ')';
+                }
+            } else {
+            }
+            target.querySelector(".i_address_zip").value = data.zonecode;
+            target.querySelector(".i_address_basic").value = addr;
+            target.querySelector(".i_address_detail").value= '';
+            target.querySelector(".i_address_detail").focus();
+            closeLayer(ads_layer);
+        },
+        width : '100%',
+        height : '100%',
+        maxSuggestItems : 5
+    }).embed(element_layer);
+}
+</script>
+</body>
+</html>
