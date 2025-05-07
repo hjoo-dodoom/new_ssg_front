@@ -1,24 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="robots" content="noindex"> <!-- 홈페이지 로봇수집X -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="robots" content="noindex" />
+    <!-- 홈페이지 로봇수집X -->
     <title>아이디 비밀번호 찾기</title>
 
-    <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/layout.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/content.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/jquery.modal.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/pikaday.css" rel="stylesheet"/>
-    <link href="/resources/real/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
-    <link href="/resources/real/dist/css/choices.css" rel="stylesheet" type="text/css"/>
-    <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
-    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon"> 
+    <link href="/resources/real/dist/css/normalize.css" rel="stylesheet" />
+    <link href="/resources/real/dist/css/common.css" rel="stylesheet" />
+    <link href="/resources/real/dist/css/layout.css" rel="stylesheet" />
+    <link href="/resources/real/dist/css/content.css" rel="stylesheet" />
+    <link href="/resources/real/dist/css/jquery.modal.css" rel="stylesheet" />
+    <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet" />
+    <link href="/resources/real/dist/css/pikaday.css" rel="stylesheet" />
+    <link
+      href="/resources/real/dist/css/simplebar.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/resources/real/dist/css/choices.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/resources/real/dist/css/slick.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="shortcut icon"
+      href="/resources/static/dist/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="/resources/static/dist/favicon.ico"
+      type="image/x-icon"
+    />
 
     <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
     <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
@@ -37,329 +61,408 @@
     <script src="/resources/real/dist/js/jquery.cookie.js"></script>
 
     <style>
-    :root {
-        --theme-color:#000000;  /* 테마컬러 - 기본색상 #F22C2D */
-        --theme-footer-bg:#1e2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
-        --theme-footer-color:#ffffff;  /* 푸터폰트컬러 - 기본색상 #fff */
-    }
+      :root {
+        --theme-color: #000000; /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg: #1e2023; /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color: #ffffff; /* 푸터폰트컬러 - 기본색상 #fff */
+      }
     </style>
 
     <!-- ie css 변수적용 -->
     <script>
-        window.MSInputMethodContext && document.documentMode && document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+      window.MSInputMethodContext &&
+        document.documentMode &&
+        document.write(
+          '<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>'
+        );
     </script>
-</head>
-<body>
-<!-- header -->
-<h1 class="screen_hide">SHINSEGAE</h1>
-<div id="layout" class="join_layout">
-    
+  </head>
+  <body>
+    <!-- header -->
+    <h1 class="screen_hide">SHINSEGAE</h1>
+    <div id="layout" class="join_layout">
+      <div class="hd_fl">
+        <div class="logo"></div>
+        <div class="links">
+          <div class="item"><a href="/auth/login">로그인</a></div>
+        </div>
+      </div>
 
+      <!-- content -->
 
+      <div id="content" class="join_content">
+        <div class="page_title_center">
+          <h2>아이디/비밀번호 찾기</h2>
+          <div class="sub">
+            휴대폰 인증을 통해
+            <strong>아이디 확인, 비밀번호를 변경</strong> 하실 수 있습니다.
+          </div>
+        </div>
 
-
-<div class="hd_fl">
-    <div class="logo">
-        
-    </div>
-    <div class="links">
-        
-            <div class="item"><a href="/auth/login">로그인</a></div>
-        
-        
-    </div>
-</div>
-
-    <!-- content -->
-    
-
-
-
-
-<div id="content" class="join_content">
-    <div class="page_title_center">
-        <h2>아이디/비밀번호 찾기</h2>
-        <div class="sub">휴대폰 인증을 통해 <strong>아이디 확인, 비밀번호를 변경</strong> 하실 수 있습니다.</div>
-    </div>
-
-    <div class="join_inner">
-        <form action="" id="findInfoForm" novalidate="novalidate">
-            <input type="hidden" name="sms_send_type" value="FINDID"/>
+        <div class="join_inner">
+          <form action="" id="findInfoForm" novalidate="novalidate">
+            <input type="hidden" name="sms_send_type" value="FINDID" />
             <div class="form form_type1 size_lg">
-                <div class="row">
-                    <div class="row_top">
-                        <div class="tit required">이름을 입력해 주세요.</div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="text" id="mbname" name="mbname">
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="row_top">
+                  <div class="tit required">이름을 입력해 주세요.</div>
                 </div>
-
-                <div class="row">
-                    <div class="row_top">
-                        <div class="tit required">본인명의 휴대폰번호를 입력해 주세요.</div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="tel" id="mbhp" name="mbhp" placeholder="-없이 휴대폰번호 입력" maxlength="11">
-                        </div>
-                        <button class="btn btn_gray btn_type3 btn_inline" type="button" id="sendSms">인증번호 받기</button>
-                        <button class="btn btn_gray btn_type3 btn_inline" type="button" id="reSendSms" style="display: none;">인증번호 재발송</button>
-                    </div>
+                <div class="input_group">
+                  <div class="input">
+                    <input type="text" id="mbname" name="mbname" />
+                  </div>
                 </div>
+              </div>
 
-                <div class="row" id="certifyNumberBox" style="display:none;">
-                    <div class="row_top">
-                        <div class="tit required">인증번호를 입력해 주세요.</div>
-                    </div>
-                    <div class="input_group">
-                        <div class="input">
-                            <input type="tel" name="sms_confirm_no" id="sms_confirm_no" maxlength="4">
-                            <span class="count" id="countDown">3:00</span>
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="row_top">
+                  <div class="tit required">
+                    본인명의 휴대폰번호를 입력해 주세요.
+                  </div>
                 </div>
-                <script>
-                    var countdownInterval;
-                    var secondsLeft;
-                    var checkCnt;
-                    var certifyNumberBox = document.getElementById('certifyNumberBox');
+                <div class="input_group">
+                  <div class="input">
+                    <input
+                      type="tel"
+                      id="mbhp"
+                      name="mbhp"
+                      placeholder="-없이 휴대폰번호 입력"
+                      maxlength="11"
+                    />
+                  </div>
+                  <button
+                    class="btn btn_gray btn_type3 btn_inline"
+                    type="button"
+                    id="sendSms"
+                  >
+                    인증번호 받기
+                  </button>
+                  <button
+                    class="btn btn_gray btn_type3 btn_inline"
+                    type="button"
+                    id="reSendSms"
+                    style="display: none"
+                  >
+                    인증번호 재발송
+                  </button>
+                </div>
+              </div>
 
-                    function startCountdown(buttonId, reButtonId, countdownId) {
-                        var button = document.getElementById(buttonId);
-                        var reButton = document.getElementById(reButtonId);
-                        var countdownSpan = document.getElementById(countdownId);
-                        button.style.display = 'block';
-                        reButton.style.display = 'none';
-                        certifyNumberBox.style.display = 'block';
-                        secondsLeft = 180;
-                        checkCnt = 0;
+              <div class="row" id="certifyNumberBox" style="display: none">
+                <div class="row_top">
+                  <div class="tit required">인증번호를 입력해 주세요.</div>
+                </div>
+                <div class="input_group">
+                  <div class="input">
+                    <input
+                      type="tel"
+                      name="sms_confirm_no"
+                      id="sms_confirm_no"
+                      maxlength="4"
+                    />
+                    <span class="count" id="countDown">3:00</span>
+                  </div>
+                </div>
+              </div>
+              <script>
+                var countdownInterval;
+                var secondsLeft;
+                var checkCnt;
+                var certifyNumberBox =
+                  document.getElementById("certifyNumberBox");
 
-                        countdownInterval = setInterval(function() {
-                            secondsLeft--;
-                            var minutes = Math.floor(secondsLeft / 60);
-                            var seconds = secondsLeft % 60;
-                            countdownSpan.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+                function startCountdown(buttonId, reButtonId, countdownId) {
+                  var button = document.getElementById(buttonId);
+                  var reButton = document.getElementById(reButtonId);
+                  var countdownSpan = document.getElementById(countdownId);
+                  button.style.display = "block";
+                  reButton.style.display = "none";
+                  certifyNumberBox.style.display = "block";
+                  secondsLeft = 180;
+                  checkCnt = 0;
 
-                            if (secondsLeft <= 0) {
-                                clearInterval(countdownInterval);
-                                countdownSpan.textContent = '3:00';
-                                button.style.display = 'none';
-                                reButton.style.display = 'block';
-                                document.getElementById('reSendSms').removeAttribute("disabled");
-                                box_alert('인증번호 입력시간이 초과되었습니다. 인증번호 재발송버튼을 선택해주세요.', 'info');
-                            }
-                        }, 1000);
+                  countdownInterval = setInterval(function () {
+                    secondsLeft--;
+                    var minutes = Math.floor(secondsLeft / 60);
+                    var seconds = secondsLeft % 60;
+                    countdownSpan.textContent =
+                      minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+                    if (secondsLeft <= 0) {
+                      clearInterval(countdownInterval);
+                      countdownSpan.textContent = "3:00";
+                      button.style.display = "none";
+                      reButton.style.display = "block";
+                      document
+                        .getElementById("reSendSms")
+                        .removeAttribute("disabled");
+                      box_alert(
+                        "인증번호 입력시간이 초과되었습니다. 인증번호 재발송버튼을 선택해주세요.",
+                        "info"
+                      );
                     }
+                  }, 1000);
+                }
 
-                    function loginSmsSend(data) {
-                        var confirmNo = document.getElementById('sms_confirm_no');
-                        clearInterval(countdownInterval);
-                        startCountdown('sendSms', 'reSendSms', 'countDown');
-                        confirmNo.value = data.result_etc;
-                        confirmNo.focus();
+                function loginSmsSend(data) {
+                  var confirmNo = document.getElementById("sms_confirm_no");
+                  clearInterval(countdownInterval);
+                  startCountdown("sendSms", "reSendSms", "countDown");
+                  confirmNo.value = data.result_etc;
+                  confirmNo.focus();
+                }
+
+                document
+                  .getElementById("sendSms")
+                  .addEventListener("click", function () {
+                    var idValid = $("#mbname").valid();
+                    var hpValid = $("#mbhp").valid();
+
+                    if (idValid && hpValid) {
+                      fnSmsSend("findInfoForm", loginSmsSend);
                     }
+                  });
 
-                    document.getElementById('sendSms').addEventListener('click', function() {
-                        var idValid = $("#mbname").valid();
-                        var hpValid = $("#mbhp").valid();
+                document
+                  .getElementById("reSendSms")
+                  .addEventListener("click", function () {
+                    var idValid = $("#mbname").valid();
+                    var hpValid = $("#mbhp").valid();
 
-                        if (idValid && hpValid) {
-                            fnSmsSend('findInfoForm', loginSmsSend);
-                        }
-                    });
-
-                    document.getElementById('reSendSms').addEventListener('click', function() {
-                        var idValid = $("#mbname").valid();
-                        var hpValid = $("#mbhp").valid();
-
-                        if (idValid && hpValid) {
-                            fnSmsSend('findInfoForm', loginSmsSend);
-                        }
-                    });
-                </script>
+                    if (idValid && hpValid) {
+                      fnSmsSend("findInfoForm", loginSmsSend);
+                    }
+                  });
+              </script>
             </div>
             <div class="form_btns between_lg">
-                <input type="submit" class="btn btn_black btn_type1" value="휴대폰 인증하기">
+              <input
+                type="submit"
+                class="btn btn_black btn_type1"
+                value="휴대폰 인증하기"
+              />
             </div>
-        </form>
-    </div>
-</div>
+          </form>
+        </div>
+      </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // 기본 커스텀함수 초기화
-        fnCmmAddCustomValidators(function() {
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // 기본 커스텀함수 초기화
+          fnCmmAddCustomValidators(function () {
             fnCertifyValidate();
+          });
         });
-    });
 
-    function fnCertifyValidate() {
-        var formValidator = $("#findInfoForm").validate({
+        function fnCertifyValidate() {
+          var error_lists = [];
+          var formValidator = $("#findInfoForm").validate({
             rules: {
-                mbname: {
-                    required: true
-                },
-                mbhp: {
-                    required: true,
-                    regex: /^(01[0-9])(-)?(\d{3,4})(-)?(\d{4})$/
-                },
-                sms_confirm_no: {
-                    required: secondsLeft,
-                    number: true
-                }
+              mbname: {
+                required: true,
+              },
+              mbhp: {
+                required: true,
+                regex: /^(01[0-9])(-)?(\d{3,4})(-)?(\d{4})$/,
+              },
+              sms_confirm_no: {
+                required: secondsLeft,
+                number: true,
+              },
             },
             messages: {
-                mbname: {
-                    required: '이름을 입력하세요.'
-                },
-                mbhp: {
-                    required: '휴대폰번호를 입력하세요.',
-                    regex: '휴대폰번호 형식이 잘못되었습니다.'
-                },
-                sms_confirm_no: {
-                    required: '인증번호를 입력하세요.',
-                    number: '인증번호는 숫자만 입력하세요.'
+              mbname: {
+                required: "이름을 입력하세요.",
+              },
+              mbhp: {
+                required: "휴대폰번호를 입력하세요.",
+                regex: "휴대폰번호 형식이 잘못되었습니다.",
+              },
+              sms_confirm_no: {
+                required: "인증번호를 입력하세요.",
+                number: "인증번호는 숫자만 입력하세요.",
+              },
+            },
+            onkeyup: function (element) {
+              $(element).valid();
+            },
+            onchange: function (element) {
+              $(element).valid();
+            },
+            errorPlacement: function (error) {
+              error_lists.push(error.text());
+            },
+            invalidHandler: function () {
+              setTimeout(function () {
+                //에러 배열 중복제거 (IE11 호환 방식)
+                var uniqueArr = [];
+                var seen = {};
+                for (var i = 0; i < error_lists.length; i++) {
+                  var item = error_lists[i];
+                  if (seen[item] !== 1) {
+                    seen[item] = 1;
+                    uniqueArr.push(item);
+                  }
                 }
-            },
-            onkeyup: function(element) {
-                $(element).valid();
-            },
-            onchange: function(element) {
-                $(element).valid();
+
+                var error_message = uniqueArr.join("<br />");
+
+                //얼랏 실행
+                box_alert(error_message, "info");
+
+                //에러 배열 초기화
+                error_lists = [];
+                return false;
+              }, 0);
             },
             submitHandler: function (form) {
-                if(secondsLeft){
-                    fnSmsConfirm("findInfoForm",fnCertifyConfirm)
-                }else{
-                    fnSmsSend('findInfoForm', loginSmsSend);
-                }
+              if (secondsLeft) {
+                fnSmsConfirm("findInfoForm", fnCertifyConfirm);
+              } else {
+                fnSmsSend("findInfoForm", loginSmsSend);
+              }
             },
-            invalidHandler: function (event, validator) {
-                if (validator.errorList.length > 0) {
-                    $(validator.errorList[0].element).focus();
-                }
-            }
-        });
-    }
+          });
+        }
 
-    // 인증번호 문자발송
-    function fnSmsSend(formId, callback) {
-        $.ajax({
-            type : 'post',
-            url:'/auth/loginSmsSend',
+        // 인증번호 문자발송
+        function fnSmsSend(formId, callback) {
+          $.ajax({
+            type: "post",
+            url: "/auth/loginSmsSend",
             data: $("#" + formId).serialize(),
-            dataType: 'json',
-            beforeSend: function() {
-                loading('show');
+            dataType: "json",
+            beforeSend: function () {
+              loading("show");
             },
-            success : function(data) {
-                box_alert(data.result_msg, 'info');
-                if ("0000" === data.result_code){
-                    document.getElementById('sendSms').setAttribute("disabled","");
-                    document.getElementById('reSendSms').setAttribute("disabled","");
-                    callback(data);
-                }
+            success: function (data) {
+              box_alert(data.result_msg, "info");
+              if ("0000" === data.result_code) {
+                document.getElementById("sendSms").setAttribute("disabled", "");
+                document
+                  .getElementById("reSendSms")
+                  .setAttribute("disabled", "");
+                callback(data);
+              }
             },
-            error: function(request, status, error) {
-                box_alert("관리자에게 문의하여 주시기바랍니다.", 'info');
+            error: function (request, status, error) {
+              box_alert("관리자에게 문의하여 주시기바랍니다.", "info");
             },
-            complete : function() {
-                setTimeout(function() {
-                    loading('hide');
-                }, 1000);
-            }
-        });
-    }
+            complete: function () {
+              setTimeout(function () {
+                loading("hide");
+              }, 1000);
+            },
+          });
+        }
 
-    // 인증번호 체크
-    function fnSmsConfirm(formId, callback) {
-        $.ajax({
-            type : 'post',
-            url:'/auth/smsConfirm',
+        // 인증번호 체크
+        function fnSmsConfirm(formId, callback) {
+          $.ajax({
+            type: "post",
+            url: "/auth/smsConfirm",
             data: $("#" + formId).serialize(),
-            dataType: 'json',
-            async: 'false',
-            beforeSend: function() {
-                loading('show');
+            dataType: "json",
+            async: "false",
+            beforeSend: function () {
+              loading("show");
             },
-            success : function(data) {
-                box_alert(data.result_msg, 'info');
-                if ("0000" === data.result_code) {
-                    callback(data);
-                }
+            success: function (data) {
+              box_alert(data.result_msg, "info");
+              if ("0000" === data.result_code) {
+                callback(data);
+              }
             },
-            error: function(request, status, error) {
-                box_alert("관리자에게 문의하여 주시기바랍니다.", 'info');
+            error: function (request, status, error) {
+              box_alert("관리자에게 문의하여 주시기바랍니다.", "info");
             },
-            complete : function() {
-                setTimeout(function() {
-                    loading('hide');
-                }, 1000);
-            }
-        });
-    }
-    function fnCertifyConfirm() {
-        var options = {
+            complete: function () {
+              setTimeout(function () {
+                loading("hide");
+              }, 1000);
+            },
+          });
+        }
+        function fnCertifyConfirm() {
+          var options = {
             formId: "findInfoForm",
             method: "post",
             action: "/auth/findResult",
-        };
-        fnCmmSubmitDynamicForm(options);
-    }
-</script>
+          };
+          fnCmmSubmitDynamicForm(options);
+        }
+      </script>
 
-    <!-- footer -->
-    <div id="footer">
-        
-
-
-<!-- 푸터  -->
-<div id="footer">
-    <div class="ft_inner">
-        <div id="ft_top">
-            <div id="ft_logo">
-                <img src="/resources/static/dist/images/common/ft_logo.png" alt="SHINSEGAE">
-            </div>
-            <div id="ft_links">
+      <!-- footer -->
+      <div id="footer">
+        <!-- 푸터  -->
+        <div id="footer">
+          <div class="ft_inner">
+            <div id="ft_top">
+              <div id="ft_logo">
+                <img
+                  src="/resources/static/dist/images/common/ft_logo.png"
+                  alt="SHINSEGAE"
+                />
+              </div>
+              <div id="ft_links">
                 <div class="item"><a href="/mypage/agreement">이용약관</a></div>
-                <div class="item"><a href="/mypage/policy">개인정보처리방침</a></div>
-                <div class="item cb"><a href="https://www.ssgb2e.com/about.ss" target="_blank" rel="noopener noreferrer">법인영업</a></div>
+                <div class="item">
+                  <a href="/mypage/policy">개인정보처리방침</a>
+                </div>
+                <div class="item cb">
+                  <a
+                    href="https://www.ssgb2e.com/about.ss"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >법인영업</a
+                  >
+                </div>
+              </div>
             </div>
+            <div id="ft_bottom">
+              <div id="ft_company">(주)신세계</div>
+              <div id="ft_info">
+                서울시 서초구 신반포로 194 고속버스터미널 신관 대표이사 : 박주형
+                | 개인정보관리 책임자 : 김선진 | 사업자등록번호 : 201-81-32195
+                고객만족센터 : TEL : 02-3406-6900 | 운영시간 : 평일 10:00 ~
+                17:00 (점심시간 12:00~13:00)
+              </div>
+              <div id="ft_copy">Copyright SHINSEGAE. All Rights Reserved.</div>
+            </div>
+          </div>
         </div>
-        <div id="ft_bottom">
-            <div id="ft_company">
-                (주)신세계
-            </div>
-            <div id="ft_info">
-                서울시 서초구 신반포로 194 고속버스터미널 신관 대표이사 : 박주형 | 개인정보관리 책임자 : 김선진  | 사업자등록번호 : 201-81-32195 고객만족센터 : TEL : 02-3406-6900 | 운영시간 : 평일 10:00 ~ 17:00 (점심시간 12:00~13:00) 
+        <!-- //푸터  -->
 
+        <!-- 모바일 하단 플로팅  -->
+        <div id="floating_wrap">
+          <div class="floating_inner">
+            <div class="item all">
+              <a href="javascript:;" onclick="toggleLayer('#cate_all_mobile');"
+                >전체</a
+              >
             </div>
-            <div id="ft_copy">Copyright SHINSEGAE. All Rights Reserved.</div>
+            <!-- 전체가 없는 경우 고객센터 노출 -->
+            <!-- <div class="item cs"><a href="javascript:;">고객센터</a></div> -->
+            <div class="item del"><a href="/mypage/orderList">배송</a></div>
+            <div class="item home"><a href="/main">홈</a></div>
+            <div class="item my">
+              <a href="javascript:fnMoveMypage();">MY</a>
+            </div>
+            <div class="item viewd">
+              <a
+                href="javascript:;"
+                onclick="toggleLayer('#viewed_products_mobile');"
+                >최근본</a
+              >
+            </div>
+          </div>
         </div>
+        <!-- //모바일 하단 플로팅  -->
+      </div>
     </div>
-</div>
-<!-- //푸터  -->
 
-<!-- 모바일 하단 플로팅  -->
-<div id="floating_wrap">
-    <div class="floating_inner">
-        <div class="item all"><a href="javascript:;" onclick="toggleLayer('#cate_all_mobile');">전체</a></div>
-        <!-- 전체가 없는 경우 고객센터 노출 -->
-        <!-- <div class="item cs"><a href="javascript:;">고객센터</a></div> -->
-        <div class="item del"><a href="/mypage/orderList">배송</a></div>
-        <div class="item home"><a href="/main">홈</a></div>
-        <div class="item my"><a href="javascript:fnMoveMypage();">MY</a></div>
-        <div class="item viewd"><a href="javascript:;" onclick="toggleLayer('#viewed_products_mobile');">최근본</a></div>
-    </div>
-</div>
-<!-- //모바일 하단 플로팅  -->
-    </div>
-</div>
-
-<script src="/resources/real/dist/js/common.js"></script>
-<script src="/resources/real/dist/js/common_dev.js"></script>
-</body>
+    <script src="/resources/real/dist/js/common.js"></script>
+    <script src="/resources/real/dist/js/common_dev.js"></script>
+  </body>
 </html>
