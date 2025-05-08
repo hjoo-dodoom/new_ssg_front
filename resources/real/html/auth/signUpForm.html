@@ -881,6 +881,7 @@
         });
     });
     function fnSignUpValidate() {
+        var error_lists = [];
         var formValidator = $("#signUpForm").validate({
             ignore: {},
             rules: {
@@ -946,11 +947,32 @@
             submitHandler: function (form) {
                 fnSignUpSubmit();
             },
-            invalidHandler: function (event, validator) {
-                if (validator.errorList.length > 0) {
-                    $(validator.errorList[0].element).focus();
+            errorPlacement: function (error) {
+              error_lists.push(error.text());
+            },
+            invalidHandler: function () {
+              setTimeout(function () {
+                //에러 배열 중복제거 (IE11 호환 방식)
+                var uniqueArr = [];
+                var seen = {};
+                for (var i = 0; i < error_lists.length; i++) {
+                  var item = error_lists[i];
+                  if (seen[item] !== 1) {
+                    seen[item] = 1;
+                    uniqueArr.push(item);
+                  }
                 }
-            }
+
+                var error_message = uniqueArr.join("<br />");
+
+                //얼랏 실행
+                box_alert(error_message, "info");
+
+                //에러 배열 초기화
+                error_lists = [];
+                return false;
+              }, 0);
+            },
         });
         formValidator.form();
     }
