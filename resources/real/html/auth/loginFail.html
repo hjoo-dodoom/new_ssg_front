@@ -48,9 +48,12 @@
       }
     </style>
 
-    <!-- ie css 변수적용 -->
+    <!-- ie 관련 스크립트 적용 -->
     <script>
-        window.MSInputMethodContext && document.documentMode && document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+        if (window.MSInputMethodContext && document.documentMode) {
+            document.write('<script src="/resources/real/dist/js/ie11CustomProperties.js"><\/script>');
+            document.write('<script src="/resources/real/dist/js/polyfill.js"><\/script>');
+        }
     </script>
   </head>
   <body>
