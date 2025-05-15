@@ -174,7 +174,7 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
 .layer_default .layer_content .layer_default_content.layer_scroll .layer_scroll{padding-top:0;}
 .layer_default .layer_content.width_sm{width: 40rem;}
 .layer_default .layer_content.width_md{width: 60rem;}
-.layer_default .layer_content.width_lg{width:80rem;}
+.layer_default .layer_content.width_lg{width:70rem;}
 .layer_default .layer_content.width_xl{width:96rem;}
 
 .layer_default .layer_content .layer_default_content{max-height: calc(100vh - 16rem);}
