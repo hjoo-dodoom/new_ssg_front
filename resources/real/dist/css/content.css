@@ -2856,7 +2856,7 @@ td .check_agree p{margin-top:2rem;}
 .board_list .bl_top{padding:2.5rem 0;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: start;-ms-flex-align: start;align-items: start;position: relative;border:0;background-color: #fff;text-align: left;}
 .board_list .bl_top .date{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
 .board_list .bl_top .date:after{content:"";margin:0 1.2rem;width:1px;height:1.4rem;background-color: #d7d7d7;}
-.board_list .bl_top .subject{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;width:1%;display:table;table-layout: fixed;}
+.board_list .bl_top .subject{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;width:100%;display:table;table-layout: fixed;}
 .board_list .bl_top .subject > div{position: relative;;display: table-cell;overflow: hidden;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;padding-right:4rem;}
 .board_list .bl_top .top_fixed{display: inline-block;width:1.8rem;height:1.8rem;text-indent:-999em;overflow:hidden;margin-right:0.8rem;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/board_fixed.svg');}
 .board_list .bl_top:after{content:"";-webkit-transition:all 0.3s;-o-transition:all 0.3s;transition:all 0.3s;position: absolute;right:0;top:50%;margin-top:-0.9rem;width:1.8rem;height:1.8rem;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/common/icon_arrow_down3.svg');}
