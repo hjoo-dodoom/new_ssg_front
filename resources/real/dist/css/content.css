@@ -167,14 +167,16 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
 .layer_default .layer_content .layer_default_title:after{content:'';display:inline-block;position:absolute;bottom:0; left:4rem; width: calc(100% - 4rem - 4rem);height:1px; background-color:#000;}
 .layer_default .layer_content .layer_default_close{position: absolute;right:4rem;top:4rem;width:3.4rem;height: 3.4rem;border:0;border-radius:50%;background-size:1.3rem;text-indent: -999em;overflow:hidden;background-color: #ebebeb;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/common/icon_close.svg');}
 .layer_default .layer_content .layer_default_close:hover{background-color: #dddddd;}
-.layer_default .layer_content .layer_default_content{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;padding:3rem 4rem 4rem;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;} 
+.layer_default .layer_content .layer_default_content{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;padding-top:3rem; padding-bottom:4rem;} 
+.layer_default .layer_content .layer_default_content > div:not([data-simplebar]):not(.simplebar-track){margin-left: 4rem; margin-right: 4rem;}
 .layer_default .layer_content .layer_default_content.layer_scroll{}
 .layer_default .layer_content .layer_scroll{overflow-y: auto;}
 .layer_default .layer_content .layer_default_content .layer_scroll{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;display: -webkit-box;display: -ms-flexbox;display: flex;overflow-y: auto;}
 .layer_default .layer_content .layer_default_content.layer_scroll .layer_scroll{padding-top:0;}
+.layer_default .layer_content .simplebar-content-wrapper{padding-left: 4rem; padding-right: 4rem;}
 .layer_default .layer_content.width_sm{width: 40rem;}
 .layer_default .layer_content.width_md{width: 60rem;}
-.layer_default .layer_content.width_lg{width:70rem;}
+.layer_default .layer_content.width_lg{width:80rem;}
 .layer_default .layer_content.width_xl{width:96rem;}
 
 .layer_default .layer_content .layer_default_content{max-height: calc(100vh - 16rem);}
@@ -210,8 +212,10 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
     .layer_default .layer_content .layer_default_title{font-size:1.8rem;padding-top:2rem;padding-bottom:2rem;padding-right: calc(3.5rem + 2rem);padding-left:2rem;}
     .layer_default .layer_content .layer_default_title:after{left:2rem; width: calc(100% - 2rem - 2rem);}
     .layer_default .layer_content .layer_default_close{right:2rem;top:2.9rem;width:2.8rem;height: 2.8rem;background-size:1rem;}
-    .layer_default .layer_content .layer_default_content{padding: 2rem 2rem 3rem;} 
+    .layer_default .layer_content .layer_default_content{padding-top:2rem; padding-bottom: 3rem;} 
+    .layer_default .layer_content .layer_default_content > div:not([data-simplebar]):not(.simplebar-track){margin-left: 2rem; margin-right: 2rem;}
     .layer_default .layer_content .layer_default_content.layer_scroll .layer_scroll{padding-top:0;}
+    .layer_default .layer_content .simplebar-content-wrapper{padding-left:2rem;  padding-right:2rem;}
 
     .layer_default .layer_content .layer_default_content.terms_content{font-size:1.4rem;}
     .layer_default .layer_content .layer_default_content .txt1{font-size:1.6rem;}
@@ -2279,6 +2283,10 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .table_bottom .mp_more{color:#444;font-size:1.4rem;font-weight: 500;padding-right: 1.7rem;background-position: right center;background-repeat: no-repeat;background-image: url('../images/content/status_arrow.svg');}
 .table_bottom .mp_more:hover{text-decoration: underline;}
 .table_bottom .btn_list{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;gap:0.8rem;}
+/* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .table_bottom .btn_list button + button{margin-left:0.8rem;}
+}
 
 .list_cates{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap: wrap;flex-wrap: wrap;gap:1.3rem 2rem;}
 .list_cates .item{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
