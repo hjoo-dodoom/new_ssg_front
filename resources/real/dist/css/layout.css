@@ -57,7 +57,7 @@
 #hd_search .search_inner .gnb_search_input:focus{outline:none;}
 #hd_search .search_inner .gnb_search_submit{width:5rem;border:0;background-color: transparent;text-indent:-999em;overflow: hidden;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/common/icon_hd_search.svg');}
 #hd_search .search_inner .gnb_search_submit:hover{opacity:0.8;}
-#hd_links{display:flex;align-items: center;justify-content: end;}
+#hd_links{display:flex;align-items: center;justify-content: flex-end;}
 #hd_links .item{text-align:center;min-width:6.2rem;}
 #hd_links .item a{display:block;color:#666;font-size:1.2rem;}
 #hd_links .item [class^=icon_hd]{display:block;margin:0 auto 0.5rem;position: relative;background-color: #F2F2F2;border-radius: 50%;width:4.6rem;height:4.6rem;background-position: center center;background-repeat: no-repeat;}
