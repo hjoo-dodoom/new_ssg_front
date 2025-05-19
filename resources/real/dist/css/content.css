@@ -629,7 +629,12 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 }
 .location_cate_wrap{margin-bottom:7rem;}
 .cate_taps{margin-top:4rem;}
+
 .cate_taps .swiper-wrapper{display: -ms-grid;display: grid;-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-columns:repeat(6, 1fr);}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+    .cate_taps .swiper-wrapper { display: -ms-flexbox; display: flex;-ms-flex-wrap: wrap; flex-wrap: wrap; margin-left: -1px;}
+    .cate_taps .swiper-wrapper .item { width: calc(100% / 6); box-sizing: border-box;}
+}
 .cate_taps .swiper-wrapper .item{border:1px solid #E7E7E7;border-left:0;}
 .cate_taps .swiper-wrapper .item:first-child,
 .cate_taps .swiper-wrapper .item:nth-child(6n+1){border-left:1px solid #E7E7E7;}
@@ -659,6 +664,11 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .cate_taps .swiper-wrapper .item:nth-child(n+6){border-top:0;}
     .cate_taps .swiper-wrapper .item a{padding:1.1rem 2rem;font-size:1.4rem;}
 }
+@media screen and (-ms-high-contrast: active) and (max-width: 1450px),
+       screen and (-ms-high-contrast: none) and (max-width: 1450px){
+    .cate_taps .swiper-wrapper { display: -ms-flexbox; display: flex;-ms-flex-wrap: wrap; flex-wrap: wrap; margin-left: -1px;}
+    .cate_taps .swiper-wrapper .item { width: calc(100% / 5); box-sizing: border-box;}
+}
 @media screen and (max-width: 1020px) {
     .location_wrap{margin-top:2.1rem;}
     .location_wrap .item{display:none;}
@@ -667,7 +677,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .location_cate_wrap{margin:0 -2.4rem 2.6rem;padding:0 2.4rem;overflow: hidden;position: relative;}
     .location_cate_wrap:before{content:"";position: absolute;left:0;bottom:0;background-color: #EDEDED;height:1px;width:100%;}
     .cate_taps{margin-top:0.5rem;}
-    .cate_taps .swiper-wrapper{display: -webkit-box;display: -ms-flexbox;display: flex;}
+    .cate_taps .swiper-wrapper{display: -webkit-box;display: -ms-flexbox;display: flex; flex-wrap:nowrap;}
     .cate_taps .swiper-wrapper .item{border:0 !important;width:auto;}
     .cate_taps .swiper-wrapper .item a{display:block;border:0 !important;font-size:1.4rem;padding:1.4rem 1rem;position: relative;}
     .cate_taps .swiper-wrapper .item a.active{border-radius:0;}

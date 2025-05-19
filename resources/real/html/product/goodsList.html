@@ -4288,6 +4288,114 @@
                   
                   
                     
+                      
+                        
+                          
+                            <div class="swiper-slide item">
+                              <a href="#" onclick="fnMoveCatePageH('10');" class="active">전체</a>
+                            </div>
+                          
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1010');">생활가전</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1020');">주방가전	</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1030');">계절가전	</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1040');">영상/음향</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1050');">컴퓨터/통신가전</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1060');">대형가전	</a>
+                              </div>
+                              
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1050');">컴퓨터/통신가전</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                        
+                          
+                          
+                            
+                              <div class="swiper-slide item">
+                                <a href="#" onclick="fnMoveCatePageH('1060');">대형가전	</a>
+                              </div>
+                            
+                          
+                        
+
+                      
+                    
                   
                 
 
@@ -4295,7 +4403,6 @@
             </div>
             <script>
               var cateTapbsSwiper;
-
               function initializeCateTaps() {
                 if (window.innerWidth <= 850) {
                   if (!cateTapbsSwiper) {
@@ -4305,16 +4412,36 @@
                       freeMode: true,
                       on: {
                         init: function () {
-                          var activeSlide = this.slides.find(slide => slide.querySelector('.active'));
+                          var activeSlide = "";
+                          var slides = this.slides;
+
+                          // IE 호환을 위한 "find" 대신 "for" 루프 사용
+                          for (var i = 0; i < slides.length; i++) {
+                            if (slides[i].querySelector('.active')) {
+                              activeSlide = slides[i];
+                              break;
+                            }
+                          }
+
                           if (activeSlide) {
-                            var activeIndex = this.slides.indexOf(activeSlide);
+                            var activeIndex;
+
+                            // "indexOf" 대신 "for" 루프를 사용해 인덱스 찾기
+                            for (var j = 0; j < slides.length; j++) {
+                              if (slides[j] === activeSlide) {
+                                activeIndex = j;
+                                break;
+                              }
+                            }
+
                             this.slideTo(activeIndex, 0, false);
-                            setTimeout(function() {
+
+                            setTimeout(function () { // 화살표 함수 변환
                               var slideWidth = activeSlide.offsetWidth;
                               var containerWidth = this.el.offsetWidth;
                               var scrollLeft = activeSlide.offsetLeft - (containerWidth / 2) + (slideWidth / 2);
                               this.wrapperEl.scrollLeft = scrollLeft;
-                            }, 0);
+                            }.bind(this), 0); // IE에서 "this" 유지
                           }
                         }
                       }
@@ -4327,6 +4454,7 @@
                   }
                 }
               }
+
               initializeCateTaps();
               window.addEventListener('resize', initializeCateTaps);
             </script>
