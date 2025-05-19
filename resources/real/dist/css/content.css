@@ -1286,7 +1286,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .dw_top .imgaes_thumbs .swiper-slide-thumb-active:before{display: block;border:1px solid #000;}
 .dw_top .imgaes_thumbs .swiper-slide-thumb-active:hover:before{border:1px solid #000;}
 
-.dw_top .goods_info{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;width:1%;margin-left:min(5%, 6rem);}
+.dw_top .goods_info{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto;width:1%;margin-left:6rem;}
 .dw_top .goods_info .department{display: inline-block;background-color: #FFEBE9;color:#CE0700;font-size:1.2rem;font-weight:600;border-radius:0.4rem;padding:0.2rem 0.5rem;}
 .dw_top .goods_info h2{margin-top:1rem;font-size:2rem;font-weight:600;}
 .dw_top .goods_info .info{margin-top:3rem;padding-top:3rem;border-top:1px solid #E5E5E5;font-size:1.6rem;font-weight:500;}
