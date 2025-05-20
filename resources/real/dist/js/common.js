@@ -1070,6 +1070,42 @@ function applyChoicesToSelect(element) {
 document.addEventListener('DOMContentLoaded', function () {
     var selectElements = document.querySelectorAll('select');
     
+    // forEach 대신 for 루프 사용
+    for (var i = 0; i < selectElements.length; i++) {
+        applyChoicesToSelect(selectElements[i]);
+    }
+
+    var observer = new MutationObserver(function(mutations) {
+        for (var j = 0; j < mutations.length; j++) {
+            var mutation = mutations[j];
+            
+            for (var k = 0; k < mutation.addedNodes.length; k++) {
+                var node = mutation.addedNodes[k];
+                
+                // nodeType과 tagName 체크
+                if (node.nodeType === 1) { // Node.ELEMENT_NODE
+                    if (node.tagName === 'SELECT') {
+                        applyChoicesToSelect(node);
+                    } else if (node.querySelectorAll) {
+                        var newSelects = node.querySelectorAll('select');
+                        for (var l = 0; l < newSelects.length; l++) {
+                            applyChoicesToSelect(newSelects[l]);
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    observer.observe(document.body, { 
+        childList: true, 
+        subtree: true 
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var selectElements = document.querySelectorAll('select');
+    
     // forEach 대신 Array.prototype.forEach.call 사용
     Array.prototype.forEach.call(selectElements, function(element) {
         applyChoicesToSelect(element);

@@ -4605,73 +4605,103 @@
                 </div>
                 <!-- 옵션 -->
                 <div class="goods_options_btns">
-
-                  <!-- 옵션 -->
-                  
-                    
-
-                    
-                  
-
-                  <!-- 다중 -->
-                  <div class="selected_options selected_options_pc_mult">
-                    <div class="items">
-                      
-                        
-                          <!-- 상시판매 -->
-                          <div class="item" data-item-opt-id="P0000000234313">
-                            
-                              
-                                <input type="hidden" name="sellprice" value="5900">
-                                <input type="hidden" name="coupon_appl_price" value="5900">
-                              
-                              
-                            
-                            <input type="hidden" name="cart_poid" value="">
-                            <input type="hidden" name="cart_prid" value="P0000000234313">
-                            <div class="l">
-
-                              <div class="lot_box">
-                                <div class="lot_control">
-                                  <button type="button" class="minus" >수량 빼기</button>
-                                  <input type="tel" name="optionaddamt" value="1"  data-opt-id="P0000000234313" readonly>
-                                  <button type="button" class="plus" >수량 추가</button>
-                                </div>
-                                <button class="btn btn_type6 btn_inline btn_red_line coupon_del_btn" type="button" onclick="javascript:couponDelAppl(`P0000000234313`)" style="display: none">적용취소</button>
-                                <button class="btn btn_type6 btn_inline btn_black coupon_add_btn" type="button" onclick="javascript:couponOpenApplLayer(`P0000000234313`);" style="display: none">쿠폰적용</button>
-                              </div>
-                            </div>
-                            <div class="r">
-                              <div class="r_cnt">
-                                
-                                <div class="price">
-                                  
-                                    
-                                      
-                                        
-
-                                        
-                                        <span class="price_sale final_price_view">5900원</span>
-                                      
-                                      
-                                    
-                                  
-                                </div>
-                              </div>
-                            </div>
+                  <div class="options">
+                      <div class="select">
+                          <div class="design_select type3">
+                              <!-- 필수 선택 옵션이 있을때 
+                              onchange="option_required(this, 1)"
+                              select-required
+                              product-option="prd_option_required1"
+                              -->
+                              <select name=""  onchange="option_required(this, 1)" select-required product-option="prd_option_required1">
+                                  <option value="">색상 선택</option>
+                                  <option value="검정">검정</option>
+                                  <option value="노랑">노랑</option>
+                                  <option value="파랑" disabled>파랑 (품절)</option>
+                              </select>
                           </div>
-                        
-                      
-                    </div>
-                    
-                      
-                        <div class="total_price">
+                      </div>
+                      <div class="select">
+                          <div class="design_select type3">
+                              <select name="" onchange="option_required(this, 2)" select-required product-option="prd_option_required2">
+                                  <option value="">사이즈 선택</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="select">
+                          <div class="design_select type3">
+                              <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="prd_option_required3">
+                                  <option value="">길이 선택</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div class="select">
+                          <div class="design_select type3">
+                              <select name="" id="">
+                                  <option value="">추가구성품 선택</option>
+                                  <option value="양말">양말 (재고 20)</option>
+                                  <option value="장갑">장갑 (재고 20)</option>
+                                  <option value="신발" disabled>신발 (품절)</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="selected_options">
+                      <div class="items">
+                          <div class="item">
+                              <div class="l">
+                                  <div class="name">블랙/미디움</div>
+                                  <div class="lot_box">
+                                      <div class="lot_control">
+                                          <button type="button" class="minus">수량 빼기</button>
+                                          <input type="tel" value="1" limit="3"><!-- limit 재고수량 -->
+                                          <button type="button" class="plus">수량 추가</button>
+                                      </div>
+                                      <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                      <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply');">쿠폰적용</button>
+                                  </div>
+                              </div>
+                              <div class="r">
+                                  <div class="r_cnt">
+                                      <div class="quantity">재고수량 3개</div>
+                                      <div class="price">
+                                          <span class="price_ori">1,020,600원</span>
+                                          <span class="price_sale">918,540원</span>
+                                      </div>
+                                  </div>
+                                  <button type="button" class="remove_item">선택옵션 삭제</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="l">
+                                  <div class="name">양말</div>
+                                  <div class="lot_box">
+                                      <div class="lot_control">
+                                          <button type="button" class="minus">수량 빼기</button>
+                                          <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                          <button type="button" class="plus">수량 추가</button>
+                                      </div>
+                                      <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                      <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</button>
+                                  </div>
+                              </div>
+                              <div class="r">
+                                  <div class="r_cnt">
+                                      <div class="quantity">재고수량 3개</div>
+                                      <div class="price">
+                                          <span class="price_ori">1,020,600원</span>
+                                          <span class="price_sale">918,540원</span>
+                                      </div>
+                                  </div>
+                                  <button type="button" class="remove_item">선택옵션 삭제</button>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="total_price">
                           <span class="tit">총 상품 금액</span>
-                          <strong class="price">0원</strong>
-                        </div>
-                      
-                      
-                    
+                          <strong class="price">1,939,140원</strong>
+                      </div>
                   </div>
 
                   <!-- //옵션없음 -->
@@ -4986,36 +5016,35 @@
               <div class="grid_scroll_content">
                 <div class="title"><a href="javascript:fn_promoExhibitList();">기획전</a></div>
                 <div class="items">
-                  
                     <div class="item">
-                      <a href="javascript:fn_exhibitDetailHeader('2288');">
-                        <div class="thum" style="background-image: url('/ib2bmall/promotionImg/');"></div>
-                      </a>
-                    </div>
-                  
-                    <div class="item">
-                      <a href="javascript:fn_exhibitDetailHeader('2669');">
-                        <div class="thum" style="background-image: url('/ib2bmall/promotionImg/');"></div>
-                      </a>
-                    </div>
-                  
-                    <div class="item">
-                      <a href="javascript:fn_exhibitDetailHeader('2673');">
-                        <div class="thum" style="background-image: url('/ib2bmall/promotionImg/fd603915-a856-4d94-8e28-39058f4f946c_기획전_p4.jpg');"></div>
-                      </a>
-                    </div>
-                  
-                    <div class="item">
-                      <a href="javascript:fn_exhibitDetailHeader('2672');">
-                        <div class="thum" style="background-image: url('/ib2bmall/promotionImg/7748d35e-ad18-4d3a-b9df-45193cdd0e30_기획전_p3.jpg');"></div>
-                      </a>
-                    </div>
-                  
-                    <div class="item">
-                      <a href="javascript:fn_exhibitDetailHeader('2674');">
-                        <div class="thum" style="background-image: url('/ib2bmall/promotionImg/6d3ca9d0-d343-417f-a072-fedf819f040f_기획전_p5.jpg');"></div>
-                      </a>
-                    </div>
+                        <a href="javascript:fn_exhibitDetailHeader('2288');">
+                            <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                        </a>
+                      </div>
+                    
+                      <div class="item">
+                        <a href="javascript:fn_exhibitDetailHeader('2669');">
+                            <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                        </a>
+                      </div>
+                    
+                      <div class="item">
+                        <a href="javascript:fn_exhibitDetailHeader('2673');">
+                            <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                        </a>
+                      </div>
+                    
+                      <div class="item">
+                        <a href="javascript:fn_exhibitDetailHeader('2672');">
+                            <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                        </a>
+                      </div>
+                    
+                      <div class="item">
+                        <a href="javascript:fn_exhibitDetailHeader('2674');">
+                            <div class="thum" style="background-image: url('/resources/static/dist/images/dummy/product_exhibitions1.jpg');"></div>
+                        </a>
+                      </div>
                   
                 </div>
               </div>
@@ -5029,106 +5058,207 @@
                 <div class="goods_btns_mobile">
                   
                     <button type="button" class="btn btn_icon icon_zzim " onclick="fn_zzim()"></button>
-                  
-                  
                     <button type="button" class="btn btn_icon icon_present" id="present_mobile"></button>
-                  
-                  
-                    
-                    
-                      <button type="button" class="btn btn_theme" id="buy_mobile" >구매하기</button>
+                    <button type="button" class="btn btn_theme" id="buy_mobile" >구매하기</button>
                     
                   
                 </div>
               
-              <div class="dimmed"></div>
-              <div class="options_fixed_layer">
-              <button type="button" class="fixed_toggle_btn">옵션 선택</button>
-              <div class="options_fixed_inner" data-simplebar>
-                <div class="goods_options_btns">
-                  <div class="options_content">
-                    <div class="product_name">테스트상품 돋움 이미지</div>
-                      
-                        
-                        
-                      
-
-                    <div class="selected_options selected_options_mobile_mult">
-                      <div class="items" data-simplebar>
-                        
-                          
-                            <!-- 상시판매 -->
-                            <div class="item" data-item-opt-id="P0000000234313">
-                              <input type="hidden" name="sellprice" value="5900">
-                              <input type="hidden" name="coupon_appl_price" value="5900">
-                              <input type="hidden" name="cart_poid" value="">
-                              <input type="hidden" name="cart_prid" value="P0000000234313">
-                              <div class="l">
-
-                                <div class="lot_box">
-                                  <div class="lot_control">
-                                    <button type="button" class="minus" >수량 빼기</button>
-                                    <input type="tel" name="optionaddamt" value="1"  data-opt-id="P0000000234313" readonly>
-                                    <button type="button" class="plus" >수량 추가</button>
-                                  </div>
-                                  <button class="btn btn_type6 btn_inline btn_red_line coupon_del_btn" type="button" onclick="javascript:couponDelAppl(`P0000000234313`)" style="display: none">적용취소</button>
-                                  <button class="btn btn_type6 btn_inline btn_black coupon_add_btn" type="button" onclick="javascript:couponOpenApplLayer(`P0000000234313`);" style="display: none">쿠폰적용</button>
+                <div class="dimmed"></div>
+                <div class="options_fixed_layer">
+                    <button type="button" class="fixed_toggle_btn">옵션 선택</button>
+                    <div class="options_fixed_inner" data-simplebar>
+                        <div class="goods_options_btns">
+                            <div class="options_content">
+                                <div class="product_name">[LG전자] 스탠바이미 스마트 터치스크린(돌비애트모스,돌비비전,무선사용,화면회전)_
+                                    27ART10DSPL ☆신세계5만원☆</div>
+                                <div class="options">
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" id="" onchange="option_required(this, 1)" select-required product-option="modal_prd_option_required1">
+                                                <option value="">색상 선택</option>
+                                                <option value="검정">검정</option>
+                                                <option value="노랑">노랑</option>
+                                                <option value="파랑" disabled>파랑 (품절)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" id="" onchange="option_required(this, 2)" select-required product-option="modal_prd_option_required2">
+                                                <option value="">사이즈 선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" onchange="option_required(this, 3, 'last')" select-required product-option="modal_prd_option_required3">
+                                                <option value="">길이 선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="select">
+                                        <div class="design_select type3">
+                                            <select name="" id="">
+                                                <option value="">추가구성품 선택</option>
+                                                <option value="양말">양말 (재고 20)</option>
+                                                <option value="장갑">장갑 (재고 20)</option>
+                                                <option value="신발" disabled>신발 (품절)</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
-                              <div class="r">
-                                <div class="r_cnt">
-                                  
-                                  <div class="price">
-                                    
-                                      <span class="price_ori">10,000원</span>
-                                    
-                                    
-                                      <span class="price_sale final_price_view">5,900원</span>
-                                    
-                                  </div>
+                                <div class="selected_options">
+                                    <div class="items" data-simplebar>
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">블랙/미디움</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="3"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</button>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 10개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="remove_item">선택옵션 삭제</button>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">양말</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</button>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 10개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="remove_item">선택옵션 삭제</button>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">블랙/미디움</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</button>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 10개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="remove_item">선택옵션 삭제</button>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">양말</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</button>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 10개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="remove_item">선택옵션 삭제</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="total_price">
+                                        <span class="tit">총 상품 금액</span>
+                                        <strong class="price">1,939,140원</strong>
+                                    </div>
                                 </div>
-                              </div>
+
+                                <!-- 옵션없음 -->
+                                <div class="selected_options">
+                                    <div class="items" data-simplebar>
+                                        <div class="item">
+                                            <div class="l">
+                                                <div class="name">양말</div>
+                                                <div class="lot_box">
+                                                    <div class="lot_control">
+                                                        <button type="button" class="minus">수량 빼기</button>
+                                                        <input type="tel" value="1" limit="10"><!-- limit 재고수량 -->
+                                                        <button type="button" class="plus">수량 추가</button>
+                                                    </div>
+                                                    <button class="btn btn_type6 btn_inline btn_red_line" type="button">적용취소</button>
+                                                    <button class="btn btn_type6 btn_inline btn_black" type="button" onclick="openLayer('#coupon_apply')">쿠폰적용</button>
+                                                </div>
+                                            </div>
+                                            <div class="r">
+                                                <div class="r_cnt">
+                                                    <div class="quantity">재고수량 10개</div>
+                                                    <div class="price">
+                                                        <span class="price_ori">1,020,600원</span>
+                                                        <span class="price_sale">918,540원</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="total_price">
+                                        <span class="tit">총 상품 금액</span>
+                                        <strong class="price">1,939,140원</strong>
+                                    </div>
+                                </div>
+                                <!-- //옵션없음 -->
                             </div>
-                          
-                        
-                      </div>
-                      <div class="total_price">
-                        <span class="tit">총 상품 금액</span>
-                        <strong class="price">0원</strong>
-                      </div>
+                            <div class="goods_btns">
+                                <button type="button" class="btn btn_icon icon_zzim">찜하기</button>
+                                <button type="button" class="btn btn_icon icon_present">선물하기</button>
+                                <button type="button" class="btn btn_black">장바구니</button>
+                                <button type="button" class="btn btn_theme">바로구매</button>
+                                <button type="button" class="btn btn_black_line">여러곳 배송</button>
+                                <button type="button" class="btn btn_theme" id="present_mobile_buy">선물하기</button>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- 옵션없음 -->
-                    
-                    <!-- //옵션없음 -->
-                  </div>
-                  
-                    <div class="goods_btns">
-                      
-                        <button type="button" class="btn btn_icon icon_zzim " onclick="fn_zzim()">찜하기</button>
-                      
-                      
-                        <button type="button" class="btn btn_icon icon_present" onclick="fn_sendGift()">선물하기</button>
-                      
-                      
-                        <button type="button" class="btn btn_black" onclick="fn_cart_set()">장바구니</button>
-                      
-                      
-                        
-                        
-                          <button type="button" class="btn btn_theme" onclick="fn_buyNow()">구매하기</button>
-                        
-                      
-                      
-                      
-                        <button type="button" class="btn btn_theme" id="present_mobile_buy" onclick="fn_sendGift()">선물하기</button>
-                      
-                    </div>
-                  
                 </div>
-              </div>
             </div>
-          </div>
         </div>
       </div>
   </div>
@@ -5528,7 +5658,7 @@ function option_add_sel(_val){
     optionRequired.init();
   }
 
-  //옵션 선택
+//옵션 선택
 function option_required(elm, num, last){
   var targetNum = num + 1;
   var targetSelect = document.querySelector('[product-option = "prd_option_required'+targetNum+'"]');
@@ -5548,7 +5678,7 @@ function option_required(elm, num, last){
       if(num == instant_count) {
         selectedOptions.push(changedValue);// 타이밍 문제로 강제로 입력
       } else if (num > instant_count){
-        selectedOptions.push(select.selectedOptions[0].value);
+        selectedOptions.push(select.options[select.selectedIndex].value);
       }
       instant_count++;
     }
@@ -5580,10 +5710,15 @@ function option_required(elm, num, last){
       },
       complete: function() {
         //선택한 셀렉트 업데이트 (선택한 셀렉트 && 모달창 안의 셀렉트)
-        var changeSelectChoices = choicesInstances.get('prd_option_required'+num);
-        var changeModalSelectChoices = choicesInstances.get('modal_prd_option_required'+num);
-        changeSelectChoices.setChoiceByValue(changedValue);
-        changeModalSelectChoices.setChoiceByValue(changedValue);
+        var changeSelectChoices = choicesInstances['prd_option_required'+num];
+        var changeModalSelectChoices = choicesInstances['modal_prd_option_required'+num];
+        
+        if (changeSelectChoices && typeof changeSelectChoices.setChoiceByValue === 'function') {
+          changeSelectChoices.setChoiceByValue(changedValue);
+        }
+        if (changeModalSelectChoices && typeof changeModalSelectChoices.setChoiceByValue === 'function') {
+          changeModalSelectChoices.setChoiceByValue(changedValue);
+        }
 
         if(last){//필수 마지막 셀렉트
           //셀렉트 selected, option 초기화
@@ -5612,10 +5747,14 @@ function option_required(elm, num, last){
               }
             }
 
-            var optionRequired = choicesInstances.get(select.getAttribute('product-option'));
-            optionRequired.removeActiveItems();
-            optionRequired.destroy();
-            optionRequired.init();
+            var productOption = select.getAttribute('product-option');
+            var optionRequired = choicesInstances[productOption];
+            
+            if (optionRequired) {
+              if (typeof optionRequired.removeActiveItems === 'function') optionRequired.removeActiveItems();
+              if (typeof optionRequired.destroy === 'function') optionRequired.destroy();
+              if (typeof optionRequired.init === 'function') optionRequired.init();
+            }
           }
 
           //옵션추가 로직
@@ -5648,15 +5787,17 @@ function option_required(elm, num, last){
           //선택한 다음 셀렉트 업데이트 후 셀렉트 초기화
           targetSelect.insertAdjacentHTML('beforeend', options);
           targetModalSelect.insertAdjacentHTML('beforeend', options);
-          var targetSelectChoices = choicesInstances.get('prd_option_required'+targetNum);
-          var targetModalSelectChoices = choicesInstances.get('modal_prd_option_required'+targetNum);
+          
+          var targetSelectChoices = choicesInstances['prd_option_required'+targetNum];
+          var targetModalSelectChoices = choicesInstances['modal_prd_option_required'+targetNum];
+          
           if (targetSelectChoices) {
-            targetSelectChoices.destroy();
-            targetSelectChoices.init();
+            if (typeof targetSelectChoices.destroy === 'function') targetSelectChoices.destroy();
+            if (typeof targetSelectChoices.init === 'function') targetSelectChoices.init();
           }
           if (targetModalSelectChoices) {
-            targetModalSelectChoices.destroy();
-            targetModalSelectChoices.init();
+            if (typeof targetModalSelectChoices.destroy === 'function') targetModalSelectChoices.destroy();
+            if (typeof targetModalSelectChoices.init === 'function') targetModalSelectChoices.init();
           }
 
           //셀렉트 selected, option 초기화
@@ -5689,30 +5830,42 @@ function option_required(elm, num, last){
           var eraser_cnt = $("select[product-option^='prd_option_required']").length;
 
           for(var eraser_index = targetNum; eraser_index <= eraser_cnt; eraser_index++) {
-            choicesInstances.get('prd_option_required'+eraser_index).removeActiveItems();
-            choicesInstances.get('prd_option_required'+eraser_index).destroy();
-            choicesInstances.get('prd_option_required'+eraser_index).init();
+            var prdChoice = choicesInstances['prd_option_required'+eraser_index];
+            var modalChoice = choicesInstances['modal_prd_option_required'+eraser_index];
+            
+            if (prdChoice) {
+              if (typeof prdChoice.removeActiveItems === 'function') prdChoice.removeActiveItems();
+              if (typeof prdChoice.destroy === 'function') prdChoice.destroy();
+              if (typeof prdChoice.init === 'function') prdChoice.init();
+            }
 
-            choicesInstances.get('modal_prd_option_required'+eraser_index).removeActiveItems();
-            choicesInstances.get('modal_prd_option_required'+eraser_index).destroy();
-            choicesInstances.get('modal_prd_option_required'+eraser_index).init();
+            if (modalChoice) {
+              if (typeof modalChoice.removeActiveItems === 'function') modalChoice.removeActiveItems();
+              if (typeof modalChoice.destroy === 'function') modalChoice.destroy();
+              if (typeof modalChoice.init === 'function') modalChoice.init();
+            }
           }
         }
       }
     });
   } else {
     //선택한 셀렉트 업데이트 (선택한 셀렉트 && 모달창 안의 셀렉트)
-    var changeSelectChoices = choicesInstances.get('prd_option_required'+num);
-    var changeModalSelectChoices = choicesInstances.get('modal_prd_option_required'+num);
-    changeSelectChoices.setChoiceByValue(changedValue);
-    changeModalSelectChoices.setChoiceByValue(changedValue);
+    var changeSelectChoices = choicesInstances['prd_option_required'+num];
+    var changeModalSelectChoices = choicesInstances['modal_prd_option_required'+num];
+    
+    if (changeSelectChoices && typeof changeSelectChoices.setChoiceByValue === 'function') {
+      changeSelectChoices.setChoiceByValue(changedValue);
+    }
+    if (changeModalSelectChoices && typeof changeModalSelectChoices.setChoiceByValue === 'function') {
+      changeModalSelectChoices.setChoiceByValue(changedValue);
+    }
 
     if(last){//필수 마지막 셀렉트
       var selectedOptions = [];
       var reqSelects = document.querySelectorAll('.options_fixed [select-required]');
       for (var rs = 0; rs < reqSelects.length; rs++) {
         var select = reqSelects[rs];
-        selectedOptions.push(select.selectedOptions[0].value);
+        selectedOptions.push(select.options[select.selectedIndex].value);
       }
 
       //옵션추가 로직
@@ -5761,31 +5914,36 @@ function option_required(elm, num, last){
           }
         }
 
-        var optionRequired = choicesInstances.get(select.getAttribute('product-option'));
-        optionRequired.removeActiveItems();
-        optionRequired.destroy();
-        optionRequired.init();
+        var productOption = select.getAttribute('product-option');
+        var optionRequired = choicesInstances[productOption];
+        
+        if (optionRequired) {
+          if (typeof optionRequired.removeActiveItems === 'function') optionRequired.removeActiveItems();
+          if (typeof optionRequired.destroy === 'function') optionRequired.destroy();
+          if (typeof optionRequired.init === 'function') optionRequired.init();
+        }
       }
     } else {
       //선택한 다음 셀렉트 업데이트 후 셀렉트 초기화
       if (targetSelect && targetModalSelect) {
         targetSelect.insertAdjacentHTML('beforeend', options);
         targetModalSelect.insertAdjacentHTML('beforeend', options);
-        var targetSelectChoices = choicesInstances.get('prd_option_required'+targetNum);
-        var targetModalSelectChoices = choicesInstances.get('modal_prd_option_required'+targetNum);
+        
+        var targetSelectChoices = choicesInstances['prd_option_required'+targetNum];
+        var targetModalSelectChoices = choicesInstances['modal_prd_option_required'+targetNum];
+        
         if (targetSelectChoices) {
-          targetSelectChoices.destroy();
-          targetSelectChoices.init();
+          if (typeof targetSelectChoices.destroy === 'function') targetSelectChoices.destroy();
+          if (typeof targetSelectChoices.init === 'function') targetSelectChoices.init();
         }
         if (targetModalSelectChoices) {
-          targetModalSelectChoices.destroy();
-          targetModalSelectChoices.init();
+          if (typeof targetModalSelectChoices.destroy === 'function') targetModalSelectChoices.destroy();
+          if (typeof targetModalSelectChoices.init === 'function') targetModalSelectChoices.init();
         }
       }
     }
   }
 }
-
 //상품 이미지 슬라이드
 var imagesThumbs = new Swiper(".imgaes_thumbs .slide", {
   watchSlidesProgress: true,
