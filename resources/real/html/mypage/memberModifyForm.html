@@ -1318,6 +1318,21 @@
             onchange: function(element) {
                 $(element).valid();
             },
+             errorPlacement: function(error, element) {
+                // 필드 ID로 에러 ID 생성
+                error.attr("id", element.attr("name") + "-error");
+                error.addClass("error-message");
+
+                // input_group 찾기
+                var inputGroup = element.closest(".input_group");
+                if(inputGroup.length) {
+                    // input_group 바깥에 에러 메시지 배치
+                    inputGroup.after(error);
+                } else {
+                    // input_group이 없는 경우 기본 위치에 배치
+                    error.insertAfter(element);
+                }
+            },
             submitHandler: function () {
                 passwordChangeSubmit();
             },
@@ -1419,6 +1434,21 @@
             },
             onchange: function(element) {
                 $(element).valid();
+            },
+            errorPlacement: function(error, element) {
+                // 필드 ID로 에러 ID 생성
+                error.attr("id", element.attr("name") + "-error");
+                error.addClass("error-message");
+
+                // input_group 찾기
+                var inputGroup = element.closest(".input_group");
+                if(inputGroup.length) {
+                    // input_group 바깥에 에러 메시지 배치
+                    inputGroup.after(error);
+                } else {
+                    // input_group이 없는 경우 기본 위치에 배치
+                    error.insertAfter(element);
+                }
             },
             submitHandler: function (form) {
                 if(secondsLeft){
@@ -1626,6 +1656,21 @@
             },
             onchange: function(element) {
                 $(element).valid();
+            },
+             errorPlacement: function(error, element) {
+                // 필드 ID로 에러 ID 생성
+                error.attr("id", element.attr("name") + "-error");
+                error.addClass("error-message");
+
+                // input_group 찾기
+                var inputGroup = element.closest(".input_group");
+                if(inputGroup.length) {
+                    // input_group 바깥에 에러 메시지 배치
+                    inputGroup.after(error);
+                } else {
+                    // input_group이 없는 경우 기본 위치에 배치
+                    error.insertAfter(element);
+                }
             },
             submitHandler: function (form) {
                 if(secondsLeft2){
