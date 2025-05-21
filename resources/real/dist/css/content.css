@@ -2671,10 +2671,11 @@ td .check_agree p{margin-top:2rem;}
 .info_lbox .item .cnt{margin-left:auto;font-size:1.8rem;font-weight:600;}
 .info_lbox .item.gray{color:#666;}
 
-.links_status{display: -webkit-box;display: -ms-flexbox;display: flex;gap:5.5rem;background-color: #F5F5F5;border-radius:1.2rem;padding:3.8rem 3rem;border:1px solid #000;}
+.links_status{display: -webkit-box;display: -ms-flexbox;display: flex;background-color: #F5F5F5;border-radius:1.2rem;padding:3.8rem 3rem;border:1px solid #000;}
 .links_status .item{-webkit-box-flex:1;-ms-flex:1 1;flex:1 1;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;}
 .links_status .item:after{content:"";position: absolute;top:50%;right:-2.75rem;margin-top:-2rem;width:1px;height:4rem;background-color: #D7D7D7;}
 .links_status .item:last-child::after{display: none;}
+.links_status .item + .item{margin-left:5.5rem;}
 .links_status .item .tit{color:#666;font-size:1.3rem;}
 .links_status .item .count{margin-left:auto;font-size:2.3rem;font-weight:600;}
 .links_status a:hover .count{text-decoration: underline;}
@@ -2693,7 +2694,9 @@ td .check_agree p{margin-top:2rem;}
 
     .links_gbox{padding:0.6rem;gap:1.2rem;}
     .links_gbox .item .cnt{font-size:1.8rem;}
-    .links_status{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;gap:1rem;padding:1.5rem;}
+    .links_status{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;padding:1.5rem;}
+    .links_status .item{flex:auto;}
+    .links_status .item + .item{margin-left:0rem; margin-top:1rem;}
     .links_status .item:after{display: none;}
     .links_status .item .count{font-size:1.8rem;}
 }
