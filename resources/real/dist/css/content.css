@@ -2761,7 +2761,8 @@ td .check_agree p{margin-top:2rem;}
 .excel_table .table table tbody tr:last-child .excel_error{border-bottom:0;}
 .excel_table .table table tbody .bg_pink{border-color:#F22C2D !important;background-color: #FFFBFA;color:#F22C2D;}
 
-.coupon_list{display:-ms-grid;display:grid;-ms-grid-columns: 1fr 4rem 1fr;grid-template-columns: repeat(2,1fr);gap:4rem;border-bottom:1px solid #E6E6E6;padding-bottom:4rem;}
+.coupon_list {display:-webkit-box;display:-ms-flexbox;display:flex;flex-wrap: wrap;margin: -2rem;}
+.coupon_list li:not(.list_empty) {width: calc(50% - 4rem);margin: 2rem;}
 .coupon_list li{border:1px solid #D8D8D8;border-radius:0.8rem;padding:1.8rem 3rem;}
 .coupon_list li .val{color:#F22C2D;font-size:2.4rem;font-weight: 600;padding-bottom:1.3rem;margin-bottom:1.7rem;border-bottom:1px dashed #d8d8d8;}
 .coupon_list li .cnt{}
@@ -2770,7 +2771,8 @@ td .check_agree p{margin-top:2rem;}
 .coupon_list li .tit + .desc{margin-top:0.5rem;}
 .coupon_list li.list_empty{border:0;}
 @media screen and (max-width: 1020px) {
-    .coupon_list{-ms-grid-columns: 1fr;grid-template-columns: repeat(1,1fr);gap:1.4rem;padding-bottom:3rem;}
+    .coupon_list {margin: 0;}
+    .coupon_list li:not(.list_empty) {width: 100%;margin: 0.7rem 0;}
     .coupon_list li{padding:1.5rem 1.6rem;}
     .coupon_list li .val{font-size:2rem;padding-bottom:1rem;margin-bottom:1rem;}
     .coupon_list li .tit{font-size:1.5rem;}
