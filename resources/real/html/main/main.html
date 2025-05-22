@@ -9053,9 +9053,10 @@ updateCountdown();
 document.addEventListener('DOMContentLoaded', function () {
   var $MvStatusNow = document.querySelector('.main_visual_slider .paging_info .count .now');
   var $MvStatusTotal = document.querySelector('.main_visual_slider .paging_info .count .total');
-  var $MvSlickElement = $('.main_visual_slider .slider');
+  var $MvSwiperElement = $('.main_visual_slider .slider');
   var $MvProgressBar = $('.main_visual_slider .progress');
-  var $MvProgressBarSet = $MvSlickElement.find('.item').length;
+  var $MvTotalSlideLength = $('.main_visual_slider .slider .swiper-slide').length;
+  var $MvProgressBarSet = $MvSwiperElement.find('.item').length;
   var $MvProgressBarSetWid = ( (1) / ($MvProgressBarSet) ) * 100;
   var self = null;
   var calculatePercent = function (obj) {
@@ -9064,8 +9065,9 @@ document.addEventListener('DOMContentLoaded', function () {
       return calculatedPercent;
   };
 
+  console.log("$MvTotalSlideLength", $MvTotalSlideLength)
   var mainBannerSideSwiper = new Swiper($('.main_visual_slider .slider'), {
-    loop: true,
+    loop: $MvTotalSlideLength !== 1,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
