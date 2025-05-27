@@ -29,40 +29,31 @@
         a {color: inherit;text-decoration: none;display: inline-block;}
         .sound_only {display: inline-block !important;position: absolute;top: 0;left: 0;margin: 0 !important;padding: 0 !important;font-size: 0;line-height: 0;border: 0 !important;overflow: hidden !important}
 
-        #hd_belt{display:none; padding: 0.9rem; text-align:center; color:#fff; background-color:#555;}
+        #hd_belt{width:100%; display:none; padding: 0.9rem; text-align:center; color:#fff; background-color:#555;}
         #hd_belt.fixed{position:fixed; top:0; left:0;}
         /* IE10+ */
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
             #hd_belt{display:block;}
         }
 
-        #error_page{}
-        #error_page #content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;min-height:100vh;padding:min(24rem, 7vw) min(18rem, 4.5vw) min(13rem, 3.5vw) min(21rem, 6vw);}
-        #error_page #content.errorNum{-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
-        #error_page .content{width:100%;}
-        #error_page .content h2{font-size:7rem;font-weight:600;margin-bottom:1.5rem;}
-        #error_page .content p{font-size:1.7rem;color:#444;word-break: keep-all;}
-        #error_page .content .form_btns{-webkit-box-pack: start;-ms-flex-pack: start;justify-content: start;}
-        #error_page .bg{margin-top:auto;margin-left:auto;}
-        #error_page .bg img{max-width:41.7rem;}
+        .error_page{width:100%; min-height: 100vh; padding:3rem 2rem; display:table;text-align:center;background-color:#F8F8F8;}
+        .error_page .content  {display:table-cell; vertical-align:middle;overflow: hidden;}
+        .error_page .content .box{position:relative;}
+        .error_page .content .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+        .error_page .content .inner img + img{margin-left:6rem;}
+        .error_page .content .inner .box{margin-left:5.3rem; text-align: left;}
+        .error_page .content .inner .box.center{position: relative; text-align: center;}
 
-        #error_page .center{width: 100%;position:relative;text-align:center;}
-        #error_page .center .bg_num{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);font-size:40rem;color:#F2F2F3;font-weight:700;z-index:-1;}
-        #error_page .center h2{font-size:3.4rem;font-weight:700;margin-bottom:2.5rem;}
-        #error_page .center p{font-size:1.7rem;font-weight:400;color:#444;word-break: keep-all;}
-        @media screen and (max-width: 1020px) {
-            #error_page #content{-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;padding:12rem 2.4rem 8rem;}
-            #error_page .content{text-align: center;}
-            #error_page .content h2{font-size:3.6rem;}
-            #error_page .content p{font-size:1.4rem;}
-            #error_page .content .form_btns{-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
-            #error_page .bg{margin:9rem 0 0;}
-            #error_page .bg img{max-width:24.6rem;}
-            #error_page .center .bg_num{top:-42%;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);font-size:17rem;}
-            #error_page .center h2{font-size:2.2rem;margin-bottom:1rem;}
-            #error_page .center p{font-size:1.3rem;}
-            #error_page .center .form_btns{margin-top: 7.4rem;}
-        }
+        .error_page .content .inner .box h1{color:#444; font-size: 3.2rem; font-weight:600;}
+        .error_page .content .inner .box p{margin-top:2.5rem; margin-bottom:4rem;color:#444; font-size: 1.7rem;}
+        .error_page .content .inner .box .btn.btn_reset{ background-color: #000; color: #fff;  font-size: 1.6rem;}
+
+
+        .error_page.error_code{background-color:transparent;}
+        .error_page.error_code .content > * {display: block;}
+        .error_page.error_code .content .bg_num{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);font-size:40rem;color:#F2F2F3;font-weight:700; line-height: normal; z-index:-1;}
+        .error_page.error_code .content h2{font-size:3.4rem;font-weight:700;margin-bottom:2.5rem;}
+        .error_page.error_code .content p{font-size:1.7rem;font-weight:400;color:#444;word-break: keep-all;}
 
         .form_btns{display: flex; justify-content: center;}
         .form_btns .btn{display:inline-flex;align-items: center;justify-content: center;}
@@ -70,8 +61,18 @@
         .btn{border-radius: 0.6rem;max-width: 100%;text-align: center;display:inline-flex;align-items: center;justify-content: center;}
         .btn.btn_black{border:1px solid #110505;background-color: #110505;color:#fff;}
         .btn.btn_type4{height:5.4rem;font-size:1.6rem;font-weight:600;width:26rem;}
-
         @media screen and (max-width: 1020px) {
+            .error_page .content .inner img + img{margin-left:0;}
+            .error_page .content .inner .box{margin-left:0rem; margin-top:3rem; text-align:center;}
+            .error_page .content .inner .box h1{font-size: 2.2rem;}
+            .error_page .content .inner .box p{font-size: 1.3rem;}
+
+            .error_page.system_check .inner, .error_page.sesstion_connect .inner{flex-direction: column;}
+            .error_page.error_code .content .bg_num{top:20%;left:50%;font-size:17rem;}
+            .error_page.error_code .content h2{font-size:2.2rem;margin-bottom:1rem;}
+            .error_page.error_code .content p{font-size:1.3rem;}
+            .error_page.error_code .content .form_btns.between_sm{margin-top: 7.4rem;}
+
             .form_btns .btn{flex:1;}
             .form_btns.between_sm{margin-top:2rem;}
             .btn.btn_type4{padding-left:1.8rem;padding-right:1.8rem;height:5rem;font-size:1.5rem;width:13rem;}
@@ -79,24 +80,25 @@
     </style>
 </head>
 <body>
-<div id="hd_belt" class="fiexd">
+<div id="hd_belt" class="fixed">
     지원이 중단된 IE브라우저입니다. 상위 버전의 브라우저를 이용하시면 보다 안전하고 쾌적한 서비스를 이용할 수 있습니다.
 </div>
-<div id="error_page">
+<div class="error_page error_code">
+    <div class="content">
+        <!-- <div class="inner"> -->
+            <div class="box">
+                <h1 class="sound_only">오류가 발생했습니다.</h1>
+                <div class="bg_num">500</div>
+                <h2>Internal Server Error</h2>
+                <p>서버가 요청사항을 처리할 수 없습니다.<br/>
+                    일시적인 문제일 수 있으니 잠시 후 다시 시도해 주세요.</p>
+                <div class="form_btns between_sm">
+                    <a href="javascript:;" class="btn btn_black btn_type4">새로고침</a>
+                </div>
 
-    <div id="content" class="errorNum">
-        <h1 class="sound_only">오류가 발생했습니다.</h1>
-        <div class="center">
-            <div class="bg_num">500</div>
-            <h2>Internal Server Error</h2>
-            <p>서버가 요청사항을 처리할 수 없습니다.<br/>
-                일시적인 문제일 수 있으니 잠시 후 다시 시도해 주세요.</p>
-            <div class="form_btns between_sm">
-                <a href="javascript:;" class="btn btn_black btn_type4">새로고침</a>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
-
 </div>
 
 </body>

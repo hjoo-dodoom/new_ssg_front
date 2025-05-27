@@ -2922,14 +2922,14 @@ td .check_agree p{margin-top:2rem;}
 }
 
 #error_page{}
-#error_page #content{display:flex;flex-direction:column;min-height:100vh;padding:min(24rem, 7vw) min(18rem, 4.5vw) min(13rem, 3.5vw) min(21rem, 6vw);}
+#error_page #content{display: -ms-flexbox;display:flex;-ms-flex-direction: column;flex-direction:column;min-height:100vh;padding: 24rem 18rem 13rem 21rem; position: relative;}
 #error_page #content.errorNum{justify-content: center;}
 #error_page .content{width:100%;}
 #error_page .content h2{font-size:7rem;font-weight:600;margin-bottom:1.5rem;}
 #error_page .content p{font-size:1.7rem;color:#444;word-break: keep-all;}
-#error_page .content .form_btns{justify-content: start;}
-#error_page .bg{margin-top:auto;margin-left:auto;}
-#error_page .bg img{max-width:41.7rem;}
+#error_page .content .form_btns{justify-content: flex-start;}
+#error_page .bg{position: absolute; right: 18rem; bottom: 13rem; margin: 0;}
+#error_page .bg img{max-width:41.7rem; height: auto;}
 
 #error_page .center{position:relative;text-align:center;}
 #error_page .center .bg_num{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-size:40rem;color:#F2F2F3;font-weight:700;z-index:-1;}
@@ -2941,7 +2941,7 @@ td .check_agree p{margin-top:2rem;}
     #error_page .content h2{font-size:3.6rem;}
     #error_page .content p{font-size:1.4rem;}
     #error_page .content .form_btns{justify-content: center;}
-    #error_page .bg{margin:9rem 0 0;}
+    #error_page .bg{position: relative; right:0; bottom:0; margin:9rem 0 0;}
     #error_page .bg img{max-width:24.6rem;}
 
     #error_page .center .bg_num{top:-42%;left:50%;transform:translateX(-50%);font-size:17rem;}
@@ -3012,24 +3012,35 @@ background-repeat:no-repeat;background-position:center center;background-image:u
     .policy_list table{white-space: nowrap;}
 }
 
-#system_check{width:100%;height: 100%; min-height: 100svh;background-color:#F8F8F8;display:flex;justify-content: center;align-items:center;}
-#system_check .bg_wrap{text-align: center;height:100%;display:flex;justify-content: center;align-items:center;flex-wrap:wrap;}
-#system_check img + img{margin-left:6rem;}
+/* 오류 페이지 */
+.error_page{width:100%; min-height: 100vh; padding:3rem 2rem; display:table;text-align:center;background-color:#F8F8F8;}
+.error_page .content  {display:table-cell; vertical-align:middle;overflow: hidden;}
+.error_page .content .box{position:relative;}
+.error_page .content .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+.error_page .content .inner img + img{margin-left:6rem;}
+.error_page .content .inner .box{margin-left:5.3rem; text-align: left;}
+.error_page .content .inner .box.center{position: relative; text-align: center;}
 
-#system_check .sesstion_connect{display:flex;flex-wrap:wrap;gap:5.3rem; row-gap:2rem;}
-#system_check .sesstion_connect .info h1{color:#444; font-size: 3.2rem; font-weight:600;}
-#system_check .sesstion_connect .info p{margin-top:2.5rem; margin-bottom:4rem;color:#444; font-size: 1.7rem;}
-#system_check .sesstion_connect .info .btn.btn_reset{ background-color: #000; color: #fff;  font-size: 1.6rem;}
+.error_page .content .inner .box h1{color:#444; font-size: 3.2rem; font-weight:600;}
+.error_page .content .inner .box p{margin-top:2.5rem; margin-bottom:4rem;color:#444; font-size: 1.7rem;}
+.error_page .content .inner .box .btn.btn_reset{ background-color: #000; color: #fff;  font-size: 1.6rem;}
+
+
+.error_page.error_code{background-color:transparent;}
+.error_page.error_code .content > * {display: block;}
+.error_page.error_code .content .bg_num{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);font-size:40rem;color:#F2F2F3;font-weight:700; line-height: normal; z-index:-1;}
+.error_page.error_code .content h2{font-size:3.4rem;font-weight:700;margin-bottom:2.5rem;}
+.error_page.error_code .content p{font-size:1.7rem;font-weight:400;color:#444;word-break: keep-all;}
 
 @media screen and (max-width: 1020px) {
-    #system_check{display:flex;justify-content: center;align-items:center;}
-    #system_check .bg_wrap{display:block;height: auto;}
-    #system_check img + img{margin-left:0rem;}
+    .error_page .content .inner img + img{margin-left:0;}
+    .error_page .content .inner .box{margin-left:0rem; margin-top:3rem; text-align:center;}
+    .error_page .content .inner .box h1{font-size: 2.2rem;}
+    .error_page .content .inner .box p{font-size: 1.3rem;}
 
-    #system_check .sesstion_connect.container:before,
-    #system_check .sesstion_connect.container:after{display:none;}
-    #system_check .sesstion_connect{justify-content: center; text-align:center;}
-    #system_check .sesstion_connect .img_wrap{text-align:center;}
-    #system_check .sesstion_connect .info h1{font-size: 2.2rem;}
-    #system_check .sesstion_connect .info p{font-size: 1.3rem;}
+    .error_page.system_check .inner, .error_page.sesstion_connect .inner{flex-direction: column;}
+    .error_page.error_code .content .bg_num{top:20%;left:50%;font-size:17rem;}
+    .error_page.error_code .content h2{font-size:2.2rem;margin-bottom:1rem;}
+    .error_page.error_code .content p{font-size:1.3rem;}
+    .error_page.error_code .content .form_btns.between_sm{margin-top: 7.4rem;}
 }
