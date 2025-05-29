@@ -1169,45 +1169,43 @@ function printLayer(ele) {
     <head>
         <meta charset="utf-8">
         <title>프린트 미리보기</title>
-        <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/layout.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/content.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/jquery.modal.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/pikaday.css" rel="stylesheet"/>
-        <link href="/resources/real/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
-        <link href="/resources/real/dist/css/choices.css" rel="stylesheet" type="text/css"/>
-        <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
+        <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+        <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+        <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+        <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+        <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+        <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+        <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+        <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon"> 
+        <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
 
-        <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
-        <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
-        <script src="/resources/real/dist/js/litepicker.js"></script>
-        <script src="/resources/real/dist/js/jquery.modal.min.js"></script>
-        <script src="/resources/real/dist/js/box_alert.js"></script>
-        <script src="/resources/real/dist/js/swiper.min.js"></script>
-        <script src="/resources/real/dist/js/slick.min.js"></script>
-        <script src="/resources/real/dist/js/litepicker.js"></script>
-        <script src="/resources/real/dist/js/jquery.validate.min.js"></script>
-        <script src="/resources/real/dist/js/simplebar.min.js"></script>
-        <script src="/resources/real/dist/js/choices.min.js"></script>
-        <script src="/resources/real/dist/js/common.js"></script>
-        <script src="/resources/real/dist/js/common_dev.js"></script>
-        <script src="/resources/real/dist/js/pikaday.js"></script>
-        <script src="/resources/real/dist/js/jquery.cookie.js"></script>
+        <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+        <script src="/resources/static/dist/js/jquery-ui.js"></script>
+        <script src="/resources/static/dist/js/litepicker.js"></script>
+        <script src="/resources/static/dist/js/jquery.modal.js"></script>
+        <script src="/resources/static/dist/js/box_alert.js"></script>
+        <script src="/resources/static/dist/js/swiper.min.js"></script>
+        <script src="/resources/static/dist/js/slick.min.js"></script>
+        <script src="/resources/static/dist/js/litepicker.js"></script>
+        <script src="/resources/static/dist/js/jquery.validate.js"></script>
+        <script src="/resources/static/dist/js/simplebar.min.js"></script>
+        <script src="/resources/static/dist/js/choices.min.js"></script>
+        <script src="/resources/static/dist/js/pikaday.js"></script>
+        <script src="/resources/static/dist/js/common.js"></script>
         <style>
-        body { font-family: 'Arial', sans-serif; padding: 20px; }
-        @media print {
-            body { margin: 0; }
-            .layer_default_title{margin-bottom:5rem; text-align:center; font-size: 1.8rem; font-weight: 600; padding-bottom: 1rem; border-bottom:2px solid #000;}
-            .layer_default_close{display:none;}
-            .print_no{display:none;}
-            table{page-break-inside:avoid;}
-            tr,td{page-break-inside:avoid;}
+            body { font-family: 'Arial', sans-serif; padding: 20px; }
+            @media print {
+                body { margin: 0; }
+                .layer_default_title{margin-bottom:5rem; text-align:center; font-size: 1.8rem; font-weight: 600; padding-bottom: 1rem; border-bottom:2px solid #000;}
+                .layer_default_close{display:none;}
+                .print_no{display:none;}
+                table{page-break-inside:avoid;}
+                tr,td{page-break-inside:avoid;}
 
-        }
+            }
         </style>
     </head>
     <body>
@@ -1215,13 +1213,13 @@ function printLayer(ele) {
         ${printContents}
         </div>
         <script>
-        window.onload = function() {
-            window.print();
-            window.onafterprint = function() {
-            window.close();
+            window.onload = function() {
+                window.print();
+                window.onafterprint = function() {
+                window.close();
+                };
+                window.close();
             };
-            window.close();
-        };
         <\/script>
     </body>
     </html>
