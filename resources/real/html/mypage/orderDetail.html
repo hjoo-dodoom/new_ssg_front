@@ -8431,7 +8431,7 @@ function fn_partnerMallPage(idx, ptncode) {
                                 <th>체결번호</th>
                                 <th>체결일자</th>
                                 <th>결제구분</th>
-                                <th>인쇄</th>
+                                <th class="print_no">인쇄</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -8449,10 +8449,10 @@ function fn_partnerMallPage(idx, ptncode) {
                                             
                                         </span>
                                     </td>
-                                    <td class="v_pc">
+                                    <td class="v_pc print_no">
                                         <span class="mb_tit">인쇄</span>
                                         <span class="mb_cnt">
-                                            <button class="btn btn_black btn_type6 btn_inline" type="button">인쇄하기</button>
+                                            <button class="btn btn_black btn_type6 btn_inline" type="button" onclick="printLayer('#trade_receipt .simplebar-content')">인쇄하기</button>
                                         </span>
                                     </td>
                                 </tr>
@@ -8579,7 +8579,7 @@ function fn_partnerMallPage(idx, ptncode) {
                                 <th>체결번호</th>
                                 <th>체결일자</th>
                                 <th>결제구분</th>
-                                <th>인쇄</th>
+                                <th class="print_no">인쇄</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -8596,10 +8596,10 @@ function fn_partnerMallPage(idx, ptncode) {
                                         
                                     </span>
                                 </td>
-                                <td class="v_pc">
+                                <td class="v_pc print_no">
                                     <span class="mb_tit">인쇄</span>
                                     <span class="mb_cnt">
-                                        <button class="btn btn_black btn_type6 btn_inline" type="button">인쇄하기</button>
+                                        <button class="btn btn_black btn_type6 btn_inline" type="button" onclick="printLayer('#trade_detail .simplebar-content')">인쇄하기</button>
                                     </span>
                                 </td>
                             </tr>

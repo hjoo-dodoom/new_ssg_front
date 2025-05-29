@@ -1629,3 +1629,75 @@ function toggleSlideItem(button, content, duration) {
     var speed = duration !== undefined ? duration : 600;
     slideToggle(targetSlide, speed);
 }
+
+
+function printLayer(ele) {
+    const printContents = document.querySelector(ele).innerHTML;
+    const popup = window.open('', 'print_open', 'width=760,height=750,top=0,left=0,resizable=no,toolbar=no,status=no,scrollbars=yes');
+
+    popup.document.open();
+    popup.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>프린트 미리보기</title>
+        <link href="/resources/real/dist/css/normalize.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/common.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/layout.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/content.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/jquery.modal.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/swiper.min.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/pikaday.css" rel="stylesheet"/>
+        <link href="/resources/real/dist/css/simplebar.css" rel="stylesheet" type="text/css" />
+        <link href="/resources/real/dist/css/choices.css" rel="stylesheet" type="text/css"/>
+        <link href="/resources/real/dist/css/slick.css" rel="stylesheet" type="text/css"/>
+        <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon"> 
+
+        <script src="/resources/real/dist/js/jquery-2.2.4.min.js"></script>
+        <script src="/resources/real/dist/js/jquery-ui.min.js"></script>
+        <script src="/resources/real/dist/js/litepicker.js"></script>
+        <script src="/resources/real/dist/js/jquery.modal.min.js"></script>
+        <script src="/resources/real/dist/js/box_alert.js"></script>
+        <script src="/resources/real/dist/js/swiper.min.js"></script>
+        <script src="/resources/real/dist/js/slick.min.js"></script>
+        <script src="/resources/real/dist/js/litepicker.js"></script>
+        <script src="/resources/real/dist/js/jquery.validate.min.js"></script>
+        <script src="/resources/real/dist/js/simplebar.min.js"></script>
+        <script src="/resources/real/dist/js/choices.min.js"></script>
+        <script src="/resources/real/dist/js/common.js"></script>
+        <script src="/resources/real/dist/js/common_dev.js"></script>
+        <script src="/resources/real/dist/js/pikaday.js"></script>
+        <script src="/resources/real/dist/js/jquery.cookie.js"></script>
+        <style>
+        body { font-family: 'Arial', sans-serif; padding: 20px; }
+        @media print {
+            body { margin: 0; }
+            .layer_default_title{margin-bottom:5rem; text-align:center; font-size: 1.8rem; font-weight: 600; padding-bottom: 1rem; border-bottom:2px solid #000;}
+            .layer_default_close{display:none;}
+            .print_no{display:none;}
+            table{page-break-inside:avoid;}
+            tr,td{page-break-inside:avoid;}
+
+        }
+        </style>
+    </head>
+    <body>
+        <div id="printArea">
+        ${printContents}
+        </div>
+        <script>
+        window.onload = function() {
+            window.print();
+            window.onafterprint = function() {
+            window.close();
+            };
+            window.close();
+        };
+        <\/script>
+    </body>
+    </html>
+    `);
+    popup.document.close();
+}
