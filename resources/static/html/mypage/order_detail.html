@@ -624,7 +624,7 @@
                                 <th>체결번호</th>
                                 <th>체결일자</th>
                                 <th>결제구분</th>
-                                <th>인쇄</th>
+                                <th class="print_no">인쇄</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -632,10 +632,10 @@
                                 <td><span class="mb_tit">체결번호</span><span class="mb_cnt">K00002870587</span></td>
                                 <td><span class="mb_tit">결제일자</span><span class="mb_cnt">2024-09-09 10:43:43</span></td>
                                 <td><span class="mb_tit">결제구분</span><span class="mb_cnt">신용거래</span></td>
-                                <td class="v_pc">
+                                <td class="v_pc print_no">
                                     <span class="mb_tit">인쇄</span>
                                     <span class="mb_cnt">
-                                        <button class="btn btn_black btn_type6 btn_inline" type="button">인쇄하기</button>
+                                        <button class="btn btn_black btn_type6 btn_inline" type="button" onclick="printLayer('#trade_receipt .simplebar-content')">인쇄하기</button>
                                     </span>
                                 </td>
                             </tr>
@@ -645,7 +645,7 @@
             </div>
 
             <div class="layer_section ">
-                <div class="ls_title">상품정보</div>
+                <div class="ls_title">상품정보1</div>
                 <div class="receipt_table">
                     <div class="table_response mobile_between border_black">
                         <table>
@@ -813,7 +813,7 @@
                                 <th>체결번호</th>
                                 <th>체결일자</th>
                                 <th>결제구분</th>
-                                <th>인쇄</th>
+                                <th class="print_no">인쇄</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -821,10 +821,10 @@
                                 <td><span class="mb_tit">체결번호</span><span class="mb_cnt">K00002870587</span></td>
                                 <td><span class="mb_tit">결제일자</span><span class="mb_cnt">2024-09-09 10:43:43</span></td>
                                 <td><span class="mb_tit">결제구분</span><span class="mb_cnt">신용거래</span></td>
-                                <td class="v_pc">
+                                <td class="v_pc print_no">
                                     <span class="mb_tit">인쇄</span>
                                     <span class="mb_cnt">
-                                        <button class="btn btn_black btn_type6 btn_inline" type="button">인쇄하기</button>
+                                        <button class="btn btn_black btn_type6 btn_inline" type="button" onclick="printLayer('#trade_detail .simplebar-content')">인쇄하기</button>
                                     </span>
                                 </td>
                             </tr>
