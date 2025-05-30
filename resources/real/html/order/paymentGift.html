@@ -4520,8 +4520,9 @@
                                         
                                     </div>
                                     
-                                        <div id="pay_form_etc" class="od_table top_line_gray bottom_line_transparent form form_type4" style="display: none;">
-                                            <table>
+                                        <div id="pay_form_etc" class="od_table bottom_line_transparent form form_type4" style="display: none;">
+                                            <div class="od_table_title">현금영수증발행(SSG MONEY)</div>
+                                            <table class="top_line_gray">
                                                 <colgroup>
                                                     <col style="width:17rem">
                                                     <col>
@@ -9970,6 +9971,7 @@
     var paymentCash = document.querySelectorAll('.pay_cash');
     var paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
     var paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
+    var paymentTableTitle = document.querySelector('#pay_form_etc .od_table_title');
     var paymentTxt = document.querySelectorAll('#pay_form_etc .text');
 
     for (var i = 0; i < paymentTypeAll.length; i++) {
@@ -9986,6 +9988,8 @@
                 for (var k = 0; k < paymentTxt.length; k++) {
                     paymentTxt[k].classList.remove('hide');
                 }
+
+                paymentTableTitle.style.display = 'block';
             }else if(this.checked && this.value === '4'){//급여공제
                 paymentFormEtc.style.display = 'block';
                 for (var j = 0; j < paymentCash.length; j++) {
@@ -9998,6 +10002,8 @@
                 for (var k = 0; k < paymentTxt.length; k++) {
                     paymentTxt[k].classList.add('hide');
                 }
+
+                paymentTableTitle.style.display = 'none';
             }else{
                 paymentFormEtc.style.display = 'none';
             }

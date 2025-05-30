@@ -468,8 +468,9 @@
                                     </label>
                                 </div>
                             </div>
-                            <div id="pay_form_etc" class="od_table top_line_gray bottom_line_transparent form form_type4" style="display: none;">
-                                <table>
+                            <div id="pay_form_etc" class="od_table bottom_line_transparent form form_type4" style="display: none;">
+                                <div class="od_table_title">현금영수증발행(SSG MONEY)</div>
+                                <table class="top_line_gray">
                                     <colgroup>
                                         <col style="width:17rem">
                                         <col>
@@ -872,6 +873,7 @@ const paymentFormEtc = document.getElementById('pay_form_etc');
 const paymentCash = document.querySelectorAll('.pay_cash');
 const paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
 const paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
+const paymentTableTitle = document.querySelector('#pay_form_etc .od_table_title');
 const paymentTxt = document.querySelectorAll('#pay_form_etc .text');
 
 paymentTypeAll.forEach(function(paymentType){
@@ -888,6 +890,8 @@ paymentTypeAll.forEach(function(paymentType){
             paymentTxt.forEach(function(text){
                 text.classList.remove('hide')
             });
+
+            paymentTableTitle.style.display = 'block';
         }else if(paymentType.checked && paymentType.value === '4'){//급여공제
             paymentFormEtc.style.display = 'block';
             paymentCash.forEach(function(cash){
@@ -900,6 +904,8 @@ paymentTypeAll.forEach(function(paymentType){
             paymentTxt.forEach(function(text){
                 text.classList.add('hide')
             });
+
+            paymentTableTitle.style.display = 'none';
         }else{
             paymentFormEtc.style.display = 'none';
         }
