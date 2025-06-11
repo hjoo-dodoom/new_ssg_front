@@ -410,7 +410,7 @@ function showBottomSheet(event){
     const bottomSheet = document.getElementById("bottom_sheet");
     bottomSheet.classList.add("show");
     document.querySelector('html').classList.add('mobile_hidden');
-    updateSheetHeight(70); // 바텀 시트 최초 높이(vh)
+    updateSheetHeight(100); // 바텀 시트 최초 높이(vh)
 }
 
 function updateSheetHeight(height){
@@ -419,7 +419,8 @@ function updateSheetHeight(height){
 
     if(height === 100){
         const viewportHeight = window.innerHeight;
-        const calculatedHeightInVh = (viewportHeight - 30) / viewportHeight * 100; // `calc( 100vh - 30px )` 와 같은 의미
+        const top = 0;
+        const calculatedHeightInVh = (viewportHeight - top) / viewportHeight * 100; // ex> `calc( 100vh - 30px )` 와 같은 의미
         sheetContent.style.height =`${calculatedHeightInVh}svh`; // 바텀 시트 최고 높이
     }else{
         sheetContent.style.height = `${height}svh`;
