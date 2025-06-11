@@ -1385,6 +1385,8 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .options_fixed .goods_options_btns .options_content{margin-right:5%;}
 .options_fixed .goods_options_btns .options_content .options{}
 .options_fixed .goods_options_btns .options_content .options .select{}
+.options_fixed .goods_options_btns .options_content .options .select .choices__list--dropdown .choices__list,
+.options_fixed .goods_options_btns .options_content .options .select .choices__list[aria-expanded] .choices__list {max-height: 150px;}
 .options_fixed .goods_options_btns .options_content .selected_options{}
 .options_fixed .goods_options_btns .options_content .selected_options .items{max-height:29rem;overflow-y: auto;}
 .options_fixed .goods_options_btns .options_content .selected_options .items .simplebar-scrollbar:before{opacity: 1 !important;background-color: rgba(0,0,0,.25);}
