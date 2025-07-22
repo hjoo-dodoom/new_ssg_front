@@ -3155,7 +3155,7 @@ background-repeat:no-repeat;background-position:center center;background-image:u
 .policy_list ul li{}
 .policy_list ul li + li{margin-top:1rem;}
 
-.policy_list .privacy_table{margin:1rem 0;}
+.policy_list .privacy_table{margin:1rem 0; word-break: keep-all;}
 .policy_list table{width:100%;border-collapse:collapse;border-top:1px solid #ddd;border-right:1px solid #ddd;}
 .policy_list table th{background-color:#f1f1f1;border-left:1px solid #ddd;border-bottom:1px solid #ddd;text-align:center;padding:1rem;font-weight:600;border-top:0;text-indent:0;}
 .policy_list table td{border-left:1px solid #ddd;border-bottom:1px solid #ddd;text-align:left;padding:1rem;border-top:0;text-indent:0;background-color:#fff;}
