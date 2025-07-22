@@ -3020,12 +3020,11 @@ background-repeat:no-repeat;background-position:center center;background-image:u
 
 /* 거래영수증, 거래내역서 */
 .layer_default.layer_trade .layer_content{top: -2rem; width: 50rem; border-radius:0;}
-.layer_default.layer_trade .layer_content .layer_default_content{padding-top: 1.8rem;padding-bottom: 0rem; max-height: calc(100vh - 25rem);}
+.layer_default.layer_trade .layer_content:after{content:''; position:absolute; top: 100%; left: 0; width: 100%; height: 3rem; background-repeat: no-repeat; background-size: contain; background-image: url('/resources/static/dist/images/content/border_stamp.png');}
+.layer_default.layer_trade .layer_content .layer_default_content{padding: 1.8rem 4rem 0rem; max-height: calc(100vh - 25rem);}
 .layer_default.layer_trade .layer_content .layer_default_title:after{left: 4rem; width: calc(100% - 4rem - 4rem); border:2px solid #000;}
 .layer_default.layer_trade .layer_default_title,
 .trade_print_inner .layer_title{padding-top: 4rem;padding-bottom: 3rem; padding-right: 4rem; padding-left: 4rem; font-size: 2.2rem; text-align:center;}
-.layer_default.layer_trade .stamp{background-repeat: no-repeat; background-size: contain; background-image: url('/resources/real/dist/images/content/border_stamp.png');}
-.layer_default.layer_trade .stamp{width:100%; height:4rem; top: 3rem; position: relative;}
 .trade_print_inner .layer_section + .layer_section{margin-top: 0rem; padding-top:1.8rem; border-top: 2px dashed #000;}
 .trade_print_inner .layer_section .rule{margin:.2rem 0 2rem; color: #555;font-size: 1.3rem; font-weight: 400; word-break: keep-all;}
 .trade_print_inner .layer_title{display:none; margin-bottom:2.4rem; font-weight: 600; border-bottom:3px solid #000;}
@@ -3059,8 +3058,8 @@ background-repeat:no-repeat;background-position:center center;background-image:u
 
 @media screen and (max-width: 1020px) {
     .layer_default.layer_trade .layer_content{top: auto;}
-    .layer_default.layer_trade .layer_content .layer_default_content{max-height: calc(100vh - 20rem);}
-    .layer_default.layer_trade .stamp{top:1rem;height: 2rem;}
+    .layer_default.layer_trade .layer_content .layer_default_content{padding: 2rem 2rem 3rem; max-height: calc(100vh - 20rem);}
+    /* .layer_default.layer_trade .stamp{top:2.5rem;height: 3rem;} */
     .layer_default.layer_trade .layer_content .layer_default_title:after{left: 2rem; width: calc(100% - 2rem - 2rem);}
     .trade_print_inner tfoot.pay_type td+th{padding-left: 2rem;}
     .layer_default.layer_trade .layer_default_title,
