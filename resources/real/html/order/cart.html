@@ -4584,12 +4584,9 @@
                 <div class="label_check_list layer_scroll" data-simplebar>
                     <div class="items" id="divDeliveryField"></div>
                 </div>
-                <div class="bottom_check">
-                    <label class="checkbox checkbox_type1">
-                        <input type="checkbox">
-                        <span class="ck_icon"></span>
-                        기본 배송지로 등록
-                    </label>
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_black">확인</a>
                 </div>
             </div>
         </div>
@@ -4600,7 +4597,8 @@
     <!-- 배송지 등록 수정 -->
     <div id="address_form" class="layer_popup layer_default">
         <div class="layer_content  width_md height_md">
-            <div class="layer_default_title" id="layer_title"></div>
+            <div class="layer_default_title">배송지 등록</div>
+            <div class="layer_default_title">배송지 수정</div>
             <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
             <div class="layer_default_content terms_content layer_scroll" data-simplebar>
                 <div class="form form_type1">
@@ -4649,7 +4647,13 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="bottom_check">
+                    <label class="checkbox checkbox_type1">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        기본 배송지로 등록
+                    </label>
+                </div>
                 <div class="form_btns between_md">
                     <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
                     <a href="javascript:fnSetDelivery();" class="btn btn_type4 btn_black">확인</a>

@@ -462,7 +462,7 @@
                         <!-- 기본 배송지 -->
                         <div class="label_item">
                             <label class="label_cnt checkbox radio_type1 ads_default">
-                                <input type="radio" name="ads_check">
+                                <input type="radio" name="ads_check" checked>
                                 <span class="ck_icon"></span>
                                 <span class="ck_line"></span>
                                 <div class="address_cnt">
@@ -517,13 +517,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="bottom_check">
-                    <label class="checkbox checkbox_type1">
-                        <input type="checkbox">
-                        <span class="ck_icon"></span>
-                        기본 배송지로 등록
-                    </label>
-                </div> -->
+                <div class="form_btns between_md">
+                    <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
+                    <a href="javascript:;" class="btn btn_type4 btn_black">기본 배송지로 등록</a>
+                </div>
             </div>
         </div>
         <span class="layer_bg" onclick="closeLayer(this)"></span>
@@ -582,7 +579,13 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="bottom_check">
+                    <label class="checkbox checkbox_type1">
+                        <input type="checkbox">
+                        <span class="ck_icon"></span>
+                        기본 배송지로 등록
+                    </label>
+                </div>
                 <div class="form_btns between_md">
                     <a href="javascript:;" class="btn btn_type4 btn_black_line" onclick="closeLayer(this)">취소</a>
                     <a href="javascript:;" class="btn btn_type4 btn_black">확인</a>
