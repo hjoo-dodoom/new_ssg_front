@@ -890,10 +890,18 @@ function fnFileDown(fileName) {
                                 <form id="uploadForm">
                                     <div class="btn_list">
                                         <label class="btn btn_input_file btn_type5 btn_black btn_icon w300">
-                                            <input type="file" id="fileInput" name="orderMultiFile">
+                                            <input type="file" id="fileInput" class="input_file" name="orderMultiFile">
                                             <span>엑셀로 업로드하기</span>
                                             <svg width="12" height="13" viewbox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.854 6.646a.5.5 0 1 1-.708.708L6.5 3.707V12a.5.5 0 0 1-1 0V3.707L1.854 7.354a.5.5 0 1 1-.708-.708l4.5-4.5a.5.5 0 0 1 .708 0l4.5 4.5ZM.5 1h11a.5.5 0 0 0 0-1H.5a.5.5 0 1 0 0 1Z" fill="#fff"/></svg>
                                         </label>
+                                        <script>
+                                            const fileInput = document.querySelector('.input_file');
+                                            fileInput.addEventListener('change', function() {
+                                                if (fileInput.files.length > 0) {
+                                                    largeOrderLoading();
+                                                }
+                                            });
+                                        </script>
                                     </div>
                                 </form>
                             </div>

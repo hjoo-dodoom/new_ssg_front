@@ -8934,7 +8934,7 @@ function fn_multi_cancel_update() {
         data: $("#all_cancelFrom").serialize(),
         dataType: 'json',
         beforeSend: function (xhr) {
-            loading('show');
+            loading('show', true);
         },
         success: function (data) {
             $("#multi_cancel_list tr").remove();

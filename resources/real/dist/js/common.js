@@ -117,16 +117,28 @@ function slideToggle (target, duration) {
 
 //로딩바 생성
 var lodingStatus = false;
-function loading(action) {
+function loading(action, isLargeOrder) {
     if(!lodingStatus){
         var loadingDiv = document.createElement("div");
         loadingDiv.classList.add("loading");
         document.body.appendChild(loadingDiv);
-    
+
         var loadingInnerDiv = document.createElement("div");
         loadingInnerDiv.classList.add("loading_inner");
         loadingDiv.appendChild(loadingInnerDiv);
-        
+        var loadingLogoDiv = document.createElement("div");
+        loadingLogoDiv.classList.add("loading_logo");
+        loadingInnerDiv.appendChild(loadingLogoDiv);
+
+        if(isLargeOrder){
+            var textP1 = document.createElement("p");
+            textP1.innerText = "100건 이상의 대량 주문/취소는 처리에 시간이 소요될 수 있으니";
+            var textP2 = document.createElement("p");
+            textP2.innerText = "약 10여분 후 주문/취소 내역을 확인해 주세요.";
+            loadingDiv.appendChild(textP1);
+            loadingDiv.appendChild(textP2);
+        }
+
         lodingStatus = true;
     }
     var loadingDiv = document.querySelector('.loading');
@@ -135,6 +147,15 @@ function loading(action) {
     } else if (action === 'hide') {
         loadingDiv.classList.remove('active');
     }
+}
+
+//대량주문 로딩바
+function largeOrderLoading(){
+    loading('show', true);
+
+    setTimeout(function() {
+        loading('hide');
+    }, 3000); // 3초 후 loading 중지
 }
 
 /*** 헤더 스크립트 ***/

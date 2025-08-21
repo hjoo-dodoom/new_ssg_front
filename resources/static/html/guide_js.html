@@ -115,6 +115,10 @@
 loading('show'); //로딩화면 show
 loading('hide'); //로딩화면 hide
 
+largeOrderLoading(); //대량주문 관련 로딩화면(3초 후 hide)
+loading('show', true); //대량주문 관련 로딩화면 show
+loading('hide'); //대량주문 관련 로딩화면 hide
+
 //ex
 function showLoading(){
     loading('show');
@@ -139,6 +143,7 @@ function showLoading(){
                     }
                 </script>
 				<button type="button" onclick="showLoading();">로딩화면</button>
+				<button type="button" onclick="largeOrderLoading();">대량 등록/취소 로딩화면</button>
 			</div>
 		</div>
         <div class="box">
