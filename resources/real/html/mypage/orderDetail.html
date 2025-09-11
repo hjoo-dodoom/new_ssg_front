@@ -8531,147 +8531,153 @@ function fn_partnerMallPage(idx, ptncode) {
 
 
 <!-- 거래내역서 -->
-<div id="trade_detail" class="layer_popup layer_default layer_trade">
-    <div class="layer_content">
+<div id="trade_detail" class="layer_popup layer_default">
+    <div class="layer_content width_xl height_md">
         <div class="layer_default_title">거래내역서</div>
         <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
         <div class="layer_default_content layer_scroll" data-simplebar>
 
             <div class="trade_print">
-                <div class="trade_print_inner">
+                <div class="order_transaction">
                     <div class="layer_title">거래내역서</div>
-                    <div class="layer_section">
-                        <div class="ls_title">거래상세내역</div>
-                        <div class="trade_table">
+                    <p class="rule">ㆍ본 거래내역서는 부가세법 제 32조의 2 제 3항에 의거 신용카드 매입 세액공제를 받을 수가 없으며, 대금결제용으로만 사용 가능합니다. </p>
+                    <div class="row">
+                        <div class="table_wrap">
                             <table>
+                                 <colgroup>
+                                    <col>
+                                    <col>
+                                    <col style="width:100px;">
+                                    <col style="width:100px;" class="print_no">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>체결번호</th>
+                                        <th>주문일시</th>
+                                        <th>고객명</th>
+                                        <th class="print_no">인쇄</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     <tr>
+                                        <td>K00002870587</td>
+                                        <td>2024-09-0910:43:43</td>
+                                        <td>홍길동</td>
+                                        <td class="print_no">
+                                            <button type="button" class="btn btn-xs btn-secondary" onclick="printLayer('#trade_detail .trade_print')">
+                                                인쇄하기
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table_wrap">
+                            <table>
+                                <caption>거래상세내역</caption>
+                                <colgroup>
+                                    <col style="width:160px"/>
+                                    <col style="width: 100%; min-width: 220px;"/>
+                                    <col style="width:80px"/>
+                                    <col style="width:80px"/>
+                                    <col style="width:100px"/>
+                                    <col style="width:100px"/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
                                         <th>주문번호</th>
+                                        <th>상품명</th>
+                                        <th>수량</th>
+                                        <th>배송비</th>
+                                        <th>금액</th>
+                                        <th>합계</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
                                         <td>O000000002805472</td>
-                                    </tr>
-                                    <tr>
-                                        <th>상품명</th>
-                                        <td>[한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트]</td>
-                                    </tr>
-                                    <tr>
-                                        <th>수량</th>
+                                        <td class="align_left">[한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트]</td>
                                         <td>1</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>주문금액</th>
-                                        <td>18,900</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <div class="trade_table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>주문번호</th>
-                                        <td>O000000003222215</td>
-                                    </tr>
-                                    <tr>
-                                        <th>상품명</th>
-                                        <td>[한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트]</td>
-                                    </tr>
-                                    <tr>
-                                        <th>수량</th>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>주문금액</th>
-                                        <td>18,900</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                        <div class="trade_table table_foot">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>총 주문금액</th>
-                                        <td>41,400</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="layer_section">
-                        <p class="rule">ㆍ본 거래내역서는 부가세법 제 32조의 2 제 3항에 의거 신용카드 매입 세액공제를 받을 수가 없으며, 대금결제용으로만 사용 가능합니다.</p>
-                    </div>
-
-                    <div class="layer_section">
-                        <div class="trade_table">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>결제일자</th>
-                                        <td colspan="3">2025.04.16</td>
-                                    </tr>
-                                    <tr>
-                                        <th>결제구분</th>
-                                        <td colspan="3">신용카드</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot class="pay_type">
-                                    <tr>
-                                        <th>신용카드</th>
-                                        <td>41,400</td>
-                                        <th>SSG MONEY</th>
                                         <td>0</td>
+                                        <td class="align_right">18,900</td>
+                                        <td class="align_right">18,900</td>
                                     </tr>
                                     <tr>
+                                        <td>O000000002805472</td>
+                                        <td class="align_left">[한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트] [한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트][한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트][한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트]</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td class="align_right">18,900</td>
+                                        <td class="align_right">18,900</td>
+                                    </tr>
+                                    <tr>
+                                        <td>O000000002805472</td>
+                                        <td class="align_left">[한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트] [한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트][한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트][한삼인]홍삼본연 50mL*40포_1세트 ※ [200세트]</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td class="align_right">18,900</td>
+                                        <td class="align_right">18,900</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">총 주문금액</td>
+                                        <td class="align_right">99,999,999</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table_wrap">
+                            <table>
+                                <caption>결제상세내역</caption>
+                                <colgroup>
+                                    <col style="width:20%; min-width: 100px;"/>
+                                    <col style="width:20%; min-width: 100px;"/>
+                                    <col style="width:20%; min-width: 100px;"/>
+                                    <col style="width:20%; min-width: 100px;"/>
+                                    <col style="width:20%; min-width: 100px;"/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>결제수단</th>
+                                        <th>결제금액</th>
                                         <th>포인트</th>
-                                        <td>0</td>
-                                        <th>급여공제</th>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
                                         <th>마일리지</th>
-                                        <td>0</td>
-                                        <th></th>
-                                        <td></td>
+                                        <th>쿠폰</th>
                                     </tr>
-                                </tfoot>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>신용카드</td>
+                                        <td>41,400</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
-
-                    <div class="layer_section info">
-                        <div class="brand_name">㈜신세계</div>
-                        <div class="list">
-                            <div class="row">
-                                <div class="item"><span>대표자</span>박주형</div>
-                                <div class="item"><span>주소</span>서울시 서초구 신반포로 194 고속버스터미널 신관 </div>
+                    <div class="row">
+                        <div class="admin_footer">
+                            <div class="ft_company">㈜ 신세계</div>
+                            <div class="ft_info">
+                                <div class="item">서울시 서초구 신반포로 194 고속버스터미널 신관</div>
+                                <div class="item">대표이사 : 박주형</div>
+                                <div class="item">개인정보보호책임자 : 김선진</div>
+                                <div class="item">사업자등록번호 :  201-81-32195</div>
+                                <div class="item">고객만족센터 : 02-3406-0000</div>
+                                <div class="item">운영시간 : 평일 10:00 ~ 17:00(점심시간 12:00 ~ 13:00)</div>
                             </div>
-                            <div class="row">
-                                <div class="item"><span>사업자등록번호</span>123-12-12345</div>
-                                <div class="item"><span>고객센터</span>02-3406-6946</div>
-                            </div>
+                            <div class="ft_copy">©copyright SHINSEGAE. All right Reserved.</div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- <div class="ssg_footer">
-                        <div class="cp">㈜신세계</div>
-                        <div class="info">
-                            <div class="item">서울시 서초구 신반포로 194 고속버스터미널 신관</div>
-                            <div class="item">대표이사 : 박주형</div>
-                            <div class="item">개인정보보호책임자 : 김선진</div>
-                            <div class="item">사업자등록번호 : 201-81-32195</div>
-                            <div class="item">고객만족센터 : 02-3406-6946</div>
-                        </div>
-                        <div class="copy">©Copyright SHINSEGAE. All Right Reserved.</div>
-                    </div> -->
-                </div>
-                <div class="form_btns between_sm print_no">
-                    <button class="btn btn_black btn_type5" type="button" onclick="printLayer('#trade_receipt .trade_print')">인쇄하기</button>
-                </div>
             </div>
         </div>
     </div>

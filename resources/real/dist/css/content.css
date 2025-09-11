@@ -3178,7 +3178,7 @@ background-repeat:no-repeat;background-position:center center;background-image:u
     .policy_list table{white-space: nowrap;}
 }
 
-/* 거래영수증, 거래내역서 */
+/* 거래영수증 */
 .layer_default.layer_trade .layer_content{top: -2rem; width: 50rem; border-radius:0;}
 .layer_default.layer_trade .layer_content:after{content:''; position:absolute; top: 100%; left: 0; width: 100%; height: 3rem; background-repeat: no-repeat; background-size: contain; background-image: url('/resources/real/dist/images/content/border_stamp.png');}
 .layer_default.layer_trade .layer_content .layer_default_content{padding: 1.8rem 0rem 0rem; max-height: calc(100vh - 25rem);}
@@ -3231,6 +3231,38 @@ background-repeat:no-repeat;background-position:center center;background-image:u
     .trade_print_inner .layer_section.info .list .item:nth-child(2n){padding:0.8rem 0;}
     .trade_print_inner .layer_section.info .list .item:nth-child(2n):before{display:none;}
 }
+
+
+
+/* 거래 내역서 */
+.order_transaction{width:100%;}
+.order_transaction .layer_title{display:none; padding-top: 4rem;padding-bottom: 3rem; padding-right: 4rem; padding-left: 4rem; font-size: 2.2rem; text-align:center;}
+.order_transaction .row + .row{margin-top:1.6rem;}
+.order_transaction .table_wrap{white-space: nowrap; overflow-x: auto;}
+.order_transaction .table_wrap + .table_wrap{margin-top:1rem;}
+.order_transaction table{width:100%; word-break: break-all; table-layout: fixed; overflow-x: auto; border-spacing: 1px; border-collapse: collapse; border: 1px solid #e3e3e3; border-color: transparent;}
+.order_transaction table caption{padding: 5px 0px;color: #000; background-color: transparent;font-size: 1.3rem; font-weight: 800; text-align: left; border-style: solid; border: 0;}
+.order_transaction thead,
+.order_transaction tbody,
+.order_transaction tfoot,
+.order_transaction tr,
+.order_transaction td,
+.order_transaction th{padding: 0.30rem 0.25rem; text-align:center; vertical-align: middle; position: relative;border-color: inherit; border-style: solid; border-width: 0;}
+.order_transaction thead th, 
+.order_transaction thead th,
+.order_transaction tbody th {background-color: #dbdee7; color: #4d525b; border-collapse: collapse; border: 1px solid #cbcbcb; font-size: 1.3rem;}
+.order_transaction tbody td{border-collapse: collapse; border: 1px solid #e3e3e3; background-color:#fff; text-align:center;white-space: normal;}
+.order_transaction tfoot tr{background-color: #333;color: #fff; height: 45px;}
+.order_transaction tfoot tr td {color: #fff;}
+.order_transaction .rule{margin-top: 0rem; margin-bottom: 1rem;color:#1d273b; font-size:1.4rem; font-weight:400; }
+.order_transaction button{padding:0 .32rem; font-size: 1.3rem; text-align: center; white-space:nowrap; vertical-align:middle; border-radius:.2rem; color:#f8fafc; background-color:#616876; border:none;}
+.admin_footer{margin-top:40px;padding:20px 0;background-color: #fff;color:#222;border-top:1px solid #000;}
+.admin_footer .ft_company{font-size:14px;}
+.admin_footer .ft_info{display: flex;flex-wrap: wrap;margin-top:10px;font-size:13px;color:#444;}
+.admin_footer .ft_info .item:not(:last-child)::after{content:"";display: inline-block;margin:0 10px;height:10px;width:1px;background-color: #ddd;vertical-align: middle;}
+.admin_footer .ft_copy{color:#777;margin-top:15px;}
+
+
 
 /* 오류 페이지 */
 .error_page{width:100%; min-height: 100vh; padding:3rem 2rem; display:table;text-align:center;background-color:#F8F8F8;}

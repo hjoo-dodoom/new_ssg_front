@@ -1695,13 +1695,18 @@ function printLayer(ele) {
         '    body { font-family: "Arial", sans-serif; padding: 20px; print-color-adjust: exact; -webkit-print-color-adjust: exact;}' +
         '    .trade_print_inner .layer_title{display:block;}' +
         '    @media print {' +
-        '        body { margin: 0; }' +
+        '        body { margin: 0; print-color-adjust: exact; -webkit-print-color-adjust: exact;}' +
+        '        .trade_print_inner .layer_title,' +
+        '        .trade_print_inner .layer_title{display:block;}' +
         '        .layer_default_title{margin-bottom:5rem; text-align:center; font-size: 1.8rem; font-weight: 600; padding-bottom: 1rem; border-bottom:2px solid #000;}' +
         '        .layer_default_close{display:none;}' +
         '        .print_no{display:none; !important}' +
-        '        table{width:100%; page-break-inside:avoid;}' +
+        '        .table_wrap {overflow: visible !important;}' +
+        '        table{width:100%; page-break-inside:avoid; border-collapse: collapse;}' +
+        '        table td{border:none;}' +
+        '        thead{display: table-row-group !important;}' +
+        '        tfoot{display: table-row-group !important;}' +
         '        tr,td{page-break-inside:avoid;}' +
-        '        .trade_print_inner .layer_title{display:block;}' +
         '    }' +
         '    </style>' +
         '</head>' +
