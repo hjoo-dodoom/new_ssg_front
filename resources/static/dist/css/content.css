@@ -3078,7 +3078,7 @@ background-repeat:no-repeat;background-position:center center;background-image:u
 .order_transaction .row + .row{margin-top:1.6rem;}
 .order_transaction .table_wrap{white-space: nowrap; overflow-x: auto;}
 .order_transaction .table_wrap + .table_wrap{margin-top:1rem;}
-.order_transaction table{width:100%; word-break: break-all; table-layout: fixed; overflow-x: auto; border-spacing: 1px; border-collapse: collapse; border: 1px solid #e3e3e3; border-color: transparent;}
+.order_transaction table{width:100%; word-break: break-all; overflow-x: auto; border-spacing: 1px; border-collapse: collapse; border: 1px solid #e3e3e3; border-color: transparent;}
 .order_transaction table caption{padding: 5px 0px;color: #000; background-color: transparent;font-size: 1.3rem; font-weight: 800; text-align: left; border-style: solid; border: 0;}
 .order_transaction thead,
 .order_transaction tbody,
@@ -3092,6 +3092,7 @@ background-repeat:no-repeat;background-position:center center;background-image:u
 .order_transaction tbody td{border-collapse: collapse; border: 1px solid #e3e3e3; background-color:#fff; text-align:center;white-space: normal;}
 .order_transaction tfoot tr{background-color: #333;color: #fff; height: 45px;}
 .order_transaction tfoot tr td {color: #fff;}
+.order_transaction .nowrap{white-space: nowrap;}
 .order_transaction .rule{margin-top: 0rem; margin-bottom: 1rem;color:#1d273b; font-size:1.4rem; font-weight:400; }
 .order_transaction button{padding:0 .32rem; font-size: 1.3rem; text-align: center; white-space:nowrap; vertical-align:middle; border-radius:.2rem; color:#f8fafc; background-color:#616876; border:none;}
 .admin_footer{margin-top:40px;padding:20px 0;background-color: #fff;color:#222;border-top:1px solid #000;}
