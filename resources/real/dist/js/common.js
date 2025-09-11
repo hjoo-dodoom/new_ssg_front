@@ -1697,7 +1697,7 @@ function printLayer(ele) {
         '    @media print {' +
         '        body { margin: 0; print-color-adjust: exact; -webkit-print-color-adjust: exact;}' +
         '        .trade_print_inner .layer_title,' +
-        '        .trade_print_inner .layer_title{display:block;}' +
+        '        .order_transaction .layer_title{display:block;}' +
         '        .layer_default_title{margin-bottom:5rem; text-align:center; font-size: 1.8rem; font-weight: 600; padding-bottom: 1rem; border-bottom:2px solid #000;}' +
         '        .layer_default_close{display:none;}' +
         '        .print_no{display:none; !important}' +
