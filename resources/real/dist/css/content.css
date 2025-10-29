@@ -1244,6 +1244,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .info_hover .btn_info_show:hover{-webkit-filter:contrast(2.5);filter:contrast(2.5);}
 .info_hover .btn_info_show.single{padding-right:1.8rem;}
 .info_hover .info_cnt{display:none;position: absolute;right:-1.8rem;margin-top:1.2rem;border:1px solid #8B8F94;background-color: #fff;z-index:10;padding:2rem 1.8rem;min-width:26rem;border-radius:0.4rem;font-size:1.4rem;word-break: keep-all;}
+.info_hover .info_cnt.size_lg{min-width:45.3rem;}
 .info_hover .info_cnt:after{content:"";position: absolute;right:1.8rem;top:-0.7rem;width:1.6rem;height:0.9rem;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/info_cnt_arrow.svg');}
 .info_hover .info_cnt .info_cnt_title{color:#000;font-weight:600;margin-bottom:0.9rem;padding-right:2rem;}
 .info_hover .info_cnt .info_cnt_text{color:#444;}
@@ -1261,6 +1262,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .info_hover .btn_info_show.single{padding-right:1.4rem;}
     .info_hover .info_cnt:after{display: none;}
     .info_hover .info_cnt{right:auto;left:50% !important;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0);margin-top:1rem;max-width:calc(100% - 4rem);font-size:1.3rem;}
+    .info_hover .info_cnt.size_lg{min-width:26rem;}
 }
 
 .jbetween_acenter{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
@@ -1877,8 +1879,10 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .od_box{}
 .od_box + .od_box{margin-top:10rem;}
 .od_box .od_title{padding-bottom:2.4rem;border-bottom:2px solid #000;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.od_box .od_title.mobile_column{}
 .od_box .od_title h3{font-size:2.2rem;font-weight: 500;}
 .od_box .od_title .checkbox{font-size:1.5rem;}
+.od_box .od_title .btn_info_show{font-size:1.4rem; color:#000;}
 .od_table.top_line_gray{border-top:1px solid #E6E6E6;}
 .od_table.bottom_line_transparent tbody tr:last-child th,
 .od_table.bottom_line_transparent tbody tr:last-child td{border-bottom:0;}
@@ -1893,6 +1897,8 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 @media screen and (max-width: 1020px) {
     .od_box + .od_box{margin-top:5rem;}
     .od_box .od_title{padding-bottom:1.9rem;}
+    .od_box .od_title.mobile_column{flex-direction:column; align-items: flex-start;}
+    .od_box .od_title.mobile_column .r{margin: 1rem 0 0;}
     .od_box .od_title h3{font-size:1.8rem;}
     .od_box .od_title .checkbox{font-size:1.4rem;}
     .od_table{}
@@ -1960,6 +1966,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .product_info .prd_cnt .options .option{color:#444;font-size:1.3rem;display: inline-block;margin-right:0.5rem;}
 .product_info .prd_cnt .option_change{margin-top:1.2rem;}
 .product_info .prd_price{margin:auto 1.7rem auto 10%;width:15rem;}
+.product_info .prd_price .tax_type{display:block; margin-bottom:.3rem;font-size:1.4rem;color:#000;}
 .product_info .prd_price .lot{margin-top:1rem;font-size:1.4rem;color:#000;}
 .product_info .prd_price .lot strong{font-weight:500;}
 .od_price{font-size:1.8rem;font-weight:600;}
@@ -2027,8 +2034,9 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .product_info .prd_cnt_price{-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;padding-left:2rem;}
     .product_info .prd_cnt_price .prd_cnt{width: 100%;padding-left:0;}
     .product_info .prd_cnt .options .option{font-size:1.2rem;}
-    .product_info .prd_price{margin:1.4rem 0 0;width:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
-    .product_info .prd_price .lot{margin:0 0 0 auto;font-size:1.3rem;}
+    .product_info .prd_price{margin:1.4rem 0 0;width:auto;}
+    .product_info .prd_price .tax_type{display:inline; font-size:1.6rem;}
+    .product_info .prd_price .lot{margin:.6rem 0 0 auto;font-size:1.3rem;}
     .od_price{font-size:1.6rem;}
     .od_point{font-size:1.3rem;position: absolute;right:0;top:-3.9rem;}
 
