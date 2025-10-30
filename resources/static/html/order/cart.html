@@ -306,6 +306,7 @@
                                             <div class="product_info">
                                                 <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
                                                 <div class="prd_cnt">
+                                                    <span class="tax_type">과세</span>
                                                     <div class="name"><a href="#" class="product_name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a></div>
                                                     <div class="options">
                                                         <div class="option">레드/스몰</div>
@@ -325,7 +326,7 @@
                                                 <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
                                             </div>
                                         </td>
-                                        <td class="td_price"><span><span class="tax_type">(과세)</span>1,200,000원</span></td>
+                                        <td class="td_price">1,200,000원</td>
                                         <td class="td_btns">
                                             <button class="btn_product_remove" type="button">상품삭제</button>
                                             <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
@@ -342,6 +343,7 @@
                                             <div class="product_info">
                                                 <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
                                                 <div class="prd_cnt">
+                                                    <span class="tax_type">면세</span>
                                                     <div class="name"><a href="#" class="product_name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a></div>
                                                     <div class="options">
                                                         <div class="option">블랙/라지</div>
@@ -361,7 +363,44 @@
                                                 <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
                                             </div>
                                         </td>
-                                        <td class="td_price"><span><span class="tax_type">(과세)</span>1,200,000원</span></td>
+                                        <td class="td_price">1,200,000원</td>
+                                        <td class="td_btns">
+                                            <button class="btn_product_remove" type="button">상품삭제</button>
+                                            <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_check">
+                                            <label class="checkbox checkbox_type2 single">
+                                                <input type="checkbox" checked>
+                                                <span class="ck_icon"></span>
+                                            </label>
+                                        </td>
+                                        <td class="td_product">
+                                            <div class="product_info">
+                                                <div class="prd_thum" style="background-image: url('/resources/static/dist/images/dummy/prd_image1.jpg');"></div>
+                                                <div class="prd_cnt">
+                                                    <span class="tax_type">유가증권</span>
+                                                    <div class="name"><a href="#" class="product_name">LG전자] 스탠바이미 스마트 터치스크린 (돌비애트모스,돌비비전,무선사용,화면회전) _27ART10DSPL ☆신세계5만원☆</a></div>
+                                                    <div class="options">
+                                                        <div class="option">블랙/라지</div>
+                                                    </div>
+                                                    <div class="option_change"><button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="td_lot">
+                                            <button type="button" class="btn_text" onclick="openLayer('#change_option')">옵션변경</button>
+                                            <div class="lot_box lot_change">
+                                                <div class="lot_control lot_event">
+                                                    <button type="button" class="minus" disabled>수량 빼기</button>
+                                                    <input type="tel" value="1" db-count="1" limit="3"><!-- limit 재고수량 -->
+                                                    <button type="button" class="plus">수량 추가</button>
+                                                </div>
+                                                <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
+                                            </div>
+                                        </td>
+                                        <td class="td_price">1,200,000원</td>
                                         <td class="td_btns">
                                             <button class="btn_product_remove" type="button">상품삭제</button>
                                             <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
@@ -370,7 +409,7 @@
                                     <tr class="tr_calc">
                                         <td colspan="5" class="td_calc">
                                             <div class="product_calc">
-                                                1,200,000원 + 2,500원(배송비) - 2,000(쿠폰할인) = <strong><span class="tax_type">(과세)</span>1,200,500원</strong>
+                                                1,200,000원 + 2,500원(배송비) - 2,000(쿠폰할인) = <strong>1,200,500원</strong>
                                             </div>
                                         </td>
                                     </tr>
@@ -406,7 +445,7 @@
                                                 <button class="btn btn_type6 btn_inline btn_gray_line lot_change_btn" type="button" onclick="lotChange(this);">변경</button>
                                             </div>
                                         </td>
-                                        <td class="td_price"><span><span class="tax_type">(면세)</span>1,200,000원</span></td>
+                                        <td class="td_price">1,200,000원</td>
                                         <td class="td_btns">
                                             <button class="btn_product_remove" type="button">상품삭제</button>
                                             <button class="btn btn_type5 btn_theme" type="button">주문하기</button>
@@ -415,7 +454,7 @@
                                     <tr class="tr_calc">
                                         <td colspan="5" class="td_calc">
                                             <div class="product_calc">
-                                                1,200,000원 + 2,500원(배송비) = <strong><span class="tax_type">(면세)</span>1,202,500원</strong>
+                                                1,200,000원 + 2,500원(배송비) = <strong>1,202,500원</strong>
                                             </div>
                                         </td>
                                     </tr>
