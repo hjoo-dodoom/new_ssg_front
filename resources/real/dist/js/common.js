@@ -158,6 +158,53 @@ function largeOrderLoading(){
     }, 3000); // 3초 후 loading 중지
 }
 
+//프로그레스 생성
+var progressLoadingStatus = false;
+function progressLoading(action) {
+    var loaderWrap = document.querySelector('.progress_wrap');
+
+    if(!loaderWrap && !progressLoadingStatus){
+        loaderWrap = document.createElement('div');
+        loaderWrap.className = 'progress_wrap';
+
+        var loadDiv = document.createElement('div');
+        loadDiv.className = 'progress_bar';
+        for (var i = 0; i < 5; i++) {
+            var progress = document.createElement('div');
+            progress.className = 'progress';
+            loadDiv.appendChild(progress);
+        }
+
+        var textP = document.createElement('p');
+        textP.className = 'progress_text';
+        textP.innerHTML = '<span>주</span><span class="mgr6">문</span><span>데</span><span>이</span><span>터</span><span class="mgr6">를 </span><span>등</span><span>록</span><span>하</span><span class="mgr6">고</span><span>있</span><span>습</span><span>니</span><span>다.</span>';
+
+        loaderWrap.appendChild(loadDiv);
+        loaderWrap.appendChild(textP);
+
+        document.body.appendChild(loaderWrap);
+        progressLoadingStatus = true;
+    }
+
+    // 로딩 상태 토글
+    if (loaderWrap) {
+        if (action === 'show') {
+            loaderWrap.classList.add('active');
+        } else if (action === 'hide') {
+            loaderWrap.classList.remove('active');
+        }
+    }
+}
+
+//프로그레스 로딩
+function progressBarLoading(){
+    progressLoading('show');
+
+    setTimeout(function() {
+        progressLoading('hide');
+    }, 3000); // 3초 후 loading 중지
+}
+
 /*** 헤더 스크립트 ***/
 //제휴몰 바로가기 토글
 function togglePatnerLinks() {

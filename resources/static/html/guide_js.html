@@ -27,6 +27,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
 <style type="text/css">
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
     *{margin:0;padding:0;font-size:12px;}
 	#guide_wrap {padding:10px}
 	table {border-collapse:collapse;border-spacing:0;}
@@ -119,6 +124,10 @@ largeOrderLoading(); //대량주문 관련 로딩화면(3초 후 hide)
 loading('show', true); //대량주문 관련 로딩화면 show
 loading('hide'); //대량주문 관련 로딩화면 hide
 
+progressBarLoading(); //프로그래스 관련 로딩화면(3초 후 hide)
+loading('show', true); //프로그래스 관련 로딩화면 show
+loading('hide'); //프로그래스 관련 로딩화면 hide
+
 //ex
 function showLoading(){
     loading('show');
@@ -144,6 +153,7 @@ function showLoading(){
                 </script>
 				<button type="button" onclick="showLoading();">로딩화면</button>
 				<button type="button" onclick="largeOrderLoading();">대량 등록/취소 로딩화면</button>
+                <button type="button" onclick="progressBarLoading();">프로그래스 로딩화면</button>
 			</div>
 		</div>
         <div class="box">

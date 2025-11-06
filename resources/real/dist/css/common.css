@@ -107,6 +107,7 @@ tr.pc_tablerow_mobile_block{display:table-row !important;}
 .mgb0{margin-bottom:0 !important;}
 .mgl0{margin-left:0 !important;}
 .mgr0{margin-right:0 !important;}
+.mgr6{margin-right:.6rem !important;}
 .bold{font-weight:700;}
 label{cursor:pointer;}
 input:read-only{cursor: default;}
@@ -339,6 +340,46 @@ top: 0;transform: translateX(-10px);background: #f52121;opacity: 0.75;backdrop-f
 }
 .loading_inner + p{margin-top:8px;}
 .loading p{font-size:1.3rem;}
+
+/* 프로그레스 바 */
+.progress_wrap{position: fixed;z-index:99999;top: 0;left: 0;width: 100%; height: 100%;background-color: rgba(255,255,255, 0.7);
+display: none;
+justify-content: center;align-items: center;}
+.progress_wrap.active {display: flex; flex-direction: column;}
+.progress_bar {display: flex; border-radius: 50%; flex-direction: row; justify-content:center;}
+.progress {width: 1rem; height: 1rem; margin: 0.4em; scale: 0; border-radius: 50%; background: var(--theme-color); box-shadow: var(--theme-color) 0px 1px 5px 0px; animation: progress_load 2s ease infinite;}
+.progress:nth-child(2) {animation-delay: .3s;}
+.progress:nth-child(3) {animation-delay: .7s;}
+.progress:nth-child(4) {animation-delay: 1.1s;}
+.progress:nth-child(5) {animation-delay: 1.5s;}
+@keyframes progress_load {50% {scale: 1;}}
+
+.progress_text{text-align: center; margin-top: 2rem;}
+.progress_text span {display: inline-block; font-size: 1.8rem; font-weight:600; animation: progress_text 1.6s infinite alternate;}
+.progress_text span:nth-child(2) {animation-delay: .1s;}
+.progress_text span:nth-child(3) {animation-delay: .2s;}
+.progress_text span:nth-child(4) {animation-delay: .3s;}
+.progress_text span:nth-child(5) {animation-delay: .4s;}
+.progress_text span:nth-child(6) {animation-delay: .5s;}
+.progress_text span:nth-child(7) {animation-delay: .6s;}
+.progress_text span:nth-child(8) {animation-delay: .7s;}
+.progress_text span:nth-child(9) {animation-delay: .8s;}
+.progress_text span:nth-child(10) {animation-delay: .9s;}
+.progress_text span:nth-child(11) {animation-delay: 1s;}
+.progress_text span:nth-child(12) {animation-delay: 1.1s;}
+.progress_text span:nth-child(13) {animation-delay: 1.2s;}
+.progress_text span:nth-child(14) {animation-delay: 1.3s;}
+.progress_text span:nth-child(15) {animation-delay: 1.4s;}
+
+@keyframes progress_text {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@media screen and (max-width: 1020px) {
+  .progress_text{margin-top: 1rem;}
+  .progress_text span{font-size: 1.4rem;}
+}
 
 .btn{border-radius: 0.6rem;max-width: 100%;text-align: center;display:inline-flex;align-items: center;justify-content: center;}
 .btn.btn_black{border:1px solid #110505;background-color: #110505;color:#fff;}
