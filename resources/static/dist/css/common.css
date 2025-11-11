@@ -342,6 +342,7 @@ top: 0;transform: translateX(-10px);background: #f52121;opacity: 0.75;backdrop-f
 
 /* 프로그레스 바 */
 .table_progress{display:inline-block;}
+.table_progress.verti{display:block; margin-top: .3rem;}
 .table_progress_inner{display: flex; flex-direction: column;}
 .progress_wrap{position: fixed;z-index:99999;top: 0;left: 0;width: 100%; height: 100%;background-color: rgba(255,255,255, 0.7);
 display: none;
