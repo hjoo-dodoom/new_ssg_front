@@ -349,7 +349,7 @@ display: none;
 justify-content: center;align-items: center;}
 .progress_wrap.active {display: flex; flex-direction: column;}
 .progress_bar {display: flex; border-radius: 50%; flex-direction: row; justify-content:center;}
-.progress {width: 1rem; height: 1rem; margin: 0.4em; scale: 0; border-radius: 50%; background: var(--theme-color); box-shadow: var(--theme-color) 0px 1px 5px 0px; animation: progress_load 2s ease infinite;}
+.progress_bar .progress {width: 1rem; height: 1rem; margin: 0.4em; scale: 0; border-radius: 50%; background: var(--theme-color); box-shadow: var(--theme-color) 0px 1px 5px 0px; animation: progress_load 2s ease infinite;}
 .table_progress .progress {width: .7rem; height: .7rem; margin: 0.4rem;}
 .progress:nth-child(2) {animation-delay: .3s;}
 .progress:nth-child(3) {animation-delay: .7s;}
