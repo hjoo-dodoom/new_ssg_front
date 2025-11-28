@@ -574,6 +574,32 @@
                                         <col>
                                     </colgroup>
                                     <tbody>
+                                        <tr class="virtual hidden">
+                                            <th>입금은행</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_20 size_mb_100">
+                                                        <div class="design_select type5">
+                                                            <select name="" id="">
+                                                                <option value="기업은행">기업은행</option>
+                                                                <option value="하나은행">하나은행</option>
+                                                                <option value="국민은행">국민은행</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="virtual hidden">
+                                            <th>입금자</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_32 size_mb_100">
+                                                        <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
                                         <tr class="pay_cash hidden">
                                             <td colspan="2">
                                                 <div class="input_group">
@@ -989,9 +1015,10 @@ function lotChange(button){
     input.setAttribute('db-count', input.value)
 }
 
-//결제수단 SSG PAY, 급여공제 토글
+//결제수단 가상계좌, SSG PAY, 급여공제 토글
 const paymentTypeAll = document.querySelectorAll('input[name="payment_type"]');
 const paymentFormEtc = document.getElementById('pay_form_etc');
+const virtual = document.querySelectorAll('.virtual'); // 가상계좌
 const paymentCash = document.querySelectorAll('.pay_cash');
 const paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
 const paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
@@ -1000,10 +1027,30 @@ const paymentTxt = document.querySelectorAll('#pay_form_etc .text');
 
 paymentTypeAll.forEach(function(paymentType){
     paymentType.addEventListener('change', function() {
-        if(paymentType.checked && paymentType.value === '3'){ //SSG PAY
+        if(paymentType.checked && paymentType.value === '0'){ // 가상계좌
             paymentFormEtc.style.display = 'block';
             paymentCash.forEach(function(cash){
                 cash.classList.remove('hidden');
+            });
+            virtual.forEach(function(cash){
+                cash.classList.remove('hidden');
+            });
+
+            paymentSelectSsgPay.classList.add('hide');
+            paymentSelectPay.classList.remove('hide');
+
+            paymentTxt.forEach(function(text){
+                text.classList.add('hide')
+            });
+
+            paymentTableTitle.style.display = 'none';
+        }else if(paymentType.checked && paymentType.value === '3'){ //SSG PAY
+            paymentFormEtc.style.display = 'block';
+            paymentCash.forEach(function(cash){
+                cash.classList.remove('hidden');
+            });
+            virtual.forEach(function(cash){
+                cash.classList.add('hidden');
             });
 
             paymentSelectSsgPay.classList.remove('hide');
@@ -1020,6 +1067,9 @@ paymentTypeAll.forEach(function(paymentType){
                 cash.classList.remove('hidden');
             });
 
+            virtual.forEach(function(cash){
+                cash.classList.add('hidden');
+            });
             paymentSelectSsgPay.classList.add('hide');
             paymentSelectPay.classList.remove('hide');
 
@@ -1030,6 +1080,9 @@ paymentTypeAll.forEach(function(paymentType){
             paymentTableTitle.style.display = 'none';
         }else{
             paymentFormEtc.style.display = 'none';
+            virtual.forEach(function(cash){
+                cash.classList.add('hidden');
+            });
         }
     });
 });

@@ -4703,6 +4703,32 @@
                                                     <col>
                                                 </colgroup>
                                                 <tbody>
+                                                    <tr class="virtual hidden">
+                                                        <th>입금은행</th>
+                                                        <td>
+                                                            <div class="input_group">
+                                                                <div class="input size_20 size_mb_100">
+                                                                    <div class="design_select type5">
+                                                                        <select name="" id="">
+                                                                            <option value="기업은행">기업은행</option>
+                                                                            <option value="하나은행">하나은행</option>
+                                                                            <option value="국민은행">국민은행</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="virtual hidden">
+                                                        <th>입금자</th>
+                                                        <td>
+                                                            <div class="input_group">
+                                                                <div class="input size_32 size_mb_100">
+                                                                    <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
                                                     <tr class="pay_cash hidden">
                                                         <td colspan="2">
                                                             <div class="input_group">
@@ -10124,9 +10150,10 @@ function fnSetExpectedTotalPice() {
     $("#expectedTotalPrice").text(fnSetComma(totalPrice));
 }
 
-// 결제수단 SSG PAY, 급여공제 토글
+// 결제수단 가상계좌, SSG PAY, 급여공제 토글
 var paymentTypeAll = document.querySelectorAll('input[name="oipaytype"]');
 var paymentFormEtc = document.getElementById('pay_form_etc');
+const virtual = document.querySelectorAll('.virtual'); // 가상계좌
 var paymentCash = document.querySelectorAll('.pay_cash');
 var paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
 var paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
@@ -10137,11 +10164,31 @@ var paymentTxt = document.querySelectorAll('#pay_form_etc .text');
 for (var i = 0; i < paymentTypeAll.length; i++) {
     paymentTypeAll[i].addEventListener('change', function() {
         // this를 사용하여 현재 선택된 라디오 버튼 참조
-        if (this.checked && this.value === '5') { // SSG PAY
+         if(this.checked && this.value.value === '0'){ // 가상계좌
+            paymentFormEtc.style.display = 'block';
+            for (var j = 0; j < paymentCash.length; j++) {
+                paymentCash[j].classList.remove('hidden');
+            }
+            for (var j = 0; j < virtual.length; j++) {
+                virtual[j].classList.remove('hidden');
+            }
+
+            paymentSelectSsgPay.classList.add('hide');
+            paymentSelectPay.classList.remove('hide');
+
+            paymentTxt.forEach(function(text){
+                text.classList.add('hide')
+            });
+
+            paymentTableTitle.style.display = 'none';
+        }else if(this.checked && this.value === '5') { // SSG PAY
             paymentFormEtc.style.display = 'block';
             
             for (var j = 0; j < paymentCash.length; j++) {
                 paymentCash[j].classList.remove('hidden');
+            }
+            for (var j = 0; j < virtual.length; j++) {
+                virtual[j].classList.add('hidden');
             }
 
             paymentSelectSsgPay.classList.remove('hide');
@@ -10158,6 +10205,9 @@ for (var i = 0; i < paymentTypeAll.length; i++) {
             for (var j = 0; j < paymentCash.length; j++) {
                 paymentCash[j].classList.remove('hidden');
             }
+            for (var j = 0; j < virtual.length; j++) {
+                virtual[j].classList.add('hidden');
+            }
 
             paymentSelectSsgPay.classList.add('hide');
             paymentSelectPay.classList.remove('hide');
@@ -10169,6 +10219,9 @@ for (var i = 0; i < paymentTypeAll.length; i++) {
             paymentTableTitle.style.display = 'none';
         } else {
             paymentFormEtc.style.display = 'none';
+            for (var j = 0; j < virtual.length; j++) {
+                virtual[j].classList.add('hidden');
+            }
         }
     });
 }
