@@ -148,6 +148,7 @@ select{border:0;padding-right: 1.7rem;-webkit-appearance: none;-moz-appearance: 
 .theme_text_color{color: var(--theme-color) !important;}
 .red_bg_color{background-color: #EA0000 !important;}
 .red_text_color{color: #EA0000 !important;}
+.red_text_color2{color: #F22C2D !important;}
 .gray_text_color{color: #666 !important;}
 .blue_text_color{color: #4D6EE4 !important;}
 .underline{text-decoration: underline !important;}

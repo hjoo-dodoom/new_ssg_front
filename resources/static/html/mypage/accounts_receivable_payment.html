@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>신세계 사용자</title>
+    
+    <link href="/resources/static/dist/css/normalize.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/common.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/layout.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/content.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/jquery.modal.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/swiper.min.css" rel="stylesheet"/>
+    <link href="/resources/static/dist/css/pikaday.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/simplebar.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/static/dist/css/choices.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="shortcut icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/resources/static/dist/favicon.ico" type="image/x-icon">
+
+    <script src="/resources/static/dist/js/jquery-3.7.1.min.js"></script>
+    <script src="/resources/static/dist/js/jquery-ui.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.modal.js"></script>
+    <script src="/resources/static/dist/js/box_alert.js"></script>
+    <script src="/resources/static/dist/js/swiper.min.js"></script>
+    <script src="/resources/static/dist/js/slick.min.js"></script>
+    <script src="/resources/static/dist/js/litepicker.js"></script>
+    <script src="/resources/static/dist/js/jquery.validate.js"></script>
+    <script src="/resources/static/dist/js/simplebar.min.js"></script>
+    <script src="/resources/static/dist/js/choices.min.js"></script>
+    <script src="/resources/static/dist/js/pikaday.js"></script>
+    <script src="/resources/static/dist/js/common.js"></script>
+    <style>
+    :root {
+        --theme-color:#b7853a;  /* 테마컬러 - 기본색상 #F22C2D */
+        --theme-footer-bg:#1E2023;  /* 푸터배경컬러 - 기본색상 #1E2023 */
+        --theme-footer-color:#fff;  /* 푸터폰트컬러 - 기본색상 #fff */
+    }
+    </style>
+    <script>
+        // html template include
+        // 개발 완료시 삭제해주세요
+        function includeTemplateFile(path, targetId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = xhr.responseText;
+
+                    var template = tempDiv.querySelector('template[data-title="' + targetId + '"]');
+                    if (template) {
+                        document.getElementById(targetId).appendChild(template.content.cloneNode(true));
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+
+<div id="layout" class="sub_layout back_mobile_show title_mobile_show quick_hidden home_mobile_show search_mobile_hidden cart_mobile_hidden">
+    
+    <!-- 공통영역1 -->
+    <div id="header"></div>
+    <script>
+        //html include
+        //헤더&푸터 개발 완료시 삭제해주세요
+        function includeFile(path, targetId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(targetId).innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+        var includePath = "/resources/static/layout/header.html";
+        includeFile(includePath, 'header');
+    </script>
+    <!-- //공통영역1 -->
+
+    <div id="content" class="sub_content">
+        <div class="main_contents">
+            <!-- 공통영역 -->
+            <!-- 퀵 콘텐츠 -->
+            <div class="right_content">
+                <div class="quick_content">
+
+                    <!-- 퀵 배너 -->
+                    <div class="quick_item">
+                        <div id="quick_banner_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="quick_banner_wrapper ">
+                                    <div class="quick_banner ">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="bb.html">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <a href="javascript:;">
+                                                    <div class="img"><img src="/resources/static/dist/images/dummy/prd_image1.jpg"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type2 swiper-button-next"></div>
+                                    <div class="swiper_button_type2 swiper-button-prev"></div>
+                                    <div class="qb_swiper_pagination"></div>
+                                    <script>
+                                    var swiper = new Swiper(".quick_banner", {
+                                        pagination: {
+                                        el: ".qb_swiper_pagination",
+                                        type: "progressbar",
+                                        },
+                                        navigation: {
+                                        nextEl: ".quick_banner_wrapper .swiper-button-next",
+                                        prevEl: ".quick_banner_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //퀵 배너 -->
+
+                    <!-- 최근 본 상품 -->
+                    <div class="quick_item">
+                        <div class="viewed_products_wrapper">
+                            <div class="layer_mobile_content">
+                                <div class="viewed_products_wrapper">
+                                    <div class="title">최근 본 상품</div>
+                                    <div class="viewed_products">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image4.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image2.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="item">
+                                                    <a href="javascript:;">
+                                                        <div class="img"><img src="/resources/static/dist/images/dummy/prd_image3.jpg"></div>
+                                                        <div class="cnt">
+                                                            <div class="product_name">[엘지 프라엘] LG 프라옐 인텐시브 멀티케어 BLP1</div>
+                                                            <div class="price_sale">1,847,800원</div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper_button_type3 swiper-button-next"></div>
+                                    <div class="swiper_button_type3 swiper-button-prev"></div>
+                                    <div class="vp_swiper_pagination"></div>
+                                    <script>
+                                        //소스 길어지는것 방지용 임시 스크립트
+                                        const viewedproducts = document.querySelector('.viewed_products');
+                                        const viewedproductsItem = viewedproducts.querySelector('.swiper-slide');
+                                        
+                                        for (var i = 0; i < 9; i++) {
+                                            const newItem = viewedproductsItem.cloneNode(true);
+                                            viewedproducts.querySelector('.swiper-wrapper').appendChild(newItem);
+                                        }
+                                        
+                                        const viewedproductsItems = viewedproducts.querySelectorAll('.item');
+                                        var i = 0;
+                                        viewedproductsItems.forEach(function(item){
+                                            i++;
+                                            if(i === 4){i = 1}
+                                            item.querySelector('img').setAttribute('src', `/resources/static/dist/images/dummy/prd_image`+i+`.jpg`)
+                                        });
+                                    </script>
+                                    <script>
+                                    var swiper = new Swiper(".viewed_products", {
+                                        pagination: {
+                                        el: ".vp_swiper_pagination",
+                                        type: "fraction",
+                                        },
+                                        navigation: {
+                                        nextEl: ".viewed_products_wrapper .swiper-button-next",
+                                        prevEl: ".viewed_products_wrapper .swiper-button-prev",
+                                        },
+                                    });
+                                    </script>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- 최근 본 상품 -->
+                    
+                    <!-- 재판매 금지 -->
+                    <div class="quick_item">
+                        <div id="resale_no_layer" class="layer_popup layer_mobile">
+                            <div class="layer_mobile_content">
+                                <div class="resale_no">
+                                    <img src="/resources/static/dist/images/content/resale_no.jpg" alt="재판매 금지 인터넷,외부로의 재판매를 엄격히 금지합니다. 적발 시 법적 책임을 질 수 있습니다.">
+                                </div>
+                                <div class="layer_mobile_btns">
+                                    <button type="button" class="btn" onclick="closeLayer(this)">닫기</button>
+                                </div>
+                            </div>
+                            <span class="layer_bg" onclick="closeLayer(this)"></span>
+                        </div>
+                    </div>
+                    <!-- //재판매 금지 -->
+                </div>
+            </div>
+            <!-- //퀵 콘텐츠 -->
+            <!-- //공통영역 -->
+
+            <div class="contents">
+                <div class="subpage_title_center">
+                    <h2>결제하기</h2>
+                    <div class="page_step">
+                        <div class="step on">01 결제하기</div>
+                        <div class="step">02 결제완료</div>
+                    </div>
+                </div>
+
+                <form action="">
+                <div class="order_wrap">
+                    <div class="order_content">
+
+                        <div class="od_box">
+                            <div class="od_title mobile_column">
+                                <h3>주문상품 정보 : 100건</h3>
+                            </div>
+                            <div class="od_table form form_type4">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:17rem">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="align_top">2025.11.18</th>
+                                            <td>
+                                                <div class="address_basic">
+                                                    <div class="cnt">
+                                                        <div class="name">order_multi_sample.xlsx</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="od_box">
+                            <div class="od_title mobile_column border_none">
+                                <h3>결제정보</h3>
+                            </div>
+                            <div class="od_table form form_type4">
+                                <!-- 가상계좌 -->
+                                <div class="payment_calc balance">
+                                    <div class="group">
+                                        <div class="top">
+                                            <div class="row">
+                                                <div class="tit">총 주문금액</div>
+                                                <div class="cnt">2,400,000원</div>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="row">
+                                                <div class="tit">총액</div>
+                                                <div class="cnt">1,500,000원</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="tit">과세</div>
+                                                <div class="cnt">1,300,000원</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="tit">면세</div>
+                                                <div class="cnt">200,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div class="top">
+                                            <div class="row">
+                                                <div class="tit">결제완료 금액</div>
+                                                <div class="cnt">1,000,000원</div>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="row">
+                                                <div class="tit">총액</div>
+                                                <div class="cnt">2,397,500원</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="tit">과세</div>
+                                                <div class="cnt">2,500원</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="tit">면세</div>
+                                                <div class="cnt">10,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="group total">
+                                        <div class="top">
+                                            <div class="row">
+                                                <div class="tit red_text_color2">미결제 금액</div>
+                                                <div class="cnt red_text_color2">500,000원</div>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="row">
+                                                <div class="tit">총액</div>
+                                                <div class="cnt red_text_color2">500,000원</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="tit">과세</div>
+                                                <div class="cnt red_text_color2">400,000원</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="tit">면세</div>
+                                                <div class="cnt red_text_color2">100,000원</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="od_box">
+                            <div class="od_title mobile_column">
+                                <h3>결제금액</h3>
+                                <div class="r">* 주문취소는 당일 취소만 가능합니다.</div>
+                            </div>
+                            <div class="od_table form form_type4">
+                                <table class="top_line_gray">
+                                    <tbody>
+                                        <tr class="tax_type">
+                                            <td colspan="2">
+                                                <div class="input_group">
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="tax_type" value="1" checked>
+                                                        <span class="ck_icon"></span>
+                                                        전체
+                                                    </label>
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="tax_type" value="2">
+                                                        <span class="ck_icon"></span>
+                                                        과세
+                                                    </label>
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="tax_type" value="3">
+                                                        <span class="ck_icon"></span>
+                                                        면세
+                                                    </label>
+                                                </div>
+                                                <div class="input_group">
+                                                    <label class="input size_20 price_won_label">
+                                                        <input type="tel" id="price_input" class="align_right" data-amount-comma disabled>
+                                                        <span class="in_text">원</span>
+                                                    </label>
+                                                    <p id="price_input_errrorEl" class="text red_text_color2"></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="od_box">
+                            <div class="od_title">
+                                <h3>결제수단</h3>
+                            </div>
+                            <div class="payment_list">
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="0">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30.375 9.281h-22.5a1.406 1.406 0 0 1 0-2.812H27a.844.844 0 1 0 0-1.688H7.875a3.094 3.094 0 0 0-3.094 3.094v18a3.094 3.094 0 0 0 3.094 3.094h22.5A1.969 1.969 0 0 0 32.344 27V11.25a1.969 1.969 0 0 0-1.969-1.969ZM30.656 27a.282.282 0 0 1-.281.281h-22.5a1.406 1.406 0 0 1-1.406-1.406V10.63c.435.223.917.34 1.406.339h22.5a.282.282 0 0 1 .281.281V27Zm-3.937-8.438a1.407 1.407 0 1 1-2.814 0 1.407 1.407 0 0 1 2.814 0Z" fill="#000"/></svg>
+                                            <span>가상계좌</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <label>
+                                        <input type="radio" name="payment_type" value="1">
+                                        <div>
+                                            <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M31.5 7.031h-27A1.969 1.969 0 0 0 2.531 9v18A1.969 1.969 0 0 0 4.5 28.969h27A1.969 1.969 0 0 0 33.469 27V9A1.969 1.969 0 0 0 31.5 7.031ZM4.5 8.72h27a.281.281 0 0 1 .281.281v3.656H4.22V9a.281.281 0 0 1 .281-.281Zm27 18.562h-27A.281.281 0 0 1 4.219 27V14.344H31.78V27a.282.282 0 0 1-.281.281Zm-2.531-3.656a.843.843 0 0 1-.844.844h-4.5a.843.843 0 1 1 0-1.688h4.5a.843.843 0 0 1 .844.844Zm-9 0a.843.843 0 0 1-.844.844h-2.25a.843.843 0 1 1 0-1.688h2.25a.843.843 0 0 1 .844.844Z" fill="#000"/></svg>
+                                            <span>신용카드</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="pay_form_etc" class="od_table bottom_line_transparent form form_type4" style="display: none;">
+                                <div class="od_table_title">현금영수증발행(SSG MONEY)</div>
+                                <table class="top_line_gray">
+                                    <colgroup>
+                                        <col style="width:17rem">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr class="virtual hidden">
+                                            <th>입금은행</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_20 size_mb_100">
+                                                        <div class="design_select type5">
+                                                            <select name="" id="">
+                                                                <option value="기업은행">기업은행</option>
+                                                                <option value="하나은행">하나은행</option>
+                                                                <option value="국민은행">국민은행</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="virtual hidden">
+                                            <th>입금자</th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="input size_32 size_mb_100">
+                                                        <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="pay_cash hidden">
+                                            <td colspan="2">
+                                                <div class="input_group">
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="cash_receipt" value="0">
+                                                        <span class="ck_icon"></span>
+                                                        개인 소득 공제
+                                                    </label>
+                                                    <label class="checkbox radio_type1 inline">
+                                                        <input type="radio" name="cash_receipt" value="1">
+                                                        <span class="ck_icon"></span>
+                                                        사업자 지출 증빙
+                                                    </label>
+                                                </div>
+
+                                                <!-- hidden -->
+                                                <div class="cash_row hidden">
+                                                    <hr class="clear_devide">
+                                                    <div class="input_group">
+                                                        <!-- SSG_PAY -->
+                                                        <div class="input size_20 size_mb_100 type_ssg">
+                                                            <div class="design_select type5">
+                                                                <select name="" id="">
+                                                                    <option value="휴대폰번호">휴대폰번호</option>
+                                                                    <option value="카드번호">카드번호</option>
+                                                                    <option value="주민등록번호">주민등록번호</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 급여공제 -->
+                                                        <div class="input size_20 size_mb_100 type_pay">
+                                                            <div class="design_select type5">
+                                                                <select name="" id="">
+                                                                    <option value="휴대폰번호">휴대폰번호</option>
+                                                                    <option value="현금영수증카드">현금영수증카드</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input size_32 size_mb_100">
+                                                            <input type="tel" placeholder="-없이 숫자만 입력해주세요">
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
+                                                </div>
+
+                                                <!-- hidden -->
+                                                <div class="company_row hidden">
+                                                    <hr class="clear_devide">
+                                                    <div class="input_group">
+                                                        <div class="input size_32 size_mb_100">
+                                                            <input type="tel" placeholder="-없이 사업자번호를 입력해주세요">
+                                                        </div>
+                                                    </div>
+                                                    <p class="text">*이벤트 등 무상으로 지급받은 SSG MONEY는 현금영수증에서 제외 될 수 있습니다.</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 클래스 장바구니, 결제, 여러곳 배송 클래스 다름 -->
+                    <div class="order_aside">
+                        <h3 class="aside_title">결제 정보</h3>
+                        <div class="price_detail">
+                            <div class="item">
+                                <div class="tit">총 상품금액</div>
+                                <div class="cnt">1,254,000원</div>
+                            </div>
+                            <div class="item total">
+                                <div class="tit">결제예정 금액</div>
+                                <div class="cnt">1,256,500원</div>
+                            </div>
+                        </div>
+                        <ul class="label_list row label_control">
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox" class="check_all">
+                                    <span class="ck_icon"></span>
+                                    <strong>결제정보를 모두 확인하였으며, <br/>약관 전체에 동의합니다.</strong>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    <button type="button" class="check_btn" onclick="openLayer('#terms_popup1')">결제내역 확인 동의(필수)</button>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    <button type="button" class="check_btn" onclick="openLayer('#terms_popup2')">개인정보 수집 및 이용, 제 3자 제공에 대한 고지(필수)</button>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkbox checkbox_type2">
+                                    <input type="checkbox">
+                                    <span class="ck_icon"></span>
+                                    <button type="button" class="check_btn" onclick="openLayer('#terms_popup3')">결제대행서비스 이용약관 동의(필수)</button>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="oa_btns btns_fixed_mobile">
+                            <button class="btn btn_type2 btn_theme" type="button">결제하기</button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 약관 -->
+    <div id="terms_popup1" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">주문내역 확인 동의</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="confirm_order_details_terms">
+                    추후 전달 예정
+                    <!-- <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'confirm_order_details_terms');
+                    </script> -->
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup2" class="layer_popup layer_default">
+        <div class="layer_content width_xl height_md">
+            <div class="layer_default_title">개인정보 수집 및 이용, 제 3자 제공에 대한 고지</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content layer_scroll" data-simplebar>
+                <div id="personal_info_provide_terms">
+                    추후 전달 예정
+                    <!-- <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'personal_info_provide_terms');
+                    </script> -->
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+    <!-- 약관 -->
+    <div id="terms_popup3" class="layer_popup layer_default">
+        <div class="layer_content  width_md height_md">
+            <div class="layer_default_title">결제대행서비스 이용약관 동의</div>
+            <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+            <div class="layer_default_content terms_content layer_scroll" data-simplebar>
+                <div id="payment_agency_service_terms">
+                    추후 전달 예정
+                    <!-- <script>
+                        var includePath = "/resources/static/inc/terms.html";
+                        includeTemplateFile(includePath, 'payment_agency_service_terms');
+                    </script> -->
+                </div>
+            </div>
+        </div>
+        <span class="layer_bg" onclick="closeLayer(this)"></span>
+    </div>
+    <!-- //약관 -->
+
+    <!-- 공통영역3 -->
+    <!-- 모바일 전체 카테고리  -->
+    <div id="cate_all_mobile" class="layer_popup layer_fullpage">
+        <script>
+            var includePath = "/resources/static/inc/cate_all_mobile.html";
+            includeFile(includePath, 'cate_all_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 최근본 상품 -->
+    <div id="viewed_products_mobile" class="layer_popup layer_fullpage">
+        <script>
+            var includePath = "/resources/static/inc/viewed_products_mobile.html";
+            includeFile(includePath, 'viewed_products_mobile');
+        </script>
+    </div>
+
+    <!-- 모바일 퀵배너,최근본상품,재판매금지,상단으로,상담 -->
+    <div id="mobile_bottom_fixed" class="mobile_bottom_fixed">
+        <script>
+            var includePath = "/resources/static/inc/mobile_bottom_fixed.html";
+            includeFile(includePath, 'mobile_bottom_fixed');
+        </script>
+    </div>
+
+    <!-- 푸터  -->
+    <div id="footer">
+        <script>
+            var includePath = "/resources/static/layout/footer.html";
+            includeFile(includePath, 'footer');
+        </script>
+    </div>
+
+    <!-- 모바일 하단 플로팅  -->
+    <!-- <div id="floating_wrap">
+        <script>
+            var includePath = "/resources/static/inc/floating_wrap.html";
+            includeFile(includePath, 'floating_wrap');
+        </script>
+    </div> -->
+
+    <!-- //공통영역3 -->
+</div>
+
+
+<script>
+    var taxTypeAll = document.querySelectorAll('input[name="tax_type"]');
+    var priceInput = document.getElementById('price_input');
+    var price_input_errrorEl = document.getElementById('price_input_errrorEl');
+    taxTypeAll.forEach(function(taxType){
+        taxType.addEventListener('change', function() {
+            if(taxType.value === '1'){ // 전체
+                priceInput.disabled = true;
+                priceInput.value = '';
+                price_input_errrorEl.innerHTML = "";
+            }else{
+                priceInput.disabled = false;
+            }
+        });
+    });
+
+    // MEMO: 데이터 값을 변경해주세요.
+    var unpaidAmounts = {
+        aaa: 400000, // 과세
+        bbb: 100000 // 면세
+    };
+
+    priceInput.addEventListener('input', function(e) {
+        var value = e.target.value.replace(/,/g, "");
+        var amount = parseInt(value, 10) || 0;
+        var taxType = document.querySelector('input[name="tax_type"]:checked').value;
+
+
+        // 오류메시지 초기화
+        price_input_errrorEl.innerHTML = "";
+
+        // 100원 단위 미만 체크
+        if (amount % 100 !== 0) {
+            price_input_errrorEl.innerHTML = "결제금액은 백원단위 이상 입력해주세요.";
+        }
+
+        // 미결제보다 초과 금액 입력했을 때
+        if(taxType === '2'){ // 과세
+            if (amount > unpaidAmounts.aaa) {
+                price_input_errrorEl.innerHTML = "미결제 금액보다 초과되었습니다.";
+            }
+        }else if(taxType === '3'){ // 면세
+            if (amount > unpaidAmounts.bbb) {
+                price_input_errrorEl.innerHTML = "미결제 금액보다 초과되었습니다.";
+            }
+        }
+    });
+
+
+    //결제수단 가상계좌, SSG PAY, 급여공제 토글
+    const paymentTypeAll = document.querySelectorAll('input[name="payment_type"]');
+    const paymentFormEtc = document.getElementById('pay_form_etc');
+    const virtual = document.querySelectorAll('.virtual'); // 가상계좌
+    const paymentCash = document.querySelectorAll('.pay_cash');
+    const paymentSelectSsgPay = document.querySelector('#pay_form_etc .type_ssg');
+    const paymentSelectPay = document.querySelector('#pay_form_etc .type_pay');
+    const paymentTableTitle = document.querySelector('#pay_form_etc .od_table_title');
+    const paymentTxt = document.querySelectorAll('#pay_form_etc .text');
+
+    paymentTypeAll.forEach(function(paymentType){
+        paymentType.addEventListener('change', function() {
+            if(paymentType.checked && paymentType.value === '0'){ // 가상계좌
+                paymentFormEtc.style.display = 'block';
+                paymentCash.forEach(function(cash){
+                    cash.classList.remove('hidden');
+                });
+                virtual.forEach(function(cash){
+                    cash.classList.remove('hidden');
+                });
+
+                paymentSelectSsgPay.classList.add('hide');
+                paymentSelectPay.classList.remove('hide');
+
+                paymentTxt.forEach(function(text){
+                    text.classList.add('hide')
+                });
+
+                paymentTableTitle.style.display = 'none';
+            }else if(paymentType.checked && paymentType.value === '3'){ //SSG PAY
+                paymentFormEtc.style.display = 'block';
+                paymentCash.forEach(function(cash){
+                    cash.classList.remove('hidden');
+                });
+                virtual.forEach(function(cash){
+                    cash.classList.add('hidden');
+                });
+
+                paymentSelectSsgPay.classList.remove('hide');
+                paymentSelectPay.classList.add('hide');
+
+                paymentTxt.forEach(function(text){
+                    text.classList.remove('hide')
+                });
+
+                paymentTableTitle.style.display = 'block';
+            }else if(paymentType.checked && paymentType.value === '4'){//급여공제
+                paymentFormEtc.style.display = 'block';
+                paymentCash.forEach(function(cash){
+                    cash.classList.remove('hidden');
+                });
+
+                virtual.forEach(function(cash){
+                    cash.classList.add('hidden');
+                });
+                paymentSelectSsgPay.classList.add('hide');
+                paymentSelectPay.classList.remove('hide');
+
+                paymentTxt.forEach(function(text){
+                    text.classList.add('hide')
+                });
+
+                paymentTableTitle.style.display = 'none';
+            }else{
+                paymentFormEtc.style.display = 'none';
+                virtual.forEach(function(cash){
+                    cash.classList.add('hidden');
+                });
+            }
+        });
+    });
+
+    //개인 소득 공제 & 사업자 지출 증빙
+    const cashReceiptAll = document.querySelectorAll('input[name="cash_receipt"]');
+    const cashRow = document.querySelector('.cash_row');
+    const companyRow = document.querySelector('.company_row');
+    cashReceiptAll.forEach(function(receipt){
+        receipt.addEventListener('change', function() {
+            if(receipt.checked && receipt.value === '0'){//개인 소득 공제
+                cashRow.classList.remove('hidden');
+                companyRow.classList.add('hidden');
+            }else if(receipt.checked && receipt.value === '1'){//사업자 지줄층빙
+                companyRow.classList.remove('hidden');
+                cashRow.classList.add('hidden');
+            }
+        });
+    });
+</script>
+</body>
+</html>

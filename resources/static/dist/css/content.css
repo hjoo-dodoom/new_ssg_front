@@ -895,6 +895,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .input_group > * + .size_mb_100 {margin-left:0;margin-top:1.2rem;}
     .input_group textarea.size_lg{height:20rem;}
     .input_group > .input.size_mb_100 + *{margin-left:0;margin-top:1rem;}
+    .input_group .text{width: 100%; margin-left:0px; margin-top: .4rem;}
 }
 
 .od_table.form_type1{margin-top:2.2rem;}
@@ -1618,6 +1619,8 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .order_wrap .order_content{flex:1 1 auto;width:1%;}
 .order_wrap .order_aside{width:33rem;margin-left:4rem;border-radius:0.8rem;padding:3.5rem;border:2px solid #000;position: sticky;top:2rem;}
 .order_wrap .order_aside .aside_title{font-size:2rem;font-weight:500;}
+.order_wrap .tax_type{}
+.order_wrap .tax_type .input_group + .input_group{margin-top:2.7rem;}
 @media screen and (max-width: 1840px) {
     .order_wrap .order_aside{width:30rem;margin-left:3rem;padding:2.5rem;}
 }
@@ -1625,6 +1628,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .subpage_title_center{display: none;}
     .order_wrap{display: block;}
     .order_wrap .order_content{width: 100%;}
+    .order_wrap .tax_type .input_group + .input_group{margin-top:2rem;}
     .order_wrap .order_aside{width:100%;margin-left:0;margin-top:2.4rem;border-radius:0;padding:0;border:0;position: relative;top:0;}
     .order_wrap .order_aside .aside_title{font-size:1.8rem;padding-bottom:1.9rem;border-bottom:2px solid #000;margin-bottom:2.2rem;}
     .order_wrap .order_aside.cart_aside{padding-top:2.6rem;border-top:1px solid #E6E6E6;}
@@ -1759,6 +1763,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .od_box + .od_box{margin-top:10rem;}
 .od_box .od_title{padding-bottom:2.4rem;border-bottom:2px solid #000;display: flex;align-items: center;}
 .od_box .od_title.mobile_column{}
+.od_box .od_title.border_none{border-bottom:0;}
 .od_box .od_title h3{font-size:2.2rem;font-weight: 500;}
 .od_box .od_title .checkbox{font-size:1.5rem;}
 .od_box .od_title .btn_info_show{font-size:1.4rem; color:#000;}
@@ -2227,6 +2232,10 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 
 .mp_product .table table tbody + tbody .group_info{margin-top:4rem;}
 .mp_product .table table tbody td{padding:3rem 1.2rem;border-bottom:1px solid #E6E6E6;text-align: center;vertical-align: middle;}
+
+.mp_product .table table tbody .receivable_info td{padding:1.2rem; border-top: 1px solid #000; font-size:1.5rem; font-weight:600;}
+.mp_product .table table tbody .mobile_only{display:none;}
+.mp_product .table table tbody .tr_detail > td{border-bottom:none; padding:0 0 4rem 0; }
 .mp_product .table table tbody tr td.td_pl0{padding-left:0;}
 .mp_product .table table tbody tr td.td_pr0{padding-right:0;}
 .mp_product .table table .td_check{padding-left:0;vertical-align: top;}
@@ -2258,6 +2267,11 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .mp_product .table table .delivery .num a{font-weight:700;text-decoration: underline;}
 .mp_product .table table .td_btns{}
 .mp_product .table table .td_btns .btn + .btn{margin-top:1rem;}
+
+.mp_product .table2 table thead th{padding:1.2rem; border-top:none; background-color:#EAEAEA;}
+.mp_product .table2 table tbody td{padding:1.2rem; background-color:#F5F5F5;}
+.mp_product .table2 table tbody td .min_height{min-height:4.6rem;}
+
 .layer_popup .mp_product .table table tbody td{border-bottom:0;}
 .layer_popup .mp_product .tfoot_gray .gray_box{margin-top:0;}
 .layer_popup .mp_product .tfoot_gray .gray_box + .gray_box{margin-top:1rem;}
@@ -2381,6 +2395,28 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
     .mp_product .table table .group_info .multi{font-size:1.3rem;}
     .mp_product .table table .group_info .order_num .tit{display:none;}
     .mp_product .table table .group_info .order_num a{display: inline-block; width:1.8rem;height: 1.8rem;text-indent: -999em;overflow:hidden; background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/content/icon_arrow_thin_right_black.svg');}
+    .mp_product .table table tbody .mobile_only{display:block;}
+    .mp_product .table table tbody .receivable_info td,
+    .mp_product .table table tbody .tr_detail td{font-size:1.3rem; padding: 0; border-top:none;}
+    .mp_product .table table tbody .pc_only,
+    .mp_product .table table tbody .pc_only{display:none !important;}
+    .mp_product .table table tbody .receivable_info td,
+    .mp_product .table table tbody .tr_detail td{display:flex; justify-content: space-between;}
+    .mp_product .table table tbody .receivable_info td.mobile_td ,
+    .mp_product .table table tbody .tr_detail td.mobile_td{margin-top:1.6rem}
+    .mp_product .table table tbody .receivable_info td:before,
+    .mp_product .table table tbody .tr_detail td:before{content: attr(data-th); font-weight: 500; color:#666; font-size:1.3rem; display: inline-block;}
+    .mp_product .table table tbody .receivable_info td.red_text_color:before,
+    .mp_product .table table tbody .tr_detail td.red_text_color:before{color:#F22C2D;}
+    .mp_product .table table tbody .receivable_info button,
+    .mp_product .table table tbody .tr_detail button{width:100%; margin-top: .4rem;}
+    .mp_product .table table tbody tr.tr_detail{padding:0; overflow: hidden; margin-top: 1.2rem;}
+    .mp_product .table2{width:100%;}
+    .mp_product .table2 table tbody tr{padding: 2rem 1.6rem;}
+    .mp_product .table2 table tbody tr + tr{margin-top: 0; border-top:1px solid #E6E6E6; border-radius:0;}
+    .mp_product .table2 table tbody td{background-color:#fff;}
+    .mp_product .table2 table tbody td .min_height{min-height:0rem;}
+
 
     .mp_product .table table tbody + tbody .group_info{margin-top:5rem;}
     .mp_product .table table tbody td{padding:3rem 1.2rem;border-bottom:1px solid #E6E6E6;text-align: center;vertical-align: middle;}
@@ -2475,6 +2511,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .payment_calc .group.total .top .tit{}
 .payment_calc .group.total .top .cnt{font-size:2rem;}
 .payment_calc .group .bottom{padding:2.4rem;min-height:16.6rem;font-size:1.3rem;}
+.payment_calc.balance .group .bottom{padding:2.4rem 2.4rem 3rem 2.4rem;min-height:auto;}
 .payment_calc .group .bottom .tit{}
 .payment_calc .group .bottom .cnt{}
 .payment_calc .group .calc{position: absolute;left:-1.2rem;top:50%;margin-top:-1.2rem;width:2.4rem;height:2.4rem;background-color: #444;border-radius: 50%;text-indent:-999em;}
@@ -2501,6 +2538,7 @@ td .check_agree p{margin-top:2rem;}
     .payment_calc .group .top .cnt{font-size:1.5rem;font-weight:600;}
     .payment_calc .group.total .top .cnt{font-size:2rem;}
     .payment_calc .group .bottom{padding:0;min-height:0;margin-top:1.6rem;}
+    .payment_calc.balance .group .bottom{padding:0;}
     .payment_calc .group .calc{display: none;}
     .check_agree{margin-top:2rem;}
     .check_agree .item{font-size:1.4rem;}
