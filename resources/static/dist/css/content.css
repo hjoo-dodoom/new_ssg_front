@@ -150,9 +150,12 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
 .layer_default.show{display: flex;}
 .layer_default .layer_bg{display: block;}
 .layer_default .layer_content{position:relative;z-index:100;display:inline-flex;flex-direction: column;background-color: #fff;border-radius:4rem;padding-top:1rem;color:#000;}
+.layer_default .layer_content.layer_iframe{border-radius:0; padding:0; height: 100%; max-height: min(70rem, calc(100vh - 12rem));}
+.layer_default .layer_content.layer_iframe iframe{height:100%;}
 .layer_default .layer_content .layer_default_title{position:relative;font-size:2.2rem;font-weight: 600;padding:3.4rem 8.8rem 2rem 4rem;word-break: keep-all;}
 .layer_default .layer_content .layer_default_title:after{content:'';display:inline-block;position:absolute;bottom:0; left:4rem; width: calc(100% - 4rem - 4rem);height:1px; background-color:#000;}
 .layer_default .layer_content .layer_default_close{position: absolute;right:4rem;top:4rem;width:3.4rem;height: 3.4rem;border:0;border-radius:50%;background-size:1.3rem;text-indent: -999em;overflow:hidden;background-color: #ebebeb;background-position: center center;background-repeat: no-repeat;background-image: url('/resources/static/dist/images/common/icon_close.svg');}
+.layer_default .layer_content.layer_iframe .layer_default_close{right: 0rem; top: -4rem;}
 .layer_default .layer_content .layer_default_close:hover{background-color: #dddddd;}
 .layer_default .layer_content .layer_default_content{flex:1 1 auto;padding:3rem 4rem 4rem;display: flex;flex-direction: column;} 
 .layer_default .layer_content .layer_default_content.layer_scroll{}
@@ -197,6 +200,7 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
     .layer_default .layer_content .layer_default_title{font-size:1.8rem;padding-top:2rem;padding-bottom:2rem;padding-right: calc(3.5rem + 2rem);padding-left:2rem;}
     .layer_default .layer_content .layer_default_title:after{left:2rem; width: calc(100% - 2rem - 2rem);}
     .layer_default .layer_content .layer_default_close{right:2rem;top:2.9rem;width:2.8rem;height: 2.8rem;background-size:1rem;}
+    .layer_default .layer_content.layer_iframe .layer_default_close{top:-3rem;}
     .layer_default .layer_content .layer_default_content{padding: 2rem 2rem 3rem;} 
     .layer_default .layer_content .layer_default_content.layer_scroll .layer_scroll{padding-top:0;}
 

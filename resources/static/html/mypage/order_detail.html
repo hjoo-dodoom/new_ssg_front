@@ -551,7 +551,7 @@
                             <div class="btn_list r">
                                 <button type="button" class="btn btn_dark btn_type6 btn_inline" onclick="openLayer('#trade_receipt');">거래영수증</button>
                                 <button type="button" class="btn btn_dark btn_type6 btn_inline" onclick="openLayer('#trade_detail');">거래내역서</button>
-                                <button type="button" class="btn btn_dark btn_type6 btn_inline">영수증</button>
+                                <button type="button" class="btn btn_dark btn_type6 btn_inline" onclick="fnReceiptPop('K00003699082');">영수증</button>
                             </div>
                         </div>
 
@@ -886,6 +886,19 @@
 
 
 
+<!-- 영수증 -->
+<div id="receipt_detail" class="layer_popup layer_default">
+    <div class="layer_content layer_iframe width_md">
+        <iframe id="receipt_iframe" src=""></iframe>
+        <button type="button" class="layer_default_close" onclick="closeLayer(this)">팝업닫기</button>
+    </div>
+    <span class="layer_bg" onclick="closeLayer(this)"></span>
+</div>
+<!-- //영수증 -->
+
+
+
+
 <!-- 배송/주문문의 -->
 <div id="gift_detail" class="layer_popup layer_default">
     <div class="layer_content width_lg">
@@ -1064,6 +1077,38 @@
 </div>
 <!-- //문의 약관 -->
 
+
+<script>
+    // 2025.12.10 개발 기준 fnReciptPop() 코드
+    function fnReceiptPop(reqOikey) {
+        $.ajax({
+            type : 'post',
+            url:'/order/getPaymentCno',
+            data: {"oikey" : reqOikey},
+            dataType: 'json',
+            success : function(data) {
+                if ("0000" === data.result_code) {
+                    if (data) {
+
+						/*
+                        window.open("", "MEMB_POP_RECEIPT", 'toolbar=0,scroll=1,menubar=0,status=0,resizable=0,width=380,height=700');
+                        document.receiptForm.action = data.targetUrl;
+                        document.receiptForm.controlNo.value = data.cno;
+                        document.receiptForm.target = "MEMB_POP_RECEIPT";
+                        document.receiptForm.submit();
+						*/
+
+                        $('#receipt_iframe').attr('src', data.targetUrl+'?controlNo='+data.cno);
+                        openLayer('#receipt_detail');
+
+                    }
+                } else {
+                    box_alert(data.result_msg, 'info');
+                }
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
