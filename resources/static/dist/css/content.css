@@ -1782,6 +1782,7 @@ background-position: left -0.2rem center;background-repeat: no-repeat;background
 .od_table > table > tbody > tr > th .info_hover{margin-left:4px;}
 .od_table > table > tbody > tr > td * + .form_btns{margin-top:2rem;}
 .od_table > table > tbody > tr > td p{font-size:1.3rem;line-height: 1.6;}
+.od_table > table > tbody > tr > td .text{font-size:1.4rem;line-height: 1.57;}
 @media screen and (max-width: 1020px) {
     .od_box + .od_box{margin-top:5rem;}
     .od_box .od_title{padding-bottom:1.9rem;}

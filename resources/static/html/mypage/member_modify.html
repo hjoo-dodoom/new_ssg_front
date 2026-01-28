@@ -357,6 +357,57 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <th>로그인 2단계 인증</th>
+                                                <td>
+                                                    <p class="text">
+                                                        로그인 시 등록된 휴대폰번호로 추가 인증을 진행합니다.<br/>
+                                                        로그인 할 때 마다 인증이 필요하며, 설정 변경은 회원 본인만 가능합니다.
+                                                    </p>
+                                                    <div class="btn_list mgt10">
+                                                        <label class="switch">
+                                                            <input type="checkbox" checked>
+                                                            <span class="slider"></span>
+                                                        </label>
+                                                    </div>
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $('.mypage_content .switch input[type="checkbox"]').on('click', function (e) {
+
+                                                                e.preventDefault();
+                                                                const checkbox = this;
+                                                                const willBeChecked = checkbox.checked; // 사용자가 의도한 상태
+
+                                                                if (willBeChecked) {
+                                                                    box_confirm(
+                                                                        '로그인 2단계 인증을 설정 하시겠습니까?<br>계정 보호를 위해 로그인 시 추가 인증이 진행됩니다.',
+                                                                        'confirm',
+                                                                        '로그인 2단계 인증',
+                                                                        function (isConfirmed) {
+                                                                            if (isConfirmed) {
+                                                                                checkbox.checked = true;
+                                                                                console.log('ON: 이후 작업');
+                                                                            }
+                                                                        }
+                                                                    );
+                                                                } else {
+                                                                    box_confirm(
+                                                                        '로그인 2단계 설정을 해제 하시겠습니까?<br>개인정보 보호를 위해 보안설정을 권고 드립니다.',
+                                                                        'confirm',
+                                                                        '로그인 2단계 인증',
+                                                                        function (isConfirmed) {
+                                                                            if (isConfirmed) {
+                                                                                checkbox.checked = false;
+                                                                                console.log('OFF: 이후 작업');
+                                                                            }
+                                                                        }
+                                                                    );
+                                                                }
+                                                            });
+                                                        });
+                                                    </script>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td colspan="2">
                                                     <div class="check_agree">
                                                         <div class="item">
