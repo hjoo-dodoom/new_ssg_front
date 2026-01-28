@@ -175,6 +175,7 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
 .layer_default .layer_content .layer_default_content.layer_scroll .layer_scroll{padding-top:0;}
 .layer_default .layer_content .simplebar-content-wrapper{padding-left: 4rem; padding-right: 4rem;}
 .layer_default .layer_content.width_sm{width: 40rem;}
+.layer_default .layer_content.width_mmd{width: 50rem;}
 .layer_default .layer_content.width_md{width: 60rem;}
 .layer_default .layer_content.width_lg{width:80rem;}
 .layer_default .layer_content.width_xl{width:96rem;}
@@ -187,9 +188,25 @@ background-image: linear-gradient(to right, #000, #000);background-repeat: no-re
 .layer_default .layer_content .layer_default_content .txt2{font-size:1.5rem;font-weight:500;word-break: keep-all;}
 .layer_default .layer_content .layer_default_content .txt2{font-size:1.4rem;word-break: keep-all;}
 .layer_default .layer_content .layer_default_content .txt3{font-size:1.4rem;word-break: keep-all;}
+.layer_default .layer_content .layer_default_content .txt4{font-size:2rem;word-break: keep-all;font-weight:600;}
+.layer_default .layer_content .layer_default_content .txt5{font-size:1.6rem;word-break: keep-all;font-weight:500;}
 .layer_default .layer_content .layer_default_content .txt2 + .txt2{margin-top:2rem;}
 .layer_default .layer_content .layer_default_content .txt1 + .txt2{margin-top:2.6rem;}
 .layer_default .layer_content .layer_default_content .txt3 + .txt3{margin-top:1.5rem;}
+.layer_default .layer_content .layer_default_content .txt4 + .txt5{margin-top:1.6rem;}
+.layer_default .layer_content .layer_default_content .sub_txt{margin-top:1.8rem; color:#666666; font-size:1.4rem;word-break: keep-all;font-weight:400;}
+
+
+
+.layer_default .layer_content .verify_box{margin-top:1.8rem; background-color: #F5F7FA; border-radius: 8px;}
+.layer_default .layer_content .verify_box.type1{padding: 2.2rem 2rem 1.4rem;}
+.layer_default .layer_content .verify_box.type1 .round{display: inline-block; padding:.7rem 1rem .5rem; font-size:1.2rem; font-weight:500; color:#3B6DEC; border:1px solid #3B6DEC; border-radius:20rem;}
+.layer_default .layer_content .verify_box.type1 .tel{margin-top:.7rem; font-size:2rem; font-weight:600; color:#000000;}
+.layer_default .layer_content .verify_box.type2{padding: 1.8rem 2rem 1.6rem; }
+.layer_default .layer_content .verify_box.type2 .logo_phone{display: inline-block; width:2.6rem;height:2.6rem;background-position: center;background-repeat: no-repeat;background-size: 100%;background-image: url('/resources/static/dist/images/content/icon_no_tel.svg');}
+.layer_default .layer_content .verify_box.type2 p{margin-top: 1.1rem; font-size:1.4rem; color:#444444; font-size:500;}
+.layer_default .layer_content .verify_box.type2 p .strong{margin-bottom:.7rem; font-size:1.6rem; color:#3B6CEC; font-weight:600;}
+
 .layer_default .layer_content .layer_today{margin-top:2.5rem;}
 .layer_default .layer_content .form_btn{margin-top:3rem;}
 .terms_content{word-break: keep-all;}
