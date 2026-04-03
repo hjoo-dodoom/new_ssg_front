@@ -8832,6 +8832,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="right">
       
       <button class="btn v_mobile resale" onclick="openLayer('#resale_no_layer')" >재판매 금지</button>
+      <!-- 테블릿 전용 플로팅 최근본 -->
+      <button type="button" class="btn btn_tablet_viewd" onclick="toggleLayer('#viewed_products_mobile');">최근본</button>
       <button type="button" class="btn to_top" onclick="toTop();">상단으로</button>
     </div>
   </div>
@@ -8933,6 +8935,10 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <!-- //푸터  -->
+
+
+<!-- 태블릿 최근 본 상품 패널 딤드 오버레이 -->
+<div id="tablet_viewed_dim" onclick="toggleLayer('#viewed_products_mobile');"></div>
 
 <!-- 모바일 하단 플로팅  -->
 <div id="floating_wrap">

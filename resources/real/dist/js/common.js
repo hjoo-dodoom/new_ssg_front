@@ -486,7 +486,41 @@ function itemSort(button, group, target) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    var panel = null;
+    var dim = document.getElementById('tablet_viewed_dim');
 
+    // #viewed_products_mobile이 include로 동적 삽입되므로 MutationObserver로 감지
+    var observer = new MutationObserver(function() {
+        var found = document.getElementById('viewed_products_mobile');
+        if (found && found !== panel) {
+            panel = found;
+            // 패널의 class 변화 감지
+            var panelObserver = new MutationObserver(function() {
+                var isTablet = window.innerWidth >= 1020 && window.innerWidth <= 1250;
+                if (!isTablet) return;
+
+                if (panel.classList.contains('show')) {
+                    // 패널 열릴 때: 딤드 표시 후 페이드인 + 스크롤 잠금
+                    dim.classList.add('show');
+                    requestAnimationFrame(function() {
+                        dim.classList.add('visible');
+                    });
+                    document.documentElement.style.overflow = 'hidden';
+                } else {
+                    // 패널 닫힐 때: 페이드아웃 후 숨김 + 스크롤 복원
+                    dim.classList.remove('visible');
+                    setTimeout(function() {
+                        dim.classList.remove('show');
+                    }, 300);
+                    document.documentElement.style.overflow = '';
+                }
+            });
+            panelObserver.observe(panel, { attributes: true, attributeFilter: ['class'] });
+        }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+});
 
 //퀵메뉴, 상단으로 버튼 모바일 footer밑으로 안넘어가게 제어
 function adjustMobileBottomFixed() {
